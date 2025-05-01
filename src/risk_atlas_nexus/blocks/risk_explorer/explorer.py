@@ -451,33 +451,29 @@ class RiskExplorer(ExplorerBase):
 
         if risk is not None:
             matching_risks = [risk]
-        if id is not None:
+        if risk_id is not None:
             matching_risks = list(filter(lambda risk: risk.id == risk_id, matching_risks))
 
         if len(matching_risks) > 0:
             risk: Risk = matching_risks[0]
-            risk_incidents = []
 
-            if risk.isDetectedBy is not None:
-                risk_incidents.append(risk.isDetectedBy)
-
-            risk_incidents = [j for i in risk_incidents for j in i]
-
-            if taxonomy is not None:
-                risk_incidents = list(
-                    filter(
-                        lambda risk_incident: risk_incident.isDefinedByTaxonomy
-                        == taxonomy,
-                        risk_incidents,
-                    )
-                )
-            related_risk_incidents = list(
+            risk_incident_instances = self._riskincidents or []
+            
+            risk_incident_instances = list(
                 filter(
-                    lambda risk_incident: risk_incident.id in risk_incidents,
-                    self._riskcontrols,
+                    lambda risk_incident: risk_id in risk_incident.refersToRisk,
+                    risk_incident_instances,
                 )
             )
-            return related_risk_incidents
+            if taxonomy is not None:
+                risk_incident_instances = list(
+                    filter(
+                        lambda risk_incident: risk_incident.isDefinedByTaxonomy == taxonomy,
+                        risk_incident_instances,
+                    )
+                )
+             
+            return risk_incident_instances
         else:
             print("No matching risk controls found")
             return None

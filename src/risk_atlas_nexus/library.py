@@ -682,7 +682,7 @@ class RiskAtlasNexus:
         )
         value_check(
             "<RAN79007538E>",
-            risk or id,
+            risk or risk_id,
             "Please provide risk or id",
         )
 

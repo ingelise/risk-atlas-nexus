@@ -6,11 +6,13 @@ from typing import Union, List, Dict
 # Third party
 from linkml_runtime import SchemaView
 from sssom_schema import Mapping
+from linkml_runtime.dumpers import YAMLDumper
 
 # Unit Test Infrastructure
 from src.risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Risk,
     Action,
+    RiskIncident,
 )
 from tests.base import TestCaseBase
 
@@ -157,7 +159,7 @@ class TestLibrary(TestCaseBase):
         """Get all taxonomy definitions from the LinkML"""
         ran_lib = self.ran_lib
         taxonomies = ran_lib.get_all_taxonomies()
-        self.assertIs(len(taxonomies), 8)
+        self.assertIs(len(taxonomies), 9)
 
     def test_get_taxonomy_by_id(self):
         """Get taxonomy definitions from the LinkML filtered by taxonomy id"""
@@ -192,3 +194,30 @@ class TestLibrary(TestCaseBase):
 
         with self.assertRaises(ValueError):
             mappings2 = ran_lib.generate_proposed_mappings(risks_1, None, None, "test_prefix", "SEMANTIC")
+
+    def test_get_risk_incidents(self):
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._riskincidents = [RiskIncident(id="test-ri")]
+        ris = ran_lib.get_risk_incidents()
+        assert all(isinstance(i, RiskIncident) for i in ris)
+        self.assertIs(len(ris), 1)
+
+    def test_get_risk_incident(self):
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._riskincidents = [RiskIncident(id="test-ri")]
+        ri = ran_lib.get_risk_incident(id="test-ri")
+        assert isinstance(ri, RiskIncident)
+
+
+    def test_get_related_risk_incidents(self):
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._riskincidents = [RiskIncident(id="test-ri", refersToRisk=["atlas-data-bias"])]
+        ri = ran_lib.get_risk_incident(id="test-ri")
+        assert isinstance(ri, RiskIncident)
+
+        rris = ran_lib.get_related_risk_incidents(risk_id="atlas-data-bias")
+        assert all(isinstance(i, RiskIncident) for i in rris)
+        self.assertIs(len(rris), 1)
+        incident = rris[0]
+        self.assertEquals(incident.id, "test-ri")
+        self.assertEquals(incident.refersToRisk, "atlas-data-bias")
