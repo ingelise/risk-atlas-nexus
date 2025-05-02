@@ -220,4 +220,4 @@ class TestLibrary(TestCaseBase):
         self.assertIs(len(rris), 1)
         incident = rris[0]
         self.assertEquals(incident.id, "test-ri")
-        self.assertEquals(incident.refersToRisk, "atlas-data-bias")
+        self.assertIn("atlas-data-bias", incident.refersToRisk)
