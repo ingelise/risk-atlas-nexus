@@ -10,6 +10,7 @@ from linkml_runtime.dumpers import YAMLDumper
 
 # Unit Test Infrastructure
 from src.risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
+    AiEval,
     Risk,
     Action,
     RiskIncident,
@@ -233,3 +234,24 @@ class TestLibrary(TestCaseBase):
         incident = rris[0]
         self.assertEquals(incident.id, "test-ri")
         self.assertIn("atlas-data-bias", incident.refersToRisk)
+
+    def test_get_all_evaluations(self):
+        """Get all evaluation definitions from the LinkML"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._evaluations = [
+            AiEval(id="test-eval1")
+        ]
+        evaluations = ran_lib.get_all_evaluations()
+        self.assertGreater(len(evaluations), 0)
+        
+
+    def test_get_risk_control_by_id(self):
+        """Get evaluation definition from the LinkML filtered by evaluation id"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._evaluations = [
+            AiEval(id="test-eval1")
+        ]
+        evaluation = ran_lib.get_evaluation(
+            id="test-eval1"
+        )
+        assert evaluation.id == "test-eval1"

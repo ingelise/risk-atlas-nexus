@@ -14,6 +14,7 @@ class RiskExplorer(ExplorerBase):
         self._riskincidents = ontology.riskincidents
         self._actions = ontology.actions
         self._taxonomies = ontology.taxonomies
+        self._evaluations = ontology.evaluations
 
     def get_all_risks(self, taxonomy=None):
         """Get all risk definitions from the LinkML
@@ -476,4 +477,48 @@ class RiskExplorer(ExplorerBase):
             return risk_incident_instances
         else:
             print("No matching risk controls found")
+            return None
+        
+    def get_all_evaluations(self, taxonomy=None):
+        """Get all evaluation definitions from the LinkML
+
+        Args:
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            list[AiEval]
+                Result containing a list of AiEval
+        """
+        evaluation_instances = self._evaluations
+
+        if taxonomy is not None:
+            evaluation_instances = list(
+                filter(
+                    lambda evaluation: evaluation.isDefinedByTaxonomy == taxonomy,
+                    evaluation_instances,
+                )
+            )
+
+        return evaluation_instances
+
+    def get_evaluation(self, id):
+        """Get evaluation definition from the LinkML by ID
+
+        Args:
+            id: str
+                The string id for an evaluation
+
+        Returns:
+            AiEval
+                Result containing an AiEval
+        """
+        matching_evaluations = list(
+            filter(lambda evaluation: evaluation.id == id, self._evaluations)
+        )
+
+        if len(matching_evaluations) > 0:
+            return matching_evaluations[0]
+        else:
+            print("No matching evaluation found")
             return None

@@ -10,6 +10,7 @@ from sssom_schema import Mapping
 
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Action,
+    AiEval,
     Risk,
     RiskControl,
     RiskIncident,
@@ -690,3 +691,41 @@ class RiskAtlasNexus:
             risk=risk, risk_id=risk_id, taxonomy=taxonomy
         )
         return related_risk_incidents
+    
+
+    def get_all_evaluations(cls, taxonomy=None):
+        """Get all evaluation definitions from the LinkML
+
+        Args:
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            list[RiskControl]
+                Result containing a list of AiEval
+        """
+        type_check("<RAN18094995E>", str, allow_none=True, taxonomy=taxonomy)
+
+        evaluation_instances: list[AiEval] = (
+            cls._risk_explorer.get_all_evaluations(taxonomy)
+        )
+        return evaluation_instances
+
+    def get_evaluation(cls, id=None, taxonomy=None):
+        """Get an evaluation definition from the LinkML, filtered by id
+
+        Args:
+            id: str
+                The string id identifying the evaluation
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            Action
+                Result containing an evaluation.
+        """
+        type_check("<RAN84465757E>", str, allow_none=False, id=id)
+        type_check("<RAN29906222E>", str, allow_none=True, taxonomy=taxonomy)
+
+        evaluation: AiEval | None = cls._risk_explorer.get_evaluation(id=id)
+        return evaluation
