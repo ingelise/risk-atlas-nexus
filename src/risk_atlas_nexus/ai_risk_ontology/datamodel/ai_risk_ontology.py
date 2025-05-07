@@ -800,10 +800,6 @@ class AiEval(Entity):
                        'BaseAi',
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
-    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
-         'domain': 'AiEval',
-         'domain_of': ['AiEval'],
-         'inverse': 'describesAiEval'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
     hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
@@ -817,6 +813,10 @@ class AiEval(Entity):
          'domain': 'RiskConcept',
          'domain_of': ['Action', 'AiEval']} })
     bestValue: Optional[str] = Field(default=None, description="""Annotation of the best possible result of the evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'bestValue', 'domain_of': ['AiEval']} })
+    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
+         'domain': 'AiEval',
+         'domain_of': ['AiEval'],
+         'inverse': 'describesAiEval'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'domain_of': ['Entity', 'BenchmarkMetadataCard'],
@@ -918,7 +918,7 @@ class BenchmarkMetadataCard(Entity):
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
     name: Optional[str] = Field(default=None, description="""The official name of the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'name', 'domain_of': ['Entity', 'BenchmarkMetadataCard']} })
-    overview: Optional[str] = Field(default=None, description="""A brief description of the benchmarks main goals and scope.""", json_schema_extra = { "linkml_meta": {'alias': 'overview', 'domain_of': ['BenchmarkMetadataCard']} })
+    overview: Optional[str] = Field(default=None, description="""A brief description of the benchmark's main goals and scope.""", json_schema_extra = { "linkml_meta": {'alias': 'overview', 'domain_of': ['BenchmarkMetadataCard']} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     description: Optional[str] = Field(default=None, description="""The description of an entity""", json_schema_extra = { "linkml_meta": {'alias': 'description',
          'domain_of': ['Entity'],
@@ -948,10 +948,6 @@ class Question(AiEval):
                        'BaseAi',
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
-    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
-         'domain': 'AiEval',
-         'domain_of': ['AiEval'],
-         'inverse': 'describesAiEval'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
     hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
@@ -965,6 +961,10 @@ class Question(AiEval):
          'domain': 'RiskConcept',
          'domain_of': ['Action', 'AiEval']} })
     bestValue: Optional[str] = Field(default=None, description="""Annotation of the best possible result of the evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'bestValue', 'domain_of': ['AiEval']} })
+    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
+         'domain': 'AiEval',
+         'domain_of': ['AiEval'],
+         'inverse': 'describesAiEval'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'domain_of': ['Entity', 'BenchmarkMetadataCard'],
@@ -997,10 +997,6 @@ class Questionnaire(AiEval):
                        'BaseAi',
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
-    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
-         'domain': 'AiEval',
-         'domain_of': ['AiEval'],
-         'inverse': 'describesAiEval'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
     hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
@@ -1014,6 +1010,10 @@ class Questionnaire(AiEval):
          'domain': 'RiskConcept',
          'domain_of': ['Action', 'AiEval']} })
     bestValue: Optional[str] = Field(default=None, description="""Annotation of the best possible result of the evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'bestValue', 'domain_of': ['AiEval']} })
+    hasBenchmarkMetadata: Optional[List[str]] = Field(default=None, description="""A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasBenchmarkMetadata',
+         'domain': 'AiEval',
+         'domain_of': ['AiEval'],
+         'inverse': 'describesAiEval'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'domain_of': ['Entity', 'BenchmarkMetadataCard'],
