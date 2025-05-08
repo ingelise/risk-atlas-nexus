@@ -245,7 +245,7 @@ class TestLibrary(TestCaseBase):
         self.assertGreater(len(evaluations), 0)
         
 
-    def test_get_risk_control_by_id(self):
+    def test_get_evaluation_by_id(self):
         """Get evaluation definition from the LinkML filtered by evaluation id"""
         ran_lib = self.ran_lib
         ran_lib._risk_explorer._evaluations = [
@@ -255,3 +255,18 @@ class TestLibrary(TestCaseBase):
             id="test-eval1"
         )
         assert evaluation.id == "test-eval1"
+
+    
+    def test_get_related_evaluations(self):
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._evaluations = [
+            AiEval(id="test-eval1", hasRelatedRisk=["atlas-data-bias"])
+        ]
+        ev1 = ran_lib.get_evaluation(id="test-eval1")
+        assert isinstance(ev1, AiEval)
+        evs = ran_lib.get_related_evaluations(risk_id="atlas-data-bias")
+        assert all(isinstance(i, AiEval) for i in evs)
+        self.assertIs(len(evs), 1)
+        ev = evs[0]
+        self.assertEquals(ev.id, "test-eval1")
+        self.assertIn("atlas-data-bias", ev.hasRelatedRisk)

@@ -476,7 +476,7 @@ class RiskExplorer(ExplorerBase):
              
             return risk_incident_instances
         else:
-            print("No matching risk controls found")
+            print("No matching risk incidents found")
             return None
         
     def get_all_evaluations(self, taxonomy=None):
@@ -521,4 +521,51 @@ class RiskExplorer(ExplorerBase):
             return matching_evaluations[0]
         else:
             print("No matching evaluation found")
+            return None
+        
+    def get_related_evaluations(
+        self, risk=None, risk_id=None, taxonomy=None
+    ):
+        """Get related evaluations for a risk 
+
+        Args:
+            risk: (Optional) Risk
+                The Risk object to find related evaluations for
+            risk_id: (Optional) str
+            taxonomy: str
+                (Optional) The string label for a taxonomy, to filter action results by
+
+        Returns:
+            list[AiEval]
+                Result containing a list of the evaluations which are marked as related to the specified AI risk
+        """
+        matching_risks = self._risks
+
+        if risk is not None:
+            matching_risks = [risk]
+        if risk_id is not None:
+            matching_risks = list(filter(lambda risk: risk.id == risk_id, matching_risks))
+
+        if len(matching_risks) > 0:
+            risk: Risk = matching_risks[0]
+
+            evaluation_instances = self._evaluations or []
+            
+            evaluation_instances = list(
+                filter(
+                    lambda evaluation: risk_id in evaluation.hasRelatedRisk,
+                    evaluation_instances,
+                )
+            )
+            if taxonomy is not None:
+                risk_incident_instances = list(
+                    filter(
+                        lambda evaluation: evaluation.isDefinedByTaxonomy == taxonomy,
+                        evaluation_instances,
+                    )
+                )
+             
+            return evaluation_instances
+        else:
+            print("No matching evaluations found")
             return None
