@@ -29,6 +29,8 @@ classes:
     slots:
       - hasDocumentation
       - hasDataset
+      - hasTasks
+      - hasImplementation
       - hasUnitxtCard
       - hasLicense
       - hasRelatedRisk
@@ -99,10 +101,23 @@ classes:
         range: Question
 
 slots:
+  hasImplementation:
+    slot_uri: schema:url
+    description: A relationship to a implementation defining the risk evaluation
+    range: uri
+    multivalued: true
+    inlined: false
   hasUnitxtCard:
     slot_uri: schema:url
     description: A relationship to a Unitxt card defining the risk evaluation
     range: uri
+    multivalued: true
+    inlined: false
+  hasMRACard:
+    slot_uri: schema:url
+    description: A relationship to an MRA (IBM internal) card defining the risk evaluation
+    multivalued: true
+    inlined: false
   hasBenchmarkMetadata:
     description: A relationship to a Benchmark Metadata Card which contains metadata about the benchmark.
     domain: AiEval
@@ -154,6 +169,7 @@ slots:
   hasTasks:
     description: The tasks or evaluations the benchmark is intended to assess.
     multivalued: true
+    inlined: false
   hasLimitations:
     description: Limitations in evaluating or addressing risks, such as gaps in demographic coverage or specific domains.
     multivalued: true
