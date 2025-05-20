@@ -709,12 +709,12 @@ class RiskExplorer(ExplorerBase):
                 Result containing a Dataset
         """
         matching_dataset_instances = list(
-            filter(lambda document: document.id == id, self._documents)
+            filter(lambda dataset: dataset.id == id, self._datasets)
         )
 
         if len(matching_dataset_instances) > 0:
             return matching_dataset_instances[0]
         else:
             print("No matching dataset found")
-            return None
+            return []
             
