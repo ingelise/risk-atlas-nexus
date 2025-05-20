@@ -11,6 +11,9 @@ from linkml_runtime.dumpers import YAMLDumper
 # Unit Test Infrastructure
 from src.risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     AiEval,
+    BenchmarkMetadataCard,
+    Dataset,
+    Documentation,
     Risk,
     Action,
     RiskIncident,
@@ -259,7 +262,7 @@ class TestLibrary(TestCaseBase):
     
     def test_get_related_evaluations(self):
         ran_lib = self.ran_lib
-        ran_lib._risk_explorer._evaluations = [
+        ran_lib._risk_explorer._evaluations = ran_lib._risk_explorer._evaluations +[
             AiEval(id="test-eval1", hasRelatedRisk=["atlas-data-bias"])
         ]
         ev1 = ran_lib.get_evaluation(id="test-eval1")
@@ -270,3 +273,67 @@ class TestLibrary(TestCaseBase):
         ev = evs[0]
         self.assertEquals(ev.id, "test-eval1")
         self.assertIn("atlas-data-bias", ev.hasRelatedRisk)
+
+    def test_get_all_benchmark_metadata_cards(self):
+        """Get all benchmark_metadata_card definitions from the LinkML"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._benchmarkmetadatacards = [
+            BenchmarkMetadataCard(id="test-bmc1")
+        ]
+        bmcs = ran_lib.get_benchmark_metadata_cards()
+        self.assertGreater(len(bmcs), 0)
+        
+
+    def test_get_benchmark_metadata_card_by_id(self):
+        """Get benchmark metadata card definition from the LinkML filtered by dataset id"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._benchmarkmetadatacards = [
+            BenchmarkMetadataCard(id="test-bmc1")
+        ]
+        bmc = ran_lib.get_benchmark_metadata_card(
+            id="test-bmc1"
+        )
+        assert bmc.id == "test-bmc1"
+
+    def test_get_all_documents(self):
+        """Get all documents definitions from the LinkML"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._documents = [
+            Documentation(id="test-ds1")
+        ]
+        documents = ran_lib.get_documents()
+        self.assertGreater(len(documents), 0)
+        
+
+    def test_get_document_by_id(self):
+        """Get document definition from the LinkML filtered by dataset id"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._documents = [
+            Documentation(id="test-ds1")
+        ]
+        document = ran_lib.get_document(
+            id="test-ds1"
+        )
+        assert document.id == "test-ds1"
+
+    
+    def test_get_all_datasets(self):
+        """Get all dataset definitions from the LinkML"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._datasets = [
+            Dataset(id="test-ds1")
+        ]
+        datasets = ran_lib.get_datasets()
+        self.assertGreater(len(datasets), 0)
+        
+
+    def test_get_evaluation_by_id(self):
+        """Get dataset definition from the LinkML filtered by dataset id"""
+        ran_lib = self.ran_lib
+        ran_lib._risk_explorer._datasets = [
+            Dataset(id="test-ds1")
+        ]
+        dataset = ran_lib.get_dataset(
+            id="test-ds1"
+        )
+        assert dataset.id == "test-ds1"
