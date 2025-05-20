@@ -11,6 +11,9 @@ from sssom_schema import Mapping
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Action,
     AiEval,
+    BenchmarkMetadataCard,
+    Dataset,
+    Documentation,
     Risk,
     RiskControl,
     RiskIncident,
@@ -762,3 +765,150 @@ class RiskAtlasNexus:
             risk=risk, risk_id=risk_id, taxonomy=taxonomy
         )
         return related_evaluations
+    
+
+    def get_benchmark_metadata_cards(cls, risk=None, risk_id=None, taxonomy=None):
+        """Get all benchmark metadata definitions from the LinkML
+
+        Args:
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            list[BenchmarkMetadataCard]
+                Result containing a list of BenchmarkMetadataCards
+        """
+        type_check(
+            "<RAN07894687E>",
+            str,
+            allow_none=True,
+            risk_id=risk_id,
+            taxonomy=taxonomy,
+        )
+        type_check(
+            "<RAN30190075E>",
+            Risk,
+            allow_none=True,
+            risk=risk
+        )
+
+        benchmark_metatdata_card_instances: list[BenchmarkMetadataCard] = (
+            cls._risk_explorer.get_all_benchmark_metadata_cards(taxonomy)
+        )
+        return benchmark_metatdata_card_instances
+    
+    def get_benchmark_metadata_card(cls, id=str):
+        """Get an benchmark_metadata_card definition from the LinkML, filtered by id
+
+        Args:
+            id: str
+                The string id identifying the benchmark_metadata_card
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            Action
+                Result containing a benchmark_metadata_card.
+        """
+        type_check(
+            "<RAN30946549E>",
+            str,
+            allow_none=False,
+            id=id,
+        )
+
+        benchmark_metadata_card: BenchmarkMetadataCard | None = cls._risk_explorer.get_benchmark_metadata_card(id=id)
+        return benchmark_metadata_card
+    
+    def get_documents(cls, taxonomy=None):
+        """Get all document definitions from the LinkML
+
+        Args:
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            list[Documentation]
+                Result containing a list of Documentation
+        """
+        type_check(
+            "<RAN61770043E>",
+            str,
+            allow_none=True,
+            taxonomy=taxonomy,
+        )
+
+        document_instances: list[Documentation] = (
+            cls._risk_explorer.get_documents(taxonomy)
+        )
+        return document_instances
+    
+    def get_document(cls, id=str):
+        """Get a document definition from the LinkML, filtered by id
+
+        Args:
+            id: str
+                The string id identifying the documentation entry
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            Action
+                Result containing a document.
+        """
+        type_check(
+            "<RAN12472418E>",
+            str,
+            allow_none=False,
+            id=id,
+        )
+
+        document: Documentation | None = cls._risk_explorer.get_document(id=id)
+        return document
+    
+
+    def get_datasets(cls, taxonomy=None):
+        """Get all dataset definitions from the LinkML
+
+        Args:
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            list[Dataset]
+                Result containing a list of Dataset entries
+        """
+        type_check(
+            "<RAN61770043E>",
+            str,
+            allow_none=True,
+            taxonomy=taxonomy,
+        )
+
+        dataset_instances: list[Dataset] = (
+            cls._risk_explorer.get_datasets(taxonomy)
+        )
+        return dataset_instances
+    
+    def get_dataset(cls, id=str):
+        """Get a dataset definition from the LinkML, filtered by id
+
+        Args:
+            id: str
+                The string id identifying the dataset entry
+            taxonomy: str
+                (Optional) The string label for a taxonomy
+
+        Returns:
+            Action
+                Result containing a dataset.
+        """
+        type_check(
+            "<RAN12472418E>",
+            str,
+            allow_none=False,
+            id=id,
+        )
+
+        dataset: Dataset | None = cls._risk_explorer.get_dataset(id=id)
+        return dataset

@@ -185,6 +185,7 @@ class Dataset(Entity):
 
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -223,6 +224,14 @@ class Documentation(Entity):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'airo:Documentation',
          'from_schema': 'https://ibm.github.io/risk-atlas-nexus/ontology/common'})
 
+    hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
+         'domain_of': ['Dataset',
+                       'Documentation',
+                       'RiskTaxonomy',
+                       'AiEval',
+                       'BenchmarkMetadataCard',
+                       'BaseAi'],
+         'slot_uri': 'airo:hasLicense'} })
     id: str = Field(default=..., description="""A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'id', 'domain_of': ['Entity'], 'slot_uri': 'schema:identifier'} })
     name: Optional[str] = Field(default=None, description="""A text name of this instance.""", json_schema_extra = { "linkml_meta": {'alias': 'name',
          'domain_of': ['Entity', 'BenchmarkMetadataCard'],
@@ -271,6 +280,7 @@ class RiskTaxonomy(Entity):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -801,9 +811,14 @@ class AiEval(Entity):
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
-    hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
+    hasTasks: Optional[List[str]] = Field(default=None, description="""The tasks or evaluations the benchmark is intended to assess.""", json_schema_extra = { "linkml_meta": {'alias': 'hasTasks', 'domain_of': ['AiEval', 'BenchmarkMetadataCard']} })
+    hasImplementation: Optional[List[str]] = Field(default=None, description="""A relationship to a implementation defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasImplementation',
+         'domain_of': ['AiEval'],
+         'slot_uri': 'schema:url'} })
+    hasUnitxtCard: Optional[List[str]] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -880,7 +895,7 @@ class BenchmarkMetadataCard(Entity):
     hasResources: Optional[List[str]] = Field(default=None, description="""Links to relevant resources, such as repositories or papers related to the benchmark.""", json_schema_extra = { "linkml_meta": {'alias': 'hasResources', 'domain_of': ['BenchmarkMetadataCard']} })
     hasGoal: Optional[str] = Field(default=None, description="""The specific goal or primary use case the benchmark is designed for.""", json_schema_extra = { "linkml_meta": {'alias': 'hasGoal', 'domain_of': ['BenchmarkMetadataCard']} })
     hasAudience: Optional[str] = Field(default=None, description="""The intended audience, such as researchers, developers, policymakers, etc.""", json_schema_extra = { "linkml_meta": {'alias': 'hasAudience', 'domain_of': ['BenchmarkMetadataCard']} })
-    hasTasks: Optional[List[str]] = Field(default=None, description="""The tasks or evaluations the benchmark is intended to assess.""", json_schema_extra = { "linkml_meta": {'alias': 'hasTasks', 'domain_of': ['BenchmarkMetadataCard']} })
+    hasTasks: Optional[List[str]] = Field(default=None, description="""The tasks or evaluations the benchmark is intended to assess.""", json_schema_extra = { "linkml_meta": {'alias': 'hasTasks', 'domain_of': ['AiEval', 'BenchmarkMetadataCard']} })
     hasLimitations: Optional[List[str]] = Field(default=None, description="""Limitations in evaluating or addressing risks, such as gaps in demographic coverage or specific domains.""", json_schema_extra = { "linkml_meta": {'alias': 'hasLimitations', 'domain_of': ['BenchmarkMetadataCard']} })
     hasOutOfScopeUses: Optional[List[str]] = Field(default=None, description="""Use cases where the benchmark is not designed to be applied and could give misleading results.""", json_schema_extra = { "linkml_meta": {'alias': 'hasOutOfScopeUses', 'domain_of': ['BenchmarkMetadataCard']} })
     hasDataSource: Optional[List[str]] = Field(default=None, description="""The origin or source of the data used in the benchmark (e.g., curated datasets, user submissions).""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataSource', 'domain_of': ['BenchmarkMetadataCard']} })
@@ -899,6 +914,7 @@ class BenchmarkMetadataCard(Entity):
          'domain_of': ['BenchmarkMetadataCard']} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -949,9 +965,14 @@ class Question(AiEval):
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
-    hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
+    hasTasks: Optional[List[str]] = Field(default=None, description="""The tasks or evaluations the benchmark is intended to assess.""", json_schema_extra = { "linkml_meta": {'alias': 'hasTasks', 'domain_of': ['AiEval', 'BenchmarkMetadataCard']} })
+    hasImplementation: Optional[List[str]] = Field(default=None, description="""A relationship to a implementation defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasImplementation',
+         'domain_of': ['AiEval'],
+         'slot_uri': 'schema:url'} })
+    hasUnitxtCard: Optional[List[str]] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -998,9 +1019,14 @@ class Questionnaire(AiEval):
                        'LargeLanguageModelFamily'],
          'slot_uri': 'airo:hasDocumentation'} })
     hasDataset: Optional[List[str]] = Field(default=None, description="""A relationship to datasets that are used.""", json_schema_extra = { "linkml_meta": {'alias': 'hasDataset', 'domain_of': ['AiEval']} })
-    hasUnitxtCard: Optional[str] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
+    hasTasks: Optional[List[str]] = Field(default=None, description="""The tasks or evaluations the benchmark is intended to assess.""", json_schema_extra = { "linkml_meta": {'alias': 'hasTasks', 'domain_of': ['AiEval', 'BenchmarkMetadataCard']} })
+    hasImplementation: Optional[List[str]] = Field(default=None, description="""A relationship to a implementation defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasImplementation',
+         'domain_of': ['AiEval'],
+         'slot_uri': 'schema:url'} })
+    hasUnitxtCard: Optional[List[str]] = Field(default=None, description="""A relationship to a Unitxt card defining the risk evaluation""", json_schema_extra = { "linkml_meta": {'alias': 'hasUnitxtCard', 'domain_of': ['AiEval'], 'slot_uri': 'schema:url'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1074,6 +1100,7 @@ class BaseAi(Entity):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1127,6 +1154,7 @@ class AiSystem(BaseAi):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1177,6 +1205,7 @@ class AiAgent(AiSystem):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1233,6 +1262,7 @@ class AiModel(BaseAi):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1308,6 +1338,7 @@ class LargeLanguageModel(AiModel):
          'slot_uri': 'airo:hasDocumentation'} })
     hasLicense: Optional[str] = Field(default=None, description="""Indicates licenses associated with a resource""", json_schema_extra = { "linkml_meta": {'alias': 'hasLicense',
          'domain_of': ['Dataset',
+                       'Documentation',
                        'RiskTaxonomy',
                        'AiEval',
                        'BenchmarkMetadataCard',
@@ -1522,6 +1553,7 @@ class Container(ConfiguredBaseModel):
     riskincidents: Optional[List[RiskIncident]] = Field(default=None, description="""A list of AI risk incidents""", json_schema_extra = { "linkml_meta": {'alias': 'riskincidents', 'domain_of': ['Container']} })
     actions: Optional[List[Action]] = Field(default=None, description="""A list of risk related actions""", json_schema_extra = { "linkml_meta": {'alias': 'actions', 'domain_of': ['Container']} })
     evaluations: Optional[List[AiEval]] = Field(default=None, description="""A list of AI evaluation methods""", json_schema_extra = { "linkml_meta": {'alias': 'evaluations', 'domain_of': ['Container']} })
+    benchmarkmetadatacards: Optional[List[BenchmarkMetadataCard]] = Field(default=None, description="""A list of AI evaluation benchmark metadata cards""", json_schema_extra = { "linkml_meta": {'alias': 'benchmarkmetadatacards', 'domain_of': ['Container']} })
     aimodelfamilies: Optional[List[LargeLanguageModelFamily]] = Field(default=None, description="""A list of AI model families""", json_schema_extra = { "linkml_meta": {'alias': 'aimodelfamilies', 'domain_of': ['Container']} })
     aimodels: Optional[List[LargeLanguageModel]] = Field(default=None, description="""A list of AI models""", json_schema_extra = { "linkml_meta": {'alias': 'aimodels', 'domain_of': ['Container']} })
 
