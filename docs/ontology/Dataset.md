@@ -177,6 +177,7 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

@@ -175,6 +175,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/risk-atlas-nexus/ontolo
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Container](Container.md) | [benchmarkmetadatacards](benchmarkmetadatacards.md) | range | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [AiEval](AiEval.md) | [hasBenchmarkMetadata](hasBenchmarkMetadata.md) | range | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | [describesAiEval](describesAiEval.md) | domain | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [Question](Question.md) | [hasBenchmarkMetadata](hasBenchmarkMetadata.md) | range | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
@@ -412,9 +413,11 @@ attributes:
     alias: hasTasks
     owner: BenchmarkMetadataCard
     domain_of:
+    - AiEval
     - BenchmarkMetadataCard
     range: string
     multivalued: true
+    inlined: false
   hasLimitations:
     name: hasLimitations
     description: Limitations in evaluating or addressing risks, such as gaps in demographic
@@ -595,6 +598,7 @@ attributes:
     owner: BenchmarkMetadataCard
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

@@ -282,6 +282,7 @@ attributes:
     owner: AiAgent
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

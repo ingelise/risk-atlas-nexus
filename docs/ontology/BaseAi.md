@@ -246,6 +246,7 @@ attributes:
     owner: BaseAi
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

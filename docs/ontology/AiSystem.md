@@ -291,6 +291,7 @@ attributes:
     owner: AiSystem
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

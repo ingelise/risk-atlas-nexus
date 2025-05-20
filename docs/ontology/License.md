@@ -73,6 +73,7 @@ URI: [airo:License](https://w3id.org/airo#License)
 | [Container](Container.md) | [licenses](licenses.md) | range | [License](License.md) |
 | [Organization](Organization.md) | [grants_license](grants_license.md) | range | [License](License.md) |
 | [Dataset](Dataset.md) | [hasLicense](hasLicense.md) | range | [License](License.md) |
+| [Documentation](Documentation.md) | [hasLicense](hasLicense.md) | range | [License](License.md) |
 | [RiskTaxonomy](RiskTaxonomy.md) | [hasLicense](hasLicense.md) | range | [License](License.md) |
 | [AiEval](AiEval.md) | [hasLicense](hasLicense.md) | range | [License](License.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | [hasLicense](hasLicense.md) | range | [License](License.md) |

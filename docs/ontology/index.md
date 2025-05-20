@@ -68,6 +68,7 @@ Name: ai-risk-ontology
 | [aitasks](aitasks.md) | A list of AI tasks |
 | [architecture](architecture.md) | A description of the architecture of an AI such as 'Decoder-only' |
 | [author](author.md) | The author or authors of the incident report |
+| [benchmarkmetadatacards](benchmarkmetadatacards.md) | A list of AI evaluation benchmark metadata cards |
 | [bestValue](bestValue.md) | Annotation of the best possible result of the evaluation |
 | [broadMatch](broadMatch.md) | The property is used to state a hierarchical mapping link between two concept... |
 | [carbon_emitted](carbon_emitted.md) | The number of tons of carbon dioxide equivalent that are emitted during train... |
@@ -112,6 +113,7 @@ Name: ai-risk-ontology
 | [hasGoal](hasGoal.md) | The specific goal or primary use case the benchmark is designed for |
 | [hasImpact](hasImpact.md) | Indicates impact(s) possible or arising as consequences from specified concep... |
 | [hasImpactOn](hasImpactOn.md) | Indicates impact(s) possible or arising as consequences from specified concep... |
+| [hasImplementation](hasImplementation.md) | A relationship to a implementation defining the risk evaluation |
 | [hasInputModality](hasInputModality.md) | A relationship indicating the input modalities supported by an AI component |
 | [hasInterpretation](hasInterpretation.md) | How users should interpret the scores or results from the metrics |
 | [hasLanguages](hasLanguages.md) | The languages included in the dataset used by the benchmark (e |
@@ -121,6 +123,7 @@ Name: ai-risk-ontology
 | [hasMethods](hasMethods.md) | The evaluation techniques applied within the benchmark |
 | [hasMetrics](hasMetrics.md) | The specific performance metrics used to assess models (e |
 | [hasModelCard](hasModelCard.md) | A relationship to model card references |
+| [hasMRACard](hasMRACard.md) | A relationship to an MRA (IBM internal) card defining the risk evaluation |
 | [hasOutOfScopeUses](hasOutOfScopeUses.md) | Use cases where the benchmark is not designed to be applied and could give mi... |
 | [hasOutputModality](hasOutputModality.md) | A relationship indicating the output modalities supported by an AI component |
 | [hasPart](hasPart.md) | A relationship where an entity has another entity |

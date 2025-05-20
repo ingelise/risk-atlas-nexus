@@ -1,15 +1,15 @@
 
 
-# Slot: hasBenchmarkMetadata
+# Slot: hasImplementation
 
 
-_A relationship to a Benchmark Metadata Card which contains metadata about the benchmark._
+_A relationship to a implementation defining the risk evaluation_
 
 
 
 
 
-URI: [nexus:hasBenchmarkMetadata](https://ibm.github.io/risk-atlas-nexus/ontology/hasBenchmarkMetadata)
+URI: [schema:url](http://schema.org/url)
 
 
 
@@ -35,7 +35,7 @@ URI: [nexus:hasBenchmarkMetadata](https://ibm.github.io/risk-atlas-nexus/ontolog
 
 ## Properties
 
-* Range: [BenchmarkMetadataCard](BenchmarkMetadataCard.md)
+* Range: [Uri](Uri.md)
 
 * Multivalued: True
 
@@ -63,8 +63,8 @@ URI: [nexus:hasBenchmarkMetadata](https://ibm.github.io/risk-atlas-nexus/ontolog
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | nexus:hasBenchmarkMetadata |
-| native | nexus:hasBenchmarkMetadata |
+| self | schema:url |
+| native | nexus:hasImplementation |
 
 
 
@@ -73,17 +73,15 @@ URI: [nexus:hasBenchmarkMetadata](https://ibm.github.io/risk-atlas-nexus/ontolog
 
 <details>
 ```yaml
-name: hasBenchmarkMetadata
-description: A relationship to a Benchmark Metadata Card which contains metadata about
-  the benchmark.
+name: hasImplementation
+description: A relationship to a implementation defining the risk evaluation
 from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
 rank: 1000
-domain: AiEval
-alias: hasBenchmarkMetadata
+slot_uri: schema:url
+alias: hasImplementation
 domain_of:
 - AiEval
-inverse: describesAiEval
-range: BenchmarkMetadataCard
+range: uri
 multivalued: true
 inlined: false
 

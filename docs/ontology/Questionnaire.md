@@ -58,6 +58,8 @@ URI: [nexus:Questionnaire](https://ibm.github.io/risk-atlas-nexus/ontology/Quest
     click Documentation href "../Documentation"
 
         
+      Questionnaire : hasImplementation
+        
       Questionnaire : hasLicense
         
           
@@ -75,6 +77,8 @@ URI: [nexus:Questionnaire](https://ibm.github.io/risk-atlas-nexus/ontology/Quest
     Questionnaire --> "*" Risk : hasRelatedRisk
     click Risk href "../Risk"
 
+        
+      Questionnaire : hasTasks
         
       Questionnaire : hasUnitxtCard
         
@@ -104,7 +108,9 @@ URI: [nexus:Questionnaire](https://ibm.github.io/risk-atlas-nexus/ontology/Quest
 | ---  | --- | --- | --- |
 | [hasDocumentation](hasDocumentation.md) | * <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity | [AiEval](AiEval.md) |
 | [hasDataset](hasDataset.md) | * <br/> [Dataset](Dataset.md) | A relationship to datasets that are used | [AiEval](AiEval.md) |
-| [hasUnitxtCard](hasUnitxtCard.md) | 0..1 <br/> [Uri](Uri.md) | A relationship to a Unitxt card defining the risk evaluation | [AiEval](AiEval.md) |
+| [hasTasks](hasTasks.md) | * <br/> [String](String.md) | The tasks or evaluations the benchmark is intended to assess | [AiEval](AiEval.md) |
+| [hasImplementation](hasImplementation.md) | * <br/> [Uri](Uri.md) | A relationship to a implementation defining the risk evaluation | [AiEval](AiEval.md) |
+| [hasUnitxtCard](hasUnitxtCard.md) | * <br/> [Uri](Uri.md) | A relationship to a Unitxt card defining the risk evaluation | [AiEval](AiEval.md) |
 | [hasLicense](hasLicense.md) | 0..1 <br/> [License](License.md) | Indicates licenses associated with a resource | [AiEval](AiEval.md) |
 | [hasRelatedRisk](hasRelatedRisk.md) | * <br/> [Risk](Risk.md) | A relationship where an entity relates to a risk | [AiEval](AiEval.md) |
 | [bestValue](bestValue.md) | 0..1 <br/> [String](String.md) | Annotation of the best possible result of the evaluation | [AiEval](AiEval.md) |
@@ -217,6 +223,32 @@ attributes:
     range: Dataset
     multivalued: true
     inlined: false
+  hasTasks:
+    name: hasTasks
+    description: The tasks or evaluations the benchmark is intended to assess.
+    from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    alias: hasTasks
+    owner: Questionnaire
+    domain_of:
+    - AiEval
+    - BenchmarkMetadataCard
+    range: string
+    multivalued: true
+    inlined: false
+  hasImplementation:
+    name: hasImplementation
+    description: A relationship to a implementation defining the risk evaluation
+    from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:url
+    alias: hasImplementation
+    owner: Questionnaire
+    domain_of:
+    - AiEval
+    range: uri
+    multivalued: true
+    inlined: false
   hasUnitxtCard:
     name: hasUnitxtCard
     description: A relationship to a Unitxt card defining the risk evaluation
@@ -228,6 +260,8 @@ attributes:
     domain_of:
     - AiEval
     range: uri
+    multivalued: true
+    inlined: false
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
@@ -238,6 +272,7 @@ attributes:
     owner: Questionnaire
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

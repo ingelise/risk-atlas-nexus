@@ -201,6 +201,7 @@ attributes:
     owner: RiskTaxonomy
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard

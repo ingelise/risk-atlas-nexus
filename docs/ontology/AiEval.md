@@ -65,6 +65,8 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
     click Documentation href "../Documentation"
 
         
+      AiEval : hasImplementation
+        
       AiEval : hasLicense
         
           
@@ -82,6 +84,8 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
     AiEval --> "*" Risk : hasRelatedRisk
     click Risk href "../Risk"
 
+        
+      AiEval : hasTasks
         
       AiEval : hasUnitxtCard
         
@@ -112,7 +116,9 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 | ---  | --- | --- | --- |
 | [hasDocumentation](hasDocumentation.md) | * <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity | direct |
 | [hasDataset](hasDataset.md) | * <br/> [Dataset](Dataset.md) | A relationship to datasets that are used | direct |
-| [hasUnitxtCard](hasUnitxtCard.md) | 0..1 <br/> [Uri](Uri.md) | A relationship to a Unitxt card defining the risk evaluation | direct |
+| [hasTasks](hasTasks.md) | * <br/> [String](String.md) | The tasks or evaluations the benchmark is intended to assess | direct |
+| [hasImplementation](hasImplementation.md) | * <br/> [Uri](Uri.md) | A relationship to a implementation defining the risk evaluation | direct |
+| [hasUnitxtCard](hasUnitxtCard.md) | * <br/> [Uri](Uri.md) | A relationship to a Unitxt card defining the risk evaluation | direct |
 | [hasLicense](hasLicense.md) | 0..1 <br/> [License](License.md) | Indicates licenses associated with a resource | direct |
 | [hasRelatedRisk](hasRelatedRisk.md) | * <br/> [Risk](Risk.md) | A relationship where an entity relates to a risk | direct |
 | [bestValue](bestValue.md) | 0..1 <br/> [String](String.md) | Annotation of the best possible result of the evaluation | direct |
@@ -189,6 +195,8 @@ is_a: Entity
 slots:
 - hasDocumentation
 - hasDataset
+- hasTasks
+- hasImplementation
 - hasUnitxtCard
 - hasLicense
 - hasRelatedRisk
@@ -252,6 +260,32 @@ attributes:
     range: Dataset
     multivalued: true
     inlined: false
+  hasTasks:
+    name: hasTasks
+    description: The tasks or evaluations the benchmark is intended to assess.
+    from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    alias: hasTasks
+    owner: AiEval
+    domain_of:
+    - AiEval
+    - BenchmarkMetadataCard
+    range: string
+    multivalued: true
+    inlined: false
+  hasImplementation:
+    name: hasImplementation
+    description: A relationship to a implementation defining the risk evaluation
+    from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:url
+    alias: hasImplementation
+    owner: AiEval
+    domain_of:
+    - AiEval
+    range: uri
+    multivalued: true
+    inlined: false
   hasUnitxtCard:
     name: hasUnitxtCard
     description: A relationship to a Unitxt card defining the risk evaluation
@@ -263,6 +297,8 @@ attributes:
     domain_of:
     - AiEval
     range: uri
+    multivalued: true
+    inlined: false
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
@@ -273,6 +309,7 @@ attributes:
     owner: AiEval
     domain_of:
     - Dataset
+    - Documentation
     - RiskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
