@@ -123,7 +123,6 @@ Name: ai-risk-ontology
 | [hasMethods](hasMethods.md) | The evaluation techniques applied within the benchmark |
 | [hasMetrics](hasMetrics.md) | The specific performance metrics used to assess models (e |
 | [hasModelCard](hasModelCard.md) | A relationship to model card references |
-| [hasMRACard](hasMRACard.md) | A relationship to an MRA (IBM internal) card defining the risk evaluation |
 | [hasOutOfScopeUses](hasOutOfScopeUses.md) | Use cases where the benchmark is not designed to be applied and could give mi... |
 | [hasOutputModality](hasOutputModality.md) | A relationship indicating the output modalities supported by an AI component |
 | [hasPart](hasPart.md) | A relationship where an entity has another entity |
