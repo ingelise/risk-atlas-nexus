@@ -466,7 +466,7 @@ class RiskExplorer(ExplorerBase):
             
             risk_incident_instances = list(
                 filter(
-                    lambda risk_incident: risk_id in risk_incident.refersToRisk,
+                    lambda risk_incident: risk.id in risk_incident.refersToRisk,
                     risk_incident_instances,
                 )
             )
@@ -557,7 +557,7 @@ class RiskExplorer(ExplorerBase):
             
             evaluation_instances = list(
                 filter(
-                    lambda evaluation: risk_id in (evaluation.hasRelatedRisk or []),
+                    lambda evaluation: risk.id in (evaluation.hasRelatedRisk or []),
                     evaluation_instances,
                 )
             )
