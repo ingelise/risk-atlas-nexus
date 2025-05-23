@@ -24,6 +24,7 @@ dependencies = [
     "linkml_runtime",
     "pydantic",
     "requests",
+    "rich",
     "sssom",
     "txtai",
     "tqdm",
@@ -31,6 +32,7 @@ dependencies = [
     "python-dotenv",
     "datasets",
     "openai>=1.0",
+    "txtai",
 ]
 
 [project.optional-dependencies]
