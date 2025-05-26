@@ -27,9 +27,7 @@ def load_yamls_to_container(base_dir):
         # Include YAML files from the user defined `base_dir` if exist.
         if yaml_dir is not None:
             master_yaml_files.extend(
-                glob.glob(
-                    os.path.join(yaml_dir, "**", "*.yaml"), recursive=True
-                )
+                glob.glob(os.path.join(yaml_dir, "**", "*.yaml"), recursive=True)
             )
 
     yml_items_result = {}
@@ -37,14 +35,12 @@ def load_yamls_to_container(base_dir):
         try:
             yml_items = yaml_loader.load_as_dict(source=yaml_file)
             for ontology_class, instances in yml_items.items():
-                yml_items_result.setdefault(ontology_class, []).extend(
-                    instances
-                )
+                yml_items_result.setdefault(ontology_class, []).extend(instances)
         except Exception as e:
             logger.info(f"YAML ignored: {yaml_file}. Failed to load. {e}")
-    
+
     # TODO: generalise this to cover all ontology classes
-    
+
     # combine any risk entries which share the same id, for example a risk, and a secondary entry for a mapping
     combine_risks = {}
 

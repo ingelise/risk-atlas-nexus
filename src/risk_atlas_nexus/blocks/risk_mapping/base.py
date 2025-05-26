@@ -16,8 +16,8 @@ class RiskMappingBase(ABC):
         new_risks: list[Risk],
         existing_risks: list[Risk],
         inference_engine: InferenceEngine,
-        new_prefix: str,  
-        mapping_method: MappingMethod
+        new_prefix: str,
+        mapping_method: MappingMethod,
     ):
         self.inference_engine = inference_engine
         self._new_risks = new_risks
@@ -26,6 +26,12 @@ class RiskMappingBase(ABC):
         self._mapping_method = mapping_method
 
     @abstractmethod
-    def generate(self, new_risks: list[Risk], existing_risks: list[Risk],  inference_engine: InferenceEngine,
-                 new_prefix: str,  mapping_method: MappingMethod) -> list[Mapping]:
+    def generate(
+        self,
+        new_risks: list[Risk],
+        existing_risks: list[Risk],
+        inference_engine: InferenceEngine,
+        new_prefix: str,
+        mapping_method: MappingMethod,
+    ) -> list[Mapping]:
         raise NotImplementedError
