@@ -1,6 +1,6 @@
 # Standard Library
-import re
 import os
+import re
 
 # Third Party
 import pandas as pd
@@ -9,6 +9,7 @@ from linkml_runtime.dumpers import YAMLDumper
 
 # Local
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import *
+
 
 SCHEMA_DIR = "src/ai_risk_ontology/schema/"
 DATA_DIR = "src/risk_atlas_nexus/data/knowledge-graph/"

@@ -1,9 +1,10 @@
 # Assisted by watsonx Code Assistant
 import unittest
+
 from src.risk_atlas_nexus.toolkit.error_utils import (
+    _gen_new_error_code,
     type_check,
     value_check,
-    _gen_new_error_code,
 )
 
 

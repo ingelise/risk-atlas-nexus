@@ -2100,5 +2100,3 @@ nexus:Entity a owl:Class ;
     skos:definition "A generic grouping for any identifiable entity." ;
     skos:exactMatch <http://schema.org/Thing> ;
     skos:inScheme nexus:common .
-
-

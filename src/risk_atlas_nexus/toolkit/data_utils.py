@@ -1,9 +1,12 @@
 import glob
 import os
+
 from linkml_runtime.loaders import yaml_loader
-from risk_atlas_nexus.data import get_data_path
+
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Container
+from risk_atlas_nexus.data import get_data_path
 from risk_atlas_nexus.toolkit.logging import configure_logger
+
 
 logger = configure_logger(__name__)
 

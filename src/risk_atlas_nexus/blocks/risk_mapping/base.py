@@ -1,10 +1,12 @@
 from abc import ABC, abstractmethod
-from sssom_schema import Mapping
-from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Risk
 
+from sssom_schema import Mapping
+
+from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Risk
 from risk_atlas_nexus.blocks.inference.base import InferenceEngine
 from risk_atlas_nexus.metadata_base import MappingMethod
 from risk_atlas_nexus.toolkit.logging import configure_logger
+
 
 logger = configure_logger(__name__)
 

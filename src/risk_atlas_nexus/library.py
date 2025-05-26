@@ -2,7 +2,7 @@ import json
 import os
 from importlib.metadata import version
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
 
 import yaml
 from jinja2 import Template
@@ -10,15 +10,12 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import YAMLDumper
 from sssom_schema import Mapping
 
+
 # workaround for txtai
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Action,
-    AiEval,
-    BenchmarkMetadataCard,
-    Dataset,
-    Documentation,
     AiEval,
     BenchmarkMetadataCard,
     Dataset,

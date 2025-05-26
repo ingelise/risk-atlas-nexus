@@ -1,27 +1,27 @@
 # Standard
 import os
 import tempfile
-from typing import Union, List, Dict
+from typing import Dict, List, Union
 
 # Third party
 from linkml_runtime import SchemaView
-from sssom_schema import Mapping
 from linkml_runtime.dumpers import YAMLDumper
+from sssom_schema import Mapping
+
+# Internal
+from src.risk_atlas_nexus import RiskAtlasNexus
 
 # Unit Test Infrastructure
 from src.risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
+    Action,
     AiEval,
     BenchmarkMetadataCard,
     Dataset,
     Documentation,
     Risk,
-    Action,
     RiskIncident,
 )
 from tests.base import TestCaseBase
-
-# Internal
-from src.risk_atlas_nexus import RiskAtlasNexus
 
 
 class TestLibrary(TestCaseBase):

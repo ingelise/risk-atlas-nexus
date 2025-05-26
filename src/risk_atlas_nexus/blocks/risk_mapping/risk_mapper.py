@@ -2,8 +2,9 @@ import datetime
 import json
 import re
 
+from sssom_schema import EntityReference, Mapping
 from txtai import Embeddings
-from sssom_schema import Mapping, EntityReference
+
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Risk
 from risk_atlas_nexus.blocks.inference import InferenceEngine
 from risk_atlas_nexus.blocks.prompt_response_schema import LIST_OF_STR_SCHEMA

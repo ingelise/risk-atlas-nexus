@@ -8,10 +8,10 @@ from linkml_runtime.dumpers import YAMLDumper
 from pydantic import BaseModel
 from sssom.parsers import parse_sssom_table
 
-
 # Local
 from risk_atlas_nexus.ai_risk_ontology import Container, Risk
 from risk_atlas_nexus.toolkit.logging import configure_logger
+
 
 MAP_DIR = "src/risk_atlas_nexus/data/mappings/"
 DATA_DIR = "src/risk_atlas_nexus/data/knowledge_graph/mappings/"

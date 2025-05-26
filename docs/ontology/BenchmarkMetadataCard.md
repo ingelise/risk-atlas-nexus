@@ -22,99 +22,99 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/risk-atlas-nexus/ontolo
     click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
       Entity <|-- BenchmarkMetadataCard
         click Entity href "../Entity"
-      
+
       BenchmarkMetadataCard : dateCreated
-        
+
       BenchmarkMetadataCard : dateModified
-        
+
       BenchmarkMetadataCard : describesAiEval
-        
-          
-    
-    
+
+
+
+
     BenchmarkMetadataCard --> "*" AiEval : describesAiEval
     click AiEval href "../AiEval"
 
-        
+
       BenchmarkMetadataCard : description
-        
+
       BenchmarkMetadataCard : hasAnnotation
-        
+
       BenchmarkMetadataCard : hasAudience
-        
+
       BenchmarkMetadataCard : hasBaselineResults
-        
+
       BenchmarkMetadataCard : hasCalculation
-        
+
       BenchmarkMetadataCard : hasConsiderationComplianceWithRegulations
-        
+
       BenchmarkMetadataCard : hasConsiderationConsentProcedures
-        
+
       BenchmarkMetadataCard : hasConsiderationPrivacyAndAnonymity
-        
+
       BenchmarkMetadataCard : hasDataFormat
-        
+
       BenchmarkMetadataCard : hasDataSize
-        
+
       BenchmarkMetadataCard : hasDataSource
-        
+
       BenchmarkMetadataCard : hasDataType
-        
+
       BenchmarkMetadataCard : hasDemographicAnalysis
-        
+
       BenchmarkMetadataCard : hasDocumentation
-        
-          
-    
-    
+
+
+
+
     BenchmarkMetadataCard --> "*" Documentation : hasDocumentation
     click Documentation href "../Documentation"
 
-        
+
       BenchmarkMetadataCard : hasDomains
-        
+
       BenchmarkMetadataCard : hasGoal
-        
+
       BenchmarkMetadataCard : hasInterpretation
-        
+
       BenchmarkMetadataCard : hasLanguages
-        
+
       BenchmarkMetadataCard : hasLicense
-        
-          
-    
-    
+
+
+
+
     BenchmarkMetadataCard --> "0..1" License : hasLicense
     click License href "../License"
 
-        
+
       BenchmarkMetadataCard : hasLimitations
-        
+
       BenchmarkMetadataCard : hasMethods
-        
+
       BenchmarkMetadataCard : hasMetrics
-        
+
       BenchmarkMetadataCard : hasOutOfScopeUses
-        
+
       BenchmarkMetadataCard : hasRelatedRisks
-        
+
       BenchmarkMetadataCard : hasResources
-        
+
       BenchmarkMetadataCard : hasSimilarBenchmarks
-        
+
       BenchmarkMetadataCard : hasTasks
-        
+
       BenchmarkMetadataCard : hasValidation
-        
+
       BenchmarkMetadataCard : id
-        
+
       BenchmarkMetadataCard : name
-        
+
       BenchmarkMetadataCard : overview
-        
+
       BenchmarkMetadataCard : url
-        
-      
+
+
 ```
 
 

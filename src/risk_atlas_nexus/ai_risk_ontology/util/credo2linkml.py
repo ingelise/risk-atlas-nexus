@@ -1,6 +1,6 @@
 # Standard Library
-import csv
 import ast
+import csv
 
 # Third Party
 from linkml_runtime.dumpers import YAMLDumper

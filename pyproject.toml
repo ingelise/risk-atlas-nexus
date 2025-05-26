@@ -33,7 +33,10 @@ dependencies = [
     "datasets",
     "openai>=1.0",
     "txtai",
+    "isort",
+    "pre-commit"
 ]
+
 
 [project.optional-dependencies]
 wml = ["ibm-watsonx-ai"]
@@ -50,6 +53,7 @@ docs = [
 ]
 
 [tool.isort]
+skip_glob = ["vrisk-atlas-nexus/*"]
 profile = "black"
 line_length = 88
 remove_redundant_aliases = true

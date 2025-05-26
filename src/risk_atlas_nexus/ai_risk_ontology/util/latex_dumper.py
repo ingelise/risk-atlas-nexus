@@ -1,9 +1,9 @@
 from typing import Union
-from pydantic import BaseModel
 
 from linkml_runtime.dumpers.dumper_root import Dumper
 from linkml_runtime.utils.context_utils import CONTEXTS_PARAM_TYPE
 from linkml_runtime.utils.yamlutils import YAMLRoot
+from pydantic import BaseModel
 
 
 class LatexDumper(Dumper):

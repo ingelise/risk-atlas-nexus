@@ -1,5 +1,5 @@
-from risk_atlas_nexus.blocks.risk_explorer.base import ExplorerBase
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Risk
+from risk_atlas_nexus.blocks.risk_explorer.base import ExplorerBase
 from risk_atlas_nexus.data.knowledge_graph import *
 
 

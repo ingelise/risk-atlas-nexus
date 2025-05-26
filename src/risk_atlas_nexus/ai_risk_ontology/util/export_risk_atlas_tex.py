@@ -2,15 +2,17 @@
 # in src/risk_atlas_nexus/data/knowledge_graph
 
 import os
+
 from risk_atlas_nexus import RiskAtlasNexus
-from risk_atlas_nexus.ai_risk_ontology.util.latex_dumper import LatexDumper
-from risk_atlas_nexus.toolkit.logging import configure_logger
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Container,
     Documentation,
     RiskGroup,
     RiskTaxonomy,
 )
+from risk_atlas_nexus.ai_risk_ontology.util.latex_dumper import LatexDumper
+from risk_atlas_nexus.toolkit.logging import configure_logger
+
 
 logger = configure_logger(__name__)
 

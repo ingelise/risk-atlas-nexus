@@ -11,7 +11,7 @@ default_curi_maps:
 prefixes:
   linkml: https://w3id.org/linkml/
   nexus: https://ibm.github.io/risk-atlas-nexus/ontology/
-  dqv: https://www.w3.org/TR/vocab-dqv/ 
+  dqv: https://www.w3.org/TR/vocab-dqv/
   skos: http://www.w3.org/2004/02/skos/core/
 default_range: string
 default_prefix: nexus
@@ -36,7 +36,7 @@ classes:
       - hasRelatedRisk
       - bestValue
       - hasBenchmarkMetadata
-  
+
   AiEvalResult:
     is_a: Entity
     class_uri: dqv:QualityMeasurement
@@ -197,7 +197,7 @@ slots:
   hasValidation:
     description: Measures taken to ensure that the benchmark provides valid and reliable evaluations.
     multivalued: true
-  hasRelatedRisks: 
+  hasRelatedRisks:
     description: Specific risks of LLMs the benchmark assesses
     multivalued: true
   hasDemographicAnalysis:

@@ -63,7 +63,7 @@ directory.
     1. manually, or
     2. semi-automatically, with aid of the python notebook [Prepare taxonomy mappings](../examples/notebooks/Prepare_taxonomy_mappings.ipynb).
 2. Verify the TSV mappings are correct.
-3. Lift all the TSV files to yaml mapping entries by executing `make lift_mappings_from_tsv`. 
+3. Lift all the TSV files to yaml mapping entries by executing `make lift_mappings_from_tsv`.
 4. Ensure the changes were saved to the [knowledge graph data mapping folder](https://github.com/ibm/risk-atlas-nexus/src/risk_atlas_nexus/data/knowledge_graph/mapping/) .
 
 ## Save your changes
@@ -97,4 +97,3 @@ If you would like to contribute your own templates to the project for others to 
 
 - Save your new template in the `risk_atlas_nexus/data/templates/` folder, push your changes and make a PR to the main
   project.
-
