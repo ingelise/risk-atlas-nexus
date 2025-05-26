@@ -3,7 +3,7 @@
 # Class: BenchmarkMetadataCard
 
 
-_Benchmark metadata cards offer a standardized way to document LLM benchmarks clearly and transparently. Inspired by Model Cards and Datasheets, Benchmark metadata cards help researchers and practitioners understand exactly what benchmarks test, how they relate to real-world risks, and how to interpret their results responsibly._
+_Benchmark metadata cards offer a standardized way to document LLM benchmarks clearly and transparently. Inspired by Model Cards and Datasheets, Benchmark metadata cards help researchers and practitioners understand exactly what benchmarks test, how they relate to real-world risks, and how to interpret their results responsibly.  This is an implementation of the design set out in 'BenchmarkCards: Large Language Model and Risk Reporting' (https://doi.org/10.48550/arXiv.2410.12974)_
 
 
 
@@ -224,10 +224,12 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/risk-atlas-nexus/ontolo
 <details>
 ```yaml
 name: BenchmarkMetadataCard
-description: Benchmark metadata cards offer a standardized way to document LLM benchmarks
+description: 'Benchmark metadata cards offer a standardized way to document LLM benchmarks
   clearly and transparently. Inspired by Model Cards and Datasheets, Benchmark metadata
   cards help researchers and practitioners understand exactly what benchmarks test,
-  how they relate to real-world risks, and how to interpret their results responsibly.
+  how they relate to real-world risks, and how to interpret their results responsibly.  This
+  is an implementation of the design set out in ''BenchmarkCards: Large Language Model
+  and Risk Reporting'' (https://doi.org/10.48550/arXiv.2410.12974)'
 from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
 is_a: Entity
 slots:
@@ -284,10 +286,12 @@ class_uri: nexus:benchmarkmetadatacard
 <details>
 ```yaml
 name: BenchmarkMetadataCard
-description: Benchmark metadata cards offer a standardized way to document LLM benchmarks
+description: 'Benchmark metadata cards offer a standardized way to document LLM benchmarks
   clearly and transparently. Inspired by Model Cards and Datasheets, Benchmark metadata
   cards help researchers and practitioners understand exactly what benchmarks test,
-  how they relate to real-world risks, and how to interpret their results responsibly.
+  how they relate to real-world risks, and how to interpret their results responsibly.  This
+  is an implementation of the design set out in ''BenchmarkCards: Large Language Model
+  and Risk Reporting'' (https://doi.org/10.48550/arXiv.2410.12974)'
 from_schema: https://ibm.github.io/risk-atlas-nexus/ontology/ai-risk-ontology
 is_a: Entity
 attributes:
