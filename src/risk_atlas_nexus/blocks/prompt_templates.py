@@ -24,13 +24,10 @@ Evalution steps:
 3. If input doesn't fit into any of the above categories, classify it as Unknown.
 4. Respond with a (maximum length 5 items) list of attribute 'category' containing the most relevant classification labels and their relation.
 
-Examples:
+{% if cot_examples is not none %}Examples:
 {% for example in cot_examples %}
 Input: {{ example.Input }}
-Output: {{ example.Output }}
-{% endfor %}
-Input: {{ usecase }}
-Output: """
+Output: {{ example.Output }}{% endfor %}{% endif %}"""
 
 AI_TASKS_TEMPLATE = """Study and understand the JSON below containing a list of LLM task and its description.
 
