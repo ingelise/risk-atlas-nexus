@@ -18,6 +18,7 @@ RISK_IDENTIFICATION_TEMPLATE = """This is an AI risk similarity task. You are gi
 RISKS:
 {{ risks }}
 
+Evalution steps:
 1. Identify the RISKS which are semantically similar and most relevant to the Input context
 2. For the similar risks, choose which relation characterizes the relevance relationship between Input context and the RISK.
 3. If input doesn't fit into any of the above categories, classify it as Unknown.
