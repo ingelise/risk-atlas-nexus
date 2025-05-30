@@ -12,50 +12,22 @@ QUESTIONNAIRE_COT_TEMPLATE = """
         Question: {{ question }}
 """
 
-# RISK_IDENTIFICATION_TEMPLATE = """You are an expert at AI risk classification. Study the risks JSON below containing list of risk category and its description.
-
-# risks:
-# {{ risks }}
-# The task is to identify the potential risks associated with the Input context and classify it into the given risk categories. If input doesn't fit into any of the above categories, classify it as Unknown. Respond with a  list of attribute 'category' containing the classification labels.
-
-# Examples:
-# {% for example in examples %}
-# Input: {{ example.Input }}
-# Output: {{ example.Output }}
-# {% endfor %}
-# Input: {{ usecase }}
-# Output: """
-
-
 RISK_IDENTIFICATION_TEMPLATE = """This is an AI risk similarity task. You are given JSON titled RISKS which contains a list of risk categories and their descriptions.
 
 RISKS:
 {{ risks }}
 
-RELATIONS:
-owl:equivalentClass
-owl:equivalentProperty
-rdfs:subClassOf
-rdfs:subPropertyOf
-owl:sameAs
-skos:exactMatch
-skos:closeMatch
-skos:broadMatch
-skos:narrowMatch
-oboInOwl:hasDbXref
-skos:relatedMatch
-rdfs:seeAlso
-
+Instructions:
 1. Identify the RISKS which are semantically similar and most relevant to the Input context
-2. For the similar risks, choose which of the RELATIONS characterizes the relevance relationship between Input context and the RISK.
+2. For the similar risks, choose which relation characterizes the relevance relationship between Input context and the RISK.
 3. If input doesn't fit into any of the above categories, classify it as Unknown.
 4. Respond with a (maximum length 5 items) list of attribute 'category' containing the most relevant classification labels and their relation.
 
-Examples:
-{% for example in cot_examples %}
+{% if cot_examples is not none %}EXAMPLES:{% for example in cot_examples %}
 Input: {{ example.Input }}
-Output: {{ example.Output }}
-{% endfor %}
+Output: {{ example.Output }}{% endfor %}{% endif %}
+===== END OF EXAMPLES ======
+
 Input: {{ usecase }}
 Output: """
 
