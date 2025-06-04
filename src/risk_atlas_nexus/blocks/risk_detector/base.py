@@ -1,7 +1,5 @@
-import json
-import os
 from abc import ABC, abstractmethod
-from typing import Optional
+from typing import List, Optional
 
 from risk_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Container,
@@ -26,12 +24,14 @@ class RiskDetector(ABC):
         ontology: Container,
         inference_engine: InferenceEngine,
         taxonomy: Optional[str] = None,
+        max_risk: Optional[int] = None,
     ):
         self.inference_engine = inference_engine
         self._ontology = ontology
         self._taxonomy_id = taxonomy if taxonomy else "ibm-risk-atlas"
         self._risks = self.get_risks_by_taxonomy_id(ontology, self._taxonomy_id)
         self._examples = RISK_IDENTIFICATION_EXAMPLES.get(self._taxonomy_id, [])
+        self.max_risk = max_risk
 
     def get_risks_by_taxonomy_id(
         self, ontology: Container, taxonomy_id: Optional[str] = None
@@ -61,5 +61,5 @@ class RiskDetector(ABC):
             )
 
     @abstractmethod
-    def detect(self, usecases: list[str]) -> list[Risk]:
+    def detect(self, usecases: List[str]) -> List[List[Risk]]:
         raise NotImplementedError
