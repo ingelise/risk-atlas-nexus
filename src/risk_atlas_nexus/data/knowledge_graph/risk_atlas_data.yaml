@@ -287,10 +287,10 @@ risks:
   tag: data-acquisition
   type: training-data
   descriptor: amplified
-  concern: '"There are several ways of collecting data for building a foundation models:
+  concern: 'There are several ways of collecting data for building a foundation models:
     web scraping, web crawling, crowdsourcing, and curating public datasets. Data
     acquisition restrictions can also impact the availability of the data that is
-    required for training an AI model and can lead to poorly represented data."'
+    required for training an AI model and can lead to poorly represented data.'
 - id: atlas-data-bias
   name: Data bias
   description: 'Historical and societal biases that are present in the data are used
