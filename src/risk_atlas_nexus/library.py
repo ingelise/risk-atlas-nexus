@@ -485,7 +485,7 @@ class RiskAtlasNexus:
         cls,
         usecases: List[str],
         inference_engine: InferenceEngine,
-        taxonomy: Optional[str] = None,
+        taxonomy: Optional[str] = "ibm-risk-atlas",
         cot_examples: Optional[Dict[str, List]] = None,
         max_risk: Optional[int] = None,
     ) -> List[List[Risk]]:
@@ -497,7 +497,7 @@ class RiskAtlasNexus:
             inference_engine (InferenceEngine):
                 An LLM inference engine to infer risks from the usecases.
             taxonomy (str, optional):
-                The string label for a taxonomy. Default to None.
+                The string label for a taxonomy. Default to "ibm-risk-atlas".
             cot_examples (Dict[str, List], optional):
                 The Chain of Thought (CoT) examples to use in the risk identification.
                 The example template is available at src/risk_atlas_nexus/data/templates/risk_generation_cot.json.
