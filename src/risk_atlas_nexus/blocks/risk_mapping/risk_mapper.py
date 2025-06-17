@@ -12,6 +12,7 @@ from risk_atlas_nexus.blocks.inference.params import TextGenerationInferenceOutp
 from risk_atlas_nexus.blocks.prompt_builder import ZeroShotPromptBuilder
 from risk_atlas_nexus.blocks.prompt_response_schema import LIST_OF_STR_SCHEMA
 from risk_atlas_nexus.blocks.prompt_templates import RISK_IDENTIFICATION_TEMPLATE
+from risk_atlas_nexus.blocks.risk_detector import GenericRiskDetector
 from risk_atlas_nexus.blocks.risk_mapping import RiskMappingBase
 from risk_atlas_nexus.metadata_base import MappingMethod
 
@@ -153,47 +154,15 @@ class RiskMapper(RiskMappingBase):
                 for nr in new_risks
             ]
 
-            # using a prompt without the template examples, as they maybe do not exist for all taxonomies
-            prompts = [
-                ZeroShotPromptBuilder(prompt_template=RISK_IDENTIFICATION_TEMPLATE).build(
-                    cot_examples=[],
-                    usecase=usecase,
-                    risks=json.dumps(
-                        [
-                            {"category": risk.name, "description": risk.description}
-                            for risk in existing_risks
-                        ],
-                        indent=4,
-                    )
-                )
-                for usecase in usecases
-            ]
-
-            # Populate schema items
-            json_schema = dict(LIST_OF_STR_SCHEMA)
-            json_schema["items"]["enum"] = [risk.name for risk in existing_risks]
-
-            # Invoke inference service
-            inference_response: List[TextGenerationInferenceOutput] = (
-                self.inference_engine.generate(
-                    prompts,
-                    response_format=json_schema,
-                    postprocessors=["list_of_str"],
-                )
+            risk_detector = GenericRiskDetector(
+                risks=existing_risks,
+                inference_engine=self.inference_engine,
+                cot_examples = None
             )
 
-            rls = [
-                list(
-                    filter(
-                        lambda risk: risk.name in inference.prediction,
-                        existing_risks,
-                    )
-                )
-                for inference in inference_response
-            ]
+            rls = risk_detector.detect(usecases)
 
-
-            for (
+            for(
                 index,
                 rl,
             ) in enumerate(rls):
