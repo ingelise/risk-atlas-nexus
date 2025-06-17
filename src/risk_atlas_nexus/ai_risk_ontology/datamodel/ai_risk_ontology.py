@@ -62,11 +62,26 @@ linkml_meta = LinkMLMeta({'default_curi_maps': ['semweb_context'],
      'source_file': 'src/risk_atlas_nexus/ai_risk_ontology/schema/ai-risk-ontology.yaml'} )
 
 class EuAiRiskCategory(str, Enum):
-    EXCLUDED = "Excluded"
-    PROHIBITED = "Prohibited"
-    HIGH_RISK_EXCEPTION = "High-Risk Exception"
-    HIGH_RISK = "High Risk"
-    LIMITED_OR_LOW_RISK = "Limited or Low Risk"
+    EXCLUDED = "EXCLUDED"
+    """
+    Excluded
+    """
+    PROHIBITED = "PROHIBITED"
+    """
+    Prohibited
+    """
+    HIGH_RISK_EXCEPTION = "HIGH_RISK_EXCEPTION"
+    """
+    High-Risk Exception
+    """
+    HIGH_RISK = "HIGH_RISK"
+    """
+    High Risk
+    """
+    LIMITED_OR_LOW_RISK = "LIMITED_OR_LOW_RISK"
+    """
+    Limited or Low Risk
+    """
 
 
 class AiSystemType(str, Enum):
