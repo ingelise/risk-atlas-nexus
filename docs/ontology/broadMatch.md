@@ -10,8 +10,7 @@ _The property is used to state a hierarchical mapping link between two concepts,
 
 
 URI: [skos:broadMatch](http://www.w3.org/2004/02/skos/core/broadMatch)
-
-
+Alias: broadMatch
 
 <!-- no inheritance hierarchy -->
 

@@ -10,8 +10,7 @@ _The risk category of an AI system as defined by the EU AI Act._
 
 
 URI: [nexus:hasEuRiskCategory](https://ibm.github.io/risk-atlas-nexus/ontology/hasEuRiskCategory)
-
-
+Alias: hasEuRiskCategory
 
 <!-- no inheritance hierarchy -->
 

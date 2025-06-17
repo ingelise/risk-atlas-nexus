@@ -10,8 +10,7 @@ _The property is used to link two concepts, indicating a high degree of confiden
 
 
 URI: [skos:exactMatch](http://www.w3.org/2004/02/skos/core/exactMatch)
-
-
+Alias: exactMatch
 
 <!-- no inheritance hierarchy -->
 

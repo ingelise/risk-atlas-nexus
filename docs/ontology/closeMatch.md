@@ -10,8 +10,7 @@ _The property is used to link two concepts that are sufficiently similar that th
 
 
 URI: [skos:closeMatch](http://www.w3.org/2004/02/skos/core/closeMatch)
-
-
+Alias: closeMatch
 
 <!-- no inheritance hierarchy -->
 

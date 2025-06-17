@@ -10,8 +10,7 @@ _Some numeric or string value_
 
 
 URI: [nexus:value](https://ibm.github.io/risk-atlas-nexus/ontology/value)
-
-
+Alias: value
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [nexus:value](https://ibm.github.io/risk-atlas-nexus/ontology/value)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Fact](Fact.md) | A fact about something, for example the result of a measurement |  no  |
 | [AiEvalResult](AiEvalResult.md) | The result of an evaluation for a specific AI model |  no  |
+| [Fact](Fact.md) | A fact about something, for example the result of a measurement |  no  |
 
 
 

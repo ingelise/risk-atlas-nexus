@@ -10,8 +10,7 @@ _The type of system as defined by the EU AI Act._
 
 
 URI: [nexus:hasEuAiSystemType](https://ibm.github.io/risk-atlas-nexus/ontology/hasEuAiSystemType)
-
-
+Alias: hasEuAiSystemType
 
 <!-- no inheritance hierarchy -->
 

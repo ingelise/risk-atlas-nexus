@@ -10,8 +10,7 @@ _The version of the entity embodied by a specified resource._
 
 
 URI: [schema:version](http://schema.org/version)
-
-
+Alias: version
 
 <!-- no inheritance hierarchy -->
 
@@ -23,8 +22,8 @@ URI: [schema:version](http://schema.org/version)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [License](License.md) | The general notion of a license which defines terms and grants permissions to... |  no  |
 | [RiskTaxonomy](RiskTaxonomy.md) | A taxonomy of AI system related risks |  no  |
+| [License](License.md) | The general notion of a license which defines terms and grants permissions to... |  no  |
 
 
 
