@@ -540,11 +540,28 @@ class RiskAtlasNexus:
             "Usecases must be a list of string.",
         )
 
+        # For the given taxonomy type, check if the user has provided 'cot_examples'. If not,
+        # retrieve the default cot examples from the master. If no examples exist in the master,
+        # set it as None.
+        RISK_IDENTIFICATION_COT = load_resource("risk_generation_cot.json")
+        processed_examples = (
+            cot_examples and cot_examples.get(taxonomy, None)
+        ) or RISK_IDENTIFICATION_COT.get(taxonomy, None)
+
+        # Set prompt builder based on whether the CoT examples are available.
+        if processed_examples is None:
+            logger.warning(
+                f"<RAN47275F12W>",
+                f"Warning: Chain of Thought (CoT) examples were not provided, or do not exist in the master for the "
+                f"taxonomy type: {taxonomy}. The API will use the Zero shot method. To improve the accuracy "
+                f"of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may "
+                f"also consider raising an issue to permanently add these examples to the Risk Atlas Nexus master."
+            )
+
         risk_detector = GenericRiskDetector(
-            cls._ontology,
+            risks=cls._risk_explorer.get_all_risks(taxonomy),
             inference_engine=inference_engine,
-            taxonomy=taxonomy,
-            cot_examples=cot_examples,
+            cot_examples=processed_examples,
             max_risk=max_risk,
         )
 
