@@ -15,6 +15,7 @@ class RiskExplorer(ExplorerBase):
         self._actions = ontology.actions or []
         self._taxonomies = ontology.taxonomies or []
         self._evaluations = ontology.evaluations or []
+        self._evaluationresults = ontology.aievalresults = []
         self._benchmarkmetadatacards = ontology.benchmarkmetadatacards or []
         self._documents = ontology.documents or []
         self._datasets = ontology.datasets or []

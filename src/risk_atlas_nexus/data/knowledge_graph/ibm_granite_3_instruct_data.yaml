@@ -37,13 +37,7 @@ aimodels:
     - modality-text
     performsTask: ["question-answering", "summarization", "text-classification", "text-generation", "code-generation", "code-explanation", "code-editing"]
     hasEvaluation:
-    - id: truthfulqa-granite-3-2b-instruct
-      name: "TruthfulQA result for Granite-3.0-2B-Instruct"
-      description: "Result of the TruthfulQA evaluation for the IBM Granite-3.0-2B-Instruct model."
-      value: "53.37"
-      evidence: "https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf, Table 10"
-      dateCreated: "2024-10-21"
-      isResultOf: cards.value_alignment.hallucinations.truthfulqa
+    - truthfulqa-granite-3-2b-instruct
   - id: granite-3.0-8b-base
     name: Granite-3.0-8B-Base
     description: "Granite-3.0-8B-Base is a decoder-only language model to support a variety of text-to-text generation tasks."
@@ -65,10 +59,21 @@ aimodels:
     - modality-text
     performsTask: ["question-answering", "summarization", "text-classification", "text-generation", "code-generation", "code-explanation", "code-editing"]
     hasEvaluation:
-    - id: truthfulqa-granite-3-8b-instruct
-      name: "TruthfulQA result for Granite-3.0-8B-Instruct"
-      description: "Result of the TruthfulQA evaluation for the IBM Granite-3.0-8B-Instruct model."
-      value: "60.32"
-      evidence: "https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf, Table 10"
-      dateCreated: "2024-10-21"
-      isResultOf: cards.value_alignment.hallucinations.truthfulqa
+    - truthfulqa-granite-3-8b-instruct
+aievalresults:
+  - id: truthfulqa-granite-3-2b-instruct
+    name: "TruthfulQA result for Granite-3.0-2B-Instruct"
+    description: "Result of the TruthfulQA evaluation for the IBM Granite-3.0-2B-Instruct model."
+    value: "53.37"
+    evidence: "https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf, Table 10"
+    dateCreated: "2024-10-21"
+    dateModified: "2024-10-21"
+    isResultOf: cards.value_alignment.hallucinations.truthfulqa
+  - id: truthfulqa-granite-3-8b-instruct
+    name: "TruthfulQA result for Granite-3.0-8B-Instruct"
+    description: "Result of the TruthfulQA evaluation for the IBM Granite-3.0-8B-Instruct model."
+    value: "60.32"
+    evidence: "https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf, Table 10"
+    dateCreated: "2024-10-21"
+    dateModified: "2024-10-21"
+    isResultOf: cards.value_alignment.hallucinations.truthfulqa
