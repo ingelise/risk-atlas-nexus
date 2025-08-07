@@ -13744,6 +13744,27 @@ evaluations:
   - akariasai/PopQA
   hasRelatedRisk:
   - atlas-hallucination
+aievalresults:
+- id: truthfulqa-granite-3-2b-instruct
+  name: TruthfulQA result for Granite-3.0-2B-Instruct
+  description: Result of the TruthfulQA evaluation for the IBM Granite-3.0-2B-Instruct
+    model.
+  dateCreated: 2024-10-21
+  dateModified: 2024-10-21
+  value: '53.37'
+  evidence: https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf,
+    Table 10
+  isResultOf: cards.value_alignment.hallucinations.truthfulqa
+- id: truthfulqa-granite-3-8b-instruct
+  name: TruthfulQA result for Granite-3.0-8B-Instruct
+  description: Result of the TruthfulQA evaluation for the IBM Granite-3.0-8B-Instruct
+    model.
+  dateCreated: 2024-10-21
+  dateModified: 2024-10-21
+  value: '60.32'
+  evidence: https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf,
+    Table 10
+  isResultOf: cards.value_alignment.hallucinations.truthfulqa
 aimodelfamilies:
 - id: ibm-granite
   name: IBM Granite
