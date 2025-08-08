@@ -52,6 +52,7 @@ from risk_atlas_nexus.toolkit.logging import configure_logger
 
 
 logger = configure_logger(__name__)
+RISK_IDENTIFICATION_COT = load_resource("risk_generation_cot.json")
 
 
 class RiskAtlasNexus:
@@ -489,6 +490,7 @@ class RiskAtlasNexus:
         taxonomy: Optional[str] = None,
         cot_examples: Optional[Dict[str, List]] = None,
         max_risk: Optional[int] = None,
+        zero_shot_only: bool = False,
     ) -> List[List[Risk]]:
         """Identify potential risks from a usecase description
 
@@ -498,15 +500,14 @@ class RiskAtlasNexus:
             inference_engine (InferenceEngine):
                 An LLM inference engine to infer risks from the usecases.
             taxonomy (str, optional):
-                The string label for a taxonomy.
+                The string label for a taxonomy. If not specified, the system will use "ibm-ai-risk-atlas" as the default taxonomy.
             cot_examples (Dict[str, List], optional):
-                The Chain of Thought (CoT) examples to use in the risk identification.
-                The example template is available at src/risk_atlas_nexus/data/templates/risk_generation_cot.json.
-                Assign the ID of the taxonomy you wish to use as the key for CoT examples. Providing this value
-                will override the CoT examples present in the template master. Default to None.
+                If the user wants to improve risk identification via a Few-shot approach, `cot_examples` can be
+                provided with the desired taxonomy as key. Please follow the example template at src/risk_atlas_nexus/data/templates/risk_generation_cot.json.
+                If the `cot_examples` is omitted, the API default to a Zero-Shot approach.
             max_risk (int, optional):
                 The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
-
+            zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
         Returns:
             List[List[Risk]]:
                 Result containing a list of risks
@@ -541,35 +542,30 @@ class RiskAtlasNexus:
             "Usecases must be a list of string.",
         )
 
-        # For the given taxonomy type, check if the user has provided 'cot_examples'. If not,
-        # retrieve the default cot examples from the master. If no examples exist in the master,
-        # set it as None.
-        RISK_IDENTIFICATION_COT = load_resource("risk_generation_cot.json")
-        processed_examples = None
-
-        if cot_examples:
-            processed_examples = cot_examples.get(taxonomy, None)
-        elif taxonomy:
-            processed_examples = RISK_IDENTIFICATION_COT.get(taxonomy, None)
-
         # if not providing taxonomy, set to IBM AI risk atlas
         if taxonomy is None:
             logger.warning(
                 f"<RAN47375G12W>",
                 f"Taxonomy was not provided, defaulting to ibm-ai-risk-atlas.",
             )
-
         set_taxonomy = taxonomy or "ibm-ai-risk-atlas"
 
-        # Set prompt builder based on whether the CoT examples are available.
-        if processed_examples is None:
-            logger.warning(
-                f"<RAN47275F12W>",
-                f"Warning: Chain of Thought (CoT) examples were not provided, or do not exist in the master for this "
-                f"taxonomy. The API will use the Zero shot method. To improve the accuracy "
-                f"of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may "
-                f"also consider raising an issue to permanently add these examples to the Risk Atlas Nexus master.",
+        processed_examples = None
+        if zero_shot_only:
+            logger.info(
+                f"The `zero_shot_only` flag is enabled. The system will use the Zero shot method. Any provided `cot_examples` will be disregarded.",
             )
+        else:
+            # For the given taxonomy type, check if the user has provided 'cot_examples'. If not,
+            # retrieve the default cot examples from the master. If no examples exist in the master,
+            # set it as None.
+            processed_examples = (
+                cot_examples and cot_examples.get(set_taxonomy, None)
+            ) or RISK_IDENTIFICATION_COT.get(set_taxonomy, None)
+            if processed_examples is None:
+                logger.warning(
+                    f"<RAN47275F12W> Chain of Thought (CoT) examples were not provided, or do not exist in the master for this taxonomy. The API will use the Zero shot method. To improve the accuracy of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may also consider raising an issue to permanently add these examples to the Risk Atlas Nexus master."
+                )
 
         risk_detector = GenericRiskDetector(
             risks=cls._risk_explorer.get_all_risks(set_taxonomy),
