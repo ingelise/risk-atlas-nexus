@@ -503,7 +503,7 @@ class RiskAtlasNexus:
             inference_engine (InferenceEngine):
                 An LLM inference engine to infer risks from the usecases.
             taxonomy (str, optional):
-                The string label for a taxonomy. If not specified, the system will use "ibm-ai-risk-atlas" as the default taxonomy.
+                The string label for a taxonomy. If not specified, the system will use "ibm-risk-atlas" as the default taxonomy.
             cot_examples (Dict[str, List], optional):
                 If the user wants to improve risk identification via a Few-shot approach, `cot_examples` can be
                 provided with the desired taxonomy as key. Please follow the example template at src/risk_atlas_nexus/data/templates/risk_generation_cot.json.
@@ -549,9 +549,9 @@ class RiskAtlasNexus:
         if taxonomy is None:
             logger.warning(
                 f"<RAN47375G12W>",
-                f"Taxonomy was not provided, defaulting to ibm-ai-risk-atlas.",
+                f"Taxonomy was not provided, defaulting to ibm-risk-atlas.",
             )
-        set_taxonomy = taxonomy or "ibm-ai-risk-atlas"
+        set_taxonomy = taxonomy or "ibm-risk-atlas"
 
         processed_examples = None
         if zero_shot_only:
