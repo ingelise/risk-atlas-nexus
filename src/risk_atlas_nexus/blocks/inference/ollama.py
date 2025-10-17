@@ -78,7 +78,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 think=think,
                 **kwargs,
             )
-            return self._prepare_prediction_output(response.response)
+            return self._prepare_prediction_output(response)
 
         return run_parallel(
             generate_text,
@@ -123,10 +123,12 @@ class OllamaInferenceEngine(InferenceEngine):
             verbose=verbose,
         )
 
-    def _prepare_prediction_output(self, message):
+    def _prepare_prediction_output(self, response):
         return TextGenerationInferenceOutput(
-            prediction=message.content,
-            thinking=message.thinking if hasattr(message, "thinking") else None,
+            prediction=(
+                response.content if hasattr(response, "content") else response.response
+            ),
+            thinking=response.thinking if hasattr(response, "thinking") else None,
             model_name_or_path=self.model_name_or_path,
             inference_engine=str(self._inference_engine_type),
         )
