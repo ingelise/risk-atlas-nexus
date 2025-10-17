@@ -109,7 +109,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
                 **kwargs,
             )
-            return response.message
+            return self._prepare_prediction_output(response.message)
 
         return run_parallel(
             chat_response,
@@ -119,9 +119,10 @@ class OllamaInferenceEngine(InferenceEngine):
             verbose=verbose,
         )
 
-    def _prepare_prediction_output(self, prediction):
+    def _prepare_prediction_output(self, message):
         return TextGenerationInferenceOutput(
-            prediction=prediction,
+            prediction=message.content,
+            thinking=message.thinking if hasattr(message, "thinking") else None,
             model_name_or_path=self.model_name_or_path,
             inference_engine=str(self._inference_engine_type),
         )
