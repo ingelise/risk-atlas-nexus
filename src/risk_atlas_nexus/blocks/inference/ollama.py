@@ -66,6 +66,7 @@ class OllamaInferenceEngine(InferenceEngine):
         response_format=None,
         postprocessors=None,
         verbose=True,
+        **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
         def generate_text(prompt: str):
             response = self.client.generate(
@@ -73,6 +74,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 prompt=prompt,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                **kwargs,
             )
             return self._prepare_prediction_output(response.response)
 
@@ -95,6 +97,7 @@ class OllamaInferenceEngine(InferenceEngine):
         response_format=None,
         postprocessors=None,
         verbose=True,
+        **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
 
         def chat_response(messages):
@@ -104,8 +107,9 @@ class OllamaInferenceEngine(InferenceEngine):
                 tools=tools,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                **kwargs,
             )
-            return self._prepare_prediction_output(response.message.content)
+            return response.message
 
         return run_parallel(
             chat_response,
