@@ -65,6 +65,7 @@ class OllamaInferenceEngine(InferenceEngine):
         prompts: List[str],
         response_format=None,
         postprocessors=None,
+        think=None,
         verbose=True,
         **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
@@ -74,6 +75,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 prompt=prompt,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                think=think,
                 **kwargs,
             )
             return self._prepare_prediction_output(response.response)
@@ -96,6 +98,7 @@ class OllamaInferenceEngine(InferenceEngine):
         tools=None,
         response_format=None,
         postprocessors=None,
+        think=None,
         verbose=True,
         **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
@@ -107,6 +110,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 tools=tools,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                think=think,
                 **kwargs,
             )
             return self._prepare_prediction_output(response.message)
