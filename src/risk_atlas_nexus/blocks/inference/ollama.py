@@ -1,5 +1,5 @@
 import os
-from typing import Any, Dict, List, Union
+from typing import Dict, List, Optional, Union
 
 from dotenv import load_dotenv
 
@@ -59,13 +59,18 @@ class OllamaInferenceEngine(InferenceEngine):
                 f"Model `{self.model_name_or_path}` not found. Please download it first."
             )
 
+    def is_thinking_supported(self):
+        if "thinking" not in self.client.show(self.model_name_or_path).capabilities:
+            raise Exception(
+                f"`Model {self.model_name_or_path}` does not support thinking. Please pass `think=False` or use another model."
+            )
+
     @postprocess
     def generate(
         self,
         prompts: List[str],
         response_format=None,
         postprocessors=None,
-        think=None,
         verbose=True,
         **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
@@ -75,7 +80,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 prompt=prompt,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
-                think=think,
+                think=self.think,
                 **kwargs,
             )
             return self._prepare_prediction_output(response)
@@ -98,7 +103,6 @@ class OllamaInferenceEngine(InferenceEngine):
         tools=None,
         response_format=None,
         postprocessors=None,
-        think=None,
         verbose=True,
         **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
@@ -110,7 +114,7 @@ class OllamaInferenceEngine(InferenceEngine):
                 tools=tools,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
-                think=think,
+                think=self.think,
                 **kwargs,
             )
             return self._prepare_prediction_output(response.message)
