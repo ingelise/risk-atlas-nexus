@@ -60,7 +60,9 @@ class OllamaInferenceEngine(InferenceEngine):
             )
 
     def is_thinking_supported(self):
-        if "thinking" not in self.client.show(self.model_name_or_path).capabilities:
+        if "thinking" in self.client.show(self.model_name_or_path).capabilities:
+            return True
+        else:
             raise Exception(
                 f"`Model {self.model_name_or_path}` does not support thinking. Please pass `think=False` or use another model."
             )
