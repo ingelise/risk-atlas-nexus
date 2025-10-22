@@ -109,6 +109,14 @@ class RITSInferenceEngine(InferenceEngine):
         return TextGenerationInferenceOutput(
             prediction=response.choices[0].message.content,
             model_name_or_path=self.model_name_or_path,
+            logprobs=(
+                {
+                    output.token: output.logprob
+                    for output in response.choices[0].logprobs.content
+                }
+                if response.choices[0].logprobs
+                else None
+            ),
             inference_engine=str(self._inference_engine_type),
         )
 
