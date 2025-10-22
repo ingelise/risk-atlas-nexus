@@ -108,6 +108,9 @@ class RITSInferenceEngine(InferenceEngine):
     def _prepare_chat_output(self, response):
         return TextGenerationInferenceOutput(
             prediction=response.choices[0].message.content,
+            input_tokens=response.usage.total_tokens,
+            output_tokens=response.usage.completion_tokens,
+            stop_reason=response.choices[0].finish_reason,
             model_name_or_path=self.model_name_or_path,
             logprobs=(
                 {
