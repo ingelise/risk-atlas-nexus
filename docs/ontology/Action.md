@@ -183,9 +183,11 @@ attributes:
     owner: Action
     domain_of:
     - Term
+    - LLMQuestionPolicy
     - Action
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Risk
     multivalued: true
@@ -211,6 +213,7 @@ attributes:
     - LargeLanguageModelFamily
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Documentation
     multivalued: true
@@ -225,6 +228,7 @@ attributes:
     alias: isDefinedByTaxonomy
     owner: Action
     domain_of:
+    - Policy
     - RiskGroup
     - Risk
     - RiskControl

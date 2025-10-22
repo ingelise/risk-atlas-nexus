@@ -33,21 +33,39 @@ class InferenceEngine(ABC):
                 VLLMInferenceEngineParams,
             ]
         ] = None,
+        think: Optional[bool] = None,
         concurrency_limit: int = 10,
     ):
+        """Create an instance of the InferenceEngine using the `model_name_or_path` and chosen LLM service.
+
+        Args:
+            model_name_or_path (str): model name or path as per the LLM model service
+            credentials (Optional[Union[Dict, InferenceEngineCredentials]], optional): credentials for the inference engine instance. Defaults to None.
+            parameters (Optional[ Union[ RITSInferenceEngineParams, WMLInferenceEngineParams, OllamaInferenceEngineParams, VLLMInferenceEngineParams, ] ], optional): parameters to use during request generation. Defaults to None.
+            think (Optional[bool], optional): enable or disable model thinking. Currently, only supported in Ollama. Defaults to None.
+            concurrency_limit (int, optional): No of parallel calls to be made to the LLM service. Defaults to 10.
+        """
+
         self.model_name_or_path = model_name_or_path
-        self.parameters = self._check_if_parameters_are_valid(parameters or {})
         self.credentials = self.prepare_credentials(credentials or {})
-        self.client = self.create_client(self.credentials)
+        self.parameters = self._check_if_parameters_are_valid(parameters or {})
+        self.think = think
         self.concurrency_limit = concurrency_limit
 
-        # health check
+        # Create inference client
+        self.client = self.create_client(self.credentials)
+
+        # Health check
         try:
             self.ping()
         except Exception as e:
             raise Exception(
                 f"Failed to create `{self.__class__.__name__}`. Reason: {str(e)} Given API credentials: {self.credentials}"
             )
+
+        # Verify whether the inference engine and the model type support `thinking`.
+        if think:
+            self.is_thinking_supported()
 
         logger.info(f"Created {self._inference_engine_type} inference engine.")
 
@@ -82,6 +100,11 @@ class InferenceEngine(ABC):
     def ping(self):
         # Implement inference engine specific ping in their respective class.
         pass
+
+    def is_thinking_supported(self):
+        raise Exception(
+            f"Currently, model thinking (think=True) is only supported in OllamaInferenceEngine."
+        )
 
     @abstractmethod
     def prepare_credentials(

@@ -1,5 +1,5 @@
 import os
-from typing import Any, Dict, List, Union
+from typing import Dict, List, Optional, Union
 
 from dotenv import load_dotenv
 
@@ -59,6 +59,14 @@ class OllamaInferenceEngine(InferenceEngine):
                 f"Model `{self.model_name_or_path}` not found. Please download it first."
             )
 
+    def is_thinking_supported(self):
+        if "thinking" in self.client.show(self.model_name_or_path).capabilities:
+            return True
+        else:
+            raise Exception(
+                f"`Model {self.model_name_or_path}` does not support thinking. Please pass `think=False` or use another model."
+            )
+
     @postprocess
     def generate(
         self,
@@ -66,6 +74,7 @@ class OllamaInferenceEngine(InferenceEngine):
         response_format=None,
         postprocessors=None,
         verbose=True,
+        **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
         def generate_text(prompt: str):
             response = self.client.generate(
@@ -73,8 +82,10 @@ class OllamaInferenceEngine(InferenceEngine):
                 prompt=prompt,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                think=self.think,
+                **kwargs,
             )
-            return self._prepare_prediction_output(response.response)
+            return self._prepare_prediction_output(response)
 
         return run_parallel(
             generate_text,
@@ -95,6 +106,7 @@ class OllamaInferenceEngine(InferenceEngine):
         response_format=None,
         postprocessors=None,
         verbose=True,
+        **kwargs,
     ) -> List[TextGenerationInferenceOutput]:
 
         def chat_response(messages):
@@ -104,8 +116,10 @@ class OllamaInferenceEngine(InferenceEngine):
                 tools=tools,
                 format=response_format,
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+                think=self.think,
+                **kwargs,
             )
-            return self._prepare_prediction_output(response.message.content)
+            return self._prepare_prediction_output(response.message)
 
         return run_parallel(
             chat_response,
@@ -115,9 +129,12 @@ class OllamaInferenceEngine(InferenceEngine):
             verbose=verbose,
         )
 
-    def _prepare_prediction_output(self, prediction):
+    def _prepare_prediction_output(self, response):
         return TextGenerationInferenceOutput(
-            prediction=prediction,
+            prediction=(
+                response.content if hasattr(response, "content") else response.response
+            ),
+            thinking=response.thinking if hasattr(response, "thinking") else None,
             model_name_or_path=self.model_name_or_path,
             inference_engine=str(self._inference_engine_type),
         )

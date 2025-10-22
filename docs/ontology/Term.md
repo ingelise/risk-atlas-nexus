@@ -131,11 +131,13 @@ URI: [nexus:Term](https://ibm.github.io/risk-atlas-nexus/ontology/Term)
 | [Term](Term.md) | [hasParentDefinition](hasParentDefinition.md) | range | [Term](Term.md) |
 | [Term](Term.md) | [hasSubDefinition](hasSubDefinition.md) | range | [Term](Term.md) |
 | [Term](Term.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [Action](Action.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [AiEval](AiEval.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [Question](Question.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [Questionnaire](Questionnaire.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
+| [Adapter](Adapter.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [LLMIntrinsic](LLMIntrinsic.md) | [hasRelatedRisk](hasRelatedRisk.md) | any_of[range] | [Term](Term.md) |
 | [LLMIntrinsic](LLMIntrinsic.md) | [hasRelatedTerm](hasRelatedTerm.md) | range | [Term](Term.md) |
 | [LLMIntrinsic](LLMIntrinsic.md) | [hasRelatedTerm](hasRelatedTerm.md) | any_of[range] | [Term](Term.md) |
@@ -215,6 +217,7 @@ attributes:
     owner: Term
     domain_of:
     - Term
+    - Adapter
     - LLMIntrinsic
     range: Vocabulary
   hasDocumentation:
@@ -235,6 +238,7 @@ attributes:
     - LargeLanguageModelFamily
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Documentation
     multivalued: true
@@ -275,9 +279,11 @@ attributes:
     owner: Term
     domain_of:
     - Term
+    - LLMQuestionPolicy
     - Action
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Risk
     multivalued: true

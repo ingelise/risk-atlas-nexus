@@ -257,6 +257,7 @@ attributes:
     - LargeLanguageModelFamily
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Documentation
     multivalued: true
@@ -328,6 +329,7 @@ attributes:
     - BaseAi
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     range: License
   hasRelatedRisk:
     name: hasRelatedRisk
@@ -339,9 +341,11 @@ attributes:
     owner: AiEval
     domain_of:
     - Term
+    - LLMQuestionPolicy
     - Action
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Risk
     multivalued: true

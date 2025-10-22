@@ -584,9 +584,11 @@ attributes:
     owner: BenchmarkMetadataCard
     domain_of:
     - Term
+    - LLMQuestionPolicy
     - Action
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Risk
     multivalued: true
@@ -632,6 +634,7 @@ attributes:
     - BaseAi
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     range: License
   hasConsiderationConsentProcedures:
     name: hasConsiderationConsentProcedures
@@ -672,6 +675,7 @@ attributes:
     - LargeLanguageModelFamily
     - AiEval
     - BenchmarkMetadataCard
+    - Adapter
     - LLMIntrinsic
     range: Documentation
     multivalued: true
