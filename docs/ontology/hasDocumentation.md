@@ -22,23 +22,23 @@ Alias: hasDocumentation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [Questionnaire](Questionnaire.md) | A questionnaire groups questions |  no  |
 | [Term](Term.md) | A term and its definitions |  no  |
 | [Adapter](Adapter.md) | Adapter-based methods add extra trainable parameters after the attention and ... |  no  |
-| [BaseAi](BaseAi.md) | Any type of AI, be it a LLM, RL agent, SVM, etc |  no  |
 | [Vocabulary](Vocabulary.md) | A collection of terms, with their definitions and relationships |  no  |
+| [AiModel](AiModel.md) | A base AI Model class |  no  |
 | [AiEval](AiEval.md) | An AI Evaluation, e |  no  |
+| [LLMIntrinsic](LLMIntrinsic.md) | A capability that can be invoked through a well-defined API that is reasonabl... |  no  |
+| [BaseAi](BaseAi.md) | Any type of AI, be it a LLM, RL agent, SVM, etc |  no  |
+| [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | A large language model family is a set of models that are provided by the sam... |  no  |
 | [RiskTaxonomy](RiskTaxonomy.md) | A taxonomy of AI system related risks |  no  |
 | [Dataset](Dataset.md) | A body of structured information describing some topic(s) of interest |  no  |
-| [LLMIntrinsic](LLMIntrinsic.md) | A capability that can be invoked through a well-defined API that is reasonabl... |  no  |
-| [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities |  no  |
-| [AiModel](AiModel.md) | A base AI Model class |  no  |
-| [Question](Question.md) | An evaluation where a question has to be answered |  no  |
-| [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | A large language model family is a set of models that are provided by the sam... |  no  |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... |  no  |
+| [Question](Question.md) | An evaluation where a question has to be answered |  no  |
 | [Action](Action.md) | Action to remediate a risk |  no  |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... |  no  |
+| [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities |  no  |
 | [AiAgent](AiAgent.md) | An artificial intelligence (AI) agent refers to a system or program that is c... |  no  |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... |  no  |
+| [Questionnaire](Questionnaire.md) | A questionnaire groups questions |  no  |
 
 
 

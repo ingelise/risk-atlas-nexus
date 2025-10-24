@@ -203,6 +203,12 @@ risks:
 - id: nist-harmful-bias-or-homogenization
   narrowMatch:
   - atlas-impact-on-affected-communities
+- id: atlas-impact-on-cultural-diversity
+  broadMatch:
+  - nist-information-integrity
+- id: nist-information-integrity
+  narrowMatch:
+  - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-human-agency
   broadMatch:
   - nist-information-integrity
@@ -479,9 +485,3 @@ risks:
 - id: nist-information-integrity
   narrowMatch:
   - atlas-untraceable-attribution
-- id: tlas-impact-on-cultural-diversity
-  broadMatch:
-  - nist-information-integrity
-- id: nist-information-integrity
-  narrowMatch:
-  - tlas-impact-on-cultural-diversity

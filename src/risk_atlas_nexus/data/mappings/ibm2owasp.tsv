@@ -33,7 +33,7 @@ ibm-risk-atlas:atlas-prompt-injection	prompt injection attack	skos:exactMatch	ow
 ibm-risk-atlas:atlas-incomplete-advice	incomplete advice	skos:broadMatch	owasp-llm-2.0:llm092025-misinformation	LLM09:2025 Misinformation	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibm-risk-atlas:atlas-data-usage-rights	data usage restrictions	skos:broadMatch	owasp-llm-2.0:llm032025-supply-chain	LLM03:2025 Supply Chain	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibm-risk-atlas:atlas-lack-of-system-transparency	lack system transparency	noMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95	Relates to explainability which is not covered in OWASP
-ibm-risk-atlas:tlas-impact-on-cultural-diversity	impact cultural diversity	noMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
+ibm-risk-atlas:atlas-impact-on-cultural-diversity	impact cultural diversity	noMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibm-risk-atlas:atlas-plagiarism	impact education plagiarism	noMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95	Social implications of AI are not specifically addressed by OWASP
 ibm-risk-atlas:atlas-improper-usage	improper usage	noMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95	Defining the intended use of an AI system is not addressed by OWASP
 ibm-risk-atlas:atlas-personal-information-in-data	personal information in data	skos:relatedMatch	owasp-llm-2.0:llm022025-sensitive-information-disclosure	LLM02:2025 Sensitive Information Disclosure	semapv:ManualMappingCuration	david.piorkowski@ibm.com	0.95

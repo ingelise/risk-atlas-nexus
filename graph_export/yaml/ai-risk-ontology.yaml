@@ -3943,6 +3943,8 @@ risks:
   dateModified: 2025-10-22
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
+  broadMatch:
+  - nist-information-integrity
   relatedMatch:
   - credo-risk-010
   - credo-risk-044
@@ -5052,6 +5054,7 @@ risks:
   isDefinedByTaxonomy: nist-ai-rmf
   narrowMatch:
   - atlas-data-transparency
+  - atlas-impact-on-cultural-diversity
   - atlas-impact-on-human-agency
   - atlas-incomplete-advice
   - atlas-jailbreaking
@@ -5060,7 +5063,6 @@ risks:
   - atlas-spreading-disinformation
   - atlas-unexplainable-output
   - atlas-untraceable-attribution
-  - tlas-impact-on-cultural-diversity
   relatedMatch:
   - ail-defamation
   - ail-intellectual-property
@@ -9844,9 +9846,6 @@ risks:
   - mit-ai-risk-subdomain-6.5
   - mit-ai-risk-subdomain-7.3
   - nist-value-chain-and-component-integration
-- id: tlas-impact-on-cultural-diversity
-  broadMatch:
-  - nist-information-integrity
 riskcontrols:
 - id: gg-harm-detection
   name: Harm detection
@@ -14918,13 +14917,13 @@ aimodels:
 - id: granite-3.2-8b-instruct
   name: Granite 3.2 8B Instruct
   description: Granite-3.2-8B-Instruct is an 8-billion-parameter, long-context AI
-    model fine-tuned for thinking capabilities.  Built on top of Granite-3.1-8B-Instruct,
-    it has been trained using a mix of permissively licensed open-source  datasets
+    model fine-tuned for thinking capabilities. Built on top of Granite-3.1-8B-Instruct,
+    it has been trained using a mix of permissively licensed open-source datasets
     and internally generated synthetic data designed for reasoning tasks. The model
-    allows controllability of  its thinking capability, ensuring it is applied only
-    when required. This model is designed to handle general  instruction-following
+    allows controllability of its thinking capability, ensuring it is applied only
+    when required. This model is designed to handle general instruction-following
     tasks and can be integrated into AI assistants across various domains, including
-    business  applications.
+    business applications.
   url: https://github.com/ibm-granite/granite-guardian
   dateCreated: 2025-02-26
   hasModelCard:
