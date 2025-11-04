@@ -134,6 +134,9 @@ class OllamaInferenceEngine(InferenceEngine):
             prediction=(
                 response.content if hasattr(response, "content") else response.response
             ),
+            input_tokens=response.prompt_eval_count,
+            output_tokens=response.eval_count,
+            stop_reason=response.done_reason,
             thinking=response.thinking if hasattr(response, "thinking") else None,
             model_name_or_path=self.model_name_or_path,
             inference_engine=str(self._inference_engine_type),
