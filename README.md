@@ -43,6 +43,7 @@ Our intention is to create a starting point for an open AI Systems ontology whos
   - [AI Tasks identification](docs/examples/notebooks/ai_tasks_identification.ipynb) Uncover ai tasks related to your usecase
   - [AI Domain identification](docs/examples/notebooks/domain_identification.ipynb) Uncover ai domain from your usecase
   - [Risk Categorization](docs/examples/notebooks/risk_categorization.ipynb) Assess and categorize the severity of risks associated with an AI system usecase.
+  - [Risk to ARES Evaluation](docs/examples/notebooks/risk_to_ares_evaluation.ipynb) ARES Integration for AI Atlas Nexus allows you to run AI robustness evaluations on AI Systems derived from use cases.
 - **Additional Resources:**
   - [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas)
   - [Usage Governance Advisor: From Intent to AI Governance](https://arxiv.org/abs/2412.01957)

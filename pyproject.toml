@@ -1,6 +1,6 @@
 [project]
 name = "ai-atlas-nexus"
-version = "1.0.4"
+version = "1.1.0"
 authors = [
     { name = "AI Atlas Nexus", email = "ai-atlas-nexus@ibm.com" },
     { name = "Elizabeth Daly", email = "elizabeth.daly@ie.ibm.com" },
@@ -55,6 +55,7 @@ dependencies = [
     "jsonschema",
     "isort",
     "pre-commit",
+    "typer"
 ]
 
 
@@ -71,6 +72,9 @@ docs = [
     "griffe-pydantic",
     "mkdocs-awesome-nav",
 ]
+
+[project.scripts]
+ran-extension = "ai_atlas_nexus.extension:app"
 
 [tool.isort]
 skip_glob = ["v-ai-atlas-nexus/*"]
