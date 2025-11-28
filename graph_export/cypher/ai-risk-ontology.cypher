@@ -1,6 +1,8 @@
+MERGE (node:Organization {id: "google"}) ON CREATE SET node += {name: "Google",description: "Google LLC is an American multinational technology corporation focused on information technology, online advertising, search engine technology, email, cloud computing, software, quantum computing, e-commerce, consumer electronics, and artificial intelligence.",url: "https://www.google.com"};
 MERGE (node:Organization {id: "codeparrot"}) ON CREATE SET node += {name: "CodeParrot & Friends",description: "This organization is dedicated to language models for code generation. In particular CodeParrot is a GPT-2 model trained to generate Python code.",url: "https://huggingface.co/codeparrot"};
 MERGE (node:Organization {id: "bigcode"}) ON CREATE SET node += {name: "BigCode",description: "BigCode is an open scientific collaboration working on the responsible development and use of large language models for code (Code LLMs), empowering the machine learning and open source communities through open governance.",url: "https://www.bigcode-project.org/"};
 MERGE (node:Organization {id: "ibm"}) ON CREATE SET node += {name: "International Business Machines Corporation",description: "International Business Machines Corporation (using the trademark IBM), is an American multinational technology company headquartered in Armonk, New York and present in over 175 countries.",url: "https://www.ibm.com"};
+MERGE (node:License {id: "gemma-terms-of-use"}) ON CREATE SET node += {name: "Gemma Terms of Use",description: "Gemma Terms of Use",url: "https://ai.google.dev/gemma/terms",dateCreated: "2025-03-24",version: "1.0"};
 MERGE (node:License {id: "license-apache-2.0"}) ON CREATE SET node += {name: "Apache 2.0",description: "The 2.0 version of the Apache License, approved by the ASF in 2004, helps to achieve the goal of providing reliable and long-lived software products through collaborative, open-source software development.",url: "https://www.apache.org/licenses/LICENSE-2.0.html",dateCreated: "2004-02-08",version: "2.0"};
 MERGE (node:License {id: "license-cc-by-2.0"}) ON CREATE SET node += {name: "Creative Commons Attribution 2.0 Generic",description: "This license allows for the sharing and adaptation of a work, as long as the creator is given proper credit. This means you can copy, distribute, and even create derivative works based on the original, but you must acknowledge the original author and link back to the license. ",url: "https://creativecommons.org/licenses/by/2.0/"};
 MERGE (node:License {id: "license-cc-by-4.0"}) ON CREATE SET node += {name: "Creative Commons Attribution 4.0 International",description: "This license enables reusers to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the creator. The license allows for commercial use.",url: "https://creativecommons.org/licenses/by/4.0/",dateCreated: "2013-11-25"};
@@ -6277,7 +6279,7 @@ MATCH (src: LargeLanguageModel {id: "granite-3.3-2b-instruct"}) MATCH (dst: Moda
 MATCH (src: LargeLanguageModel {id: "granite-3.3-2b-instruct"}) MATCH (dst: LargeLanguageModelFamily {id: "ibm-granite"}) MERGE (src)-[: isPartOf]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: Documentation {id: "shieldgemma-paper"}) MERGE (src)-[: hasDocumentation]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: License {id: "gemma-terms-of-use"}) MERGE (src)-[: hasLicense]->(dst);
-MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: AiTask {id: "content-moderation"}) MERGE (src)-[: performsTask]->(dst);
+MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: AiTask {id: "text-generation"}) MERGE (src)-[: performsTask]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: AiProvider {id: "google"}) MERGE (src)-[: isProvidedBy]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: RiskControl {id: "shieldgemma-sexually-explicit-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: RiskControl {id: "shieldgemma-dangerous-content-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
@@ -6288,7 +6290,7 @@ MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: Modality {id:
 MATCH (src: LargeLanguageModel {id: "shieldgemma-2b"}) MATCH (dst: LargeLanguageModelFamily {id: "shieldgemma"}) MERGE (src)-[: isPartOf]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: Documentation {id: "shieldgemma-paper"}) MERGE (src)-[: hasDocumentation]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: License {id: "gemma-terms-of-use"}) MERGE (src)-[: hasLicense]->(dst);
-MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: AiTask {id: "content-moderation"}) MERGE (src)-[: performsTask]->(dst);
+MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: AiTask {id: "text-generation"}) MERGE (src)-[: performsTask]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: AiProvider {id: "google"}) MERGE (src)-[: isProvidedBy]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: RiskControl {id: "shieldgemma-sexually-explicit-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: RiskControl {id: "shieldgemma-dangerous-content-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
@@ -6299,7 +6301,7 @@ MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: Modality {id:
 MATCH (src: LargeLanguageModel {id: "shieldgemma-9b"}) MATCH (dst: LargeLanguageModelFamily {id: "shieldgemma"}) MERGE (src)-[: isPartOf]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: Documentation {id: "shieldgemma-paper"}) MERGE (src)-[: hasDocumentation]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: License {id: "gemma-terms-of-use"}) MERGE (src)-[: hasLicense]->(dst);
-MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: AiTask {id: "content-moderation"}) MERGE (src)-[: performsTask]->(dst);
+MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: AiTask {id: "text-generation"}) MERGE (src)-[: performsTask]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: AiProvider {id: "google"}) MERGE (src)-[: isProvidedBy]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: RiskControl {id: "shieldgemma-sexually-explicit-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
 MATCH (src: LargeLanguageModel {id: "shieldgemma-27b"}) MATCH (dst: RiskControl {id: "shieldgemma-dangerous-content-detection"}) MERGE (src)-[: hasRiskControl]->(dst);
