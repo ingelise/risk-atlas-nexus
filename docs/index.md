@@ -4,7 +4,7 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://www.apache.org/licenses/LICENSE-2.0) ![main branch](https://github.com/IBM/ai-atlas-nexus/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main) [![](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/) <img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 
-👉 (Jun-2025) Our [HF spaces demo site](https://huggingface.co/spaces/ibm/ai-atlas-nexus) has been updated to show related benchmarks!
+👉 (Jun-2025) Our [HF spaces demo site](https://huggingface.co/spaces/ibm/risk-atlas-nexus) has been updated to show related benchmarks!
 
 👉 (Jun-2025) The [demo projects repository](https://github.com/IBM/ai-atlas-nexus-demos) showcases implementations of AI Atlas Nexus.
 ## Overview
