@@ -39,7 +39,7 @@ def install(extension_name: str) -> None:
 
 class Extension:
     """
-    Imports and loads a risk atlas nexus extension main class
+    Imports and loads an AI atlas nexus extension main class
     """
 
     @staticmethod
@@ -47,7 +47,7 @@ class Extension:
         """Import the main extension class.
 
         Args:
-            extension_name (str): a Risk Atlas Nexus extension name
+            extension_name (str): an AI Atlas Nexus extension name
 
         Raises:
             ModuleNotFoundError: if the main module is not present

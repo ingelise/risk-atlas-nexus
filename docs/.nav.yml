@@ -40,6 +40,8 @@ nav:
     - 🔀  Mapping:
       - "Preparing mappings": examples/notebooks/Prepare_taxonomy_mappings.ipynb
       - "Generate crosswalks": examples/notebooks/generate_crosswalk.ipynb
+    - Extensions:
+      - "Risk to ARES Evaluation" : examples/notebooks/risk_to_ares_evaluation.ipynb
   - Ontology:
       - Ontology: ontology/index.md
       - "ontology/*"

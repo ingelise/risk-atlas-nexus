@@ -1659,7 +1659,7 @@ class AIAtlasNexus:
         """Submit potential attack risks for ARES red-teaming evaluation.
         This API needs the `ran-ares-integration` extension. Please install this extension via
         `ran-extension install ran-ares-integration`. Refer `Readme` file for further information
-        on `risk-atlas-nexus` extensions.
+        on `ai-atlas-nexus` extensions.
 
         Args:
             risks (List[Risk]):
