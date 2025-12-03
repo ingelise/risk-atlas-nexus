@@ -81,6 +81,8 @@ class OllamaInferenceEngine(InferenceEngine):
                 model=self.model_name_or_path,
                 prompt=prompt,
                 format=response_format,
+                logprobs=self.parameters.pop("logprobs", None),
+                top_logprobs=self.parameters.pop("top_logprobs", None),
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
                 think=self.think,
                 **kwargs,
@@ -115,6 +117,8 @@ class OllamaInferenceEngine(InferenceEngine):
                 messages=self._to_openai_format(messages),
                 tools=tools,
                 format=response_format,
+                logprobs=self.parameters.pop("logprobs", None),
+                top_logprobs=self.parameters.pop("top_logprobs", None),
                 options=self.parameters,  # https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
                 think=self.think,
                 **kwargs,
@@ -132,12 +136,19 @@ class OllamaInferenceEngine(InferenceEngine):
     def _prepare_prediction_output(self, response):
         return TextGenerationInferenceOutput(
             prediction=(
-                response.message.content if hasattr(response, "message") else response.response
+                response.message.content
+                if hasattr(response, "message")
+                else response.response
             ),
             input_tokens=response.prompt_eval_count,
             output_tokens=response.eval_count,
             stop_reason=response.done_reason,
             thinking=response.thinking if hasattr(response, "thinking") else None,
             model_name_or_path=self.model_name_or_path,
+            logprobs=(
+                {output.token: output.logprob for output in response.logprobs}
+                if response.logprobs
+                else None
+            ),
             inference_engine=str(self._inference_engine_type),
         )
