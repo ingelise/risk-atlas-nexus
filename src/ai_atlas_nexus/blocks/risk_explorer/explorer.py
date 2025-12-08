@@ -1,8 +1,11 @@
+import warnings
+
 from ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import Risk
 from ai_atlas_nexus.blocks.risk_explorer.base import ExplorerBase
 from ai_atlas_nexus.data.knowledge_graph import *
 
 
+warnings.warn("Deprecated, Please use AtlasExplorer instead")
 class RiskExplorer(ExplorerBase):
 
     def __init__(self, ontology):
