@@ -158,6 +158,18 @@ class AIAtlasNexus:
         response = {"version": version("ai_atlas_nexus")}
         return response
 
+    def get_all_classes(cls):
+        """
+        Get all the available classes
+
+        Returns:
+            List[str]
+                List of classes
+        """
+        classes: List[str] = cls._atlas_explorer.get_all_classes()
+        return classes
+
+
     def get_all(cls, class_name, taxonomy=None, vocabulary=None):
         """
         Get all the instances of a specified class.
@@ -198,6 +210,41 @@ class AIAtlasNexus:
         """
         instance = cls._atlas_explorer.get_by_id(class_name, identifier)
         return instance
+
+    def get_by_attribute(cls, class_name, attribute, value):
+        """
+        Get a single instance by its identifier.
+
+        Args:
+            class_name: str
+                Name of the class (the collection key in data)
+            attribute: str
+                Attribute name to filter by
+            value: Any
+                Value to match
+
+        Returns:
+            Optional[Dict[str, Any]]
+                The matching instance or None
+        """
+        instance = cls._atlas_explorer.get_by_attribute(class_name, attribute, value)
+        return instance
+
+    def query(cls, class_name, **kwargs):
+        """
+        Query instances using keyword arguments.
+
+        Args:
+            class_name: str
+                Name of the class (the collection key in data)
+            **kwargs:
+                The attribute-value pairs to filter by
+
+        Returns:
+            List[Dict[str, Any]]
+                List of matching instances
+        """
+        return cls._atlas_explorer.query(class_name, **kwargs)
 
     def get_all_risks(cls, taxonomy=None):
         """Get all risk definitions from the LinkML

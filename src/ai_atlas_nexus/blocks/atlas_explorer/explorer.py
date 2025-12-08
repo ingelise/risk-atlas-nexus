@@ -15,7 +15,7 @@ class AtlasExplorer(ExplorerBase):
         """
         Get all the class names that have data in the knowledge graph.
         """
-        return list(self._data.keys())
+        return list(self._data.model_fields_set)
 
     def get_all(self, class_name=None, taxonomy=None, vocabulary=None, document=None):
         """
@@ -115,7 +115,7 @@ class AtlasExplorer(ExplorerBase):
         matches = []
 
         for instance in instances:
-            if isinstance(instance, dict) and instance.get(attribute) == value:
+            if (type(getattr(instance, attribute)) == str and getattr(instance, attribute) == value) or (type(getattr(instance, attribute)) == List and getattr(instance, attribute).contains(value)):
                 matches.append(instance)
 
         return matches
