@@ -11,9 +11,12 @@ class AtlasExplorer(ExplorerBase):
         # load the data into the graph
         self._data = data
 
-    def get_all_classes(self) -> List[str]:
+    def get_all_classes(self):
         """
         Get all the class names that have data in the knowledge graph.
+
+        Returns:
+             list[str]
         """
         return list(self._data.model_fields_set)
 
@@ -32,7 +35,7 @@ class AtlasExplorer(ExplorerBase):
                 (Optional) The string id for a document
 
         Returns:
-            List[Dict[str, Any]]
+            list[Dict[str, Any]]
                 List of instances
         """
 
@@ -131,7 +134,7 @@ class AtlasExplorer(ExplorerBase):
                 # TODO
 
         Returns:
-            List[Dict[str, Any]]
+            list[Dict[str, Any]]
                 List of matching instances
         """
         pass
@@ -175,7 +178,7 @@ class AtlasExplorer(ExplorerBase):
                 The attribute-value pairs to filter by
 
         Returns:
-            List[Dict[str, Any]]
+            list[Dict[str, Any]]
                 List of matching instances
         """
         return self.filter_instances(class_name, kwargs)
@@ -202,7 +205,7 @@ class AtlasExplorer(ExplorerBase):
             if all(
                 (type(getattr(instance, k)) == str and getattr(instance, k) == v)
                 or
-                (type(getattr(instance, k)) == List and getattr(instance, k).contains(v))
+                (type(getattr(instance, k)) == list and v in getattr(instance, k))
                 for k, v in filters.items() if v is not None):
                 matches.append(instance)
 
