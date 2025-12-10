@@ -1654,7 +1654,7 @@ class AIAtlasNexus:
         return results
 
     def run_ares_evaluation(
-        cls, risks: List[Risk], inference_engine: InferenceEngine, target
+        cls, risks: List[Risk], inference_engine: InferenceEngine, target: Dict
     ) -> None:
         """Submit potential attack risks for ARES red-teaming evaluation.
         This API needs the `ran-ares-integration` extension. Please install this extension via
@@ -1666,7 +1666,7 @@ class AIAtlasNexus:
                 A List of attack risks
             inference_engine (InferenceEngine):
                 An instance of the LLM inference engine
-            target (Optional[Path], optional):
+            target (Dict):
                 A target AI model to perform the ARES red-teaming evaluation
 
         Returns:
