@@ -47,7 +47,6 @@ class AtlasExplorer(ExplorerBase):
                     key = k
                     break
 
-        #result = self._data.model_dump().get(key, [])
         result = getattr(self._data, key) if hasattr(self._data, key) else []
         if taxonomy is not None:
             result = list(
@@ -124,17 +123,21 @@ class AtlasExplorer(ExplorerBase):
         return matches
 
 
-    def get_attribute(self, class_name: str, identifier: Any, attribute: str) -> Any:
+    def get_attribute(self, class_name, identifier, attribute):
         """
         Get a specific attribute value from an instance.
 
         Args:
-            class_name: Name of the class
-            identifier: Identifier of the instance
-            attribute: Attribute name to retrieve
+            class_name: str
+                Name of the class
+            identifier: str
+                Identifier of the instance
+            attribute: str
+                Attribute name to retrieve
 
         Returns:
-            The attribute value or None
+            Any
+                The attribute value or None
         """
         instance = self.get_by_id(class_name, identifier)
         if instance and isinstance(instance, dict):
