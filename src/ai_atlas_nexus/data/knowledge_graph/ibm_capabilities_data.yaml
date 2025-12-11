@@ -1,0 +1,4 @@
+taxonomies:
+  - id: ibm-ai-capabilities
+    name: IBM AI Capabilities Framework
+    type: CapabilityTaxonomy

@@ -18,6 +18,7 @@ documents:
 taxonomies:
 - id: ai-risk-taxonomy
   name: The AI Risk Taxonomy (AIR 2024)
+  type: RiskTaxonomy
   description: 'An AI risk taxonomy derived from eight government policies from the
     European Union, United States, and China and 16 company policies worldwide. It
     identifies 314 unique risk categories organized into a four-tiered taxonomy. This

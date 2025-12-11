@@ -6,6 +6,7 @@ documents:
 taxonomies:
 - id: ibm-granite-guardian
   name: IBM Granite Guardian
+  type: RiskTaxonomy
   description: Understand risk dimensions covered by Granite Guardian.
   url: https://arxiv.org/abs/2412.07724
   dateCreated: 2024-12-10

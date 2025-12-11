@@ -1754,6 +1754,7 @@ taxonomies:
   dateModified: 2025-10-22
   hasDocumentation:
   - 10a99803d8afd656
+  type: RiskTaxonomy
 - id: nist-ai-rmf
   name: NIST AI Risk Management Framework (AI RMF)
   description: In collaboration with the private and public sectors, NIST has developed
@@ -1766,6 +1767,7 @@ taxonomies:
   dateCreated: 2024-07-26
   hasDocumentation:
   - NIST.AI.600-1
+  type: RiskTaxonomy
 - id: ailuminate-v1.0
   name: AILuminate
   description: AI-safety benchmark developed by the MLCommons Risk and Reliability
@@ -1779,6 +1781,7 @@ taxonomies:
   version: '1.0'
   hasDocumentation:
   - AILuminate-doc
+  type: RiskTaxonomy
 - id: mit-ai-risk-repository
   name: 'The AI Risk Repository: Domain Taxonomy of AI Risks'
   description: 'The Domain Taxonomy of AI Risks adapted from Weidinger (2021) classifies
@@ -1790,6 +1793,7 @@ taxonomies:
   version: '1'
   hasDocumentation:
   - arxiv.org/2408.12622
+  type: RiskTaxonomy
 - id: mit-ai-risk-repository-causal
   name: 'The AI Risk Repository: Casual Taxonomy of AI Risks'
   description: The Causal Taxonomy of AI Risks, adapted from Yampolskiy (2016), classifies
@@ -1800,6 +1804,10 @@ taxonomies:
   version: '1'
   hasDocumentation:
   - arxiv.org/2408.12622
+  type: RiskTaxonomy
+- id: ibm-ai-capabilities
+  name: IBM AI Capabilities Framework
+  type: CapabilityTaxonomy
 - id: csiro-responsible-ai-patterns
   name: CSIRO Responsible AI Pattern Catalogue
   description: A pattern-oriented approach is taken to build up the Responsible AI
@@ -1809,6 +1817,7 @@ taxonomies:
   version: '1.0'
   hasDocumentation:
   - CSIRO-responsible-ai-pattern-catalogue-doc
+  type: RiskTaxonomy
 - id: ai-risk-taxonomy
   name: The AI Risk Taxonomy (AIR 2024)
   description: 'An AI risk taxonomy derived from eight government policies from the
@@ -1823,6 +1832,7 @@ taxonomies:
   version: '1'
   hasDocumentation:
   - arxiv.org/pdf/2406.17864
+  type: RiskTaxonomy
 - id: shieldgemma-taxonomy
   name: ShieldGemma Safety Categories
   description: Four-category harm taxonomy for content moderation built on Gemma 2
@@ -1832,6 +1842,7 @@ taxonomies:
   dateModified: 2025-01-15
   hasDocumentation:
   - shieldgemma-paper
+  type: RiskTaxonomy
 - id: ibm-granite-guardian
   name: IBM Granite Guardian
   description: Understand risk dimensions covered by Granite Guardian.
@@ -1840,6 +1851,7 @@ taxonomies:
   dateModified: 2024-12-16
   hasDocumentation:
   - granite-guardian-paper
+  type: RiskTaxonomy
 - id: owasp-llm-2.0
   name: OWASP Top 10 for Large Language Model Applications
   description: The OWASP Top 10 for Large Language Model Applications project aims
@@ -1852,6 +1864,7 @@ taxonomies:
   dateCreated: 2024-11-18
   dateModified: 2024-11-18
   version: '2.0'
+  type: RiskTaxonomy
 - id: credo-ucf
   name: Credo Unified Control Framework
   description: A comprehensive risk taxonomy synthesizing organizational and societal
@@ -1861,6 +1874,7 @@ taxonomies:
   version: '1.0'
   hasDocumentation:
   - credo-doc
+  type: RiskTaxonomy
 vocabularies:
 - id: ibm-factuality
   name: IBM Factuality

@@ -12,6 +12,7 @@ documents:
 taxonomies:
   - id: shieldgemma-taxonomy
     name: ShieldGemma Safety Categories
+    type: RiskTaxonomy
     description: Four-category harm taxonomy for content moderation built on Gemma 2 foundation models
     dateCreated: "2024-07-30"
     dateModified: "2025-01-15"

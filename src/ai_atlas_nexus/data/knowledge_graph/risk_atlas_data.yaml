@@ -13,6 +13,7 @@ documents:
 taxonomies:
 - id: ibm-risk-atlas
   name: IBM AI Risk Atlas
+  type: RiskTaxonomy
   description: Explore this atlas to understand some of the risks of working with
     generative AI, foundation models, and machine learning models.
   url: https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas
