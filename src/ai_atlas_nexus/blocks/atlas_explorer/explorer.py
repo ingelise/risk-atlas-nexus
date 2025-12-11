@@ -123,31 +123,6 @@ class AtlasExplorer(ExplorerBase):
 
         return matches
 
-    def get_by_expression(self, class_name, expression):
-        """
-        Get all the instances that match a specific attribute value.
-
-        Args:
-            class_name: str
-                Name of the class (the collection key in data)
-            expression: str
-                # TODO
-
-        Returns:
-            list[Dict[str, Any]]
-                List of matching instances
-        """
-        pass
-        '''
-        instances = self.get_all(class_name)
-        matches = []
-
-        for instance in instances:
-            if isinstance(instance, dict) #TODO and instance matches the expression
-                matches.append(instance)
-
-        return matches
-        '''
 
     def get_attribute(self, class_name: str, identifier: Any, attribute: str) -> Any:
         """
