@@ -20,7 +20,6 @@ Alias: isComposedOf
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -30,9 +29,7 @@ Alias: isComposedOf
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

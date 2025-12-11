@@ -10,13 +10,12 @@ URI: [dpv:IncidentNearMissclass](https://w3id.org/dpv#IncidentNearMissclass)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentNearMissclass
-    click IncidentNearMissclass href "../IncidentNearMissclass"
+    click IncidentNearMissclass href "../IncidentNearMissclass/"
       IncidentStatus <|-- IncidentNearMissclass
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
       IncidentNearMissclass : dateCreated
 
@@ -63,8 +62,8 @@ URI: [dpv:IncidentNearMissclass](https://w3id.org/dpv#IncidentNearMissclass)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [dpv:IncidentNearMissclass](https://w3id.org/dpv#IncidentNearMissclass)
 | ---  | ---  |
 | self | dpv:IncidentNearMissclass |
 | native | nexus:IncidentNearMissclass |
-
 
 
 

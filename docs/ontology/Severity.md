@@ -10,13 +10,12 @@ URI: [dpv:Severity](https://w3id.org/dpv#Severity)
 
 
 
-
 ```mermaid
  classDiagram
     class Severity
-    click Severity href "../Severity"
+    click Severity href "../Severity/"
       Entity <|-- Severity
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Severity : dateCreated
 
@@ -69,8 +68,8 @@ URI: [dpv:Severity](https://w3id.org/dpv#Severity)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -91,7 +90,6 @@ URI: [dpv:Severity](https://w3id.org/dpv#Severity)
 | ---  | ---  |
 | self | dpv:Severity |
 | native | nexus:Severity |
-
 
 
 

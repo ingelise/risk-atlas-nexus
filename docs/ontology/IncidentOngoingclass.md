@@ -10,13 +10,12 @@ URI: [dpv:IncidentOngoingclass](https://w3id.org/dpv#IncidentOngoingclass)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentOngoingclass
-    click IncidentOngoingclass href "../IncidentOngoingclass"
+    click IncidentOngoingclass href "../IncidentOngoingclass/"
       IncidentStatus <|-- IncidentOngoingclass
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
       IncidentOngoingclass : dateCreated
 
@@ -63,8 +62,8 @@ URI: [dpv:IncidentOngoingclass](https://w3id.org/dpv#IncidentOngoingclass)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [dpv:IncidentOngoingclass](https://w3id.org/dpv#IncidentOngoingclass)
 | ---  | ---  |
 | self | dpv:IncidentOngoingclass |
 | native | nexus:IncidentOngoingclass |
-
 
 
 

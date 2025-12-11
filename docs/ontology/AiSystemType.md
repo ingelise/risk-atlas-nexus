@@ -2,7 +2,7 @@
 
 
 
-URI: [AiSystemType](AiSystemType.md)
+URI: [nexus:AiSystemType](https://ibm.github.io/ai-atlas-nexus/ontology/AiSystemType)
 
 ## Permissible Values
 
@@ -28,9 +28,7 @@ URI: [AiSystemType](AiSystemType.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

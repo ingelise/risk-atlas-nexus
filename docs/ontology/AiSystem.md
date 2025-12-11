@@ -15,17 +15,16 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-
 ```mermaid
  classDiagram
     class AiSystem
-    click AiSystem href "../AiSystem"
+    click AiSystem href "../AiSystem/"
       BaseAi <|-- AiSystem
-        click BaseAi href "../BaseAi"
+        click BaseAi href "../BaseAi/"
 
 
       AiSystem <|-- AiAgent
-        click AiAgent href "../AiAgent"
+        click AiAgent href "../AiAgent/"
 
 
       AiSystem : dateCreated
@@ -41,7 +40,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -52,7 +51,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "0..1" AiSystemType : hasEuAiSystemType
-        click AiSystemType href "../AiSystemType"
+        click AiSystemType href "../AiSystemType/"
 
 
 
@@ -63,7 +62,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "0..1" EuAiRiskCategory : hasEuRiskCategory
-        click EuAiRiskCategory href "../EuAiRiskCategory"
+        click EuAiRiskCategory href "../EuAiRiskCategory/"
 
 
 
@@ -74,7 +73,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -89,7 +88,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -102,7 +101,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -113,7 +112,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
         AiSystem --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -161,8 +160,8 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -183,7 +182,6 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 | ---  | ---  |
 | self | airo:AISystem |
 | native | nexus:AiSystem |
-
 
 
 

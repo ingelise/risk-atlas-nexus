@@ -15,13 +15,12 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-
 ```mermaid
  classDiagram
     class LLMIntrinsic
-    click LLMIntrinsic href "../LLMIntrinsic"
+    click LLMIntrinsic href "../LLMIntrinsic/"
       Entity <|-- LLMIntrinsic
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       LLMIntrinsic : dateCreated
 
@@ -36,7 +35,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
         LLMIntrinsic --> "*" Adapter : hasAdapter
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
 
 
 
@@ -47,7 +46,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
         LLMIntrinsic --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -58,7 +57,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
         LLMIntrinsic --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -69,7 +68,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
         LLMIntrinsic --> "*" Term : hasRelatedTerm
-        click Term href "../Term"
+        click Term href "../Term/"
 
 
 
@@ -82,7 +81,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
         LLMIntrinsic --> "0..1" Vocabulary : isDefinedByVocabulary
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
 
 
 
@@ -135,8 +134,8 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -157,7 +156,6 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 | ---  | ---  |
 | self | ai:Capability |
 | native | nexus:LLMIntrinsic |
-
 
 
 

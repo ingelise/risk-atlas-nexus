@@ -29,7 +29,6 @@ Alias: taxonomies
 
 
 
-
 ## Properties
 
 * Range: [RiskTaxonomy](RiskTaxonomy.md)
@@ -39,9 +38,7 @@ Alias: taxonomies
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: riskincidents
 
 
 
-
 ## Properties
 
 * Range: [RiskIncident](RiskIncident.md)
@@ -39,9 +38,7 @@ Alias: riskincidents
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

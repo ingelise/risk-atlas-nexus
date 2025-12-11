@@ -30,7 +30,6 @@ Alias: hasOutputModality
 
 
 
-
 ## Properties
 
 * Range: [Modality](Modality.md)
@@ -40,9 +39,7 @@ Alias: hasOutputModality
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

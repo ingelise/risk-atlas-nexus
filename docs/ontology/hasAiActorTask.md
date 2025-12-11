@@ -29,7 +29,6 @@ Alias: hasAiActorTask
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasAiActorTask
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: permissions
 
 
 
-
 ## Properties
 
 * Range: [Permission](Permission.md)
@@ -39,9 +38,7 @@ Alias: permissions
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

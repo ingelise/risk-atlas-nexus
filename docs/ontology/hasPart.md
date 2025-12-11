@@ -29,7 +29,6 @@ Alias: hasPart
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasPart
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

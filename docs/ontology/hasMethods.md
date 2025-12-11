@@ -29,7 +29,6 @@ Alias: hasMethods
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasMethods
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

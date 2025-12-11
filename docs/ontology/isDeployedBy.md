@@ -20,7 +20,6 @@ Alias: isDeployedBy
 
 
 
-
 ## Properties
 
 * Range: [Organization](Organization.md)
@@ -28,9 +27,7 @@ Alias: isDeployedBy
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: hasParentDefinition
 
 
 
-
 ## Properties
 
 * Range: [Term](Term.md)
@@ -39,9 +38,7 @@ Alias: hasParentDefinition
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

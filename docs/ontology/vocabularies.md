@@ -29,7 +29,6 @@ Alias: vocabularies
 
 
 
-
 ## Properties
 
 * Range: [Vocabulary](Vocabulary.md)
@@ -39,9 +38,7 @@ Alias: vocabularies
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

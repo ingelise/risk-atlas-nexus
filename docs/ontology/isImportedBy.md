@@ -20,7 +20,6 @@ Alias: isImportedBy
 
 
 
-
 ## Properties
 
 * Range: [Organization](Organization.md)
@@ -28,9 +27,7 @@ Alias: isImportedBy
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

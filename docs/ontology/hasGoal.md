@@ -29,7 +29,6 @@ Alias: hasGoal
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasGoal
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

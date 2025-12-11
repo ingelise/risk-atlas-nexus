@@ -29,7 +29,6 @@ Alias: hasConsiderationConsentProcedures
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasConsiderationConsentProcedures
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

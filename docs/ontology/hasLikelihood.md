@@ -29,7 +29,6 @@ Alias: hasLikelihood
 
 
 
-
 ## Properties
 
 * Range: [Likelihood](Likelihood.md)
@@ -37,9 +36,7 @@ Alias: hasLikelihood
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

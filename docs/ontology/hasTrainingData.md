@@ -30,7 +30,6 @@ Alias: hasTrainingData
 
 
 
-
 ## Properties
 
 * Range: [Dataset](Dataset.md)
@@ -40,9 +39,7 @@ Alias: hasTrainingData
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

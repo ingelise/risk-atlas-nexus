@@ -15,13 +15,12 @@ URI: [nexus:Stakeholder](https://ibm.github.io/ai-atlas-nexus/ontology/Stakehold
 
 
 
-
 ```mermaid
  classDiagram
     class Stakeholder
-    click Stakeholder href "../Stakeholder"
+    click Stakeholder href "../Stakeholder/"
       Entity <|-- Stakeholder
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Stakeholder : dateCreated
 
@@ -38,7 +37,7 @@ URI: [nexus:Stakeholder](https://ibm.github.io/ai-atlas-nexus/ontology/Stakehold
 
 
         Stakeholder --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -49,7 +48,7 @@ URI: [nexus:Stakeholder](https://ibm.github.io/ai-atlas-nexus/ontology/Stakehold
 
 
         Stakeholder --> "0..1" StakeholderGroup : isPartOf
-        click StakeholderGroup href "../StakeholderGroup"
+        click StakeholderGroup href "../StakeholderGroup/"
 
 
 
@@ -98,8 +97,8 @@ URI: [nexus:Stakeholder](https://ibm.github.io/ai-atlas-nexus/ontology/Stakehold
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -120,7 +119,6 @@ URI: [nexus:Stakeholder](https://ibm.github.io/ai-atlas-nexus/ontology/Stakehold
 | ---  | ---  |
 | self | nexus:Stakeholder |
 | native | nexus:Stakeholder |
-
 
 
 

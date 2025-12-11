@@ -10,13 +10,12 @@ URI: [dpv:IncidentConcludedclass](https://w3id.org/dpv#IncidentConcludedclass)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentConcludedclass
-    click IncidentConcludedclass href "../IncidentConcludedclass"
+    click IncidentConcludedclass href "../IncidentConcludedclass/"
       IncidentStatus <|-- IncidentConcludedclass
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
       IncidentConcludedclass : dateCreated
 
@@ -63,8 +62,8 @@ URI: [dpv:IncidentConcludedclass](https://w3id.org/dpv#IncidentConcludedclass)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [dpv:IncidentConcludedclass](https://w3id.org/dpv#IncidentConcludedclass)
 | ---  | ---  |
 | self | dpv:IncidentConcludedclass |
 | native | nexus:IncidentConcludedclass |
-
 
 
 

@@ -29,7 +29,6 @@ Alias: risks
 
 
 
-
 ## Properties
 
 * Range: [Risk](Risk.md)
@@ -39,9 +38,7 @@ Alias: risks
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

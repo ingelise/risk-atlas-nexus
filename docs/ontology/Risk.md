@@ -15,15 +15,14 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
 
-
 ```mermaid
  classDiagram
     class Risk
-    click Risk href "../Risk"
+    click Risk href "../Risk/"
       RiskConcept <|-- Risk
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- Risk
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Risk : broadMatch
 
@@ -32,7 +31,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Any : broadMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -43,7 +42,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Any : closeMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -64,7 +63,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" RiskConcept : detectsRiskConcept
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
 
 
 
@@ -75,7 +74,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Any : exactMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -86,7 +85,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Action : hasRelatedAction
-        click Action href "../Action"
+        click Action href "../Action/"
 
 
 
@@ -99,7 +98,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -110,7 +109,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -121,7 +120,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "0..1" RiskGroup : isPartOf
-        click RiskGroup href "../RiskGroup"
+        click RiskGroup href "../RiskGroup/"
 
 
 
@@ -134,7 +133,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Any : narrowMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -147,7 +146,7 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
         Risk --> "*" Any : relatedMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -232,8 +231,8 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -254,7 +253,6 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 | ---  | ---  |
 | self | airo:Risk |
 | native | nexus:Risk |
-
 
 
 

@@ -363,8 +363,6 @@ class AIAtlasNexus:
 
         if id:
             risk = cls.get_risk(id=id)
-        elif risk:
-            risk = risk
         elif tag:
             risk = cls.get_risk(tag=tag)
 
@@ -428,8 +426,6 @@ class AIAtlasNexus:
 
         if id:
             risk = cls.get_risk(id=id)
-        elif risk:
-            risk = risk
         elif tag:
             risk = cls.get_risk(tag=tag)
         elif name:
@@ -542,8 +538,6 @@ class AIAtlasNexus:
 
         if id:
             risk = cls.get_risk(id=id)
-        elif risk:
-            risk = risk
         elif tag:
             risk = cls.get_risk(tag=tag)
         elif name:
@@ -1076,14 +1070,12 @@ class AIAtlasNexus:
         value_check(
             "<RAN79007538E>",
             risk or risk_id,
-            risk or risk_id,
             "Please provide risk or id",
         )
 
         if risk_id:
             risk = cls.get_risk(id=risk_id)
-        elif risk:
-            risk = risk
+
 
         related_risk_incidents = cls._atlas_explorer.query("riskincidents", refersToRisk=risk.id, taxonomy=taxonomy,
         )
@@ -1154,8 +1146,6 @@ class AIAtlasNexus:
 
         if risk_id:
             risk = cls.get_risk(id=risk_id)
-        elif risk:
-            risk = risk
 
         related_evaluations = cls._atlas_explorer.query("evaluations", hasRelatedRisk=risk.id, taxonomy=taxonomy)
         return related_evaluations
@@ -1435,8 +1425,6 @@ class AIAtlasNexus:
 
         if risk_id:
             risk = cls.get_risk(id=risk_id)
-        elif risk:
-            risk = risk
         elif tag:
             risk = cls.get_risk(tag=tag)
         elif name:
@@ -1463,7 +1451,7 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        adapter_instances: list[Adapter] = cls._atlas_explorer.get_adapters(taxonomy)
+        adapter_instances: list[Adapter] = cls._atlas_explorer.get_all("adapters", taxonomy)
         return adapter_instances
 
     def get_adapter(cls, id=str):
@@ -1486,7 +1474,7 @@ class AIAtlasNexus:
             id=id,
         )
 
-        adapter: Adapter | None = cls._atlas_explorer.get_adapter(id=id)
+        adapter: Adapter | None = cls._atlas_explorer.get_by_id("adapters", identifier=id)
         return adapter
 
     def get_llm_question_policies(cls, taxonomy=None):
@@ -1508,7 +1496,7 @@ class AIAtlasNexus:
         )
 
         llm_question_policy_instances: list[LLMQuestionPolicy] = (
-            cls._atlas_explorer.get_llm_question_policies(taxonomy)
+            cls._atlas_explorer.get_all("llmquestionpolicies", taxonomy)
         )
         return llm_question_policy_instances
 
@@ -1533,7 +1521,7 @@ class AIAtlasNexus:
         )
 
         llm_question_policy: LLMQuestionPolicy | None = (
-            cls._atlas_explorer.get_llm_question_policy(id=id)
+            cls._atlas_explorer.get_by_id("llmquestionPolicies", identifier=id)
         )
         return llm_question_policy
 

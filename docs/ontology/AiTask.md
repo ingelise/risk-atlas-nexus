@@ -15,13 +15,12 @@ URI: [airo:AiCapability](https://w3id.org/airo#AiCapability)
 
 
 
-
 ```mermaid
  classDiagram
     class AiTask
-    click AiTask href "../AiTask"
+    click AiTask href "../AiTask/"
       Entity <|-- AiTask
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       AiTask : dateCreated
 
@@ -80,8 +79,8 @@ URI: [airo:AiCapability](https://w3id.org/airo#AiCapability)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -102,7 +101,6 @@ URI: [airo:AiCapability](https://w3id.org/airo#AiCapability)
 | ---  | ---  |
 | self | airo:AiCapability |
 | native | nexus:AiTask |
-
 
 
 

@@ -15,13 +15,12 @@ URI: [nexus:AiModelValidation](https://ibm.github.io/ai-atlas-nexus/ontology/AiM
 
 
 
-
 ```mermaid
  classDiagram
     class AiModelValidation
-    click AiModelValidation href "../AiModelValidation"
+    click AiModelValidation href "../AiModelValidation/"
       AiLifecyclePhase <|-- AiModelValidation
-        click AiLifecyclePhase href "../AiLifecyclePhase"
+        click AiLifecyclePhase href "../AiLifecyclePhase/"
 
       AiModelValidation : dateCreated
 
@@ -68,8 +67,8 @@ URI: [nexus:AiModelValidation](https://ibm.github.io/ai-atlas-nexus/ontology/AiM
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -90,7 +89,6 @@ URI: [nexus:AiModelValidation](https://ibm.github.io/ai-atlas-nexus/ontology/AiM
 | ---  | ---  |
 | self | nexus:AiModelValidation |
 | native | nexus:AiModelValidation |
-
 
 
 

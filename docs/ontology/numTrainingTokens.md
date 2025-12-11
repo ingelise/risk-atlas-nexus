@@ -30,7 +30,6 @@ Alias: numTrainingTokens
 
 
 
-
 ## Properties
 
 * Range: [Integer](Integer.md)
@@ -40,9 +39,7 @@ Alias: numTrainingTokens
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

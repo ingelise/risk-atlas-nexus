@@ -10,15 +10,14 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 
 
 
-
 ```mermaid
  classDiagram
     class Impact
-    click Impact href "../Impact"
+    click Impact href "../Impact/"
       RiskConcept <|-- Impact
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- Impact
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Impact : dateCreated
 
@@ -35,7 +34,7 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 
 
         Impact --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -84,8 +83,8 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -106,7 +105,6 @@ URI: [dpv:Impact](https://w3id.org/dpv#Impact)
 | ---  | ---  |
 | self | dpv:Impact |
 | native | nexus:Impact |
-
 
 
 

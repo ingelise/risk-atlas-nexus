@@ -29,7 +29,6 @@ Alias: hasDomains
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasDomains
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

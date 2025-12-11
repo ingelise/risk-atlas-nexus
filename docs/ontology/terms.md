@@ -29,7 +29,6 @@ Alias: terms
 
 
 
-
 ## Properties
 
 * Range: [Term](Term.md)
@@ -39,9 +38,7 @@ Alias: terms
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

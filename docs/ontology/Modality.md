@@ -15,13 +15,12 @@ URI: [airo:Modality](https://w3id.org/airo#Modality)
 
 
 
-
 ```mermaid
  classDiagram
     class Modality
-    click Modality href "../Modality"
+    click Modality href "../Modality/"
       Entity <|-- Modality
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Modality : dateCreated
 
@@ -78,8 +77,8 @@ URI: [airo:Modality](https://w3id.org/airo#Modality)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -100,7 +99,6 @@ URI: [airo:Modality](https://w3id.org/airo#Modality)
 | ---  | ---  |
 | self | airo:Modality |
 | native | nexus:Modality |
-
 
 
 

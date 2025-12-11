@@ -20,7 +20,6 @@ Alias: training_data_preprocessing
 
 
 
-
 ## Properties
 
 * Range: [DataPreprocessing](DataPreprocessing.md)
@@ -30,9 +29,7 @@ Alias: training_data_preprocessing
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
