@@ -15,13 +15,12 @@ URI: [dpv:Principle](https://w3id.org/dpv#Principle)
 
 
 
-
 ```mermaid
  classDiagram
     class Principle
-    click Principle href "../Principle"
+    click Principle href "../Principle/"
       Entity <|-- Principle
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Principle : dateCreated
 
@@ -36,7 +35,7 @@ URI: [dpv:Principle](https://w3id.org/dpv#Principle)
 
 
         Principle --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -86,8 +85,8 @@ URI: [dpv:Principle](https://w3id.org/dpv#Principle)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -108,7 +107,6 @@ URI: [dpv:Principle](https://w3id.org/dpv#Principle)
 | ---  | ---  |
 | self | dpv:Principle |
 | native | nexus:Principle |
-
 
 
 

@@ -29,7 +29,6 @@ Alias: aitasks
 
 
 
-
 ## Properties
 
 * Range: [AiTask](AiTask.md)
@@ -39,9 +38,7 @@ Alias: aitasks
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

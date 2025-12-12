@@ -29,7 +29,6 @@ Alias: hasRule
 
 
 
-
 ## Properties
 
 * Range: [Rule](Rule.md)
@@ -39,9 +38,7 @@ Alias: hasRule
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

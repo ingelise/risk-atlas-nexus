@@ -29,7 +29,6 @@ Alias: hasSeverity
 
 
 
-
 ## Properties
 
 * Range: [Severity](Severity.md)
@@ -37,9 +36,7 @@ Alias: hasSeverity
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: hasDataFormat
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasDataFormat
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

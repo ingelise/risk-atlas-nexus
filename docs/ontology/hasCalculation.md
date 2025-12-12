@@ -29,7 +29,6 @@ Alias: hasCalculation
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasCalculation
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

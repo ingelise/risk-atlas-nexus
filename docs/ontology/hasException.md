@@ -29,7 +29,6 @@ Alias: hasException
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasException
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

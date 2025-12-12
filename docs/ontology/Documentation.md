@@ -15,13 +15,12 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 
 
 
-
 ```mermaid
  classDiagram
     class Documentation
-    click Documentation href "../Documentation"
+    click Documentation href "../Documentation/"
       Entity <|-- Documentation
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Documentation : author
 
@@ -38,7 +37,7 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 
 
         Documentation --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -107,8 +106,8 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -129,7 +128,6 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 | ---  | ---  |
 | self | airo:Documentation |
 | native | nexus:Documentation |
-
 
 
 

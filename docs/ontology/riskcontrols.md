@@ -29,7 +29,6 @@ Alias: riskcontrols
 
 
 
-
 ## Properties
 
 * Range: [RiskControl](RiskControl.md)
@@ -39,9 +38,7 @@ Alias: riskcontrols
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -10,13 +10,12 @@ URI: [dpv:Likelihood](https://w3id.org/dpv#Likelihood)
 
 
 
-
 ```mermaid
  classDiagram
     class Likelihood
-    click Likelihood href "../Likelihood"
+    click Likelihood href "../Likelihood/"
       Entity <|-- Likelihood
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Likelihood : dateCreated
 
@@ -69,8 +68,8 @@ URI: [dpv:Likelihood](https://w3id.org/dpv#Likelihood)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -91,7 +90,6 @@ URI: [dpv:Likelihood](https://w3id.org/dpv#Likelihood)
 | ---  | ---  |
 | self | dpv:Likelihood |
 | native | nexus:Likelihood |
-
 
 
 

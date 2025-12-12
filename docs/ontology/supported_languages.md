@@ -30,7 +30,6 @@ Alias: supported_languages
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -40,9 +39,7 @@ Alias: supported_languages
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

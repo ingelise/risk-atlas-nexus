@@ -15,15 +15,14 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
 
-
 ```mermaid
  classDiagram
     class RiskGroup
-    click RiskGroup href "../RiskGroup"
+    click RiskGroup href "../RiskGroup/"
       RiskConcept <|-- RiskGroup
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- RiskGroup
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       RiskGroup : broadMatch
 
@@ -32,7 +31,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Any : broadMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -43,7 +42,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Any : closeMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -60,7 +59,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Any : exactMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -71,7 +70,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Risk : hasPart
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -95,7 +94,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -108,7 +107,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Any : narrowMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -119,7 +118,7 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
         RiskGroup --> "*" Any : relatedMatch
-        click Any href "../Any"
+        click Any href "../Any/"
 
 
 
@@ -183,8 +182,8 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -205,7 +204,6 @@ URI: [nexus:RiskGroup](https://ibm.github.io/ai-atlas-nexus/ontology/RiskGroup)
 | ---  | ---  |
 | self | nexus:RiskGroup |
 | native | nexus:RiskGroup |
-
 
 
 

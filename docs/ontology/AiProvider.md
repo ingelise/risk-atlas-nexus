@@ -15,13 +15,12 @@ URI: [airo:AIProvider](https://w3id.org/airo#AIProvider)
 
 
 
-
 ```mermaid
  classDiagram
     class AiProvider
-    click AiProvider href "../AiProvider"
+    click AiProvider href "../AiProvider/"
       Organization <|-- AiProvider
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
       AiProvider : dateCreated
 
@@ -36,7 +35,7 @@ URI: [airo:AIProvider](https://w3id.org/airo#AIProvider)
 
 
         AiProvider --> "0..1" License : grants_license
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -92,8 +91,8 @@ URI: [airo:AIProvider](https://w3id.org/airo#AIProvider)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -114,7 +113,6 @@ URI: [airo:AIProvider](https://w3id.org/airo#AIProvider)
 | ---  | ---  |
 | self | airo:AIProvider |
 | native | nexus:AiProvider |
-
 
 
 

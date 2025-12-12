@@ -15,13 +15,12 @@ URI: [dpv:Permission](https://w3id.org/dpv#Permission)
 
 
 
-
 ```mermaid
  classDiagram
     class Permission
-    click Permission href "../Permission"
+    click Permission href "../Permission/"
       Rule <|-- Permission
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
       Permission : dateCreated
 
@@ -75,8 +74,8 @@ URI: [dpv:Permission](https://w3id.org/dpv#Permission)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -97,7 +96,6 @@ URI: [dpv:Permission](https://w3id.org/dpv#Permission)
 | ---  | ---  |
 | self | dpv:Permission |
 | native | nexus:Permission |
-
 
 
 

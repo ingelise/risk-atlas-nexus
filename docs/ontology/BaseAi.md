@@ -17,19 +17,18 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
 
-
 ```mermaid
  classDiagram
     class BaseAi
-    click BaseAi href "../BaseAi"
+    click BaseAi href "../BaseAi/"
       Entity <|-- BaseAi
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       BaseAi <|-- AiSystem
-        click AiSystem href "../AiSystem"
+        click AiSystem href "../AiSystem/"
       BaseAi <|-- AiModel
-        click AiModel href "../AiModel"
+        click AiModel href "../AiModel/"
 
 
       BaseAi : dateCreated
@@ -45,7 +44,7 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
         BaseAi --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -56,7 +55,7 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
         BaseAi --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -71,7 +70,7 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
         BaseAi --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
         BaseAi --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -95,7 +94,7 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
         BaseAi --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -141,8 +140,8 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -163,7 +162,6 @@ URI: [nexus:BaseAi](https://ibm.github.io/ai-atlas-nexus/ontology/BaseAi)
 | ---  | ---  |
 | self | nexus:BaseAi |
 | native | nexus:BaseAi |
-
 
 
 

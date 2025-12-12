@@ -29,7 +29,6 @@ Alias: hasOutOfScopeUses
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasOutOfScopeUses
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

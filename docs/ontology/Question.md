@@ -15,13 +15,12 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
 
-
 ```mermaid
  classDiagram
     class Question
-    click Question href "../Question"
+    click Question href "../Question/"
       AiEval <|-- Question
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
 
       Question : bestValue
 
@@ -38,7 +37,7 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
         Question --> "*" BenchmarkMetadataCard : hasBenchmarkMetadata
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
 
 
 
@@ -49,7 +48,7 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
         Question --> "*" Dataset : hasDataset
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -60,7 +59,7 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
         Question --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -73,7 +72,7 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
         Question --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
         Question --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -143,8 +142,8 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -165,7 +164,6 @@ URI: [nexus:Question](https://ibm.github.io/ai-atlas-nexus/ontology/Question)
 | ---  | ---  |
 | self | nexus:Question |
 | native | nexus:Question |
-
 
 
 

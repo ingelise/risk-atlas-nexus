@@ -29,7 +29,6 @@ Alias: hasReasonDenial
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasReasonDenial
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

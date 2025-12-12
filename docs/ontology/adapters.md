@@ -29,7 +29,6 @@ Alias: adapters
 
 
 
-
 ## Properties
 
 * Range: [Adapter](Adapter.md)
@@ -39,9 +38,7 @@ Alias: adapters
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

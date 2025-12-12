@@ -15,15 +15,14 @@ URI: [dqv:QualityMeasurement](https://www.w3.org/TR/vocab-dqv/QualityMeasurement
 
 
 
-
 ```mermaid
  classDiagram
     class AiEvalResult
-    click AiEvalResult href "../AiEvalResult"
+    click AiEvalResult href "../AiEvalResult/"
       Fact <|-- AiEvalResult
-        click Fact href "../Fact"
+        click Fact href "../Fact/"
       Entity <|-- AiEvalResult
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       AiEvalResult : dateCreated
 
@@ -42,7 +41,7 @@ URI: [dqv:QualityMeasurement](https://www.w3.org/TR/vocab-dqv/QualityMeasurement
 
 
         AiEvalResult --> "0..1" AiEval : isResultOf
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
 
 
 
@@ -97,8 +96,8 @@ URI: [dqv:QualityMeasurement](https://www.w3.org/TR/vocab-dqv/QualityMeasurement
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -119,7 +118,6 @@ URI: [dqv:QualityMeasurement](https://www.w3.org/TR/vocab-dqv/QualityMeasurement
 | ---  | ---  |
 | self | dqv:QualityMeasurement |
 | native | nexus:AiEvalResult |
-
 
 
 

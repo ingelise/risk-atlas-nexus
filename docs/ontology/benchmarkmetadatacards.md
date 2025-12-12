@@ -29,7 +29,6 @@ Alias: benchmarkmetadatacards
 
 
 
-
 ## Properties
 
 * Range: [BenchmarkMetadataCard](BenchmarkMetadataCard.md)
@@ -39,9 +38,7 @@ Alias: benchmarkmetadatacards
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

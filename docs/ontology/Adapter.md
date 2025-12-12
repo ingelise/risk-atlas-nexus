@@ -15,15 +15,14 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
-
 ```mermaid
  classDiagram
     class Adapter
-    click Adapter href "../Adapter"
+    click Adapter href "../Adapter/"
       LargeLanguageModel <|-- Adapter
-        click LargeLanguageModel href "../LargeLanguageModel"
+        click LargeLanguageModel href "../LargeLanguageModel/"
       Entity <|-- Adapter
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Adapter : adaptsModel
 
@@ -32,7 +31,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" LargeLanguageModel : adaptsModel
-        click LargeLanguageModel href "../LargeLanguageModel"
+        click LargeLanguageModel href "../LargeLanguageModel/"
 
 
 
@@ -59,7 +58,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" AdapterType : hasAdapterType
-        click AdapterType href "../AdapterType"
+        click AdapterType href "../AdapterType/"
 
 
 
@@ -70,7 +69,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -81,7 +80,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" AiEvalResult : hasEvaluation
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -92,7 +91,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" Modality : hasInputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -103,7 +102,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -116,7 +115,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" Modality : hasOutputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -127,7 +126,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -138,7 +137,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" RiskControl : hasRiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -149,7 +148,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" Dataset : hasTrainingData
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -162,7 +161,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" Vocabulary : isDefinedByVocabulary
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
 
 
 
@@ -173,7 +172,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" LargeLanguageModelFamily : isPartOf
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
 
 
 
@@ -184,7 +183,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -201,7 +200,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -214,7 +213,7 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
         Adapter --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -287,8 +286,8 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -309,7 +308,6 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 | ---  | ---  |
 | self | nexus:Adapter |
 | native | nexus:Adapter |
-
 
 
 

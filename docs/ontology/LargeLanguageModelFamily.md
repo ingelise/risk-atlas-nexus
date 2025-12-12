@@ -15,13 +15,12 @@ URI: [nexus:LargeLanguageModelFamily](https://ibm.github.io/ai-atlas-nexus/ontol
 
 
 
-
 ```mermaid
  classDiagram
     class LargeLanguageModelFamily
-    click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+    click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
       Entity <|-- LargeLanguageModelFamily
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       LargeLanguageModelFamily : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:LargeLanguageModelFamily](https://ibm.github.io/ai-atlas-nexus/ontol
 
 
         LargeLanguageModelFamily --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -88,8 +87,8 @@ URI: [nexus:LargeLanguageModelFamily](https://ibm.github.io/ai-atlas-nexus/ontol
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -110,7 +109,6 @@ URI: [nexus:LargeLanguageModelFamily](https://ibm.github.io/ai-atlas-nexus/ontol
 | ---  | ---  |
 | self | nexus:LargeLanguageModelFamily |
 | native | nexus:LargeLanguageModelFamily |
-
 
 
 

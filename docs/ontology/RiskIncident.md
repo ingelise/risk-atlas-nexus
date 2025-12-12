@@ -15,15 +15,14 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
 
-
 ```mermaid
  classDiagram
     class RiskIncident
-    click RiskIncident href "../RiskIncident"
+    click RiskIncident href "../RiskIncident/"
       RiskConcept <|-- RiskIncident
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- RiskIncident
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       RiskIncident : author
 
@@ -40,7 +39,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" Consequence : hasConsequence
-        click Consequence href "../Consequence"
+        click Consequence href "../Consequence/"
 
 
 
@@ -51,7 +50,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" Impact : hasImpact
-        click Impact href "../Impact"
+        click Impact href "../Impact/"
 
 
 
@@ -62,7 +61,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" Impact : hasImpactOn
-        click Impact href "../Impact"
+        click Impact href "../Impact/"
 
 
 
@@ -73,7 +72,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" Likelihood : hasLikelihood
-        click Likelihood href "../Likelihood"
+        click Likelihood href "../Likelihood/"
 
 
 
@@ -84,7 +83,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" Severity : hasSeverity
-        click Severity href "../Severity"
+        click Severity href "../Severity/"
 
 
 
@@ -95,7 +94,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" IncidentStatus : hasStatus
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
 
 
@@ -106,7 +105,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" RiskIncident : hasVariant
-        click RiskIncident href "../RiskIncident"
+        click RiskIncident href "../RiskIncident/"
 
 
 
@@ -119,7 +118,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -130,7 +129,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -143,7 +142,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
         RiskIncident --> "*" Risk : refersToRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -205,8 +204,8 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -227,7 +226,6 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 | ---  | ---  |
 | self | https://w3id.org/dpv/risk#Incident |
 | native | nexus:RiskIncident |
-
 
 
 

@@ -10,13 +10,12 @@ URI: [dpv:Consequence](https://w3id.org/dpv#Consequence)
 
 
 
-
 ```mermaid
  classDiagram
     class Consequence
-    click Consequence href "../Consequence"
+    click Consequence href "../Consequence/"
       Entity <|-- Consequence
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Consequence : dateCreated
 
@@ -69,8 +68,8 @@ URI: [dpv:Consequence](https://w3id.org/dpv#Consequence)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -91,7 +90,6 @@ URI: [dpv:Consequence](https://w3id.org/dpv#Consequence)
 | ---  | ---  |
 | self | dpv:Consequence |
 | native | nexus:Consequence |
-
 
 
 

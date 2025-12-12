@@ -29,7 +29,6 @@ Alias: hasDataType
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasDataType
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: hasValidation
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasValidation
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

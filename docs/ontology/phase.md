@@ -29,7 +29,6 @@ Alias: phase
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: phase
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

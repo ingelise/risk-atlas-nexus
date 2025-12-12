@@ -15,13 +15,12 @@ URI: [nexus:Vocabulary](https://ibm.github.io/ai-atlas-nexus/ontology/Vocabulary
 
 
 
-
 ```mermaid
  classDiagram
     class Vocabulary
-    click Vocabulary href "../Vocabulary"
+    click Vocabulary href "../Vocabulary/"
       Entity <|-- Vocabulary
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Vocabulary : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:Vocabulary](https://ibm.github.io/ai-atlas-nexus/ontology/Vocabulary
 
 
         Vocabulary --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -47,7 +46,7 @@ URI: [nexus:Vocabulary](https://ibm.github.io/ai-atlas-nexus/ontology/Vocabulary
 
 
         Vocabulary --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -104,8 +103,8 @@ URI: [nexus:Vocabulary](https://ibm.github.io/ai-atlas-nexus/ontology/Vocabulary
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -126,7 +125,6 @@ URI: [nexus:Vocabulary](https://ibm.github.io/ai-atlas-nexus/ontology/Vocabulary
 | ---  | ---  |
 | self | nexus:Vocabulary |
 | native | nexus:Vocabulary |
-
 
 
 

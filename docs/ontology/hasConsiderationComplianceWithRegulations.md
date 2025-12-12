@@ -29,7 +29,6 @@ Alias: hasConsiderationComplianceWithRegulations
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasConsiderationComplianceWithRegulations
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

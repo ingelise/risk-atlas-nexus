@@ -15,13 +15,12 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
 
-
 ```mermaid
  classDiagram
     class AiAgent
-    click AiAgent href "../AiAgent"
+    click AiAgent href "../AiAgent/"
       AiSystem <|-- AiAgent
-        click AiSystem href "../AiSystem"
+        click AiSystem href "../AiSystem/"
 
       AiAgent : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -47,7 +46,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "0..1" AiSystemType : hasEuAiSystemType
-        click AiSystemType href "../AiSystemType"
+        click AiSystemType href "../AiSystemType/"
 
 
 
@@ -58,7 +57,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "0..1" EuAiRiskCategory : hasEuRiskCategory
-        click EuAiRiskCategory href "../EuAiRiskCategory"
+        click EuAiRiskCategory href "../EuAiRiskCategory/"
 
 
 
@@ -69,7 +68,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -97,7 +96,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -108,7 +107,7 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
         AiAgent --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -156,8 +155,8 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -178,7 +177,6 @@ URI: [nexus:AiAgent](https://ibm.github.io/ai-atlas-nexus/ontology/AiAgent)
 | ---  | ---  |
 | self | nexus:AiAgent |
 | native | nexus:AiAgent |
-
 
 
 

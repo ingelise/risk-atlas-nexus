@@ -29,7 +29,6 @@ Alias: source_uri
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: source_uri
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
