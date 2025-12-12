@@ -15,21 +15,20 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 
 
 
-
 ```mermaid
  classDiagram
     class Rule
-    click Rule href "../Rule"
+    click Rule href "../Rule/"
       Entity <|-- Rule
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       Rule <|-- Permission
-        click Permission href "../Permission"
+        click Permission href "../Permission/"
       Rule <|-- Prohibition
-        click Prohibition href "../Prohibition"
+        click Prohibition href "../Prohibition/"
       Rule <|-- Obligation
-        click Obligation href "../Obligation"
+        click Obligation href "../Obligation/"
 
 
       Rule : dateCreated
@@ -87,8 +86,8 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -109,7 +108,6 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 | ---  | ---  |
 | self | dpv:Rule |
 | native | nexus:Rule |
-
 
 
 

@@ -17,77 +17,76 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 
 
-
 ```mermaid
  classDiagram
     class Entity
-    click Entity href "../Entity"
+    click Entity href "../Entity/"
       Entity <|-- Organization
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
       Entity <|-- License
-        click License href "../License"
+        click License href "../License/"
       Entity <|-- Dataset
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
       Entity <|-- Documentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
       Entity <|-- Vocabulary
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
       Entity <|-- Term
-        click Term href "../Term"
+        click Term href "../Term/"
       Entity <|-- Principle
-        click Principle href "../Principle"
+        click Principle href "../Principle/"
       Entity <|-- Policy
-        click Policy href "../Policy"
+        click Policy href "../Policy/"
       Entity <|-- Rule
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
       Entity <|-- RiskTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
       Entity <|-- RiskGroup
-        click RiskGroup href "../RiskGroup"
+        click RiskGroup href "../RiskGroup/"
       Entity <|-- Risk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
       Entity <|-- RiskConcept
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- RiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
       Entity <|-- RiskIncident
-        click RiskIncident href "../RiskIncident"
+        click RiskIncident href "../RiskIncident/"
       Entity <|-- Impact
-        click Impact href "../Impact"
+        click Impact href "../Impact/"
       Entity <|-- IncidentStatus
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
       Entity <|-- Severity
-        click Severity href "../Severity"
+        click Severity href "../Severity/"
       Entity <|-- Likelihood
-        click Likelihood href "../Likelihood"
+        click Likelihood href "../Likelihood/"
       Entity <|-- Consequence
-        click Consequence href "../Consequence"
+        click Consequence href "../Consequence/"
       Entity <|-- BaseAi
-        click BaseAi href "../BaseAi"
+        click BaseAi href "../BaseAi/"
       Entity <|-- LargeLanguageModelFamily
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
       Entity <|-- AiTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
       Entity <|-- AiLifecyclePhase
-        click AiLifecyclePhase href "../AiLifecyclePhase"
+        click AiLifecyclePhase href "../AiLifecyclePhase/"
       Entity <|-- Modality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
       Entity <|-- Input
-        click Input href "../Input"
+        click Input href "../Input/"
       Entity <|-- AiEval
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
       Entity <|-- AiEvalResult
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
       Entity <|-- BenchmarkMetadataCard
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
       Entity <|-- Adapter
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
       Entity <|-- LLMIntrinsic
-        click LLMIntrinsic href "../LLMIntrinsic"
+        click LLMIntrinsic href "../LLMIntrinsic/"
       Entity <|-- StakeholderGroup
-        click StakeholderGroup href "../StakeholderGroup"
+        click StakeholderGroup href "../StakeholderGroup/"
       Entity <|-- Stakeholder
-        click Stakeholder href "../Stakeholder"
+        click Stakeholder href "../Stakeholder/"
 
       Entity : dateCreated
 
@@ -165,8 +164,8 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -187,7 +186,6 @@ URI: [schema:Thing](http://schema.org/Thing)
 | ---  | ---  |
 | self | schema:Thing |
 | native | nexus:Entity |
-
 
 
 

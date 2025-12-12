@@ -29,7 +29,6 @@ Alias: hasInterpretation
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasInterpretation
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

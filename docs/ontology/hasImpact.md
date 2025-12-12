@@ -29,7 +29,6 @@ Alias: hasImpact
 
 
 
-
 ## Properties
 
 * Range: [Impact](Impact.md)
@@ -37,9 +36,7 @@ Alias: hasImpact
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

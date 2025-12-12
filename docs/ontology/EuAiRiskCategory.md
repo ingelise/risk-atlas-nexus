@@ -2,7 +2,7 @@
 
 
 
-URI: [EuAiRiskCategory](EuAiRiskCategory.md)
+URI: [nexus:EuAiRiskCategory](https://ibm.github.io/ai-atlas-nexus/ontology/EuAiRiskCategory)
 
 ## Permissible Values
 
@@ -27,9 +27,7 @@ URI: [EuAiRiskCategory](EuAiRiskCategory.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

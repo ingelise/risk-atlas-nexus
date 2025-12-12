@@ -15,19 +15,18 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
 
-
 ```mermaid
  classDiagram
     class RiskControl
-    click RiskControl href "../RiskControl"
+    click RiskControl href "../RiskControl/"
       RiskConcept <|-- RiskControl
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
       Entity <|-- RiskControl
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       RiskControl <|-- Action
-        click Action href "../Action"
+        click Action href "../Action/"
 
 
       RiskControl : dateCreated
@@ -43,7 +42,7 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
         RiskControl --> "*" RiskConcept : detectsRiskConcept
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
 
 
 
@@ -56,7 +55,7 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
         RiskControl --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -67,7 +66,7 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
         RiskControl --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -131,8 +130,8 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -153,7 +152,6 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 | ---  | ---  |
 | self | airo:RiskControl |
 | native | nexus:RiskControl |
-
 
 
 

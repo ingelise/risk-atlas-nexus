@@ -10,13 +10,12 @@ URI: [dpv:IncidentMitigatedclass](https://w3id.org/dpv#IncidentMitigatedclass)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentMitigatedclass
-    click IncidentMitigatedclass href "../IncidentMitigatedclass"
+    click IncidentMitigatedclass href "../IncidentMitigatedclass/"
       IncidentStatus <|-- IncidentMitigatedclass
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
       IncidentMitigatedclass : dateCreated
 
@@ -63,8 +62,8 @@ URI: [dpv:IncidentMitigatedclass](https://w3id.org/dpv#IncidentMitigatedclass)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [dpv:IncidentMitigatedclass](https://w3id.org/dpv#IncidentMitigatedclass)
 | ---  | ---  |
 | self | dpv:IncidentMitigatedclass |
 | native | nexus:IncidentMitigatedclass |
-
 
 
 

@@ -15,13 +15,12 @@ URI: [airo:License](https://w3id.org/airo#License)
 
 
 
-
 ```mermaid
  classDiagram
     class License
-    click License href "../License"
+    click License href "../License/"
       Entity <|-- License
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       License : dateCreated
 
@@ -94,8 +93,8 @@ URI: [airo:License](https://w3id.org/airo#License)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -116,7 +115,6 @@ URI: [airo:License](https://w3id.org/airo#License)
 | ---  | ---  |
 | self | airo:License |
 | native | nexus:License |
-
 
 
 

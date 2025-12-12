@@ -25,7 +25,6 @@ Alias: author
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -33,9 +32,7 @@ Alias: author
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

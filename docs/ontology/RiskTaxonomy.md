@@ -15,13 +15,12 @@ URI: [nexus:RiskTaxonomy](https://ibm.github.io/ai-atlas-nexus/ontology/RiskTaxo
 
 
 
-
 ```mermaid
  classDiagram
     class RiskTaxonomy
-    click RiskTaxonomy href "../RiskTaxonomy"
+    click RiskTaxonomy href "../RiskTaxonomy/"
       Entity <|-- RiskTaxonomy
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       RiskTaxonomy : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:RiskTaxonomy](https://ibm.github.io/ai-atlas-nexus/ontology/RiskTaxo
 
 
         RiskTaxonomy --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -47,7 +46,7 @@ URI: [nexus:RiskTaxonomy](https://ibm.github.io/ai-atlas-nexus/ontology/RiskTaxo
 
 
         RiskTaxonomy --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -110,8 +109,8 @@ URI: [nexus:RiskTaxonomy](https://ibm.github.io/ai-atlas-nexus/ontology/RiskTaxo
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -132,7 +131,6 @@ URI: [nexus:RiskTaxonomy](https://ibm.github.io/ai-atlas-nexus/ontology/RiskTaxo
 | ---  | ---  |
 | self | nexus:RiskTaxonomy |
 | native | nexus:RiskTaxonomy |
-
 
 
 

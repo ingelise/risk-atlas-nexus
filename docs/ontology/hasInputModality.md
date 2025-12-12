@@ -30,7 +30,6 @@ Alias: hasInputModality
 
 
 
-
 ## Properties
 
 * Range: [Modality](Modality.md)
@@ -40,9 +39,7 @@ Alias: hasInputModality
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -15,25 +15,24 @@ URI: [airo:RiskConcept](https://w3id.org/airo#RiskConcept)
 
 
 
-
 ```mermaid
  classDiagram
     class RiskConcept
-    click RiskConcept href "../RiskConcept"
+    click RiskConcept href "../RiskConcept/"
       Entity <|-- RiskConcept
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       RiskConcept <|-- RiskGroup
-        click RiskGroup href "../RiskGroup"
+        click RiskGroup href "../RiskGroup/"
       RiskConcept <|-- Risk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
       RiskConcept <|-- RiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
       RiskConcept <|-- RiskIncident
-        click RiskIncident href "../RiskIncident"
+        click RiskIncident href "../RiskIncident/"
       RiskConcept <|-- Impact
-        click Impact href "../Impact"
+        click Impact href "../Impact/"
 
 
       RiskConcept : dateCreated
@@ -51,7 +50,7 @@ URI: [airo:RiskConcept](https://w3id.org/airo#RiskConcept)
 
 
         RiskConcept --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -124,8 +123,8 @@ URI: [airo:RiskConcept](https://w3id.org/airo#RiskConcept)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -146,7 +145,6 @@ URI: [airo:RiskConcept](https://w3id.org/airo#RiskConcept)
 | ---  | ---  |
 | self | airo:RiskConcept |
 | native | nexus:RiskConcept |
-
 
 
 

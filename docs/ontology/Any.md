@@ -10,11 +10,10 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 
 
 
-
 ```mermaid
  classDiagram
     class Any
-    click Any href "../Any"
+    click Any href "../Any/"
 
 ```
 
@@ -63,8 +62,8 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | ---  | ---  |
 | self | linkml:Any |
 | native | nexus:Any |
-
 
 
 

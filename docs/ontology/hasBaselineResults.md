@@ -29,7 +29,6 @@ Alias: hasBaselineResults
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasBaselineResults
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

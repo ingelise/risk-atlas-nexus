@@ -29,7 +29,6 @@ Alias: evaluations
 
 
 
-
 ## Properties
 
 * Range: [AiEval](AiEval.md)
@@ -39,9 +38,7 @@ Alias: evaluations
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

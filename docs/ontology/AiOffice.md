@@ -15,13 +15,12 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
 
-
 ```mermaid
  classDiagram
     class AiOffice
-    click AiOffice href "../AiOffice"
+    click AiOffice href "../AiOffice/"
       Organization <|-- AiOffice
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
       AiOffice : dateCreated
 
@@ -36,7 +35,7 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
         AiOffice --> "0..1" License : grants_license
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -80,8 +79,8 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -102,7 +101,6 @@ URI: [schema:Organization](http://schema.org/Organization)
 | ---  | ---  |
 | self | schema:Organization |
 | native | nexus:AiOffice |
-
 
 
 

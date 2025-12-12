@@ -22,16 +22,15 @@ Alias: isDefinedByTaxonomy
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RiskIncident](RiskIncident.md) | An event occuring or occured which is a realised or materialised risk |  no  |
+| [RiskGroup](RiskGroup.md) | A group of AI system related risks that are part of a risk taxonomy |  no  |
+| [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping |  no  |
+| [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts) |  no  |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md) | The policy guides how the language model should answer a diverse set of sensi... |  no  |
 | [Policy](Policy.md) | A guidance document outlining any of: procedures, plans, principles, decision... |  no  |
+| [RiskIncident](RiskIncident.md) | An event occuring or occured which is a realised or materialised risk |  no  |
+| [Risk](Risk.md) | The state of uncertainty associated with an AI system, that has the potential... |  no  |
 | [Stakeholder](Stakeholder.md) | An AI system stakeholder for Responsible AI governance (e |  no  |
 | [Action](Action.md) | Action to remediate a risk |  no  |
-| [RiskGroup](RiskGroup.md) | A group of AI system related risks that are part of a risk taxonomy |  no  |
-| [Risk](Risk.md) | The state of uncertainty associated with an AI system, that has the potential... |  no  |
-| [LLMQuestionPolicy](LLMQuestionPolicy.md) | The policy guides how the language model should answer a diverse set of sensi... |  no  |
-| [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts) |  no  |
-| [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping |  no  |
-
 
 
 
@@ -45,9 +44,7 @@ Alias: isDefinedByTaxonomy
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

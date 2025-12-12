@@ -29,7 +29,6 @@ Alias: hasVariant
 
 
 
-
 ## Properties
 
 * Range: [RiskIncident](RiskIncident.md)
@@ -37,9 +36,7 @@ Alias: hasVariant
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -15,13 +15,12 @@ URI: [dpv:Obligation](https://w3id.org/dpv#Obligation)
 
 
 
-
 ```mermaid
  classDiagram
     class Obligation
-    click Obligation href "../Obligation"
+    click Obligation href "../Obligation/"
       Rule <|-- Obligation
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
       Obligation : dateCreated
 
@@ -75,8 +74,8 @@ URI: [dpv:Obligation](https://w3id.org/dpv#Obligation)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -97,7 +96,6 @@ URI: [dpv:Obligation](https://w3id.org/dpv#Obligation)
 | ---  | ---  |
 | self | dpv:Obligation |
 | native | nexus:Obligation |
-
 
 
 

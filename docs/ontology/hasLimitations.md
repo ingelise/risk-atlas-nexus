@@ -29,7 +29,6 @@ Alias: hasLimitations
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasLimitations
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

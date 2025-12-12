@@ -15,11 +15,10 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
 
-
 ```mermaid
  classDiagram
     class Container
-    click Container href "../Container"
+    click Container href "../Container/"
       Container : actions
 
 
@@ -27,7 +26,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Action : actions
-        click Action href "../Action"
+        click Action href "../Action/"
 
 
 
@@ -38,7 +37,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Adapter : adapters
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
 
 
 
@@ -49,7 +48,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiEvalResult : aievalresults
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -60,7 +59,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LargeLanguageModelFamily : aimodelfamilies
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
 
 
 
@@ -71,7 +70,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LargeLanguageModel : aimodels
-        click LargeLanguageModel href "../LargeLanguageModel"
+        click LargeLanguageModel href "../LargeLanguageModel/"
 
 
 
@@ -82,7 +81,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiTask : aitasks
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -93,7 +92,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" BenchmarkMetadataCard : benchmarkmetadatacards
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
 
 
 
@@ -104,7 +103,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Dataset : datasets
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -115,7 +114,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Documentation : documents
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -126,7 +125,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" AiEval : evaluations
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
 
 
 
@@ -137,7 +136,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" License : licenses
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -148,7 +147,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LLMIntrinsic : llmintrinsics
-        click LLMIntrinsic href "../LLMIntrinsic"
+        click LLMIntrinsic href "../LLMIntrinsic/"
 
 
 
@@ -159,7 +158,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" LLMQuestionPolicy : llmquestionpolicies
-        click LLMQuestionPolicy href "../LLMQuestionPolicy"
+        click LLMQuestionPolicy href "../LLMQuestionPolicy/"
 
 
 
@@ -170,7 +169,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Modality : modalities
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -181,7 +180,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Obligation : obligations
-        click Obligation href "../Obligation"
+        click Obligation href "../Obligation/"
 
 
 
@@ -192,7 +191,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Organization : organizations
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -203,7 +202,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Permission : permissions
-        click Permission href "../Permission"
+        click Permission href "../Permission/"
 
 
 
@@ -214,7 +213,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Policy : policies
-        click Policy href "../Policy"
+        click Policy href "../Policy/"
 
 
 
@@ -225,7 +224,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Principle : principles
-        click Principle href "../Principle"
+        click Principle href "../Principle/"
 
 
 
@@ -236,7 +235,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Prohibition : prohibitions
-        click Prohibition href "../Prohibition"
+        click Prohibition href "../Prohibition/"
 
 
 
@@ -247,7 +246,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" RiskControl : riskcontrols
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -258,7 +257,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" RiskGroup : riskgroups
-        click RiskGroup href "../RiskGroup"
+        click RiskGroup href "../RiskGroup/"
 
 
 
@@ -269,7 +268,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" RiskIncident : riskincidents
-        click RiskIncident href "../RiskIncident"
+        click RiskIncident href "../RiskIncident/"
 
 
 
@@ -280,7 +279,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Risk : risks
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -291,7 +290,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Rule : rules
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
 
 
@@ -302,7 +301,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" StakeholderGroup : stakeholdergroups
-        click StakeholderGroup href "../StakeholderGroup"
+        click StakeholderGroup href "../StakeholderGroup/"
 
 
 
@@ -313,7 +312,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Stakeholder : stakeholders
-        click Stakeholder href "../Stakeholder"
+        click Stakeholder href "../Stakeholder/"
 
 
 
@@ -324,7 +323,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" RiskTaxonomy : taxonomies
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -335,7 +334,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Term : terms
-        click Term href "../Term"
+        click Term href "../Term/"
 
 
 
@@ -346,7 +345,7 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
         Container --> "*" Vocabulary : vocabularies
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
 
 
 
@@ -402,8 +401,8 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -424,7 +423,6 @@ URI: [nexus:Container](https://ibm.github.io/ai-atlas-nexus/ontology/Container)
 | ---  | ---  |
 | self | nexus:Container |
 | native | nexus:Container |
-
 
 
 

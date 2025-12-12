@@ -15,13 +15,12 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
 
-
 ```mermaid
  classDiagram
     class Action
-    click Action href "../Action"
+    click Action href "../Action/"
       RiskControl <|-- Action
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
       Action : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
         Action --> "*" RiskConcept : detectsRiskConcept
-        click RiskConcept href "../RiskConcept"
+        click RiskConcept href "../RiskConcept/"
 
 
 
@@ -49,7 +48,7 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
         Action --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -60,7 +59,7 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
         Action --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -73,7 +72,7 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
         Action --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
         Action --> "*" RiskControl : isDetectedBy
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -139,8 +138,8 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -161,7 +160,6 @@ URI: [nexus:Action](https://ibm.github.io/ai-atlas-nexus/ontology/Action)
 | ---  | ---  |
 | self | nexus:Action |
 | native | nexus:Action |
-
 
 
 

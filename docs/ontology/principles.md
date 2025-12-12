@@ -29,7 +29,6 @@ Alias: principles
 
 
 
-
 ## Properties
 
 * Range: [Principle](Principle.md)
@@ -39,9 +38,7 @@ Alias: principles
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

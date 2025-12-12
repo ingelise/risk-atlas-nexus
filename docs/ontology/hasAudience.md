@@ -29,7 +29,6 @@ Alias: hasAudience
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasAudience
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

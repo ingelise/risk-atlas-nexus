@@ -30,7 +30,6 @@ Alias: contextWindowSize
 
 
 
-
 ## Properties
 
 * Range: [Integer](Integer.md)
@@ -40,9 +39,7 @@ Alias: contextWindowSize
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

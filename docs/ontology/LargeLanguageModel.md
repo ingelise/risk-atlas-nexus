@@ -15,17 +15,16 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
 
-
 ```mermaid
  classDiagram
     class LargeLanguageModel
-    click LargeLanguageModel href "../LargeLanguageModel"
+    click LargeLanguageModel href "../LargeLanguageModel/"
       AiModel <|-- LargeLanguageModel
-        click AiModel href "../AiModel"
+        click AiModel href "../AiModel/"
 
 
       LargeLanguageModel <|-- Adapter
-        click Adapter href "../Adapter"
+        click Adapter href "../Adapter/"
 
 
       LargeLanguageModel : architecture
@@ -51,7 +50,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -62,7 +61,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" AiEvalResult : hasEvaluation
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -73,7 +72,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Modality : hasInputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -97,7 +96,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Modality : hasOutputModality
-        click Modality href "../Modality"
+        click Modality href "../Modality/"
 
 
 
@@ -108,7 +107,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" RiskControl : hasRiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -119,7 +118,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" Dataset : hasTrainingData
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -132,7 +131,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" LargeLanguageModelFamily : isPartOf
-        click LargeLanguageModelFamily href "../LargeLanguageModelFamily"
+        click LargeLanguageModelFamily href "../LargeLanguageModelFamily/"
 
 
 
@@ -143,7 +142,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -160,7 +159,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -173,7 +172,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
         LargeLanguageModel --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -242,15 +241,15 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
 
+
+
 ## Aliases
 
 
 * LLM
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
@@ -271,7 +270,6 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 | ---  | ---  |
 | self | nexus:LargeLanguageModel |
 | native | nexus:LargeLanguageModel |
-
 
 
 

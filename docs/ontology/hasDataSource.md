@@ -29,7 +29,6 @@ Alias: hasDataSource
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasDataSource
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

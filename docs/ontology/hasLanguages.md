@@ -29,7 +29,6 @@ Alias: hasLanguages
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasLanguages
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

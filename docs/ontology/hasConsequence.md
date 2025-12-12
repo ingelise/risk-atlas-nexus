@@ -29,7 +29,6 @@ Alias: hasConsequence
 
 
 
-
 ## Properties
 
 * Range: [Consequence](Consequence.md)
@@ -37,9 +36,7 @@ Alias: hasConsequence
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

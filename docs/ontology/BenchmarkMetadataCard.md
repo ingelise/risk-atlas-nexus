@@ -15,13 +15,12 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
 
-
 ```mermaid
  classDiagram
     class BenchmarkMetadataCard
-    click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+    click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
       Entity <|-- BenchmarkMetadataCard
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       BenchmarkMetadataCard : dateCreated
 
@@ -34,7 +33,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
         BenchmarkMetadataCard --> "*" AiEval : describesAiEval
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
 
 
 
@@ -71,7 +70,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
         BenchmarkMetadataCard --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -90,7 +89,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
         BenchmarkMetadataCard --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -109,7 +108,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
         BenchmarkMetadataCard --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -201,8 +200,8 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -223,7 +222,6 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 | ---  | ---  |
 | self | nexus:benchmarkmetadatacard |
 | native | nexus:BenchmarkMetadataCard |
-
 
 
 

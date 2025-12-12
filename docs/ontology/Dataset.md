@@ -15,13 +15,12 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
 
-
 ```mermaid
  classDiagram
     class Dataset
-    click Dataset href "../Dataset"
+    click Dataset href "../Dataset/"
       Entity <|-- Dataset
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Dataset : dateCreated
 
@@ -36,7 +35,7 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
         Dataset --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -47,7 +46,7 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
         Dataset --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -62,7 +61,7 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
         Dataset --> "0..1" Organization : provider
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -115,8 +114,8 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -137,7 +136,6 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 | ---  | ---  |
 | self | schema:Dataset |
 | native | nexus:Dataset |
-
 
 
 

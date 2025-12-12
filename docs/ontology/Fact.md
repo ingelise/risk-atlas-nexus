@@ -17,13 +17,12 @@ URI: [schema:Statement](http://schema.org/Statement)
 
 
 
-
 ```mermaid
  classDiagram
     class Fact
-    click Fact href "../Fact"
+    click Fact href "../Fact/"
       Fact <|-- AiEvalResult
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
       Fact : evidence
 
@@ -53,8 +52,8 @@ URI: [schema:Statement](http://schema.org/Statement)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -75,7 +74,6 @@ URI: [schema:Statement](http://schema.org/Statement)
 | ---  | ---  |
 | self | schema:Statement |
 | native | nexus:Fact |
-
 
 
 

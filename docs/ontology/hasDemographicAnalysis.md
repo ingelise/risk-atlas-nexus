@@ -29,7 +29,6 @@ Alias: hasDemographicAnalysis
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasDemographicAnalysis
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

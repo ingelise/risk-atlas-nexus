@@ -29,7 +29,6 @@ Alias: hasStatus
 
 
 
-
 ## Properties
 
 * Range: [IncidentStatus](IncidentStatus.md)
@@ -37,9 +36,7 @@ Alias: hasStatus
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

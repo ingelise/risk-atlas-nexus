@@ -29,7 +29,6 @@ Alias: tag
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: tag
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

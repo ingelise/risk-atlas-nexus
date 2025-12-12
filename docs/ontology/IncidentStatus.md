@@ -10,25 +10,24 @@ URI: [dpv:IncidentStatus](https://w3id.org/dpv#IncidentStatus)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentStatus
-    click IncidentStatus href "../IncidentStatus"
+    click IncidentStatus href "../IncidentStatus/"
       Entity <|-- IncidentStatus
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       IncidentStatus <|-- IncidentConcludedclass
-        click IncidentConcludedclass href "../IncidentConcludedclass"
+        click IncidentConcludedclass href "../IncidentConcludedclass/"
       IncidentStatus <|-- IncidentHaltedclass
-        click IncidentHaltedclass href "../IncidentHaltedclass"
+        click IncidentHaltedclass href "../IncidentHaltedclass/"
       IncidentStatus <|-- IncidentMitigatedclass
-        click IncidentMitigatedclass href "../IncidentMitigatedclass"
+        click IncidentMitigatedclass href "../IncidentMitigatedclass/"
       IncidentStatus <|-- IncidentNearMissclass
-        click IncidentNearMissclass href "../IncidentNearMissclass"
+        click IncidentNearMissclass href "../IncidentNearMissclass/"
       IncidentStatus <|-- IncidentOngoingclass
-        click IncidentOngoingclass href "../IncidentOngoingclass"
+        click IncidentOngoingclass href "../IncidentOngoingclass/"
 
 
       IncidentStatus : dateCreated
@@ -87,8 +86,8 @@ URI: [dpv:IncidentStatus](https://w3id.org/dpv#IncidentStatus)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -109,7 +108,6 @@ URI: [dpv:IncidentStatus](https://w3id.org/dpv#IncidentStatus)
 | ---  | ---  |
 | self | dpv:IncidentStatus |
 | native | nexus:IncidentStatus |
-
 
 
 
