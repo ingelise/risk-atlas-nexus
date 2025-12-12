@@ -102,7 +102,7 @@ class AIAtlasNexus:
 
         ontology = load_yamls_to_container(base_dir)
         self._ontology = ontology
-        self._atlas_explorer = AtlasExplorer(ontology)
+        self._atlas_explorer = AtlasExplorer(ontology, self.schema_view)
         logger.info(
             f"Created AIAtlasNexus instance. Base_dir: %s",
             base_dir,
@@ -1521,7 +1521,7 @@ class AIAtlasNexus:
         )
 
         llm_question_policy: LLMQuestionPolicy | None = (
-            cls._atlas_explorer.get_by_id("llmquestionPolicies", identifier=id)
+            cls._atlas_explorer.get_by_id("llmquestionpolicies", identifier=id)
         )
         return llm_question_policy
 

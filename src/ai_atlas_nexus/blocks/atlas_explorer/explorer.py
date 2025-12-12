@@ -1,15 +1,20 @@
 from typing import Any, Dict, List
 
+import inflect
+
 from ai_atlas_nexus.blocks.risk_explorer.base import ExplorerBase
 from ai_atlas_nexus.data.knowledge_graph import *
 
 
+ie = inflect.engine()
+
 class AtlasExplorer(ExplorerBase):
 
-    def __init__(self, data):
+    def __init__(self, data, schema_view):
 
         # load the data into the graph
         self._data = data
+        self._schema_view = schema_view
 
     def get_all_classes(self):
         """
@@ -40,14 +45,28 @@ class AtlasExplorer(ExplorerBase):
         """
 
         key = class_name
+        result = []
+
         if key not in self._data:
             for k in self._data.model_fields_set:
-                # handle both the snake_case and the actual class name
+                # snake_case and the actual class name
                 if k.lower().replace('_', '') == class_name.lower().replace('_', ''):
                     key = k
                     break
 
-        result = getattr(self._data, key) if hasattr(self._data, key) else []
+        if hasattr(self._data, key):
+            result = getattr(self._data, key)
+        else:
+            # look for subclasses within container collections
+            for collection_key, collection_data in self._data:
+                instances = collection_data if isinstance(collection_data, list) else []
+
+                for instance in instances:
+                    instance_type_name = type(instance).__name__
+                    possible_singular = ie.singular_noun(class_name)
+                    if instance_type_name.lower() == class_name or (possible_singular and instance_type_name.lower() == possible_singular.lower()):
+                        result.append(instance)
+
         if taxonomy is not None:
             result = list(
                 filter(
