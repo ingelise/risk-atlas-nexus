@@ -54,7 +54,7 @@ def load_yamls_to_container(base_dir):
             combine_risks[risk_id] = {"id": risk_id}
 
         for key, value in risk.items():
-            if key != "id":
+            if key != "id" and key != "type":
                 if key not in combine_risks[risk_id]:
                     combine_risks[risk_id][key] = value
                 else:

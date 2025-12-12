@@ -15,6 +15,7 @@ from sssom_schema import Mapping
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 os.environ["OMP_NUM_THREADS"] = "1"
 
+from ai_atlas_nexus import Taxonomy
 from ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Action,
     Adapter,
@@ -597,10 +598,10 @@ class AIAtlasNexus:
         """Get all taxonomy definitions from the LinkML
 
         Returns:
-            List[RiskTaxonomy]
-                Result containing a list of AI Risk taxonomies
+            List[Taxonomy]
+                Result containing a list of taxonomies
         """
-        taxonomy_instances: list[RiskTaxonomy] = cls._risk_explorer.get_all_taxonomies()
+        taxonomy_instances: list[Taxonomy] = cls._risk_explorer.get_all_taxonomies()
         return taxonomy_instances
 
     def get_taxonomy_by_id(cls, id):
@@ -611,8 +612,8 @@ class AIAtlasNexus:
                 The string id for a taxonomy
 
         Returns:
-            RiskTaxonomy
-                An AI Risk taxonomy
+            Taxonomy
+                An AI taxonomy
         """
         type_check(
             "<RANBFB574E3E>",
@@ -621,7 +622,7 @@ class AIAtlasNexus:
             id=id,
         )
 
-        taxonomy: RiskTaxonomy | None = cls._risk_explorer.get_taxonomy_by_id(id)
+        taxonomy: Taxonomy | None = cls._risk_explorer.get_taxonomy_by_id(id)
         return taxonomy
 
     def generate_zero_shot_risk_questionnaire_output(

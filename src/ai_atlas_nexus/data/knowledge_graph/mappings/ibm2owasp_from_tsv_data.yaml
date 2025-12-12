@@ -1,193 +1,257 @@
 risks:
 - id: atlas-attribute-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-confidential-data-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-data-acquisition
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-acquisition
 - id: atlas-data-contamination
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-contamination
 - id: atlas-data-curation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-curation
 - id: atlas-data-poisoning
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm042025-data-and-model-poisoning
 - id: llm042025-data-and-model-poisoning
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-poisoning
 - id: atlas-data-provenance
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-provenance
 - id: atlas-data-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-usage-rights
 - id: atlas-data-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-usage-rights
 - id: atlas-exposing-personal-information
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-exposing-personal-information
 - id: atlas-hallucination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm092025-misinformation
 - id: llm092025-misinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-hallucination
 - id: atlas-harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm092025-misinformation
 - id: llm092025-misinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-code-generation
 - id: atlas-improper-retraining
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-retraining
 - id: atlas-inaccessible-training-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-incomplete-advice
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm092025-misinformation
 - id: llm092025-misinformation
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-incomplete-advice
 - id: atlas-ip-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-jailbreaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm01-prompt-injection
 - id: llm01-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-jailbreaking
 - id: atlas-lack-of-data-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-membership-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-membership-inference-attack
 - id: atlas-model-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-model-usage-rights
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm052025-improper-output-handling
 - id: llm052025-improper-output-handling
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm062025-excessive-agency
 - id: llm062025-excessive-agency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-personal-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-prompt-injection
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - llm01-prompt-injection
 - id: llm01-prompt-injection
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-leaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-priming
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm01-prompt-injection
 - id: llm01-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-priming
 - id: atlas-reidentification
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-reidentification
 - id: atlas-revealing-confidential-information
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm022025-sensitive-information-disclosure
 - id: llm022025-sensitive-information-disclosure
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-spreading-disinformation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm092025-misinformation
 - id: llm092025-misinformation
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-spreading-disinformation
 - id: atlas-untraceable-attribution
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - llm032025-supply-chain
 - id: llm032025-supply-chain
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-untraceable-attribution

@@ -31,6 +31,11 @@ classes:
       - url
       - dateCreated
       - dateModified
+      - exact_mappings
+      - close_mappings
+      - related_mappings
+      - narrow_mappings
+      - broad_mappings
 
   Organization:
     is_a: Entity
@@ -97,8 +102,48 @@ classes:
       - hasDocumentation
       - hasLicense
 
-  Term:
+  Concept:
     is_a: Entity
+    abstract: true
+    class_uri: skos:Concept
+    description: A concept
+    attributes:
+      type:
+        range: string
+        designates_type: true
+    slots:
+      - isDefinedByTaxonomy
+      - hasDocumentation
+
+  Group:
+    is_a: Entity
+    abstract: true
+    class_uri: skos:Collection
+    description: Labelled groups of concepts.
+    attributes:
+      type:
+        range: string
+        designates_type: true
+    slots:
+      - isDefinedByTaxonomy
+      - hasPart
+
+  Entry:
+    is_a: Entity
+    abstract: true
+    class_uri: nexus:Entry
+    description: An entry and its definitions.
+    attributes:
+      type:
+        range: string
+        designates_type: true
+    slots:
+      - isDefinedByVocabulary
+      - hasDocumentation
+      - isPartOf
+
+  Term:
+    is_a: Entry
     description: A term and its definitions
     slots:
       - isDefinedByVocabulary
@@ -224,7 +269,7 @@ slots:
     slot_uri: schema:isPartOf
     description: A relationship where an entity is part of another entity
   hasPart:
-    slot_uri: schema:hasPart
+    slot_uri: skos:member
     description: A relationship where an entity has another entity
     multivalued: true
   hasTerm:
@@ -282,3 +327,33 @@ slots:
     slot_uri: schema:isPartOf
     description: A relationship where a concept or a concept group is defined by a taxonomy
     range: Taxonomy
+  close_mappings:
+    slot_uri: skos:closeMatch
+    description: The property is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications.
+    range: Any
+    multivalued: true
+    inlined: false
+  exact_mappings:
+    slot_uri: skos:exactMatch
+    description: The property is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications
+    range: Any
+    multivalued: true
+    inlined: false
+  broad_mappings:
+    slot_uri: skos:broadMatch
+    description: The property is used to state a hierarchical mapping link between two concepts, indicating that the concept linked to, is a broader concept than the originating concept.
+    range: Any
+    multivalued: true
+    inlined: false
+  narrow_mappings:
+    slot_uri: skos:narrowMatch
+    description: The property is used to state a hierarchical mapping link between two concepts, indicating that the concept linked to, is a narrower concept than the originating concept.
+    range: Any
+    multivalued: true
+    inlined: false
+  related_mappings:
+    slot_uri: skos:relatedMatch
+    description: The property skos:relatedMatch is used to state an associative mapping link between two concepts.
+    range: Any
+    multivalued: true
+    inlined: false

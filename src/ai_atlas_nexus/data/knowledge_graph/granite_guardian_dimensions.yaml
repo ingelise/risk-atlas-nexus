@@ -35,9 +35,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: harm
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  narrowMatch:
+  narrow_mappings:
   - granite-social-bias
   - granite-profanity
   - granite-sexual-content
@@ -55,9 +55,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: social_bias
-  relatedMatch:
+  related_mappings:
   - atlas-output-bias
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-profanity
   name: Profanity
@@ -68,9 +68,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: profanity
-  relatedMatch:
+  related_mappings:
   - atlas-toxic-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-sexual-content
   name: Sexual Content
@@ -81,9 +81,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: sexual-content
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-unethical-behavior
   name: Unethical Behavior
@@ -94,9 +94,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: unethical-behavior
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-violence
   name: Violence
@@ -107,9 +107,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: violence
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-jailbreak
   name: Jailbreaking
@@ -120,9 +120,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: jailbreak
-  relatedMatch:
+  related_mappings:
   - atlas-jailbreaking
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-harm-engagement
   name: Harm Engagement
@@ -133,9 +133,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-conversational-egregiousness
   tag: harm-engagement
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-evasiveness
   name: Evasiveness
@@ -146,9 +146,9 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-conversational-egregiousness
   tag: evasiveness
-  relatedMatch:
+  related_mappings:
   - atlas-harmful-output
-  broadMatch:
+  broad_mappings:
   - granite-guardian-harm
 - id: granite-groundedness
   name: Groundedness
@@ -159,7 +159,7 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: groundedness
-  relatedMatch:
+  related_mappings:
   - atlas-hallucination
 - id: granite-relevance
   name: Context Relevance
@@ -170,7 +170,7 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: relevance
-  relatedMatch:
+  related_mappings:
   - atlas-hallucination
 - id: granite-answer-relevance
   name: Answer Relevance
@@ -181,7 +181,7 @@ risks:
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: answer-relevance
-  relatedMatch:
+  related_mappings:
   - atlas-hallucination
 - id: granite-function-call
   name: Function Calling Hallucination
@@ -194,10 +194,10 @@ risks:
   - gg-function-call-detection
   isPartOf: granite-guardian-agentic-safety-group
   tag: function-call
-  relatedMatch:
+  related_mappings:
   - atlas-hallucination
 - id: atlas-harmful-output
-  relatedMatch:
+  related_mappings:
   - granite-guardian-harm
   - granite-sexual-content
   - granite-unethical-behavior
@@ -205,16 +205,16 @@ risks:
   - granite-evasiveness
   - granite-violence
 - id: atlas-output-bias
-  relatedMatch:
+  related_mappings:
   - granite-social-bias
 - id: atlas-toxic-output
-  relatedMatch:
+  related_mappings:
   - granite-profanity
 - id: atlas-jailbreaking
-  relatedMatch:
+  related_mappings:
   - granite-jailbreak
 - id: atlas-hallucination
-  relatedMatch:
+  related_mappings:
   - granite-function-call
   - granite-answer-relevance
   - granite-relevance

@@ -64,20 +64,20 @@ def process_mappings_to_risks(risk_maps):
 
         relationship = rm.relationship
         if relationship == "skos:closeMatch":
-            risk.closeMatch = [o_id]
-            risk_for_inverse.closeMatch = [s_id]
+            risk.close_mappings = [o_id]
+            risk_for_inverse.close_mappings = [s_id]
         elif relationship == "skos:exactMatch":
-            risk.exactMatch = [o_id]
-            risk_for_inverse.exactMatch = [s_id]
+            risk.exact_mappings = [o_id]
+            risk_for_inverse.exact_mappings = [s_id]
         elif relationship == "skos:broadMatch":
-            risk.broadMatch = [o_id]
-            risk_for_inverse.narrowMatch = [s_id]
+            risk.broad_mappings = [o_id]
+            risk_for_inverse.narrow_mappings = [s_id]
         elif relationship == "skos:narrowMatch":
-            risk.narrowMatch = [o_id]
-            risk_for_inverse.broadMatch = [s_id]
+            risk.narrow_mappings = [o_id]
+            risk_for_inverse.broad_mappings = [s_id]
         elif relationship == "skos:relatedMatch":
-            risk.relatedMatch = [o_id]
-            risk_for_inverse.relatedMatch = [s_id]
+            risk.related_mappings = [o_id]
+            risk_for_inverse.related_mappings = [s_id]
         else:
             logger.info("Unparseable predicate_id: %s", relationship)
 

@@ -1,1513 +1,2017 @@
 risks:
 - id: atlas-attribute-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-attribute-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-attribute-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-attribute-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-bypassing-learning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-bypassing-learning
 - id: atlas-bypassing-learning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-bypassing-learning
 - id: atlas-bypassing-learning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-bypassing-learning
 - id: atlas-bypassing-learning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-4.3
 - id: mit-ai-risk-subdomain-4.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-bypassing-learning
 - id: atlas-confidential-data-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-data-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-data-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-data-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-confidential-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-confidential-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-confidential-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-copyright-infringement
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-copyright-infringement
 - id: atlas-copyright-infringement
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-copyright-infringement
 - id: atlas-copyright-infringement
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-copyright-infringement
 - id: atlas-copyright-infringement
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.3
 - id: mit-ai-risk-subdomain-6.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-copyright-infringement
 - id: atlas-dangerous-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-dangerous-use
 - id: atlas-dangerous-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-dangerous-use
 - id: atlas-dangerous-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-dangerous-use
 - id: atlas-data-acquisition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-acquisition
 - id: atlas-data-acquisition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-acquisition
 - id: atlas-data-acquisition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-acquisition
 - id: atlas-data-acquisition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-acquisition
 - id: atlas-data-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-bias
 - id: atlas-data-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-bias
 - id: atlas-data-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-bias
 - id: atlas-data-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.1
 - id: mit-ai-risk-subdomain-1.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-bias
 - id: atlas-data-contamination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-contamination
 - id: atlas-data-contamination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-contamination
 - id: atlas-data-contamination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-contamination
 - id: atlas-data-contamination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-contamination
 - id: atlas-data-curation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-curation
 - id: atlas-data-curation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-curation
 - id: atlas-data-curation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-curation
 - id: atlas-data-curation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-curation
 - id: atlas-data-poisoning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-poisoning
 - id: atlas-data-poisoning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-poisoning
 - id: atlas-data-poisoning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-poisoning
 - id: atlas-data-poisoning
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-poisoning
 - id: atlas-data-provenance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-provenance
 - id: atlas-data-provenance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-provenance
 - id: atlas-data-provenance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-provenance
 - id: atlas-data-provenance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-provenance
 - id: atlas-data-transfer
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transfer
 - id: atlas-data-transfer
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transfer
 - id: atlas-data-transfer
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transfer
 - id: atlas-data-transfer
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transfer
 - id: atlas-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transparency
 - id: atlas-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transparency
 - id: atlas-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transparency
 - id: atlas-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-transparency
 - id: atlas-data-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-usage
 - id: atlas-data-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-usage
 - id: atlas-data-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-usage
 - id: atlas-data-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-data-usage
 - id: atlas-decision-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-decision-bias
 - id: atlas-decision-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-decision-bias
 - id: atlas-decision-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-decision-bias
 - id: atlas-decision-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.1
 - id: mit-ai-risk-subdomain-1.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-decision-bias
 - id: atlas-evasion-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-evasion-attack
 - id: atlas-evasion-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-evasion-attack
 - id: atlas-evasion-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-evasion-attack
 - id: atlas-evasion-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-evasion-attack
 - id: atlas-exposing-personal-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-exposing-personal-information
 - id: atlas-exposing-personal-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-exposing-personal-information
 - id: atlas-exposing-personal-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-exposing-personal-information
 - id: atlas-exposing-personal-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-exposing-personal-information
 - id: atlas-extraction-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-extraction-attack
 - id: atlas-extraction-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-extraction-attack
 - id: atlas-extraction-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-extraction-attack
 - id: atlas-extraction-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-extraction-attack
 - id: atlas-generated-content-ownership
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-generated-content-ownership
 - id: atlas-generated-content-ownership
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-generated-content-ownership
 - id: atlas-generated-content-ownership
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-other
 - id: mit-ai-causal-risk-timing-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-generated-content-ownership
 - id: atlas-generated-content-ownership
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.3
 - id: mit-ai-risk-subdomain-6.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-generated-content-ownership
 - id: atlas-hallucination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-hallucination
 - id: atlas-hallucination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-hallucination
 - id: atlas-hallucination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-hallucination
 - id: atlas-hallucination
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-3.1
 - id: mit-ai-risk-subdomain-3.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-hallucination
 - id: atlas-harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.2
 - id: mit-ai-risk-subdomain-1.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-human-exploitation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-human-exploitation
 - id: atlas-human-exploitation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-human-exploitation
 - id: atlas-human-exploitation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-human-exploitation
 - id: atlas-human-exploitation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.2
 - id: mit-ai-risk-subdomain-6.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-human-exploitation
 - id: atlas-impact-on-affected-communities
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-affected-communities
 - id: atlas-impact-on-affected-communities
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-affected-communities
 - id: atlas-impact-on-affected-communities
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-affected-communities
 - id: atlas-impact-on-affected-communities
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.3
 - id: mit-ai-risk-subdomain-1.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-affected-communities
 - id: atlas-impact-on-cultural-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-cultural-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-cultural-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-cultural-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.3
 - id: mit-ai-risk-subdomain-6.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-jobs
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-jobs
 - id: atlas-impact-on-jobs
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-jobs
 - id: atlas-impact-on-jobs
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-jobs
 - id: atlas-impact-on-jobs
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.2
 - id: mit-ai-risk-subdomain-6.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-jobs
 - id: atlas-impact-on-the-environment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-the-environment
 - id: atlas-impact-on-the-environment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-the-environment
 - id: atlas-impact-on-the-environment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-the-environment
 - id: atlas-impact-on-the-environment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.6
 - id: mit-ai-risk-subdomain-6.6
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-impact-on-the-environment
 - id: atlas-improper-retraining
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-retraining
 - id: atlas-improper-retraining
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-retraining
 - id: atlas-improper-retraining
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-retraining
 - id: atlas-improper-retraining
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-retraining
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-5.1
 - id: mit-ai-risk-subdomain-5.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-5.1
 - id: mit-ai-risk-subdomain-5.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-improper-usage
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-5.1
 - id: mit-ai-risk-subdomain-5.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-improper-usage
 - id: atlas-inaccessible-training-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-inaccessible-training-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-inaccessible-training-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-inaccessible-training-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-incomplete-advice
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-advice
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-advice
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-advice
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-usage-definition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-usage-definition
 - id: atlas-incomplete-usage-definition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-usage-definition
 - id: atlas-incomplete-usage-definition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-usage-definition
 - id: atlas-incomplete-usage-definition
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incomplete-usage-definition
 - id: atlas-incorrect-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incorrect-risk-testing
 - id: atlas-incorrect-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incorrect-risk-testing
 - id: atlas-incorrect-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incorrect-risk-testing
 - id: atlas-incorrect-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-incorrect-risk-testing
 - id: atlas-ip-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-ip-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-ip-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-ip-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-lack-of-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-lack-of-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-lack-of-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-lack-of-data-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-lack-of-model-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-model-transparency
 - id: atlas-lack-of-model-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-model-transparency
 - id: atlas-lack-of-model-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-other
 - id: mit-ai-causal-risk-timing-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-model-transparency
 - id: atlas-lack-of-model-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-model-transparency
 - id: atlas-lack-of-system-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-system-transparency
 - id: atlas-lack-of-system-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-system-transparency
 - id: atlas-lack-of-system-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-other
 - id: mit-ai-causal-risk-timing-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-system-transparency
 - id: atlas-lack-of-system-transparency
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-system-transparency
 - id: atlas-lack-of-testing-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-testing-diversity
 - id: atlas-lack-of-testing-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-testing-diversity
 - id: atlas-lack-of-testing-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-testing-diversity
 - id: atlas-lack-of-testing-diversity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-lack-of-testing-diversity
 - id: atlas-legal-accountability
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-legal-accountability
 - id: atlas-legal-accountability
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-legal-accountability
 - id: atlas-legal-accountability
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-other
 - id: mit-ai-causal-risk-timing-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-legal-accountability
 - id: atlas-legal-accountability
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-legal-accountability
 - id: atlas-membership-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-membership-inference-attack
 - id: atlas-membership-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-membership-inference-attack
 - id: atlas-membership-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-membership-inference-attack
 - id: atlas-membership-inference-attack
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-membership-inference-attack
 - id: atlas-non-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-non-disclosure
 - id: atlas-non-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-non-disclosure
 - id: atlas-non-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-non-disclosure
 - id: atlas-non-disclosure
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-non-disclosure
 - id: atlas-nonconsensual-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-nonconsensual-use
 - id: atlas-nonconsensual-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-nonconsensual-use
 - id: atlas-nonconsensual-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-nonconsensual-use
 - id: atlas-nonconsensual-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-4.3
 - id: mit-ai-risk-subdomain-4.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-nonconsensual-use
 - id: atlas-output-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-output-bias
 - id: atlas-output-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-output-bias
 - id: atlas-output-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-output-bias
 - id: atlas-output-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.1
 - id: mit-ai-risk-subdomain-1.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-output-bias
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-5.1
 - id: mit-ai-risk-subdomain-5.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-personal-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-personal-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-personal-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-personal-information-in-prompt
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-plagiarism
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-plagiarism
 - id: atlas-plagiarism
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-plagiarism
 - id: atlas-plagiarism
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-plagiarism
 - id: atlas-plagiarism
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-4.3
 - id: mit-ai-risk-subdomain-4.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-plagiarism
 - id: atlas-poor-model-accuracy
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-poor-model-accuracy
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-poor-model-accuracy
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-poor-model-accuracy
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-leaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-leaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-leaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-other
 - id: mit-ai-causal-risk-timing-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-leaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-priming
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-priming
 - id: atlas-prompt-priming
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-priming
 - id: atlas-prompt-priming
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-priming
 - id: atlas-prompt-priming
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.2
 - id: mit-ai-risk-subdomain-2.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-priming
 - id: atlas-reidentification
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-reidentification
 - id: atlas-reidentification
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-reidentification
 - id: atlas-reidentification
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-reidentification
 - id: atlas-reidentification
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-reidentification
 - id: atlas-revealing-confidential-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-revealing-confidential-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-revealing-confidential-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-revealing-confidential-information
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-2.1
 - id: mit-ai-risk-subdomain-2.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-spreading-disinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-disinformation
 - id: atlas-spreading-disinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-disinformation
 - id: atlas-spreading-disinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-disinformation
 - id: atlas-spreading-disinformation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-4.1
 - id: mit-ai-risk-subdomain-4.1
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-disinformation
 - id: atlas-spreading-toxicity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-toxicity
 - id: atlas-spreading-toxicity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-intentional
 - id: mit-ai-causal-risk-intent-intentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-toxicity
 - id: atlas-spreading-toxicity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-spreading-toxicity
 - id: atlas-toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-toxic-output
 - id: atlas-toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-toxic-output
 - id: atlas-toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-toxic-output
 - id: atlas-toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-1.2
 - id: mit-ai-risk-subdomain-1.2
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-toxic-output
 - id: atlas-unexplainable-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unexplainable-output
 - id: atlas-unexplainable-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unexplainable-output
 - id: atlas-unexplainable-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unexplainable-output
 - id: atlas-unexplainable-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unexplainable-output
 - id: atlas-unreliable-source-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-ai
 - id: mit-ai-causal-risk-entity-ai
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unreliable-source-attribution
 - id: atlas-unreliable-source-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unreliable-source-attribution
 - id: atlas-unreliable-source-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unreliable-source-attribution
 - id: atlas-unreliable-source-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unreliable-source-attribution
 - id: atlas-unrepresentative-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.3
 - id: mit-ai-risk-subdomain-7.3
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-human
 - id: mit-ai-causal-risk-entity-human
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-risk-testing
 - id: atlas-unrepresentative-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-unintentional
 - id: mit-ai-causal-risk-intent-unintentional
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-risk-testing
 - id: atlas-unrepresentative-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-pre-deployment
 - id: mit-ai-causal-risk-timing-pre-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-risk-testing
 - id: atlas-unrepresentative-risk-testing
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-6.5
 - id: mit-ai-risk-subdomain-6.5
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-risk-testing
 - id: atlas-untraceable-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-entity-other
 - id: mit-ai-causal-risk-entity-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-untraceable-attribution
 - id: atlas-untraceable-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-intent-other
 - id: mit-ai-causal-risk-intent-other
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-untraceable-attribution
 - id: atlas-untraceable-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
 - id: mit-ai-causal-risk-timing-post-deployment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-untraceable-attribution
 - id: atlas-untraceable-attribution
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - mit-ai-risk-subdomain-7.4
 - id: mit-ai-risk-subdomain-7.4
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-untraceable-attribution

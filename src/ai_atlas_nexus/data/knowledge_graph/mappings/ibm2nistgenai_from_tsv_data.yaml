@@ -1,487 +1,649 @@
 risks:
 - id: atlas-attribute-inference-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-attribute-inference-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-attribute-inference-attack
 - id: atlas-confidential-data-in-prompt
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-confidential-data-in-prompt
 - id: atlas-confidential-information-in-data
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-confidential-information-in-data
 - id: atlas-copyright-infringement
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-copyright-infringement
 - id: atlas-dangerous-use
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-cbrn-information-or-capabilities
 - id: nist-cbrn-information-or-capabilities
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-dangerous-use
 - id: atlas-data-acquisition
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-acquisition
 - id: atlas-data-bias
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-bias
 - id: atlas-data-contamination
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-contamination
 - id: atlas-data-contamination
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-contamination
 - id: atlas-data-curation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-curation
 - id: atlas-data-poisoning
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-poisoning
 - id: atlas-data-privacy-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-privacy-rights
 - id: atlas-data-provenance
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-provenance
 - id: atlas-data-transfer
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-transfer
 - id: atlas-data-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-transparency
 - id: atlas-data-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-transparency
 - id: atlas-data-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-usage-rights
 - id: atlas-data-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-usage-rights
 - id: atlas-data-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-data-usage-rights
 - id: atlas-decision-bias
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-decision-bias
 - id: atlas-evasion-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-evasion-attack
 - id: atlas-exposing-personal-information
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-exposing-personal-information
 - id: atlas-extraction-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-extraction-attack
 - id: atlas-generated-content-ownership
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-generated-content-ownership
 - id: atlas-hallucination
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - nist-confabulation
 - id: nist-confabulation
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - atlas-hallucination
 - id: atlas-harmful-code-generation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-dangerous-violent-or-hateful-content
 - id: nist-dangerous-violent-or-hateful-content
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-code-generation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-harmful-code-generation
 - id: atlas-harmful-output
-  closeMatch:
+  type: Risk
+  close_mappings:
   - nist-dangerous-violent-or-hateful-content
 - id: nist-dangerous-violent-or-hateful-content
-  closeMatch:
+  type: Risk
+  close_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - nist-cbrn-information-or-capabilities
 - id: nist-cbrn-information-or-capabilities
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - nist-obscene-degrading-and-or-abusive-content
 - id: nist-obscene-degrading-and-or-abusive-content
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-harmful-output
 - id: atlas-human-exploitation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-obscene-degrading-and-or-abusive-content
 - id: nist-obscene-degrading-and-or-abusive-content
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-human-exploitation
 - id: atlas-impact-on-affected-communities
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-impact-on-affected-communities
 - id: atlas-impact-on-cultural-diversity
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-impact-on-cultural-diversity
 - id: atlas-impact-on-human-agency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-impact-on-human-agency
 - id: atlas-impact-on-the-environment
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - nist-environmental-impacts
 - id: nist-environmental-impacts
-  exactMatch:
+  type: Risk
+  exact_mappings:
   - atlas-impact-on-the-environment
 - id: atlas-improper-retraining
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-improper-retraining
 - id: atlas-improper-usage
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-human-ai-configuration
 - id: nist-human-ai-configuration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-improper-usage
 - id: atlas-inaccessible-training-data
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-inaccessible-training-data
 - id: atlas-incomplete-advice
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-advice
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-incomplete-advice
 - id: atlas-incomplete-usage-definition
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-human-ai-configuration
 - id: nist-human-ai-configuration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-incomplete-usage-definition
 - id: atlas-incorrect-risk-testing
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-incorrect-risk-testing
 - id: atlas-ip-information-in-prompt
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-ip-information-in-prompt
 - id: atlas-jailbreaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-jailbreaking
 - id: atlas-lack-of-data-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-lack-of-data-transparency
 - id: atlas-lack-of-model-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-lack-of-model-transparency
 - id: atlas-lack-of-system-transparency
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-lack-of-system-transparency
 - id: atlas-lack-of-testing-diversity
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-lack-of-testing-diversity
 - id: atlas-legal-accountability
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-legal-accountability
 - id: atlas-legal-accountability
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-legal-accountability
 - id: atlas-legal-accountability
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-legal-accountability
 - id: atlas-membership-inference-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-membership-inference-attack
 - id: atlas-model-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-model-usage-rights
 - id: atlas-model-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-model-usage-rights
 - id: atlas-model-usage-rights
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-model-usage-rights
 - id: atlas-non-disclosure
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-human-ai-configuration
 - id: nist-human-ai-configuration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-non-disclosure
 - id: atlas-nonconsensual-use
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-nonconsensual-use
 - id: atlas-output-bias
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-output-bias
 - id: atlas-over-or-under-reliance
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-human-ai-configuration
 - id: nist-human-ai-configuration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-over-or-under-reliance
 - id: atlas-personal-information-in-data
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-personal-information-in-data
 - id: atlas-personal-information-in-prompt
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-personal-information-in-prompt
 - id: atlas-poor-model-accuracy
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-human-ai-configuration
 - id: nist-human-ai-configuration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-poor-model-accuracy
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-poor-model-accuracy
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-poor-model-accuracy
 - id: atlas-prompt-injection
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-leaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-priming
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-priming
 - id: atlas-reidentification
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-data-privacy
 - id: nist-data-privacy
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-reidentification
 - id: atlas-revealing-confidential-information
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-intellectual-property
 - id: nist-intellectual-property
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-revealing-confidential-information
 - id: atlas-spreading-disinformation
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-spreading-disinformation
 - id: atlas-spreading-toxicity
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-spreading-toxicity
 - id: atlas-toxic-output
-  closeMatch:
+  type: Risk
+  close_mappings:
   - nist-dangerous-violent-or-hateful-content
 - id: nist-dangerous-violent-or-hateful-content
-  closeMatch:
+  type: Risk
+  close_mappings:
   - atlas-toxic-output
 - id: atlas-toxic-output
-  closeMatch:
+  type: Risk
+  close_mappings:
   - nist-obscene-degrading-and-or-abusive-content
 - id: nist-obscene-degrading-and-or-abusive-content
-  closeMatch:
+  type: Risk
+  close_mappings:
   - atlas-toxic-output
 - id: atlas-unexplainable-output
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-unexplainable-output
 - id: atlas-unreliable-source-attribution
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-security
 - id: nist-information-security
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-unreliable-source-attribution
 - id: atlas-unrepresentative-data
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-harmful-bias-or-homogenization
 - id: nist-harmful-bias-or-homogenization
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-data
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-unrepresentative-data
 - id: atlas-unrepresentative-risk-testing
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-value-chain-and-component-integration
 - id: nist-value-chain-and-component-integration
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-unrepresentative-risk-testing
 - id: atlas-untraceable-attribution
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - nist-information-integrity
 - id: nist-information-integrity
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-untraceable-attribution

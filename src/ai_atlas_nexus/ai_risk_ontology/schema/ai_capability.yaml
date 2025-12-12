@@ -27,7 +27,74 @@ classes:
     is_a: Taxonomy
     class_uri: skos:ConceptScheme
     description: A taxonomy of AI capabilities describing the abilities of AI systems.
+
+  CapabilityConcept:
+    is_a: Concept
+    description: An umbrella term for referring to capability domains, groups, and individual capabilities..
+    class_uri: nexus:CapabilityConcept
+
+  CapabilityDomain:
+    is_a: Group
+    class_uri: nexus:CapabilityDomain
+    description: A high-level domain of AI capabilities (e.g., Language, Reasoning, Knowledge)
+    mixins:
+      - CapabilityConcept
+    slot_usage:
+      hasPart:
+        description: A relationship where a capability domain has capability groups
+        range: CapabilityGroup
     slots:
-      - version
-      - hasDocumentation
-      - hasLicense
+      - belongsToDomain
+
+  CapabilityGroup:
+    is_a: Group
+    class_uri: nexus:CapabilityGroup
+    description: A group of AI capabilities that are part of a capability taxonomy, organized under a domain
+    mixins:
+      - CapabilityConcept
+    slot_usage:
+      hasPart:
+        description: A relationship where a capability group has capabilities
+        range: Capability
+      belongsToDomain:
+        description: A relationship where a capability group belongs to a capability domain
+        range: CapabilityDomain
+    slots:
+    - belongsToDomain
+
+  Capability:
+    is_a: Entry
+    mixins:
+      - CapabilityConcept
+    description: >-
+      A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation.
+      Aligned with the W3C DPV AI extension dpv-ai:Capability, representing what an AI technology is capable of achieving or providing.
+      Capabilities are distinct from:
+      (1) the intended purpose for which the technology is designed,
+      (2) the actual tasks performed in a specific deployment context, and
+      (3) the technical implementation mechanisms (intrinsics, adapters) that enable the capability.
+    class_uri: ai:Capability
+    broad_mappings:
+      - tech:Capability
+    slot_usage:
+      isPartOf:
+        description: A relationship where a capability is part of a capability group
+        range: CapabilityGroup
+    slots:
+      - requiredByTask
+
+slots:
+  belongsToDomain:
+    description: A relationship where a capability group belongs to a capability domain
+    range: CapabilityDomain
+    slot_uri: schema:isPartOf
+
+  requiredByTask:
+    description: >-
+      Indicates that this capability is required to perform a specific AI task.
+      This links abstract capabilities (technical abilities) to concrete tasks (application-level operations).
+      An AI system with this capability can perform tasks that require it.
+    range: AiTask
+    multivalued: true
+    inlined: false
+    inverse: requiresCapability

@@ -1,91 +1,121 @@
 risks:
 - id: shieldgemma-dangerous-content
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - dangerous-use
 - id: dangerous-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-dangerous-content
 - id: shieldgemma-dangerous-content
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - harmful-code-generation
 - id: harmful-code-generation
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-dangerous-content
 - id: shieldgemma-dangerous-content
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - harmful-output
 - id: harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-dangerous-content
 - id: shieldgemma-harassment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - harmful-output
 - id: harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-harassment
 - id: shieldgemma-harassment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - over-or-under-reliance
 - id: over-or-under-reliance
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-harassment
 - id: shieldgemma-harassment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - spreading-toxicity
 - id: spreading-toxicity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-harassment
 - id: shieldgemma-harassment
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - toxic-output
 - id: toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-harassment
 - id: shieldgemma-hate-speech
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - data-bias
 - id: data-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-hate-speech
 - id: shieldgemma-hate-speech
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - decision-bias
 - id: decision-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-hate-speech
 - id: shieldgemma-hate-speech
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - output-bias
 - id: output-bias
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-hate-speech
 - id: shieldgemma-hate-speech
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - spreading-toxicity
 - id: spreading-toxicity
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-hate-speech
 - id: shieldgemma-hate-speech
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - toxic-output
 - id: toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-hate-speech
 - id: shieldgemma-sexually-explicit
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - harmful-output
 - id: harmful-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-sexually-explicit
 - id: shieldgemma-sexually-explicit
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - nonconsensual-use
 - id: nonconsensual-use
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-sexually-explicit
 - id: shieldgemma-sexually-explicit
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - toxic-output
 - id: toxic-output
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - shieldgemma-sexually-explicit

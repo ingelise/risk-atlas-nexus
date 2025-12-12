@@ -88,6 +88,24 @@ classes:
         range: Taxonomy
         inlined: true
         inlined_as_list: true
+      concepts:
+        description: A list of concepts
+        multivalued: true
+        range: Concept
+        inlined: true
+        inlined_as_list: true
+      entries:
+        description: A list of entries
+        multivalued: true
+        range: Entry
+        inlined: true
+        inlined_as_list: true
+      groups:
+        description: A list of groups
+        multivalued: true
+        range: Group
+        inlined: true
+        inlined_as_list: true
       vocabularies:
         description: A list of vocabularies
         multivalued: true

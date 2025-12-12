@@ -1,97 +1,129 @@
 risks:
 - id: atlas-context-overload-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-context-overload-attack
 - id: atlas-direct-instructions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-direct-instructions-attack
 - id: atlas-encoded-interactions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-encoded-interactions-attack
 - id: atlas-indirect-instructions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-indirect-instructions-attack
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-context-overload-attack
 - id: atlas-context-overload-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-direct-instructions-attack
 - id: atlas-direct-instructions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-encoded-interactions-attack
 - id: atlas-encoded-interactions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-indirect-instructions-attack
 - id: atlas-indirect-instructions-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-leaking
 - id: atlas-prompt-leaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-social-hacking-attack
 - id: atlas-social-hacking-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-specialized-tokens-attack
 - id: atlas-specialized-tokens-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-jailbreaking
 - id: atlas-jailbreaking
-  relatedMatch:
+  type: Risk
+  related_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-leaking
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-prompt-leaking
 - id: atlas-social-hacking-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-social-hacking-attack
 - id: atlas-specialized-tokens-attack
-  broadMatch:
+  type: Risk
+  broad_mappings:
   - atlas-prompt-injection
 - id: atlas-prompt-injection
-  narrowMatch:
+  type: Risk
+  narrow_mappings:
   - atlas-specialized-tokens-attack
