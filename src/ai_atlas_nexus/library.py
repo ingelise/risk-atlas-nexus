@@ -367,11 +367,11 @@ class AIAtlasNexus:
             risk = cls.get_risk(tag=tag)
 
         # just get all the related risks from the risk, these should have been added during lifting
-        options = [risk.closeMatch or [],
-        risk.exactMatch or [] ,
-        risk.broadMatch or [] ,
-        risk.narrowMatch or [],
-        risk.relatedMatch or []]
+        options = [risk.close_mappings or [],
+        risk.exact_mappings or [] ,
+        risk.broad_mappings or [] ,
+        risk.narrow_mappings or [],
+        risk.related_mappings or []]
         related_risk_ids = [x for x_list in options for x in x_list]
         related_risk_instances = [cls.get_risk(id=x) for x in related_risk_ids]
         return related_risk_instances

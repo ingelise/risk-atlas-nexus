@@ -85,7 +85,8 @@ classes:
 
 slots:
   belongsToDomain:
-    description: A relationship where a capability group belongs to a capability domain
+    description: >-
+      A relationship where a capability group belongs to a capability domain
     range: CapabilityDomain
     slot_uri: schema:isPartOf
 
@@ -98,3 +99,11 @@ slots:
     multivalued: true
     inlined: false
     inverse: requiresCapability
+
+  requiresCapability:
+    description: Indicates that this AI task requires a specific capability
+    domain: AiTask
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: requiredByTask

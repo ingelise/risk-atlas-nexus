@@ -1,121 +1,121 @@
 risks:
 - id: shieldgemma-dangerous-content
-  type: Risk
   related_mappings:
   - dangerous-use
-- id: dangerous-use
   type: Risk
+- id: dangerous-use
   related_mappings:
   - shieldgemma-dangerous-content
-- id: shieldgemma-dangerous-content
   type: Risk
+- id: shieldgemma-dangerous-content
   related_mappings:
   - harmful-code-generation
+  type: Risk
 - id: harmful-code-generation
-  type: Risk
   related_mappings:
   - shieldgemma-dangerous-content
+  type: Risk
 - id: shieldgemma-dangerous-content
-  type: Risk
   related_mappings:
   - harmful-output
-- id: harmful-output
   type: Risk
+- id: harmful-output
   related_mappings:
   - shieldgemma-dangerous-content
-- id: shieldgemma-harassment
   type: Risk
+- id: shieldgemma-harassment
   related_mappings:
   - harmful-output
-- id: harmful-output
   type: Risk
+- id: harmful-output
   related_mappings:
   - shieldgemma-harassment
-- id: shieldgemma-harassment
   type: Risk
+- id: shieldgemma-harassment
   related_mappings:
   - over-or-under-reliance
-- id: over-or-under-reliance
   type: Risk
+- id: over-or-under-reliance
   related_mappings:
   - shieldgemma-harassment
-- id: shieldgemma-harassment
   type: Risk
+- id: shieldgemma-harassment
   related_mappings:
   - spreading-toxicity
-- id: spreading-toxicity
   type: Risk
+- id: spreading-toxicity
   related_mappings:
   - shieldgemma-harassment
-- id: shieldgemma-harassment
   type: Risk
+- id: shieldgemma-harassment
   related_mappings:
   - toxic-output
-- id: toxic-output
   type: Risk
+- id: toxic-output
   related_mappings:
   - shieldgemma-harassment
-- id: shieldgemma-hate-speech
   type: Risk
+- id: shieldgemma-hate-speech
   related_mappings:
   - data-bias
-- id: data-bias
   type: Risk
+- id: data-bias
   related_mappings:
   - shieldgemma-hate-speech
-- id: shieldgemma-hate-speech
   type: Risk
+- id: shieldgemma-hate-speech
   related_mappings:
   - decision-bias
-- id: decision-bias
   type: Risk
+- id: decision-bias
   related_mappings:
   - shieldgemma-hate-speech
-- id: shieldgemma-hate-speech
   type: Risk
+- id: shieldgemma-hate-speech
   related_mappings:
   - output-bias
-- id: output-bias
   type: Risk
+- id: output-bias
   related_mappings:
   - shieldgemma-hate-speech
-- id: shieldgemma-hate-speech
   type: Risk
+- id: shieldgemma-hate-speech
   related_mappings:
   - spreading-toxicity
-- id: spreading-toxicity
   type: Risk
+- id: spreading-toxicity
   related_mappings:
   - shieldgemma-hate-speech
-- id: shieldgemma-hate-speech
   type: Risk
+- id: shieldgemma-hate-speech
   related_mappings:
   - toxic-output
-- id: toxic-output
   type: Risk
+- id: toxic-output
   related_mappings:
   - shieldgemma-hate-speech
-- id: shieldgemma-sexually-explicit
   type: Risk
+- id: shieldgemma-sexually-explicit
   related_mappings:
   - harmful-output
-- id: harmful-output
   type: Risk
+- id: harmful-output
   related_mappings:
   - shieldgemma-sexually-explicit
-- id: shieldgemma-sexually-explicit
   type: Risk
+- id: shieldgemma-sexually-explicit
   related_mappings:
   - nonconsensual-use
-- id: nonconsensual-use
   type: Risk
+- id: nonconsensual-use
   related_mappings:
   - shieldgemma-sexually-explicit
-- id: shieldgemma-sexually-explicit
   type: Risk
+- id: shieldgemma-sexually-explicit
   related_mappings:
   - toxic-output
-- id: toxic-output
   type: Risk
+- id: toxic-output
   related_mappings:
   - shieldgemma-sexually-explicit
+  type: Risk

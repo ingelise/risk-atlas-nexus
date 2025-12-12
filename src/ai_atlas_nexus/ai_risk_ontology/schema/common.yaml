@@ -138,6 +138,7 @@ classes:
         range: string
         designates_type: true
     slots:
+      - isDefinedByTaxonomy
       - isDefinedByVocabulary
       - hasDocumentation
       - isPartOf
