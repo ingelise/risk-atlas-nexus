@@ -52,7 +52,6 @@ from ai_atlas_nexus.blocks.prompt_templates import (
 )
 from ai_atlas_nexus.blocks.risk_categorization.severity import RiskSeverityCategorizer
 from ai_atlas_nexus.blocks.risk_detector import GenericRiskDetector
-from ai_atlas_nexus.blocks.risk_explorer import RiskExplorer
 from ai_atlas_nexus.blocks.risk_mapping import RiskMapper
 from ai_atlas_nexus.data import load_resource
 from ai_atlas_nexus.extension import Extension
