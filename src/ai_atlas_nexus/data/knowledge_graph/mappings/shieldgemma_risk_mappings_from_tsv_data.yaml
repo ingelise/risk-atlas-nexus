@@ -1,121 +1,121 @@
 risks:
 - id: shieldgemma-dangerous-content
   related_mappings:
-  - dangerous-use
+  - atlas-dangerous-use
   type: Risk
-- id: dangerous-use
+- id: atlas-dangerous-use
   related_mappings:
   - shieldgemma-dangerous-content
   type: Risk
 - id: shieldgemma-dangerous-content
   related_mappings:
-  - harmful-code-generation
+  - atlas-harmful-code-generation
   type: Risk
-- id: harmful-code-generation
+- id: atlas-harmful-code-generation
   related_mappings:
   - shieldgemma-dangerous-content
   type: Risk
 - id: shieldgemma-dangerous-content
   related_mappings:
-  - harmful-output
+  - atlas-harmful-output
   type: Risk
-- id: harmful-output
+- id: atlas-harmful-output
   related_mappings:
   - shieldgemma-dangerous-content
   type: Risk
 - id: shieldgemma-harassment
   related_mappings:
-  - harmful-output
+  - atlas-harmful-output
   type: Risk
-- id: harmful-output
+- id: atlas-harmful-output
   related_mappings:
   - shieldgemma-harassment
   type: Risk
 - id: shieldgemma-harassment
   related_mappings:
-  - over-or-under-reliance
+  - atlas-over-or-under-reliance
   type: Risk
-- id: over-or-under-reliance
+- id: atlas-over-or-under-reliance
   related_mappings:
   - shieldgemma-harassment
   type: Risk
 - id: shieldgemma-harassment
   related_mappings:
-  - spreading-toxicity
+  - atlas-spreading-toxicity
   type: Risk
-- id: spreading-toxicity
+- id: atlas-spreading-toxicity
   related_mappings:
   - shieldgemma-harassment
   type: Risk
 - id: shieldgemma-harassment
   related_mappings:
-  - toxic-output
+  - atlas-toxic-output
   type: Risk
-- id: toxic-output
+- id: atlas-toxic-output
   related_mappings:
   - shieldgemma-harassment
   type: Risk
 - id: shieldgemma-hate-speech
   related_mappings:
-  - data-bias
+  - atlas-data-bias
   type: Risk
-- id: data-bias
+- id: atlas-data-bias
   related_mappings:
   - shieldgemma-hate-speech
   type: Risk
 - id: shieldgemma-hate-speech
   related_mappings:
-  - decision-bias
+  - atlas-decision-bias
   type: Risk
-- id: decision-bias
+- id: atlas-decision-bias
   related_mappings:
   - shieldgemma-hate-speech
   type: Risk
 - id: shieldgemma-hate-speech
   related_mappings:
-  - output-bias
+  - atlas-output-bias
   type: Risk
-- id: output-bias
+- id: atlas-output-bias
   related_mappings:
   - shieldgemma-hate-speech
   type: Risk
 - id: shieldgemma-hate-speech
   related_mappings:
-  - spreading-toxicity
+  - atlas-spreading-toxicity
   type: Risk
-- id: spreading-toxicity
+- id: atlas-spreading-toxicity
   related_mappings:
   - shieldgemma-hate-speech
   type: Risk
 - id: shieldgemma-hate-speech
   related_mappings:
-  - toxic-output
+  - atlas-toxic-output
   type: Risk
-- id: toxic-output
+- id: atlas-toxic-output
   related_mappings:
   - shieldgemma-hate-speech
   type: Risk
 - id: shieldgemma-sexually-explicit
   related_mappings:
-  - harmful-output
+  - atlas-harmful-output
   type: Risk
-- id: harmful-output
+- id: atlas-harmful-output
   related_mappings:
   - shieldgemma-sexually-explicit
   type: Risk
 - id: shieldgemma-sexually-explicit
   related_mappings:
-  - nonconsensual-use
+  - atlas-nonconsensual-use
   type: Risk
-- id: nonconsensual-use
+- id: atlas-nonconsensual-use
   related_mappings:
   - shieldgemma-sexually-explicit
   type: Risk
 - id: shieldgemma-sexually-explicit
   related_mappings:
-  - toxic-output
+  - atlas-toxic-output
   type: Risk
-- id: toxic-output
+- id: atlas-toxic-output
   related_mappings:
   - shieldgemma-sexually-explicit
   type: Risk
