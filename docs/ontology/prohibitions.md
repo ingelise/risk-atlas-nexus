@@ -29,7 +29,6 @@ Alias: prohibitions
 
 
 
-
 ## Properties
 
 * Range: [Prohibition](Prohibition.md)
@@ -39,9 +38,7 @@ Alias: prohibitions
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

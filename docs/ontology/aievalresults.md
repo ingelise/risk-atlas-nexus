@@ -29,7 +29,6 @@ Alias: aievalresults
 
 
 
-
 ## Properties
 
 * Range: [AiEvalResult](AiEvalResult.md)
@@ -39,9 +38,7 @@ Alias: aievalresults
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

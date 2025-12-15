@@ -20,7 +20,6 @@ Alias: isDistributedBy
 
 
 
-
 ## Properties
 
 * Range: [Organization](Organization.md)
@@ -28,9 +27,7 @@ Alias: isDistributedBy
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

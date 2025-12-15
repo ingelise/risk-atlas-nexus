@@ -29,7 +29,6 @@ Alias: obligations
 
 
 
-
 ## Properties
 
 * Range: [Obligation](Obligation.md)
@@ -39,9 +38,7 @@ Alias: obligations
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

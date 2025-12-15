@@ -29,7 +29,6 @@ Alias: hasSubDefinition
 
 
 
-
 ## Properties
 
 * Range: [Term](Term.md)
@@ -39,9 +38,7 @@ Alias: hasSubDefinition
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

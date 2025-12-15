@@ -20,7 +20,6 @@ Alias: hasTerm
 
 
 
-
 ## Properties
 
 * Range: [Term](Term.md)
@@ -30,9 +29,7 @@ Alias: hasTerm
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

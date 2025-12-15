@@ -29,7 +29,6 @@ Alias: licenses
 
 
 
-
 ## Properties
 
 * Range: [License](License.md)
@@ -39,9 +38,7 @@ Alias: licenses
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

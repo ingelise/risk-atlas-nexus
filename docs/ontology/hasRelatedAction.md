@@ -29,7 +29,6 @@ Alias: hasRelatedAction
 
 
 
-
 ## Properties
 
 * Range: [Action](Action.md)
@@ -39,9 +38,7 @@ Alias: hasRelatedAction
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -15,13 +15,12 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 
 
 
-
 ```mermaid
  classDiagram
     class LLMQuestionPolicy
-    click LLMQuestionPolicy href "../LLMQuestionPolicy"
+    click LLMQuestionPolicy href "../LLMQuestionPolicy/"
       Policy <|-- LLMQuestionPolicy
-        click Policy href "../Policy"
+        click Policy href "../Policy/"
 
       LLMQuestionPolicy : dateCreated
 
@@ -40,7 +39,7 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 
 
         LLMQuestionPolicy --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -51,7 +50,7 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 
 
         LLMQuestionPolicy --> "*" Rule : hasRule
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
 
 
@@ -66,7 +65,7 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 
 
         LLMQuestionPolicy --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -120,8 +119,8 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -142,7 +141,6 @@ URI: [nexus:LLMQuestionPolicy](https://ibm.github.io/ai-atlas-nexus/ontology/LLM
 | ---  | ---  |
 | self | nexus:LLMQuestionPolicy |
 | native | nexus:LLMQuestionPolicy |
-
 
 
 

@@ -15,13 +15,12 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
 
-
 ```mermaid
  classDiagram
     class Term
-    click Term href "../Term"
+    click Term href "../Term/"
       Entity <|-- Term
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Term : dateCreated
 
@@ -36,7 +35,7 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
         Term --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -47,7 +46,7 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
         Term --> "*" Term : hasParentDefinition
-        click Term href "../Term"
+        click Term href "../Term/"
 
 
 
@@ -58,7 +57,7 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
         Term --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -69,7 +68,7 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
         Term --> "*" Term : hasSubDefinition
-        click Term href "../Term"
+        click Term href "../Term/"
 
 
 
@@ -82,7 +81,7 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
         Term --> "0..1" Vocabulary : isDefinedByVocabulary
-        click Vocabulary href "../Vocabulary"
+        click Vocabulary href "../Vocabulary/"
 
 
 
@@ -147,8 +146,8 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -169,7 +168,6 @@ URI: [nexus:Term](https://ibm.github.io/ai-atlas-nexus/ontology/Term)
 | ---  | ---  |
 | self | nexus:Term |
 | native | nexus:Term |
-
 
 
 

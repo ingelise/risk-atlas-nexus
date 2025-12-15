@@ -29,7 +29,6 @@ Alias: hasResources
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasResources
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

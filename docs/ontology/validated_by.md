@@ -20,7 +20,6 @@ Alias: validated_by
 
 
 
-
 ## Properties
 
 * Range: [AiModelValidation](AiModelValidation.md)
@@ -30,9 +29,7 @@ Alias: validated_by
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -29,7 +29,6 @@ Alias: aimodelfamilies
 
 
 
-
 ## Properties
 
 * Range: [LargeLanguageModelFamily](LargeLanguageModelFamily.md)
@@ -39,9 +38,7 @@ Alias: aimodelfamilies
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

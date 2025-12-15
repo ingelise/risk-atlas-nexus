@@ -15,19 +15,18 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
 
-
 ```mermaid
  classDiagram
     class Organization
-    click Organization href "../Organization"
+    click Organization href "../Organization/"
       Entity <|-- Organization
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       Organization <|-- AiProvider
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
       Organization <|-- AiOffice
-        click AiOffice href "../AiOffice"
+        click AiOffice href "../AiOffice/"
 
 
       Organization : dateCreated
@@ -43,7 +42,7 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
         Organization --> "0..1" License : grants_license
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -102,8 +101,8 @@ URI: [schema:Organization](http://schema.org/Organization)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -124,7 +123,6 @@ URI: [schema:Organization](http://schema.org/Organization)
 | ---  | ---  |
 | self | schema:Organization |
 | native | nexus:Organization |
-
 
 
 

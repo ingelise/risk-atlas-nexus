@@ -17,19 +17,18 @@ URI: [airo:AILifecyclePhase](https://w3id.org/airo#AILifecyclePhase)
 
 
 
-
 ```mermaid
  classDiagram
     class AiLifecyclePhase
-    click AiLifecyclePhase href "../AiLifecyclePhase"
+    click AiLifecyclePhase href "../AiLifecyclePhase/"
       Entity <|-- AiLifecyclePhase
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       AiLifecyclePhase <|-- DataPreprocessing
-        click DataPreprocessing href "../DataPreprocessing"
+        click DataPreprocessing href "../DataPreprocessing/"
       AiLifecyclePhase <|-- AiModelValidation
-        click AiModelValidation href "../AiModelValidation"
+        click AiModelValidation href "../AiModelValidation/"
 
 
       AiLifecyclePhase : dateCreated
@@ -78,8 +77,8 @@ URI: [airo:AILifecyclePhase](https://w3id.org/airo#AILifecyclePhase)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -100,7 +99,6 @@ URI: [airo:AILifecyclePhase](https://w3id.org/airo#AILifecyclePhase)
 | ---  | ---  |
 | self | airo:AILifecyclePhase |
 | native | nexus:AiLifecyclePhase |
-
 
 
 

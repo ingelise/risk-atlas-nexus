@@ -10,13 +10,12 @@ URI: [dpv:IncidentHaltedclass](https://w3id.org/dpv#IncidentHaltedclass)
 
 
 
-
 ```mermaid
  classDiagram
     class IncidentHaltedclass
-    click IncidentHaltedclass href "../IncidentHaltedclass"
+    click IncidentHaltedclass href "../IncidentHaltedclass/"
       IncidentStatus <|-- IncidentHaltedclass
-        click IncidentStatus href "../IncidentStatus"
+        click IncidentStatus href "../IncidentStatus/"
 
       IncidentHaltedclass : dateCreated
 
@@ -63,8 +62,8 @@ URI: [dpv:IncidentHaltedclass](https://w3id.org/dpv#IncidentHaltedclass)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -85,7 +84,6 @@ URI: [dpv:IncidentHaltedclass](https://w3id.org/dpv#IncidentHaltedclass)
 | ---  | ---  |
 | self | dpv:IncidentHaltedclass |
 | native | nexus:IncidentHaltedclass |
-
 
 
 

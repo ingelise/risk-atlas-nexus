@@ -29,7 +29,6 @@ Alias: hasDataSize
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasDataSize
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -15,19 +15,18 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
 
-
 ```mermaid
  classDiagram
     class AiEval
-    click AiEval href "../AiEval"
+    click AiEval href "../AiEval/"
       Entity <|-- AiEval
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       AiEval <|-- Question
-        click Question href "../Question"
+        click Question href "../Question/"
       AiEval <|-- Questionnaire
-        click Questionnaire href "../Questionnaire"
+        click Questionnaire href "../Questionnaire/"
 
 
       AiEval : bestValue
@@ -45,7 +44,7 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
         AiEval --> "*" BenchmarkMetadataCard : hasBenchmarkMetadata
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
 
 
 
@@ -56,7 +55,7 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
         AiEval --> "*" Dataset : hasDataset
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -67,7 +66,7 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
         AiEval --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -80,7 +79,7 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
         AiEval --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -91,7 +90,7 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
         AiEval --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -160,8 +159,8 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -182,7 +181,6 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 | ---  | ---  |
 | self | dqv:Metric |
 | native | nexus:AiEval |
-
 
 
 

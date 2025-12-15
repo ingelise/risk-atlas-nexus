@@ -29,7 +29,6 @@ Alias: hasRelatedTerm
 
 
 
-
 ## Properties
 
 * Range: [Term](Term.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md)&nbsp;or&nbsp;<br />[Term](Term.md)
@@ -39,9 +38,7 @@ Alias: hasRelatedTerm
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

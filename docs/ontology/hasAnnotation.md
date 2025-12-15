@@ -29,7 +29,6 @@ Alias: hasAnnotation
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasAnnotation
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

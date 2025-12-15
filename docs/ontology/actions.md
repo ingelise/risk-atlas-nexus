@@ -29,7 +29,6 @@ Alias: actions
 
 
 
-
 ## Properties
 
 * Range: [Action](Action.md)
@@ -39,9 +38,7 @@ Alias: actions
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

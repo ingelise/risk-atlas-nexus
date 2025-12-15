@@ -15,17 +15,16 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
 
-
 ```mermaid
  classDiagram
     class AiModel
-    click AiModel href "../AiModel"
+    click AiModel href "../AiModel/"
       BaseAi <|-- AiModel
-        click BaseAi href "../BaseAi"
+        click BaseAi href "../BaseAi/"
 
 
       AiModel <|-- LargeLanguageModel
-        click LargeLanguageModel href "../LargeLanguageModel"
+        click LargeLanguageModel href "../LargeLanguageModel/"
 
 
       AiModel : architecture
@@ -47,7 +46,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -58,7 +57,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "*" AiEvalResult : hasEvaluation
-        click AiEvalResult href "../AiEvalResult"
+        click AiEvalResult href "../AiEvalResult/"
 
 
 
@@ -69,7 +68,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -82,7 +81,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "*" RiskControl : hasRiskControl
-        click RiskControl href "../RiskControl"
+        click RiskControl href "../RiskControl/"
 
 
 
@@ -95,7 +94,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider"
+        click AiProvider href "../AiProvider/"
 
 
 
@@ -108,7 +107,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "*" AiTask : performsTask
-        click AiTask href "../AiTask"
+        click AiTask href "../AiTask/"
 
 
 
@@ -121,7 +120,7 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
         AiModel --> "0..1" Organization : producer
-        click Organization href "../Organization"
+        click Organization href "../Organization/"
 
 
 
@@ -173,8 +172,8 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -195,7 +194,6 @@ URI: [nexus:AiModel](https://ibm.github.io/ai-atlas-nexus/ontology/AiModel)
 | ---  | ---  |
 | self | nexus:AiModel |
 | native | nexus:AiModel |
-
 
 
 

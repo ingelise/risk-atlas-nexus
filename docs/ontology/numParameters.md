@@ -30,7 +30,6 @@ Alias: numParameters
 
 
 
-
 ## Properties
 
 * Range: [Integer](Integer.md)
@@ -40,9 +39,7 @@ Alias: numParameters
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

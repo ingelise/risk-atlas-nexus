@@ -22,11 +22,10 @@ Alias: hasTasks
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [AiEval](AiEval.md) | An AI Evaluation, e |  no  |
 | [Question](Question.md) | An evaluation where a question has to be answered |  no  |
 | [Questionnaire](Questionnaire.md) | A questionnaire groups questions |  no  |
-| [AiEval](AiEval.md) | An AI Evaluation, e |  no  |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... |  no  |
-
 
 
 
@@ -42,9 +41,7 @@ Alias: hasTasks
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

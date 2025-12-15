@@ -15,13 +15,12 @@ URI: [airo:Input](https://w3id.org/airo#Input)
 
 
 
-
 ```mermaid
  classDiagram
     class Input
-    click Input href "../Input"
+    click Input href "../Input/"
       Entity <|-- Input
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
       Input : dateCreated
 
@@ -67,8 +66,8 @@ URI: [airo:Input](https://w3id.org/airo#Input)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -89,7 +88,6 @@ URI: [airo:Input](https://w3id.org/airo#Input)
 | ---  | ---  |
 | self | airo:Input |
 | native | nexus:Input |
-
 
 
 

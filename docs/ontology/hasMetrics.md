@@ -29,7 +29,6 @@ Alias: hasMetrics
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -39,9 +38,7 @@ Alias: hasMetrics
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

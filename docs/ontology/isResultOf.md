@@ -29,7 +29,6 @@ Alias: isResultOf
 
 
 
-
 ## Properties
 
 * Range: [AiEval](AiEval.md)
@@ -37,9 +36,7 @@ Alias: isResultOf
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

@@ -2,7 +2,7 @@
 
 
 
-URI: [AdapterType](AdapterType.md)
+URI: [nexus:AdapterType](https://ibm.github.io/ai-atlas-nexus/ontology/AdapterType)
 
 ## Permissible Values
 
@@ -25,9 +25,7 @@ URI: [AdapterType](AdapterType.md)
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

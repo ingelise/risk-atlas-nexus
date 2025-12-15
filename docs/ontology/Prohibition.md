@@ -15,13 +15,12 @@ URI: [dpv:Prohibition](https://w3id.org/dpv#Prohibition)
 
 
 
-
 ```mermaid
  classDiagram
     class Prohibition
-    click Prohibition href "../Prohibition"
+    click Prohibition href "../Prohibition/"
       Rule <|-- Prohibition
-        click Rule href "../Rule"
+        click Rule href "../Rule/"
 
       Prohibition : dateCreated
 
@@ -75,8 +74,8 @@ URI: [dpv:Prohibition](https://w3id.org/dpv#Prohibition)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -97,7 +96,6 @@ URI: [dpv:Prohibition](https://w3id.org/dpv#Prohibition)
 | ---  | ---  |
 | self | dpv:Prohibition |
 | native | nexus:Prohibition |
-
 
 
 

@@ -29,7 +29,6 @@ Alias: hasShortReplyType
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasShortReplyType
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

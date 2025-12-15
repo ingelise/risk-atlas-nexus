@@ -15,17 +15,16 @@ URI: [dpv:Policy](https://w3id.org/dpv#Policy)
 
 
 
-
 ```mermaid
  classDiagram
     class Policy
-    click Policy href "../Policy"
+    click Policy href "../Policy/"
       Entity <|-- Policy
-        click Entity href "../Entity"
+        click Entity href "../Entity/"
 
 
       Policy <|-- LLMQuestionPolicy
-        click LLMQuestionPolicy href "../LLMQuestionPolicy"
+        click LLMQuestionPolicy href "../LLMQuestionPolicy/"
 
 
       Policy : dateCreated
@@ -43,7 +42,7 @@ URI: [dpv:Policy](https://w3id.org/dpv#Policy)
 
 
         Policy --> "0..1" RiskTaxonomy : isDefinedByTaxonomy
-        click RiskTaxonomy href "../RiskTaxonomy"
+        click RiskTaxonomy href "../RiskTaxonomy/"
 
 
 
@@ -92,8 +91,8 @@ URI: [dpv:Policy](https://w3id.org/dpv#Policy)
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -114,7 +113,6 @@ URI: [dpv:Policy](https://w3id.org/dpv#Policy)
 | ---  | ---  |
 | self | dpv:Policy |
 | native | nexus:Policy |
-
 
 
 

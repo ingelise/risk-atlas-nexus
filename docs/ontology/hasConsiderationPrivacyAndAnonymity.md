@@ -29,7 +29,6 @@ Alias: hasConsiderationPrivacyAndAnonymity
 
 
 
-
 ## Properties
 
 * Range: [String](String.md)
@@ -37,9 +36,7 @@ Alias: hasConsiderationPrivacyAndAnonymity
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

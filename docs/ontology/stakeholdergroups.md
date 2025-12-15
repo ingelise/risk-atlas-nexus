@@ -29,7 +29,6 @@ Alias: stakeholdergroups
 
 
 
-
 ## Properties
 
 * Range: [StakeholderGroup](StakeholderGroup.md)
@@ -39,9 +38,7 @@ Alias: stakeholdergroups
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

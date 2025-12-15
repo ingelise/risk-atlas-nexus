@@ -29,7 +29,6 @@ Alias: hasAdapterType
 
 
 
-
 ## Properties
 
 * Range: [AdapterType](AdapterType.md)
@@ -37,9 +36,7 @@ Alias: hasAdapterType
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

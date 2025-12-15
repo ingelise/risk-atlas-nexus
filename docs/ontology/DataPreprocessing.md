@@ -15,13 +15,12 @@ URI: [nexus:DataPreprocessing](https://ibm.github.io/ai-atlas-nexus/ontology/Dat
 
 
 
-
 ```mermaid
  classDiagram
     class DataPreprocessing
-    click DataPreprocessing href "../DataPreprocessing"
+    click DataPreprocessing href "../DataPreprocessing/"
       AiLifecyclePhase <|-- DataPreprocessing
-        click AiLifecyclePhase href "../AiLifecyclePhase"
+        click AiLifecyclePhase href "../AiLifecyclePhase/"
 
       DataPreprocessing : dateCreated
 
@@ -68,8 +67,8 @@ URI: [nexus:DataPreprocessing](https://ibm.github.io/ai-atlas-nexus/ontology/Dat
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -90,7 +89,6 @@ URI: [nexus:DataPreprocessing](https://ibm.github.io/ai-atlas-nexus/ontology/Dat
 | ---  | ---  |
 | self | nexus:DataPreprocessing |
 | native | nexus:DataPreprocessing |
-
 
 
 

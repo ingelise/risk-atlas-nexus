@@ -29,7 +29,6 @@ Alias: modalities
 
 
 
-
 ## Properties
 
 * Range: [Modality](Modality.md)
@@ -39,9 +38,7 @@ Alias: modalities
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

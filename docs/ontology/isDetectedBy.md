@@ -22,14 +22,13 @@ Alias: isDetectedBy
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RiskIncident](RiskIncident.md) | An event occuring or occured which is a realised or materialised risk |  no  |
-| [Action](Action.md) | Action to remediate a risk |  no  |
-| [RiskConcept](RiskConcept.md) | An umbrella term for refering to risk, risk source, consequence and impact |  no  |
-| [RiskGroup](RiskGroup.md) | A group of AI system related risks that are part of a risk taxonomy |  no  |
 | [Impact](Impact.md) |  |  no  |
-| [Risk](Risk.md) | The state of uncertainty associated with an AI system, that has the potential... |  no  |
+| [RiskGroup](RiskGroup.md) | A group of AI system related risks that are part of a risk taxonomy |  no  |
+| [RiskConcept](RiskConcept.md) | An umbrella term for refering to risk, risk source, consequence and impact |  no  |
 | [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts) |  no  |
-
+| [RiskIncident](RiskIncident.md) | An event occuring or occured which is a realised or materialised risk |  no  |
+| [Risk](Risk.md) | The state of uncertainty associated with an AI system, that has the potential... |  no  |
+| [Action](Action.md) | Action to remediate a risk |  no  |
 
 
 
@@ -45,9 +44,7 @@ Alias: isDetectedBy
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 

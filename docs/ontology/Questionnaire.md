@@ -15,13 +15,12 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
 
-
 ```mermaid
  classDiagram
     class Questionnaire
-    click Questionnaire href "../Questionnaire"
+    click Questionnaire href "../Questionnaire/"
       AiEval <|-- Questionnaire
-        click AiEval href "../AiEval"
+        click AiEval href "../AiEval/"
 
       Questionnaire : bestValue
 
@@ -38,7 +37,7 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
         Questionnaire --> "*" BenchmarkMetadataCard : hasBenchmarkMetadata
-        click BenchmarkMetadataCard href "../BenchmarkMetadataCard"
+        click BenchmarkMetadataCard href "../BenchmarkMetadataCard/"
 
 
 
@@ -49,7 +48,7 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
         Questionnaire --> "*" Dataset : hasDataset
-        click Dataset href "../Dataset"
+        click Dataset href "../Dataset/"
 
 
 
@@ -60,7 +59,7 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
         Questionnaire --> "*" Documentation : hasDocumentation
-        click Documentation href "../Documentation"
+        click Documentation href "../Documentation/"
 
 
 
@@ -73,7 +72,7 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
         Questionnaire --> "0..1" License : hasLicense
-        click License href "../License"
+        click License href "../License/"
 
 
 
@@ -84,7 +83,7 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
         Questionnaire --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk"
+        click Risk href "../Risk/"
 
 
 
@@ -140,8 +139,8 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
 
-## Identifier and Mapping Information
 
+## Identifier and Mapping Information
 
 
 
@@ -162,7 +161,6 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 | ---  | ---  |
 | self | nexus:Questionnaire |
 | native | nexus:Questionnaire |
-
 
 
 

@@ -29,7 +29,6 @@ Alias: policies
 
 
 
-
 ## Properties
 
 * Range: [Policy](Policy.md)
@@ -39,9 +38,7 @@ Alias: policies
 
 
 
-
 ## Identifier and Mapping Information
-
 
 
 
