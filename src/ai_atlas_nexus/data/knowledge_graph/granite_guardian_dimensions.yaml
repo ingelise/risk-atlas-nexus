@@ -25,6 +25,7 @@ riskgroups:
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: granite-guardian-conversational-egregiousness
   name: Conversational egregiousness / degradation
+  isDefinedByTaxonomy: ibm-granite-guardian
 risks:
 - id: granite-guardian-harm
   name: Harm
