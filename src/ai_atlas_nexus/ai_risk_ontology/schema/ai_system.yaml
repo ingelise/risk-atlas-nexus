@@ -49,6 +49,7 @@ classes:
     slots:
       - hasEuAiSystemType
       - hasEuRiskCategory
+      - hasCapability
 
   AiAgent:
     is_a: AiSystem
@@ -97,10 +98,11 @@ classes:
       - hasDocumentation
 
   AiTask:
-    is_a: Entity
+    is_a: Entry
     class_uri: airo:AiCapability
     description: A task, such as summarization and classification, performed by an AI.
     slots:
+    - requiresCapability
 
   AiLifecyclePhase:
     is_a: Entity

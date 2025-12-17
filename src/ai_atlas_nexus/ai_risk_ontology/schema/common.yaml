@@ -13,6 +13,7 @@ prefixes:
   dpv: https://w3id.org/dpv#
   ai: https://w3id.org/dpv/ai#
   skos: https://www.w3.org/2009/08/skos-reference/skos.html#
+  tech: https://w3id.org/dpv/tech#
 
 default_range: string
 default_prefix: nexus
@@ -145,7 +146,7 @@ classes:
 
   Term:
     is_a: Entry
-    description: A term and its definitions
+    description: A term and its definitions.
     slots:
       - isDefinedByVocabulary
       - hasDocumentation
@@ -154,8 +155,8 @@ classes:
       - hasRelatedRisk
 
   Principle:
-    is_a: Entity
-    description: A representation of values or norms that must be taken into consideration when conducting activities
+    is_a: Entry
+    description: A representation of values or norms that must be taken into consideration when conducting activities.
     class_uri: dpv:Principle
     slots:
       - hasDocumentation
@@ -273,6 +274,13 @@ slots:
     slot_uri: skos:member
     description: A relationship where an entity has another entity
     multivalued: true
+  hasCapability:
+    slot_uri: tech:hasCapability
+    description: >
+      Indicates the technical capabilities this entry possesses.
+    multivalued: true
+    inlined: false
+    range: Capability
   hasTerm:
     slot_uri: nexus:hasTerm
     range: Term
