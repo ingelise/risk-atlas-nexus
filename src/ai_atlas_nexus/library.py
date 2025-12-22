@@ -17,7 +17,7 @@ from ai_atlas_nexus.blocks.atlas_explorer.explorer import AtlasExplorer
 os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
 os.environ["OMP_NUM_THREADS"] = "1"
 
-from ai_atlas_nexus import Taxonomy
+from ai_atlas_nexus import AiTask, Taxonomy
 from ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Action,
     Adapter,
@@ -234,7 +234,7 @@ class AIAtlasNexus:
         Query instances using keyword arguments.
 
         Args:
-            class_name: str
+            class_name: Union[str | list]:
                 Name of the class (the collection key in data)
             **kwargs:
                 The attribute-value pairs to filter by
@@ -310,8 +310,10 @@ class AIAtlasNexus:
             name=name,
             taxonomy=taxonomy,
         )
-        if risk:
+        if risk and len(risk) > 0:
             risk = risk[0]
+        else:
+            risk = None
         return risk
 
     def get_related_risks(
@@ -530,7 +532,7 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
         value_check(
-            "<RAN5DCADF94E>",
+            "<RAN5DCADG95E>",
             risk or tag or id or name,
             "Please provide risk, tag, id, or name",
         )
@@ -1380,6 +1382,9 @@ class AIAtlasNexus:
         risk=None,
         tag=None,
         risk_id=None,
+        aitask=None,
+        aitask_id=None,
+        task_id=None,
         name=None,
         taxonomy=None,
     ):
@@ -1390,6 +1395,10 @@ class AIAtlasNexus:
                 The risk
             risk_id: (Optional) str
                 The string ID identifying the risk
+            aitask: (Optional) str
+                The aitask
+            aitask_id: (Optional) str
+                The string ID identifying the ai task
             tag: (Optional) str
                 The string tag identifying the risk
             name: (Optional) str
@@ -1408,28 +1417,45 @@ class AIAtlasNexus:
             risk=risk,
         )
         type_check(
+            "<RAN4E93178FE>",
+            AiTask,
+            allow_none=True,
+            aitask=aitask,
+        )
+        type_check(
             "<RAN55784808E>",
             str,
             allow_none=True,
             tag=tag,
             risk_id=risk_id,
+            aitask_id=aitask_id,
             name=name,
             taxonomy=taxonomy,
         )
         value_check(
             "<RAN5DCADF94E>",
-            risk or tag or risk_id or name,
-            "Please provide risk, tag, risk_id, or name",
+            risk or tag or aitask or aitask_id or risk_id or name,
+            "Please provide risk, tag, aitask, aitask_id, risk_id, or name",
         )
 
-        if risk_id:
-            risk = cls.get_risk(id=risk_id)
-        elif tag:
-            risk = cls.get_risk(tag=tag)
-        elif name:
-            risk = cls.get_risk(name=name)
+        if aitask or aitask_id:
+            if aitask_id:
+                aitask = cls.get_by_id(class_name="aitasks", identifier=aitask_id)
 
-        related_llmintrinsics = cls._atlas_explorer.query("llmintrinsics", hasRelatedRisk=risk.id, taxonomy=taxonomy)
+            related_llmintrinsics = []
+            capability_ids = cls._atlas_explorer.get_attribute(class_name="aitasks", identifier=aitask.id, attribute="requiresCapability") or []
+            for cap in capability_ids:
+                related_llmintrinsics += cls._atlas_explorer.query("llmintrinsics", c=cap.id, taxonomy=taxonomy)
+        else:
+            if risk_id:
+                risk = cls.get_risk(id=risk_id)
+            elif tag:
+                risk = cls.get_risk(tag=tag)
+            elif name:
+                risk = cls.get_risk(name=name)
+
+            related_llmintrinsics = cls._atlas_explorer.query("llmintrinsics", hasRelatedRisk=risk.id, taxonomy=taxonomy)
+
         return related_llmintrinsics
 
     def get_adapters(cls, taxonomy=None):
