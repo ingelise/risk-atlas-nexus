@@ -30,6 +30,7 @@ classes:
 
   CapabilityConcept:
     is_a: Concept
+    mixin: true
     description: An umbrella term for referring to capability domains, groups, and individual capabilities..
     class_uri: nexus:CapabilityConcept
 
@@ -44,11 +45,9 @@ classes:
         description: A relationship where a capability domain has capability groups
         range: CapabilityGroup
     slots:
-      - belongsToDomain
 
   CapabilityGroup:
     is_a: Group
-    class_uri: nexus:CapabilityGroup
     description: A group of AI capabilities that are part of a capability taxonomy, organized under a domain
     mixins:
       - CapabilityConcept
@@ -56,11 +55,17 @@ classes:
       hasPart:
         description: A relationship where a capability group has capabilities
         range: Capability
+      isPartOf:
+        description: A relationship where a capability group belongs to a capability domain
+        range: CapabilityDomain
       belongsToDomain:
         description: A relationship where a capability group belongs to a capability domain
         range: CapabilityDomain
     slots:
-    - belongsToDomain
+      - isDefinedByTaxonomy
+      - isPartOf
+      - hasPart
+      - belongsToDomain
 
   Capability:
     is_a: Entry
@@ -80,30 +85,68 @@ classes:
       isPartOf:
         description: A relationship where a capability is part of a capability group
         range: CapabilityGroup
+      requiredByTask:
+        description: >-
+          Indicates that this capability is required to perform a specific AI task.
+          This links abstract capabilities (technical abilities) to concrete tasks (application-level operations).
+          An AI system with this capability can perform tasks that require it.
+        range: AiTask
+      implementedByAdapter:
+        description: >-
+          Indicates that this capability is implemented by a specific adapter.
+          This relationship distinguishes the abstract capability (what can be done) from
+          the technical implementation mechanism (how it is added/extended via adapters).
+        domain: Capability
+        range: Adapter
     slots:
       - requiredByTask
+      - implementedByAdapter
 
 slots:
-  belongsToDomain:
-    description: >-
-      A relationship where a capability group belongs to a capability domain
-    range: CapabilityDomain
-    slot_uri: schema:isPartOf
-
-  requiredByTask:
-    description: >-
-      Indicates that this capability is required to perform a specific AI task.
-      This links abstract capabilities (technical abilities) to concrete tasks (application-level operations).
-      An AI system with this capability can perform tasks that require it.
-    range: AiTask
+  # Benchmark-capability relationships
+  evaluatedByBenchmark:
+    description: Indicates that this capability is evaluated by a specific benchmark
+    range: BenchmarkMetadataCard
     multivalued: true
     inlined: false
-    inverse: requiresCapability
+    inverse: evaluatesCapability
 
-  requiresCapability:
-    description: Indicates that this AI task requires a specific capability
-    domain: AiTask
+  evaluatesCapability:
+    description: Indicates that this benchmark evaluates a specific capability
+    domain: BenchmarkMetadataCard
     range: Capability
     multivalued: true
     inlined: false
-    inverse: requiredByTask
+    inverse: evaluatedByBenchmark
+
+  # Intrinsic-capability relationships
+  implementedByIntrinsic:
+    description: >
+      Indicates that this capability is implemented by a specific LLM intrinsic.
+      This relationship distinguishes the abstract capability (what can be done) from
+      the technical implementation mechanism (how it is done at the model component level).
+    range: LLMIntrinsic
+    multivalued: true
+    inlined: false
+    inverse: implementsCapability
+
+  implementsCapability:
+    description: Indicates that this intrinsic implements a specific capability
+    domain: LLMIntrinsic
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: implementedByIntrinsic
+
+  # AI System-capability relationships
+  possessedByAi:
+    description: >
+      Indicates that this capability is possessed by a specific AI system or component.
+      Inverse of hasCapability, allowing navigation from capabilities to AI systems.
+      This enables queries like "which AI systems have this capability?"
+    domain: Capability
+    range: BaseAi
+    slot_uri: tech:hasCapability
+    multivalued: true
+    inlined: false
+    inverse: hasCapability

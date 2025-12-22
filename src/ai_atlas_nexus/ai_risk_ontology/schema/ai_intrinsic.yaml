@@ -38,7 +38,9 @@ classes:
     - hasLicense
     - hasRelatedRisk
     - adaptsModel
+    - implementsCapability
     - hasCapability
+    - requiresCapability
     # Can it be used on any model?
 
   LLMIntrinsic:

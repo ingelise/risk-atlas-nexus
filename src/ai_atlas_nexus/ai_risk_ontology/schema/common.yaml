@@ -24,6 +24,7 @@ classes:
     description:
       A generic grouping for any identifiable entity.
     abstract: true
+    mixin: true
     class_uri: schema:Thing
     slots:
       - id
@@ -82,8 +83,13 @@ classes:
 
   Vocabulary:
     is_a: Entity
+    mixin: true
     class_uri: skos:ConceptScheme
     description: A collection of terms, with their definitions and relationships.
+    attributes:
+      type:
+        range: string
+        designates_type: true
     slots:
       - version
       - hasDocumentation
@@ -92,6 +98,7 @@ classes:
   Taxonomy:
     is_a: Entity
     abstract: true
+    mixin: true
     class_uri: skos:ConceptScheme
     description: A hierachical taxonomy of concepts, with their definitions and relationships.
     attributes:
@@ -106,6 +113,7 @@ classes:
   Concept:
     is_a: Entity
     abstract: true
+    mixin: true
     class_uri: skos:Concept
     description: A concept
     attributes:
@@ -119,6 +127,7 @@ classes:
   Group:
     is_a: Entity
     abstract: true
+    mixin: true
     class_uri: skos:Collection
     description: Labelled groups of concepts.
     attributes:
@@ -127,11 +136,14 @@ classes:
         designates_type: true
     slots:
       - isDefinedByTaxonomy
+      - hasDocumentation
       - hasPart
+      - belongsToDomain
 
   Entry:
     is_a: Entity
     abstract: true
+    mixin: true
     class_uri: nexus:Entry
     description: An entry and its definitions.
     attributes:
@@ -143,6 +155,9 @@ classes:
       - isDefinedByVocabulary
       - hasDocumentation
       - isPartOf
+      - requiredByTask
+      - requiresCapability
+      - implementedByAdapter
 
   Term:
     is_a: Entry
@@ -281,6 +296,38 @@ slots:
     multivalued: true
     inlined: false
     range: Capability
+  requiredByTask:
+    description: >-
+      Indicates that this entry is required to perform a specific AI task.
+    range: AiTask
+    multivalued: true
+    inlined: false
+    inverse: requiresCapability
+  requiresCapability:
+    description: Indicates that this entry requires a specific capability
+    domain: Any
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: requiredByTask
+  implementedByAdapter:
+    description: >
+      Indicates that this capability is implemented by a specific adapter.
+      This relationship distinguishes the abstract capability (what can be done) from
+      the technical implementation mechanism (how it is added/extended via adapters).
+    domain: Any
+    range: Adapter
+    multivalued: true
+    inlined: false
+    inverse: implementsCapability
+  implementsCapability:
+    description: Indicates that this adapter implements a specific capability
+    domain: Any
+    range: Capability
+    multivalued: true
+    inlined: false
+    inverse: implementedByAdapter
+
   hasTerm:
     slot_uri: nexus:hasTerm
     range: Term
@@ -366,3 +413,10 @@ slots:
     range: Any
     multivalued: true
     inlined: false
+  belongsToDomain:
+    description: >-
+      A relationship where a group belongs to a domain
+    range: Any
+    multivalued: false
+    inlined: false
+    slot_uri: schema:isPartOf

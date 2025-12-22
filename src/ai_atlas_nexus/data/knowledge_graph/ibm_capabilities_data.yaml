@@ -16,7 +16,6 @@ taxonomies:
     HELM evaluation scenarios, and OECD AI Capability Indicators.
   dateCreated: 2025-11-26
   dateModified: 2025-12-02
-
 groups:
 - id: ibm-cap-domain-language
   name: Language Understanding and Generation
@@ -35,7 +34,7 @@ groups:
     systems to draw conclusions, solve complex problems, and reason through chains
     of dependencies.
   isDefinedByTaxonomy: ibm-ai-capabilities
-- id: ibm-cap-domain-knowledge
+- id: ibm-cap-domain-knowledge-and-learning
   name: Knowledge & Learning
   type: CapabilityDomain
   description: >-
@@ -113,7 +112,6 @@ groups:
     languages.
   isDefinedByTaxonomy: ibm-ai-capabilities
   belongsToDomain: ibm-cap-domain-creativity
-
 entries:
 - id: ibm-cap-reading-comprehension
   name: Reading Comprehension
@@ -198,7 +196,7 @@ entries:
     Related to BIG-bench domain-specific tasks (e.g., medical, legal, scientific
     knowledge tasks) and OECD "Knowledge representation" subdomain.
   isDefinedByTaxonomy: ibm-ai-capabilities
-  isPartOf: ibm-cap-group-domain-knowledge
+  isPartOf: ibm-cap-domain-knowledge-and-learning
   dateCreated: 2025-11-26
   dateModified: 2025-12-02
 - id: ibm-cap-common-sense-reasoning

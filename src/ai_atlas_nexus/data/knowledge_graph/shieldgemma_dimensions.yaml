@@ -91,23 +91,6 @@ risks:
       - atlas-harmful-output
       - atlas-spreading-toxicity
 
-  # Bidirectional relationships for Risk Atlas risks
-  - id: atlas-harmful-output
-    related_mappings:
-      - shieldgemma-sexually-explicit
-      - shieldgemma-dangerous-content
-      - shieldgemma-harassment
-
-  - id: atlas-output-bias
-    related_mappings:
-      - shieldgemma-hate-speech
-
-  - id: atlas-toxic-output
-    related_mappings:
-      - shieldgemma-sexually-explicit
-      - shieldgemma-hate-speech
-      - shieldgemma-harassment
-
 riskcontrols:
   - id: shieldgemma-sexually-explicit-detection
     name: Sexually Explicit Content Detection
