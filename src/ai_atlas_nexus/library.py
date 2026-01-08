@@ -101,7 +101,7 @@ class AIAtlasNexus:
 
         ontology = load_yamls_to_container(base_dir)
         self._ontology = ontology
-        self._atlas_explorer = AtlasExplorer(ontology, self.schema_view)
+        self._atlas_explorer = AtlasExplorer(ontology)
         logger.info(
             f"Created AIAtlasNexus instance. Base_dir: %s",
             base_dir,

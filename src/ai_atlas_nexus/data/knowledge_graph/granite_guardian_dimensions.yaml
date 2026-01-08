@@ -13,26 +13,31 @@ taxonomies:
   dateModified: 2024-12-16
   hasDocumentation:
   - granite-guardian-paper
-riskgroups:
+groups:
 - id: granite-guardian-harm-group
   name: Harm
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: granite-guardian-rag-safety-group
   name: RAG Safety
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: granite-guardian-agentic-safety-group
   name: Agentic Safety
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: granite-guardian-conversational-egregiousness
   name: Conversational egregiousness / degradation
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-granite-guardian
-risks:
+entries:
 - id: granite-guardian-harm
   name: Harm
   description: "Content considered universally harmful. This is our general category, which should encompass a variety of risks including those not specifically addressed by the following categories: Social Bias, Profanity, Sexual Content, Unethical Behavior, Violence, Jailbreaking, Groundedness, Answer Relevance, Context Relevance."
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: harm
@@ -53,6 +58,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: social_bias
@@ -66,6 +72,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: profanity
@@ -79,6 +86,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: sexual-content
@@ -92,6 +100,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: unethical-behavior
@@ -105,6 +114,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: violence
@@ -118,6 +128,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-harm-group
   tag: jailbreak
@@ -131,6 +142,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2025-02-26
   dateModified: 2025-02-26
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-conversational-egregiousness
   tag: harm-engagement
@@ -144,6 +156,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2025-02-26
   dateModified: 2025-02-26
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-conversational-egregiousness
   tag: evasiveness
@@ -157,6 +170,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: groundedness
@@ -168,6 +182,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: relevance
@@ -179,6 +194,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   tag: answer-relevance
@@ -190,6 +206,7 @@ risks:
   url: https://www.ibm.com/granite/docs/models/guardian/#risk-definitions
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
+  type: Risk
   isDefinedByTaxonomy: ibm-granite-guardian
   isDetectedBy:
   - gg-function-call-detection
@@ -220,69 +237,82 @@ risks:
   - granite-answer-relevance
   - granite-relevance
   - granite-groundedness
-riskcontrols:
+controls:
 - id: gg-harm-detection
   name: Harm detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-social-bias-detection
   name: Social Bias detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-social-bias
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-profanity-detection
   name: Profanity detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-profanity
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-sexual-content-detection
   name: Sexual Content detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-sexual-content
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-unethical-behavior-detection
   name: Unethical Behavior detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-unethical-behavior
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-violence-detection
   name: Violence detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-violence
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-jailbreak-detection
   name: Jailbreaking detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-jailbreak
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-harm-engagement-detection
   name: Harm engagement detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-harm-engagement
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-evasiveness-detection
   name: Evasiveness detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-evasiveness
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-groundedness-detection
   name: Groundedness detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-groundedness
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-relevance-detection
   name: Context Relevance detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-relevance
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-answer-relevance-detection
   name: Answer Relevance detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-answer-relevance
   isDefinedByTaxonomy: ibm-granite-guardian
 - id: gg-function-call-detection
   name: Function Calling Hallucination detection
+  type: RiskControl
   detectsRiskConcept:
   - granite-function-call
   isDefinedByTaxonomy: ibm-granite-guardian

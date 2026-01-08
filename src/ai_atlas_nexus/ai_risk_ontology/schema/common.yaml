@@ -124,6 +124,19 @@ classes:
       - isDefinedByTaxonomy
       - hasDocumentation
 
+  Control:
+    is_a: Entity
+    abstract: true
+    mixin: true
+    class_uri: nexus:Control
+    description: A measure that maintains and/or modifies
+    attributes:
+      type:
+        range: string
+        designates_type: true
+    slots:
+      - isDefinedByTaxonomy
+
   Group:
     is_a: Entity
     abstract: true
@@ -134,6 +147,7 @@ classes:
       type:
         range: string
         designates_type: true
+        ifabsent: string(Group)
     slots:
       - isDefinedByTaxonomy
       - hasDocumentation
@@ -143,7 +157,6 @@ classes:
   Entry:
     is_a: Entity
     abstract: true
-    mixin: true
     class_uri: nexus:Entry
     description: An entry and its definitions.
     attributes:

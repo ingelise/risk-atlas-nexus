@@ -75,7 +75,7 @@ classes:
       - isDetectedBy
 
   RiskControl:
-    is_a: Entity
+    is_a: Control
     mixin: true
     mixins:
       - RiskConcept

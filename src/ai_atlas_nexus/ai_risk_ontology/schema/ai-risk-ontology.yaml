@@ -112,34 +112,16 @@ classes:
         range: Vocabulary
         inlined: true
         inlined_as_list: true
-      riskgroups:
-        description: A list of AI risk groups
+      controls:
+        description: A list of AI controls
         multivalued: true
-        range: RiskGroup
-        inlined: true
-        inlined_as_list: true
-      risks:
-        description: A list of AI risks
-        multivalued: true
-        range: Risk
-        inlined: true
-        inlined_as_list: true
-      riskcontrols:
-        description: A list of AI risk controls
-        multivalued: true
-        range: RiskControl
+        range: Control
         inlined: true
         inlined_as_list: true
       riskincidents:
         description: A list of AI risk incidents
         multivalued: true
         range: RiskIncident
-        inlined: true
-        inlined_as_list: true
-      terms:
-        description: A list of terms from a vocabulary
-        multivalued: true
-        range: Term
         inlined: true
         inlined_as_list: true
       stakeholdergroups:
@@ -224,11 +206,5 @@ classes:
         description: A list of Obligations
         multivalued: true
         range: Obligation
-        inlined: true
-        inlined_as_list: true
-      principles:
-        description: A list of Principles
-        multivalued: true
-        range: Principle
         inlined: true
         inlined_as_list: true

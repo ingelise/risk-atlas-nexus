@@ -10,11 +10,10 @@ ie = inflect.engine()
 
 class AtlasExplorer(ExplorerBase):
 
-    def __init__(self, data, schema_view):
+    def __init__(self, data):
 
         # load the data into the graph
         self._data = data
-        self._schema_view = schema_view
 
     def get_all_classes(self):
         """
@@ -25,7 +24,7 @@ class AtlasExplorer(ExplorerBase):
         """
         return list(self._data.model_fields_set)
 
-    def check_subclasses(self, result, class_name):
+    def _check_subclasses(self, result, class_name):
         # look for subclasses within container collections
         for collection_key, collection_data in self._data:
             instances = collection_data if isinstance(collection_data, list) else []
@@ -65,7 +64,6 @@ class AtlasExplorer(ExplorerBase):
         result = []
 
         for key in class_names:
-            possible_singular = ie.singular_noun(key)
             if key not in self._data:
                 for k in self._data.model_fields_set:
                     # snake_case and the actual class name
@@ -76,7 +74,7 @@ class AtlasExplorer(ExplorerBase):
             if hasattr(self._data, key):
                 result = getattr(self._data, key)
             else:
-                result = self.check_subclasses(result, class_name)
+                result = self._check_subclasses(result, class_name)
 
         if taxonomy is not None:
             result = list(

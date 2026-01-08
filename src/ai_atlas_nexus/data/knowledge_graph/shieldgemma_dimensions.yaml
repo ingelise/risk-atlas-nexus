@@ -20,12 +20,13 @@ taxonomies:
     hasDocumentation:
       - shieldgemma-paper
 
-riskgroups:
+groups:
   - id: shieldgemma-content-safety-group
     name: Content Safety
+    type: RiskGroup
     isDefinedByTaxonomy: shieldgemma-taxonomy
 
-risks:
+entries:
   - id: shieldgemma-sexually-explicit
     name: Sexually Explicit Content
     description: Content containing references to sexual acts or other lewd content, including sexually graphic descriptions and content aimed at causing arousal
@@ -35,6 +36,7 @@ risks:
     isDefinedByTaxonomy: shieldgemma-taxonomy
     isPartOf: shieldgemma-content-safety-group
     tag: sexually-explicit
+    type: Risk
     isDetectedBy:
       - shieldgemma-sexually-explicit-detection
     related_mappings:
@@ -51,6 +53,7 @@ risks:
     isDefinedByTaxonomy: shieldgemma-taxonomy
     isPartOf: shieldgemma-content-safety-group
     tag: dangerous-content
+    type: Risk
     isDetectedBy:
       - shieldgemma-dangerous-content-detection
     related_mappings:
@@ -67,6 +70,7 @@ risks:
     isDefinedByTaxonomy: shieldgemma-taxonomy
     isPartOf: shieldgemma-content-safety-group
     tag: hate-speech
+    type: Risk
     isDetectedBy:
       - shieldgemma-hate-speech-detection
     related_mappings:
@@ -84,6 +88,7 @@ risks:
     isDefinedByTaxonomy: shieldgemma-taxonomy
     isPartOf: shieldgemma-content-safety-group
     tag: harassment
+    type: Risk
     isDetectedBy:
       - shieldgemma-harassment-detection
     related_mappings:
@@ -91,27 +96,31 @@ risks:
       - atlas-harmful-output
       - atlas-spreading-toxicity
 
-riskcontrols:
+controls:
   - id: shieldgemma-sexually-explicit-detection
     name: Sexually Explicit Content Detection
+    type: RiskControl
     detectsRiskConcept:
       - shieldgemma-sexually-explicit
     isDefinedByTaxonomy: shieldgemma-taxonomy
 
   - id: shieldgemma-dangerous-content-detection
     name: Dangerous Content Detection
+    type: RiskControl
     detectsRiskConcept:
       - shieldgemma-dangerous-content
     isDefinedByTaxonomy: shieldgemma-taxonomy
 
   - id: shieldgemma-hate-speech-detection
     name: Hate Speech Detection
+    type: RiskControl
     detectsRiskConcept:
       - shieldgemma-hate-speech
     isDefinedByTaxonomy: shieldgemma-taxonomy
 
   - id: shieldgemma-harassment-detection
     name: Harassment Detection
+    type: RiskControl
     detectsRiskConcept:
       - shieldgemma-harassment
     isDefinedByTaxonomy: shieldgemma-taxonomy

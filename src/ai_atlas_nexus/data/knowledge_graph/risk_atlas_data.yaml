@@ -86,7 +86,7 @@ groups:
   name: Value alignment
   type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
-risks:
+entries:
 - id: atlas-evasion-attack
   name: Evasion attack
   description: Evasion attacks attempt to make a model output incorrect results by
@@ -98,6 +98,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: evasion-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Evasion attacks alter model behavior, usually to benefit the attacker.
@@ -112,6 +113,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-the-environment
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Training and operating large AI models, building data centers, and manufacturing
@@ -130,6 +132,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: incorrect-risk-testing
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: If the metrics do not measure the risk as intended, then the understanding
@@ -150,6 +153,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: over-or-under-reliance
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: In tasks where humans make choices based on AI-based suggestions, over/under
@@ -169,6 +173,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: membership-inference-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Identifying whether a data sample was used for training data can reveal
@@ -186,6 +191,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: confidential-data-in-prompt
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: If not properly developed to secure confidential data, the model might
@@ -202,6 +208,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-leaking
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: 'A successful prompt leaking attack copies the system prompt used in the
@@ -222,6 +229,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: data-privacy-rights
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -240,6 +248,7 @@ risks:
   isPartOf: ibm-risk-atlas-fairness
   tag: discriminatory-actions-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: Discriminatory actions can cause harm to people. Discriminatory actions
@@ -256,6 +265,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: ip-information-in-prompt
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Inclusion of such data might result in it being disclosed in the model
@@ -276,6 +286,7 @@ risks:
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: legal-accountability
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -299,6 +310,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: hallucination
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -320,6 +332,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: social-hacking-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Social hacking attacks can be used to alter model behavior and benefit
@@ -336,6 +349,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: harmful-output
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: A model generating harmful output can cause immediate physical harm or
@@ -352,6 +366,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: indirect-instructions-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Indirect instructions attacks can be used to alter model behavior and benefit
@@ -367,6 +382,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: mitigation-maintenance-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: AI agents may interact with other systems, tools, or other agents. Tracing
@@ -384,6 +400,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: ai-agent-compliance-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: AI agents may interact with other systems, tools, or other agents. AI agents
@@ -404,6 +421,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: function-calling-hallucination-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: Hallucinations when generating function calls might result in wrong or
@@ -421,6 +439,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: confidential-information-in-data
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: If confidential data is not properly protected, there could be an unwanted
@@ -438,6 +457,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-model-transparency
   risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Transparency is important for legal compliance, AI ethics, and guiding
@@ -460,6 +480,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: exploit-trust-mismatch-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: This could lead to mismatched (expected vs. realized) trust boundaries
@@ -479,6 +500,7 @@ risks:
   isPartOf: ibm-risk-atlas-accuracy
   tag: unrepresentative-data
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -495,6 +517,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-human-agency-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'AI agents might shift the decision, thinking, and control from humans
@@ -512,6 +535,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: personal-information-in-prompt
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: If personal information or sensitive personal information is included in
@@ -529,6 +553,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-human-agency
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: AI can generate false or misleading information that looks real.  It may
@@ -550,6 +575,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: sharing-info-user-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: AI agents may share privileged information to users. The act of sharing
@@ -567,6 +593,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-testing-diversity
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Without diversity and the relevant experience, an organization might not
@@ -583,6 +610,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: nonconsensual-use
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -603,6 +631,7 @@ risks:
   isPartOf: ibm-risk-atlas-fairness
   tag: decision-bias
   risk_type: output
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Bias can harm persons affected by the decisions of the model.
@@ -619,6 +648,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: exposing-personal-information
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -635,6 +665,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-jobs-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'As trust in agentic systems increases, business may be more motivated
@@ -652,6 +683,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: data-curation
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -677,6 +709,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: over-or-under-reliance-on-ai-agents-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: Over/under reliance can lead to poor decision making by humans because
@@ -695,6 +728,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: external-resources-attack-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: Compromised external resources could impact the AI agent’s performance
@@ -714,6 +748,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: revealing-confidential-information
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: If not properly developed to secure confidential data, the model might
@@ -730,6 +765,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: spreading-disinformation
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Spreading disinformation might affect human’s ability to make informed
@@ -747,6 +783,7 @@ risks:
   isPartOf: ibm-risk-atlas-transparency
   tag: data-provenance
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -766,6 +803,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: unrepresentative-risk-testing
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: If the model is evaluated in a use, context, or setting that is not the
@@ -783,6 +821,7 @@ risks:
   isPartOf: ibm-risk-atlas-fairness
   tag: data-bias
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -800,6 +839,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: data-usage-rights
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Laws and regulations concerning the use of data to train AI are unsettled
@@ -823,6 +863,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: unauthorized-use-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: Attackers accessing the agent can alter AI agent’s behavior and make it
@@ -843,6 +884,7 @@ risks:
   isPartOf: ibm-risk-atlas-computational-inefficiency
   tag: redundant-actions-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: Executing actions that are not needed for the goal might result in wasting
@@ -863,6 +905,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-environment-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: The operation of AI agents could contribute to carbon emissions. If not
@@ -885,6 +928,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: misaligned-actions-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'Misaligned actions can adversely impact or harm people. '
@@ -900,6 +944,7 @@ risks:
   isPartOf: ibm-risk-atlas-accuracy
   tag: data-contamination
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Data that differs from the intended training data might skew model accuracy
@@ -915,6 +960,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: harmful-code-generation
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: The execution of harmful code might open vulnerabilities in IT systems.
@@ -930,6 +976,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: incomplete-usage-definition
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: It might be difficult to accurately determine and mitigate the relevant
@@ -947,6 +994,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-data-transparency
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -971,6 +1019,7 @@ risks:
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: copyright-infringement
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -990,6 +1039,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: context-overload-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Context overload attacks can be used to alter model behavior and benefit
@@ -1007,6 +1057,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-affected-communities
   risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Failing to engage with communities that are affected by a model’s outcomes
@@ -1022,6 +1073,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: improper-retraining
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Repurposing generated output for retraining a model without implementing
@@ -1039,6 +1091,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: spreading-toxicity
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Toxic content might negatively affect the well-being of its recipients.
@@ -1055,6 +1108,7 @@ risks:
   isPartOf: ibm-risk-atlas-fairness
   tag: introduce-data-bias-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: AI agents can introduce or magnify existing discriminatory behaviors. It
@@ -1071,6 +1125,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: accountability-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'Without properly documenting decisions and assigning responsibility, determining
@@ -1086,6 +1141,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: incomplete-ai-agent-evaluation-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: Insufficient evaluation of an agent’s performance or accuracy can lead
@@ -1102,6 +1158,7 @@ risks:
   isPartOf: ibm-risk-atlas-explainability
   tag: inaccessible-training-data
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Low quality explanations without source data make it difficult for users,
@@ -1117,6 +1174,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: bypassing-learning
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: AI models are quick to find solutions or solve complex problems. These
@@ -1135,6 +1193,7 @@ risks:
   isPartOf: ibm-risk-atlas-explainability
   tag: untraceable-attribution
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Without the ability to access training data content, the possibility of
@@ -1151,6 +1210,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: non-disclosure
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Users must be notified when they are interacting with an AI system. Not
@@ -1168,6 +1228,7 @@ risks:
   isPartOf: ibm-risk-atlas-transparency
   tag: data-transparency
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -1188,6 +1249,7 @@ risks:
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: model-usage-rights
   risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Laws and regulations that concern the use of AI are in place and vary from
@@ -1205,6 +1267,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: reproducibility-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: Because AI agents behavior may rely on Application Programming Interfaces
@@ -1223,6 +1286,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: specialized-tokens-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Specialized tokens attacks can be used to alter model behavior and benefit
@@ -1239,6 +1303,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: incomplete-advice
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: A person might act on incomplete advice or worry about a situation that
@@ -1258,6 +1323,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-injection
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: 'Injection attacks can be used to alter model behavior and benefit the
@@ -1273,6 +1339,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-system-transparency
   risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: A lack of documentation makes it difficult to understand how the model’s
@@ -1288,6 +1355,7 @@ risks:
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-usage
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Data usage restrictions can impact the availability of the data required
@@ -1303,6 +1371,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-cultural-diversity
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -1323,6 +1392,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: plagiarism
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: AI models can be used to claim the authorship or originality of works that
@@ -1340,6 +1410,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: personal-information-in-data
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: If not properly developed to protect sensitive data, the model might expose
@@ -1357,6 +1428,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: direct-instructions-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Direct instructions attacks can be used to alter model behavior and benefit
@@ -1372,6 +1444,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: improper-usage
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Reusing a model without understanding its original data, design intent,
@@ -1387,6 +1460,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-jobs
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Job loss might lead to a loss of income and thus might negatively impact
@@ -1404,6 +1478,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: extraction-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: 'With a successful extraction attack, the attacker can perform further
@@ -1420,6 +1495,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: jailbreaking
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Jailbreaking attacks can be used to alter model behavior and benefit the
@@ -1435,12 +1511,13 @@ risks:
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-acquisition
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
-  concern: There are several ways of collecting data for building a foundation models:
+  concern: "There are several ways of collecting data for building a foundation models:
     web scraping, web crawling, crowdsourcing, and curating public datasets. Data
     acquisition restrictions can also impact the availability of the data that is
-    required for training an AI model and can lead to poorly represented data.
+    required for training an AI model and can lead to poorly represented data."
 - id: atlas-sharing-info-tools-agentic
   name: Sharing IP/PI/confidential information with tools
   description: AI agents with unrestricted access to resources or databases or tools
@@ -1453,6 +1530,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: sharing-info-tools-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: AI agents may share privileged information with other tools/agents. The
@@ -1473,6 +1551,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-priming
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: 'The attack can be used to alter model behavior and benefit the attacker.'
@@ -1488,6 +1567,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: reidentification
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -1507,6 +1587,7 @@ risks:
   isPartOf: ibm-risk-atlas-privacy
   tag: attribute-inference-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: With a successful attack, the attacker can gain valuable information such
@@ -1523,6 +1604,7 @@ risks:
   isPartOf: ibm-risk-atlas-accuracy
   tag: poor-model-accuracy
   risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -1540,6 +1622,7 @@ risks:
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-transfer
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: Data transfer restrictions can also impact the availability of the data
@@ -1555,6 +1638,7 @@ risks:
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: generated-content-ownership
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Laws and regulations that relate to the ownership of AI-generated content
@@ -1573,6 +1657,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-ai-agent-transparency-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'Transparency is important for AI ethics and guiding appropriate use of
@@ -1594,6 +1679,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: encoded-interactions-attack
   risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Encoded interactions attacks can be used to alter model behavior and benefit
@@ -1609,6 +1695,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-human-dignity-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: Human workers perceiving AI agents as being better at doing the humans’
@@ -1625,6 +1712,7 @@ risks:
   isPartOf: ibm-risk-atlas-fairness
   tag: output-bias
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Bias can harm users of the AI models and magnify existing discriminatory
@@ -1640,6 +1728,7 @@ risks:
   isPartOf: ibm-risk-atlas-misuse
   tag: dangerous-use
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Large language models are often trained on vast amounts of publicly-available
@@ -1656,6 +1745,7 @@ risks:
   isPartOf: ibm-risk-atlas-explainability
   tag: unexplainable-output
   risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: Foundation models are based on complex deep learning architectures, making
@@ -1675,6 +1765,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: human-exploitation
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: 'Foundation models still depend on human labor to source, manage, and program
@@ -1691,6 +1782,7 @@ risks:
   isPartOf: ibm-risk-atlas-value-alignment
   tag: toxic-output
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: Hateful, abusive, and profane (HAP) or obscene content can adversely impact
@@ -1706,6 +1798,7 @@ risks:
   isPartOf: ibm-risk-atlas-explainability
   tag: unexplainable-untraceable-actions-agentic
   risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: 'Without clear explanations, lineage trace information, and source attributions
@@ -1723,6 +1816,7 @@ risks:
   isPartOf: ibm-risk-atlas-robustness
   tag: data-poisoning
   risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -1743,6 +1837,7 @@ risks:
   isPartOf: ibm-risk-atlas-explainability
   tag: unreliable-source-attribution
   risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -1766,6 +1861,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: temporal-gap
   risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by synthetic data
   concern: Temporal gaps in synthetic data can render it outdated or obsolete as real-world
@@ -1789,6 +1885,7 @@ risks:
   isPartOf: ibm-risk-atlas-governance
   tag: lack-domain-expertise
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to synthetic data
   concern: Lack of domain expertise can lead to AI models that are not well-suited
@@ -1808,6 +1905,7 @@ risks:
   isPartOf: ibm-risk-atlas-societal-impact
   tag: exclusion
   risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to synthetic data
   concern: Exclusion can lead to unfair model outcomes, erosion of trust, and potential
@@ -1831,6 +1929,7 @@ risks:
   isPartOf: ibm-risk-atlas-accuracy
   tag: overfitting
   risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by synthetic data
   concern: 'Overfitting to synthetic data can undermine the broad applicability and
