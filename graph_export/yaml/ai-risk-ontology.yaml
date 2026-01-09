@@ -136,9 +136,9 @@ aitasks:
   requiresCapability:
   - ibm-cap-logical-reasoning
   - ibm-cap-domain-knowledge
-  - ibm-cap-factual-accuracy
   - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
+  - ibm-cap-factual-accuracy
   type: AiTask
 - id: visual-document-retrieval
   name: Visual Document Retrieval
@@ -214,9 +214,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
   - ibm-cap-text-generation
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: question-answering
   name: Question Answering
@@ -229,9 +229,9 @@ aitasks:
   requiresCapability:
   - ibm-cap-logical-reasoning
   - ibm-cap-domain-knowledge
-  - ibm-cap-factual-accuracy
   - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
+  - ibm-cap-factual-accuracy
   type: AiTask
 - id: sentence-similarity
   name: Sentence Similarity
@@ -243,8 +243,8 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: summarization
   name: Summarization
@@ -255,9 +255,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
   - ibm-cap-text-generation
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: table-question-answering
   name: Table Question Answering
@@ -268,9 +268,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-factual-accuracy
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
+  - ibm-cap-logical-reasoning
+  - ibm-cap-factual-accuracy
   type: AiTask
 - id: text-classification
   name: Text Classification
@@ -281,8 +281,8 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: text-generation
   name: Text Generation
@@ -292,9 +292,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
+  - ibm-cap-text-generation
   - ibm-cap-contextual-understanding
   - ibm-cap-common-sense-reasoning
-  - ibm-cap-text-generation
   type: AiTask
 - id: text-ranking
   name: Text Ranking
@@ -319,9 +319,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
-  - ibm-cap-domain-knowledge
   - ibm-cap-reading-comprehension
+  - ibm-cap-domain-knowledge
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: translation
   name: Translation
@@ -335,9 +335,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
   - ibm-cap-text-generation
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: zero-shot-classification
   name: Zero-Shot Classification
@@ -348,9 +348,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-nlp
   requiresCapability:
-  - ibm-cap-contextual-understanding
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
+  - ibm-cap-logical-reasoning
+  - ibm-cap-contextual-understanding
   type: AiTask
 - id: depth-estimation
   name: Depth Estimation
@@ -563,9 +563,9 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-computer-tabular
   requiresCapability:
-  - ibm-cap-domain-knowledge
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
+  - ibm-cap-logical-reasoning
+  - ibm-cap-domain-knowledge
   type: AiTask
 - id: tabular-regression
   name: Tabular Regression
@@ -575,10 +575,10 @@ aitasks:
   isDefinedByTaxonomy: hf-ml-tasks
   isPartOf: hf-ml-tasks-group-computer-tabular
   requiresCapability:
-  - ibm-cap-domain-knowledge
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
   - ibm-cap-mathematical-reasoning
+  - ibm-cap-logical-reasoning
+  - ibm-cap-domain-knowledge
   type: AiTask
 - id: reinforcement-learning
   name: Reinforcement Learning
@@ -594,18 +594,18 @@ aitasks:
   description: Code generation is the task of generating code given some text describing
     the purpose.
   requiresCapability:
+  - ibm-cap-reading-comprehension
   - ibm-cap-domain-knowledge
   - ibm-cap-logical-reasoning
   - ibm-cap-code-generation
-  - ibm-cap-reading-comprehension
   type: AiTask
 - id: code-explanation
   name: Code Explanation
   description: Code explanation is the task of summarizing the purpose of a given
     piece of code in natural language.
   requiresCapability:
-  - ibm-cap-reading-comprehension
   - ibm-cap-code-understanding
+  - ibm-cap-reading-comprehension
   - ibm-cap-text-generation
   type: AiTask
 - id: code-editing
@@ -613,9 +613,9 @@ aitasks:
   description: Code editing is the task of changing a given piece of code to reach
     certain golas like e.g. better readability or improved performance.
   requiresCapability:
+  - ibm-cap-code-understanding
   - ibm-cap-logical-reasoning
   - ibm-cap-code-generation
-  - ibm-cap-code-understanding
   type: AiTask
 documents:
 - id: 10a99803d8afd656
@@ -1972,9 +1972,9 @@ adapters:
   hasAdapterType: LORA
   adaptsModel: granite-guardian-3.3-8b-instruct
   implementsCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-reading-comprehension
   - ibm-cap-text-generation
+  - ibm-cap-contextual-understanding
 - id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
   name: Granite 3.3 8b Instruct - Query Expansion
   description: Query Expansion is a LoRA adapter for ibm-granite/granite-3.3-8b-instruct
@@ -1991,9 +1991,9 @@ adapters:
   hasAdapterType: LORA
   adaptsModel: granite-guardian-3.3-8b-instruct
   implementsCapability:
-  - ibm-cap-contextual-understanding
   - ibm-cap-causal-reasoning
   - ibm-cap-text-generation
+  - ibm-cap-contextual-understanding
 - id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
   name: Granite 3.3 8b Instruct - Context Relevance
   description: 'Granite 3.3 8b Instruct - Context Relevance is a LoRA adapter for
@@ -2014,9 +2014,9 @@ adapters:
   hasAdapterType: LORA
   adaptsModel: granite-guardian-3.3-8b-instruct
   implementsCapability:
-  - ibm-cap-contextual-understanding
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
+  - ibm-cap-logical-reasoning
+  - ibm-cap-contextual-understanding
 - id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
   name: Granite 3.3 8b Instruct - Answerability Determination
   description: Granite 3.3 8b Instruct - Answerability Determination is a LoRA adapter
@@ -2033,9 +2033,9 @@ adapters:
   adaptsModel: granite-guardian-3.3-8b-instruct
   implementsCapability:
   - ibm-cap-contextual-understanding
-  - ibm-cap-factual-accuracy
   - ibm-cap-reading-comprehension
   - ibm-cap-logical-reasoning
+  - ibm-cap-factual-accuracy
 - id: ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
   name: Granite 3.3 Instruct - Passage Reranking
   description: Granite 3.3 Instruct - Passage Reranking is a prompt-based intrinsic
@@ -2050,9 +2050,9 @@ adapters:
   hasAdapterType: LORA
   adaptsModel: granite-guardian-3.3-8b-instruct
   implementsCapability:
-  - ibm-cap-contextual-understanding
-  - ibm-cap-logical-reasoning
   - ibm-cap-reading-comprehension
+  - ibm-cap-logical-reasoning
+  - ibm-cap-contextual-understanding
 - id: ibm-factuality-adapter-granite-3.3-8b-instruct-lora-uncertainty-quantification
   name: Granite 3.3 8b Instruct - Uncertainty Quantification
   description: Granite 3.3 8b Instruct - Uncertainty Quantification is a LoRA adapter
@@ -2416,10 +2416,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
+  - mit-ai-risk-subdomain-2.2
   - mit-ai-causal-risk-intent-intentional
   - credo-risk-041
   - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-risk-subdomain-2.2
   - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-information-security
@@ -2441,11 +2441,11 @@ entries:
   exact_mappings:
   - nist-environmental-impacts
   related_mappings:
-  - credo-risk-004
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-other
+  - credo-risk-004
   - mit-ai-causal-risk-entity-ai
   - mit-ai-risk-subdomain-6.6
+  - mit-ai-causal-risk-timing-post-deployment
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   type: Risk
@@ -2466,11 +2466,11 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-unintentional
-  - credo-risk-032
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-6.5
+  - credo-risk-032
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -2497,13 +2497,13 @@ entries:
   close_mappings:
   - credo-risk-016
   related_mappings:
+  - shieldgemma-harassment
+  - mit-ai-causal-risk-intent-unintentional
+  - llm062025-excessive-agency
+  - llm052025-improper-output-handling
   - mit-ai-risk-subdomain-5.1
   - mit-ai-causal-risk-timing-post-deployment
-  - llm062025-excessive-agency
-  - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-human
-  - shieldgemma-harassment
-  - llm052025-improper-output-handling
   broad_mappings:
   - nist-human-ai-configuration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -2527,10 +2527,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-timing-post-deployment
-  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-data-privacy
@@ -2554,11 +2554,11 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-causal-risk-entity-other
-  - mit-ai-causal-risk-timing-post-deployment
-  - ail-privacy
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-2.1
+  - ail-privacy
   broad_mappings:
   - nist-intellectual-property
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -2579,15 +2579,15 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-other
+  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
   narrow_mappings:
   - atlas-prompt-injection
   broad_mappings:
-  - nist-information-security
   - atlas-prompt-injection
+  - nist-information-security
   - llm022025-sensitive-information-disclosure
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
@@ -2652,11 +2652,11 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-causal-risk-entity-other
-  - mit-ai-causal-risk-timing-post-deployment
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-risk-subdomain-2.1
   - ail-intellectual-property
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - nist-data-privacy
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -2681,13 +2681,13 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - credo-risk-023
   - mit-ai-causal-risk-entity-other
   - mit-ai-causal-risk-intent-other
-  - credo-risk-046
   - mit-ai-risk-subdomain-6.5
+  - credo-risk-023
   - mit-ai-causal-risk-timing-other
   - credo-risk-034
+  - credo-risk-046
   broad_mappings:
   - nist-value-chain-and-component-integration
   - nist-intellectual-property
@@ -2719,14 +2719,14 @@ entries:
   - nist-confabulation
   related_mappings:
   - granite-groundedness
-  - granite-function-call
-  - mit-ai-causal-risk-timing-post-deployment
-  - llm092025-misinformation
   - mit-ai-causal-risk-intent-unintentional
-  - granite-answer-relevance
-  - mit-ai-risk-subdomain-3.1
   - mit-ai-causal-risk-entity-ai
   - granite-relevance
+  - granite-function-call
+  - mit-ai-risk-subdomain-3.1
+  - mit-ai-causal-risk-timing-post-deployment
+  - llm092025-misinformation
+  - granite-answer-relevance
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   type: Risk
@@ -2773,35 +2773,35 @@ entries:
   close_mappings:
   - nist-dangerous-violent-or-hateful-content
   related_mappings:
-  - credo-risk-024
-  - shieldgemma-sexually-explicit
-  - nist-obscene-degrading-and-or-abusive-content
-  - granite-guardian-harm
-  - ail-hate
-  - shieldgemma-dangerous-content
-  - granite-violence
-  - credo-risk-014
-  - credo-risk-003
-  - mit-ai-causal-risk-timing-post-deployment
-  - ail-child-sexual-exploitation
-  - mit-ai-causal-risk-intent-unintentional
-  - ail-sexual-content
-  - mit-ai-risk-subdomain-1.2
-  - granite-evasiveness
+  - ail-violent-crimes
   - nist-data-privacy
-  - nist-cbrn-information-or-capabilities
-  - ail-suicide-and-self-harm
-  - granite-unethical-behavior
+  - granite-guardian-harm
+  - granite-evasiveness
   - ail-indiscriminate-weapons-cbrne
+  - shieldgemma-sexually-explicit
+  - mit-ai-causal-risk-intent-unintentional
+  - credo-risk-024
+  - ail-child-sexual-exploitation
+  - granite-harm-engagement
+  - granite-unethical-behavior
+  - granite-violence
+  - nist-obscene-degrading-and-or-abusive-content
   - ail-nonviolent-crimes
-  - ail-sex-related-crimes
+  - nist-cbrn-information-or-capabilities
+  - shieldgemma-dangerous-content
+  - credo-risk-002
+  - ail-sexual-content
+  - credo-risk-011
+  - mit-ai-causal-risk-timing-post-deployment
+  - credo-risk-003
+  - ail-hate
+  - shieldgemma-harassment
   - mit-ai-causal-risk-entity-ai
   - granite-sexual-content
-  - granite-harm-engagement
-  - credo-risk-002
-  - ail-violent-crimes
-  - shieldgemma-harassment
-  - credo-risk-011
+  - ail-sex-related-crimes
+  - credo-risk-014
+  - mit-ai-risk-subdomain-1.2
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   type: Risk
@@ -2896,12 +2896,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-causal-risk-timing-pre-deployment
-  - mit-ai-risk-subdomain-2.1
   - ail-intellectual-property
+  - mit-ai-causal-risk-timing-pre-deployment
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - nist-intellectual-property
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -2923,9 +2923,9 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-other
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
   - mit-ai-risk-subdomain-7.4
   broad_mappings:
   - nist-value-chain-and-component-integration
@@ -2973,12 +2973,12 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-risk-subdomain-7.3
   - mit-ai-causal-risk-entity-other
+  - mit-ai-risk-subdomain-7.3
   - mit-ai-causal-risk-intent-unintentional
+  - credo-risk-010
   - mit-ai-causal-risk-timing-pre-deployment
   - nist-value-chain-and-component-integration
-  - credo-risk-010
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3017,10 +3017,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-ai
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - nist-data-privacy
@@ -3045,9 +3045,9 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - credo-risk-019
-  - credo-risk-002
-  - ail-intellectual-property
   - credo-risk-044
+  - ail-intellectual-property
+  - credo-risk-002
   broad_mappings:
   - nist-information-integrity
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3091,10 +3091,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-risk-subdomain-6.5
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-risk-subdomain-6.5
   broad_mappings:
   - nist-information-integrity
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3115,18 +3115,18 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
+  - ail-child-sexual-exploitation
+  - ail-defamation
   - shieldgemma-sexually-explicit
+  - ail-intellectual-property
+  - mit-ai-causal-risk-intent-intentional
   - mit-ai-risk-subdomain-4.3
+  - ail-sex-related-crimes
+  - credo-risk-034
   - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
   - ail-suicide-and-self-harm
   - ail-privacy
-  - ail-defamation
-  - ail-child-sexual-exploitation
-  - ail-sex-related-crimes
-  - mit-ai-causal-risk-entity-human
-  - ail-intellectual-property
-  - credo-risk-034
   broad_mappings:
   - nist-data-privacy
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3151,13 +3151,13 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-entity-ai
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-timing-pre-deployment
-  - shieldgemma-hate-speech
   - mit-ai-risk-subdomain-1.1
   - credo-risk-022
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-entity-ai
   - credo-risk-011
+  - mit-ai-causal-risk-timing-pre-deployment
+  - shieldgemma-hate-speech
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3178,12 +3178,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
+  - credo-risk-040
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-entity-ai
+  - credo-risk-037
   - credo-risk-024
   - mit-ai-causal-risk-timing-post-deployment
-  - credo-risk-037
-  - mit-ai-causal-risk-entity-ai
-  - mit-ai-causal-risk-intent-unintentional
-  - credo-risk-040
   - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - llm022025-sensitive-information-disclosure
@@ -3224,10 +3224,10 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-risk-subdomain-7.3
-  - ail-suicide-and-self-harm
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - ail-suicide-and-self-harm
   broad_mappings:
   - llm032025-supply-chain
   - nist-value-chain-and-component-integration
@@ -3299,10 +3299,10 @@ entries:
   close_mappings:
   - credo-risk-038
   related_mappings:
-  - credo-risk-024
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-ai
+  - credo-risk-024
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - nist-intellectual-property
@@ -3325,12 +3325,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - credo-risk-021
+  - credo-risk-028
   - mit-ai-causal-risk-intent-intentional
+  - credo-risk-021
   - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-4.1
-  - credo-risk-028
   broad_mappings:
   - nist-information-integrity
   - llm092025-misinformation
@@ -3353,10 +3353,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-risk-subdomain-6.5
-  - mit-ai-causal-risk-intent-other
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-other
+  - mit-ai-risk-subdomain-6.5
   broad_mappings:
   - llm032025-supply-chain
   - nist-value-chain-and-component-integration
@@ -3381,10 +3381,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-risk-subdomain-6.5
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-risk-subdomain-6.5
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3406,11 +3406,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
-  - shieldgemma-hate-speech
   - mit-ai-risk-subdomain-1.1
+  - mit-ai-causal-risk-intent-unintentional
+  - shieldgemma-hate-speech
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3432,9 +3432,9 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   broad_mappings:
-  - nist-intellectual-property
-  - nist-data-privacy
   - llm032025-supply-chain
+  - nist-data-privacy
+  - nist-intellectual-property
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
@@ -3541,13 +3541,13 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-risk-subdomain-7.3
-  - ail-privacy
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - ail-privacy
   broad_mappings:
-  - nist-information-security
   - llm032025-supply-chain
+  - nist-information-security
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-accuracy
@@ -3566,12 +3566,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
+  - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-unintentional
+  - shieldgemma-dangerous-content
+  - mit-ai-causal-risk-entity-ai
   - mit-ai-causal-risk-timing-post-deployment
   - llm092025-misinformation
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-risk-subdomain-2.2
-  - mit-ai-causal-risk-entity-ai
-  - shieldgemma-dangerous-content
   broad_mappings:
   - nist-information-security
   - nist-dangerous-violent-or-hateful-content
@@ -3592,10 +3592,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-risk-subdomain-6.5
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-risk-subdomain-6.5
   broad_mappings:
   - nist-human-ai-configuration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3617,12 +3617,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - credo-risk-008
-  - credo-risk-006
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-6.5
+  - credo-risk-008
+  - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-timing-pre-deployment
+  - credo-risk-006
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - llm032025-supply-chain
   - nist-value-chain-and-component-integration
@@ -3652,10 +3652,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-13
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-other
   - credo-risk-039
   - mit-ai-causal-risk-entity-ai
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-6.3
   broad_mappings:
   - nist-intellectual-property
@@ -3702,10 +3702,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-1.3
-  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-intent-unintentional
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3726,10 +3726,10 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-risk-subdomain-7.3
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - llm032025-supply-chain
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3751,13 +3751,13 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - credo-risk-014
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-entity-human
-  - shieldgemma-harassment
   - credo-risk-013
+  - shieldgemma-harassment
+  - mit-ai-causal-risk-intent-intentional
+  - mit-ai-causal-risk-entity-human
   - shieldgemma-hate-speech
+  - mit-ai-causal-risk-timing-post-deployment
+  - credo-risk-014
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3828,11 +3828,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
-  - llm032025-supply-chain
   - mit-ai-causal-risk-entity-ai
   - mit-ai-risk-subdomain-7.4
+  - llm032025-supply-chain
+  - mit-ai-causal-risk-timing-post-deployment
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -3852,10 +3852,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-10
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-4.3
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-intentional
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   type: Risk
@@ -3881,8 +3881,8 @@ entries:
   - mit-ai-causal-risk-intent-other
   - mit-ai-risk-subdomain-7.4
   broad_mappings:
-  - nist-information-integrity
   - llm032025-supply-chain
+  - nist-information-integrity
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   type: Risk
@@ -3928,11 +3928,11 @@ entries:
   close_mappings:
   - credo-risk-005
   related_mappings:
-  - credo-risk-006
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-6.5
+  - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-timing-pre-deployment
+  - credo-risk-006
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-information-integrity
   - nist-value-chain-and-component-integration
@@ -3960,9 +3960,9 @@ entries:
   related_mappings:
   - ail-specialized-advice
   broad_mappings:
+  - llm032025-supply-chain
   - nist-value-chain-and-component-integration
   - nist-intellectual-property
-  - llm032025-supply-chain
   - nist-data-privacy
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-legal-compliance
@@ -4022,11 +4022,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - ail-specialized-advice
   - mit-ai-risk-subdomain-7.3
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-ai
+  - mit-ai-causal-risk-timing-post-deployment
+  - ail-specialized-advice
   broad_mappings:
   - nist-information-integrity
   - llm092025-misinformation
@@ -4054,28 +4054,28 @@ entries:
   exact_mappings:
   - llm01-prompt-injection
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-timing-post-deployment
   - atlas-jailbreaking
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   narrow_mappings:
   - atlas-encoded-interactions-attack
   - atlas-direct-instructions-attack
   - atlas-prompt-leaking
+  - atlas-indirect-instructions-attack
+  - atlas-context-overload-attack
   - atlas-specialized-tokens-attack
   - atlas-social-hacking-attack
-  - atlas-context-overload-attack
-  - atlas-indirect-instructions-attack
   broad_mappings:
   - atlas-encoded-interactions-attack
-  - nist-information-security
   - atlas-direct-instructions-attack
   - atlas-prompt-leaking
+  - nist-information-security
+  - atlas-indirect-instructions-attack
+  - atlas-context-overload-attack
   - atlas-specialized-tokens-attack
   - atlas-social-hacking-attack
-  - atlas-context-overload-attack
-  - atlas-indirect-instructions-attack
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   type: Risk
@@ -4092,10 +4092,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-other
-  - mit-ai-risk-subdomain-6.5
+  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-intent-other
+  - mit-ai-risk-subdomain-6.5
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4115,10 +4115,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-7.3
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-data-laws
   type: Risk
@@ -4136,12 +4136,12 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
-  - credo-risk-044
-  - mit-ai-causal-risk-entity-ai
-  - mit-ai-risk-subdomain-6.3
   - credo-risk-010
+  - mit-ai-causal-risk-entity-ai
+  - credo-risk-044
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-risk-subdomain-6.3
   broad_mappings:
   - nist-information-integrity
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4166,10 +4166,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-10
   related_mappings:
+  - mit-ai-risk-subdomain-4.3
   - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-intent-other
-  - mit-ai-risk-subdomain-4.3
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   type: Risk
@@ -4190,13 +4190,13 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - credo-risk-036
-  - mit-ai-causal-risk-timing-post-deployment
-  - ail-privacy
-  - credo-risk-037
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-ai
+  - credo-risk-037
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-2.1
+  - ail-privacy
   broad_mappings:
   - nist-data-privacy
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4238,10 +4238,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-5.1
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
   broad_mappings:
   - nist-human-ai-configuration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4261,11 +4261,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-risk-subdomain-6.2
   - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - credo-risk-042
+  - mit-ai-risk-subdomain-6.2
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   type: Risk
@@ -4286,9 +4286,9 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-intentional
   - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
   broad_mappings:
   - nist-information-security
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4309,11 +4309,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-timing-post-deployment
   - granite-jailbreak
   - mit-ai-risk-subdomain-2.2
   - atlas-prompt-injection
+  - mit-ai-causal-risk-intent-intentional
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-information-integrity
@@ -4335,10 +4335,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-7.3
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
   broad_mappings:
   - llm032025-supply-chain
   - nist-value-chain-and-component-integration
@@ -4384,9 +4384,9 @@ entries:
   dateModified: 2025-10-10
   related_mappings:
   - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-intentional
   - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
   broad_mappings:
   - nist-information-security
   - llm01-prompt-injection
@@ -4408,9 +4408,9 @@ entries:
   dateModified: 2025-10-22
   related_mappings:
   - mit-ai-causal-risk-entity-other
-  - llm022025-sensitive-information-disclosure
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-timing-pre-deployment
+  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-2.1
   broad_mappings:
   - nist-data-privacy
@@ -4435,10 +4435,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - mit-ai-causal-risk-timing-post-deployment
-  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-causal-risk-intent-intentional
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-information-security
@@ -4461,10 +4461,10 @@ entries:
   dateCreated: 2024-09-24
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-risk-subdomain-7.3
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-unintentional
   - credo-risk-032
+  - mit-ai-risk-subdomain-7.3
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-human-ai-configuration
@@ -4489,10 +4489,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-unintentional
-  - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-7.3
   - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-entity-human
+  - mit-ai-causal-risk-intent-unintentional
   broad_mappings:
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4512,9 +4512,9 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
+  - mit-ai-causal-risk-timing-other
   - mit-ai-causal-risk-entity-other
   - mit-ai-risk-subdomain-6.3
-  - mit-ai-causal-risk-timing-other
   - mit-ai-causal-risk-intent-other
   broad_mappings:
   - nist-intellectual-property
@@ -4597,15 +4597,15 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - granite-social-bias
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-entity-ai
-  - mit-ai-causal-risk-intent-unintentional
-  - shieldgemma-hate-speech
-  - credo-risk-010
   - mit-ai-risk-subdomain-1.1
   - credo-risk-022
+  - credo-risk-010
+  - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-entity-ai
   - credo-risk-011
+  - shieldgemma-hate-speech
+  - mit-ai-causal-risk-timing-post-deployment
+  - granite-social-bias
   broad_mappings:
   - nist-harmful-bias-or-homogenization
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4625,17 +4625,17 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
-  - credo-risk-012
-  - credo-risk-003
-  - mit-ai-causal-risk-timing-post-deployment
   - credo-risk-027
   - ail-hate
   - credo-risk-015
   - ail-defamation
-  - mit-ai-causal-risk-entity-human
-  - ail-violent-crimes
   - shieldgemma-dangerous-content
+  - ail-violent-crimes
+  - mit-ai-causal-risk-intent-intentional
+  - credo-risk-012
+  - mit-ai-causal-risk-timing-post-deployment
+  - mit-ai-causal-risk-entity-human
+  - credo-risk-003
   broad_mappings:
   - nist-cbrn-information-or-capabilities
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4656,10 +4656,10 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-entity-ai
   - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-risk-subdomain-7.4
   - mit-ai-causal-risk-intent-unintentional
+  - mit-ai-causal-risk-entity-ai
+  - mit-ai-risk-subdomain-7.4
   broad_mappings:
   - nist-information-integrity
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4683,11 +4683,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-risk-subdomain-6.2
-  - mit-ai-causal-risk-intent-other
-  - mit-ai-causal-risk-entity-human
-  - mit-ai-causal-risk-timing-pre-deployment
   - credo-risk-013
+  - mit-ai-causal-risk-intent-other
+  - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-risk-subdomain-6.2
+  - mit-ai-causal-risk-entity-human
   broad_mappings:
   - nist-obscene-degrading-and-or-abusive-content
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4711,16 +4711,16 @@ entries:
   - nist-obscene-degrading-and-or-abusive-content
   - nist-dangerous-violent-or-hateful-content
   related_mappings:
-  - shieldgemma-sexually-explicit
-  - granite-profanity
-  - mit-ai-causal-risk-timing-post-deployment
-  - mit-ai-causal-risk-intent-other
   - credo-risk-015
-  - shieldgemma-hate-speech
-  - ail-sex-related-crimes
-  - ail-violent-crimes
+  - mit-ai-causal-risk-intent-other
+  - shieldgemma-sexually-explicit
   - shieldgemma-harassment
+  - ail-violent-crimes
   - mit-ai-causal-risk-entity-ai
+  - granite-profanity
+  - ail-sex-related-crimes
+  - shieldgemma-hate-speech
+  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-risk-subdomain-1.2
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
@@ -4757,13 +4757,13 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-22
   related_mappings:
-  - mit-ai-causal-risk-intent-intentional
+  - mit-ai-causal-risk-timing-pre-deployment
   - mit-ai-causal-risk-entity-human
   - mit-ai-risk-subdomain-2.2
-  - mit-ai-causal-risk-timing-pre-deployment
+  - mit-ai-causal-risk-intent-intentional
   broad_mappings:
-  - nist-information-security
   - llm042025-data-and-model-poisoning
+  - nist-information-security
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   type: Risk
@@ -4786,11 +4786,11 @@ entries:
   dateCreated: 2024-03-06
   dateModified: 2025-10-13
   related_mappings:
-  - credo-risk-007
-  - mit-ai-causal-risk-timing-post-deployment
   - mit-ai-causal-risk-intent-unintentional
   - mit-ai-causal-risk-entity-ai
   - mit-ai-risk-subdomain-7.4
+  - mit-ai-causal-risk-timing-post-deployment
+  - credo-risk-007
   broad_mappings:
   - nist-information-security
   isDefinedByTaxonomy: ibm-risk-atlas
@@ -4977,18 +4977,18 @@ entries:
     illegal activities. Includes difficulty controlling public exposure to hateful
     and disparaging or stereotyping content.
   close_mappings:
+  - ail-hate
   - atlas-harmful-output
+  - credo-risk-015
   - atlas-toxic-output
+  related_mappings:
   - ail-hate
   - credo-risk-015
-  related_mappings:
-  - ail-suicide-and-self-harm
-  - ail-hate
+  - credo-risk-013
   - ail-indiscriminate-weapons-cbrne
   - ail-nonviolent-crimes
-  - credo-risk-015
   - ail-violent-crimes
-  - credo-risk-013
+  - ail-suicide-and-self-harm
   broad_mappings:
   - atlas-harmful-code-generation
   isDefinedByTaxonomy: nist-ai-rmf
@@ -5030,27 +5030,27 @@ entries:
     of biometric, health, location, or other personally identifiable information or
     sensitive data.
   related_mappings:
-  - atlas-harmful-output
-  - ail-specialized-advice
-  - credo-risk-023
   - credo-risk-036
-  - ail-privacy
-  - credo-risk-029
-  - credo-risk-037
   - ail-intellectual-property
+  - credo-risk-023
+  - credo-risk-037
+  - atlas-harmful-output
+  - credo-risk-029
+  - ail-specialized-advice
+  - ail-privacy
   broad_mappings:
-  - atlas-data-usage-rights
-  - atlas-personal-information-in-prompt
-  - atlas-personal-information-in-data
-  - atlas-exposing-personal-information
-  - atlas-ip-information-in-prompt
-  - atlas-membership-inference-attack
-  - atlas-model-usage-rights
   - atlas-attribute-inference-attack
+  - atlas-model-usage-rights
+  - atlas-personal-information-in-prompt
+  - atlas-membership-inference-attack
+  - atlas-data-privacy-rights
+  - atlas-exposing-personal-information
   - atlas-nonconsensual-use
   - atlas-reidentification
-  - atlas-data-privacy-rights
+  - atlas-data-usage-rights
+  - atlas-ip-information-in-prompt
   - atlas-legal-accountability
+  - atlas-personal-information-in-data
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
   hasRelatedAction:
@@ -5104,19 +5104,19 @@ entries:
     that skews system or model outputs, which may be erroneous, lead to ill-founded
     decision-making, or amplify harmful biases.
   related_mappings:
-  - credo-risk-012
-  - ail-suicide-and-self-harm
+  - credo-risk-022
   - ail-defamation
   - credo-risk-010
-  - credo-risk-022
+  - credo-risk-012
   - credo-risk-011
+  - ail-suicide-and-self-harm
   broad_mappings:
-  - atlas-decision-bias
   - atlas-impact-on-affected-communities
-  - atlas-unrepresentative-data
   - atlas-spreading-toxicity
-  - atlas-data-bias
+  - atlas-unrepresentative-data
   - atlas-output-bias
+  - atlas-decision-bias
+  - atlas-data-bias
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
 - id: nist-human-ai-configuration
@@ -5126,21 +5126,21 @@ entries:
     algorithmic aversion, automation bias, over-reliance, or emotional entanglement
     with GAI systems.
   related_mappings:
-  - credo-risk-016
+  - credo-risk-020
+  - credo-risk-017
   - credo-risk-008
+  - credo-risk-002
   - credo-risk-018
   - credo-risk-012
-  - credo-risk-002
-  - ail-suicide-and-self-harm
+  - credo-risk-016
   - credo-risk-009
-  - credo-risk-017
-  - credo-risk-020
+  - ail-suicide-and-self-harm
   broad_mappings:
-  - atlas-non-disclosure
   - atlas-improper-usage
-  - atlas-incomplete-usage-definition
   - atlas-over-or-under-reliance
+  - atlas-non-disclosure
   - atlas-poor-model-accuracy
+  - atlas-incomplete-usage-definition
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
   hasRelatedAction:
@@ -5204,24 +5204,24 @@ entries:
     uncertainties, or could be leveraged for large-scale dis- and mis-information
     campaigns.
   related_mappings:
-  - credo-risk-007
-  - ail-specialized-advice
-  - ail-privacy
   - ail-nonviolent-crimes
+  - credo-risk-022
   - ail-defamation
   - credo-risk-032
   - ail-intellectual-property
-  - credo-risk-022
+  - ail-specialized-advice
+  - credo-risk-007
+  - ail-privacy
   broad_mappings:
-  - atlas-spreading-disinformation
-  - atlas-untraceable-attribution
   - atlas-jailbreaking
-  - atlas-incomplete-advice
-  - atlas-unexplainable-output
-  - atlas-data-transparency
-  - atlas-impact-on-cultural-diversity
+  - atlas-spreading-disinformation
   - atlas-impact-on-human-agency
+  - atlas-unexplainable-output
+  - atlas-untraceable-attribution
+  - atlas-impact-on-cultural-diversity
   - atlas-poor-model-accuracy
+  - atlas-incomplete-advice
+  - atlas-data-transparency
   - atlas-lack-of-testing-diversity
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
@@ -5306,21 +5306,21 @@ entries:
     targeted cyberattacks, which may compromise a system’s availability or the confidentiality
     or integrity of training data, code, or model weights.
   related_mappings:
-  - credo-risk-041
-  - ail-privacy
-  - ail-nonviolent-crimes
   - credo-risk-040
+  - ail-nonviolent-crimes
+  - credo-risk-041
   - credo-risk-038
+  - ail-privacy
   broad_mappings:
   - atlas-prompt-priming
-  - atlas-prompt-leaking
-  - atlas-extraction-attack
-  - atlas-harmful-code-generation
-  - atlas-evasion-attack
   - atlas-attribute-inference-attack
-  - atlas-data-poisoning
   - atlas-prompt-injection
+  - atlas-prompt-leaking
   - atlas-unreliable-source-attribution
+  - atlas-data-poisoning
+  - atlas-extraction-attack
+  - atlas-evasion-attack
+  - atlas-harmful-code-generation
   - atlas-data-contamination
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
@@ -5385,19 +5385,19 @@ entries:
   close_mappings:
   - ail-intellectual-property
   related_mappings:
-  - ail-privacy
   - ail-nonviolent-crimes
   - ail-defamation
-  - credo-risk-039
   - ail-intellectual-property
+  - credo-risk-039
+  - ail-privacy
   broad_mappings:
+  - atlas-model-usage-rights
+  - atlas-copyright-infringement
+  - atlas-confidential-data-in-prompt
+  - atlas-confidential-information-in-data
+  - atlas-generated-content-ownership
   - atlas-revealing-confidential-information
   - atlas-data-usage-rights
-  - atlas-copyright-infringement
-  - atlas-confidential-information-in-data
-  - atlas-model-usage-rights
-  - atlas-generated-content-ownership
-  - atlas-confidential-data-in-prompt
   - atlas-legal-accountability
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
@@ -5437,15 +5437,15 @@ entries:
   close_mappings:
   - atlas-toxic-output
   related_mappings:
+  - credo-risk-013
+  - ail-defamation
+  - ail-violent-crimes
+  - ail-sexual-content
+  - ail-sex-related-crimes
   - atlas-harmful-output
+  - ail-child-sexual-exploitation
   - credo-risk-014
   - ail-suicide-and-self-harm
-  - ail-defamation
-  - ail-child-sexual-exploitation
-  - ail-sex-related-crimes
-  - ail-sexual-content
-  - ail-violent-crimes
-  - credo-risk-013
   broad_mappings:
   - atlas-human-exploitation
   isDefinedByTaxonomy: nist-ai-rmf
@@ -5473,31 +5473,31 @@ entries:
     the AI lifecycle; or other issues that diminish transparency or accountability
     for downstream users.
   related_mappings:
-  - credo-risk-049
-  - credo-risk-030
-  - atlas-unrepresentative-data
   - credo-risk-048
   - credo-risk-031
+  - atlas-unrepresentative-data
   - credo-risk-047
+  - credo-risk-030
+  - credo-risk-049
   broad_mappings:
-  - atlas-incorrect-risk-testing
-  - atlas-data-usage-rights
-  - atlas-data-acquisition
-  - atlas-data-transfer
   - atlas-data-curation
-  - atlas-data-contamination
-  - atlas-unrepresentative-risk-testing
-  - atlas-incomplete-advice
-  - atlas-model-usage-rights
   - atlas-improper-retraining
-  - atlas-data-transparency
-  - atlas-lack-of-data-transparency
-  - atlas-data-provenance
-  - atlas-poor-model-accuracy
-  - atlas-lack-of-system-transparency
+  - atlas-unrepresentative-risk-testing
+  - atlas-model-usage-rights
   - atlas-lack-of-model-transparency
   - atlas-inaccessible-training-data
+  - atlas-incomplete-advice
+  - atlas-lack-of-system-transparency
+  - atlas-data-provenance
+  - atlas-incorrect-risk-testing
+  - atlas-data-usage-rights
+  - atlas-poor-model-accuracy
   - atlas-legal-accountability
+  - atlas-data-transfer
+  - atlas-data-transparency
+  - atlas-data-contamination
+  - atlas-data-acquisition
+  - atlas-lack-of-data-transparency
   isDefinedByTaxonomy: nist-ai-rmf
   type: Risk
   hasRelatedAction:
@@ -5603,20 +5603,20 @@ entries:
     terrorism, genocide, murder, hate-motivated violent crimes, child abuse, assault,
     battery, or kidnapping), Unlawful violence toward animals (e.g., animal abuse).'
   related_mappings:
-  - atlas-harmful-output
-  - atlas-toxic-output
-  - nist-obscene-degrading-and-or-abusive-content
-  - granite-groundedness
-  - granite-violence
-  - nist-cbrn-information-or-capabilities
   - credo-risk-027
+  - credo-risk-015
+  - nist-obscene-degrading-and-or-abusive-content
+  - nist-dangerous-violent-or-hateful-content
+  - granite-groundedness
+  - nist-cbrn-information-or-capabilities
+  - atlas-toxic-output
+  - atlas-dangerous-use
+  - atlas-harmful-output
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-risk-subdomain-1.2
   - granite-guardian-harm
   - granite-unethical-behavior
-  - credo-risk-015
-  - llm022025-sensitive-information-disclosure
-  - atlas-dangerous-use
-  - mit-ai-risk-subdomain-1.2
-  - nist-dangerous-violent-or-hateful-content
+  - granite-violence
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-physical-hazards
   type: Risk
@@ -5628,16 +5628,16 @@ entries:
     (e.g., rape), Sexual harassment (physical, verbal, or visual), Nonconsensual sharing
     of sexually intimate content (e.g., revenge porn), Bestiality.'
   related_mappings:
-  - atlas-harmful-output
-  - atlas-toxic-output
   - nist-obscene-degrading-and-or-abusive-content
-  - credo-risk-014
-  - granite-sexual-content
-  - credo-risk-003
-  - credo-risk-002
-  - granite-guardian-harm
   - atlas-nonconsensual-use
+  - credo-risk-002
+  - atlas-toxic-output
+  - atlas-harmful-output
+  - granite-sexual-content
+  - credo-risk-014
   - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
+  - credo-risk-003
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-physical-hazards
   type: Risk
@@ -5647,15 +5647,15 @@ entries:
     Unacceptable responses will contain, describe, enable, encourage, or endorse the
     sexual abuse of people under the age of 18.
   related_mappings:
-  - atlas-harmful-output
-  - credo-risk-014
-  - nist-obscene-degrading-and-or-abusive-content
-  - granite-sexual-content
-  - granite-harm-engagement
-  - granite-guardian-harm
   - granite-unethical-behavior
+  - nist-obscene-degrading-and-or-abusive-content
   - atlas-nonconsensual-use
+  - atlas-harmful-output
+  - granite-sexual-content
+  - credo-risk-014
   - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
+  - granite-harm-engagement
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-physical-hazards
   type: Risk
@@ -5667,28 +5667,28 @@ entries:
     sports). Unacceptable responses will enable, encourage, or endorse acts of intentional
     self-harm: Suicide, Self-injury (e.g., cutting), Disordered eating.'
   related_mappings:
-  - mit-ai-risk-subdomain-1.3
-  - nist-obscene-degrading-and-or-abusive-content
-  - credo-risk-036
-  - credo-risk-009
-  - granite-guardian-harm
-  - granite-answer-relevance
+  - credo-risk-033
   - credo-risk-007
-  - credo-risk-003
-  - atlas-data-curation
-  - mit-ai-risk-subdomain-2.2
-  - credo-risk-037
-  - mit-ai-risk-subdomain-1.2
-  - credo-risk-010
+  - granite-guardian-harm
   - nist-dangerous-violent-or-hateful-content
-  - atlas-harmful-output
+  - mit-ai-risk-subdomain-1.3
+  - nist-harmful-bias-or-homogenization
+  - credo-risk-009
+  - granite-harm-engagement
+  - nist-obscene-degrading-and-or-abusive-content
   - granite-groundedness
   - nist-human-ai-configuration
-  - credo-risk-033
-  - nist-harmful-bias-or-homogenization
-  - granite-sexual-content
-  - granite-harm-engagement
+  - credo-risk-037
+  - atlas-harmful-output
+  - granite-answer-relevance
+  - credo-risk-003
+  - atlas-data-curation
+  - credo-risk-036
+  - mit-ai-risk-subdomain-2.2
+  - credo-risk-010
   - atlas-nonconsensual-use
+  - granite-sexual-content
+  - mit-ai-risk-subdomain-1.2
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-physical-hazards
   type: Risk
@@ -5703,13 +5703,13 @@ entries:
   close_mappings:
   - nist-cbrn-information-or-capabilities
   related_mappings:
-  - atlas-harmful-output
-  - granite-violence
   - credo-risk-027
-  - granite-guardian-harm
   - mit-ai-risk-subdomain-4.2
-  - mit-ai-risk-subdomain-1.2
   - nist-dangerous-violent-or-hateful-content
+  - atlas-harmful-output
+  - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
+  - granite-violence
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-physical-hazards
   type: Risk
@@ -5721,24 +5721,24 @@ entries:
   close_mappings:
   - nist-intellectual-property
   related_mappings:
-  - credo-risk-024
+  - nist-information-integrity
+  - atlas-impact-on-human-agency
+  - credo-risk-025
+  - nist-data-privacy
+  - llm052025-improper-output-handling
   - credo-risk-005
   - granite-guardian-harm
-  - credo-risk-025
-  - atlas-impact-on-human-agency
   - atlas-confidential-information-in-data
-  - mit-ai-risk-subdomain-1.2
-  - atlas-data-privacy-rights
-  - nist-data-privacy
-  - llm022025-sensitive-information-disclosure
-  - nist-information-integrity
   - credo-risk-039
-  - mit-ai-risk-subdomain-2.1
-  - atlas-ip-information-in-prompt
+  - credo-risk-024
   - granite-harm-engagement
+  - atlas-data-privacy-rights
   - credo-risk-002
+  - atlas-ip-information-in-prompt
+  - mit-ai-risk-subdomain-2.1
   - atlas-nonconsensual-use
-  - llm052025-improper-output-handling
+  - llm022025-sensitive-information-disclosure
+  - mit-ai-risk-subdomain-1.2
   - nist-intellectual-property
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-non-physical-hazards
@@ -5752,20 +5752,20 @@ entries:
     25 years. Unacceptable responses will be both verifiably false and likely to injure
     the reputation of a living person.
   related_mappings:
-  - nist-harmful-bias-or-homogenization
-  - credo-risk-024
-  - nist-obscene-degrading-and-or-abusive-content
-  - mit-ai-risk-subdomain-4.3
-  - granite-harm-engagement
-  - granite-guardian-harm
-  - llm092025-misinformation
-  - llm022025-sensitive-information-disclosure
-  - atlas-dangerous-use
-  - atlas-nonconsensual-use
   - nist-information-integrity
+  - nist-obscene-degrading-and-or-abusive-content
+  - atlas-nonconsensual-use
+  - granite-guardian-harm
+  - credo-risk-024
+  - mit-ai-risk-subdomain-4.3
+  - nist-harmful-bias-or-homogenization
+  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-3.1
   - mit-ai-risk-subdomain-4.1
+  - llm092025-misinformation
+  - atlas-dangerous-use
   - nist-intellectual-property
+  - granite-harm-engagement
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-non-physical-hazards
   type: Risk
@@ -5780,26 +5780,26 @@ entries:
     using regulated substances)., Weapons crimes (e.g., illegal manufacture of firearms).,
     Cybercrimes (e.g., hacking).
   related_mappings:
-  - granite-guardian-harm
-  - nist-information-security
-  - mit-ai-risk-subdomain-5.1
-  - mit-ai-risk-subdomain-2.2
-  - mit-ai-risk-subdomain-4.2
-  - nist-dangerous-violent-or-hateful-content
-  - atlas-harmful-output
-  - credo-risk-026
-  - granite-unethical-behavior
-  - llm022025-sensitive-information-disclosure
   - nist-information-integrity
-  - mit-ai-risk-subdomain-6.5
+  - nist-information-security
+  - granite-guardian-harm
   - mit-ai-risk-subdomain-4.1
-  - mit-ai-risk-subdomain-2.1
-  - mit-ai-risk-subdomain-6.6
+  - nist-dangerous-violent-or-hateful-content
   - mit-ai-risk-subdomain-7.1
-  - mit-ai-risk-subdomain-4.3
-  - mit-ai-risk-subdomain-7.2
-  - nist-intellectual-property
+  - mit-ai-risk-subdomain-6.6
+  - granite-unethical-behavior
+  - mit-ai-risk-subdomain-6.5
+  - credo-risk-026
   - mit-ai-risk-subdomain-5.2
+  - atlas-harmful-output
+  - mit-ai-risk-subdomain-5.1
+  - mit-ai-risk-subdomain-2.1
+  - mit-ai-risk-subdomain-4.2
+  - mit-ai-risk-subdomain-7.2
+  - mit-ai-risk-subdomain-2.2
+  - mit-ai-risk-subdomain-4.3
+  - llm022025-sensitive-information-disclosure
+  - nist-intellectual-property
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-non-physical-hazards
   type: Risk
@@ -5812,15 +5812,15 @@ entries:
   close_mappings:
   - nist-dangerous-violent-or-hateful-content
   related_mappings:
-  - atlas-harmful-output
-  - granite-harm-engagement
-  - granite-guardian-harm
   - credo-risk-015
-  - atlas-dangerous-use
   - credo-risk-013
-  - mit-ai-risk-subdomain-1.2
-  - credo-risk-010
   - nist-dangerous-violent-or-hateful-content
+  - credo-risk-010
+  - atlas-dangerous-use
+  - atlas-harmful-output
+  - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
+  - granite-harm-engagement
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-non-physical-hazards
   type: Risk
@@ -5833,23 +5833,23 @@ entries:
     Digital security (e.g., log-in credentials)., Financial security (e.g., bank-account
     number or credit-card details).
   related_mappings:
-  - nist-information-security
-  - atlas-personal-information-in-data
-  - credo-risk-036
-  - nist-data-privacy
-  - granite-guardian-harm
-  - llm022025-sensitive-information-disclosure
-  - mit-ai-risk-subdomain-2.2
-  - atlas-nonconsensual-use
   - nist-information-integrity
-  - llm052025-improper-output-handling
-  - atlas-confidential-data-in-prompt
-  - credo-risk-029
-  - credo-risk-037
-  - mit-ai-risk-subdomain-2.1
   - nist-intellectual-property
+  - credo-risk-036
+  - mit-ai-risk-subdomain-2.2
+  - atlas-confidential-data-in-prompt
   - credo-risk-038
+  - atlas-nonconsensual-use
+  - granite-guardian-harm
+  - credo-risk-037
+  - nist-data-privacy
+  - nist-information-security
+  - llm052025-improper-output-handling
+  - llm022025-sensitive-information-disclosure
+  - credo-risk-029
   - atlas-data-contamination
+  - atlas-personal-information-in-data
+  - mit-ai-risk-subdomain-2.1
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-non-physical-hazards
   type: Risk
@@ -5871,25 +5871,25 @@ entries:
     \ Unacceptable responses may also contain statements indicating that dangerous\n\
     \ activities or objects are categorically safe."
   related_mappings:
-  - credo-risk-005
-  - credo-risk-036
-  - credo-risk-027
-  - granite-guardian-harm
-  - granite-answer-relevance
-  - granite-relevance
-  - mit-ai-risk-subdomain-5.1
-  - llm092025-misinformation
-  - atlas-model-usage-rights
-  - granite-evasiveness
-  - granite-groundedness
-  - nist-data-privacy
-  - granite-unethical-behavior
-  - atlas-incomplete-advice
   - nist-information-integrity
   - credo-risk-033
+  - nist-data-privacy
+  - atlas-incomplete-advice
+  - granite-guardian-harm
   - granite-social-bias
+  - granite-evasiveness
+  - atlas-model-usage-rights
+  - llm092025-misinformation
   - granite-harm-engagement
+  - granite-unethical-behavior
+  - credo-risk-027
+  - granite-groundedness
+  - mit-ai-risk-subdomain-5.1
+  - granite-answer-relevance
+  - credo-risk-036
+  - granite-relevance
   - credo-risk-029
+  - credo-risk-005
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-contextual-hazards
   type: Risk
@@ -5908,14 +5908,14 @@ entries:
     Annotators need not decide a particular one under which the response is unacceptable,
     but merely whether it is unacceptable under any of them.'
   related_mappings:
-  - atlas-harmful-output
+  - credo-risk-013
   - nist-obscene-degrading-and-or-abusive-content
-  - credo-risk-014
+  - atlas-harmful-output
   - granite-profanity
   - granite-sexual-content
-  - granite-guardian-harm
-  - credo-risk-013
+  - credo-risk-014
   - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
   isDefinedByTaxonomy: ailuminate-v1.0
   isPartOf: ail-contextual-hazards
   type: Risk
@@ -6048,11 +6048,11 @@ entries:
     gender, or other sensitive characteristics, resulting in unfair outcomes and representation
     of those groups.
   related_mappings:
-  - atlas-decision-bias
-  - credo-risk-011
-  - atlas-data-bias
   - credo-risk-010
   - atlas-output-bias
+  - credo-risk-011
+  - atlas-decision-bias
+  - atlas-data-bias
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-1
   type: Risk
@@ -6066,18 +6066,18 @@ entries:
   close_mappings:
   - credo-risk-013
   related_mappings:
-  - atlas-harmful-output
-  - atlas-toxic-output
-  - credo-risk-014
-  - ail-suicide-and-self-harm
   - ail-hate
-  - ail-indiscriminate-weapons-cbrne
   - credo-risk-015
-  - ail-child-sexual-exploitation
+  - ail-indiscriminate-weapons-cbrne
+  - ail-intellectual-property
+  - ail-violent-crimes
   - ail-sex-related-crimes
   - ail-sexual-content
-  - ail-violent-crimes
-  - ail-intellectual-property
+  - atlas-harmful-output
+  - ail-child-sexual-exploitation
+  - credo-risk-014
+  - atlas-toxic-output
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-1
   type: Risk
@@ -6103,22 +6103,22 @@ entries:
   close_mappings:
   - credo-risk-036
   related_mappings:
-  - atlas-revealing-confidential-information
-  - credo-risk-024
-  - atlas-personal-information-in-prompt
   - atlas-personal-information-in-data
-  - atlas-exposing-personal-information
-  - atlas-confidential-information-in-data
-  - ail-privacy
-  - ail-nonviolent-crimes
-  - credo-risk-037
-  - atlas-reidentification
-  - ail-intellectual-property
-  - credo-risk-029
   - credo-risk-040
+  - ail-nonviolent-crimes
+  - atlas-confidential-information-in-data
   - atlas-confidential-data-in-prompt
+  - atlas-personal-information-in-prompt
+  - ail-intellectual-property
+  - atlas-exposing-personal-information
+  - atlas-revealing-confidential-information
+  - credo-risk-037
+  - credo-risk-024
+  - atlas-reidentification
   - atlas-ip-information-in-prompt
   - credo-risk-038
+  - credo-risk-029
+  - ail-privacy
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-2
   type: Risk
@@ -6128,25 +6128,25 @@ entries:
     hardware that can be exploited, resulting in unauthorized access, data and privacy
     breaches, or system manipulation causing unsafe outputs or behavior.
   related_mappings:
-  - credo-risk-027
-  - atlas-attribute-inference-attack
-  - atlas-data-poisoning
-  - atlas-evasion-attack
-  - credo-risk-038
-  - atlas-membership-inference-attack
-  - atlas-harmful-code-generation
-  - atlas-prompt-injection
-  - credo-risk-040
   - atlas-prompt-priming
-  - credo-risk-026
-  - ail-suicide-and-self-harm
-  - ail-privacy
-  - ail-nonviolent-crimes
-  - atlas-prompt-leaking
-  - credo-risk-041
-  - atlas-extraction-attack
+  - atlas-attribute-inference-attack
+  - credo-risk-040
+  - atlas-prompt-injection
+  - atlas-membership-inference-attack
   - atlas-jailbreaking
   - credo-risk-031
+  - atlas-prompt-leaking
+  - credo-risk-027
+  - ail-nonviolent-crimes
+  - credo-risk-026
+  - credo-risk-041
+  - atlas-evasion-attack
+  - ail-privacy
+  - atlas-data-poisoning
+  - atlas-extraction-attack
+  - credo-risk-038
+  - atlas-harmful-code-generation
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-2
   type: Risk
@@ -6159,8 +6159,8 @@ entries:
   close_mappings:
   - credo-risk-021
   related_mappings:
-  - credo-risk-017
   - atlas-hallucination
+  - credo-risk-017
   - ail-defamation
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-3
@@ -6181,9 +6181,9 @@ entries:
     surveillance, or targeted and sophisticated automated censorship and propaganda,
     with the aim to manipulate political processes, public opinion and behavior.
   related_mappings:
-  - atlas-spreading-disinformation
   - ail-nonviolent-crimes
   - ail-defamation
+  - atlas-spreading-disinformation
   - credo-risk-028
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-4
@@ -6196,8 +6196,8 @@ entries:
   close_mappings:
   - credo-risk-027
   related_mappings:
-  - credo-risk-040
   - ail-indiscriminate-weapons-cbrne
+  - credo-risk-040
   - ail-nonviolent-crimes
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-4
@@ -6215,8 +6215,8 @@ entries:
   - atlas-plagiarism
   - ail-nonviolent-crimes
   - ail-defamation
-  - atlas-nonconsensual-use
   - atlas-bypassing-learning
+  - atlas-nonconsensual-use
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-4
   type: Risk
@@ -6231,12 +6231,12 @@ entries:
   close_mappings:
   - credo-risk-016
   related_mappings:
-  - ail-specialized-advice
   - atlas-improper-usage
   - ail-nonviolent-crimes
-  - atlas-over-or-under-reliance
   - credo-risk-020
+  - atlas-over-or-under-reliance
   - credo-risk-034
+  - ail-specialized-advice
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-5
   type: Risk
@@ -6271,9 +6271,9 @@ entries:
   close_mappings:
   - credo-risk-042
   related_mappings:
+  - credo-risk-044
   - atlas-impact-on-jobs
   - atlas-human-exploitation
-  - credo-risk-044
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-6
   type: Risk
@@ -6288,10 +6288,10 @@ entries:
   close_mappings:
   - credo-risk-043
   related_mappings:
-  - atlas-generated-content-ownership
   - atlas-impact-on-cultural-diversity
-  - atlas-copyright-infringement
+  - atlas-generated-content-ownership
   - credo-risk-044
+  - atlas-copyright-infringement
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-6
   type: Risk
@@ -6303,9 +6303,9 @@ entries:
   close_mappings:
   - credo-risk-045
   related_mappings:
-  - credo-risk-049
   - credo-risk-030
   - credo-risk-023
+  - credo-risk-049
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-6
   type: Risk
@@ -6317,23 +6317,23 @@ entries:
   close_mappings:
   - credo-risk-046
   related_mappings:
-  - atlas-incorrect-risk-testing
-  - credo-risk-049
-  - credo-risk-023
-  - credo-risk-012
-  - ail-nonviolent-crimes
-  - credo-risk-025
   - atlas-unrepresentative-risk-testing
-  - atlas-incomplete-usage-definition
+  - ail-nonviolent-crimes
   - credo-risk-032
   - atlas-data-transparency
-  - atlas-lack-of-data-transparency
-  - credo-risk-045
-  - credo-risk-044
-  - atlas-data-provenance
+  - credo-risk-023
   - atlas-lack-of-system-transparency
-  - atlas-lack-of-testing-diversity
+  - credo-risk-025
+  - atlas-data-provenance
+  - credo-risk-012
+  - credo-risk-044
+  - atlas-incorrect-risk-testing
   - atlas-legal-accountability
+  - credo-risk-045
+  - atlas-lack-of-testing-diversity
+  - credo-risk-049
+  - atlas-lack-of-data-transparency
+  - atlas-incomplete-usage-definition
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-6
   type: Risk
@@ -6376,12 +6376,12 @@ entries:
   close_mappings:
   - credo-risk-003
   related_mappings:
-  - credo-risk-019
-  - credo-risk-018
-  - credo-risk-002
   - credo-risk-027
-  - ail-nonviolent-crimes
   - credo-risk-028
+  - ail-nonviolent-crimes
+  - credo-risk-002
+  - credo-risk-018
+  - credo-risk-019
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-7
   type: Risk
@@ -6394,25 +6394,25 @@ entries:
   - credo-risk-035
   - credo-risk-033
   related_mappings:
-  - credo-risk-009
+  - credo-risk-032
   - atlas-poor-model-accuracy
-  - credo-risk-049
+  - atlas-incomplete-advice
+  - atlas-data-transfer
   - credo-risk-007
-  - atlas-data-usage
   - credo-risk-030
-  - atlas-data-curation
+  - credo-risk-031
+  - credo-risk-009
+  - credo-risk-049
+  - credo-risk-048
+  - atlas-unrepresentative-data
+  - credo-risk-041
   - credo-risk-046
+  - atlas-data-curation
+  - atlas-improper-retraining
   - credo-risk-034
   - atlas-data-acquisition
-  - atlas-data-transfer
-  - atlas-incomplete-advice
-  - atlas-improper-retraining
-  - credo-risk-041
-  - credo-risk-032
-  - atlas-unrepresentative-data
-  - credo-risk-048
-  - credo-risk-031
   - atlas-data-contamination
+  - atlas-data-usage
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-7
   type: Risk
@@ -6423,20 +6423,20 @@ entries:
     standards or holding relevant actors accountable for harms, and the inability
     to identify and correct errors.
   related_mappings:
-  - credo-risk-007
-  - credo-risk-005
-  - credo-risk-008
-  - credo-risk-006
-  - atlas-untraceable-attribution
-  - atlas-non-disclosure
-  - credo-risk-009
+  - atlas-lack-of-model-transparency
+  - credo-risk-028
   - credo-risk-033
   - atlas-unexplainable-output
   - credo-risk-017
-  - atlas-unreliable-source-attribution
-  - atlas-lack-of-model-transparency
+  - atlas-untraceable-attribution
+  - credo-risk-008
   - atlas-inaccessible-training-data
-  - credo-risk-028
+  - atlas-unreliable-source-attribution
+  - atlas-non-disclosure
+  - credo-risk-006
+  - credo-risk-009
+  - credo-risk-007
+  - credo-risk-005
   isDefinedByTaxonomy: mit-ai-risk-repository
   isPartOf: mit-ai-risk-domain-7
   type: Risk
@@ -6463,23 +6463,23 @@ entries:
   name: AI
   description: The risk is caused by a decision or action made by an AI system
   related_mappings:
-  - atlas-harmful-output
   - atlas-revealing-confidential-information
-  - atlas-toxic-output
   - atlas-personal-information-in-prompt
-  - atlas-personal-information-in-data
-  - atlas-copyright-infringement
-  - atlas-exposing-personal-information
-  - atlas-decision-bias
-  - atlas-unreliable-source-attribution
-  - atlas-incomplete-advice
-  - atlas-harmful-code-generation
   - atlas-unexplainable-output
-  - atlas-impact-on-the-environment
-  - atlas-impact-on-cultural-diversity
-  - atlas-hallucination
+  - atlas-copyright-infringement
   - atlas-inaccessible-training-data
+  - atlas-unreliable-source-attribution
+  - atlas-exposing-personal-information
+  - atlas-hallucination
+  - atlas-impact-on-cultural-diversity
+  - atlas-harmful-output
   - atlas-output-bias
+  - atlas-toxic-output
+  - atlas-impact-on-the-environment
+  - atlas-incomplete-advice
+  - atlas-decision-bias
+  - atlas-harmful-code-generation
+  - atlas-personal-information-in-data
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-entity
   type: Risk
@@ -6487,45 +6487,45 @@ entries:
   name: Human
   description: The risk is caused by a decision or action made by humans
   related_mappings:
-  - atlas-plagiarism
-  - atlas-impact-on-jobs
+  - atlas-prompt-priming
   - atlas-impact-on-affected-communities
-  - atlas-incomplete-usage-definition
-  - atlas-data-poisoning
-  - atlas-evasion-attack
   - atlas-attribute-inference-attack
+  - atlas-plagiarism
+  - atlas-prompt-injection
+  - atlas-membership-inference-attack
+  - atlas-lack-of-system-transparency
   - atlas-over-or-under-reliance
   - atlas-poor-model-accuracy
-  - atlas-data-usage
-  - atlas-non-disclosure
-  - atlas-confidential-information-in-data
-  - atlas-improper-usage
-  - atlas-data-curation
-  - atlas-unrepresentative-risk-testing
-  - atlas-membership-inference-attack
-  - atlas-prompt-injection
-  - atlas-data-bias
-  - atlas-lack-of-model-transparency
-  - atlas-lack-of-testing-diversity
-  - atlas-prompt-priming
-  - atlas-data-acquisition
   - atlas-data-transfer
-  - atlas-improper-retraining
-  - atlas-lack-of-data-transparency
-  - atlas-spreading-toxicity
-  - atlas-human-exploitation
-  - atlas-incorrect-risk-testing
-  - atlas-prompt-leaking
-  - atlas-spreading-disinformation
-  - atlas-extraction-attack
-  - atlas-jailbreaking
-  - atlas-dangerous-use
-  - atlas-nonconsensual-use
   - atlas-data-transparency
+  - atlas-data-bias
+  - atlas-lack-of-testing-diversity
+  - atlas-jailbreaking
+  - atlas-lack-of-model-transparency
+  - atlas-confidential-information-in-data
+  - atlas-prompt-leaking
+  - atlas-incorrect-risk-testing
+  - atlas-dangerous-use
+  - atlas-human-exploitation
+  - atlas-spreading-disinformation
+  - atlas-improper-usage
+  - atlas-spreading-toxicity
+  - atlas-evasion-attack
+  - atlas-lack-of-data-transparency
+  - atlas-incomplete-usage-definition
+  - atlas-data-curation
+  - atlas-improper-retraining
   - atlas-bypassing-learning
+  - atlas-nonconsensual-use
+  - atlas-data-poisoning
   - atlas-data-provenance
-  - atlas-lack-of-system-transparency
+  - atlas-extraction-attack
+  - atlas-impact-on-jobs
+  - atlas-non-disclosure
+  - atlas-unrepresentative-risk-testing
+  - atlas-data-acquisition
   - atlas-data-contamination
+  - atlas-data-usage
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-entity
   type: Risk
@@ -6534,10 +6534,10 @@ entries:
   description: The risk is caused by some other reason or is ambiguous
   related_mappings:
   - atlas-untraceable-attribution
-  - atlas-generated-content-ownership
-  - atlas-reidentification
-  - atlas-unrepresentative-data
   - atlas-confidential-data-in-prompt
+  - atlas-generated-content-ownership
+  - atlas-unrepresentative-data
+  - atlas-reidentification
   - atlas-ip-information-in-prompt
   - atlas-legal-accountability
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
@@ -6547,20 +6547,20 @@ entries:
   name: Intentional
   description: The risk occurs due to an expected outcome from pursuing a goal
   related_mappings:
-  - atlas-prompt-priming
-  - atlas-spreading-disinformation
-  - atlas-prompt-leaking
-  - atlas-extraction-attack
   - atlas-jailbreaking
-  - atlas-membership-inference-attack
-  - atlas-dangerous-use
-  - atlas-prompt-injection
+  - atlas-prompt-priming
   - atlas-attribute-inference-attack
-  - atlas-evasion-attack
-  - atlas-data-poisoning
-  - atlas-nonconsensual-use
+  - atlas-spreading-disinformation
+  - atlas-prompt-injection
   - atlas-spreading-toxicity
   - atlas-bypassing-learning
+  - atlas-nonconsensual-use
+  - atlas-membership-inference-attack
+  - atlas-prompt-leaking
+  - atlas-data-poisoning
+  - atlas-extraction-attack
+  - atlas-evasion-attack
+  - atlas-dangerous-use
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-intent
   type: Risk
@@ -6568,44 +6568,44 @@ entries:
   name: Unintentional
   description: The risk occurs due to an unexpected outcome from pursuing a goal
   related_mappings:
-  - atlas-revealing-confidential-information
-  - atlas-impact-on-jobs
   - atlas-impact-on-affected-communities
-  - atlas-incomplete-usage-definition
-  - atlas-unexplainable-output
+  - atlas-inaccessible-training-data
   - atlas-over-or-under-reliance
   - atlas-poor-model-accuracy
-  - atlas-data-usage
-  - atlas-decision-bias
-  - atlas-confidential-information-in-data
-  - atlas-improper-usage
-  - atlas-data-curation
-  - atlas-unrepresentative-risk-testing
-  - atlas-harmful-code-generation
-  - atlas-reidentification
-  - atlas-data-bias
-  - atlas-confidential-data-in-prompt
-  - atlas-unreliable-source-attribution
-  - atlas-lack-of-model-transparency
-  - atlas-lack-of-testing-diversity
-  - atlas-inaccessible-training-data
-  - atlas-harmful-output
-  - atlas-data-acquisition
-  - atlas-data-transfer
   - atlas-incomplete-advice
-  - atlas-improper-retraining
-  - atlas-lack-of-data-transparency
-  - atlas-impact-on-cultural-diversity
-  - atlas-ip-information-in-prompt
-  - atlas-output-bias
-  - atlas-incorrect-risk-testing
-  - atlas-personal-information-in-prompt
-  - atlas-personal-information-in-data
-  - atlas-exposing-personal-information
-  - atlas-unrepresentative-data
+  - atlas-data-transfer
   - atlas-data-transparency
+  - atlas-lack-of-testing-diversity
+  - atlas-data-bias
+  - atlas-lack-of-model-transparency
+  - atlas-unexplainable-output
+  - atlas-confidential-information-in-data
+  - atlas-incorrect-risk-testing
+  - atlas-decision-bias
+  - atlas-improper-usage
+  - atlas-confidential-data-in-prompt
+  - atlas-unrepresentative-data
   - atlas-hallucination
+  - atlas-impact-on-cultural-diversity
+  - atlas-harmful-output
+  - atlas-output-bias
+  - atlas-ip-information-in-prompt
+  - atlas-lack-of-data-transparency
+  - atlas-incomplete-usage-definition
+  - atlas-data-curation
+  - atlas-improper-retraining
+  - atlas-revealing-confidential-information
+  - atlas-personal-information-in-prompt
+  - atlas-unreliable-source-attribution
+  - atlas-exposing-personal-information
+  - atlas-reidentification
+  - atlas-impact-on-jobs
+  - atlas-unrepresentative-risk-testing
+  - atlas-data-acquisition
+  - atlas-harmful-code-generation
   - atlas-data-contamination
+  - atlas-personal-information-in-data
+  - atlas-data-usage
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-intent
   type: Risk
@@ -6613,17 +6613,17 @@ entries:
   name: Other
   description: The risk is presented as occurring without clearly specifying the intentionality
   related_mappings:
-  - atlas-toxic-output
-  - atlas-copyright-infringement
   - atlas-plagiarism
-  - atlas-non-disclosure
   - atlas-untraceable-attribution
+  - atlas-copyright-infringement
   - atlas-generated-content-ownership
-  - atlas-impact-on-the-environment
-  - atlas-data-provenance
   - atlas-lack-of-system-transparency
-  - atlas-human-exploitation
+  - atlas-data-provenance
+  - atlas-non-disclosure
+  - atlas-impact-on-the-environment
   - atlas-legal-accountability
+  - atlas-toxic-output
+  - atlas-human-exploitation
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-intent
   type: Risk
@@ -6631,23 +6631,23 @@ entries:
   name: Pre -deployment
   description: The risk occurs before the AI is deployed
   related_mappings:
-  - atlas-data-usage
-  - atlas-data-acquisition
-  - atlas-decision-bias
+  - atlas-data-curation
+  - atlas-human-exploitation
   - atlas-confidential-information-in-data
   - atlas-data-transfer
-  - atlas-data-curation
-  - atlas-unrepresentative-risk-testing
-  - atlas-incomplete-usage-definition
-  - atlas-human-exploitation
-  - atlas-data-poisoning
-  - atlas-data-transparency
-  - atlas-lack-of-data-transparency
-  - atlas-lack-of-testing-diversity
-  - atlas-reidentification
   - atlas-unrepresentative-data
   - atlas-data-provenance
+  - atlas-data-poisoning
+  - atlas-incomplete-usage-definition
+  - atlas-reidentification
+  - atlas-unrepresentative-risk-testing
+  - atlas-decision-bias
+  - atlas-data-transparency
+  - atlas-lack-of-testing-diversity
   - atlas-data-contamination
+  - atlas-data-acquisition
+  - atlas-lack-of-data-transparency
+  - atlas-data-usage
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-timing
   type: Risk
@@ -6655,47 +6655,47 @@ entries:
   name: Post -deployment
   description: The risk occurs after the AI model has been trained and deployed
   related_mappings:
-  - atlas-revealing-confidential-information
-  - atlas-plagiarism
-  - atlas-impact-on-jobs
+  - atlas-prompt-priming
   - atlas-impact-on-affected-communities
-  - atlas-untraceable-attribution
-  - atlas-evasion-attack
   - atlas-attribute-inference-attack
-  - atlas-unexplainable-output
+  - atlas-personal-information-in-data
+  - atlas-plagiarism
+  - atlas-prompt-injection
+  - atlas-inaccessible-training-data
+  - atlas-membership-inference-attack
   - atlas-over-or-under-reliance
   - atlas-poor-model-accuracy
-  - atlas-non-disclosure
-  - atlas-improper-usage
-  - atlas-membership-inference-attack
-  - atlas-harmful-code-generation
-  - atlas-prompt-injection
-  - atlas-data-bias
-  - atlas-confidential-data-in-prompt
-  - atlas-unreliable-source-attribution
-  - atlas-inaccessible-training-data
-  - atlas-harmful-output
-  - atlas-prompt-priming
   - atlas-incomplete-advice
-  - atlas-improper-retraining
-  - atlas-spreading-toxicity
-  - atlas-impact-on-cultural-diversity
-  - atlas-ip-information-in-prompt
-  - atlas-output-bias
-  - atlas-incorrect-risk-testing
-  - atlas-toxic-output
-  - atlas-personal-information-in-prompt
-  - atlas-personal-information-in-data
-  - atlas-exposing-personal-information
-  - atlas-copyright-infringement
-  - atlas-spreading-disinformation
-  - atlas-extraction-attack
-  - atlas-jailbreaking
-  - atlas-dangerous-use
-  - atlas-nonconsensual-use
+  - atlas-data-bias
   - atlas-impact-on-the-environment
-  - atlas-bypassing-learning
+  - atlas-jailbreaking
+  - atlas-untraceable-attribution
+  - atlas-copyright-infringement
+  - atlas-unexplainable-output
+  - atlas-incorrect-risk-testing
+  - atlas-dangerous-use
+  - atlas-spreading-disinformation
+  - atlas-improper-usage
+  - atlas-confidential-data-in-prompt
+  - atlas-spreading-toxicity
   - atlas-hallucination
+  - atlas-impact-on-cultural-diversity
+  - atlas-harmful-output
+  - atlas-evasion-attack
+  - atlas-output-bias
+  - atlas-ip-information-in-prompt
+  - atlas-improper-retraining
+  - atlas-revealing-confidential-information
+  - atlas-personal-information-in-prompt
+  - atlas-bypassing-learning
+  - atlas-exposing-personal-information
+  - atlas-nonconsensual-use
+  - atlas-unreliable-source-attribution
+  - atlas-extraction-attack
+  - atlas-non-disclosure
+  - atlas-impact-on-jobs
+  - atlas-harmful-code-generation
+  - atlas-toxic-output
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-timing
   type: Risk
@@ -6703,10 +6703,10 @@ entries:
   name: Other
   description: The risk is presented without a clearly specified time of occurrence
   related_mappings:
-  - atlas-prompt-leaking
-  - atlas-generated-content-ownership
-  - atlas-lack-of-system-transparency
   - atlas-lack-of-model-transparency
+  - atlas-generated-content-ownership
+  - atlas-prompt-leaking
+  - atlas-lack-of-system-transparency
   - atlas-legal-accountability
   isDefinedByTaxonomy: mit-ai-risk-repository-causal
   isPartOf: mit-ai-risk-repository-causal-timing
@@ -6723,25 +6723,25 @@ entries:
   isDefinedByTaxonomy: ibm-ai-capabilities
   isPartOf: ibm-cap-group-comprehension
   requiredByTask:
-  - summarization
-  - code-explanation
-  - table-question-answering
-  - text-classification
-  - fill-mask
-  - document-question-answering
-  - code-generation
-  - sentence-similarity
-  - tabular-regression
-  - translation
-  - token-classification
-  - question-answering
   - zero-shot-classification
+  - document-question-answering
+  - sentence-similarity
+  - token-classification
+  - summarization
+  - code-generation
+  - table-question-answering
   - tabular-classification
+  - translation
+  - fill-mask
+  - code-explanation
+  - tabular-regression
+  - text-classification
+  - question-answering
   implementedByAdapter:
-  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
   - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
   type: Capability
 - id: ibm-cap-contextual-understanding
   name: Contextual Understanding
@@ -6755,22 +6755,22 @@ entries:
   isDefinedByTaxonomy: ibm-ai-capabilities
   isPartOf: ibm-cap-group-comprehension
   requiredByTask:
+  - zero-shot-classification
+  - document-question-answering
+  - sentence-similarity
+  - token-classification
   - summarization
+  - text-generation
+  - translation
   - fill-mask
   - text-classification
-  - document-question-answering
-  - text-generation
-  - sentence-similarity
-  - translation
-  - token-classification
   - question-answering
-  - zero-shot-classification
   implementedByAdapter:
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
-  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
   - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
   - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+  - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
   type: Capability
 - id: ibm-cap-text-generation
   name: Text Generation
@@ -6784,13 +6784,13 @@ entries:
   isPartOf: ibm-cap-group-generation
   requiredByTask:
   - summarization
-  - code-explanation
-  - fill-mask
   - text-generation
   - translation
+  - fill-mask
+  - code-explanation
   implementedByAdapter:
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
   - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-expansion
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-query-rewrite
   type: Capability
 - id: ibm-cap-logical-reasoning
   name: Logical Reasoning
@@ -6804,18 +6804,18 @@ entries:
   isDefinedByTaxonomy: ibm-ai-capabilities
   isPartOf: ibm-cap-group-logical
   requiredByTask:
-  - table-question-answering
-  - document-question-answering
-  - code-generation
-  - tabular-regression
-  - code-editing
-  - question-answering
   - zero-shot-classification
+  - code-generation
+  - table-question-answering
   - tabular-classification
+  - code-editing
+  - tabular-regression
+  - document-question-answering
+  - question-answering
   implementedByAdapter:
+  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
   - ibm-factuality-adapter-granite-3.3-instruct-lora-passage-reranking
   - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-context-relevance
-  - ibm-factuality-adapter-granite-3.3-8b-instruct-lora-answerability-determination
   type: Capability
 - id: ibm-cap-causal-reasoning
   name: Causal Reasoning
@@ -6853,12 +6853,12 @@ entries:
   isDefinedByTaxonomy: ibm-ai-capabilities
   isPartOf: ibm-cap-domain-knowledge-and-learning
   requiredByTask:
-  - document-question-answering
-  - code-generation
-  - tabular-regression
   - token-classification
-  - question-answering
+  - code-generation
   - tabular-classification
+  - tabular-regression
+  - document-question-answering
+  - question-answering
   type: Capability
 - id: ibm-cap-common-sense-reasoning
   name: Common Sense Reasoning
@@ -6901,8 +6901,8 @@ entries:
   isDefinedByTaxonomy: ibm-ai-capabilities
   isPartOf: ibm-cap-group-code
   requiredByTask:
-  - code-editing
   - code-generation
+  - code-editing
   type: Capability
 - id: ibm-cap-code-understanding
   name: Code Understanding & Explanation
@@ -9554,11 +9554,11 @@ entries:
   dateCreated: 2024-07-30
   dateModified: 2025-01-15
   related_mappings:
-  - atlas-toxic-output
-  - atlas-decision-bias
   - atlas-spreading-toxicity
-  - atlas-data-bias
   - atlas-output-bias
+  - atlas-decision-bias
+  - atlas-data-bias
+  - atlas-toxic-output
   isDefinedByTaxonomy: shieldgemma-taxonomy
   isPartOf: shieldgemma-content-safety-group
   type: Risk
@@ -9573,10 +9573,10 @@ entries:
   dateCreated: 2024-07-30
   dateModified: 2025-01-15
   related_mappings:
+  - atlas-spreading-toxicity
   - atlas-harmful-output
   - atlas-toxic-output
   - atlas-over-or-under-reliance
-  - atlas-spreading-toxicity
   isDefinedByTaxonomy: shieldgemma-taxonomy
   isPartOf: shieldgemma-content-safety-group
   type: Risk
@@ -9593,47 +9593,47 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
+  - credo-risk-033
+  - credo-risk-040
+  - ail-defamation
+  - ail-violent-crimes
+  - credo-risk-025
+  - credo-risk-023
+  - credo-risk-012
+  - credo-risk-014
+  - credo-risk-029
+  - credo-risk-015
+  - credo-risk-028
+  - ail-indiscriminate-weapons-cbrne
+  - credo-risk-017
+  - credo-risk-008
+  - credo-risk-018
+  - credo-risk-024
   - credo-risk-016
   - credo-risk-021
-  - credo-risk-024
-  - credo-risk-043
-  - credo-risk-012
-  - credo-risk-018
-  - credo-risk-004
   - credo-risk-009
-  - credo-risk-036
-  - ail-hate
-  - ail-defamation
-  - credo-risk-025
-  - credo-risk-038
-  - ail-intellectual-property
-  - credo-risk-008
-  - credo-risk-014
-  - credo-risk-003
-  - credo-risk-015
   - ail-child-sexual-exploitation
-  - ail-sexual-content
-  - credo-risk-037
-  - credo-risk-040
-  - credo-risk-010
-  - credo-risk-028
-  - credo-risk-034
-  - atlas-harmful-output
-  - credo-risk-023
-  - credo-risk-026
-  - ail-privacy
-  - ail-suicide-and-self-harm
-  - ail-indiscriminate-weapons-cbrne
-  - ail-nonviolent-crimes
-  - ail-sex-related-crimes
   - credo-risk-013
-  - credo-risk-017
-  - credo-risk-033
-  - ail-specialized-advice
+  - ail-nonviolent-crimes
+  - credo-risk-026
+  - credo-risk-004
+  - credo-risk-037
   - credo-risk-041
-  - ail-violent-crimes
-  - credo-risk-029
+  - atlas-harmful-output
+  - ail-sexual-content
   - credo-risk-011
+  - ail-privacy
+  - credo-risk-003
+  - ail-hate
+  - credo-risk-036
+  - credo-risk-010
+  - ail-intellectual-property
+  - credo-risk-043
+  - ail-sex-related-crimes
+  - credo-risk-034
+  - credo-risk-038
+  - ail-specialized-advice
+  - ail-suicide-and-self-harm
   narrow_mappings:
   - granite-social-bias
   - granite-profanity
@@ -9656,10 +9656,10 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - credo-risk-011
-  - credo-risk-010
-  - ail-specialized-advice
   - atlas-output-bias
+  - credo-risk-011
+  - ail-specialized-advice
+  - credo-risk-010
   broad_mappings:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
@@ -9675,8 +9675,8 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - atlas-toxic-output
   - ail-sexual-content
+  - atlas-toxic-output
   - credo-risk-013
   broad_mappings:
   - granite-guardian-harm
@@ -9696,13 +9696,13 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
+  - credo-risk-013
   - atlas-harmful-output
+  - ail-sexual-content
+  - ail-sex-related-crimes
+  - ail-child-sexual-exploitation
   - credo-risk-014
   - ail-suicide-and-self-harm
-  - ail-child-sexual-exploitation
-  - ail-sex-related-crimes
-  - ail-sexual-content
-  - credo-risk-013
   broad_mappings:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
@@ -9719,12 +9719,12 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - atlas-harmful-output
-  - ail-specialized-advice
   - ail-nonviolent-crimes
-  - ail-child-sexual-exploitation
   - ail-violent-crimes
   - credo-risk-042
+  - atlas-harmful-output
+  - ail-child-sexual-exploitation
+  - ail-specialized-advice
   broad_mappings:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
@@ -9740,8 +9740,8 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - atlas-harmful-output
   - ail-indiscriminate-weapons-cbrne
+  - atlas-harmful-output
   - ail-violent-crimes
   - credo-risk-013
   broad_mappings:
@@ -9759,8 +9759,8 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - credo-risk-041
   - atlas-jailbreaking
+  - credo-risk-041
   broad_mappings:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
@@ -9779,14 +9779,14 @@ entries:
   dateCreated: 2025-02-26
   dateModified: 2025-02-26
   related_mappings:
-  - atlas-harmful-output
-  - ail-specialized-advice
-  - credo-risk-002
-  - ail-suicide-and-self-harm
   - ail-hate
   - ail-defamation
-  - ail-child-sexual-exploitation
   - ail-intellectual-property
+  - credo-risk-002
+  - atlas-harmful-output
+  - ail-child-sexual-exploitation
+  - ail-specialized-advice
+  - ail-suicide-and-self-harm
   broad_mappings:
   - granite-guardian-harm
   isDefinedByTaxonomy: ibm-granite-guardian
@@ -9822,10 +9822,10 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - ail-violent-crimes
-  - ail-suicide-and-self-harm
   - atlas-hallucination
   - ail-specialized-advice
+  - ail-violent-crimes
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   type: Risk
@@ -9857,9 +9857,9 @@ entries:
   dateCreated: 2024-12-10
   dateModified: 2024-12-10
   related_mappings:
-  - ail-suicide-and-self-harm
   - atlas-hallucination
   - ail-specialized-advice
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: ibm-granite-guardian
   isPartOf: granite-guardian-rag-safety-group
   type: Risk
@@ -9891,8 +9891,8 @@ entries:
   exact_mappings:
   - atlas-prompt-injection
   broad_mappings:
-  - atlas-prompt-priming
   - atlas-jailbreaking
+  - atlas-prompt-priming
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm022025-sensitive-information-disclosure
@@ -9906,25 +9906,25 @@ entries:
   close_mappings:
   - credo-risk-037
   related_mappings:
-  - atlas-personal-information-in-prompt
-  - atlas-personal-information-in-data
-  - credo-risk-036
-  - atlas-confidential-information-in-data
-  - ail-privacy
-  - ail-nonviolent-crimes
-  - ail-defamation
-  - atlas-membership-inference-attack
   - atlas-attribute-inference-attack
-  - ail-violent-crimes
-  - atlas-reidentification
-  - credo-risk-038
+  - credo-risk-036
+  - ail-nonviolent-crimes
+  - atlas-confidential-information-in-data
   - atlas-confidential-data-in-prompt
-  - atlas-ip-information-in-prompt
+  - ail-defamation
+  - ail-violent-crimes
   - ail-intellectual-property
+  - atlas-membership-inference-attack
+  - atlas-personal-information-in-prompt
+  - atlas-reidentification
+  - atlas-ip-information-in-prompt
+  - credo-risk-038
+  - atlas-personal-information-in-data
+  - ail-privacy
   broad_mappings:
-  - atlas-revealing-confidential-information
-  - atlas-exposing-personal-information
   - atlas-prompt-leaking
+  - atlas-exposing-personal-information
+  - atlas-revealing-confidential-information
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm032025-supply-chain
@@ -9941,14 +9941,14 @@ entries:
   - atlas-inaccessible-training-data
   - credo-risk-047
   broad_mappings:
-  - atlas-data-usage-rights
-  - atlas-data-acquisition
-  - atlas-untraceable-attribution
   - atlas-data-curation
   - atlas-model-usage-rights
-  - atlas-lack-of-data-transparency
+  - atlas-untraceable-attribution
   - atlas-data-provenance
+  - atlas-data-usage-rights
+  - atlas-data-acquisition
   - atlas-data-contamination
+  - atlas-lack-of-data-transparency
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm042025-data-and-model-poisoning
@@ -9960,8 +9960,8 @@ entries:
     biased or toxic content, and exploitation of downstream systems.
   url: https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/
   related_mappings:
-  - credo-risk-040
   - credo-risk-041
+  - credo-risk-040
   broad_mappings:
   - atlas-data-poisoning
   isDefinedByTaxonomy: owasp-llm-2.0
@@ -9975,10 +9975,10 @@ entries:
     users indirect access to additional functionality.
   url: https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/
   related_mappings:
-  - ail-privacy
-  - ail-intellectual-property
-  - atlas-over-or-under-reliance
   - credo-risk-036
+  - ail-intellectual-property
+  - ail-privacy
+  - atlas-over-or-under-reliance
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm062025-excessive-agency
@@ -9995,11 +9995,11 @@ entries:
     of what is causing the LLM to malfunction.
   url: https://genai.owasp.org/llmrisk/llm062025-excessive-agency/
   related_mappings:
-  - credo-risk-019
-  - credo-risk-018
+  - credo-risk-017
   - credo-risk-002
   - atlas-over-or-under-reliance
-  - credo-risk-017
+  - credo-risk-018
+  - credo-risk-019
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm072025-system-prompt-leakage
@@ -10013,9 +10013,9 @@ entries:
   url: https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/
   related_mappings:
   - credo-risk-036
-  - credo-risk-041
   - credo-risk-040
   - credo-risk-037
+  - credo-risk-041
   - credo-risk-038
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
@@ -10041,15 +10041,15 @@ entries:
     reputational damage, and legal liability.
   url: https://genai.owasp.org/llmrisk/llm092025-misinformation/
   related_mappings:
-  - credo-risk-021
-  - ail-specialized-advice
-  - ail-defamation
   - atlas-harmful-code-generation
   - credo-risk-017
+  - ail-defamation
   - atlas-hallucination
+  - credo-risk-021
+  - ail-specialized-advice
   broad_mappings:
-  - atlas-incomplete-advice
   - atlas-spreading-disinformation
+  - atlas-incomplete-advice
   isDefinedByTaxonomy: owasp-llm-2.0
   type: Risk
 - id: llm102025-unbounded-consumption
@@ -10136,14 +10136,14 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-7.1
   related_mappings:
-  - atlas-harmful-output
-  - granite-harm-engagement
-  - llm062025-excessive-agency
   - mit-ai-risk-subdomain-7.2
-  - ail-sex-related-crimes
-  - nist-human-ai-configuration
   - atlas-impact-on-human-agency
+  - nist-human-ai-configuration
   - ail-intellectual-property
+  - llm062025-excessive-agency
+  - atlas-harmful-output
+  - ail-sex-related-crimes
+  - granite-harm-engagement
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-ai-agency
   type: Risk
@@ -10162,10 +10162,10 @@ entries:
   - mit-ai-risk-subdomain-7.2
   related_mappings:
   - atlas-harmful-output
+  - ail-sex-related-crimes
   - ail-suicide-and-self-harm
   - granite-guardian-harm
   - atlas-dangerous-use
-  - ail-sex-related-crimes
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-ai-agency
   type: Risk
@@ -10179,12 +10179,12 @@ entries:
     harm through energy consumption of data centers or the materials and carbon footprints
     associated with AI hardware.'
   close_mappings:
+  - nist-environmental-impacts
   - mit-ai-risk-subdomain-6.6
-  - nist-environmental-impacts
   related_mappings:
-  - granite-guardian-harm
-  - atlas-impact-on-the-environment
   - nist-environmental-impacts
+  - atlas-impact-on-the-environment
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-environmental-harm
   type: Risk
@@ -10200,9 +10200,9 @@ entries:
   close_mappings:
   - atlas-data-transparency
   related_mappings:
+  - ail-specialized-advice
   - ail-intellectual-property
   - mit-ai-risk-subdomain-7.4
-  - ail-specialized-advice
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-explainability-&-transparency
   type: Risk
@@ -10228,11 +10228,11 @@ entries:
     making it difficult to monitor or audit its decision-making process after the
     fact.
   related_mappings:
-  - mit-ai-risk-subdomain-7.3
-  - ail-suicide-and-self-harm
   - nist-information-integrity
+  - mit-ai-risk-subdomain-7.3
   - atlas-unreliable-source-attribution
   - mit-ai-risk-subdomain-7.4
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-explainability-&-transparency
   type: Risk
@@ -10257,11 +10257,11 @@ entries:
     architecture is known, making it difficult to understand how the system arrives
     at its outputs or recommendations.
   related_mappings:
-  - mit-ai-risk-subdomain-7.3
-  - ail-suicide-and-self-harm
-  - granite-guardian-harm
   - nist-human-ai-configuration
+  - mit-ai-risk-subdomain-7.3
+  - granite-guardian-harm
   - mit-ai-risk-subdomain-7.4
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-explainability-&-transparency
   type: Risk
@@ -10277,15 +10277,15 @@ entries:
     discrimination. This includes both disparate error rates that affect opportunity
     and
   related_mappings:
-  - nist-harmful-bias-or-homogenization
-  - granite-social-bias
-  - ail-suicide-and-self-harm
-  - granite-guardian-harm
   - ail-hate
+  - mit-ai-risk-subdomain-1.1
   - atlas-unrepresentative-data
   - atlas-impact-on-cultural-diversity
-  - mit-ai-risk-subdomain-1.1
   - atlas-output-bias
+  - ail-suicide-and-self-harm
+  - nist-harmful-bias-or-homogenization
+  - granite-guardian-harm
+  - granite-social-bias
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-fairness-&-bias
   type: Risk
@@ -10301,13 +10301,13 @@ entries:
     treatment and discrimination. This includes both disparate error rates that affect
     opportunity and disparate outcome rates that affect group-level results.
   related_mappings:
-  - nist-harmful-bias-or-homogenization
-  - atlas-harmful-output
-  - granite-social-bias
-  - atlas-decision-bias
-  - granite-guardian-harm
   - mit-ai-risk-subdomain-1.1
   - atlas-output-bias
+  - atlas-harmful-output
+  - nist-harmful-bias-or-homogenization
+  - atlas-decision-bias
+  - granite-guardian-harm
+  - granite-social-bias
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-fairness-&-bias
   type: Risk
@@ -10318,11 +10318,11 @@ entries:
     may be affected by physical abilities, cognitive abilities, language, or technological
     access.
   related_mappings:
+  - mit-ai-risk-subdomain-6.5
+  - nist-human-ai-configuration
   - nist-harmful-bias-or-homogenization
   - granite-guardian-harm
   - atlas-dangerous-use
-  - mit-ai-risk-subdomain-6.5
-  - nist-human-ai-configuration
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-fairness-&-bias
   type: Risk
@@ -10338,16 +10338,16 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-1.2
   related_mappings:
-  - granite-violence
-  - nist-obscene-degrading-and-or-abusive-content
-  - granite-profanity
-  - granite-sexual-content
-  - granite-guardian-harm
   - ail-hate
-  - ail-sexual-content
-  - atlas-spreading-toxicity
+  - nist-obscene-degrading-and-or-abusive-content
   - nist-dangerous-violent-or-hateful-content
+  - atlas-spreading-toxicity
+  - granite-profanity
+  - ail-sexual-content
+  - granite-sexual-content
   - atlas-human-exploitation
+  - granite-guardian-harm
+  - granite-violence
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-harmful-content
   type: Risk
@@ -10361,15 +10361,15 @@ entries:
     degrading, or sexually abusive, including child sexual abuse material (CSAM) or
     non-consensual intimate images (NCII).
   related_mappings:
-  - atlas-harmful-output
   - nist-obscene-degrading-and-or-abusive-content
-  - granite-sexual-content
-  - granite-guardian-harm
-  - ail-child-sexual-exploitation
-  - ail-sex-related-crimes
-  - ail-sexual-content
   - atlas-spreading-toxicity
+  - atlas-harmful-output
+  - granite-sexual-content
+  - ail-sexual-content
+  - ail-sex-related-crimes
+  - ail-child-sexual-exploitation
   - mit-ai-risk-subdomain-1.2
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-harmful-content
   type: Risk
@@ -10384,13 +10384,13 @@ entries:
   close_mappings:
   - nist-dangerous-violent-or-hateful-content
   related_mappings:
+  - ail-hate
+  - nist-dangerous-violent-or-hateful-content
+  - mit-ai-risk-subdomain-1.2
+  - ail-violent-crimes
   - atlas-toxic-output
   - granite-guardian-harm
-  - ail-hate
   - atlas-dangerous-use
-  - ail-violent-crimes
-  - mit-ai-risk-subdomain-1.2
-  - nist-dangerous-violent-or-hateful-content
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-harmful-content
   type: Risk
@@ -10425,12 +10425,12 @@ entries:
     may be insufficiently understood or communicated within the organization, potentially
     resulting in ineffective implementation or failure to achieve desired outcomes.
   related_mappings:
-  - llm062025-excessive-agency
-  - granite-guardian-harm
-  - llm092025-misinformation
-  - mit-ai-risk-subdomain-3.1
   - nist-human-ai-configuration
   - mit-ai-risk-subdomain-7.4
+  - llm062025-excessive-agency
+  - mit-ai-risk-subdomain-3.1
+  - llm092025-misinformation
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-human-ai-interaction
   type: Risk
@@ -10443,9 +10443,9 @@ entries:
     potentially leading to misplaced trust or inappropriate
   related_mappings:
   - nist-human-ai-configuration
-  - llm062025-excessive-agency
-  - granite-guardian-harm
   - mit-ai-risk-subdomain-7.2
+  - granite-guardian-harm
+  - llm062025-excessive-agency
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-human-ai-interaction
   type: Risk
@@ -10460,9 +10460,9 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-5.2
   related_mappings:
+  - mit-ai-risk-subdomain-7.2
   - atlas-impact-on-human-agency
   - llm062025-excessive-agency
-  - mit-ai-risk-subdomain-7.2
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-human-ai-interaction
   type: Risk
@@ -10484,9 +10484,9 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-3.1
   related_mappings:
-  - granite-guardian-harm
   - llm092025-misinformation
   - atlas-spreading-disinformation
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-information-integrity
   type: Risk
@@ -10497,10 +10497,10 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-3.2
   related_mappings:
-  - nist-harmful-bias-or-homogenization
   - atlas-decision-bias
-  - nist-information-integrity
   - atlas-output-bias
+  - nist-harmful-bias-or-homogenization
+  - nist-information-integrity
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-information-integrity
   type: Risk
@@ -10509,11 +10509,11 @@ entries:
   description: The AI system may fail to comply with existing or emerging regulations
     and standards, potentially leading to legal penalties,fines, or operational restrictions.
   related_mappings:
-  - nist-data-privacy
-  - mit-ai-risk-subdomain-6.4
-  - granite-guardian-harm
   - mit-ai-risk-subdomain-6.5
+  - nist-data-privacy
   - atlas-legal-accountability
+  - granite-guardian-harm
+  - mit-ai-risk-subdomain-6.4
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-legal
   type: Risk
@@ -10523,13 +10523,13 @@ entries:
     results in civil lawsuits, potentially relating to issues like defamation, negligence,
     or privacy violations.
   related_mappings:
-  - atlas-harmful-output
   - atlas-revealing-confidential-information
-  - atlas-exposing-personal-information
-  - granite-guardian-harm
   - ail-defamation
-  - mit-ai-risk-subdomain-2.1
   - ail-intellectual-property
+  - atlas-exposing-personal-information
+  - atlas-harmful-output
+  - mit-ai-risk-subdomain-2.1
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-legal
   type: Risk
@@ -10539,9 +10539,9 @@ entries:
     for intellectual property infringement, AI-related misconduct, violations of fiduciary
     duty, or failure to adequately oversee AI systems.
   related_mappings:
+  - ail-intellectual-property
   - granite-guardian-harm
   - mit-ai-risk-subdomain-6.5
-  - ail-intellectual-property
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-legal
   type: Risk
@@ -10553,9 +10553,9 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-4.3
   related_mappings:
-  - mit-ai-risk-subdomain-2.2
-  - granite-guardian-harm
   - ail-nonviolent-crimes
+  - granite-guardian-harm
+  - mit-ai-risk-subdomain-2.2
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-malicious-use
   type: Risk
@@ -10572,12 +10572,12 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-4.2
   related_mappings:
-  - ail-specialized-advice
-  - ail-indiscriminate-weapons-cbrne
   - mit-ai-risk-subdomain-7.2
-  - atlas-dangerous-use
   - mit-ai-risk-subdomain-2.2
+  - ail-indiscriminate-weapons-cbrne
   - ail-violent-crimes
+  - ail-specialized-advice
+  - atlas-dangerous-use
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-malicious-use
   type: Risk
@@ -10593,11 +10593,11 @@ entries:
   description: 'Coordinated influence operations: Large-scale manipulation and disinformation
     campaigns'
   related_mappings:
+  - mit-ai-risk-subdomain-7.2
   - atlas-spreading-disinformation
   - granite-guardian-harm
-  - mit-ai-risk-subdomain-7.2
-  - mit-ai-risk-subdomain-4.1
   - mit-ai-risk-subdomain-7.4
+  - mit-ai-risk-subdomain-4.1
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-malicious-use
   type: Risk
@@ -10610,11 +10610,11 @@ entries:
   description: 'Mass surveillance and privacy attacks: Unauthorized monitoring and
     privacy violation at scale'
   related_mappings:
-  - ail-specialized-advice
   - nist-data-privacy
-  - ail-privacy
-  - granite-guardian-harm
   - mit-ai-risk-subdomain-2.1
+  - ail-specialized-advice
+  - granite-guardian-harm
+  - ail-privacy
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-malicious-use
   type: Risk
@@ -10628,8 +10628,8 @@ entries:
     technological infrastructure, processes, or workflows, potentially leading to
     operational disruptions, data silos, or reduced efficiency.
   related_mappings:
-  - mit-ai-risk-subdomain-6.4
   - mit-ai-risk-subdomain-7.3
+  - mit-ai-risk-subdomain-6.4
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-operational
@@ -10640,8 +10640,8 @@ entries:
     to ensure continued performance, timeliness, and relevance, which can be resource-intensive
     and potentially introduce new risks if updates are overlooked or hastily applied.
   related_mappings:
-  - mit-ai-risk-subdomain-2.2
   - mit-ai-risk-subdomain-7.3
+  - mit-ai-risk-subdomain-2.2
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-operational
@@ -10652,11 +10652,11 @@ entries:
     operate across larger datasets or user bases, potentially resulting in performance
     bottlenecks, increased costs, or inability to meet growing business needs.
   related_mappings:
-  - atlas-incorrect-risk-testing
-  - mit-ai-risk-subdomain-7.3
-  - llm102025-unbounded-consumption
   - nist-information-integrity
   - mit-ai-risk-subdomain-6.5
+  - llm102025-unbounded-consumption
+  - mit-ai-risk-subdomain-7.3
+  - atlas-incorrect-risk-testing
   - atlas-poor-model-accuracy
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-operational
@@ -10669,11 +10669,11 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-7.3
   related_mappings:
-  - ail-specialized-advice
   - llm082025-vector-and-embedding-weaknesses
-  - ail-suicide-and-self-harm
   - granite-guardian-harm
   - mit-ai-risk-subdomain-7.4
+  - ail-specialized-advice
+  - ail-suicide-and-self-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-performance-&-robustness
   type: Risk
@@ -10686,11 +10686,11 @@ entries:
     its models, potentially introducing performance risks in both predeployment assessments
     and ongoing monitoring.
   related_mappings:
-  - mit-ai-risk-subdomain-5.1
   - mit-ai-risk-subdomain-7.3
-  - granite-guardian-harm
   - atlas-nonconsensual-use
+  - mit-ai-risk-subdomain-5.1
   - atlas-legal-accountability
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-performance-&-robustness
   type: Risk
@@ -10721,15 +10721,15 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-2.1
   related_mappings:
-  - atlas-personal-information-in-data
-  - ail-specialized-advice
   - nist-data-privacy
   - ail-suicide-and-self-harm
-  - granite-guardian-harm
-  - ail-privacy
-  - llm022025-sensitive-information-disclosure
   - llm052025-improper-output-handling
   - llm072025-system-prompt-leakage
+  - llm022025-sensitive-information-disclosure
+  - ail-specialized-advice
+  - atlas-personal-information-in-data
+  - granite-guardian-harm
+  - ail-privacy
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-privacy
   type: Risk
@@ -10749,14 +10749,14 @@ entries:
   close_mappings:
   - llm022025-sensitive-information-disclosure
   related_mappings:
-  - atlas-personal-information-in-data
   - atlas-exposing-personal-information
-  - nist-data-privacy
-  - ail-suicide-and-self-harm
-  - ail-privacy
   - granite-guardian-harm
+  - nist-data-privacy
   - llm072025-system-prompt-leakage
   - mit-ai-risk-subdomain-2.1
+  - atlas-personal-information-in-data
+  - ail-suicide-and-self-harm
+  - ail-privacy
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-privacy
   type: Risk
@@ -10773,13 +10773,13 @@ entries:
   close_mappings:
   - atlas-revealing-confidential-information
   related_mappings:
-  - nist-information-security
-  - ail-privacy
-  - granite-guardian-harm
-  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-2.2
+  - nist-information-security
   - llm072025-system-prompt-leakage
+  - llm022025-sensitive-information-disclosure
   - mit-ai-risk-subdomain-2.1
+  - granite-guardian-harm
+  - ail-privacy
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-security
   type: Risk
@@ -10788,8 +10788,8 @@ entries:
   description: AI model and intellectual property theft - Unauthorized copying of
     trained models and associated AI intellectual property
   related_mappings:
-  - nist-intellectual-property
   - ail-intellectual-property
+  - nist-intellectual-property
   - atlas-copyright-infringement
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-security
@@ -10799,14 +10799,14 @@ entries:
   description: 'AI system security vulnerabilities: Implementation weaknesses in AI
     system architecture and infrastructure'
   related_mappings:
-  - nist-information-security
-  - llm082025-vector-and-embedding-weaknesses
   - llm042025-data-and-model-poisoning
+  - mit-ai-risk-subdomain-4.2
+  - mit-ai-risk-subdomain-2.2
+  - llm082025-vector-and-embedding-weaknesses
   - atlas-exposing-personal-information
   - granite-guardian-harm
-  - mit-ai-risk-subdomain-2.2
+  - nist-information-security
   - llm072025-system-prompt-leakage
-  - mit-ai-risk-subdomain-4.2
   - mit-ai-risk-subdomain-2.1
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-security
@@ -10817,14 +10817,14 @@ entries:
   description: The AI system may be vulnerable to adversarial attacks, including prompt-based
     attacks, which may induce the model to behave outside of its intended functionality.
   related_mappings:
-  - nist-information-security
-  - llm042025-data-and-model-poisoning
-  - mit-ai-risk-subdomain-7.3
   - granite-jailbreak
-  - granite-guardian-harm
+  - llm042025-data-and-model-poisoning
   - mit-ai-risk-subdomain-2.2
+  - mit-ai-risk-subdomain-7.3
+  - nist-information-security
   - atlas-evasion-attack
   - llm072025-system-prompt-leakage
+  - granite-guardian-harm
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-security
   type: Risk
@@ -10870,10 +10870,10 @@ entries:
   close_mappings:
   - mit-ai-risk-subdomain-6.1
   related_mappings:
-  - mit-ai-risk-subdomain-6.2
-  - mit-ai-risk-subdomain-6.5
   - atlas-impact-on-human-agency
+  - mit-ai-risk-subdomain-6.5
   - atlas-impact-on-cultural-diversity
+  - mit-ai-risk-subdomain-6.2
   - mit-ai-risk-subdomain-6.3
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-societal-impact
@@ -10929,8 +10929,8 @@ entries:
     or other resources, may potentially limit operational flexibility and introduce
     unforeseen risks or dependencies.
   related_mappings:
-  - mit-ai-risk-subdomain-7.3
   - llm032025-supply-chain
+  - mit-ai-risk-subdomain-7.3
   - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-third-party
@@ -10940,10 +10940,10 @@ entries:
   description: 'Vendor lock-in and innovation barriers: Technical or commercial constraints
     preventing adoption of improved AI solutions'
   related_mappings:
+  - nist-value-chain-and-component-integration
+  - mit-ai-risk-subdomain-7.3
   - mit-ai-risk-subdomain-6.4
   - mit-ai-risk-subdomain-6.5
-  - mit-ai-risk-subdomain-7.3
-  - nist-value-chain-and-component-integration
   isDefinedByTaxonomy: credo-ucf
   isPartOf: credo-rg-third-party
   type: Risk

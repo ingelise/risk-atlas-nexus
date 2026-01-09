@@ -33,13 +33,20 @@ class JSONGraphDumper(Dumper):
         # Export classes as nodes
         for class_name in self.schema_view.all_classes():
             cls = self.schema_view.get_class(class_name)
+
+            if "type" in cls.model_fields_set:
+                # check for a subclass
+                label = cls.__getattribute__("type")
+            else:
+                label = cls.name
+
             if class_name not in self.processed_ids:
                 class_node = {
                     "key": f"{class_name}",
                     "node_type": "schema_class",
                     "tag": "schema_class",
-                    "name": class_name,
-                    "label": cls.name,
+                    "name": label,
+                    "label": label,
                     "description": cls.description or "",
                     "abstract": cls.abstract or False,
                     "attributes": {

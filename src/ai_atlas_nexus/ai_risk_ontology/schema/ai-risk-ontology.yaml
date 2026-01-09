@@ -178,12 +178,6 @@ classes:
         range: Policy
         inlined: true
         inlined_as_list: true
-      llmquestionpolicies:
-        description: A list of LLM question policies
-        multivalued: true
-        range: LLMQuestionPolicy
-        inlined: true
-        inlined_as_list: true
       rules:
         description: A list of rules
         multivalued: true

@@ -191,8 +191,13 @@ classes:
 
   Policy:
     is_a: Entity
+    abstract: true
     description: "A guidance document outlining any of: procedures, plans, principles, decisions, intent, or protocols."
     class_uri: dpv:Policy
+    attributes:
+      type:
+        range: string
+        designates_type: true
     slots:
       - isDefinedByTaxonomy
 

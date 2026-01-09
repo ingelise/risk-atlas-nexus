@@ -131,6 +131,11 @@ def convert_entity_to_graph_node(
     entity: BaseModel, label: str, schema_view: SchemaView, linkml_types: list[str]
 ) -> list[GraphNode]:
     return_list: list[GraphNode] = []
+
+    if "type" in entity.model_fields_set:
+       # check for a subclass
+       label =  entity.__getattribute__("type")
+
     # Extract properties, namely slots that have a generic LinkML type as range
     properties = {
         item: entity.__getattribute__(item)
