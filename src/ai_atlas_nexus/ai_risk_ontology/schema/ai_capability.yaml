@@ -121,7 +121,7 @@ slots:
 
   # Intrinsic-capability relationships
   implementedByIntrinsic:
-    description: >
+    description: >-
       Indicates that this capability is implemented by a specific LLM intrinsic.
       This relationship distinguishes the abstract capability (what can be done) from
       the technical implementation mechanism (how it is done at the model component level).
@@ -140,7 +140,7 @@ slots:
 
   # AI System-capability relationships
   possessedByAi:
-    description: >
+    description: >-
       Indicates that this capability is possessed by a specific AI system or component.
       Inverse of hasCapability, allowing navigation from capabilities to AI systems.
       This enables queries like "which AI systems have this capability?"
