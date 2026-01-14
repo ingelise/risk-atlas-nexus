@@ -2,18 +2,19 @@ documents:
 - id: 10a99803d8afd656
   name: 'Foundation models: Opportunities, risks and mitigations'
   description: >-
-    'In this document we: Explore the benefits of foundation models, including
+    In this document we: Explore the benefits of foundation models, including
     their capability to perform challenging tasks, potential to speed up the adoption
     of AI, ability to increase productivity and the cost benefits they provide. Discuss
     the three categories of risk, including risks known from earlier forms of AI,
     known risks amplified by foundation models and emerging risks intrinsic to the
     generative capabilities of foundation models. Cover the principles, pillars and
     governance that form the foundation of IBM’s AI ethics initiatives and suggest
-    guardrails for risk mitigation.'
+    guardrails for risk mitigation.
   url: https://www.ibm.com/downloads/documents/us-en/10a99803d8afd656
 taxonomies:
 - id: ibm-risk-atlas
   name: IBM AI Risk Atlas
+  type: RiskTaxonomy
   description: >-
     Explore this atlas to understand some of the risks of working with
     generative AI, foundation models, and machine learning models.
@@ -22,56 +23,72 @@ taxonomies:
   dateModified: "2025-10-22"
   hasDocumentation:
   - 10a99803d8afd656
-riskgroups:
+groups:
 - id: ibm-risk-atlas-accuracy
   name: Accuracy
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-computational-inefficiency
   name: Computational inefficiency
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-data-laws
   name: Data laws
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-explainability
   name: Explainability
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-fairness
   name: Fairness
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-governance
   name: Governance
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-intellectual-property
   name: Intellectual property
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-legal-compliance
   name: Legal compliance
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-misuse
   name: Misuse
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-privacy
   name: Privacy
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-robustness
   name: Robustness
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-robustness-model-behavior-manipulation
   name: 'Robustness: model behavior manipulation'
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-robustness-prompt-attacks
   name: 'Robustness: prompt attacks'
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-societal-impact
   name: Societal impact
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-transparency
   name: Transparency
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
 - id: ibm-risk-atlas-value-alignment
   name: Value alignment
+  type: RiskGroup
   isDefinedByTaxonomy: ibm-risk-atlas
-risks:
+entries:
 - id: atlas-evasion-attack
   name: Evasion attack
   description: >-
@@ -83,7 +100,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: evasion-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -99,7 +117,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-the-environment
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -119,7 +138,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: incorrect-risk-testing
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -141,7 +161,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: over-or-under-reliance
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -162,7 +183,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: membership-inference-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -181,7 +203,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: confidential-data-in-prompt
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -199,7 +222,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-leaking
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -221,7 +245,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: data-privacy-rights
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -241,7 +266,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-fairness
   tag: discriminatory-actions-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -259,7 +285,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: ip-information-in-prompt
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -281,7 +308,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: legal-accountability
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -306,7 +334,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: hallucination
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -329,7 +358,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: social-hacking-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -347,7 +377,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: harmful-output
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -365,7 +396,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: indirect-instructions-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -382,7 +414,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: mitigation-maintenance-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -401,7 +434,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: ai-agent-compliance-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -423,7 +457,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: function-calling-hallucination-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: >-
@@ -442,7 +477,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: confidential-information-in-data
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -461,7 +497,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-model-transparency
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -485,7 +522,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: exploit-trust-mismatch-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -506,7 +544,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-accuracy
   tag: unrepresentative-data
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -524,7 +563,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-human-agency-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -543,7 +583,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: personal-information-in-prompt
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -562,7 +603,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-human-agency
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -585,7 +627,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: sharing-info-user-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -604,7 +647,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-testing-diversity
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -622,7 +666,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: nonconsensual-use
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -644,7 +689,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-fairness
   tag: decision-bias
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -662,7 +708,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: exposing-personal-information
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -680,7 +727,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-jobs-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -699,7 +747,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: data-curation
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -726,7 +775,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: over-or-under-reliance-on-ai-agents-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -746,7 +796,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: external-resources-attack-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: >-
@@ -767,7 +818,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: revealing-confidential-information
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -785,7 +837,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: spreading-disinformation
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -804,7 +857,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-transparency
   tag: data-provenance
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -825,7 +879,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: unrepresentative-risk-testing
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -844,7 +899,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-fairness
   tag: data-bias
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -863,7 +919,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: data-usage-rights
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -888,7 +945,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: unauthorized-use-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -910,7 +968,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-computational-inefficiency
   tag: redundant-actions-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: >-
@@ -932,7 +991,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-environment-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -956,7 +1016,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: misaligned-actions-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -973,7 +1034,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-accuracy
   tag: data-contamination
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -990,7 +1052,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: harmful-code-generation
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1007,7 +1070,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: incomplete-usage-definition
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1026,7 +1090,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-data-transparency
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -1052,7 +1117,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-intellectual-property
   tag: copyright-infringement
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -1073,7 +1139,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: context-overload-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1092,7 +1159,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-affected-communities
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -1109,7 +1177,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: improper-retraining
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1128,7 +1197,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: spreading-toxicity
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1146,7 +1216,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-fairness
   tag: introduce-data-bias-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1164,7 +1235,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: accountability-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1181,7 +1253,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: incomplete-ai-agent-evaluation-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1199,7 +1272,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   tag: inaccessible-training-data
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1216,7 +1290,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: bypassing-learning
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1236,7 +1311,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   tag: untraceable-attribution
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1254,7 +1330,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: non-disclosure
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1273,7 +1350,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-transparency
   tag: data-transparency
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -1295,7 +1373,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: model-usage-rights
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -1314,7 +1393,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: reproducibility-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: >-
@@ -1334,7 +1414,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: specialized-tokens-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1352,7 +1433,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: incomplete-advice
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1373,7 +1455,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-injection
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1390,7 +1473,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-system-transparency
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -1407,7 +1491,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-usage
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -1424,7 +1509,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-cultural-diversity
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -1446,7 +1532,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: plagiarism
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1465,7 +1552,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: personal-information-in-data
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
@@ -1484,7 +1572,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: direct-instructions-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1501,7 +1590,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: improper-usage
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1518,7 +1608,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-on-jobs
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1537,7 +1628,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: extraction-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1555,7 +1647,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-model-behavior-manipulation
   tag: jailbreaking
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1572,7 +1665,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-acquisition
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1592,7 +1686,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: sharing-info-tools-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - specific to agentic AI
   concern: >-
@@ -1614,7 +1709,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: prompt-priming
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1631,7 +1727,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: reidentification
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -1652,7 +1749,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-privacy
   tag: attribute-inference-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1670,7 +1768,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-accuracy
   tag: poor-model-accuracy
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - amplified by generative AI
   - amplified by synthetic data
@@ -1689,12 +1788,13 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-data-laws
   tag: data-transfer
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   concern: >-
     Data transfer restrictions can also impact the availability of the data
-    that is required for training an AI model and can lead to poorly represented data.
+    that is required for training an AI model and can lead to ted data.
 - id: atlas-generated-content-ownership
   name: Generated content ownership and IP
   description: >-
@@ -1706,7 +1806,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-legal-compliance
   tag: generated-content-ownership
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1726,7 +1827,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-of-ai-agent-transparency-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1749,7 +1851,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness-Prompt-attacks
   tag: encoded-interactions-attack
-  type: inference
+  risk_type: inference
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1766,7 +1869,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: impact-human-dignity-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1784,7 +1888,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-fairness
   tag: output-bias
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1801,7 +1906,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-misuse
   tag: dangerous-use
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1819,7 +1925,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   tag: unexplainable-output
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1840,7 +1947,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: human-exploitation
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by generative AI
   concern: >-
@@ -1858,7 +1966,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-value-alignment
   tag: toxic-output
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   concern: >-
@@ -1875,7 +1984,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   tag: unexplainable-untraceable-actions-agentic
-  type: agentic
+  risk_type: agentic
+  type: Risk
   descriptor:
   - amplified by agentic AI
   concern: >-
@@ -1894,7 +2004,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-robustness
   tag: data-poisoning
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - traditional risk of AI
   - amplified by synthetic data
@@ -1916,7 +2027,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-explainability
   tag: unreliable-source-attribution
-  type: output
+  risk_type: output
+  type: Risk
   descriptor:
   - specific to generative AI
   - amplified by synthetic data
@@ -1941,7 +2053,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: temporal-gap
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - amplified by synthetic data
   concern: >-
@@ -1966,7 +2079,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-governance
   tag: lack-domain-expertise
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to synthetic data
   concern: >-
@@ -1987,7 +2101,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-societal-impact
   tag: exclusion
-  type: non-technical
+  risk_type: non-technical
+  type: Risk
   descriptor:
   - specific to synthetic data
   concern: >-
@@ -2012,7 +2127,8 @@ risks:
   isDefinedByTaxonomy: ibm-risk-atlas
   isPartOf: ibm-risk-atlas-accuracy
   tag: overfitting
-  type: training-data
+  risk_type: training-data
+  type: Risk
   descriptor:
   - amplified by synthetic data
   concern: >-
