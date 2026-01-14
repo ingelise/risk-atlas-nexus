@@ -83,7 +83,11 @@ class OllamaInferenceEngine(InferenceEngine):
                 format=response_format,
                 logprobs=self.parameters.get("logprobs", None),
                 top_logprobs=self.parameters.get("top_logprobs", None),
-                options={k:v for k,v in self.parameters.items() if (k != "logprobs" or k != "top_logprobs")},  # https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#valid-parameters-and-values
+                options={
+                    k: v
+                    for k, v in self.parameters.items()
+                    if (k != "logprobs" or k != "top_logprobs")
+                },  # https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#valid-parameters-and-values
                 think=self.think,
                 **kwargs,
             )
@@ -119,7 +123,11 @@ class OllamaInferenceEngine(InferenceEngine):
                 format=response_format,
                 logprobs=self.parameters.get("logprobs", None),
                 top_logprobs=self.parameters.get("top_logprobs", None),
-                options={k:v for k,v in self.parameters.items() if (k != "logprobs" or k != "top_logprobs")},  # https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#valid-parameters-and-values
+                options={
+                    k: v
+                    for k, v in self.parameters.items()
+                    if (k != "logprobs" or k != "top_logprobs")
+                },  # https://github.com/ollama/ollama/blob/main/docs/modelfile.mdx#valid-parameters-and-values
                 think=self.think,
                 **kwargs,
             )
@@ -134,16 +142,13 @@ class OllamaInferenceEngine(InferenceEngine):
         )
 
     def _prepare_prediction_output(self, response):
+        _CHAT_API = True if hasattr(response, "message") else False
         return TextGenerationInferenceOutput(
-            prediction=(
-                response.message.content
-                if hasattr(response, "message")
-                else response.response
-            ),
+            prediction=response.message.content if _CHAT_API else response.response,
             input_tokens=response.prompt_eval_count,
             output_tokens=response.eval_count,
             stop_reason=response.done_reason,
-            thinking=response.thinking if hasattr(response, "thinking") else None,
+            thinking=response.message.thinking if _CHAT_API else response.thinking,
             model_name_or_path=self.model_name_or_path,
             logprobs=(
                 {output.token: output.logprob for output in response.logprobs}
