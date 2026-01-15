@@ -15,12 +15,15 @@ class InferenceEngineCredentials(TypedDict):
         space_id (str, optional) : space id to use for the WML platform.
 
         project_id (str, optional) : project id to use for the WML platform.
+
+        hf_token (str, optional) : HuggingFace API token for HF ZeroGPU engine.
     """
 
     api_url: str
     api_key: Optional[str] = None  # Optional for vLLM/Ollama server mode
     space_id: Optional[str] = None  # only used in WML engine
     project_id: Optional[str] = None  # only used in WML engine
+    hf_token: Optional[str] = None  # only used in HF ZeroGPU engine
 
 
 class RITSInferenceEngineParams(TypedDict):
@@ -111,6 +114,35 @@ class OllamaInferenceEngineParams(TypedDict):
     # enable log probs
     logprobs: Optional[bool] = None
     top_logprobs: Optional[int] = None
+
+
+class HFZeroGPUInferenceEngineParams(TypedDict):
+    """Parameters for HuggingFace ZeroGPU Inference Engine.
+
+    Based on HuggingFace Inference API parameters.
+    See: https://huggingface.co/docs/huggingface_hub/package_reference/inference_client
+    """
+
+    # Generation parameters
+    temperature: Optional[float] = None
+    max_new_tokens: Optional[int] = None
+    top_p: Optional[float] = None
+    top_k: Optional[int] = None
+    repetition_penalty: Optional[float] = None
+
+    # Sampling parameters
+    do_sample: Optional[bool] = None
+    seed: Optional[int] = None
+
+    # Stopping parameters
+    stop_sequences: Optional[List[str]] = None
+
+    # Advanced parameters
+    return_full_text: Optional[bool] = None
+    num_return_sequences: Optional[int] = None
+
+    # Thinking/CoT parameters
+    output_reasoning: Optional[bool] = None  # For thinking support
 
 
 class VLLMInferenceEngineParams(TypedDict):

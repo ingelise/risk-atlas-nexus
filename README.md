@@ -52,7 +52,7 @@ Our intention is to create a starting point for an open AI Systems ontology whos
 
 This project targets python version ">=3.11, <3.12". You can download specific versions of python here: https://www.python.org/downloads/
 
-**Note:** Replace `INFERENCE_LIB` with one of the LLM inference library [ollama, vllm, wml, rits] as explained [here](#install-for-inference-apis)
+**Note:** Replace `INFERENCE_LIB` with one of the LLM inference library [ollama, vllm, wml, rits, hf_zero_gpu] as explained [here](#install-for-inference-apis)
 
 To install the current release
 ```
@@ -75,6 +75,7 @@ AI Atlas Nexus uses Large Language Models (LLMs) to infer risks and risks data. 
 - [IBM Watsonx AI](https://www.ibm.com/products/watsonx-ai) (Watson Machine Learning)
 - [Ollama](https://ollama.com/)
 - [vLLM](https://docs.vllm.ai/en/latest/)
+- [HuggingFace ZeroGPU](https://huggingface.co/zero-gpu-runners)
 - [RITS](https://rits.fmaas.res.ibm.com) (IBM Internal Only)
 
 #### IBM Watsonx AI (WML)
@@ -135,6 +136,51 @@ vllm serve ibm-granite/granite-3.1-8b-instruct --max_model_len 4096 --host local
 The CUSTOM_API_KEY can be any string that you choose to use as your API key. Above command will start vLLM server at http://localhost:8000. The server currently hosts one model at a time. Check all supported APIs at `http://localhost:8000/docs`
 
 **Note:** When selecting vLLM engine in AI Atlas Nexus, pass `api_url` as `host:port` and given `api_key` to `credentials` with values from the vllm serve command above.
+
+#### HuggingFace ZeroGPU
+
+When using HuggingFace ZeroGPU for inference, you need to:
+
+1. Install HuggingFace dependencies as follows:
+
+```command
+pip install -e ".[hf_zero_gpu]"
+```
+
+2. Set your HuggingFace API token. You can obtain a token from [HuggingFace settings](https://huggingface.co/settings/tokens):
+
+```bash
+export HF_TOKEN="your_hf_token_here"
+```
+
+Alternatively, add it to your `.env` file:
+
+```yaml
+HF_TOKEN=<your HuggingFace token goes here>
+```
+
+3. When selecting HuggingFace ZeroGPU engine in AI Atlas Nexus, use the following configuration:
+
+```python
+from ai_atlas_nexus.blocks.inference import HFZeroGPUInferenceEngine
+
+engine = HFZeroGPUInferenceEngine(
+    model_name_or_path="meta-llama/Llama-3-8B-Instruct",
+    credentials={"hf_token": "your_hf_token"},
+    parameters={"temperature": 0.7, "max_tokens": 500}
+)
+
+results = engine.generate(["Explain AI risks"])
+```
+
+You can also pass the HF token via environment variable by omitting it from credentials:
+
+```python
+engine = HFZeroGPUInferenceEngine(
+    model_name_or_path="meta-llama/Llama-3-8B-Instruct",
+    parameters={"temperature": 0.7, "max_tokens": 500}
+)
+```
 
 #### RITS (IBM Internal Only)
 

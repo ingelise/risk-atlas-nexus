@@ -64,6 +64,7 @@ dependencies = [
 wml = ["ibm-watsonx-ai"]
 ollama = ["ollama"]
 vllm = ["vllm", "xgrammar"]
+hf_zero_gpu = ["huggingface-hub>=0.20.0"]
 docs = [
     "mkdocs-material",
     "mkdocs-jupyter",

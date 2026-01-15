@@ -4,6 +4,7 @@ from typing import Any, Dict, List, Literal, Optional, Union
 import pydantic
 
 from ai_atlas_nexus.blocks.inference.params import (
+    HFZeroGPUInferenceEngineParams,
     InferenceEngineCredentials,
     OllamaInferenceEngineParams,
     OpenAIChatCompletionMessageParam,
@@ -26,6 +27,7 @@ class InferenceEngine(ABC):
         credentials: Optional[Union[Dict, InferenceEngineCredentials]] = None,
         parameters: Optional[
             Union[
+                HFZeroGPUInferenceEngineParams,
                 RITSInferenceEngineParams,
                 WMLInferenceEngineParams,
                 OllamaInferenceEngineParams,

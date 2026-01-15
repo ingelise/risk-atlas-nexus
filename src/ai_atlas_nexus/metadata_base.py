@@ -10,6 +10,7 @@ class InferenceEngineType(str, Enum):
     WML = "WML"
     VLLM = "VLLM"
     OLLAMA = "OLLAMA"
+    HF_ZERO_GPU = "HF_ZERO_GPU"
 
     @classmethod
     def list(cls):
