@@ -11,6 +11,7 @@ from ai_atlas_nexus.blocks.inference.params import (
     TextGenerationInferenceOutput,
 )
 from ai_atlas_nexus.blocks.inference.postprocessing import postprocess
+from ai_atlas_nexus.exceptions import RiskInferenceError
 from ai_atlas_nexus.metadata_base import InferenceEngineType
 from ai_atlas_nexus.toolkit.job_utils import run_parallel
 from ai_atlas_nexus.toolkit.logging import configure_logger
@@ -93,13 +94,16 @@ class OllamaInferenceEngine(InferenceEngine):
             )
             return self._prepare_prediction_output(response)
 
-        return run_parallel(
-            generate_text,
-            prompts,
-            f"Inferring with {self._inference_engine_type}",
-            self.concurrency_limit,
-            verbose=verbose,
-        )
+        try:
+            return run_parallel(
+                generate_text,
+                prompts,
+                f"Inferring with {self._inference_engine_type}",
+                self.concurrency_limit,
+                verbose=verbose,
+            )
+        except Exception as e:
+            raise RiskInferenceError(str(e))
 
     @postprocess
     def chat(
@@ -133,13 +137,16 @@ class OllamaInferenceEngine(InferenceEngine):
             )
             return self._prepare_prediction_output(response)
 
-        return run_parallel(
-            chat_response,
-            messages,
-            f"Inferring with {self._inference_engine_type}",
-            self.concurrency_limit,
-            verbose=verbose,
-        )
+        try:
+            return run_parallel(
+                chat_response,
+                messages,
+                f"Inferring with {self._inference_engine_type}",
+                self.concurrency_limit,
+                verbose=verbose,
+            )
+        except Exception as e:
+            raise RiskInferenceError(str(e))
 
     def _prepare_prediction_output(self, response):
         _CHAT_API = True if hasattr(response, "message") else False
