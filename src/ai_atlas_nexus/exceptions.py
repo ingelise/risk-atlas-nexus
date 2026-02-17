@@ -18,9 +18,11 @@ def handle_exception(
             try:
                 event = func(*args, **kwargs)
             except Exception as e:
-                if isinstance(e, tuple(exceptions) or isinstance(e, RiskInferenceError)):
+                if isinstance(e, tuple(exceptions)):
                     LOGGER.error(f"{e.name}: {e.message}")
                     return None
+                else:
+                    raise e
 
             return event
 
