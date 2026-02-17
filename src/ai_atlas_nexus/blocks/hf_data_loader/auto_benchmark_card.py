@@ -38,7 +38,7 @@ class AutoBenchmarkCardLoader(HFDataLoaderBase):
 
     def transform_record(self, record):
         """
-        Transform a HuggingFace Auto-BenchmarkCard record into a LinkML BenchmarkMetadataCard.
+        Transform a HuggingFace Auto-BenchmarkCard record into a BenchmarkMetadataCard.
 
         Args:
             record:  Dict[str, Any]
@@ -46,7 +46,7 @@ class AutoBenchmarkCardLoader(HFDataLoaderBase):
 
         Returns:
             Dict[str, Any]
-                A dictionary representing a LinkML BenchmarkMetadataCard
+                A dictionary representing a BenchmarkMetadataCard
         """
         # Extract the nested benchmark card data
         benchmark_card = record.get("benchmark_card", {})
