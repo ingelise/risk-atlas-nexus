@@ -684,7 +684,7 @@ class AIAtlasNexus:
 
         processed_examples = None
         if zero_shot_only:
-            logger.info(
+            logger.debug(
                 f"The `zero_shot_only` flag is enabled. The system will use the Zero shot method. Any provided `cot_examples` will be disregarded.",
             )
         else:
