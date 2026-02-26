@@ -623,7 +623,6 @@ class AIAtlasNexus:
         cot_examples: Optional[Dict[str, List]] = None,
         max_risk: Optional[int] = None,
         zero_shot_only: bool = False,
-        batch_inference: bool = True,
     ) -> List[List[Risk]]:
         """Identify potential risks from a usecase description
 
@@ -641,7 +640,6 @@ class AIAtlasNexus:
             max_risk (int, optional):
                 The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
             zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
-            batch_inference (bool): Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
         Returns:
             List[List[Risk]]:
                 Result containing a list of risks
@@ -686,7 +684,7 @@ class AIAtlasNexus:
 
         processed_examples = None
         if zero_shot_only:
-            logger.info(
+            logger.debug(
                 f"The `zero_shot_only` flag is enabled. The system will use the Zero shot method. Any provided `cot_examples` will be disregarded.",
             )
         else:
@@ -719,11 +717,7 @@ class AIAtlasNexus:
             max_risk=max_risk,
         )
 
-        return (
-            risk_detector.detect(usecases)
-            if batch_inference
-            else risk_detector.detect_one(usecases)
-        )
+        return risk_detector.detect(usecases)
 
     def get_all_taxonomies(cls):
         """Get all taxonomy definitions from the LinkML
