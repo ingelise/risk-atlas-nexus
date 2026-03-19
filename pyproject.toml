@@ -77,6 +77,7 @@ docs = [
 
 [project.scripts]
 ran-extension = "ai_atlas_nexus.extension:app"
+ran-identify-risks = "ai_atlas_nexus.cli.identify_risks:app"
 
 [tool.isort]
 skip_glob = ["v-ai-atlas-nexus/*"]
