@@ -1,8 +1,9 @@
+import itertools
 import json
 import os
 from importlib.metadata import version
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 import yaml
 from jinja2 import Template
@@ -77,7 +78,7 @@ class AIAtlasNexus:
     )
     schema_view = SchemaView(yaml.safe_load(fn))
 
-    def __init__(self, base_dir: str = None):
+    def __init__(self, base_dir: Optional[str] = None):
         """Create a new AIAtlasNexus object
 
         Args:
@@ -176,8 +177,8 @@ class AIAtlasNexus:
         Args:
             class_name: str
                 Name of the class (the collection key in data)
-            taxonomy: str
-                (Optional) The string id for a taxonomy
+            taxonomy: Optional[Union[str, List[str]]]
+                (Optional) The string id for a taxonomy or list of taxonomy ids
             vocabulary:
                 (Optional) The string id for a vocabulary
 
@@ -251,8 +252,8 @@ class AIAtlasNexus:
         """Get all risk definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: Optional[Union[str, List[str]]]
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Risk]
@@ -260,7 +261,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RANEACF44A7E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -273,7 +274,7 @@ class AIAtlasNexus:
         tag=None,
         id=None,
         name=None,
-        taxonomy=None,
+        taxonomy= None,
     ):
         """Get risk definition from the LinkML, filtered by risk atlas id, tag, name
 
@@ -284,8 +285,8 @@ class AIAtlasNexus:
                 The string tag identifying the risk
             name: (Optional) str
                 The string name identifying the risk
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: Optional[Union[str, List[str]]]
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             Risk
@@ -293,7 +294,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAND62C1B3AE>",
-            str,
+            Union[str, List],
             allow_none=True,
             tag=tag,
             id=id,
@@ -338,8 +339,8 @@ class AIAtlasNexus:
                 The string tag identifying the risk
             name: (Optional) str
                 The string name identifying the risk
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: Optional[Union[str, List[str]]]
+                (Optional) The string label for a taxonomy or list of strings
         Returns:
             List[str]
                 Result containing a list of AI risk IDs
@@ -352,7 +353,7 @@ class AIAtlasNexus:
         )
         type_check(
             "<RANC9FDCC45E>",
-            str,
+            Union[str | List],
             allow_none=True,
             tag=tag,
             id=id,
@@ -443,19 +444,19 @@ class AIAtlasNexus:
         related_action_ids = risk.hasRelatedAction
         if related_action_ids:
             return [
-                cls._atlas_explorer.get_by_id("actions", identifier=x)
+                cls._atlas_explorer.get_by_id(class_name="actions", identifier=x)
                 for x in related_action_ids
             ]
         else:
             return []
         return related_action_instances
 
-    def get_all_actions(cls, taxonomy=None):
+    def get_all_actions(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all action definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Action]
@@ -463,7 +464,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN1C9A35ADE>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -473,14 +474,14 @@ class AIAtlasNexus:
         )
         return action_instances
 
-    def get_action_by_id(cls, id, taxonomy=None):
+    def get_action_by_id(cls, id, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an action definition from the LinkML, filtered by action id
 
         Args:
             id: str
                 The string id identifying the action
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             Action
@@ -494,12 +495,12 @@ class AIAtlasNexus:
         )
         type_check(
             "<RAN869039B6E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
 
-        action: Action | None = cls._atlas_explorer.get_by_id("actions", identifier=id)
+        action: Action | None = cls._atlas_explorer.get_by_id(class_name="actions", identifier=id)
         return action
 
     def get_related_risk_controls(
@@ -557,17 +558,17 @@ class AIAtlasNexus:
             risk = cls.get_risk(name=name)
 
         risk_controls = [
-            cls._atlas_explorer.get_by_id("riskcontrols", identifier=x)
+            cls._atlas_explorer.get_by_id(class_name="riskcontrols", identifier=x)
             for x in risk.isDetectedBy or []
         ]
         return risk_controls
 
-    def get_all_risk_controls(cls, taxonomy=None):
+    def get_all_risk_controls(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all risk control definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[RiskControl]
@@ -575,7 +576,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN129A1692E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -585,14 +586,14 @@ class AIAtlasNexus:
         )
         return risk_control_instances
 
-    def get_risk_control(cls, id=None, taxonomy=None):
+    def get_risk_control(cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an action definition from the LinkML, filtered by risk control id
 
         Args:
             id: str
                 The string id identifying the risk control
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             Action
@@ -606,13 +607,13 @@ class AIAtlasNexus:
         )
         type_check(
             "<RAN5A157049E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
 
         risk_control: RiskControl | None = cls._atlas_explorer.get_by_id(
-            "riskcontrols", identifier=id
+            class_name="riskcontrols", identifier=id
         )
         return risk_control
 
@@ -621,7 +622,7 @@ class AIAtlasNexus:
         cls,
         usecases: List[str],
         inference_engine: InferenceEngine,
-        taxonomy: Optional[str] = None,
+        taxonomy: str | list[str] | List[str] | None = None,
         cot_examples: Optional[Dict[str, List]] = None,
         max_risk: Optional[int] = None,
         zero_shot_only: bool = False,
@@ -647,20 +648,20 @@ class AIAtlasNexus:
                 Result containing a list of risks
         """
         type_check(
-            "<RANE023314BE>",
+            "<RANE02D314BE>",
             List,
             allow_none=False,
             usecases=usecases,
         )
         type_check(
-            "<RANE023314BE>",
+            "<RANE023914BE>",
             InferenceEngine,
             allow_none=False,
             inference_engine=inference_engine,
         )
         type_check(
             "<RANB72CAE6EE>",
-            str,
+            Union[str,list,List,None],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -677,49 +678,191 @@ class AIAtlasNexus:
         )
 
         # if not providing taxonomy, set to IBM AI risk atlas
+        taxonomies = []
+
         if taxonomy is None:
             logger.warning(
                 f"<RAN47375G12W>",
                 f"Taxonomy was not provided, defaulting to ibm-risk-atlas.",
             )
-        set_taxonomy = taxonomy or "ibm-risk-atlas"
+            taxonomies = ["ibm-risk-atlas"]
+        elif isinstance(taxonomy, str):
+            taxonomies.append(taxonomy)
+        else:
+            taxonomies = taxonomy
 
-        processed_examples = None
-        if zero_shot_only:
-            logger.debug(
-                f"The `zero_shot_only` flag is enabled. The system will use the Zero shot method. Any provided `cot_examples` will be disregarded.",
+        if taxonomy is None:
+            logger.warning(
+                f"<RAN47375G12W>",
+                f"Taxonomy was not provided, defaulting to ibm-risk-atlas.",
             )
-        else:
-            # For the given taxonomy type, check if the user has provided 'cot_examples'. If not,
-            # retrieve the default cot examples from the master. If no examples exist in the master,
-            # set it as None. The CoT examples include risk-related questions that have been synthetically generated for this task.
-            processed_examples = (
-                cot_examples and cot_examples.get(set_taxonomy, None)
-            ) or RISK_IDENTIFICATION_COT.get(set_taxonomy, None)
-            if processed_examples is None:
-                logger.warning(
-                    f"<RAN47275F12W> Chain of Thought (CoT) examples were not provided, or do not exist in the master for this taxonomy. The API will use the Zero shot method. To improve the accuracy of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may also consider raising an issue to permanently add these examples to the AI Atlas Nexus master."
-                )
 
-        if set_taxonomy == "ibm-attack-risk-atlas":
-            risks = [
-                risk
-                for risk in cls._atlas_explorer.get_all(
-                    "risks", taxonomy="ibm-risk-atlas"
+
+        combined_processed_examples = None
+        combined_risks = []
+
+        for tx in taxonomies:
+
+            if tx == "ibm-attack-risk-atlas":
+                risks = [
+                    risk
+                    for risk in cls._atlas_explorer.get_all(
+                        "risks", taxonomy="ibm-risk-atlas"
+                    )
+                    if risk.tag.endswith("-attack")
+                ]
+            else:
+                risks = cls._atlas_explorer.get_all("risks", taxonomy=tx)
+
+            combined_risks.extend(risks)
+
+            if len(taxonomies) > 1:
+                logger.debug(
+                    f"When there is more than one taxonomy given, `zero_shot_only` flag is enabled.",
                 )
-                if risk.tag.endswith("-attack")
-            ]
-        else:
-            risks = cls._atlas_explorer.get_all("risks", taxonomy=set_taxonomy)
+                zero_shot_only = True
+
+            if zero_shot_only:
+                logger.debug(
+                    f"The `zero_shot_only` flag is enabled. The system will use the Zero shot method. Any provided `cot_examples` will be disregarded.",
+                )
+            else:
+                # For the given taxonomy type, check if the user has provided 'cot_examples'. If not,
+                # retrieve the default cot examples from the master. If no examples exist in the master,
+                # set it as None. The CoT examples include risk-related questions that have been synthetically generated for this task.
+                processed_examples = (
+                    cot_examples and cot_examples.get(tx, None)
+                ) or RISK_IDENTIFICATION_COT.get(tx, None)
+                if combined_processed_examples and type(combined_processed_examples) == list:
+                    combined_processed_examples.append(processed_examples)
+                else:
+                    combined_processed_examples = processed_examples
+
+
+        if combined_processed_examples is None:
+            logger.warning(
+                f"<RAN47275F12W> Chain of Thought (CoT) examples were not provided, or do not exist in the master for this taxonomy. The API will use the Zero shot method. To improve the accuracy of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may also consider raising an issue to permanently add these examples to the AI Atlas Nexus master."
+            )
 
         risk_detector = GenericRiskDetector(
-            risks=risks,
+            risks=combined_risks,
             inference_engine=inference_engine,
-            cot_examples=processed_examples,
+            cot_examples=combined_processed_examples,
             max_risk=max_risk,
         )
 
         return risk_detector.detect(usecases)
+
+
+
+
+
+
+    @handle_exception(exceptions=[RiskInferenceError])
+    def identify_risks_and_actions_from_usecases(
+        cls,
+        usecases: List[str],
+        inference_engine: InferenceEngine,
+        taxonomy: str | list[str] | List[str] | None = None,
+        cot_examples: Optional[Dict[str, List]] = None,
+        max_risk: Optional[int] = None,
+        zero_shot_only: bool = False,
+    ):
+        """Identify potential risks from a usecase description
+
+        Args:
+            usecases (List[str]):
+                A List of strings describing AI usecases
+            inference_engine (InferenceEngine):
+                An LLM inference engine to infer risks from the usecases.
+            taxonomy (str | list[str] | List[str] | None = None):
+                The string label for a taxonomy. If not specified, the system will use "ibm-risk-atlas" as the default taxonomy.
+            cot_examples (Dict[str, List], optional):
+                If the user wants to improve risk identification via a Few-shot approach, `cot_examples` can be
+                provided with the desired taxonomy as key. Please follow the example template at src/ai_atlas_nexus/data/templates/risk_generation_cot.json.
+                If the `cot_examples` is omitted, the API default to a Zero-Shot approach.
+            max_risk (int, optional):
+                The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
+            zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
+        Returns:
+            List[List[Risk]]:
+                Result containing a list of risks
+        """
+        type_check(
+            "<RANE053314BE>",
+            List,
+            allow_none=False,
+            usecases=usecases,
+        )
+        type_check(
+            "<RANE023614CE>",
+            InferenceEngine,
+            allow_none=False,
+            inference_engine=inference_engine,
+        )
+        type_check(
+            "<RANB72CPE6BE>",
+            Union[str,list,List,None],
+            allow_none=True,
+            taxonomy=taxonomy,
+        )
+        type_check(
+            "<RAND098498E>",
+            int,
+            allow_none=True,
+            max_risk=max_risk,
+        )
+        value_check(
+            "<RAN6717CP18E>",
+            all([isinstance(usecase, str) for usecase in usecases]),
+            "Usecases must be a list of string.",
+        )
+
+
+        risks = cls.identify_risks_from_usecases(usecases, inference_engine, taxonomy, cot_examples, max_risk, zero_shot_only)[0]
+        control_ids = []
+        actions = []
+        detectors = []
+
+        for risk in risks:
+            if risk.hasRelatedAction:
+                risk_actions = risk.hasRelatedAction if isinstance(risk.hasRelatedAction, list) else [risk.hasRelatedAction]
+                actions.extend(risk_actions)
+
+            if risk.isDetectedBy:
+                risk_detections = risk.isDetectedBy if isinstance(risk.isDetectedBy, list) else [risk.isDetectedBy]
+                detectors.extend(risk_detections)
+
+            mappings = list(itertools.chain(
+                risk.related_mappings or [],
+                risk.broad_mappings or [],
+                risk.close_mappings or [],
+                risk.exact_mappings or [],
+                risk.hasRelatedAction or [],
+                risk.isDetectedBy or []
+            ))
+
+            control_ids.extend(cls._atlas_explorer.filter_ids_by_type(ids=mappings, disallowed_types=["Risk"]))
+            control_ids = list(set(control_ids))
+
+        summary_1 = {
+            "risk_ids": [risk.id for risk in risks],
+            "action_ids": actions,
+            "detector_ids": detectors,
+        }
+        summary_2  = cls._atlas_explorer.arrange_ids_by_type(control_ids)
+        summary = summary_1 | summary_2
+
+        result = {
+            "usecases": usecases,
+            "model": inference_engine.model_name_or_path,
+            "taxonomy": taxonomy,
+            "summary": summary,
+            "risks": risks,
+            "mixed_control_items": [cls._atlas_explorer.get_by_id(None, identifier=item) for item in control_ids]
+        }
+        return result
+
 
     def get_all_taxonomies(cls):
         """Get all taxonomy definitions from the LinkML
@@ -752,7 +895,7 @@ class AIAtlasNexus:
         )
 
         taxonomy: RiskTaxonomy | None = cls._atlas_explorer.get_by_id(
-            "taxonomies", identifier=id
+            class_name="taxonomies", identifier=id
         )
         return taxonomy
 
@@ -956,6 +1099,7 @@ class AIAtlasNexus:
             verbose=verbose,
         )
 
+
     def generate_proposed_mappings(
         cls,
         new_risks: List[Risk],
@@ -1014,8 +1158,12 @@ class AIAtlasNexus:
             mapping_method=mapping_method,
         )
 
-    def get_risk_incidents(cls, taxonomy: Optional[str] = None):
+    def get_risk_incidents(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get risk incident instances, optionally filtered by taxonomy
+
+        Args:
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             List[RiskIncident]
@@ -1023,7 +1171,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN04811131E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1033,14 +1181,14 @@ class AIAtlasNexus:
         )
         return risk_incident_instances
 
-    def get_risk_incident(cls, id=None, taxonomy=None):
+    def get_risk_incident(cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an risk incident instance filtered by risk incident id
 
         Args:
             id: str
                 The string id identifying the risk incident
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             RiskIncident
@@ -1054,13 +1202,13 @@ class AIAtlasNexus:
         )
         type_check(
             "<RAN38198685E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
 
         risk_incident: RiskIncident | None = cls._atlas_explorer.get_by_id(
-            "riskincidents", identifier=id
+            class_name="riskincidents", identifier=id
         )
         return risk_incident
 
@@ -1112,46 +1260,46 @@ class AIAtlasNexus:
         )
         return related_risk_incidents
 
-    def get_all_evaluations(cls, taxonomy=None):
+    def get_all_evaluations(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all evaluation definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
-            list[RiskControl]
+            list[AiEval]
                 Result containing a list of AiEval
         """
-        type_check("<RAN18094995E>", str, allow_none=True, taxonomy=taxonomy)
+        type_check("<RAN18094995E>", Union[str, List], allow_none=True, taxonomy=taxonomy)
 
         evaluation_instances: list[AiEval] = cls._atlas_explorer.get_all(
             "evaluations", taxonomy=taxonomy
         )
         return evaluation_instances
 
-    def get_evaluation(cls, id=None, taxonomy=None):
+    def get_evaluation(cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an evaluation definition from the LinkML, filtered by id
 
         Args:
             id: str
                 The string id identifying the evaluation
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             Action
                 Result containing an evaluation.
         """
         type_check("<RAN84465757E>", str, allow_none=False, id=id)
-        type_check("<RAN29906222E>", str, allow_none=True, taxonomy=taxonomy)
+        type_check("<RAN29906222E>", Union[str, List], allow_none=True, taxonomy=taxonomy)
 
         evaluation: AiEval | None = cls._atlas_explorer.get_by_id(
-            "evaluations", identifier=id
+            class_name="evaluations", identifier=id
         )
         return evaluation
 
-    def get_related_evaluations(cls, risk=None, risk_id=None, taxonomy=None):
+    def get_related_evaluations(cls, risk=None, risk_id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get related evaluations filtered by risk id
 
         Args:
@@ -1159,8 +1307,8 @@ class AIAtlasNexus:
                 The risk
             risk_id: (Optional) str
                 The string ID identifying the risk
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
         Returns:
             List[AiEval]
                 Result containing a list of AI evaluations
@@ -1168,7 +1316,7 @@ class AIAtlasNexus:
         type_check("<RAN04616807E>", Risk, allow_none=True, risk=risk)
         type_check(
             "<RAN05640166E>",
-            str,
+            Union[str, List],
             allow_none=True,
             risk_id=risk_id,
             taxonomy=taxonomy,
@@ -1187,12 +1335,12 @@ class AIAtlasNexus:
         )
         return related_evaluations
 
-    def get_benchmark_metadata_cards(cls, risk=None, risk_id=None, taxonomy=None):
+    def get_benchmark_metadata_cards(cls, risk=None, risk_id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all benchmark metadata definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[BenchmarkMetadataCard]
@@ -1200,7 +1348,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN07894687E>",
-            str,
+            Union[str, List],
             allow_none=True,
             risk_id=risk_id,
             taxonomy=taxonomy,
@@ -1233,16 +1381,16 @@ class AIAtlasNexus:
         )
 
         benchmark_metadata_card: BenchmarkMetadataCard | None = (
-            cls._atlas_explorer.get_by_id("benchmarkmetadatacards", identifier=id)
+            cls._atlas_explorer.get_by_id(class_name="benchmarkmetadatacards", identifier=id)
         )
         return benchmark_metadata_card
 
-    def get_documents(cls, taxonomy=None):
+    def get_documents(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all document definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Documentation]
@@ -1250,7 +1398,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61770043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1285,12 +1433,12 @@ class AIAtlasNexus:
         )
         return document
 
-    def get_datasets(cls, taxonomy=None):
+    def get_datasets(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all dataset definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Dataset]
@@ -1298,7 +1446,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61770043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1333,12 +1481,12 @@ class AIAtlasNexus:
         )
         return dataset
 
-    def get_stakeholders(cls, taxonomy=None):
+    def get_stakeholders(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all stakeholder definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Stakeholder]
@@ -1346,7 +1494,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61770043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1381,12 +1529,12 @@ class AIAtlasNexus:
         )
         return stakeholder
 
-    def get_intrinsics(cls, taxonomy=None):
+    def get_intrinsics(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all intrinsic definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[LLMIntrinsic]
@@ -1394,7 +1542,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61770043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1521,12 +1669,12 @@ class AIAtlasNexus:
 
         return related_llmintrinsics
 
-    def get_adapters(cls, taxonomy=None):
+    def get_adapters(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all adapter definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Adapter]
@@ -1534,7 +1682,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61770043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1569,12 +1717,12 @@ class AIAtlasNexus:
         )
         return adapter
 
-    def get_llm_question_policies(cls, taxonomy=None):
+    def get_llm_question_policies(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all LLM Quesiton Policy definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[LLMQuestionPolicy]
@@ -1582,7 +1730,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61796043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1617,12 +1765,12 @@ class AIAtlasNexus:
         )
         return llm_question_policy
 
-    def get_principles(cls, taxonomy=None, document=None):
+    def get_principles(cls, taxonomy: Optional[Union[str, List[str]]] = None, document=None):
         """Get all Principle definitions from the LinkML
 
         Args:
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
             document: str
                 (Optional) The string label for a document
 
@@ -1633,7 +1781,7 @@ class AIAtlasNexus:
         """
         type_check(
             "<RAN61573043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1672,14 +1820,14 @@ class AIAtlasNexus:
         )
         return principle
 
-    def get_instances(cls, target_class, taxonomy=None):
+    def get_instances(cls, target_class, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all instance definitions from the LinkML
 
         Args:
             target_class: str
                 (Optional) The string label for a target class
-            taxonomy: str
-                (Optional) The string label for a taxonomy
+            taxonomy: str or list of str
+                (Optional) The string label for a taxonomy or list of taxonomy labels
 
         Returns:
             list[Any]
@@ -1693,7 +1841,7 @@ class AIAtlasNexus:
         )
         type_check(
             "<RAN61877043E>",
-            str,
+            Union[str, List],
             allow_none=True,
             taxonomy=taxonomy,
         )
@@ -1802,13 +1950,13 @@ class AIAtlasNexus:
         # Collecting required parameters for categorizing risk severity per usecase
         results = []
         for usecase in usecases:
-
+            domains = self.identify_domain_from_usecases(
+                    [usecase], inference_engine=inference_engine, verbose=False
+            )
             # Get AI Domain of the usecase
             domain_predictions = [
                 domain.prediction["answer"]
-                for domain in self.identify_domain_from_usecases(
-                    [usecase], inference_engine=inference_engine, verbose=False
-                )
+                for domain in domains
             ]
             domain = domain_predictions[0] if len(domain_predictions) == 1 else None
 
