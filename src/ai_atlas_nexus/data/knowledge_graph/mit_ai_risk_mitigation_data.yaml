@@ -149,7 +149,7 @@ documents:
     url: https://code-of-practice.ai/
     dateCreated: 2025-07-10
     dateModified: 2025-07-10
-  - id: doc-Gipiškis2024
+  - id: doc-Gipiskis2024
     name: Risk sources and risk management measures in support of standards for general-purpose AI systems
     description: >-
       There is an urgent need to identify both short and long-term risks from newly emerging types of Artificial
@@ -163,7 +163,7 @@ documents:
       regulatory framework. This work intends to help AI providers, standards experts, researchers, policymakers, and
       regulators in identifying and mitigating systemic risks from GPAI systems. For this reason, the catalog is
       released under a public domain license for ease of direct use by stakeholders in AI governance and standards.
-    author: Rokas Gipiškis, Ayrton San Joaquin, Ze Shen Chin, Adrian Regenfuß, Ariel Gil, Koen Holtman
+    author: Rokas Gipiskis, Ayrton San Joaquin, Ze Shen Chin, Adrian Regenfuß, Ariel Gil, Koen Holtman
     url: https://arxiv.org/abs/2410.23472
     dateCreated: 2024-10-30
     dateModified: 2024-10-30
