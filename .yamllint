@@ -11,7 +11,6 @@ rules:
   document-start:
     present: false
   line-length:
-    max: 125
     allow-non-breakable-words: true
     allow-non-breakable-inline-mappings: true
   quoted-strings:
