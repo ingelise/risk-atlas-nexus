@@ -90,7 +90,5 @@ ibmairisk:atlas-evasion-attack	evasion attack	skos:broadMatch	nistai:nist-inform
 ibmairisk:atlas-impact-on-the-environment	impact environment	skos:exactMatch	nistai:nist-environmental-impacts	Environmental Impacts	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibmairisk:atlas-incorrect-risk-testing	incorrect risk testing	skos:broadMatch	nistai:nist-value-chain-and-component-integration	Value Chain and Component Integration	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibmairisk:atlas-over-or-under-reliance	over under reliance	skos:broadMatch	nistai:nist-human-ai-configuration	Human-AI Configuration	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
-ibmairisk:atlas-over-or-under-reliance	over under reliance	skos:relatedMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
-ibmairisk:atlas-over-or-under-reliance	over under reliance	skos:relatedMatch			semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibmairisk:atlas-membership-inference-attack	membership inference attack	skos:broadMatch	nistai:nist-data-privacy	Data Privacy	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
 ibmairisk:atlas-confidential-data-in-prompt	confidential data in prompt	skos:broadMatch	nistai:nist-intellectual-property	Intellectual Property	semapv:ManualMappingCuration	cgi@zurich.ibm.com	0.95
