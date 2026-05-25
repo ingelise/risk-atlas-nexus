@@ -11,7 +11,7 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import YAMLDumper
 from sssom_schema import Mapping
 
-from ai_atlas_nexus.blocks.atlas_explorer.explorer import AtlasExplorer
+from ai_atlas_nexus.blocks.graph_explorer import AtlasExplorer
 from ai_atlas_nexus.exceptions import RiskInferenceError, handle_exception
 
 
@@ -229,7 +229,9 @@ class AIAtlasNexus:
             Optional[Dict[str, Any]]
                 The matching instance or None
         """
-        instance = cls._atlas_explorer.get_by_attribute(class_name, attribute, value)
+        instance = cls._atlas_explorer.get_by_attribute(
+            class_name, attribute, value
+        )
         return instance
 
     def query(cls, class_name, **kwargs):
@@ -266,7 +268,9 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        risk_instances = cls._atlas_explorer.get_all("risks", taxonomy=taxonomy)
+        risk_instances = cls._atlas_explorer.get_all(
+            "risks", taxonomy=taxonomy
+        )
         return risk_instances
 
     def get_risk(
@@ -444,7 +448,9 @@ class AIAtlasNexus:
         related_action_ids = risk.hasRelatedAction
         if related_action_ids:
             return [
-                cls._atlas_explorer.get_by_id(class_name="actions", identifier=x)
+                cls._atlas_explorer.get_by_id(
+                    class_name="actions", identifier=x
+                )
                 for x in related_action_ids
             ]
         else:
@@ -474,7 +480,9 @@ class AIAtlasNexus:
         )
         return action_instances
 
-    def get_action_by_id(cls, id, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_action_by_id(
+        cls, id, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get an action definition from the LinkML, filtered by action id
 
         Args:
@@ -560,12 +568,16 @@ class AIAtlasNexus:
             risk = cls.get_risk(name=name)
 
         risk_controls = [
-            cls._atlas_explorer.get_by_id(class_name="riskcontrols", identifier=x)
+            cls._atlas_explorer.get_by_id(
+                class_name="riskcontrols", identifier=x
+            )
             for x in risk.isDetectedBy or []
         ]
         return risk_controls
 
-    def get_all_risk_controls(cls, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_all_risk_controls(
+        cls, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get all risk control definitions from the LinkML
 
         Args:
@@ -583,8 +595,8 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        risk_control_instances: list[RiskControl] = cls._atlas_explorer.get_all(
-            "riskcontrols", taxonomy=taxonomy
+        risk_control_instances: list[RiskControl] = (
+            cls._atlas_explorer.get_all("riskcontrols", taxonomy=taxonomy)
         )
         return risk_control_instances
 
@@ -825,7 +837,12 @@ class AIAtlasNexus:
         )
 
         risks = cls.identify_risks_from_usecases(
-            usecases, inference_engine, taxonomy, cot_examples, max_risk, zero_shot_only
+            usecases,
+            inference_engine,
+            taxonomy,
+            cot_examples,
+            max_risk,
+            zero_shot_only,
         )[0]
         control_ids = []
         actions = []
@@ -1072,7 +1089,10 @@ class AIAtlasNexus:
         )
 
     def identify_ai_tasks_from_usecases(
-        cls, usecases: List[str], inference_engine: InferenceEngine, verbose=True
+        cls,
+        usecases: List[str],
+        inference_engine: InferenceEngine,
+        verbose=True,
     ) -> List[List[str]]:
         """Identify potential risks from a usecase description
 
@@ -1103,7 +1123,9 @@ class AIAtlasNexus:
         # Load HF tasks from the template dir
         hf_ai_tasks = [
             {"task_label": task.name, "task_description": task.description}
-            for task in cls.get_all(class_name="aitasks", taxonomy="hf-ml-tasks")
+            for task in cls.get_all(
+                class_name="aitasks", taxonomy="hf-ml-tasks"
+            )
         ]
 
         prompts = [
@@ -1119,7 +1141,9 @@ class AIAtlasNexus:
                     ],
                     "grounding_context": {
                         "Use case": usecase,
-                        "AI Task Definitions": json.dumps(hf_ai_tasks, indent=2),
+                        "AI Task Definitions": json.dumps(
+                            hf_ai_tasks, indent=2
+                        ),
                     },
                 }
                 if inference_engine.backend._backend_type == BackendType.MELLEA
@@ -1198,7 +1222,9 @@ class AIAtlasNexus:
             mapping_method=mapping_method,
         )
 
-    def get_risk_incidents(cls, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_risk_incidents(
+        cls, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get risk incident instances, optionally filtered by taxonomy
 
         Args:
@@ -1216,8 +1242,8 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        risk_incident_instances: List[RiskIncident] = cls._atlas_explorer.get_all(
-            "riskincidents", taxonomy=taxonomy
+        risk_incident_instances: List[RiskIncident] = (
+            cls._atlas_explorer.get_all("riskincidents", taxonomy=taxonomy)
         )
         return risk_incident_instances
 
@@ -1302,7 +1328,9 @@ class AIAtlasNexus:
         )
         return related_risk_incidents
 
-    def get_all_evaluations(cls, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_all_evaluations(
+        cls, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get all evaluation definitions from the LinkML
 
         Args:
@@ -1314,7 +1342,10 @@ class AIAtlasNexus:
                 Result containing a list of AiEval
         """
         type_check(
-            "<RAN18094995E>", Union[str, List], allow_none=True, taxonomy=taxonomy
+            "<RAN18094995E>",
+            Union[str, List],
+            allow_none=True,
+            taxonomy=taxonomy,
         )
 
         evaluation_instances: list[AiEval] = cls._atlas_explorer.get_all(
@@ -1322,7 +1353,9 @@ class AIAtlasNexus:
         )
         return evaluation_instances
 
-    def get_evaluation(cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_evaluation(
+        cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get an evaluation definition from the LinkML, filtered by id
 
         Args:
@@ -1337,7 +1370,10 @@ class AIAtlasNexus:
         """
         type_check("<RAN84465757E>", str, allow_none=False, id=id)
         type_check(
-            "<RAN29906222E>", Union[str, List], allow_none=True, taxonomy=taxonomy
+            "<RAN29906222E>",
+            Union[str, List],
+            allow_none=True,
+            taxonomy=taxonomy,
         )
 
         evaluation: AiEval | None = cls._atlas_explorer.get_by_id(
@@ -1346,7 +1382,10 @@ class AIAtlasNexus:
         return evaluation
 
     def get_related_evaluations(
-        cls, risk=None, risk_id=None, taxonomy: Optional[Union[str, List[str]]] = None
+        cls,
+        risk=None,
+        risk_id=None,
+        taxonomy: Optional[Union[str, List[str]]] = None,
     ):
         """Get related evaluations filtered by risk id
 
@@ -1384,7 +1423,10 @@ class AIAtlasNexus:
         return related_evaluations
 
     def get_benchmark_metadata_cards(
-        cls, risk=None, risk_id=None, taxonomy: Optional[Union[str, List[str]]] = None
+        cls,
+        risk=None,
+        risk_id=None,
+        taxonomy: Optional[Union[str, List[str]]] = None,
     ):
         """Get all benchmark metadata definitions from the LinkML
 
@@ -1406,7 +1448,9 @@ class AIAtlasNexus:
         type_check("<RAN30190075E>", Risk, allow_none=True, risk=risk)
 
         benchmark_metatdata_card_instances: list[BenchmarkMetadataCard] = (
-            cls._atlas_explorer.get_all("benchmarkmetadatacards", taxonomy=taxonomy)
+            cls._atlas_explorer.get_all(
+                "benchmarkmetadatacards", taxonomy=taxonomy
+            )
         )
         return benchmark_metatdata_card_instances
 
@@ -1533,7 +1577,9 @@ class AIAtlasNexus:
         )
         return dataset
 
-    def get_stakeholders(cls, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_stakeholders(
+        cls, taxonomy: Optional[Union[str, List[str]]] = None
+    ):
         """Get all stakeholder definitions from the LinkML
 
         Args:
@@ -1692,7 +1738,9 @@ class AIAtlasNexus:
 
         if aitask or aitask_id:
             if aitask_id:
-                aitask = cls.get_by_id(class_name="aitasks", identifier=aitask_id)
+                aitask = cls.get_by_id(
+                    class_name="aitasks", identifier=aitask_id
+                )
 
             related_llmintrinsics = []
             capability_ids = (
@@ -1814,8 +1862,8 @@ class AIAtlasNexus:
             id=id,
         )
 
-        llm_question_policy: LLMQuestionPolicy | None = cls._atlas_explorer.get_by_id(
-            "llmquestionPolicies", identifier=id
+        llm_question_policy: LLMQuestionPolicy | None = (
+            cls._atlas_explorer.get_by_id("llmquestionPolicies", identifier=id)
         )
         return llm_question_policy
 
@@ -1904,11 +1952,16 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        instances: list[Any] = cls._atlas_explorer.get_instances(target_class, taxonomy)
+        instances: list[Any] = cls._atlas_explorer.get_instances(
+            target_class, taxonomy
+        )
         return instances
 
     def identify_domain_from_usecases(
-        cls, usecases: List[str], inference_engine: InferenceEngine, verbose=True
+        cls,
+        usecases: List[str],
+        inference_engine: InferenceEngine,
+        verbose=True,
     ) -> List[List[str]]:
         """Identify potential risks from a usecase description
 
@@ -2034,8 +2087,12 @@ class AIAtlasNexus:
                 [usecase], inference_engine=inference_engine, verbose=False
             )
             # Get AI Domain of the usecase
-            domain_predictions = [domain.prediction["answer"] for domain in domains]
-            domain = domain_predictions[0] if len(domain_predictions) == 1 else None
+            domain_predictions = [
+                domain.prediction["answer"] for domain in domains
+            ]
+            domain = (
+                domain_predictions[0] if len(domain_predictions) == 1 else None
+            )
 
             # Using a risk questionnaire to identify key attributes necessary for
             # constituting an AI system from the usecase.
@@ -2050,7 +2107,8 @@ class AIAtlasNexus:
                     usecase,
                     list(
                         filter(
-                            lambda question: question["no"] in ["Q4", "Q5", "Q6", "Q7"],
+                            lambda question: question["no"]
+                            in ["Q4", "Q5", "Q6", "Q7"],
                             risk_questionnaire,
                         )
                     ),
