@@ -100,6 +100,26 @@ class SPARQLQueryBuilder:
         }}
         """)
 
+    def get_instances_by_attributes(
+        self, class_name_camel: str, filters: dict
+    ) -> str:
+        """Get instances of a class matching multiple attribute filters (AND).
+
+        Args:
+            class_name_camel: Camel case class name (e.g., 'Risk', 'Action')
+            filters: Dict of {attribute_name: sparql_literal_value} pairs
+
+        Returns:
+            SPARQL query string
+        """
+        query_parts = [f"SELECT ?s WHERE {{"]
+        if class_name_camel:
+            query_parts.append(f"?s rdf:type nexus:{class_name_camel} .")
+        for attr, sparql_val in filters.items():
+            query_parts.append(f"?s nexus:{attr} {sparql_val} .")
+        query_parts.append("}")
+        return self._wrap(" ".join(query_parts))
+
     def intersection(self) -> str:
         return self._wrap(f"""
         SELECT ?s ?p ?o WHERE {{
@@ -293,30 +313,48 @@ class SPARQLQueryBuilder:
         """)
 
     def get_neighbours_with_hops(self, node_uri: str) -> str:
-        """Neightbours"""
+        """Neighbours"""
         return self._wrap(f"""
             SELECT DISTINCT ?neighbour ?depth
             WHERE {{
                           {{
-                    <{node_uri}> ?p1 ?neighbour .
+                    nexus:{node_uri} ?p1 ?neighbour .
                     BIND(1 AS ?depth)
                 }}
                 UNION
                 {{
-                    <{node_uri}> ?p1 ?mid1 .
+                    nexus:{node_uri}  ?p1 ?mid1 .
                     ?mid1 ?p2 ?neighbour .
                     BIND(2 AS ?depth)
                 }}
                 UNION
                 {{
-                    <{node_uri}> ?p1 ?mid1 .
+                    nexus:{node_uri}  ?p1 ?mid1 .
                     ?mid1 ?p2 ?mid2 .
                     ?mid2 ?p3 ?neighbour .
                     BIND(3 AS ?depth)
                 }}
 
-                FILTER(?neighbour != <{node_uri}>)
+                FILTER(?neighbour != nexus:{node_uri} )
                 FILTER(isIRI(?neighbour))
                 }}
             ORDER BY ?depth
             """)
+
+    def get_types_for_subjects(self, subject_uris: list) -> str:
+        """Get rdf:type for multiple subjects in a single query.
+
+        Args:
+            subject_uris: List[str]
+                URIs of subjects to get types for
+
+        Returns:
+            SPARQL query string returning (?s ?type) pairs
+        """
+        values = " ".join(f"(<{u}>)" for u in subject_uris)
+        return self._wrap(f"""
+        SELECT ?s ?type WHERE {{
+            VALUES (?s) {{ {values} }}
+            ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?type .
+        }}
+        """)

@@ -1,3 +1,5 @@
+import logging
+import re
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Set
 from urllib.parse import quote, unquote
@@ -11,6 +13,8 @@ from ai_atlas_nexus.blocks.graph_explorer.query_builder import (
     NEXUS_URI,
     SPARQLQueryBuilder,
 )
+from ai_atlas_nexus.blocks.prompt_builder import ZeroShotPromptBuilder
+from ai_atlas_nexus.blocks.prompt_templates import NL_TO_SPARQL_TEMPLATE
 from ai_atlas_nexus.data.knowledge_graph import *
 from ai_atlas_nexus.exceptions import InvalidSPARQLQueryException
 
@@ -21,6 +25,7 @@ except ImportError:
     Embeddings = None
 
 ie = inflect.engine()
+logger = logging.getLogger(__name__)
 
 
 class PyoxigraphExplorer(ExplorerBase):
@@ -34,43 +39,10 @@ class PyoxigraphExplorer(ExplorerBase):
                 Container object, populated instance of the knowledge graph
         """
         self._data = data
-        self._combined_cache = {}
-        self._id_cache = {}
-        self._collection_map = {}
         self._embeddings = None
         self._qb = SPARQLQueryBuilder()
-        self._build_id_caches()
         self._store = self._load_data_to_store(data)
-
-    def _build_id_caches(self):
-        """
-        A dict which is mapping ID to LinkML obj and a map for collection_key → ClassName for the
-        SPARQL type filtering.
-        """
-        for class_name in self._data.model_fields_set:
-            items = getattr(self._data, class_name) or []
-
-            # build collection map: map collection key (e.g. "risks") to class name (e.g. "Risk")
-            if items:
-                item_types = set(type(item).__name__ for item in items)
-                if len(item_types) == 1:
-                    # Single type in collection: use it directly
-                    self._collection_map[class_name] = item_types.pop()
-                else:
-                    # Mixed types: fallback to singularized class name
-
-                    for item_type in item_types:
-                        singular = ie.singular_noun(item_type)
-                        self._collection_map[item_type] = (
-                            singular.title()
-                            if singular
-                            else item_type.rstrip("s").title()
-                        )
-
-            # cache index
-            for item in items:
-                if hasattr(item, "id") and item.id:
-                    self._id_cache[item.id] = item
+        self._data_types = []
 
     def get_all_classes(self):
         """
@@ -82,23 +54,32 @@ class PyoxigraphExplorer(ExplorerBase):
         results = []
         rs = self._store.query(self._qb.get_all_classes())
         classes = [str(row["class"]) for row in rs]
+
         for uri_str in classes:
-            if uri_str.startswith("<") and uri_str.endswith(">"):
-                uri_str = uri_str[1:-1]
-            if uri_str.startswith(NEXUS_URI):
-                encoded_id = uri_str[len(NEXUS_URI) :]
-                identifier = unquote(encoded_id)
+            identifier = self._format_uri_str(uri_str)
+            if identifier:
                 results.append(identifier)
+
         return results
 
     def _check_subclasses(self, result, class_name):
-        # look for subclasses within container collections
-        for collection_key, collection_data in self._data:
-            instances = (
-                collection_data if isinstance(collection_data, list) else []
-            )
+        """
+        Look for subclasses within container collections
 
-            for instance in instances:
+        Args:
+            result: list
+                Append any subclasses to this result list
+            class_name: str
+                The name of class
+        Returns:
+            result: list
+        """
+        for field in self._data.model_fields_set:
+            items = getattr(self._data, field) or []
+            if not isinstance(items, list):
+                items = [items]
+
+            for instance in items:
                 instance_type_name = type(instance).__name__
                 possible_singular = ie.singular_noun(class_name)
                 if instance_type_name.lower() == class_name.lower() or (
@@ -109,9 +90,15 @@ class PyoxigraphExplorer(ExplorerBase):
 
         return result
 
-    def _load_data_to_store(self, data) -> pyoxigraph.Store:
+    def _load_data_to_store(self, data):
         """
         Load Container into a pyoxigraph Store by building RDF quads from Pydantic objects.
+
+        Args:
+            data: Container object, populated instance of the knowledge graph
+
+        Returns:
+            pyoxigraph.Store
         """
         store = pyoxigraph.Store()
         seen_iris = set()
@@ -134,7 +121,6 @@ class PyoxigraphExplorer(ExplorerBase):
                 encoded_id = quote(str(item_id), safe="")
                 item_uri = pyoxigraph.NamedNode(f"{NEXUS_URI}{encoded_id}")
 
-                # Skip duplicates
                 if item_uri in seen_iris:
                     continue
                 seen_iris.add(item_uri)
@@ -197,9 +183,16 @@ class PyoxigraphExplorer(ExplorerBase):
 
         return store
 
-    def _uri_to_pydantic(self, node: pyoxigraph.NamedNode) -> Optional[Any]:
+    def _uri_to_pydantic(self, node):
         """
-        Convert a pyoxigraph NamedNode to a Pydantic object via id_cache.
+        Convert a pyoxigraph NamedNode to a Pydantic object by scanning self._data.
+
+        Args:
+            node: pyoxigraph.NamedNode
+                The node to convert
+
+        Returns:
+            Optional[Any]
         """
 
         uri_str = str(node)
@@ -209,18 +202,14 @@ class PyoxigraphExplorer(ExplorerBase):
         if uri_str.startswith(NEXUS_URI):
             encoded_id = uri_str[len(NEXUS_URI) :]
             identifier = unquote(encoded_id)
-            return self._id_cache.get(identifier)
-        return None
 
-    def _get_embeddings(self):
-        """Lazy-initialize and return a txtai Embeddings instance."""
-        if self._embeddings is None:
-            if Embeddings is None:
-                raise ImportError(
-                    "txtai is required for semantic similarity. Install with: pip install txtai"
-                )
-            self._embeddings = Embeddings()
-        return self._embeddings
+            # Scan self._data to find the item by id
+            for field_name in self._data.model_fields_set:
+                items = getattr(self._data, field_name) or []
+                for item in items:
+                    if hasattr(item, "id") and item.id == identifier:
+                        return item
+        return None
 
     def get_all(
         self,
@@ -254,20 +243,6 @@ class PyoxigraphExplorer(ExplorerBase):
         else:
             class_names = class_name
 
-        cache_key = (
-            (
-                tuple(class_names)
-                if isinstance(class_names, list)
-                else class_name
-            ),
-            taxonomy,
-            vocabulary,
-            document,
-        )
-
-        if cache_key in self._combined_cache:
-            return self._combined_cache[cache_key]
-
         result = []
         seen_ids = set()
 
@@ -281,7 +256,9 @@ class PyoxigraphExplorer(ExplorerBase):
                         key = k
                         break
 
-            class_name_camel = self._collection_map.get(key)
+            # Derive class name from self._data
+            items = getattr(self._data, key, None) or []
+            class_name_camel = type(items[0]).__name__ if items else None
 
             if not class_name_camel:
                 # Try to find by class name (e.g., "Risk" or "Action") via _check_subclasses
@@ -311,7 +288,6 @@ class PyoxigraphExplorer(ExplorerBase):
                         elif not item_id:
                             result.append(obj)
 
-        self._combined_cache[cache_key] = result
         return result
 
     def get_by_id(self, class_name, identifier):
@@ -328,7 +304,18 @@ class PyoxigraphExplorer(ExplorerBase):
             Optional[Dict[str, Any]]
                 The matching instance or None
         """
-        return self._id_cache.get(identifier)
+        if len(identifier) < 1:
+            raise ValueError(f"No identifier provided: {identifier}")
+
+        try:
+            # Query the store to resolve the identifier to a Pydantic object
+            encoded_id = quote(str(identifier), safe="")
+            item_uri = pyoxigraph.NamedNode(f"{NEXUS_URI}{encoded_id}")
+            return self._uri_to_pydantic(item_uri)
+        except InvalidSPARQLQueryException:
+            raise
+        except Exception as e:
+            return [{"error": str(e)}]
 
     def get_by_attribute(self, class_name, attribute, value):
         """
@@ -346,14 +333,11 @@ class PyoxigraphExplorer(ExplorerBase):
             List[Dict[str, Any]]
                 List of matching instances
         """
-        # Resolve class name to camel case
-        class_name_camel = self._collection_map.get(class_name, class_name)
+        # Resolve collection key from model
+        class_name_camel = self._resolve_key(class_name)
 
-        # Format value as SPARQL literal
-        if isinstance(value, str):
-            sparql_value = f'"{value}"'
-        else:
-            sparql_value = f'"{value}"'
+        # Format value as SPARQL literal with proper type decoration
+        sparql_value = self._to_sparql_literal(value)
 
         query = self._qb.get_instances_by_attribute(
             class_name_camel, attribute, sparql_value
@@ -371,11 +355,11 @@ class PyoxigraphExplorer(ExplorerBase):
 
     def get_attribute(self, class_name, identifier, attribute):
         """
-        Get a specific attribute value from an instance.
+        Get a specific attribute value from an instance by querying the store.
 
         Args:
             class_name: str
-                Name of the class
+                Name of the class (unused; kept for API compatibility)
             identifier: str
                 Identifier of the instance
             attribute: str
@@ -385,9 +369,20 @@ class PyoxigraphExplorer(ExplorerBase):
             Any
                 The attribute value or None
         """
-        instance = self.get_by_id(class_name, identifier)
-        if instance and hasattr(instance, attribute):
-            return getattr(instance, attribute)
+        encoded_id = quote(str(identifier), safe="")
+        subject_uri = f"{NEXUS_URI}{encoded_id}"
+        predicate_uri = f"{NEXUS_URI}{attribute}"
+        query = self._qb.get_by_subject_and_predicate(
+            subject_uri, predicate_uri
+        )
+
+        results = list(self._store.query(query))
+        if results:
+            val = results[0]["o"]
+            if isinstance(val, pyoxigraph.Literal):
+                return val.value
+            else:
+                return str(val)
         return None
 
     def query(self, class_name, **kwargs):
@@ -406,9 +401,20 @@ class PyoxigraphExplorer(ExplorerBase):
         """
         return self.filter_instances(class_name, kwargs)
 
+    @staticmethod
+    def _to_sparql_literal(value):
+        """Convert a Python value to a SPARQL literal with proper type decoration."""
+        if isinstance(value, bool):
+            return f'"{"true" if value else "false"}"^^xsd:boolean'
+        if isinstance(value, int):
+            return f'"{value}"^^xsd:integer'
+        if isinstance(value, float):
+            return f'"{value}"^^xsd:decimal'
+        return f'"{value}"'
+
     def filter_instances(self, class_name, filters):
         """
-        Filter instances by multiple criteria.
+        Filter instances by multiple criteria using a compound SPARQL query.
 
         Args:
             class_name: Union[str | list]
@@ -420,26 +426,30 @@ class PyoxigraphExplorer(ExplorerBase):
             List[Dict[str, Any]]
                 List of matching instances
         """
-        instances = self.get_all(class_name)
+        # Resolve collection key from model (mirrors get_all() logic)
+        class_name_camel = self._resolve_key(class_name)
+
+        # Build SPARQL filters for non-None values
+        sparql_filters = {}
+        for k, v in filters.items():
+            if v is not None:
+                sparql_filters[k] = self._to_sparql_literal(v)
+
+        if not sparql_filters:
+            return []
+
+        # Query the store with all filters ANDed together
+        query = self._qb.get_instances_by_attributes(
+            class_name_camel, sparql_filters
+        )
+
         matches = []
-
-        for instance in instances:
-            match = []
-            for k, v in filters.items():
-                if v is not None:
-                    if (
-                        type(getattr(instance, k)) == str
-                        and getattr(instance, k) == v
-                    ) or (
-                        type(getattr(instance, k)) == list
-                        and v in getattr(instance, k)
-                    ):
-                        match.append(1)
-                    else:
-                        match.append(0)
-
-            if not 0 in match:
-                matches.append(instance)
+        for solution in self._store.query(query):
+            node = solution["s"]
+            if node:
+                obj = self._uri_to_pydantic(node)
+                if obj:
+                    matches.append(obj)
 
         return matches
 
@@ -450,19 +460,47 @@ class PyoxigraphExplorer(ExplorerBase):
         Args:
             ids: List[str]
                 List of ids to filter
-            allowed_types: List[str]
-                The types to allow
+            disallowed_types: List[str]
+                The types to exclude
 
         Returns:
             List[str]
 
         """
-        return [
-            id_
-            for id_ in ids
-            if id_ in self._id_cache
-            and type(self._id_cache[id_]).__name__ not in disallowed_types
+        if not ids:
+            return []
+
+        # Build URIs for all IDs and query their types in a single SPARQL query
+        subject_uris = [
+            f"{NEXUS_URI}{quote(str(id_), safe='')}" for id_ in ids
         ]
+        query = self._qb.get_types_for_subjects(subject_uris)
+
+        result = []
+        id_to_type = {}
+        for solution in self._store.query(query):
+            subject_uri = str(solution["s"])
+            type_uri = str(solution["type"])
+
+            # Strip angle brackets and NEXUS_URI prefix to get the type name
+            if subject_uri.startswith("<") and subject_uri.endswith(">"):
+                subject_uri = subject_uri[1:-1]
+            if type_uri.startswith("<") and type_uri.endswith(">"):
+                type_uri = type_uri[1:-1]
+
+            if subject_uri.startswith(NEXUS_URI) and type_uri.startswith(
+                NEXUS_URI
+            ):
+                identifier = unquote(subject_uri[len(NEXUS_URI) :])
+                type_name = unquote(type_uri[len(NEXUS_URI) :])
+                id_to_type[identifier] = type_name
+
+        # Return IDs whose types are not in disallowed list
+        for id_ in ids:
+            if id_to_type.get(id_) not in disallowed_types:
+                result.append(id_)
+
+        return result
 
     def arrange_ids_by_type(self, ids):
         """
@@ -470,20 +508,38 @@ class PyoxigraphExplorer(ExplorerBase):
 
         Args:
             ids: List[str]
-                List of ids to filter
+                List of ids to organize
 
         Returns:
             dict
 
         """
+        if not ids:
+            return defaultdict(list)
+
+        # Build URIs for all IDs and query their types in a single SPARQL query
+        subject_uris = [
+            f"{NEXUS_URI}{quote(str(id_), safe='')}" for id_ in ids
+        ]
+        query = self._qb.get_types_for_subjects(subject_uris)
+
         result = defaultdict(list)
-        for id_ in ids:
-            if id_ in self._id_cache:
-                r_type = type(self._id_cache[id_]).__name__
-                if result.get(r_type):
-                    result[r_type].append(id_)
-                else:
-                    result[r_type] = [id_]
+        for solution in self._store.query(query):
+            subject_uri = str(solution["s"])
+            type_uri = str(solution["type"])
+
+            # Strip angle brackets and NEXUS_URI prefix
+            if subject_uri.startswith("<") and subject_uri.endswith(">"):
+                subject_uri = subject_uri[1:-1]
+            if type_uri.startswith("<") and type_uri.endswith(">"):
+                type_uri = type_uri[1:-1]
+
+            if subject_uri.startswith(NEXUS_URI) and type_uri.startswith(
+                NEXUS_URI
+            ):
+                identifier = unquote(subject_uri[len(NEXUS_URI) :])
+                type_name = unquote(type_uri[len(NEXUS_URI) :])
+                result[type_name].append(identifier)
 
         return result
 
@@ -545,9 +601,100 @@ class PyoxigraphExplorer(ExplorerBase):
         else:
             raise ValueError(f"Unknown type: {type(term)}")
 
-    def clear_cache(self):
+    def _format_uri_str(self, uri_str):
+        if uri_str.startswith("<") and uri_str.endswith(">"):
+            uri_str = uri_str[1:-1]
+        if uri_str.startswith(NEXUS_URI):
+            encoded_id = uri_str[len(NEXUS_URI) :]
+            identifier = unquote(encoded_id)
+            return identifier
+
+    def _resolve_key(self, class_name):
+        key = class_name
+        if key not in self._data.model_fields_set:
+            for k in self._data.model_fields_set:
+                if k.lower().replace("_", "") == key.lower().replace("_", ""):
+                    key = k
+                    break
+
+        items = getattr(self._data, key, None) or []
+        class_name_camel = type(items[0]).__name__ if items else None
+
+        if not class_name_camel:
+            # Fallback: scan all collections for matching type name
+            possible_singular = ie.singular_noun(class_name) or class_name
+            for _, collection_data in self._data:
+                instances = (
+                    collection_data
+                    if isinstance(collection_data, list)
+                    else []
+                )
+                for instance in instances:
+                    iname = type(instance).__name__
+                    if iname.lower() in (
+                        class_name.lower(),
+                        possible_singular.lower(),
+                    ):
+                        class_name_camel = iname
+                        break
+                if class_name_camel:
+                    break
+
+        if not class_name_camel:
+            return []
+
+        return class_name_camel
+
+    def natural_language_query(
+        self,
+        question: str,
+        inference_engine,
+    ) -> List[Dict[str, str]]:
         """
-        Manually clear combined cache. ID cache is intentionally not cleared
-        since it's built from Pydantic data and should persist across queries.
+        Translate a natural language question to SPARQL and execute it on the store.
+
+        Args:
+            question: str
+                Natural language question about the knowledge graph
+            inference_engine: InferenceEngine
+                Any configured inference engine (Ollama, RITS, WML, vLLM, HF)
+
+        Returns:
+            list[dict]: Query results in the same format as sparql_query().
+                        Returns an empty list if the LLM or SPARQL execution fails.
         """
-        self._combined_cache.clear()
+        classes = sorted(set(self.get_all_classes()))
+        prompt = ZeroShotPromptBuilder(NL_TO_SPARQL_TEMPLATE).build(
+            question=question,
+            classes=", ".join(classes),
+        )
+
+        try:
+            outputs = inference_engine.chat(
+                messages=[[{"role": "user", "content": prompt}]]
+            )
+            raw = outputs[0].prediction
+        except Exception as e:
+            logger.warning("NL-to-SPARQL: inference engine failed: %s", e)
+            return []
+
+        # Strip markdown code fences if present
+        raw = re.sub(
+            r"```(?:sparql)?\s*", "", raw, flags=re.IGNORECASE
+        ).strip()
+
+        # Ensure standard prefixes are defined
+        if "PREFIX" not in raw.upper():
+            raw = SPARQLQueryBuilder.PREFIXES + raw
+
+        results = self.sparql_query(raw)
+
+        if results and "error" in results[0]:
+            logger.warning(
+                "NL-to-SPARQL: generated query failed.\nSPARQL:\n%s\nError: %s",
+                raw,
+                results[0]["error"],
+            )
+            return []
+
+        return results
