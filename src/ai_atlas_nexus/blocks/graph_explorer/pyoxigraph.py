@@ -41,8 +41,8 @@ class PyoxigraphExplorer(ExplorerBase):
         self._data = data
         self._embeddings = None
         self._qb = SPARQLQueryBuilder()
-        self._store = self._load_data_to_store(data)
         self._data_types = []
+        self._store = self._load_data_to_store(data)
 
     def get_all_classes(self):
         """
@@ -334,13 +334,12 @@ class PyoxigraphExplorer(ExplorerBase):
                 List of matching instances
         """
         # Resolve collection key from model
-        class_name_camel = self._resolve_key(class_name)
-
+        type_names = self._resolve_key(class_name)
         # Format value as SPARQL literal with proper type decoration
         sparql_value = self._to_sparql_literal(value)
 
         query = self._qb.get_instances_by_attribute(
-            class_name_camel, attribute, sparql_value
+            type_names, attribute, sparql_value
         )
 
         matches = []
@@ -435,9 +434,6 @@ class PyoxigraphExplorer(ExplorerBase):
             if v is not None:
                 sparql_filters[k] = self._to_sparql_literal(v)
 
-        if not sparql_filters:
-            return []
-
         # Query the store with all filters ANDed together
         query = self._qb.get_instances_by_attributes(
             class_name_camel, sparql_filters
@@ -469,6 +465,8 @@ class PyoxigraphExplorer(ExplorerBase):
         """
         if not ids:
             return []
+
+        ids = [item.id if hasattr(item, "id") else item for item in ids]
 
         # Build URIs for all IDs and query their types in a single SPARQL query
         subject_uris = [
@@ -516,6 +514,8 @@ class PyoxigraphExplorer(ExplorerBase):
         """
         if not ids:
             return defaultdict(list)
+
+        ids = [item.id if hasattr(item, "id") else item for item in ids]
 
         # Build URIs for all IDs and query their types in a single SPARQL query
         subject_uris = [
@@ -618,9 +618,13 @@ class PyoxigraphExplorer(ExplorerBase):
                     break
 
         items = getattr(self._data, key, None) or []
-        class_name_camel = type(items[0]).__name__ if items else None
-
-        if not class_name_camel:
+        type_names = list(
+            {type(i).__name__ for i in items if isinstance(i, BaseModel)}
+        )
+        if type_names and len(type_names) > 0:
+            return type_names
+        else:
+            class_name_camel = None
             # Fallback: scan all collections for matching type name
             possible_singular = ie.singular_noun(class_name) or class_name
             for _, collection_data in self._data:
@@ -640,10 +644,10 @@ class PyoxigraphExplorer(ExplorerBase):
                 if class_name_camel:
                     break
 
-        if not class_name_camel:
-            return []
+            if not class_name_camel:
+                return []
 
-        return class_name_camel
+            return [class_name_camel]
 
     def natural_language_query(
         self,

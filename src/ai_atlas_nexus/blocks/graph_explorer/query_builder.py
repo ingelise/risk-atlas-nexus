@@ -24,7 +24,6 @@ class SPARQLQueryBuilder:
     def get_all_classes(self):
         """
         Get all classes
-        class_name_camel
         """
         return self._wrap(f"""
             SELECT DISTINCT ?class WHERE {{
@@ -57,10 +56,18 @@ class SPARQLQueryBuilder:
                     (Optional) Filter by document id
         ):
         """
+        if isinstance(class_name_camel, str):
+            class_name_camel = [class_name_camel]
+
+        type_filters = " UNION ".join(
+            f"{{ ?s rdf:type nexus:{cls} .}}" for cls in class_name_camel
+        )
+
         query_parts = [f"""SELECT ?s WHERE {{"""]
 
         if class_name_camel:
-            query_parts.append(f"""?s rdf:type nexus:{class_name_camel} . """)
+            query_parts.append(f" {{ {type_filters} }}")
+
         if taxonomy:
             query_parts.append(
                 f"""?s nexus:isDefinedByTaxonomy "{taxonomy}" . """
@@ -81,7 +88,10 @@ class SPARQLQueryBuilder:
         return self._wrap(query)
 
     def get_instances_by_attribute(
-        self, class_name_camel: str, attribute: str, sparql_value: str
+        self,
+        class_name_camel: str | list[str],
+        attribute: str,
+        sparql_value: str,
     ) -> str:
         """Get instances of a class that match a specific attribute value.
 
@@ -93,15 +103,21 @@ class SPARQLQueryBuilder:
         Returns:
             SPARQL query string
         """
+        if isinstance(class_name_camel, str):
+            class_name_camel = [class_name_camel]
+
+        type_filters = " UNION ".join(
+            f"{{ ?s rdf:type nexus:{cls} .}}" for cls in class_name_camel
+        )
         return self._wrap(f"""
         SELECT ?s WHERE {{
-            ?s rdf:type nexus:{class_name_camel} .
+            {{ {type_filters} }}
             ?s nexus:{attribute} {sparql_value} .
         }}
         """)
 
     def get_instances_by_attributes(
-        self, class_name_camel: str, filters: dict
+        self, class_name_camel: str | list[str], filters: dict
     ) -> str:
         """Get instances of a class matching multiple attribute filters (AND).
 
@@ -112,9 +128,16 @@ class SPARQLQueryBuilder:
         Returns:
             SPARQL query string
         """
+
+        if isinstance(class_name_camel, str):
+            class_name_camel = [class_name_camel]
+
+        type_filters = " UNION ".join(
+            f"{{ ?s rdf:type nexus:{cls} .}}" for cls in class_name_camel
+        )
+
         query_parts = [f"SELECT ?s WHERE {{"]
-        if class_name_camel:
-            query_parts.append(f"?s rdf:type nexus:{class_name_camel} .")
+        query_parts.append(f" {{ {type_filters} }}")
         for attr, sparql_val in filters.items():
             query_parts.append(f"?s nexus:{attr} {sparql_val} .")
         query_parts.append("}")
