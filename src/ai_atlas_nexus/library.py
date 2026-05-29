@@ -12,6 +12,8 @@ from linkml_runtime.dumpers import YAMLDumper
 from sssom_schema import Mapping
 
 from ai_atlas_nexus.blocks.graph_explorer import AtlasExplorer
+from ai_atlas_nexus.blocks.graph_explorer.pyoxigraph import PyoxigraphExplorer
+from ai_atlas_nexus.blocks.shacl import SHACLEngine
 from ai_atlas_nexus.exceptions import RiskInferenceError, handle_exception
 
 
@@ -104,10 +106,41 @@ class AIAtlasNexus:
         ontology = load_yamls_to_container(base_dir)
         self._ontology = ontology
         self._atlas_explorer = AtlasExplorer(ontology)
+        self._shacl_engine = SHACLEngine.from_discovery(base_dir, ontology)
+        self._ox = PyoxigraphExplorer(self._ontology)
         logger.info(
             f"Created AIAtlasNexus instance. Base_dir: %s",
             base_dir,
         )
+
+    def get_shacl_engine(self):
+        """Return the loaded SHACLEngine, or None when no shapes were discovered.
+
+        Returns:
+            Optional["SHACLEngine"]
+        """
+        return self._shacl_engine
+
+    def _apply_rules_check(self, instances, apply_rules):
+        """Run SHACL inference and augment instances when apply_rules is True.
+        If no shapes have been loaded, returns instances unchanged.
+
+        Arguments:
+            instances: list
+                Data instances
+            apply_rules: bool
+                Boolean describing whether to apply rules
+        Returns:
+            list
+        """
+        if (
+            not apply_rules
+            or not self._shacl_engine
+            or not self._shacl_engine.has_shapes()
+        ):
+            return instances
+        derived = self._shacl_engine.infer(self._ox._store)
+        return self._shacl_engine.augment_objects(instances, derived)
 
     def export(cls, export_path):
         """Export AIAtlasNexus configuration to file.
@@ -250,12 +283,15 @@ class AIAtlasNexus:
         """
         return cls._atlas_explorer.query(class_name, **kwargs)
 
-    def get_all_risks(cls, taxonomy=None):
+    def get_all_risks(cls, taxonomy=None, apply_rules: bool = False):
         """Get all risk definitions from the LinkML
 
         Args:
             taxonomy: Optional[Union[str, List[str]]]
                 (Optional) The string label for a taxonomy or list of taxonomy labels
+            apply_rules: bool
+                (Optional) When True, run loaded SHACL rules and attach derived
+                attributes (accessible via ``instance.derived_attrs``) to each result.
 
         Returns:
             list[Risk]
@@ -271,7 +307,7 @@ class AIAtlasNexus:
         risk_instances = cls._atlas_explorer.get_all(
             "risks", taxonomy=taxonomy
         )
-        return risk_instances
+        return cls._apply_rules_check(risk_instances, apply_rules)
 
     def get_risk(
         cls,
@@ -279,6 +315,7 @@ class AIAtlasNexus:
         id=None,
         name=None,
         taxonomy=None,
+        apply_rules: bool = False,
     ):
         """Get risk definition from the LinkML, filtered by risk atlas id, tag, name
 
@@ -321,8 +358,9 @@ class AIAtlasNexus:
         if risk and len(risk) > 0:
             risk = risk[0]
         else:
-            risk = None
-        return risk
+            return None
+        augmented = cls._apply_rules_check([risk], apply_rules)
+        return augmented[0] if augmented else None
 
     def get_related_risks(
         cls,
@@ -331,6 +369,7 @@ class AIAtlasNexus:
         id=None,
         name=None,
         taxonomy=None,
+        apply_rules: bool = False,
     ):
         """Get related risks from the LinkML, filtered by risk id, tag, or name
 
@@ -386,10 +425,13 @@ class AIAtlasNexus:
         related_risk_ids = [x for x_list in options for x in x_list]
         related_risk_instances = [
             risk_instance
-            for risk_instance in [cls.get_risk(id=x) for x in related_risk_ids]
+            for risk_instance in [
+                cls.get_risk(id=x, apply_rules=apply_rules)
+                for x in related_risk_ids
+            ]
             if risk_instance is not None
         ]
-        return related_risk_instances
+        return cls._apply_rules_check(related_risk_instances, apply_rules)
 
     def get_related_actions(
         cls,
@@ -398,6 +440,7 @@ class AIAtlasNexus:
         id=None,
         name=None,
         taxonomy=None,
+        apply_rules: bool = False,
     ):
         """Get actions for a risk definition from the LinkML.  The risk is identified by risk id, tag, or name
 
@@ -439,30 +482,38 @@ class AIAtlasNexus:
         )
 
         if id:
-            risk = cls.get_risk(id=id)
+            risk = cls.get_risk(id=id, apply_rules=apply_rules)
         elif tag:
-            risk = cls.get_risk(tag=tag)
+            risk = cls.get_risk(tag=tag, apply_rules=apply_rules)
         elif name:
-            risk = cls.get_risk(name=name)
+            risk = cls.get_risk(name=name, apply_rules=apply_rules)
 
         related_action_ids = risk.hasRelatedAction
         if related_action_ids:
-            return [
+            actions = [
                 cls._atlas_explorer.get_by_id(
-                    class_name="actions", identifier=x
+                    class_name="actions",
+                    identifier=x,
                 )
                 for x in related_action_ids
             ]
         else:
-            return []
-        return related_action_instances
+            actions = []
+        return cls._apply_rules_check(actions, apply_rules)
 
-    def get_all_actions(cls, taxonomy: Optional[Union[str, List[str]]] = None):
+    def get_all_actions(
+        cls,
+        taxonomy: Optional[Union[str, List[str]]] = None,
+        apply_rules: bool = False,
+    ):
         """Get all action definitions from the LinkML
 
         Args:
             taxonomy: str or list of str
                 (Optional) The string label for a taxonomy or list of taxonomy labels
+            apply_rules: bool
+                (Optional) When True, run loaded SHACL rules and attach derived
+                attributes (accessible via ``instance.derived_attrs``) to each result.
 
         Returns:
             list[Action]
@@ -478,7 +529,7 @@ class AIAtlasNexus:
         action_instances: list[Action] = cls._atlas_explorer.get_all(
             "actions", taxonomy=taxonomy
         )
-        return action_instances
+        return cls._apply_rules_check(action_instances, apply_rules)
 
     def get_action_by_id(
         cls, id, taxonomy: Optional[Union[str, List[str]]] = None
@@ -576,13 +627,18 @@ class AIAtlasNexus:
         return risk_controls
 
     def get_all_risk_controls(
-        cls, taxonomy: Optional[Union[str, List[str]]] = None
+        cls,
+        taxonomy: Optional[Union[str, List[str]]] = None,
+        apply_rules: bool = False,
     ):
         """Get all risk control definitions from the LinkML
 
         Args:
             taxonomy: str or list of str
                 (Optional) The string label for a taxonomy or list of taxonomy labels
+            apply_rules: bool
+                (Optional) When True, run loaded SHACL rules and attach derived
+                attributes (accessible via ``instance.derived_attrs``) to each result.
 
         Returns:
             list[RiskControl]
@@ -598,7 +654,7 @@ class AIAtlasNexus:
         risk_control_instances: list[RiskControl] = (
             cls._atlas_explorer.get_all("riskcontrols", taxonomy=taxonomy)
         )
-        return risk_control_instances
+        return cls._apply_rules_check(risk_control_instances, apply_rules)
 
     def get_risk_control(
         cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None
@@ -1602,7 +1658,7 @@ class AIAtlasNexus:
         )
         return stakeholder_instances
 
-    def get_stakeholder(cls, id=str):
+    def get_stakeholder(cls, id: str):
         """Get a stakeholder definition from the LinkML, filtered by id
 
         Args:
@@ -1650,7 +1706,7 @@ class AIAtlasNexus:
         )
         return intrinsic_instances
 
-    def get_intrinsic(cls, id=str):
+    def get_intrinsic(cls, id: str):
         """Get an intrinsic definition from the LinkML, filtered by id
 
         Args:
