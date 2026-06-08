@@ -2,8 +2,8 @@ id: https://ibm.github.io/ai-atlas-nexus/ontology/ai_capability
 name: ai_capability
 description: >-
   Vocabulary describing AI capabilities as used by IBM Risk Atlas. Aligned with the W3C Data Privacy Vocabulary (DPV)
-  Capability concept. Capabilities represent what AI technologies are capable of achieving or providing, distinct from
-  their intended purpose or actual
+  Capability concept. Capabilities represent what AI technologies are capable of achieving or providing, distinct from their
+  intended purpose or actual
 default_curi_maps:
   - semweb_context
 imports:
@@ -72,14 +72,12 @@ classes:
     mixins:
       - CapabilityConcept
     description: >-
-      A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation.
-      Aligned with the W3C DPV AI extension dpv-ai:Capability, representing what an AI technology is capable of
-      achieving or providing.
+      A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation. Aligned with
+      the W3C DPV AI extension dpv-ai:Capability, representing what an AI technology is capable of achieving or providing.
 
-      Capabilities are distinct from:
-      (1) the intended purpose for which the technology is designed,
-      (2) the actual tasks performed in a specific deployment context, and
-      (3) the technical implementation mechanisms (intrinsics, adapters) that enable the capability.
+      Capabilities are distinct from: (1) the intended purpose for which the technology is designed, (2) the actual tasks
+      performed in a specific deployment context, and (3) the technical implementation mechanisms (intrinsics, adapters) that
+      enable the capability.
     class_uri: ai:Capability
     broad_mappings:
       - tech:Capability
@@ -89,15 +87,14 @@ classes:
         range: CapabilityGroup
       requiredByTask:
         description: >-
-          Indicates that this capability is required to perform a specific AI task.
-          This links abstract capabilities (technical abilities) to concrete tasks (application-level operations).
-          An AI system with this capability can perform tasks that require it.
+          Indicates that this capability is required to perform a specific AI task. This links abstract capabilities
+          (technical abilities) to concrete tasks (application-level operations). An AI system with this capability can
+          perform tasks that require it.
         range: AiTask
       implementedByAdapter:
         description: >-
-          Indicates that this capability is implemented by a specific adapter.
-          This relationship distinguishes the abstract capability (what can be done) from
-          the technical implementation mechanism (how it is added/extended via adapters).
+          Indicates that this capability is implemented by a specific adapter. This relationship distinguishes the abstract
+          capability (what can be done) from the technical implementation mechanism (how it is added/extended via adapters).
         domain: Capability
         range: Adapter
     slots:
@@ -124,9 +121,9 @@ slots:
   # Intrinsic-capability relationships
   implementedByIntrinsic:
     description: >-
-      Indicates that this capability is implemented by a specific LLM intrinsic.
-      This relationship distinguishes the abstract capability (what can be done) from
-      the technical implementation mechanism (how it is done at the model component level).
+      Indicates that this capability is implemented by a specific LLM intrinsic. This relationship distinguishes the abstract
+      capability (what can be done) from the technical implementation mechanism (how it is done at the model component
+      level).
     range: LLMIntrinsic
     multivalued: true
     inlined: false
@@ -143,9 +140,8 @@ slots:
   # AI System-capability relationships
   possessedByAi:
     description: >-
-      Indicates that this capability is possessed by a specific AI system or component.
-      Inverse of hasCapability, allowing navigation from capabilities to AI systems.
-      This enables queries like "which AI systems have this capability?"
+      Indicates that this capability is possessed by a specific AI system or component. Inverse of hasCapability, allowing
+      navigation from capabilities to AI systems. This enables queries like "which AI systems have this capability?"
     domain: Capability
     range: BaseAi
     slot_uri: tech:hasCapability

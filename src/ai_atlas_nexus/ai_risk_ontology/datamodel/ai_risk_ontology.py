@@ -4879,7 +4879,7 @@ class Adapter(LargeLanguageModel, Entry):
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://ibm.github.io/ai-atlas-nexus/ontology/ai_intrinsic',
          'mixins': ['LargeLanguageModel']})
 
-    hasAdapterType: Optional[AdapterType] = Field(default=None, description="""The Adapter type, for example: LORA, ALORA, X-LORA""", json_schema_extra = { "linkml_meta": {'domain_of': ['Adapter']} })
+    hasAdapterType: Optional[list[AdapterType]] = Field(default=None, description="""The Adapter type, for example: LORA, ALORA, X-LORA""", json_schema_extra = { "linkml_meta": {'domain_of': ['Adapter']} })
     isDefinedByVocabulary: Optional[str] = Field(default=None, description="""A relationship where a term or a term group is defined by a vocabulary""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entry', 'Term', 'Adapter', 'LLMIntrinsic'],
          'slot_uri': 'schema:isPartOf'} })
     hasDocumentation: Optional[list[str]] = Field(default=None, description="""Indicates documentation associated with an entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Dataset',
@@ -4923,7 +4923,7 @@ class Adapter(LargeLanguageModel, Entry):
                        'BenchmarkMetadataCard',
                        'Adapter',
                        'LLMIntrinsic']} })
-    adaptsModel: Optional[str] = Field(default=None, description="""The LargeLanguageModel being adapted""", json_schema_extra = { "linkml_meta": {'domain_of': ['Adapter']} })
+    adaptsModel: Optional[list[str]] = Field(default=None, description="""The LargeLanguageModel being adapted""", json_schema_extra = { "linkml_meta": {'domain_of': ['Adapter']} })
     implementsCapability: Optional[list[str]] = Field(default=None, description="""Indicates that this intrinsic implements a specific capability""", json_schema_extra = { "linkml_meta": {'domain': 'LLMIntrinsic',
          'domain_of': ['Adapter'],
          'inverse': 'implementedByIntrinsic'} })
