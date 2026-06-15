@@ -1323,6 +1323,8 @@ class AttributeConditionRule(Rule):
                        'RiskControl',
                        'Action',
                        'RiskIncident',
+                       'AiTaskDomain',
+                       'AiTaskGroup',
                        'Stakeholder',
                        'StakeholderGroup',
                        'CapabilityGroup',
@@ -3794,6 +3796,8 @@ class Purpose(Entry):
                        'RiskControl',
                        'Action',
                        'RiskIncident',
+                       'AiTaskDomain',
+                       'AiTaskGroup',
                        'Stakeholder',
                        'StakeholderGroup',
                        'CapabilityGroup',
@@ -3814,6 +3818,7 @@ class Purpose(Entry):
                        'Action',
                        'BaseAi',
                        'LargeLanguageModelFamily',
+                       'AiTaskTaxonomy',
                        'AiEval',
                        'EveryEvalAIResult',
                        'BenchmarkMetadataCard',
@@ -3823,6 +3828,7 @@ class Purpose(Entry):
     isPartOf: Optional[str] = Field(default=None, description="""A relationship where an entity is part of another entity""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entry',
                        'Risk',
                        'LargeLanguageModel',
+                       'AiTaskGroup',
                        'Stakeholder',
                        'CapabilityGroup'],
          'slot_uri': 'schema:isPartOf'} })
@@ -3910,6 +3916,8 @@ class LocalityOfUse(Entry):
                        'RiskControl',
                        'Action',
                        'RiskIncident',
+                       'AiTaskDomain',
+                       'AiTaskGroup',
                        'Stakeholder',
                        'StakeholderGroup',
                        'CapabilityGroup',
@@ -3930,6 +3938,7 @@ class LocalityOfUse(Entry):
                        'Action',
                        'BaseAi',
                        'LargeLanguageModelFamily',
+                       'AiTaskTaxonomy',
                        'AiEval',
                        'EveryEvalAIResult',
                        'BenchmarkMetadataCard',
@@ -3939,6 +3948,7 @@ class LocalityOfUse(Entry):
     isPartOf: Optional[str] = Field(default=None, description="""A relationship where an entity is part of another entity""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entry',
                        'Risk',
                        'LargeLanguageModel',
+                       'AiTaskGroup',
                        'Stakeholder',
                        'CapabilityGroup'],
          'slot_uri': 'schema:isPartOf'} })
@@ -6437,13 +6447,8 @@ class Container(ConfiguredBaseModel):
     adapters: Optional[list[Adapter]] = Field(default=None, description="""A list of Adapters""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
     taxonomies: Optional[list[Union[Taxonomy,RiskTaxonomy,RiskControlGroupTaxonomy,AiTaskTaxonomy,CapabilityTaxonomy]]] = Field(default=None, description="""A list of taxonomies""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
     concepts: Optional[list[Union[Concept,RiskConcept,CapabilityConcept,CapabilityDomain,CapabilityGroup,Capability,RiskControlGroup,RiskGroup,Risk,RiskControl,RiskIncident,Impact,Action]]] = Field(default=None, description="""A list of concepts""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
-<<<<<<< HEAD
-    entries: Optional[list[Union[Entry,Term,Principle,Certification,Risk,AiSystem,AiTask,Capability,Adapter,LLMIntrinsic,AiAgent]]] = Field(default=None, description="""A list of entries""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
-    groups: Optional[list[Union[Group,RiskControlGroup,RiskGroup,AiTaskDomain,AiTaskGroup,StakeholderGroup,CapabilityDomain,CapabilityGroup]]] = Field(default=None, description="""A list of groups""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
-=======
     entries: Optional[list[Union[Entry,Term,Principle,Certification,Risk,AiSystem,AiTask,Purpose,LocalityOfUse,Capability,Adapter,LLMIntrinsic,AiAgent]]] = Field(default=None, description="""A list of entries""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
-    groups: Optional[list[Union[Group,RiskControlGroup,RiskGroup,StakeholderGroup,CapabilityDomain,CapabilityGroup]]] = Field(default=None, description="""A list of groups""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
->>>>>>> upstream/main
+    groups: Optional[list[Union[Group,RiskControlGroup,RiskGroup,AiTaskDomain,AiTaskGroup,StakeholderGroup,CapabilityDomain,CapabilityGroup]]] = Field(default=None, description="""A list of groups""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
     vocabularies: Optional[list[Vocabulary]] = Field(default=None, description="""A list of vocabularies""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
     controls: Optional[list[Union[Control,RiskControl,Action]]] = Field(default=None, description="""A list of AI controls""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
     riskincidents: Optional[list[RiskIncident]] = Field(default=None, description="""A list of AI risk incidents""", json_schema_extra = { "linkml_meta": {'domain_of': ['Container']} })
