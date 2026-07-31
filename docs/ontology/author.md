@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: author
 
-URI: [nexus:author](https://ibm.github.io/ai-atlas-nexus/ontology/author)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:author](https://w3id.org/ai-atlas-nexus/author)
 Alias: author
 
 <!-- no inheritance hierarchy -->
@@ -14,7 +21,17 @@ Alias: author
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
+
+| Property  | Value                                                              |
+| --------- | ------------------------------------------------------------------ |
+| Range     | [String](String.md)                                                |
+| Domain Of | [Documentation](Documentation.md), [RiskIncident](RiskIncident.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
 
 ## Identifier and Mapping Information
 
@@ -37,5 +54,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

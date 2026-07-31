@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: aievalresults
 
 _A list of AI evaluation results_
 
-URI: [nexus:aievalresults](https://ibm.github.io/ai-atlas-nexus/ontology/aievalresults)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:aievalresults](https://w3id.org/ai-atlas-nexus/aievalresults)
 Alias: aievalresults
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: aievalresults
 
 ## Properties
 
-- Range: [AiEvalResult](AiEvalResult.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                           |
+| --------- | ------------------------------- |
+| Range     | [AiEvalResult](AiEvalResult.md) |
+| Domain Of | [Container](Container.md)       |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: aievalresults
 ```yaml
 name: aievalresults
 description: A list of AI evaluation results
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: aievalresults
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

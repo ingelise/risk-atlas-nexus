@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: evaluatesCapability
 
 _Indicates that this benchmark evaluates a specific capability_
 
-URI: [nexus:evaluatesCapability](https://ibm.github.io/ai-atlas-nexus/ontology/evaluatesCapability)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:evaluatesCapability](https://w3id.org/ai-atlas-nexus/evaluatesCapability)
 Alias: evaluatesCapability
 
 <!-- no inheritance hierarchy -->
@@ -35,7 +42,7 @@ Alias: evaluatesCapability
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -50,7 +57,7 @@ Alias: evaluatesCapability
 ```yaml
 name: evaluatesCapability
 description: Indicates that this benchmark evaluates a specific capability
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: BenchmarkMetadataCard
 alias: evaluatesCapability
@@ -60,5 +67,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

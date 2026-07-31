@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: carbon_emitted
 
 _The number of tons of carbon dioxide equivalent that are emitted during training_
 
-URI: [nexus:carbon_emitted](https://ibm.github.io/ai-atlas-nexus/ontology/carbon_emitted)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:carbon_emitted](https://w3id.org/ai-atlas-nexus/carbon_emitted)
 Alias: carbon_emitted
 
 <!-- no inheritance hierarchy -->
@@ -11,21 +18,46 @@ Alias: carbon_emitted
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 | [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
-- Range: [Float](Float.md)
+### Type and Range
 
-- Minimum Value: 0
+| Property  | Value                 |
+| --------- | --------------------- |
+| Range     | [Float](Float.md)     |
+| Domain Of | [AiModel](AiModel.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
+
+### Value Constraints
+
+| Property      | Value |
+| ------------- | ----- |
+| Minimum Value | 0     |
+
+<details>
+<summary>Additional Constraints</summary>
+**Unit:**
+
+| Property         | Value                  |
+| ---------------- | ---------------------- |
+| symbol           | t CO2-eq               |
+| descriptive_name | tons of CO2 equivalent |
+
+</details>
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -41,7 +73,7 @@ Alias: carbon_emitted
 name: carbon_emitted
 description: The number of tons of carbon dioxide equivalent that are emitted during
   training
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: carbon_emitted
 domain_of:
@@ -53,5 +85,5 @@ unit:
   descriptive_name: tons of CO2 equivalent
 
 ```
-</details>
+</details></div>
 ```

@@ -1,6 +1,13 @@
+---
+search:
+  boost: 2.0
+---
+
 # Enum: AiSystemType
 
-URI: [nexus:AiSystemType](https://ibm.github.io/ai-atlas-nexus/ontology/AiSystemType)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:AiSystemType](https://w3id.org/ai-atlas-nexus/AiSystemType)
 
 ## Permissible Values
 
@@ -23,14 +30,14 @@ URI: [nexus:AiSystemType](https://ibm.github.io/ai-atlas-nexus/ontology/AiSystem
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: AiSystemType
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 permissible_values:
   GPAI:
@@ -57,4 +64,6 @@ permissible_values:
 
 ```
 </details>
+
+</div>
 ```

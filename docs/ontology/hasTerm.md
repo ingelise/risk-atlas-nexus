@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasTerm
 
 _Indicates terms associated with a vocabulary_
 
-URI: [nexus:hasTerm](https://ibm.github.io/ai-atlas-nexus/ontology/hasTerm)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasTerm](https://w3id.org/ai-atlas-nexus/hasTerm)
 Alias: hasTerm
 
 <!-- no inheritance hierarchy -->
@@ -11,10 +18,10 @@ Alias: hasTerm
 
 ### Type and Range
 
-| Property | Value                                                                  |
-| -------- | ---------------------------------------------------------------------- |
-| Range    | [Term](Term.md)                                                        |
-| Slot URI | [nexus:hasTerm](https://ibm.github.io/ai-atlas-nexus/ontology/hasTerm) |
+| Property | Value                                                    |
+| -------- | -------------------------------------------------------- |
+| Range    | [Term](Term.md)                                          |
+| Slot URI | [nexus:hasTerm](https://w3id.org/ai-atlas-nexus/hasTerm) |
 
 ### Cardinality and Requirements
 
@@ -26,7 +33,7 @@ Alias: hasTerm
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -41,7 +48,7 @@ Alias: hasTerm
 ```yaml
 name: hasTerm
 description: Indicates terms associated with a vocabulary
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasTerm
 alias: hasTerm
@@ -50,5 +57,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isAppliedWithinDomain
 
 _Specifies the domain an AI system is used within._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:isAppliedWithinDomain](https://w3id.org/airo#isAppliedWithinDomain)
 Alias: isAppliedWithinDomain
@@ -11,8 +18,8 @@ Alias: isAppliedWithinDomain
 
 | Name                    | Description                                                                      | Modifies Slot |
 | ----------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiAgent](AiAgent.md)   | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
 | [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities                      | no            |
+| [AiAgent](AiAgent.md)   | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
 
 ## Properties
 
@@ -34,7 +41,7 @@ Alias: isAppliedWithinDomain
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: isAppliedWithinDomain
 ```yaml
 name: isAppliedWithinDomain
 description: Specifies the domain an AI system is used within.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:isAppliedWithinDomain
 alias: isAppliedWithinDomain
@@ -60,5 +67,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: documents
 
 _A list of documents_
 
-URI: [nexus:documents](https://ibm.github.io/ai-atlas-nexus/ontology/documents)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:documents](https://w3id.org/ai-atlas-nexus/documents)
 Alias: documents
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: documents
 
 ## Properties
 
-- Range: [Documentation](Documentation.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                             |
+| --------- | --------------------------------- |
+| Range     | [Documentation](Documentation.md) |
+| Domain Of | [Container](Container.md)         |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: documents
 ```yaml
 name: documents
 description: A list of documents
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: documents
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasBaselineResults
 
 _The results of well-known or widely used models to give context to new performance scores._
 
-URI: [nexus:hasBaselineResults](https://ibm.github.io/ai-atlas-nexus/ontology/hasBaselineResults)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasBaselineResults](https://w3id.org/ai-atlas-nexus/hasBaselineResults)
 Alias: hasBaselineResults
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasBaselineResults
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasBaselineResults
 name: hasBaselineResults
 description: The results of well-known or widely used models to give context to new
   performance scores.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasBaselineResults
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

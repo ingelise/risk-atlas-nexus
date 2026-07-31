@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: evidence
 
 _Evidence provides a source (typical a chunk, paragraph or link) describing where some value was found or how it was generated._
 
-URI: [nexus:evidence](https://ibm.github.io/ai-atlas-nexus/ontology/evidence)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:evidence](https://w3id.org/ai-atlas-nexus/evidence)
 Alias: evidence
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: evidence
 
 | Name                                      | Description                                                                      | Modifies Slot |
 | ----------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [Fact](Fact.md)                           | A fact about something, for example the result of a measurement                  | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
 
 ## Properties
@@ -33,7 +40,7 @@ Alias: evidence
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: evidence
 name: evidence
 description: Evidence provides a source (typical a chunk, paragraph or link) describing
   where some value was found or how it was generated.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: evidence
 domain_of:
@@ -57,5 +64,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

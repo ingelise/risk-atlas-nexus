@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: licenses
 
 _A list of licenses_
 
-URI: [nexus:licenses](https://ibm.github.io/ai-atlas-nexus/ontology/licenses)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:licenses](https://w3id.org/ai-atlas-nexus/licenses)
 Alias: licenses
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: licenses
 
 ## Properties
 
-- Range: [License](License.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [License](License.md)     |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: licenses
 ```yaml
 name: licenses
 description: A list of licenses
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: licenses
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

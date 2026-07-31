@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasTrainingData
 
 _A relationship indicating the datasets an AI model was trained on._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:hasTrainingData](https://w3id.org/airo#hasTrainingData)
 Alias: hasTrainingData
@@ -11,8 +18,8 @@ Alias: hasTrainingData
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -34,7 +41,7 @@ Alias: hasTrainingData
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasTrainingData
 ```yaml
 name: hasTrainingData
 description: A relationship indicating the datasets an AI model was trained on.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasTrainingData
 alias: hasTrainingData
@@ -60,5 +67,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: detectsRiskConcept
 
 _The property airo:detectsRiskConcept indicates the control used for detecting risks, risk sources, consequences, and impacts._
 
-URI: [nexus:detectsRiskConcept](https://ibm.github.io/ai-atlas-nexus/ontology/detectsRiskConcept)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:detectsRiskConcept](https://w3id.org/ai-atlas-nexus/detectsRiskConcept)
 Alias: detectsRiskConcept
 
 <!-- no inheritance hierarchy -->
@@ -12,8 +19,8 @@ Alias: detectsRiskConcept
 | Name                          | Description                                                                      | Modifies Slot |
 | ----------------------------- | -------------------------------------------------------------------------------- | ------------- |
 | [Action](Action.md)           | Action to remediate a risk                                                       | no            |
-| [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts)                | no            |
 | [Risk](Risk.md)               | The state of uncertainty associated with an AI system, that has the potential... | no            |
+| [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts)                | no            |
 
 ## Properties
 
@@ -44,7 +51,7 @@ Alias: detectsRiskConcept
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -61,7 +68,7 @@ Alias: detectsRiskConcept
 name: detectsRiskConcept
 description: The property airo:detectsRiskConcept indicates the control used for detecting
   risks, risk sources, consequences, and impacts.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 exact_mappings:
 - airo:detectsRiskConcept
 rank: 1000
@@ -76,5 +83,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

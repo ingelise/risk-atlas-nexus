@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasDataSize
 
 _The size of the dataset, including the number of data points or examples._
 
-URI: [nexus:hasDataSize](https://ibm.github.io/ai-atlas-nexus/ontology/hasDataSize)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasDataSize](https://w3id.org/ai-atlas-nexus/hasDataSize)
 Alias: hasDataSize
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasDataSize
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -32,7 +39,7 @@ Alias: hasDataSize
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasDataSize
 ```yaml
 name: hasDataSize
 description: The size of the dataset, including the number of data points or examples.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasDataSize
 domain_of:
@@ -56,5 +63,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

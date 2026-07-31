@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: describesAiEval
 
 _A relationship where a BenchmarkMetadataCard describes an AI evaluation (benchmark)._
 
-URI: [nexus:describesAiEval](https://ibm.github.io/ai-atlas-nexus/ontology/describesAiEval)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:describesAiEval](https://w3id.org/ai-atlas-nexus/describesAiEval)
 Alias: describesAiEval
 
 <!-- no inheritance hierarchy -->
@@ -42,7 +49,7 @@ Alias: describesAiEval
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -58,7 +65,7 @@ Alias: describesAiEval
 name: describesAiEval
 description: A relationship where a BenchmarkMetadataCard describes an AI evaluation
   (benchmark).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: BenchmarkMetadataCard
 alias: describesAiEval
@@ -70,5 +77,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

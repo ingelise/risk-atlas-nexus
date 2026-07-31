@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasReasonDenial
 
 _Reason for denial_
 
-URI: [nexus:hasReasonDenial](https://ibm.github.io/ai-atlas-nexus/ontology/hasReasonDenial)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasReasonDenial](https://w3id.org/ai-atlas-nexus/hasReasonDenial)
 Alias: hasReasonDenial
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +24,11 @@ Alias: hasReasonDenial
 
 ### Type and Range
 
-| Property  | Value                                                                                  |
-| --------- | -------------------------------------------------------------------------------------- |
-| Range     | [String](String.md)                                                                    |
-| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                                              |
-| Slot URI  | [nexus:hasReasonDenial](https://ibm.github.io/ai-atlas-nexus/ontology/hasReasonDenial) |
+| Property  | Value                                                                    |
+| --------- | ------------------------------------------------------------------------ |
+| Range     | [String](String.md)                                                      |
+| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                                |
+| Slot URI  | [nexus:hasReasonDenial](https://w3id.org/ai-atlas-nexus/hasReasonDenial) |
 
 ### Cardinality and Requirements
 
@@ -32,7 +39,7 @@ Alias: hasReasonDenial
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasReasonDenial
 ```yaml
 name: hasReasonDenial
 description: Reason for denial
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasReasonDenial
 alias: hasReasonDenial
@@ -58,5 +65,5 @@ multivalued: false
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

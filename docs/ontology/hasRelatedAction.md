@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasRelatedAction
 
 _A relationship where an entity relates to an action_
 
-URI: [nexus:hasRelatedAction](https://ibm.github.io/ai-atlas-nexus/ontology/hasRelatedAction)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasRelatedAction](https://w3id.org/ai-atlas-nexus/hasRelatedAction)
 Alias: hasRelatedAction
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasRelatedAction
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasRelatedAction
 ```yaml
 name: hasRelatedAction
 description: A relationship where an entity relates to an action
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasRelatedAction
 domain_of:
@@ -57,5 +64,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

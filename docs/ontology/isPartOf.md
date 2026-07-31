@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isPartOf
 
 _A relationship where an entity is part of another entity_
+
+<div data-search-exclude markdown="1">
 
 URI: [schema:isPartOf](http://schema.org/isPartOf)
 Alias: isPartOf
@@ -11,35 +18,39 @@ Alias: isPartOf
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Entry](Entry.md)                           | An entry and its definitions                                                     | no            |
-| [Risk](Risk.md)                             | The state of uncertainty associated with an AI system, that has the potential... | yes           |
-| [Term](Term.md)                             | A term and its definitions                                                       | no            |
-| [Principle](Principle.md)                   | A representation of values or norms that must be taken into consideration whe... | no            |
-| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
-| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
-| [LLMIntrinsic](LLMIntrinsic.md)             | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
 | [AIUser](AIUser.md)                         | Individual or group that interacts with a system                                 | no            |
+| [AISubject](AISubject.md)                   | An entity that is subject to or impacted by the use of AI                        | no            |
+| [Entry](Entry.md)                           | An entry and its definitions                                                     | no            |
+| [LLMIntrinsic](LLMIntrinsic.md)             | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
+| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
+| [AIDeployer](AIDeployer.md)                 | Any natural or legal person, public authority, agency or other body using an ... | no            |
+| [Term](Term.md)                             | A term and its definitions                                                       | no            |
+| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [AiTaskGroup](AiTaskGroup.md)               | A group of AI Tasks                                                              | yes           |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | yes           |
+| [AIOperator](AIOperator.md)                 | Refers to a provider, product manufacturer, deployer, authorised representati... | no            |
+| [Capability](Capability.md)                 | A specific AI capability or ability, such as reading comprehension, logical r... | yes           |
+| [LocalityOfUse](LocalityOfUse.md)           | The area, e                                                                      | no            |
+| [Purpose](Purpose.md)                       | The end goal for which an entity is used or an action is taken                   | no            |
+| [AiSystem](AiSystem.md)                     | A compound AI System composed of one or more AI capablities                      | no            |
+| [Certification](Certification.md)           | Certification mechanisms, seals, and marks for the purpose of demonstrating c... | no            |
+| [Domain](Domain.md)                         | An area, sector, or industry that is associated with economic activities         | no            |
 | [AIDeveloper](AIDeveloper.md)               | An organisation or entity that is concerned with the development of AI servic... | no            |
 | [CapabilityGroup](CapabilityGroup.md)       | A group of AI capabilities that are part of a capability taxonomy, organized ... | yes           |
-| [AIDeployer](AIDeployer.md)                 | Any natural or legal person, public authority, agency or other body using an ... | no            |
-| [AiTask](AiTask.md)                         | A task, such as summarization and classification, performed by an AI             | no            |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | yes           |
+| [Principle](Principle.md)                   | A representation of values or norms that must be taken into consideration whe... | no            |
+| [Risk](Risk.md)                             | The state of uncertainty associated with an AI system, that has the potential... | yes           |
 | [Stakeholder](Stakeholder.md)               | Represents any individual, group or organization that can affect, be affected... | yes           |
-| [AIOperator](AIOperator.md)                 | Refers to a provider, product manufacturer, deployer, authorised representati... | no            |
-| [AISubject](AISubject.md)                   | An entity that is subject to or impacted by the use of AI                        | no            |
-| [Certification](Certification.md)           | Certification mechanisms, seals, and marks for the purpose of demonstrating c... | no            |
-| [Capability](Capability.md)                 | A specific AI capability or ability, such as reading comprehension, logical r... | yes           |
-| [AiSystem](AiSystem.md)                     | A compound AI System composed of one or more AI capablities                      | no            |
+| [AiTask](AiTask.md)                         | A task, such as summarization and classification, performed by an AI             | no            |
 
 ## Properties
 
 ### Type and Range
 
-| Property  | Value                                                                                                                                                 |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Range     | [String](String.md)                                                                                                                                   |
-| Domain Of | [Entry](Entry.md), [Risk](Risk.md), [LargeLanguageModel](LargeLanguageModel.md), [Stakeholder](Stakeholder.md), [CapabilityGroup](CapabilityGroup.md) |
-| Slot URI  | [schema:isPartOf](http://schema.org/isPartOf)                                                                                                         |
+| Property  | Value                                                                                                                                                                                |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Range     | [String](String.md)                                                                                                                                                                  |
+| Domain Of | [Entry](Entry.md), [Risk](Risk.md), [CapabilityGroup](CapabilityGroup.md), [LargeLanguageModel](LargeLanguageModel.md), [AiTaskGroup](AiTaskGroup.md), [Stakeholder](Stakeholder.md) |
+| Slot URI  | [schema:isPartOf](http://schema.org/isPartOf)                                                                                                                                        |
 
 ### Cardinality and Requirements
 
@@ -50,7 +61,7 @@ Alias: isPartOf
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -65,18 +76,19 @@ Alias: isPartOf
 ```yaml
 name: isPartOf
 description: A relationship where an entity is part of another entity
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: schema:isPartOf
 alias: isPartOf
 domain_of:
 - Entry
 - Risk
-- LargeLanguageModel
-- Stakeholder
 - CapabilityGroup
+- LargeLanguageModel
+- AiTaskGroup
+- Stakeholder
 range: string
 
 ```
-</details>
+</details></div>
 ```

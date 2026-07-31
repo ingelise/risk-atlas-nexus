@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Adapter
 
 _Adapter-based methods add extra trainable parameters after the attention and fully-connected layers of a frozen pretrained model to reduce memory-usage and speed up training. The adapters are typically small but demonstrate comparable performance to a fully finetuned model and enable training larger models with fewer resources. (https://huggingface.co/docs/peft/en/conceptual_guides/adapter)_
 
-URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:Adapter](https://w3id.org/ai-atlas-nexus/Adapter)
 
 ```mermaid
  classDiagram
@@ -174,6 +181,17 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
+      Adapter : hasRule
+
+
+
+
+
+        Adapter --> "*" Rule : hasRule
+        click Rule href "../Rule/"
+
+
+
       Adapter : hasTrainingData
 
 
@@ -193,8 +211,8 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
-        Adapter --> "*" Adapter : implementedByAdapter
-        click Adapter href "../Adapter/"
+        Adapter --> "*" Any : implementedByAdapter
+        click Any href "../Any/"
 
 
 
@@ -322,8 +340,8 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
-        Adapter --> "*" AiTask : requiredByTask
-        click AiTask href "../AiTask/"
+        Adapter --> "*" Any : requiredByTask
+        click Any href "../Any/"
 
 
 
@@ -333,8 +351,8 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 
 
-        Adapter --> "*" Capability : requiresCapability
-        click Capability href "../Capability/"
+        Adapter --> "*" Any : requiresCapability
+        click Any href "../Any/"
 
 
 
@@ -355,76 +373,69 @@ URI: [nexus:Adapter](https://ibm.github.io/ai-atlas-nexus/ontology/Adapter)
 
 ## Slots
 
-| Name                                              | Cardinality and Range                                                                                        | Description                                                                      | Inheritance                                                    |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| [hasAdapterType](hasAdapterType.md)               | \* <br/> [AdapterType](AdapterType.md)                                                                       | The Adapter type, for example: LORA, ALORA, X-LORA                               | direct                                                         |
-| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                                                                       | A relationship where a term or a term group is defined by a vocabulary           | direct                                                         |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                                                                   | Indicates documentation associated with an entity                                | direct                                                         |
-| [hasLicense](hasLicense.md)                       | 0..1 <br/> [License](License.md)                                                                             | Indicates licenses associated with a resource                                    | direct                                                         |
-| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a risk                                 | direct                                                         |
-| [adaptsModel](adaptsModel.md)                     | \* <br/> [LargeLanguageModel](LargeLanguageModel.md)                                                         | The LargeLanguageModel being adapted                                             | direct                                                         |
-| [implementsCapability](implementsCapability.md)   | \* <br/> [Capability](Capability.md)                                                                         | Indicates that this adapter implements a specific capability                     | direct                                                         |
-| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)                                                                         | Indicates the technical capabilities this entry possesses                        | direct                                                         |
-| [requiresCapability](requiresCapability.md)       | \* <br/> [Capability](Capability.md)                                                                         | Indicates that this entry requires a specific capability                         | direct                                                         |
-| [numParameters](numParameters.md)                 | 0..1 <br/> [Integer](Integer.md)                                                                             | A property indicating the number of parameters in a LLM                          | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [numTrainingTokens](numTrainingTokens.md)         | 0..1 <br/> [Integer](Integer.md)                                                                             | The number of tokens a AI model was trained on                                   | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [contextWindowSize](contextWindowSize.md)         | 0..1 <br/> [Integer](Integer.md)                                                                             | The total length, in bytes, of an AI model's context window                      | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [hasInputModality](hasInputModality.md)           | \* <br/> [Modality](Modality.md)                                                                             | A relationship indicating the input modalities supported by an AI component      | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [hasOutputModality](hasOutputModality.md)         | \* <br/> [Modality](Modality.md)                                                                             | A relationship indicating the output modalities supported by an AI component     | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [hasTrainingData](hasTrainingData.md)             | \* <br/> [Dataset](Dataset.md)                                                                               | A relationship indicating the datasets an AI model was trained on                | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [fine_tuning](fine_tuning.md)                     | 0..1 <br/> [String](String.md)                                                                               | A description of the fine-tuning mechanism(s) applied to a model                 | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [supported_languages](supported_languages.md)     | \* <br/> [String](String.md)                                                                                 | A list of languages, expressed as ISO two letter codes                           | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [isPartOf](isPartOf.md)                           | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md)                                           | Annotation that a Large Language model is part of a family of models             | [LargeLanguageModel](LargeLanguageModel.md), [Entry](Entry.md) |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                                                           | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                                              |
-| [requiredByTask](requiredByTask.md)               | \* <br/> [AiTask](AiTask.md)                                                                                 | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                                              |
-| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Adapter](Adapter.md)                                                                               | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                                              |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)                                                                               | The entry type                                                                   | [Entry](Entry.md)                                              |
-| [id](id.md)                                       | 1 <br/> [String](String.md)                                                                                  | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                                            |
-| [name](name.md)                                   | 0..1 <br/> [String](String.md)                                                                               | A text name of this instance                                                     | [Entity](Entity.md)                                            |
-| [description](description.md)                     | 0..1 <br/> [String](String.md)                                                                               | The description of an entity                                                     | [Entity](Entity.md)                                            |
-| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                                                                                     | An optional URL associated with this instance                                    | [Entity](Entity.md)                                            |
-| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was created                                         | [Entity](Entity.md)                                            |
-| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was most recently modified                          | [Entity](Entity.md)                                            |
-| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                                            |
-| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                                            |
-| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                                                                                       | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                                            |
-| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                                            |
-| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                                            |
-| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                                                                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                                            |
-| [hasEvaluation](hasEvaluation.md)                 | \* <br/> [AiEvalResult](AiEvalResult.md)                                                                     | A relationship indicating that an entity has an AI evaluation result             | [AiModel](AiModel.md)                                          |
-| [architecture](architecture.md)                   | 0..1 <br/> [String](String.md)                                                                               | A description of the architecture of an AI such as 'Decoder-only'                | [AiModel](AiModel.md)                                          |
-| [gpu_hours](gpu_hours.md)                         | 0..1 <br/> [Integer](Integer.md)                                                                             | GPU consumption in terms of hours                                                | [AiModel](AiModel.md)                                          |
-| [power_consumption_w](power_consumption_w.md)     | 0..1 <br/> [Integer](Integer.md)                                                                             | power consumption in Watts                                                       | [AiModel](AiModel.md)                                          |
-| [carbon_emitted](carbon_emitted.md)               | 0..1 <br/> [Float](Float.md)                                                                                 | The number of tons of carbon dioxide equivalent that are emitted during train... | [AiModel](AiModel.md)                                          |
-| [hasRiskControl](hasRiskControl.md)               | \* <br/> [RiskControl](RiskControl.md)                                                                       | Indicates the control measures associated with a system or component to modif... | [AiModel](AiModel.md)                                          |
-| [producer](producer.md)                           | 0..1 <br/> [Organization](Organization.md)                                                                   | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                                            |
-| [hasModelCard](hasModelCard.md)                   | \* <br/> [String](String.md)                                                                                 | A relationship to model card references                                          | [BaseAi](BaseAi.md)                                            |
-| [performsTask](performsTask.md)                   | \* <br/> [AiTask](AiTask.md)                                                                                 | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)                                            |
-| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [AiProvider](AiProvider.md)                                                                       | Indicates provider of an AI system or component                                  | [BaseAi](BaseAi.md)                                            |
+| Name                                              | Cardinality and Range                                              | Description                                                                      | Inheritance                                                    |
+| ------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| [hasAdapterType](hasAdapterType.md)               | \* <br/> [AdapterType](AdapterType.md)                             | The Adapter type, for example: LORA, ALORA, X-LORA                               | direct                                                         |
+| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                             | A relationship where a term or a term group is defined by a vocabulary           | direct                                                         |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                         | Indicates documentation associated with an entity                                | direct                                                         |
+| [hasLicense](hasLicense.md)                       | 0..1 <br/> [License](License.md)                                   | Indicates licenses associated with a resource                                    | direct                                                         |
+| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Risk](Risk.md)                                           | A relationship where an entity relates to a risk                                 | direct                                                         |
+| [adaptsModel](adaptsModel.md)                     | \* <br/> [LargeLanguageModel](LargeLanguageModel.md)               | The LargeLanguageModel being adapted                                             | direct                                                         |
+| [implementsCapability](implementsCapability.md)   | \* <br/> [Capability](Capability.md)                               | Indicates that this adapter implements a specific capability                     | direct                                                         |
+| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)                               | Indicates the technical capabilities this entry possesses                        | direct                                                         |
+| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                                             | Indicates that this entry requires a specific capability                         | direct                                                         |
+| [numParameters](numParameters.md)                 | 0..1 <br/> [Integer](Integer.md)                                   | A property indicating the number of parameters in a LLM                          | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [numTrainingTokens](numTrainingTokens.md)         | 0..1 <br/> [Integer](Integer.md)                                   | The number of tokens a AI model was trained on                                   | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [contextWindowSize](contextWindowSize.md)         | 0..1 <br/> [Integer](Integer.md)                                   | The total length, in bytes, of an AI model's context window                      | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [hasInputModality](hasInputModality.md)           | \* <br/> [Modality](Modality.md)                                   | A relationship indicating the input modalities supported by an AI component      | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [hasOutputModality](hasOutputModality.md)         | \* <br/> [Modality](Modality.md)                                   | A relationship indicating the output modalities supported by an AI component     | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [hasTrainingData](hasTrainingData.md)             | \* <br/> [Dataset](Dataset.md)                                     | A relationship indicating the datasets an AI model was trained on                | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [fine_tuning](fine_tuning.md)                     | 0..1 <br/> [String](String.md)                                     | A description of the fine-tuning mechanism(s) applied to a model                 | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [supported_languages](supported_languages.md)     | \* <br/> [String](String.md)                                       | A list of languages, expressed as ISO two letter codes                           | [LargeLanguageModel](LargeLanguageModel.md)                    |
+| [isPartOf](isPartOf.md)                           | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models             | [LargeLanguageModel](LargeLanguageModel.md), [Entry](Entry.md) |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                 | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                                              |
+| [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                                             | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                                              |
+| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                                             | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                                              |
+| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                                           | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                                              |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                                     | The entry type or class designation specifying what kind of entry this is        | [Entry](Entry.md)                                              |
+| [id](id.md)                                       | 1 <br/> [String](String.md)                                        | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                                            |
+| [name](name.md)                                   | 0..1 <br/> [String](String.md)                                     | A text name of this instance                                                     | [Entity](Entity.md)                                            |
+| [description](description.md)                     | 0..1 <br/> [String](String.md)                                     | The description of an entity                                                     | [Entity](Entity.md)                                            |
+| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                                           | An optional URL associated with this instance                                    | [Entity](Entity.md)                                            |
+| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                                         | The date on which the entity was created                                         | [Entity](Entity.md)                                            |
+| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                                         | The date on which the entity was most recently modified                          | [Entity](Entity.md)                                            |
+| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                                             | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                                            |
+| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                                             | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                                            |
+| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                                             | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                                            |
+| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                                            |
+| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                                            |
+| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                                             | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                                            |
+| [hasEvaluation](hasEvaluation.md)                 | \* <br/> [AiEvalResult](AiEvalResult.md)                           | A relationship indicating that an entity has an AI evaluation result             | [AiModel](AiModel.md)                                          |
+| [architecture](architecture.md)                   | 0..1 <br/> [String](String.md)                                     | A description of the architecture of an AI such as 'Decoder-only'                | [AiModel](AiModel.md)                                          |
+| [gpu_hours](gpu_hours.md)                         | 0..1 <br/> [Integer](Integer.md)                                   | GPU consumption in terms of hours                                                | [AiModel](AiModel.md)                                          |
+| [power_consumption_w](power_consumption_w.md)     | 0..1 <br/> [Integer](Integer.md)                                   | power consumption in Watts                                                       | [AiModel](AiModel.md)                                          |
+| [carbon_emitted](carbon_emitted.md)               | 0..1 <br/> [Float](Float.md)                                       | The number of tons of carbon dioxide equivalent that are emitted during train... | [AiModel](AiModel.md)                                          |
+| [hasRiskControl](hasRiskControl.md)               | \* <br/> [RiskControl](RiskControl.md)                             | Indicates the control measures associated with a system or component to modif... | [AiModel](AiModel.md)                                          |
+| [producer](producer.md)                           | 0..1 <br/> [Organization](Organization.md)                         | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                                            |
+| [hasModelCard](hasModelCard.md)                   | \* <br/> [String](String.md)                                       | A relationship to model card references                                          | [BaseAi](BaseAi.md)                                            |
+| [performsTask](performsTask.md)                   | \* <br/> [AiTask](AiTask.md)                                       | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)                                            |
+| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [AiProvider](AiProvider.md)                             | Indicates provider of an AI system or component                                  | [BaseAi](BaseAi.md)                                            |
 
 ## Usages
 
-| used by                           | used in                                         | type  | used                  |
-| --------------------------------- | ----------------------------------------------- | ----- | --------------------- |
-| [Container](Container.md)         | [adapters](adapters.md)                         | range | [Adapter](Adapter.md) |
-| [Entry](Entry.md)                 | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Term](Term.md)                   | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Principle](Principle.md)         | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Certification](Certification.md) | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Risk](Risk.md)                   | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [AiSystem](AiSystem.md)           | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [AiAgent](AiAgent.md)             | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [AiTask](AiTask.md)               | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Capability](Capability.md)       | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [Adapter](Adapter.md)             | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
-| [LLMIntrinsic](LLMIntrinsic.md)   | [hasAdapter](hasAdapter.md)                     | range | [Adapter](Adapter.md) |
-| [LLMIntrinsic](LLMIntrinsic.md)   | [implementedByAdapter](implementedByAdapter.md) | range | [Adapter](Adapter.md) |
+| used by                         | used in                                         | type   | used                  |
+| ------------------------------- | ----------------------------------------------- | ------ | --------------------- |
+| [Container](Container.md)       | [adapters](adapters.md)                         | range  | [Adapter](Adapter.md) |
+| [Capability](Capability.md)     | [implementedByAdapter](implementedByAdapter.md) | range  | [Adapter](Adapter.md) |
+| [Adapter](Adapter.md)           | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Adapter](Adapter.md) |
+| [Adapter](Adapter.md)           | [implementsCapability](implementsCapability.md) | domain | [Adapter](Adapter.md) |
+| [LLMIntrinsic](LLMIntrinsic.md) | [hasAdapter](hasAdapter.md)                     | range  | [Adapter](Adapter.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -447,7 +458,7 @@ description: Adapter-based methods add extra trainable parameters after the atte
   speed up training. The adapters are typically small but demonstrate comparable performance
   to a fully finetuned model and enable training larger models with fewer resources.
   (https://huggingface.co/docs/peft/en/conceptual_guides/adapter)
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
 mixins:
 - LargeLanguageModel
@@ -461,6 +472,17 @@ slots:
 - implementsCapability
 - hasCapability
 - requiresCapability
+slot_usage:
+  implementsCapability:
+    name: implementsCapability
+    description: Indicates that this adapter implements a specific capability
+    domain: Adapter
+    inverse: implementedByAdapter
+    range: Capability
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: Adapter
+    range: Risk
 
 ````
 </details>
@@ -475,15 +497,26 @@ description: Adapter-based methods add extra trainable parameters after the atte
   speed up training. The adapters are typically small but demonstrate comparable performance
   to a fully finetuned model and enable training larger models with fewer resources.
   (https://huggingface.co/docs/peft/en/conceptual_guides/adapter)
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
 mixins:
 - LargeLanguageModel
+slot_usage:
+  implementsCapability:
+    name: implementsCapability
+    description: Indicates that this adapter implements a specific capability
+    domain: Adapter
+    inverse: implementedByAdapter
+    range: Capability
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: Adapter
+    range: Risk
 attributes:
   hasAdapterType:
     name: hasAdapterType
     description: 'The Adapter type, for example: LORA, ALORA, X-LORA'
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasAdapterType
     owner: Adapter
@@ -494,7 +527,7 @@ attributes:
   isDefinedByVocabulary:
     name: isDefinedByVocabulary
     description: A relationship where a term or a term group is defined by a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByVocabulary
@@ -508,7 +541,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -527,6 +560,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -538,7 +572,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -551,6 +585,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -558,9 +593,9 @@ attributes:
   hasRelatedRisk:
     name: hasRelatedRisk
     description: A relationship where an entity relates to a risk
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: Adapter
     alias: hasRelatedRisk
     owner: Adapter
     domain_of:
@@ -576,13 +611,10 @@ attributes:
     range: Risk
     multivalued: true
     inlined: false
-    any_of:
-    - range: RiskConcept
-    - range: Term
   adaptsModel:
     name: adaptsModel
     description: The LargeLanguageModel being adapted
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: adaptsModel
     owner: Adapter
@@ -593,13 +625,14 @@ attributes:
   implementsCapability:
     name: implementsCapability
     description: Indicates that this adapter implements a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: Adapter
     alias: implementsCapability
     owner: Adapter
     domain_of:
     - Adapter
+    - LLMIntrinsic
     inverse: implementedByAdapter
     range: Capability
     multivalued: true
@@ -609,7 +642,7 @@ attributes:
     description: 'Indicates the technical capabilities this entry possesses.
 
       '
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: tech:hasCapability
     alias: hasCapability
@@ -624,7 +657,7 @@ attributes:
   requiresCapability:
     name: requiresCapability
     description: Indicates that this entry requires a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: requiresCapability
@@ -635,13 +668,13 @@ attributes:
     - AiTask
     - Adapter
     inverse: requiredByTask
-    range: Capability
+    range: Any
     multivalued: true
     inlined: false
   numParameters:
     name: numParameters
     description: A property indicating the number of parameters in a LLM.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: numParameters
     owner: Adapter
@@ -652,7 +685,7 @@ attributes:
   numTrainingTokens:
     name: numTrainingTokens
     description: The number of tokens a AI model was trained on.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: numTrainingTokens
     owner: Adapter
@@ -663,7 +696,7 @@ attributes:
   contextWindowSize:
     name: contextWindowSize
     description: The total length, in bytes, of an AI model's context window.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: contextWindowSize
     owner: Adapter
@@ -675,7 +708,7 @@ attributes:
     name: hasInputModality
     description: A relationship indicating the input modalities supported by an AI
       component. Examples include text, image, video.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasInputModality
     owner: Adapter
@@ -688,7 +721,7 @@ attributes:
     name: hasOutputModality
     description: A relationship indicating the output modalities supported by an AI
       component. Examples include text, image, video.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasOutputModality
     owner: Adapter
@@ -700,7 +733,7 @@ attributes:
   hasTrainingData:
     name: hasTrainingData
     description: A relationship indicating the datasets an AI model was trained on.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasTrainingData
     alias: hasTrainingData
@@ -713,7 +746,7 @@ attributes:
   fine_tuning:
     name: fine_tuning
     description: A description of the fine-tuning mechanism(s) applied to a model.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: fine_tuning
     owner: Adapter
@@ -724,7 +757,7 @@ attributes:
     name: supported_languages
     description: A list of languages, expressed as ISO two letter codes. For example,
       'jp, fr, en, de'
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: supported_languages
     owner: Adapter
@@ -737,7 +770,7 @@ attributes:
   isPartOf:
     name: isPartOf
     description: Annotation that a Large Language model is part of a family of models
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isPartOf
@@ -745,15 +778,16 @@ attributes:
     domain_of:
     - Entry
     - Risk
-    - LargeLanguageModel
-    - Stakeholder
     - CapabilityGroup
+    - LargeLanguageModel
+    - AiTaskGroup
+    - Stakeholder
     range: LargeLanguageModelFamily
   isDefinedByTaxonomy:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -771,23 +805,26 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   requiredByTask:
     name: requiredByTask
     description: Indicates that this entry is required to perform a specific AI task.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    domain: Entry
     alias: requiredByTask
     owner: Adapter
     domain_of:
     - Entry
     - Capability
     inverse: requiresCapability
-    range: AiTask
+    range: Any
     multivalued: true
     inlined: false
   implementedByAdapter:
@@ -795,7 +832,7 @@ attributes:
     description: Indicates that this capability is implemented by a specific adapter.
       This relationship distinguishes the abstract capability (what can be done) from
       the technical implementation mechanism (how it is added/extended via adapters).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: implementedByAdapter
@@ -804,13 +841,31 @@ attributes:
     - Entry
     - Capability
     inverse: implementsCapability
-    range: Adapter
+    range: Any
+    multivalued: true
+    inlined: false
+  hasRule:
+    name: hasRule
+    description: Specifying applicability or inclusion of a rule within specified
+      context.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasRule
+    alias: hasRule
+    owner: Adapter
+    domain_of:
+    - Entry
+    - LLMQuestionPolicy
+    - Rule
+    - Requirement
+    range: Rule
     multivalued: true
     inlined: false
   type:
     name: type
-    description: The entry type.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The entry type or class designation specifying what kind of entry
+      this is.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: Adapter
@@ -840,7 +895,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -853,7 +908,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -865,7 +920,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -876,7 +931,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -887,7 +942,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -899,7 +954,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -913,7 +968,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -927,7 +982,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -941,7 +996,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -956,7 +1011,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -971,7 +1026,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -984,7 +1039,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -997,7 +1052,7 @@ attributes:
   hasEvaluation:
     name: hasEvaluation
     description: A relationship indicating that an entity has an AI evaluation result.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dqv:hasQualityMeasurement
     alias: hasEvaluation
@@ -1009,7 +1064,7 @@ attributes:
   architecture:
     name: architecture
     description: A description of the architecture of an AI such as 'Decoder-only'.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: architecture
     owner: Adapter
@@ -1019,7 +1074,7 @@ attributes:
   gpu_hours:
     name: gpu_hours
     description: GPU consumption in terms of hours
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: gpu_hours
     owner: Adapter
@@ -1030,7 +1085,7 @@ attributes:
   power_consumption_w:
     name: power_consumption_w
     description: power consumption in Watts
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: power_consumption_w
     owner: Adapter
@@ -1042,7 +1097,7 @@ attributes:
     name: carbon_emitted
     description: The number of tons of carbon dioxide equivalent that are emitted
       during training
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: carbon_emitted
     owner: Adapter
@@ -1057,7 +1112,7 @@ attributes:
     name: hasRiskControl
     description: Indicates the control measures associated with a system or component
       to modify risks.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasRiskControl
     alias: hasRiskControl
@@ -1069,7 +1124,7 @@ attributes:
   producer:
     name: producer
     description: A relationship to the Organization instance which produces this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: producer
     owner: Adapter
@@ -1079,7 +1134,7 @@ attributes:
   hasModelCard:
     name: hasModelCard
     description: A relationship to model card references.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasModelCard
     owner: Adapter
@@ -1092,7 +1147,7 @@ attributes:
   performsTask:
     name: performsTask
     description: relationship indicating the AI tasks an AI model can perform.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: performsTask
     owner: Adapter
@@ -1104,7 +1159,7 @@ attributes:
   isProvidedBy:
     name: isProvidedBy
     description: Indicates provider of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isProvidedBy
     alias: isProvidedBy
@@ -1115,4 +1170,4 @@ attributes:
 
 ````
 
-</details>
+</details></div>

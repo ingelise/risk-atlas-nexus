@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasInputModality
 
 _A relationship indicating the input modalities supported by an AI component. Examples include text, image, video._
 
-URI: [nexus:hasInputModality](https://ibm.github.io/ai-atlas-nexus/ontology/hasInputModality)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasInputModality](https://w3id.org/ai-atlas-nexus/hasInputModality)
 Alias: hasInputModality
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasInputModality
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasInputModality
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasInputModality
 name: hasInputModality
 description: A relationship indicating the input modalities supported by an AI component.
   Examples include text, image, video.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasInputModality
 domain_of:
@@ -59,5 +66,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

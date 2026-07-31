@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasSubDefinition
 
 _Indicates child terms associated with a term_
 
-URI: [nexus:hasSubDefinition](https://ibm.github.io/ai-atlas-nexus/ontology/hasSubDefinition)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasSubDefinition](https://w3id.org/ai-atlas-nexus/hasSubDefinition)
 Alias: hasSubDefinition
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +24,11 @@ Alias: hasSubDefinition
 
 ### Type and Range
 
-| Property  | Value                                                                                    |
-| --------- | ---------------------------------------------------------------------------------------- |
-| Range     | [Term](Term.md)                                                                          |
-| Domain Of | [Term](Term.md)                                                                          |
-| Slot URI  | [nexus:hasSubDefinition](https://ibm.github.io/ai-atlas-nexus/ontology/hasSubDefinition) |
+| Property  | Value                                                                      |
+| --------- | -------------------------------------------------------------------------- |
+| Range     | [Term](Term.md)                                                            |
+| Domain Of | [Term](Term.md)                                                            |
+| Slot URI  | [nexus:hasSubDefinition](https://w3id.org/ai-atlas-nexus/hasSubDefinition) |
 
 ### Cardinality and Requirements
 
@@ -33,7 +40,7 @@ Alias: hasSubDefinition
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasSubDefinition
 ```yaml
 name: hasSubDefinition
 description: Indicates child terms associated with a term
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasSubDefinition
 alias: hasSubDefinition
@@ -59,5 +66,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

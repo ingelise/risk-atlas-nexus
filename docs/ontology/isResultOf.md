@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isResultOf
 
 _A relationship indicating that an entity is the result of an AI evaluation._
+
+<div data-search-exclude markdown="1">
 
 URI: [dqv:isMeasurementOf](https://www.w3.org/TR/vocab-dqv/isMeasurementOf)
 Alias: isResultOf
@@ -33,7 +40,7 @@ Alias: isResultOf
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: isResultOf
 ```yaml
 name: isResultOf
 description: A relationship indicating that an entity is the result of an AI evaluation.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: dqv:isMeasurementOf
 alias: isResultOf
@@ -59,5 +66,5 @@ multivalued: false
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

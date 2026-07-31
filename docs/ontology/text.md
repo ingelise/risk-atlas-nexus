@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: text
 
 _The question itself_
 
-URI: [nexus:text](https://ibm.github.io/ai-atlas-nexus/ontology/text)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:text](https://w3id.org/ai-atlas-nexus/text)
 Alias: text
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: text
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
 
-- Required: True
+| Property  | Value                   |
+| --------- | ----------------------- |
+| Range     | [String](String.md)     |
+| Domain Of | [Question](Question.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
+| Required | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                   |
+| -------- | ----------------------- |
+| Owner    | [Question](Question.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: text
 ```yaml
 name: text
 description: The question itself
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: text
 owner: Question
@@ -48,5 +70,5 @@ range: string
 required: true
 
 ```
-</details>
+</details></div>
 ```

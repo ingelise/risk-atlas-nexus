@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isUsedBy
 
 _Indicates user of an AI system._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:isUsedBy](https://w3id.org/airo#isUsedBy)
 Alias: isUsedBy
@@ -25,7 +32,7 @@ Alias: isUsedBy
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -40,12 +47,12 @@ Alias: isUsedBy
 ```yaml
 name: isUsedBy
 description: Indicates user of an AI system.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:isUsedBy
 alias: isUsedBy
 range: AiProvider
 
 ```
-</details>
+</details></div>
 ```

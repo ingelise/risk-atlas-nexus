@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: policies
 
 _A list of policies_
 
-URI: [nexus:policies](https://ibm.github.io/ai-atlas-nexus/ontology/policies)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:policies](https://w3id.org/ai-atlas-nexus/policies)
 Alias: policies
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: policies
 
 ## Properties
 
-- Range: [Policy](Policy.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [Policy](Policy.md)       |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: policies
 ```yaml
 name: policies
 description: A list of policies
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: policies
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasScoreDetails
 
 _Score details_
 
-URI: [nexus:hasScoreDetails](https://ibm.github.io/ai-atlas-nexus/ontology/hasScoreDetails)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasScoreDetails](https://w3id.org/ai-atlas-nexus/hasScoreDetails)
 Alias: hasScoreDetails
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasScoreDetails
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasScoreDetails
 ```yaml
 name: hasScoreDetails
 description: Score details
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EvaluationResultRecord
 alias: hasScoreDetails
@@ -57,5 +64,5 @@ range: ScoreDetails
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

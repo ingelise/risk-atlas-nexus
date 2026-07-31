@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: RiskIncident
 
 _An event occuring or occured which is a realised or materialised risk._
 
-URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
+<div data-search-exclude markdown="1">
+
+URI: [dpv-risk:Incident](https://w3id.org/dpv/risk#Incident)
 
 ```mermaid
  classDiagram
@@ -98,6 +105,17 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
 
+      RiskIncident : hasJurisdiction
+
+
+
+
+
+        RiskIncident --> "*" Jurisdiction : hasJurisdiction
+        click Jurisdiction href "../Jurisdiction/"
+
+
+
       RiskIncident : hasLikelihood
 
 
@@ -177,6 +195,28 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 
 
+      RiskIncident : isMitigatedBy
+
+
+
+
+
+        RiskIncident --> "*" RiskControl : isMitigatedBy
+        click RiskControl href "../RiskControl/"
+
+
+
+      RiskIncident : isUsedWithinLocality
+
+
+
+
+
+        RiskIncident --> "*" LocalityOfUse : isUsedWithinLocality
+        click LocalityOfUse href "../LocalityOfUse/"
+
+
+
       RiskIncident : name
 
       RiskIncident : narrow_mappings
@@ -228,40 +268,43 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 ## Class Properties
 
-| Property  | Value                                                                    |
-| --------- | ------------------------------------------------------------------------ |
-| Class URI | [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident) |
+| Property  | Value                                                   |
+| --------- | ------------------------------------------------------- |
+| Class URI | [dpv-risk:Incident](https://w3id.org/dpv/risk#Incident) |
 
 ## Slots
 
-| Name                                          | Cardinality and Range                          | Description                                                                      | Inheritance                   |
-| --------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- |
-| [refersToRisk](refersToRisk.md)               | \* <br/> [Risk](Risk.md)                       | Indicates the incident (subject) is a materialisation of the indicated risk (... | direct                        |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)             | A relationship where a concept or a concept group is defined by a taxonomy       | direct                        |
-| [hasStatus](hasStatus.md)                     | 0..1 <br/> [IncidentStatus](IncidentStatus.md) | Indicates the status of specified concept                                        | direct                        |
-| [hasSeverity](hasSeverity.md)                 | 0..1 <br/> [Severity](Severity.md)             | Indicates the severity associated with a concept                                 | direct                        |
-| [hasLikelihood](hasLikelihood.md)             | 0..1 <br/> [Likelihood](Likelihood.md)         | The likelihood or probability or chance of something taking place or occuring    | direct                        |
-| [hasImpactOn](hasImpactOn.md)                 | 0..1 <br/> [Impact](Impact.md)                 | Indicates impact(s) possible or arising as consequences from specified concep... | direct                        |
-| [hasConsequence](hasConsequence.md)           | 0..1 <br/> [Consequence](Consequence.md)       | Indicates consequence(s) possible or arising from specified concept              | direct                        |
-| [hasImpact](hasImpact.md)                     | 0..1 <br/> [Impact](Impact.md)                 | Indicates impact(s) possible or arising as consequences from specified concep... | direct                        |
-| [hasVariant](hasVariant.md)                   | 0..1 <br/> [RiskIncident](RiskIncident.md)     | Indicates an incident that shares the same causative factors, produces simila... | direct                        |
-| [author](author.md)                           | 0..1 <br/> [String](String.md)                 | The author or authors of the incident report                                     | direct                        |
-| [source_uri](source_uri.md)                   | 0..1 <br/> [String](String.md)                 | The uri of the incident                                                          | direct                        |
-| [isDetectedBy](isDetectedBy.md)               | \* <br/> [RiskControl](RiskControl.md)         | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md) |
-| [id](id.md)                                   | 1 <br/> [String](String.md)                    | A unique identifier to this instance of the model element                        | [Entity](Entity.md)           |
-| [name](name.md)                               | 0..1 <br/> [String](String.md)                 | A text name of this instance                                                     | [Entity](Entity.md)           |
-| [description](description.md)                 | 0..1 <br/> [String](String.md)                 | The description of an entity                                                     | [Entity](Entity.md)           |
-| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                       | An optional URL associated with this instance                                    | [Entity](Entity.md)           |
-| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was created                                         | [Entity](Entity.md)           |
-| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was most recently modified                          | [Entity](Entity.md)           |
-| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)           |
-| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)           |
-| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                         | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)           |
-| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
-| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
-| [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                         | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)           |
-| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md)     | Indicates documentation associated with an entity                                | [Concept](Concept.md)         |
-| [type](type.md)                               | 0..1 <br/> [String](String.md)                 |                                                                                  | [Concept](Concept.md)         |
+| Name                                            | Cardinality and Range                          | Description                                                                      | Inheritance                   |
+| ----------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------- |
+| [refersToRisk](refersToRisk.md)                 | \* <br/> [Risk](Risk.md)                       | Indicates the incident (subject) is a materialisation of the indicated risk (... | direct                        |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)   | 0..1 <br/> [Taxonomy](Taxonomy.md)             | A relationship where a concept or a concept group is defined by a taxonomy       | direct                        |
+| [hasStatus](hasStatus.md)                       | 0..1 <br/> [IncidentStatus](IncidentStatus.md) | Indicates the status of specified concept                                        | direct                        |
+| [hasSeverity](hasSeverity.md)                   | 0..1 <br/> [Severity](Severity.md)             | Indicates the severity associated with a concept                                 | direct                        |
+| [hasLikelihood](hasLikelihood.md)               | 0..1 <br/> [Likelihood](Likelihood.md)         | The likelihood or probability or chance of something taking place or occuring    | direct                        |
+| [hasImpactOn](hasImpactOn.md)                   | 0..1 <br/> [Impact](Impact.md)                 | Indicates impact(s) possible or arising as consequences from specified concep... | direct                        |
+| [hasConsequence](hasConsequence.md)             | 0..1 <br/> [Consequence](Consequence.md)       | Indicates consequence(s) possible or arising from specified concept              | direct                        |
+| [hasImpact](hasImpact.md)                       | 0..1 <br/> [Impact](Impact.md)                 | Indicates impact(s) possible or arising as consequences from specified concep... | direct                        |
+| [hasVariant](hasVariant.md)                     | 0..1 <br/> [RiskIncident](RiskIncident.md)     | Indicates an incident that shares the same causative factors, produces simila... | direct                        |
+| [author](author.md)                             | 0..1 <br/> [String](String.md)                 | The author or authors of the incident report                                     | direct                        |
+| [source_uri](source_uri.md)                     | 0..1 <br/> [String](String.md)                 | The uri of the incident                                                          | direct                        |
+| [isDetectedBy](isDetectedBy.md)                 | \* <br/> [RiskControl](RiskControl.md)         | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md) |
+| [isMitigatedBy](isMitigatedBy.md)               | \* <br/> [RiskControl](RiskControl.md)         | A relationship where a risk, risk source, consequence, or impact is mitigated... | [RiskConcept](RiskConcept.md) |
+| [isUsedWithinLocality](isUsedWithinLocality.md) | \* <br/> [LocalityOfUse](LocalityOfUse.md)     | Specifies the domain an AI system is used within                                 | [RiskConcept](RiskConcept.md) |
+| [id](id.md)                                     | 1 <br/> [String](String.md)                    | A unique identifier to this instance of the model element                        | [Entity](Entity.md)           |
+| [name](name.md)                                 | 0..1 <br/> [String](String.md)                 | A text name of this instance                                                     | [Entity](Entity.md)           |
+| [description](description.md)                   | 0..1 <br/> [String](String.md)                 | The description of an entity                                                     | [Entity](Entity.md)           |
+| [url](url.md)                                   | 0..1 <br/> [Uri](Uri.md)                       | An optional URL associated with this instance                                    | [Entity](Entity.md)           |
+| [dateCreated](dateCreated.md)                   | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was created                                         | [Entity](Entity.md)           |
+| [dateModified](dateModified.md)                 | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was most recently modified                          | [Entity](Entity.md)           |
+| [exact_mappings](exact_mappings.md)             | \* <br/> [Any](Any.md)                         | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)           |
+| [close_mappings](close_mappings.md)             | \* <br/> [Any](Any.md)                         | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)           |
+| [related_mappings](related_mappings.md)         | \* <br/> [Any](Any.md)                         | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)           |
+| [narrow_mappings](narrow_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
+| [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
+| [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                         | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)           |
+| [hasDocumentation](hasDocumentation.md)         | \* <br/> [Documentation](Documentation.md)     | Indicates documentation associated with an entity                                | [Concept](Concept.md)         |
+| [hasJurisdiction](hasJurisdiction.md)           | \* <br/> [Jurisdiction](Jurisdiction.md)       | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)         |
+| [type](type.md)                                 | 0..1 <br/> [String](String.md)                 | The type or class designation of this entity instance                            | [Concept](Concept.md)         |
 
 ## Usages
 
@@ -276,14 +319,14 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
-| Mapping Type | Mapped Value                       |
-| ------------ | ---------------------------------- |
-| self         | https://w3id.org/dpv/risk#Incident |
-| native       | nexus:RiskIncident                 |
+| Mapping Type | Mapped Value       |
+| ------------ | ------------------ |
+| self         | dpv-risk:Incident  |
+| native       | nexus:RiskIncident |
 
 ## LinkML Source
 
@@ -295,7 +338,7 @@ URI: [https://w3id.org/dpv/risk#Incident](https://w3id.org/dpv/risk#Incident)
 ```yaml
 name: RiskIncident
 description: An event occuring or occured which is a realised or materialised risk.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 mixins:
 - RiskConcept
@@ -313,18 +356,18 @@ attributes:
   author:
     name: author
     description: The author or authors of the incident report
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_risk
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     domain_of:
     - Documentation
     - RiskIncident
   source_uri:
     name: source_uri
     description: The uri of the incident
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_risk
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
     domain_of:
     - RiskIncident
-class_uri: https://w3id.org/dpv/risk#Incident
+class_uri: dpv-risk:Incident
 
 ````
 </details>
@@ -335,7 +378,7 @@ class_uri: https://w3id.org/dpv/risk#Incident
 ```yaml
 name: RiskIncident
 description: An event occuring or occured which is a realised or materialised risk.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 mixins:
 - RiskConcept
@@ -343,7 +386,7 @@ attributes:
   author:
     name: author
     description: The author or authors of the incident report
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_risk
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     alias: author
     owner: RiskIncident
     domain_of:
@@ -353,7 +396,7 @@ attributes:
   source_uri:
     name: source_uri
     description: The uri of the incident
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_risk
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
     alias: source_uri
     owner: RiskIncident
@@ -364,7 +407,7 @@ attributes:
     name: refersToRisk
     description: Indicates the incident (subject) is a materialisation of the indicated
       risk (object)
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     exact_mappings:
     - dpv:refersToRisk
     rank: 1000
@@ -380,7 +423,7 @@ attributes:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -398,15 +441,17 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   hasStatus:
     name: hasStatus
     description: Indicates the status of specified concept
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
     alias: hasStatus
@@ -417,7 +462,7 @@ attributes:
   hasSeverity:
     name: hasSeverity
     description: Indicates the severity associated with a concept
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
     alias: hasSeverity
@@ -429,7 +474,7 @@ attributes:
     name: hasLikelihood
     description: The likelihood or probability or chance of something taking place
       or occuring
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
     alias: hasLikelihood
@@ -441,7 +486,7 @@ attributes:
     name: hasImpactOn
     description: Indicates impact(s) possible or arising as consequences from specified
       concept
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     broad_mappings:
     - dpv:hasConsequenceOn
     rank: 1000
@@ -454,7 +499,7 @@ attributes:
   hasConsequence:
     name: hasConsequence
     description: Indicates consequence(s) possible or arising from specified concept
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
     alias: hasConsequence
@@ -466,7 +511,7 @@ attributes:
     name: hasImpact
     description: Indicates impact(s) possible or arising as consequences from specified
       concept
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     broad_mappings:
     - dpv:hasConsequence
     rank: 1000
@@ -480,7 +525,7 @@ attributes:
     name: hasVariant
     description: Indicates an incident that shares the same causative factors, produces
       similar harms, and involves the same intelligent systems as a known AI incident.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskIncident
     alias: hasVariant
@@ -492,7 +537,7 @@ attributes:
     name: isDetectedBy
     description: A relationship where a risk, risk source, consequence, or impact
       is detected by a risk control.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
     alias: isDetectedBy
@@ -503,11 +548,40 @@ attributes:
     range: RiskControl
     multivalued: true
     inlined: false
+  isMitigatedBy:
+    name: isMitigatedBy
+    description: A relationship where a risk, risk source, consequence, or impact
+      is mitigated by a risk control.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    domain: RiskConcept
+    alias: isMitigatedBy
+    owner: RiskIncident
+    domain_of:
+    - RiskConcept
+    inverse: mitigatesRiskConcept
+    range: RiskControl
+    multivalued: true
+    inlined: false
+  isUsedWithinLocality:
+    name: isUsedWithinLocality
+    description: Specifies the domain an AI system is used within.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: airo:isUsedWithinLocality
+    alias: isUsedWithinLocality
+    owner: RiskIncident
+    domain_of:
+    - RiskConcept
+    - AiSystem
+    range: LocalityOfUse
+    multivalued: true
+    inlined: false
   id:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -520,7 +594,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -532,7 +606,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -543,7 +617,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -554,7 +628,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -566,7 +640,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -580,7 +654,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -594,7 +668,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -608,7 +682,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -623,7 +697,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -638,7 +712,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -651,7 +725,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -664,7 +738,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -683,6 +757,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -691,9 +766,24 @@ attributes:
     range: Documentation
     multivalued: true
     inlined: false
+  hasJurisdiction:
+    name: hasJurisdiction
+    description: The legal or political jurisdiction(s) in which this concept applies,
+      expressed as ISO 3166-1 country codes.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasJurisdiction
+    alias: hasJurisdiction
+    owner: RiskIncident
+    domain_of:
+    - Concept
+    range: Jurisdiction
+    multivalued: true
+    inlined: false
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: RiskIncident
@@ -719,8 +809,8 @@ attributes:
     - ControlActivityRecommendation
     - Requirement
     range: string
-class_uri: https://w3id.org/dpv/risk#Incident
+class_uri: dpv-risk:Incident
 
 ````
 
-</details>
+</details></div>

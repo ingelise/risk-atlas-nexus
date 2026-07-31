@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: CapabilityConcept
 
 _An umbrella term for referring to capability domains, groups, and individual capabilities._
 
-URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/CapabilityConcept)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:CapabilityConcept](https://w3id.org/ai-atlas-nexus/CapabilityConcept)
 
 ```mermaid
  classDiagram
@@ -70,6 +77,17 @@ URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/Cap
 
 
 
+      CapabilityConcept : hasJurisdiction
+
+
+
+
+
+        CapabilityConcept --> "*" Jurisdiction : hasJurisdiction
+        click Jurisdiction href "../Jurisdiction/"
+
+
+
       CapabilityConcept : id
 
       CapabilityConcept : isCategorizedAs
@@ -133,10 +151,10 @@ URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/Cap
 
 ## Class Properties
 
-| Property  | Value                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------ |
-| Class URI | [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/CapabilityConcept) |
-| Mixin     | Yes                                                                                        |
+| Property  | Value                                                                        |
+| --------- | ---------------------------------------------------------------------------- |
+| Class URI | [nexus:CapabilityConcept](https://w3id.org/ai-atlas-nexus/CapabilityConcept) |
+| Mixin     | Yes                                                                          |
 
 ## Slots
 
@@ -144,7 +162,8 @@ URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/Cap
 | --------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- | --------------------- |
 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)         | A relationship where a concept or a concept group is defined by a taxonomy       | [Concept](Concept.md) |
 | [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | [Concept](Concept.md) |
-| [type](type.md)                               | 0..1 <br/> [String](String.md)             |                                                                                  | [Concept](Concept.md) |
+| [hasJurisdiction](hasJurisdiction.md)         | \* <br/> [Jurisdiction](Jurisdiction.md)   | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md) |
+| [type](type.md)                               | 0..1 <br/> [String](String.md)             | The type or class designation of this entity instance                            | [Concept](Concept.md) |
 | [id](id.md)                                   | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md)   |
 | [name](name.md)                               | 0..1 <br/> [String](String.md)             | A text name of this instance                                                     | [Entity](Entity.md)   |
 | [description](description.md)                 | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md)   |
@@ -170,7 +189,7 @@ URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/Cap
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -190,7 +209,7 @@ URI: [nexus:CapabilityConcept](https://ibm.github.io/ai-atlas-nexus/ontology/Cap
 name: CapabilityConcept
 description: An umbrella term for referring to capability domains, groups, and individual
   capabilities.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Concept
 mixin: true
 class_uri: nexus:CapabilityConcept
@@ -205,7 +224,7 @@ class_uri: nexus:CapabilityConcept
 name: CapabilityConcept
 description: An umbrella term for referring to capability domains, groups, and individual
   capabilities.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Concept
 mixin: true
 attributes:
@@ -213,7 +232,7 @@ attributes:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -231,15 +250,17 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -258,6 +279,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -266,9 +288,24 @@ attributes:
     range: Documentation
     multivalued: true
     inlined: false
+  hasJurisdiction:
+    name: hasJurisdiction
+    description: The legal or political jurisdiction(s) in which this concept applies,
+      expressed as ISO 3166-1 country codes.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasJurisdiction
+    alias: hasJurisdiction
+    owner: CapabilityConcept
+    domain_of:
+    - Concept
+    range: Jurisdiction
+    multivalued: true
+    inlined: false
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: CapabilityConcept
@@ -298,7 +335,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -311,7 +348,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -323,7 +360,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -334,7 +371,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -345,7 +382,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -357,7 +394,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -371,7 +408,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -385,7 +422,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -399,7 +436,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -414,7 +451,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -429,7 +466,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -442,7 +479,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -456,4 +493,4 @@ class_uri: nexus:CapabilityConcept
 
 ````
 
-</details>
+</details></div>

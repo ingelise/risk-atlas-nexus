@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasAdapter
 
 _The Adapter for the intrinsic_
 
-URI: [nexus:hasAdapter](https://ibm.github.io/ai-atlas-nexus/ontology/hasAdapter)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasAdapter](https://w3id.org/ai-atlas-nexus/hasAdapter)
 Alias: hasAdapter
 
 <!-- no inheritance hierarchy -->
@@ -33,7 +40,7 @@ Alias: hasAdapter
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasAdapter
 ```yaml
 name: hasAdapter
 description: The Adapter for the intrinsic
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: LLMIntrinsic
 alias: hasAdapter
@@ -59,5 +66,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

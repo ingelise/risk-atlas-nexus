@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: tag
 
 _A shost version of the name_
 
-URI: [nexus:tag](https://ibm.github.io/ai-atlas-nexus/ontology/tag)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:tag](https://w3id.org/ai-atlas-nexus/tag)
 Alias: tag
 
 <!-- no inheritance hierarchy -->
@@ -15,13 +22,29 @@ Alias: tag
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
+
+| Property  | Value               |
+| --------- | ------------------- |
+| Range     | [String](String.md) |
+| Domain Of | [Risk](Risk.md)     |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
+
+### Slot Characteristics
+
+| Property | Value           |
+| -------- | --------------- |
+| Owner    | [Risk](Risk.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -36,7 +59,7 @@ Alias: tag
 ```yaml
 name: tag
 description: A shost version of the name
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: tag
 owner: Risk
@@ -45,5 +68,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

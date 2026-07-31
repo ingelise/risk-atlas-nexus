@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasTasks
 
 _The tasks or evaluations the benchmark is intended to assess._
 
-URI: [nexus:hasTasks](https://ibm.github.io/ai-atlas-nexus/ontology/hasTasks)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasTasks](https://w3id.org/ai-atlas-nexus/hasTasks)
 Alias: hasTasks
 
 <!-- no inheritance hierarchy -->
@@ -11,9 +18,9 @@ Alias: hasTasks
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
 | [AiEval](AiEval.md)                               | An AI Evaluation, e                                                              | no            |
 | [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
+| [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
 | [Questionnaire](Questionnaire.md)                 | A questionnaire groups questions                                                 | no            |
 | [Question](Question.md)                           | An evaluation where a question has to be answered                                | no            |
 
@@ -36,7 +43,7 @@ Alias: hasTasks
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -51,7 +58,7 @@ Alias: hasTasks
 ```yaml
 name: hasTasks
 description: The tasks or evaluations the benchmark is intended to assess.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasTasks
 domain_of:
@@ -63,5 +70,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

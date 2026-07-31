@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: value
 
 _Some numeric or string value_
 
-URI: [nexus:value](https://ibm.github.io/ai-atlas-nexus/ontology/value)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:value](https://w3id.org/ai-atlas-nexus/value)
 Alias: value
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: value
 
 | Name                                      | Description                                                                      | Modifies Slot |
 | ----------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [Fact](Fact.md)                           | A fact about something, for example the result of a measurement                  | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
 
 ## Properties
@@ -34,7 +41,7 @@ Alias: value
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: value
 ```yaml
 name: value
 description: Some numeric or string value
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: value
 domain_of:
@@ -58,5 +65,5 @@ range: string
 required: true
 
 ```
-</details>
+</details></div>
 ```

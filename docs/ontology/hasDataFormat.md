@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasDataFormat
 
 _The structure and modality of the data (e.g., sentence pairs, question-answer format, tabular data)._
 
-URI: [nexus:hasDataFormat](https://ibm.github.io/ai-atlas-nexus/ontology/hasDataFormat)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasDataFormat](https://w3id.org/ai-atlas-nexus/hasDataFormat)
 Alias: hasDataFormat
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasDataFormat
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasDataFormat
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasDataFormat
 name: hasDataFormat
 description: The structure and modality of the data (e.g., sentence pairs, question-answer
   format, tabular data).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasDataFormat
 domain_of:
@@ -59,5 +66,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

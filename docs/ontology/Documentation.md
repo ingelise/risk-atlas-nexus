@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Documentation
 
 _Documented information about a concept or other topic(s) of interest._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 
@@ -149,6 +156,7 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 | [Term](Term.md)                                         | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [Principle](Principle.md)                               | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [Certification](Certification.md)                       | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [LocalityOfUse](LocalityOfUse.md)                       | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [RiskTaxonomy](RiskTaxonomy.md)                         | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [RiskControlGroupTaxonomy](RiskControlGroupTaxonomy.md) | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [RiskControlGroup](RiskControlGroup.md)                 | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
@@ -159,6 +167,11 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 | [Action](Action.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [RiskIncident](RiskIncident.md)                         | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [Impact](Impact.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)             | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [CapabilityConcept](CapabilityConcept.md)               | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [CapabilityDomain](CapabilityDomain.md)                 | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [CapabilityGroup](CapabilityGroup.md)                   | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [Capability](Capability.md)                             | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [BaseAi](BaseAi.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [AiSystem](AiSystem.md)                                 | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [AiAgent](AiAgent.md)                                   | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
@@ -166,12 +179,12 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 | [LargeLanguageModel](LargeLanguageModel.md)             | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [AiTask](AiTask.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [AiTaskDomain](AiTaskDomain.md)                         | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [AiTaskGroup](AiTaskGroup.md)                           | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [Purpose](Purpose.md)                                   | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
+| [Domain](Domain.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [StakeholderGroup](StakeholderGroup.md)                 | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)             | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
-| [CapabilityConcept](CapabilityConcept.md)               | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
-| [CapabilityDomain](CapabilityDomain.md)                 | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
-| [CapabilityGroup](CapabilityGroup.md)                   | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
-| [Capability](Capability.md)                             | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [AiEval](AiEval.md)                                     | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)               | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)       | [hasDocumentation](hasDocumentation.md) | range | [Documentation](Documentation.md) |
@@ -184,7 +197,7 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -203,7 +216,7 @@ URI: [airo:Documentation](https://w3id.org/airo#Documentation)
 ```yaml
 name: Documentation
 description: Documented information about a concept or other topic(s) of interest.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 slots:
 - hasLicense
@@ -211,7 +224,7 @@ attributes:
   author:
     name: author
     description: The author or authors of the documentation
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     domain_of:
     - Documentation
@@ -227,13 +240,13 @@ class_uri: airo:Documentation
 ```yaml
 name: Documentation
 description: Documented information about a concept or other topic(s) of interest.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   author:
     name: author
     description: The author or authors of the documentation
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     alias: author
     owner: Documentation
@@ -244,7 +257,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -257,6 +270,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -265,7 +279,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -278,7 +292,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -290,7 +304,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -301,7 +315,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -312,7 +326,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -324,7 +338,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -338,7 +352,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -352,7 +366,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -366,7 +380,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -381,7 +395,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -396,7 +410,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -409,7 +423,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -423,4 +437,4 @@ class_uri: airo:Documentation
 
 ````
 
-</details>
+</details></div>

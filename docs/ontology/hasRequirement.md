@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasRequirement
 
 _This requirement this rule belongs to_
 
-URI: [nexus:hasRequirement](https://ibm.github.io/ai-atlas-nexus/ontology/hasRequirement)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasRequirement](https://w3id.org/ai-atlas-nexus/hasRequirement)
 Alias: hasRequirement
 
 <!-- no inheritance hierarchy -->
@@ -11,21 +18,33 @@ Alias: hasRequirement
 
 | Name                                                              | Description                                                                      | Modifies Slot |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [ControlActivityPermission](ControlActivityPermission.md)         | A control activity (rule) describing a permission to perform an activity         | no            |
-| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
 | [ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    | no            |
 | [ControlActivityProhibition](ControlActivityProhibition.md)       | A control activity (rule) describing a prohibition to perform an activity        | no            |
+| [ControlActivityPermission](ControlActivityPermission.md)         | A control activity (rule) describing a permission to perform an activity         | no            |
 | [ControlActivityRecommendation](ControlActivityRecommendation.md) | A control activity (rule) describing a recommendation for performing an activ... | no            |
+| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
 
 ## Properties
 
-- Range: [Requirement](Requirement.md)
+### Type and Range
+
+| Property  | Value                                                                  |
+| --------- | ---------------------------------------------------------------------- |
+| Range     | [Requirement](Requirement.md)                                          |
+| Domain    | [ControlActivity](ControlActivity.md)                                  |
+| Domain Of | [ControlActivity](ControlActivity.md)                                  |
+| Slot URI  | [nexus:hasRequirement](https://w3id.org/ai-atlas-nexus/hasRequirement) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -40,8 +59,9 @@ Alias: hasRequirement
 ```yaml
 name: hasRequirement
 description: This requirement this rule belongs to
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+domain: ControlActivity
 slot_uri: nexus:hasRequirement
 alias: hasRequirement
 domain_of:
@@ -51,5 +71,5 @@ multivalued: false
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

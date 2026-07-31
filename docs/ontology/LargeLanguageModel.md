@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: LargeLanguageModel
 
 _A large language model (LLM) is an AI model which supports a range of language-related tasks such as generation, summarization, classification, among others. A LLM is implemented as an artificial neural networks using a transformer architecture._
 
-URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/LargeLanguageModel)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:LargeLanguageModel](https://w3id.org/ai-atlas-nexus/LargeLanguageModel)
 
 ```mermaid
  classDiagram
@@ -237,8 +244,8 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 
 
-        LargeLanguageModel --> "*" Capability : requiresCapability
-        click Capability href "../Capability/"
+        LargeLanguageModel --> "*" Any : requiresCapability
+        click Any href "../Any/"
 
 
 
@@ -275,7 +282,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 | [fine_tuning](fine_tuning.md)                 | 0..1 <br/> [String](String.md)                                     | A description of the fine-tuning mechanism(s) applied to a model                 | direct                |
 | [supported_languages](supported_languages.md) | \* <br/> [String](String.md)                                       | A list of languages, expressed as ISO two letter codes                           | direct                |
 | [isPartOf](isPartOf.md)                       | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models             | direct                |
-| [requiresCapability](requiresCapability.md)   | \* <br/> [Capability](Capability.md)                               | Indicates that this entry requires a specific capability                         | direct                |
+| [requiresCapability](requiresCapability.md)   | \* <br/> [Any](Any.md)                                             | Indicates that this entry requires a specific capability                         | direct                |
 | [hasEvaluation](hasEvaluation.md)             | \* <br/> [AiEvalResult](AiEvalResult.md)                           | A relationship indicating that an entity has an AI evaluation result             | [AiModel](AiModel.md) |
 | [architecture](architecture.md)               | 0..1 <br/> [String](String.md)                                     | A description of the architecture of an AI such as 'Decoder-only'                | [AiModel](AiModel.md) |
 | [gpu_hours](gpu_hours.md)                     | 0..1 <br/> [Integer](Integer.md)                                   | GPU consumption in terms of hours                                                | [AiModel](AiModel.md) |
@@ -322,7 +329,7 @@ URI: [nexus:LargeLanguageModel](https://ibm.github.io/ai-atlas-nexus/ontology/La
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -344,7 +351,7 @@ description: A large language model (LLM) is an AI model which supports a range 
   language-related tasks such as generation, summarization, classification, among
   others. A LLM is implemented as an artificial neural networks using a transformer
   architecture.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 aliases:
 - LLM
 is_a: AiModel
@@ -378,7 +385,7 @@ description: A large language model (LLM) is an AI model which supports a range 
   language-related tasks such as generation, summarization, classification, among
   others. A LLM is implemented as an artificial neural networks using a transformer
   architecture.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 aliases:
 - LLM
 is_a: AiModel
@@ -392,7 +399,7 @@ attributes:
   numParameters:
     name: numParameters
     description: A property indicating the number of parameters in a LLM.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: numParameters
     owner: LargeLanguageModel
@@ -403,7 +410,7 @@ attributes:
   numTrainingTokens:
     name: numTrainingTokens
     description: The number of tokens a AI model was trained on.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: numTrainingTokens
     owner: LargeLanguageModel
@@ -414,7 +421,7 @@ attributes:
   contextWindowSize:
     name: contextWindowSize
     description: The total length, in bytes, of an AI model's context window.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: contextWindowSize
     owner: LargeLanguageModel
@@ -426,7 +433,7 @@ attributes:
     name: hasInputModality
     description: A relationship indicating the input modalities supported by an AI
       component. Examples include text, image, video.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasInputModality
     owner: LargeLanguageModel
@@ -439,7 +446,7 @@ attributes:
     name: hasOutputModality
     description: A relationship indicating the output modalities supported by an AI
       component. Examples include text, image, video.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasOutputModality
     owner: LargeLanguageModel
@@ -451,7 +458,7 @@ attributes:
   hasTrainingData:
     name: hasTrainingData
     description: A relationship indicating the datasets an AI model was trained on.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasTrainingData
     alias: hasTrainingData
@@ -464,7 +471,7 @@ attributes:
   fine_tuning:
     name: fine_tuning
     description: A description of the fine-tuning mechanism(s) applied to a model.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: fine_tuning
     owner: LargeLanguageModel
@@ -475,7 +482,7 @@ attributes:
     name: supported_languages
     description: A list of languages, expressed as ISO two letter codes. For example,
       'jp, fr, en, de'
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: supported_languages
     owner: LargeLanguageModel
@@ -488,7 +495,7 @@ attributes:
   isPartOf:
     name: isPartOf
     description: Annotation that a Large Language model is part of a family of models
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isPartOf
@@ -496,14 +503,15 @@ attributes:
     domain_of:
     - Entry
     - Risk
-    - LargeLanguageModel
-    - Stakeholder
     - CapabilityGroup
+    - LargeLanguageModel
+    - AiTaskGroup
+    - Stakeholder
     range: LargeLanguageModelFamily
   requiresCapability:
     name: requiresCapability
     description: Indicates that this entry requires a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: requiresCapability
@@ -514,13 +522,13 @@ attributes:
     - AiTask
     - Adapter
     inverse: requiredByTask
-    range: Capability
+    range: Any
     multivalued: true
     inlined: false
   hasEvaluation:
     name: hasEvaluation
     description: A relationship indicating that an entity has an AI evaluation result.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dqv:hasQualityMeasurement
     alias: hasEvaluation
@@ -532,7 +540,7 @@ attributes:
   architecture:
     name: architecture
     description: A description of the architecture of an AI such as 'Decoder-only'.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: architecture
     owner: LargeLanguageModel
@@ -542,7 +550,7 @@ attributes:
   gpu_hours:
     name: gpu_hours
     description: GPU consumption in terms of hours
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: gpu_hours
     owner: LargeLanguageModel
@@ -553,7 +561,7 @@ attributes:
   power_consumption_w:
     name: power_consumption_w
     description: power consumption in Watts
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: power_consumption_w
     owner: LargeLanguageModel
@@ -565,7 +573,7 @@ attributes:
     name: carbon_emitted
     description: The number of tons of carbon dioxide equivalent that are emitted
       during training
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: carbon_emitted
     owner: LargeLanguageModel
@@ -580,7 +588,7 @@ attributes:
     name: hasRiskControl
     description: Indicates the control measures associated with a system or component
       to modify risks.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasRiskControl
     alias: hasRiskControl
@@ -592,7 +600,7 @@ attributes:
   producer:
     name: producer
     description: A relationship to the Organization instance which produces this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: producer
     owner: LargeLanguageModel
@@ -602,7 +610,7 @@ attributes:
   hasModelCard:
     name: hasModelCard
     description: A relationship to model card references.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasModelCard
     owner: LargeLanguageModel
@@ -615,7 +623,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -634,6 +642,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -645,7 +654,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -658,6 +667,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -665,7 +675,7 @@ attributes:
   performsTask:
     name: performsTask
     description: relationship indicating the AI tasks an AI model can perform.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: performsTask
     owner: LargeLanguageModel
@@ -677,7 +687,7 @@ attributes:
   isProvidedBy:
     name: isProvidedBy
     description: Indicates provider of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isProvidedBy
     alias: isProvidedBy
@@ -689,7 +699,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -702,7 +712,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -714,7 +724,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -725,7 +735,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -736,7 +746,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -748,7 +758,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -762,7 +772,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -776,7 +786,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -790,7 +800,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -805,7 +815,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -820,7 +830,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -833,7 +843,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -846,4 +856,4 @@ attributes:
 
 ````
 
-</details>
+</details></div>

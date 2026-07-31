@@ -1,24 +1,36 @@
-# Type: Uri
+---
+
+search:
+boost: 1.0
+---# Type: Uri
 
 _a complete URI_
 
+<div data-search-exclude markdown="1">
+
 URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
-- [base](https://w3id.org/linkml/base): URI
+## Type Properties
 
-- [uri](https://w3id.org/linkml/uri): xsd:anyURI
-
-- [repr](https://w3id.org/linkml/repr): str
+| Property       | Value                                                 |
+| -------------- | ----------------------------------------------------- |
+| Base           | `URI`                                                 |
+| Type URI       | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |
+| Representation | `str`                                                 |
 
 ## Comments
 
 - in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node
 
+## Notes
+
+- If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uri".
+
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -27,3 +39,5 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | self         | xsd:anyURI   |
 | native       | nexus:uri    |
 | close        | schema:URL   |
+
+</div>

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasRelatedTerm
 
 _A relationship where an entity relates to a term_
 
-URI: [nexus:hasRelatedTerm](https://ibm.github.io/ai-atlas-nexus/ontology/hasRelatedTerm)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasRelatedTerm](https://w3id.org/ai-atlas-nexus/hasRelatedTerm)
 Alias: hasRelatedTerm
 
 <!-- no inheritance hierarchy -->
@@ -19,7 +26,7 @@ Alias: hasRelatedTerm
 
 | Property  | Value                                                            |
 | --------- | ---------------------------------------------------------------- |
-| Range     | [Term](Term.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) |
+| Range     | [RiskConcept](RiskConcept.md)&nbsp;or&nbsp;<br />[Term](Term.md) |
 | Domain    | [Any](Any.md)                                                    |
 | Domain Of | [LLMIntrinsic](LLMIntrinsic.md)                                  |
 
@@ -44,7 +51,7 @@ Value must satisfy at least one of:
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -59,7 +66,7 @@ Value must satisfy at least one of:
 ```yaml
 name: hasRelatedTerm
 description: A relationship where an entity relates to a term
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Any
 alias: hasRelatedTerm
@@ -73,5 +80,5 @@ any_of:
 - range: Term
 
 ```
-</details>
+</details></div>
 ```
