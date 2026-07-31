@@ -1,25 +1,18 @@
+from __future__ import annotations
+
 import itertools
 import json
 import os
+from functools import lru_cache
 from importlib.metadata import version
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Union
 
 import yaml
 from jinja2 import Template
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import YAMLDumper
 from sssom_schema import Mapping
-
-from ai_atlas_nexus.blocks.graph_explorer import AtlasExplorer
-from ai_atlas_nexus.blocks.graph_explorer.pyoxigraph import PyoxigraphExplorer
-from ai_atlas_nexus.blocks.shacl import SHACLEngine
-from ai_atlas_nexus.exceptions import RiskInferenceError, handle_exception
-
-
-# workaround for txtai
-os.environ["KMP_DUPLICATE_LIB_OK"] = "True"
-os.environ["OMP_NUM_THREADS"] = "1"
 
 from ai_atlas_nexus import AiTask, Taxonomy
 from ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
@@ -40,33 +33,26 @@ from ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
     Rule,
     Stakeholder,
 )
-from ai_atlas_nexus.blocks.inference import InferenceEngine
-from ai_atlas_nexus.blocks.prompt_builder import (
-    FewShotPromptBuilder,
-    ZeroShotPromptBuilder,
-)
-from ai_atlas_nexus.blocks.prompt_response_schema import (
-    AITaskList,
-    DomainType,
-    QuestionnaireOutput,
-)
-from ai_atlas_nexus.blocks.prompt_templates import (
-    AI_TASKS_TEMPLATE,
-    QUESTIONNAIRE_COT_TEMPLATE,
-)
-from ai_atlas_nexus.blocks.risk_categorization.severity import RiskSeverityCategorizer
-from ai_atlas_nexus.blocks.risk_detector import GenericRiskDetector
-from ai_atlas_nexus.blocks.risk_mapping import RiskMapper
+from ai_atlas_nexus.blocks.graph_explorer import AtlasExplorer
+from ai_atlas_nexus.blocks.graph_explorer.pyoxigraph import PyoxigraphExplorer
+from ai_atlas_nexus.blocks.shacl import SHACLEngine
 from ai_atlas_nexus.data import load_resource
-from ai_atlas_nexus.extension import Extension
+from ai_atlas_nexus.exceptions import RiskInferenceError, handle_exception
 from ai_atlas_nexus.metadata_base import BackendType, MappingMethod
 from ai_atlas_nexus.toolkit.data_utils import load_yamls_to_container
 from ai_atlas_nexus.toolkit.error_utils import type_check, value_check
 from ai_atlas_nexus.toolkit.logging import configure_logger
 
 
+if TYPE_CHECKING:
+    from ai_atlas_nexus.blocks.inference import InferenceEngine
+
 logger = configure_logger(__name__)
-RISK_IDENTIFICATION_COT = load_resource("risk_generation_cot.json")
+
+
+@lru_cache(maxsize=1)
+def _get_risk_identification_cot():
+    return load_resource("risk_generation_cot.json")
 
 
 class AIAtlasNexus:
@@ -203,9 +189,7 @@ class AIAtlasNexus:
         classes: List[str] = cls._atlas_explorer.get_all_classes()
         return classes
 
-    def get_all(
-        cls, class_name, taxonomy=None, vocabulary=None, document=None
-    ):
+    def get_all(cls, class_name, taxonomy=None, vocabulary=None, document=None):
         """
         Get all the instances of a specified class.
 
@@ -266,9 +250,7 @@ class AIAtlasNexus:
             Optional[Dict[str, Any]]
                 The matching instance or None
         """
-        instance = cls._atlas_explorer.get_by_attribute(
-            class_name, attribute, value
-        )
+        instance = cls._atlas_explorer.get_by_attribute(class_name, attribute, value)
         return instance
 
     def query(cls, class_name, **kwargs):
@@ -355,7 +337,7 @@ class AIAtlasNexus:
             tag=tag,
             id=id,
             name=name,
-            taxonomy=taxonomy,
+            isDefinedByTaxonomy=taxonomy,
         )
         if risk and len(risk) > 0:
             risk = risk[0]
@@ -415,6 +397,8 @@ class AIAtlasNexus:
             risk = cls.get_risk(id=id)
         elif tag:
             risk = cls.get_risk(tag=tag)
+        elif name:
+            risk = cls.get_risk(name=name)
 
         # just get all the related risks from the risk, these should have been added during lifting
         options = [
@@ -428,7 +412,7 @@ class AIAtlasNexus:
         related_risk_instances = [
             risk_instance
             for risk_instance in [
-                cls.get_risk(id=x, apply_rules=apply_rules)
+                cls.get_risk(id=x, taxonomy=taxonomy, apply_rules=apply_rules)
                 for x in related_risk_ids
             ]
             if risk_instance is not None
@@ -528,14 +512,10 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        action_instances: list[Action] = cls.get_all(
-            "actions", taxonomy=taxonomy
-        )
+        action_instances: list[Action] = cls.get_all("actions", taxonomy=taxonomy)
         return cls._apply_rules_check(action_instances, apply_rules)
 
-    def get_action_by_id(
-        cls, id, taxonomy: Optional[Union[str, List[str]]] = None
-    ):
+    def get_action_by_id(cls, id, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an action definition from the LinkML, filtered by action id
 
         Args:
@@ -621,9 +601,7 @@ class AIAtlasNexus:
             risk = cls.get_risk(name=name)
 
         risk_controls = [
-            cls._atlas_explorer.get_by_id(
-                class_name="riskcontrols", identifier=x
-            )
+            cls._atlas_explorer.get_by_id(class_name="riskcontrols", identifier=x)
             for x in risk.isDetectedBy or []
         ]
         return risk_controls
@@ -725,6 +703,9 @@ class AIAtlasNexus:
             List[List[Risk]]:
                 Result containing a list of risks
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.risk_detector import GenericRiskDetector
+
         type_check(
             "<RANE02D314BE>",
             List,
@@ -807,7 +788,7 @@ class AIAtlasNexus:
                 # set it as None. The CoT examples include risk-related questions that have been synthetically generated for this task.
                 processed_examples = (
                     cot_examples and cot_examples.get(tx, None)
-                ) or RISK_IDENTIFICATION_COT.get(tx, None)
+                ) or _get_risk_identification_cot().get(tx, None)
                 if (
                     combined_processed_examples
                     and type(combined_processed_examples) == list
@@ -841,6 +822,8 @@ class AIAtlasNexus:
         cot_examples: Optional[Dict[str, List]] = None,
         max_risk: Optional[int] = None,
         zero_shot_only: bool = False,
+        batch_inference: bool = True,
+        use_dspy_prompt: bool = False,
     ):
         """Identify potential risks from a usecase description
 
@@ -858,10 +841,14 @@ class AIAtlasNexus:
             max_risk (int, optional):
                 The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
             zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
+            batch_inference (bool): Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
+            use_dspy_prompt (bool): Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
         Returns:
             List[List[Risk]]:
                 Result containing a list of risks
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+
         type_check(
             "<RANE053314BE>",
             List,
@@ -899,6 +886,8 @@ class AIAtlasNexus:
             cot_examples,
             max_risk,
             zero_shot_only,
+            batch_inference,
+            use_dspy_prompt,
         )[0]
         control_ids = []
         actions = []
@@ -1017,6 +1006,11 @@ class AIAtlasNexus:
         Returns:
             List[str]: List of LLM predictions.
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.prompt_builder import ZeroShotPromptBuilder
+        from ai_atlas_nexus.blocks.prompt_response_schema import QuestionnaireOutput
+        from ai_atlas_nexus.blocks.prompt_templates import QUESTIONNAIRE_COT_TEMPLATE
+
         type_check(
             "<RANF7EFFADAE>",
             InferenceEngine,
@@ -1096,6 +1090,11 @@ class AIAtlasNexus:
         Returns:
             List[str]: List of LLM predictions.
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.prompt_builder import FewShotPromptBuilder
+        from ai_atlas_nexus.blocks.prompt_response_schema import QuestionnaireOutput
+        from ai_atlas_nexus.blocks.prompt_templates import QUESTIONNAIRE_COT_TEMPLATE
+
         type_check(
             "<RAN19989483E>",
             InferenceEngine,
@@ -1161,6 +1160,10 @@ class AIAtlasNexus:
             List[List[str]]:
                 Result containing a list of AI tasks
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.prompt_response_schema import AITaskList
+        from ai_atlas_nexus.blocks.prompt_templates import AI_TASKS_TEMPLATE
+
         type_check(
             "<RAN3B9CD886E>",
             InferenceEngine,
@@ -1177,9 +1180,7 @@ class AIAtlasNexus:
         # Load HF tasks from the template dir
         hf_ai_tasks = [
             {"task_label": task.name, "task_description": task.description}
-            for task in cls.get_all(
-                class_name="aitasks", taxonomy="hf-ml-tasks"
-            )
+            for task in cls.get_all(class_name="aitasks", taxonomy="hf-ml-tasks")
         ]
 
         prompts = [
@@ -1195,9 +1196,7 @@ class AIAtlasNexus:
                     ],
                     "grounding_context": {
                         "Use case": usecase,
-                        "AI Task Definitions": json.dumps(
-                            hf_ai_tasks, indent=2
-                        ),
+                        "AI Task Definitions": json.dumps(hf_ai_tasks, indent=2),
                     },
                 }
                 if inference_engine.backend._backend_type == BackendType.MELLEA
@@ -1244,6 +1243,9 @@ class AIAtlasNexus:
             List[Mapping]
                 Result containing a list of mappings
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.risk_mapping import RiskMapper
+
         type_check(
             "<RAN28959363E>",
             InferenceEngine,
@@ -1276,9 +1278,7 @@ class AIAtlasNexus:
             mapping_method=mapping_method,
         )
 
-    def get_risk_incidents(
-        cls, taxonomy: Optional[Union[str, List[str]]] = None
-    ):
+    def get_risk_incidents(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get risk incident instances, optionally filtered by taxonomy
 
         Args:
@@ -1382,9 +1382,7 @@ class AIAtlasNexus:
         )
         return related_risk_incidents
 
-    def get_all_evaluations(
-        cls, taxonomy: Optional[Union[str, List[str]]] = None
-    ):
+    def get_all_evaluations(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all evaluation definitions from the LinkML
 
         Args:
@@ -1407,9 +1405,7 @@ class AIAtlasNexus:
         )
         return evaluation_instances
 
-    def get_evaluation(
-        cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None
-    ):
+    def get_evaluation(cls, id=None, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get an evaluation definition from the LinkML, filtered by id
 
         Args:
@@ -1470,6 +1466,8 @@ class AIAtlasNexus:
 
         if risk_id:
             risk = cls.get_risk(id=risk_id)
+            if risk is None:
+                raise ValueError("Risk cannot be found: {0}".format(risk_id))
 
         related_evaluations = cls._atlas_explorer.query(
             "evaluations", hasRelatedRisk=risk.id, taxonomy=taxonomy
@@ -1501,8 +1499,8 @@ class AIAtlasNexus:
         )
         type_check("<RAN30190075E>", Risk, allow_none=True, risk=risk)
 
-        benchmark_metatdata_card_instances: list[BenchmarkMetadataCard] = (
-            cls.get_all("benchmarkmetadatacards", taxonomy=taxonomy)
+        benchmark_metatdata_card_instances: list[BenchmarkMetadataCard] = cls.get_all(
+            "benchmarkmetadatacards", taxonomy=taxonomy
         )
         return benchmark_metatdata_card_instances
 
@@ -1599,9 +1597,7 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        dataset_instances: list[Dataset] = cls.get_all(
-            "datasets", taxonomy=taxonomy
-        )
+        dataset_instances: list[Dataset] = cls.get_all("datasets", taxonomy=taxonomy)
         return dataset_instances
 
     def get_dataset(cls, id=str):
@@ -1629,9 +1625,7 @@ class AIAtlasNexus:
         )
         return dataset
 
-    def get_stakeholders(
-        cls, taxonomy: Optional[Union[str, List[str]]] = None
-    ):
+    def get_stakeholders(cls, taxonomy: Optional[Union[str, List[str]]] = None):
         """Get all stakeholder definitions from the LinkML
 
         Args:
@@ -1790,9 +1784,7 @@ class AIAtlasNexus:
 
         if aitask or aitask_id:
             if aitask_id:
-                aitask = cls.get_by_id(
-                    class_name="aitasks", identifier=aitask_id
-                )
+                aitask = cls.get_by_id(class_name="aitasks", identifier=aitask_id)
 
             related_llmintrinsics = []
             capability_ids = (
@@ -1912,8 +1904,8 @@ class AIAtlasNexus:
             id=id,
         )
 
-        llm_question_policy: LLMQuestionPolicy | None = (
-            cls._atlas_explorer.get_by_id("llmquestionPolicies", identifier=id)
+        llm_question_policy: LLMQuestionPolicy | None = cls._atlas_explorer.get_by_id(
+            "llmquestionPolicies", identifier=id
         )
         return llm_question_policy
 
@@ -1993,7 +1985,7 @@ class AIAtlasNexus:
             "<RAN92358069E>",
             str,
             allow_none=False,
-            target_class=id,
+            target_class=target_class,
         )
         type_check(
             "<RAN61877043E>",
@@ -2002,8 +1994,8 @@ class AIAtlasNexus:
             taxonomy=taxonomy,
         )
 
-        instances: list[Any] = cls._atlas_explorer.get_instances(
-            target_class, taxonomy
+        instances: list[Any] = cls._atlas_explorer.get_all(
+            target_class, taxonomy=taxonomy
         )
         return instances
 
@@ -2026,6 +2018,11 @@ class AIAtlasNexus:
             List[List[str]]:
                 Result containing a list of AI tasks
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.prompt_builder import FewShotPromptBuilder
+        from ai_atlas_nexus.blocks.prompt_response_schema import DomainType
+        from ai_atlas_nexus.blocks.prompt_templates import QUESTIONNAIRE_COT_TEMPLATE
+
         type_check(
             "<RAN3B9CD886E>",
             InferenceEngine,
@@ -2106,6 +2103,11 @@ class AIAtlasNexus:
             results (List[Dict]):
                 Results detailing risk categorization by usecase.
         """
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.risk_categorization.severity import (
+            RiskSeverityCategorizer,
+        )
+
         type_check(
             "<RAN75727859E>",
             InferenceEngine,
@@ -2137,12 +2139,8 @@ class AIAtlasNexus:
                 [usecase], inference_engine=inference_engine, verbose=False
             )
             # Get AI Domain of the usecase
-            domain_predictions = [
-                domain.prediction["answer"] for domain in domains
-            ]
-            domain = (
-                domain_predictions[0] if len(domain_predictions) == 1 else None
-            )
+            domain_predictions = [domain.prediction["answer"] for domain in domains]
+            domain = domain_predictions[0] if len(domain_predictions) == 1 else None
 
             # Using a risk questionnaire to identify key attributes necessary for
             # constituting an AI system from the usecase.
@@ -2157,8 +2155,7 @@ class AIAtlasNexus:
                     usecase,
                     list(
                         filter(
-                            lambda question: question["no"]
-                            in ["Q4", "Q5", "Q6", "Q7"],
+                            lambda question: question["no"] in ["Q4", "Q5", "Q6", "Q7"],
                             risk_questionnaire,
                         )
                     ),
@@ -2206,6 +2203,8 @@ class AIAtlasNexus:
         Returns:
             None
         """
+        from ai_atlas_nexus.extension import Extension
+
         logger.info(
             f"Risks submitted for ARES evluation: {json.dumps([risk.name for risk in risks], indent=2)}"
         )
