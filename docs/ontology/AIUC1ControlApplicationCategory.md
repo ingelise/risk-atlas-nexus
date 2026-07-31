@@ -1,6 +1,15 @@
+---
+search:
+  boost: 2.0
+---
+
 # Enum: AIUC1ControlApplicationCategory
 
-URI: [nexus:AIUC1ControlApplicationCategory](https://ibm.github.io/ai-atlas-nexus/ontology/AIUC1ControlApplicationCategory)
+_AIUC1 ControlApplication Category_
+
+<div data-search-exclude markdown="1">
+
+URI: [nexus:AIUC1ControlApplicationCategory](https://w3id.org/ai-atlas-nexus/AIUC1ControlApplicationCategory)
 
 ## Permissible Values
 
@@ -19,14 +28,15 @@ URI: [nexus:AIUC1ControlApplicationCategory](https://ibm.github.io/ai-atlas-nexu
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: AIUC1ControlApplicationCategory
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+description: AIUC1 ControlApplication Category
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 permissible_values:
   CORE:
@@ -38,4 +48,6 @@ permissible_values:
 
 ```
 </details>
+
+</div>
 ```

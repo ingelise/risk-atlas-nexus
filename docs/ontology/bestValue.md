@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: bestValue
 
 _Annotation of the best possible result of the evaluation_
 
-URI: [nexus:bestValue](https://ibm.github.io/ai-atlas-nexus/ontology/bestValue)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:bestValue](https://w3id.org/ai-atlas-nexus/bestValue)
 Alias: bestValue
 
 <!-- no inheritance hierarchy -->
@@ -12,8 +19,8 @@ Alias: bestValue
 | Name                              | Description                                       | Modifies Slot |
 | --------------------------------- | ------------------------------------------------- | ------------- |
 | [Questionnaire](Questionnaire.md) | A questionnaire groups questions                  | no            |
-| [Question](Question.md)           | An evaluation where a question has to be answered | no            |
 | [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
+| [Question](Question.md)           | An evaluation where a question has to be answered | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: bestValue
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: bestValue
 ```yaml
 name: bestValue
 description: Annotation of the best possible result of the evaluation
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: bestValue
 domain_of:
@@ -56,5 +63,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

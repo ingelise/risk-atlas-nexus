@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Taxonomy
 
 _A hierachical taxonomy of concepts, with their definitions and relationships._
+
+<div data-search-exclude markdown="1">
 
 - **NOTE**: this is an abstract class and should not be instantiated directly
 
@@ -20,6 +27,8 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
         click RiskControlGroupTaxonomy href "../RiskControlGroupTaxonomy/"
       Taxonomy <|-- CapabilityTaxonomy
         click CapabilityTaxonomy href "../CapabilityTaxonomy/"
+      Taxonomy <|-- AiTaskTaxonomy
+        click AiTaskTaxonomy href "../AiTaskTaxonomy/"
 
 
       Taxonomy : broad_mappings
@@ -136,6 +145,7 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
     - [RiskTaxonomy](RiskTaxonomy.md)
     - [RiskControlGroupTaxonomy](RiskControlGroupTaxonomy.md)
     - [CapabilityTaxonomy](CapabilityTaxonomy.md)
+    - [AiTaskTaxonomy](AiTaskTaxonomy.md)
 
 ## Class Properties
 
@@ -151,7 +161,7 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 | [version](version.md)                   | 0..1 <br/> [String](String.md)             | The version of the entity embodied by a specified resource                       | direct              |
 | [hasDocumentation](hasDocumentation.md) | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | direct              |
 | [hasLicense](hasLicense.md)             | 0..1 <br/> [License](License.md)           | Indicates licenses associated with a resource                                    | direct              |
-| [type](type.md)                         | 0..1 <br/> [String](String.md)             |                                                                                  | direct              |
+| [type](type.md)                         | 0..1 <br/> [String](String.md)             | The type or class designation of this entity instance                            | direct              |
 | [id](id.md)                             | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
 | [name](name.md)                         | 0..1 <br/> [String](String.md)             | A text name of this instance                                                     | [Entity](Entity.md) |
 | [description](description.md)           | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md) |
@@ -184,11 +194,13 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 | [Policy](Policy.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Rule](Rule.md)                                                   | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Permission](Permission.md)                                       | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Prohibition](Prohibition.md)                                     | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Obligation](Obligation.md)                                       | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Recommendation](Recommendation.md)                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Certification](Certification.md)                                 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [RiskControlGroup](RiskControlGroup.md)                           | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [RiskGroup](RiskGroup.md)                                         | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Risk](Risk.md)                                                   | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
@@ -197,9 +209,17 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 | [Action](Action.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [RiskIncident](RiskIncident.md)                                   | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Impact](Impact.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [Capability](Capability.md)                                       | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AiSystem](AiSystem.md)                                           | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AiAgent](AiAgent.md)                                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AiTask](AiTask.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [Purpose](Purpose.md)                                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
+| [Domain](Domain.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AISubject](AISubject.md)                                         | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AIOperator](AIOperator.md)                                       | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [AIDeveloper](AIDeveloper.md)                                     | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
@@ -207,10 +227,6 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 | [AIUser](AIUser.md)                                               | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Stakeholder](Stakeholder.md)                                     | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [StakeholderGroup](StakeholderGroup.md)                           | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
-| [Capability](Capability.md)                                       | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [Adapter](Adapter.md)                                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
 | [ControlActivity](ControlActivity.md)                             | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | range | [Taxonomy](Taxonomy.md) |
@@ -224,7 +240,7 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -243,7 +259,7 @@ URI: [skos:ConceptScheme](http://www.w3.org/2004/02/skos/core#ConceptScheme)
 ```yaml
 name: Taxonomy
 description: A hierachical taxonomy of concepts, with their definitions and relationships.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 abstract: true
 mixin: true
@@ -254,7 +270,8 @@ slots:
 attributes:
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     domain_of:
     - Vocabulary
@@ -289,14 +306,15 @@ class_uri: skos:ConceptScheme
 ```yaml
 name: Taxonomy
 description: A hierachical taxonomy of concepts, with their definitions and relationships.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 abstract: true
 mixin: true
 attributes:
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: Taxonomy
@@ -325,7 +343,7 @@ attributes:
   version:
     name: version
     description: The version of the entity embodied by a specified resource.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:version
     alias: version
@@ -336,11 +354,12 @@ attributes:
     - Taxonomy
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
+    - AiTaskTaxonomy
     range: string
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -359,6 +378,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -370,7 +390,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -383,6 +403,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -391,7 +412,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -404,7 +425,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -416,7 +437,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -427,7 +448,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -438,7 +459,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -450,7 +471,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -464,7 +485,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -478,7 +499,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -492,7 +513,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -507,7 +528,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -522,7 +543,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -535,7 +556,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -549,4 +570,4 @@ class_uri: skos:ConceptScheme
 
 ````
 
-</details>
+</details></div>

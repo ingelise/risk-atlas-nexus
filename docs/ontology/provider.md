@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: provider
 
 _A relationship to the Organization instance that provides this instance._
+
+<div data-search-exclude markdown="1">
 
 URI: [schema:provider](http://schema.org/provider)
 Alias: provider
@@ -32,7 +39,7 @@ Alias: provider
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: provider
 ```yaml
 name: provider
 description: A relationship to the Organization instance that provides this instance.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: schema:provider
 alias: provider
@@ -56,5 +63,5 @@ domain_of:
 range: Organization
 
 ```
-</details>
+</details></div>
 ```

@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: AiSystem
 
 _A compound AI System composed of one or more AI capablities. ChatGPT is an example of an AI system which deploys multiple GPT AI models._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
@@ -63,12 +70,21 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-        AiSystem --> "0..1" AISubject : hasAISubject
+        AiSystem --> "*" AISubject : hasAISubject
         click AISubject href "../AISubject/"
 
 
 
       AiSystem : hasAIUser
+
+
+
+
+
+        AiSystem --> "*" AIUser : hasAIUser
+        click AIUser href "../AIUser/"
+
+
 
       AiSystem : hasCapability
 
@@ -133,7 +149,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-        AiSystem --> "0..1" Purpose : hasPurpose
+        AiSystem --> "*" Purpose : hasPurpose
         click Purpose href "../Purpose/"
 
 
@@ -149,13 +165,24 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
+      AiSystem : hasRule
+
+
+
+
+
+        AiSystem --> "*" Rule : hasRule
+        click Rule href "../Rule/"
+
+
+
       AiSystem : hasStakeholder
 
 
 
 
 
-        AiSystem --> "0..1" Stakeholder : hasStakeholder
+        AiSystem --> "*" Stakeholder : hasStakeholder
         click Stakeholder href "../Stakeholder/"
 
 
@@ -168,8 +195,8 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-        AiSystem --> "*" Adapter : implementedByAdapter
-        click Adapter href "../Adapter/"
+        AiSystem --> "*" Any : implementedByAdapter
+        click Any href "../Any/"
 
 
 
@@ -326,8 +353,8 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-        AiSystem --> "*" AiTask : requiredByTask
-        click AiTask href "../AiTask/"
+        AiSystem --> "*" Any : requiredByTask
+        click Any href "../Any/"
 
 
 
@@ -337,8 +364,8 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 
 
-        AiSystem --> "*" Capability : requiresCapability
-        click Capability href "../Capability/"
+        AiSystem --> "*" Any : requiresCapability
+        click Any href "../Any/"
 
 
 
@@ -365,46 +392,47 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 ## Slots
 
-| Name                                              | Cardinality and Range                                                                                        | Description                                                                      | Inheritance                            |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------- |
-| [isComposedOf](isComposedOf.md)                   | \* <br/> [BaseAi](BaseAi.md)                                                                                 | Relationship indicating the AI components from which a complete AI system is ... | direct                                 |
-| [hasEuAiSystemType](hasEuAiSystemType.md)         | 0..1 <br/> [AiSystemType](AiSystemType.md)                                                                   | The type of system as defined by the EU AI Act                                   | direct                                 |
-| [hasEuRiskCategory](hasEuRiskCategory.md)         | 0..1 <br/> [EuAiRiskCategory](EuAiRiskCategory.md)                                                           | The risk category of an AI system as defined by the EU AI Act                    | direct                                 |
-| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)                                                                         | Indicates the technical capabilities this entry possesses                        | direct                                 |
-| [isAppliedWithinDomain](isAppliedWithinDomain.md) | \* <br/> [Domain](Domain.md)                                                                                 | Specifies the domain an AI system is used within                                 | direct                                 |
-| [isUsedWithinLocality](isUsedWithinLocality.md)   | \* <br/> [LocalityOfUse](LocalityOfUse.md)                                                                   | Specifies the domain an AI system is used within                                 | direct                                 |
-| [hasPurpose](hasPurpose.md)                       | 0..1 <br/> [Purpose](Purpose.md)                                                                             | Indicates the purpose of an entity, e                                            | direct                                 |
-| [hasStakeholder](hasStakeholder.md)               | 0..1 <br/> [Stakeholder](Stakeholder.md)                                                                     | Indicates stakeholders of an AI system or component                              | direct                                 |
-| [isDeployedBy](isDeployedBy.md)                   | 0..1 <br/> [AIDeployer](AIDeployer.md)                                                                       | Indicates the deployer of an AI system or component                              | direct                                 |
-| [isDevelopedBy](isDevelopedBy.md)                 | 0..1 <br/> [AIDeveloper](AIDeveloper.md)                                                                     | Indicates the developer of an AI system or component                             | direct                                 |
-| [hasAISubject](hasAISubject.md)                   | 0..1 <br/> [AISubject](AISubject.md)                                                                         | Indicates the subjects of an AI system                                           | direct                                 |
-| [hasAIUser](hasAIUser.md)                         | 0..1 <br/> [String](String.md)                                                                               | Indicate the end-user of an AI system                                            | direct                                 |
-| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a risk                                 | direct                                 |
-| [producer](producer.md)                           | 0..1 <br/> [Organization](Organization.md)                                                                   | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                    |
-| [hasModelCard](hasModelCard.md)                   | \* <br/> [String](String.md)                                                                                 | A relationship to model card references                                          | [BaseAi](BaseAi.md)                    |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                                                                   | Indicates documentation associated with an entity                                | [Entry](Entry.md), [BaseAi](BaseAi.md) |
-| [hasLicense](hasLicense.md)                       | 0..1 <br/> [License](License.md)                                                                             | Indicates licenses associated with a resource                                    | [BaseAi](BaseAi.md)                    |
-| [performsTask](performsTask.md)                   | \* <br/> [AiTask](AiTask.md)                                                                                 | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)                    |
-| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [AiProvider](AiProvider.md)                                                                       | Indicates provider of an AI system or component                                  | [BaseAi](BaseAi.md)                    |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                                                           | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                      |
-| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                                                                       | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                      |
-| [isPartOf](isPartOf.md)                           | 0..1 <br/> [String](String.md)                                                                               | A relationship where an entity is part of another entity                         | [Entry](Entry.md)                      |
-| [requiredByTask](requiredByTask.md)               | \* <br/> [AiTask](AiTask.md)                                                                                 | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                      |
-| [requiresCapability](requiresCapability.md)       | \* <br/> [Capability](Capability.md)                                                                         | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                      |
-| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Adapter](Adapter.md)                                                                               | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                      |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)                                                                               | The entry type                                                                   | [Entry](Entry.md)                      |
-| [id](id.md)                                       | 1 <br/> [String](String.md)                                                                                  | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                    |
-| [name](name.md)                                   | 0..1 <br/> [String](String.md)                                                                               | A text name of this instance                                                     | [Entity](Entity.md)                    |
-| [description](description.md)                     | 0..1 <br/> [String](String.md)                                                                               | The description of an entity                                                     | [Entity](Entity.md)                    |
-| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                                                                                     | An optional URL associated with this instance                                    | [Entity](Entity.md)                    |
-| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was created                                         | [Entity](Entity.md)                    |
-| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was most recently modified                          | [Entity](Entity.md)                    |
-| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                    |
-| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                    |
-| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                                                                                       | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                    |
-| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                    |
-| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                    |
-| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                                                                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                    |
+| Name                                              | Cardinality and Range                              | Description                                                                      | Inheritance                            |
+| ------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
+| [isComposedOf](isComposedOf.md)                   | \* <br/> [BaseAi](BaseAi.md)                       | Relationship indicating the AI components from which a complete AI system is ... | direct                                 |
+| [hasEuAiSystemType](hasEuAiSystemType.md)         | 0..1 <br/> [AiSystemType](AiSystemType.md)         | The type of system as defined by the EU AI Act                                   | direct                                 |
+| [hasEuRiskCategory](hasEuRiskCategory.md)         | 0..1 <br/> [EuAiRiskCategory](EuAiRiskCategory.md) | The risk category of an AI system as defined by the EU AI Act                    | direct                                 |
+| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)               | Indicates the technical capabilities this entry possesses                        | direct                                 |
+| [isAppliedWithinDomain](isAppliedWithinDomain.md) | \* <br/> [Domain](Domain.md)                       | Specifies the domain an AI system is used within                                 | direct                                 |
+| [isUsedWithinLocality](isUsedWithinLocality.md)   | \* <br/> [LocalityOfUse](LocalityOfUse.md)         | Specifies the domain an AI system is used within                                 | direct                                 |
+| [hasPurpose](hasPurpose.md)                       | \* <br/> [Purpose](Purpose.md)                     | Indicates the purpose of an entity, e                                            | direct                                 |
+| [hasStakeholder](hasStakeholder.md)               | \* <br/> [Stakeholder](Stakeholder.md)             | Indicates stakeholders of an AI system or component                              | direct                                 |
+| [isDeployedBy](isDeployedBy.md)                   | 0..1 <br/> [AIDeployer](AIDeployer.md)             | Indicates the deployer of an AI system or component                              | direct                                 |
+| [isDevelopedBy](isDevelopedBy.md)                 | 0..1 <br/> [AIDeveloper](AIDeveloper.md)           | Indicates the developer of an AI system or component                             | direct                                 |
+| [hasAISubject](hasAISubject.md)                   | \* <br/> [AISubject](AISubject.md)                 | Indicates the subjects of an AI system                                           | direct                                 |
+| [hasAIUser](hasAIUser.md)                         | \* <br/> [AIUser](AIUser.md)                       | Indicate the end-user of an AI system                                            | direct                                 |
+| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Risk](Risk.md)                           | A relationship where an entity relates to a risk                                 | direct                                 |
+| [producer](producer.md)                           | 0..1 <br/> [Organization](Organization.md)         | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                    |
+| [hasModelCard](hasModelCard.md)                   | \* <br/> [String](String.md)                       | A relationship to model card references                                          | [BaseAi](BaseAi.md)                    |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)         | Indicates documentation associated with an entity                                | [BaseAi](BaseAi.md), [Entry](Entry.md) |
+| [hasLicense](hasLicense.md)                       | 0..1 <br/> [License](License.md)                   | Indicates licenses associated with a resource                                    | [BaseAi](BaseAi.md)                    |
+| [performsTask](performsTask.md)                   | \* <br/> [AiTask](AiTask.md)                       | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)                    |
+| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [AiProvider](AiProvider.md)             | Indicates provider of an AI system or component                                  | [BaseAi](BaseAi.md)                    |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                 | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                      |
+| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)             | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                      |
+| [isPartOf](isPartOf.md)                           | 0..1 <br/> [String](String.md)                     | A relationship where an entity is part of another entity                         | [Entry](Entry.md)                      |
+| [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                             | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                      |
+| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                             | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                      |
+| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                             | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                      |
+| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                           | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                      |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                     | The entry type or class designation specifying what kind of entry this is        | [Entry](Entry.md)                      |
+| [id](id.md)                                       | 1 <br/> [String](String.md)                        | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                    |
+| [name](name.md)                                   | 0..1 <br/> [String](String.md)                     | A text name of this instance                                                     | [Entity](Entity.md)                    |
+| [description](description.md)                     | 0..1 <br/> [String](String.md)                     | The description of an entity                                                     | [Entity](Entity.md)                    |
+| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                           | An optional URL associated with this instance                                    | [Entity](Entity.md)                    |
+| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                         | The date on which the entity was created                                         | [Entity](Entity.md)                    |
+| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                         | The date on which the entity was most recently modified                          | [Entity](Entity.md)                    |
+| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                             | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                    |
+| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                             | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                    |
+| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                             | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                    |
+| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                    |
+| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                    |
+| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                             | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                    |
 
 ## Mixin Usage
 
@@ -413,16 +441,20 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
 ## Usages
 
-| used by                 | used in                   | type   | used                    |
-| ----------------------- | ------------------------- | ------ | ----------------------- |
-| [AiSystem](AiSystem.md) | [hasAIUser](hasAIUser.md) | domain | [AiSystem](AiSystem.md) |
-| [AiAgent](AiAgent.md)   | [hasAIUser](hasAIUser.md) | domain | [AiSystem](AiSystem.md) |
+| used by                 | used in                             | type   | used                    |
+| ----------------------- | ----------------------------------- | ------ | ----------------------- |
+| [AiSystem](AiSystem.md) | [hasCapability](hasCapability.md)   | domain | [AiSystem](AiSystem.md) |
+| [AiSystem](AiSystem.md) | [hasAIUser](hasAIUser.md)           | domain | [AiSystem](AiSystem.md) |
+| [AiSystem](AiSystem.md) | [hasRelatedRisk](hasRelatedRisk.md) | domain | [AiSystem](AiSystem.md) |
+| [AiAgent](AiAgent.md)   | [hasCapability](hasCapability.md)   | domain | [AiSystem](AiSystem.md) |
+| [AiAgent](AiAgent.md)   | [hasAIUser](hasAIUser.md)           | domain | [AiSystem](AiSystem.md) |
+| [AiAgent](AiAgent.md)   | [hasRelatedRisk](hasRelatedRisk.md) | domain | [AiSystem](AiSystem.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -442,7 +474,7 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 name: AiSystem
 description: A compound AI System composed of one or more AI capablities. ChatGPT
   is an example of an AI system which deploys multiple GPT AI models.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
 mixin: true
 mixins:
@@ -467,6 +499,14 @@ slot_usage:
     description: Relationship indicating the AI components from which a complete AI
       system is composed.
     range: BaseAi
+  hasCapability:
+    name: hasCapability
+    domain: AiSystem
+    inverse: possessedByAi
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: AiSystem
+    range: Risk
 class_uri: airo:AISystem
 
 ````
@@ -479,7 +519,7 @@ class_uri: airo:AISystem
 name: AiSystem
 description: A compound AI System composed of one or more AI capablities. ChatGPT
   is an example of an AI system which deploys multiple GPT AI models.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
 mixin: true
 mixins:
@@ -490,24 +530,33 @@ slot_usage:
     description: Relationship indicating the AI components from which a complete AI
       system is composed.
     range: BaseAi
+  hasCapability:
+    name: hasCapability
+    domain: AiSystem
+    inverse: possessedByAi
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: AiSystem
+    range: Risk
 attributes:
   isComposedOf:
     name: isComposedOf
     description: Relationship indicating the AI components from which a complete AI
       system is composed.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: isComposedOf
     owner: AiSystem
     domain_of:
     - AiSystem
+    - AiEval
     range: BaseAi
     multivalued: true
     inlined: false
   hasEuAiSystemType:
     name: hasEuAiSystemType
     description: The type of system as defined by the EU AI Act.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasEuAiSystemType
     owner: AiSystem
@@ -517,7 +566,7 @@ attributes:
   hasEuRiskCategory:
     name: hasEuRiskCategory
     description: The risk category of an AI system as defined by the EU AI Act.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasEuRiskCategory
     owner: AiSystem
@@ -529,8 +578,9 @@ attributes:
     description: 'Indicates the technical capabilities this entry possesses.
 
       '
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    domain: AiSystem
     slot_uri: tech:hasCapability
     alias: hasCapability
     owner: AiSystem
@@ -538,13 +588,14 @@ attributes:
     - AiSystem
     - Adapter
     - LLMIntrinsic
+    inverse: possessedByAi
     range: Capability
     multivalued: true
     inlined: false
   isAppliedWithinDomain:
     name: isAppliedWithinDomain
     description: Specifies the domain an AI system is used within.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isAppliedWithinDomain
     alias: isAppliedWithinDomain
@@ -557,12 +608,13 @@ attributes:
   isUsedWithinLocality:
     name: isUsedWithinLocality
     description: Specifies the domain an AI system is used within.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isUsedWithinLocality
     alias: isUsedWithinLocality
     owner: AiSystem
     domain_of:
+    - RiskConcept
     - AiSystem
     range: LocalityOfUse
     multivalued: true
@@ -570,7 +622,7 @@ attributes:
   hasPurpose:
     name: hasPurpose
     description: Indicates the purpose of an entity, e.g. AI system, components.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasPurpose
     alias: hasPurpose
@@ -578,10 +630,12 @@ attributes:
     domain_of:
     - AiSystem
     range: Purpose
+    multivalued: true
+    inlined: false
   hasStakeholder:
     name: hasStakeholder
     description: Indicates stakeholders of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasStakeholder
     alias: hasStakeholder
@@ -589,10 +643,11 @@ attributes:
     domain_of:
     - AiSystem
     range: Stakeholder
+    multivalued: true
   isDeployedBy:
     name: isDeployedBy
     description: Indicates the deployer of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isDeployedBy
     alias: isDeployedBy
@@ -603,7 +658,7 @@ attributes:
   isDevelopedBy:
     name: isDevelopedBy
     description: Indicates the developer of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isDevelopedBy
     alias: isDevelopedBy
@@ -614,7 +669,7 @@ attributes:
   hasAISubject:
     name: hasAISubject
     description: Indicates the subjects of an AI system
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasAISubject
     alias: hasAISubject
@@ -622,10 +677,11 @@ attributes:
     domain_of:
     - AiSystem
     range: AISubject
+    multivalued: true
   hasAIUser:
     name: hasAIUser
     description: Indicate the end-user of an AI system.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: AiSystem
     slot_uri: airo:hasAiUser
@@ -633,13 +689,14 @@ attributes:
     owner: AiSystem
     domain_of:
     - AiSystem
-    range: string
+    range: AIUser
+    multivalued: true
   hasRelatedRisk:
     name: hasRelatedRisk
     description: A relationship where an entity relates to a risk
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: AiSystem
     alias: hasRelatedRisk
     owner: AiSystem
     domain_of:
@@ -655,13 +712,10 @@ attributes:
     range: Risk
     multivalued: true
     inlined: false
-    any_of:
-    - range: RiskConcept
-    - range: Term
   producer:
     name: producer
     description: A relationship to the Organization instance which produces this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: producer
     owner: AiSystem
@@ -671,7 +725,7 @@ attributes:
   hasModelCard:
     name: hasModelCard
     description: A relationship to model card references.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasModelCard
     owner: AiSystem
@@ -684,7 +738,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -703,6 +757,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -714,7 +769,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -727,6 +782,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -734,7 +790,7 @@ attributes:
   performsTask:
     name: performsTask
     description: relationship indicating the AI tasks an AI model can perform.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: performsTask
     owner: AiSystem
@@ -746,7 +802,7 @@ attributes:
   isProvidedBy:
     name: isProvidedBy
     description: Indicates provider of an AI system or component.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isProvidedBy
     alias: isProvidedBy
@@ -758,7 +814,7 @@ attributes:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -776,15 +832,17 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   isDefinedByVocabulary:
     name: isDefinedByVocabulary
     description: A relationship where a term or a term group is defined by a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByVocabulary
@@ -798,7 +856,7 @@ attributes:
   isPartOf:
     name: isPartOf
     description: A relationship where an entity is part of another entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isPartOf
@@ -806,28 +864,30 @@ attributes:
     domain_of:
     - Entry
     - Risk
-    - LargeLanguageModel
-    - Stakeholder
     - CapabilityGroup
+    - LargeLanguageModel
+    - AiTaskGroup
+    - Stakeholder
     range: string
   requiredByTask:
     name: requiredByTask
     description: Indicates that this entry is required to perform a specific AI task.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    domain: Entry
     alias: requiredByTask
     owner: AiSystem
     domain_of:
     - Entry
     - Capability
     inverse: requiresCapability
-    range: AiTask
+    range: Any
     multivalued: true
     inlined: false
   requiresCapability:
     name: requiresCapability
     description: Indicates that this entry requires a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: requiresCapability
@@ -838,7 +898,7 @@ attributes:
     - AiTask
     - Adapter
     inverse: requiredByTask
-    range: Capability
+    range: Any
     multivalued: true
     inlined: false
   implementedByAdapter:
@@ -846,7 +906,7 @@ attributes:
     description: Indicates that this capability is implemented by a specific adapter.
       This relationship distinguishes the abstract capability (what can be done) from
       the technical implementation mechanism (how it is added/extended via adapters).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: implementedByAdapter
@@ -855,13 +915,31 @@ attributes:
     - Entry
     - Capability
     inverse: implementsCapability
-    range: Adapter
+    range: Any
+    multivalued: true
+    inlined: false
+  hasRule:
+    name: hasRule
+    description: Specifying applicability or inclusion of a rule within specified
+      context.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasRule
+    alias: hasRule
+    owner: AiSystem
+    domain_of:
+    - Entry
+    - LLMQuestionPolicy
+    - Rule
+    - Requirement
+    range: Rule
     multivalued: true
     inlined: false
   type:
     name: type
-    description: The entry type.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The entry type or class designation specifying what kind of entry
+      this is.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: AiSystem
@@ -891,7 +969,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -904,7 +982,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -916,7 +994,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -927,7 +1005,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -938,7 +1016,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -950,7 +1028,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -964,7 +1042,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -978,7 +1056,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -992,7 +1070,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -1007,7 +1085,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -1022,7 +1100,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -1035,7 +1113,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -1049,4 +1127,4 @@ class_uri: airo:AISystem
 
 ````
 
-</details>
+</details></div>

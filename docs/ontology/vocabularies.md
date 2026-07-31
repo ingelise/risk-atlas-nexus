@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: vocabularies
 
 _A list of vocabularies_
 
-URI: [nexus:vocabularies](https://ibm.github.io/ai-atlas-nexus/ontology/vocabularies)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:vocabularies](https://w3id.org/ai-atlas-nexus/vocabularies)
 Alias: vocabularies
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: vocabularies
 
 ## Properties
 
-- Range: [Vocabulary](Vocabulary.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                       |
+| --------- | --------------------------- |
+| Range     | [Vocabulary](Vocabulary.md) |
+| Domain Of | [Container](Container.md)   |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: vocabularies
 ```yaml
 name: vocabularies
 description: A list of vocabularies
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: vocabularies
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

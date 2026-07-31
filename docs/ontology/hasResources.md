@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasResources
 
 _Links to relevant resources, such as repositories or papers related to the benchmark._
 
-URI: [nexus:hasResources](https://ibm.github.io/ai-atlas-nexus/ontology/hasResources)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasResources](https://w3id.org/ai-atlas-nexus/hasResources)
 Alias: hasResources
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasResources
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasResources
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasResources
 name: hasResources
 description: Links to relevant resources, such as repositories or papers related to
   the benchmark.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasResources
 domain_of:
@@ -59,5 +66,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

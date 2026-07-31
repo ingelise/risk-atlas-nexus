@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Capability
 
 _A specific AI capability or ability, such as reading comprehension, logical reasoning, or code generation. Aligned with the W3C DPV AI extension dpv-ai:Capability, representing what an AI technology is capable of achieving or providing._
 
 _Capabilities are distinct from: (1) the intended purpose for which the technology is designed, (2) the actual tasks performed in a specific deployment context, and (3) the technical implementation mechanisms (intrinsics, adapters) that enable the capability._
+
+<div data-search-exclude markdown="1">
 
 URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
@@ -62,6 +69,28 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
         Capability --> "*" Documentation : hasDocumentation
         click Documentation href "../Documentation/"
+
+
+
+      Capability : hasJurisdiction
+
+
+
+
+
+        Capability --> "*" Jurisdiction : hasJurisdiction
+        click Jurisdiction href "../Jurisdiction/"
+
+
+
+      Capability : hasRule
+
+
+
+
+
+        Capability --> "*" Rule : hasRule
+        click Rule href "../Rule/"
 
 
 
@@ -163,8 +192,8 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-        Capability --> "*" Capability : requiresCapability
-        click Capability href "../Capability/"
+        Capability --> "*" Any : requiresCapability
+        click Any href "../Any/"
 
 
 
@@ -193,12 +222,13 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 | ------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------- |
 | [requiredByTask](requiredByTask.md)               | \* <br/> [AiTask](AiTask.md)                     | Indicates that this capability is required to perform a specific AI task         | direct                                   |
 | [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Adapter](Adapter.md)                   | Indicates that this capability is implemented by a specific adapter              | direct                                   |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)               | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md), [Concept](Concept.md) |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)               | A relationship where a concept or a concept group is defined by a taxonomy       | [Concept](Concept.md), [Entry](Entry.md) |
 | [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)           | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                        |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Entry](Entry.md), [Concept](Concept.md) |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Concept](Concept.md), [Entry](Entry.md) |
 | [isPartOf](isPartOf.md)                           | 0..1 <br/> [CapabilityGroup](CapabilityGroup.md) | A relationship where a capability is part of a capability group                  | [Entry](Entry.md)                        |
-| [requiresCapability](requiresCapability.md)       | \* <br/> [Capability](Capability.md)             | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                        |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)                   | The entry type                                                                   | [Entry](Entry.md), [Concept](Concept.md) |
+| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                           | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                        |
+| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                         | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                        |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                   | The entry type or class designation specifying what kind of entry this is        | [Concept](Concept.md), [Entry](Entry.md) |
 | [id](id.md)                                       | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
 | [name](name.md)                                   | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md)                      |
 | [description](description.md)                     | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md)                      |
@@ -211,36 +241,28 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 | [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
 | [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
 | [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
+| [hasJurisdiction](hasJurisdiction.md)             | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
 
 ## Usages
 
-| used by                                     | used in                                         | type   | used                        |
-| ------------------------------------------- | ----------------------------------------------- | ------ | --------------------------- |
-| [Entry](Entry.md)                           | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [Term](Term.md)                             | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [Principle](Principle.md)                   | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [Certification](Certification.md)           | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [Risk](Risk.md)                             | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [AiSystem](AiSystem.md)                     | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
-| [AiSystem](AiSystem.md)                     | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [AiAgent](AiAgent.md)                       | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
-| [AiAgent](AiAgent.md)                       | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [LargeLanguageModel](LargeLanguageModel.md) | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [AiTask](AiTask.md)                         | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [CapabilityGroup](CapabilityGroup.md)       | [hasPart](hasPart.md)                           | range  | [Capability](Capability.md) |
-| [Capability](Capability.md)                 | [implementedByAdapter](implementedByAdapter.md) | domain | [Capability](Capability.md) |
-| [Capability](Capability.md)                 | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [Adapter](Adapter.md)                       | [implementsCapability](implementsCapability.md) | range  | [Capability](Capability.md) |
-| [Adapter](Adapter.md)                       | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
-| [Adapter](Adapter.md)                       | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
-| [LLMIntrinsic](LLMIntrinsic.md)             | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
-| [LLMIntrinsic](LLMIntrinsic.md)             | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
+| used by                               | used in                                         | type   | used                        |
+| ------------------------------------- | ----------------------------------------------- | ------ | --------------------------- |
+| [CapabilityGroup](CapabilityGroup.md) | [hasPart](hasPart.md)                           | range  | [Capability](Capability.md) |
+| [Capability](Capability.md)           | [requiredByTask](requiredByTask.md)             | domain | [Capability](Capability.md) |
+| [Capability](Capability.md)           | [implementedByAdapter](implementedByAdapter.md) | domain | [Capability](Capability.md) |
+| [AiSystem](AiSystem.md)               | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
+| [AiAgent](AiAgent.md)                 | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
+| [AiTask](AiTask.md)                   | [requiresCapability](requiresCapability.md)     | range  | [Capability](Capability.md) |
+| [Adapter](Adapter.md)                 | [implementsCapability](implementsCapability.md) | range  | [Capability](Capability.md) |
+| [Adapter](Adapter.md)                 | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)       | [hasCapability](hasCapability.md)               | range  | [Capability](Capability.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)       | [implementsCapability](implementsCapability.md) | range  | [Capability](Capability.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -267,7 +289,7 @@ Capabilities are distinct from: (1) the intended purpose for which the technolog
 is designed, (2) the actual tasks performed in a specific deployment context, and
 (3) the technical implementation mechanisms (intrinsics, adapters) that enable the
 capability.'
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 broad_mappings:
 
 - tech:Capability
@@ -288,6 +310,7 @@ broad_mappings:
   AI task. This links abstract capabilities (technical abilities) to concrete
   tasks (application-level operations). An AI system with this capability can
   perform tasks that require it.
+  domain: Capability
   range: AiTask
   implementedByAdapter:
   name: implementedByAdapter
@@ -314,7 +337,7 @@ description: 'A specific AI capability or ability, such as reading comprehension
   is designed, (2) the actual tasks performed in a specific deployment context, and
   (3) the technical implementation mechanisms (intrinsics, adapters) that enable the
   capability.'
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 broad_mappings:
 - tech:Capability
 is_a: Entry
@@ -331,6 +354,7 @@ slot_usage:
       AI task. This links abstract capabilities (technical abilities) to concrete
       tasks (application-level operations). An AI system with this capability can
       perform tasks that require it.
+    domain: Capability
     range: AiTask
   implementedByAdapter:
     name: implementedByAdapter
@@ -346,8 +370,9 @@ attributes:
       AI task. This links abstract capabilities (technical abilities) to concrete
       tasks (application-level operations). An AI system with this capability can
       perform tasks that require it.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    domain: Capability
     alias: requiredByTask
     owner: Capability
     domain_of:
@@ -362,7 +387,7 @@ attributes:
     description: Indicates that this capability is implemented by a specific adapter.
       This relationship distinguishes the abstract capability (what can be done) from
       the technical implementation mechanism (how it is added/extended via adapters).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Capability
     alias: implementedByAdapter
@@ -378,7 +403,7 @@ attributes:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -396,15 +421,17 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   isDefinedByVocabulary:
     name: isDefinedByVocabulary
     description: A relationship where a term or a term group is defined by a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByVocabulary
@@ -418,7 +445,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -437,6 +464,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -448,7 +476,7 @@ attributes:
   isPartOf:
     name: isPartOf
     description: A relationship where a capability is part of a capability group
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isPartOf
@@ -456,14 +484,15 @@ attributes:
     domain_of:
     - Entry
     - Risk
-    - LargeLanguageModel
-    - Stakeholder
     - CapabilityGroup
+    - LargeLanguageModel
+    - AiTaskGroup
+    - Stakeholder
     range: CapabilityGroup
   requiresCapability:
     name: requiresCapability
     description: Indicates that this entry requires a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: requiresCapability
@@ -474,13 +503,31 @@ attributes:
     - AiTask
     - Adapter
     inverse: requiredByTask
-    range: Capability
+    range: Any
+    multivalued: true
+    inlined: false
+  hasRule:
+    name: hasRule
+    description: Specifying applicability or inclusion of a rule within specified
+      context.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasRule
+    alias: hasRule
+    owner: Capability
+    domain_of:
+    - Entry
+    - LLMQuestionPolicy
+    - Rule
+    - Requirement
+    range: Rule
     multivalued: true
     inlined: false
   type:
     name: type
-    description: The entry type.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The entry type or class designation specifying what kind of entry
+      this is.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: Capability
@@ -510,7 +557,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -523,7 +570,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -535,7 +582,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -546,7 +593,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -557,7 +604,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -569,7 +616,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -583,7 +630,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -597,7 +644,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -611,7 +658,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -626,7 +673,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -641,7 +688,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -654,7 +701,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -664,8 +711,22 @@ attributes:
     range: Any
     multivalued: true
     inlined: false
+  hasJurisdiction:
+    name: hasJurisdiction
+    description: The legal or political jurisdiction(s) in which this concept applies,
+      expressed as ISO 3166-1 country codes.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasJurisdiction
+    alias: hasJurisdiction
+    owner: Capability
+    domain_of:
+    - Concept
+    range: Jurisdiction
+    multivalued: true
+    inlined: false
 class_uri: ai:Capability
 
 ````
 
-</details>
+</details></div>

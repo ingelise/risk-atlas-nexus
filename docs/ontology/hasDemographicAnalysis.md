@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasDemographicAnalysis
 
 _How the benchmark evaluates performance across different demographic groups (e.g., gender, race)._
 
-URI: [nexus:hasDemographicAnalysis](https://ibm.github.io/ai-atlas-nexus/ontology/hasDemographicAnalysis)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasDemographicAnalysis](https://w3id.org/ai-atlas-nexus/hasDemographicAnalysis)
 Alias: hasDemographicAnalysis
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasDemographicAnalysis
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasDemographicAnalysis
 name: hasDemographicAnalysis
 description: How the benchmark evaluates performance across different demographic
   groups (e.g., gender, race).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasDemographicAnalysis
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

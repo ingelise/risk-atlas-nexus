@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: LLMIntrinsic
 
 _A capability that can be invoked through a well-defined API that is reasonably stable and independent of how the LLM intrinsic itself is implemented._
+
+<div data-search-exclude markdown="1">
 
 URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
@@ -89,8 +96,8 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-        LLMIntrinsic --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk/"
+        LLMIntrinsic --> "*" RiskConcept : hasRelatedRisk
+        click RiskConcept href "../RiskConcept/"
 
 
 
@@ -105,6 +112,17 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
+      LLMIntrinsic : hasRule
+
+
+
+
+
+        LLMIntrinsic --> "*" Rule : hasRule
+        click Rule href "../Rule/"
+
+
+
       LLMIntrinsic : id
 
       LLMIntrinsic : implementedByAdapter
@@ -113,8 +131,19 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-        LLMIntrinsic --> "*" Adapter : implementedByAdapter
-        click Adapter href "../Adapter/"
+        LLMIntrinsic --> "*" Any : implementedByAdapter
+        click Any href "../Any/"
+
+
+
+      LLMIntrinsic : implementsCapability
+
+
+
+
+
+        LLMIntrinsic --> "*" Capability : implementsCapability
+        click Capability href "../Capability/"
 
 
 
@@ -183,8 +212,8 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-        LLMIntrinsic --> "*" AiTask : requiredByTask
-        click AiTask href "../AiTask/"
+        LLMIntrinsic --> "*" Any : requiredByTask
+        click Any href "../Any/"
 
 
 
@@ -194,8 +223,8 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 
 
-        LLMIntrinsic --> "*" Capability : requiresCapability
-        click Capability href "../Capability/"
+        LLMIntrinsic --> "*" Any : requiresCapability
+        click Any href "../Any/"
 
 
 
@@ -220,45 +249,49 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 
 ## Slots
 
-| Name                                              | Cardinality and Range                                                                                        | Description                                                                      | Inheritance         |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
-| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a risk                                 | direct              |
-| [hasRelatedTerm](hasRelatedTerm.md)               | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md)                                    | A relationship where an entity relates to a term                                 | direct              |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                                                                   | Indicates documentation associated with an entity                                | direct              |
-| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                                                                       | A relationship where a term or a term group is defined by a vocabulary           | direct              |
-| [hasAdapter](hasAdapter.md)                       | \* <br/> [Adapter](Adapter.md)                                                                               | The Adapter for the intrinsic                                                    | direct              |
-| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)                                                                         | Indicates the technical capabilities this entry possesses                        | direct              |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                                                           | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)   |
-| [isPartOf](isPartOf.md)                           | 0..1 <br/> [String](String.md)                                                                               | A relationship where an entity is part of another entity                         | [Entry](Entry.md)   |
-| [requiredByTask](requiredByTask.md)               | \* <br/> [AiTask](AiTask.md)                                                                                 | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)   |
-| [requiresCapability](requiresCapability.md)       | \* <br/> [Capability](Capability.md)                                                                         | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)   |
-| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Adapter](Adapter.md)                                                                               | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)   |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)                                                                               | The entry type                                                                   | [Entry](Entry.md)   |
-| [id](id.md)                                       | 1 <br/> [String](String.md)                                                                                  | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
-| [name](name.md)                                   | 0..1 <br/> [String](String.md)                                                                               | A text name of this instance                                                     | [Entity](Entity.md) |
-| [description](description.md)                     | 0..1 <br/> [String](String.md)                                                                               | The description of an entity                                                     | [Entity](Entity.md) |
-| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                                                                                     | An optional URL associated with this instance                                    | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was created                                         | [Entity](Entity.md) |
-| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
-| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
-| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
-| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                                                                                       | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
-| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                                                                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| Name                                              | Cardinality and Range                                                     | Description                                                                      | Inheritance         |
+| ------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------- |
+| [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [RiskConcept](RiskConcept.md)                                    | A relationship where an entity relates to a risk                                 | direct              |
+| [hasRelatedTerm](hasRelatedTerm.md)               | \* <br/> [RiskConcept](RiskConcept.md)&nbsp;or&nbsp;<br />[Term](Term.md) | A relationship where an entity relates to a term                                 | direct              |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                                | Indicates documentation associated with an entity                                | direct              |
+| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                                    | A relationship where a term or a term group is defined by a vocabulary           | direct              |
+| [hasAdapter](hasAdapter.md)                       | \* <br/> [Adapter](Adapter.md)                                            | The Adapter for the intrinsic                                                    | direct              |
+| [hasCapability](hasCapability.md)                 | \* <br/> [Capability](Capability.md)                                      | Indicates the technical capabilities this entry possesses                        | direct              |
+| [implementsCapability](implementsCapability.md)   | \* <br/> [Capability](Capability.md)                                      | Indicates that this entity implements a specific capability                      | direct              |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                        | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)   |
+| [isPartOf](isPartOf.md)                           | 0..1 <br/> [String](String.md)                                            | A relationship where an entity is part of another entity                         | [Entry](Entry.md)   |
+| [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                                                    | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)   |
+| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                                                    | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)   |
+| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                                                    | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)   |
+| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                                                  | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)   |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                                            | The entry type or class designation specifying what kind of entry this is        | [Entry](Entry.md)   |
+| [id](id.md)                                       | 1 <br/> [String](String.md)                                               | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
+| [name](name.md)                                   | 0..1 <br/> [String](String.md)                                            | A text name of this instance                                                     | [Entity](Entity.md) |
+| [description](description.md)                     | 0..1 <br/> [String](String.md)                                            | The description of an entity                                                     | [Entity](Entity.md) |
+| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                                                  | An optional URL associated with this instance                                    | [Entity](Entity.md) |
+| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                                                | The date on which the entity was created                                         | [Entity](Entity.md) |
+| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                                                | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
+| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                                                    | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
+| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                                                    | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
+| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                                                    | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
+| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                                                    | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                                                    | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                                                    | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 
 ## Usages
 
-| used by                         | used in                           | type   | used                            |
-| ------------------------------- | --------------------------------- | ------ | ------------------------------- |
-| [Container](Container.md)       | [llmintrinsics](llmintrinsics.md) | range  | [LLMIntrinsic](LLMIntrinsic.md) |
-| [LLMIntrinsic](LLMIntrinsic.md) | [hasAdapter](hasAdapter.md)       | domain | [LLMIntrinsic](LLMIntrinsic.md) |
+| used by                         | used in                                         | type   | used                            |
+| ------------------------------- | ----------------------------------------------- | ------ | ------------------------------- |
+| [Container](Container.md)       | [llmintrinsics](llmintrinsics.md)               | range  | [LLMIntrinsic](LLMIntrinsic.md) |
+| [LLMIntrinsic](LLMIntrinsic.md) | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [LLMIntrinsic](LLMIntrinsic.md) |
+| [LLMIntrinsic](LLMIntrinsic.md) | [hasAdapter](hasAdapter.md)                     | domain | [LLMIntrinsic](LLMIntrinsic.md) |
+| [LLMIntrinsic](LLMIntrinsic.md) | [implementsCapability](implementsCapability.md) | domain | [LLMIntrinsic](LLMIntrinsic.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -278,7 +311,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 name: LLMIntrinsic
 description: A capability that can be invoked through a well-defined API that is reasonably
   stable and independent of how the LLM intrinsic itself is implemented.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
 slots:
 - hasRelatedRisk
@@ -287,6 +320,17 @@ slots:
 - isDefinedByVocabulary
 - hasAdapter
 - hasCapability
+- implementsCapability
+slot_usage:
+  implementsCapability:
+    name: implementsCapability
+    domain: LLMIntrinsic
+    inverse: implementedByIntrinsic
+    range: Capability
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: LLMIntrinsic
+    range: RiskConcept
 class_uri: ai:Capability
 
 ````
@@ -299,15 +343,25 @@ class_uri: ai:Capability
 name: LLMIntrinsic
 description: A capability that can be invoked through a well-defined API that is reasonably
   stable and independent of how the LLM intrinsic itself is implemented.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entry
+slot_usage:
+  implementsCapability:
+    name: implementsCapability
+    domain: LLMIntrinsic
+    inverse: implementedByIntrinsic
+    range: Capability
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: LLMIntrinsic
+    range: RiskConcept
 attributes:
   hasRelatedRisk:
     name: hasRelatedRisk
     description: A relationship where an entity relates to a risk
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: LLMIntrinsic
     alias: hasRelatedRisk
     owner: LLMIntrinsic
     domain_of:
@@ -320,16 +374,13 @@ attributes:
     - BenchmarkMetadataCard
     - Adapter
     - LLMIntrinsic
-    range: Risk
+    range: RiskConcept
     multivalued: true
     inlined: false
-    any_of:
-    - range: RiskConcept
-    - range: Term
   hasRelatedTerm:
     name: hasRelatedTerm
     description: A relationship where an entity relates to a term
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: hasRelatedTerm
@@ -345,7 +396,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -364,6 +415,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -375,7 +427,7 @@ attributes:
   isDefinedByVocabulary:
     name: isDefinedByVocabulary
     description: A relationship where a term or a term group is defined by a vocabulary
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByVocabulary
@@ -389,7 +441,7 @@ attributes:
   hasAdapter:
     name: hasAdapter
     description: The Adapter for the intrinsic
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: LLMIntrinsic
     alias: hasAdapter
@@ -404,7 +456,7 @@ attributes:
     description: 'Indicates the technical capabilities this entry possesses.
 
       '
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: tech:hasCapability
     alias: hasCapability
@@ -416,11 +468,26 @@ attributes:
     range: Capability
     multivalued: true
     inlined: false
+  implementsCapability:
+    name: implementsCapability
+    description: Indicates that this entity implements a specific capability
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    domain: LLMIntrinsic
+    alias: implementsCapability
+    owner: LLMIntrinsic
+    domain_of:
+    - Adapter
+    - LLMIntrinsic
+    inverse: implementedByIntrinsic
+    range: Capability
+    multivalued: true
+    inlined: false
   isDefinedByTaxonomy:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -438,15 +505,17 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   isPartOf:
     name: isPartOf
     description: A relationship where an entity is part of another entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isPartOf
@@ -454,28 +523,30 @@ attributes:
     domain_of:
     - Entry
     - Risk
-    - LargeLanguageModel
-    - Stakeholder
     - CapabilityGroup
+    - LargeLanguageModel
+    - AiTaskGroup
+    - Stakeholder
     range: string
   requiredByTask:
     name: requiredByTask
     description: Indicates that this entry is required to perform a specific AI task.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    domain: Entry
     alias: requiredByTask
     owner: LLMIntrinsic
     domain_of:
     - Entry
     - Capability
     inverse: requiresCapability
-    range: AiTask
+    range: Any
     multivalued: true
     inlined: false
   requiresCapability:
     name: requiresCapability
     description: Indicates that this entry requires a specific capability
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: requiresCapability
@@ -486,7 +557,7 @@ attributes:
     - AiTask
     - Adapter
     inverse: requiredByTask
-    range: Capability
+    range: Any
     multivalued: true
     inlined: false
   implementedByAdapter:
@@ -494,7 +565,7 @@ attributes:
     description: Indicates that this capability is implemented by a specific adapter.
       This relationship distinguishes the abstract capability (what can be done) from
       the technical implementation mechanism (how it is added/extended via adapters).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
     alias: implementedByAdapter
@@ -503,13 +574,31 @@ attributes:
     - Entry
     - Capability
     inverse: implementsCapability
-    range: Adapter
+    range: Any
+    multivalued: true
+    inlined: false
+  hasRule:
+    name: hasRule
+    description: Specifying applicability or inclusion of a rule within specified
+      context.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: dpv:hasRule
+    alias: hasRule
+    owner: LLMIntrinsic
+    domain_of:
+    - Entry
+    - LLMQuestionPolicy
+    - Rule
+    - Requirement
+    range: Rule
     multivalued: true
     inlined: false
   type:
     name: type
-    description: The entry type.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The entry type or class designation specifying what kind of entry
+      this is.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: LLMIntrinsic
@@ -539,7 +628,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -552,7 +641,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -564,7 +653,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -575,7 +664,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -586,7 +675,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -598,7 +687,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -612,7 +701,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -626,7 +715,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -640,7 +729,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -655,7 +744,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -670,7 +759,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -683,7 +772,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -697,4 +786,4 @@ class_uri: ai:Capability
 
 ````
 
-</details>
+</details></div>

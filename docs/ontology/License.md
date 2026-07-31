@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: License
 
 _The general notion of a license which defines terms and grants permissions to users of AI systems, datasets and software._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:License](https://w3id.org/airo#License)
 
@@ -135,13 +142,14 @@ URI: [airo:License](https://w3id.org/airo#License)
 | [Taxonomy](Taxonomy.md)                                 | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [RiskTaxonomy](RiskTaxonomy.md)                         | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [RiskControlGroupTaxonomy](RiskControlGroupTaxonomy.md) | [hasLicense](hasLicense.md)         | range | [License](License.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)             | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [BaseAi](BaseAi.md)                                     | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [AiSystem](AiSystem.md)                                 | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [AiAgent](AiAgent.md)                                   | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [AiModel](AiModel.md)                                   | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [LargeLanguageModel](LargeLanguageModel.md)             | [hasLicense](hasLicense.md)         | range | [License](License.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                     | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [AiProvider](AiProvider.md)                             | [grants_license](grants_license.md) | range | [License](License.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)             | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [AiEval](AiEval.md)                                     | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)       | [hasLicense](hasLicense.md)         | range | [License](License.md) |
 | [Question](Question.md)                                 | [hasLicense](hasLicense.md)         | range | [License](License.md) |
@@ -153,7 +161,7 @@ URI: [airo:License](https://w3id.org/airo#License)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -173,7 +181,7 @@ URI: [airo:License](https://w3id.org/airo#License)
 name: License
 description: The general notion of a license which defines terms and grants permissions
   to users of AI systems, datasets and software.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 slots:
 - version
@@ -189,13 +197,13 @@ class_uri: airo:License
 name: License
 description: The general notion of a license which defines terms and grants permissions
   to users of AI systems, datasets and software.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   version:
     name: version
     description: The version of the entity embodied by a specified resource.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:version
     alias: version
@@ -206,12 +214,13 @@ attributes:
     - Taxonomy
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
+    - AiTaskTaxonomy
     range: string
   id:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -224,7 +233,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -236,7 +245,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -247,7 +256,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -258,7 +267,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -270,7 +279,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -284,7 +293,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -298,7 +307,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -312,7 +321,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -327,7 +336,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -342,7 +351,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -355,7 +364,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -369,4 +378,4 @@ class_uri: airo:License
 
 ````
 
-</details>
+</details></div>

@@ -1,0 +1,553 @@
+---
+search:
+  boost: 10.0
+---
+
+# Class: AiTaskDomain
+
+_A grouping of AI Tasks by domain._
+
+<div data-search-exclude markdown="1">
+
+URI: [nexus:AiTaskDomain](https://w3id.org/ai-atlas-nexus/AiTaskDomain)
+
+```mermaid
+ classDiagram
+    class AiTaskDomain
+    click AiTaskDomain href "../AiTaskDomain/"
+      Group <|-- AiTaskDomain
+        click Group href "../Group/"
+
+      AiTaskDomain : belongsToDomain
+
+
+
+
+
+        AiTaskDomain --> "0..1" Any : belongsToDomain
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : broad_mappings
+
+
+
+
+
+        AiTaskDomain --> "*" Any : broad_mappings
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : broader
+
+      AiTaskDomain : close_mappings
+
+
+
+
+
+        AiTaskDomain --> "*" Any : close_mappings
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : dateCreated
+
+      AiTaskDomain : dateModified
+
+      AiTaskDomain : description
+
+      AiTaskDomain : exact_mappings
+
+
+
+
+
+        AiTaskDomain --> "*" Any : exact_mappings
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : hasDocumentation
+
+
+
+
+
+        AiTaskDomain --> "*" Documentation : hasDocumentation
+        click Documentation href "../Documentation/"
+
+
+
+      AiTaskDomain : hasPart
+
+
+
+
+
+        AiTaskDomain --> "*" AiTaskGroup : hasPart
+        click AiTaskGroup href "../AiTaskGroup/"
+
+
+
+      AiTaskDomain : id
+
+      AiTaskDomain : isCategorizedAs
+
+
+
+
+
+        AiTaskDomain --> "*" Any : isCategorizedAs
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : isDefinedByTaxonomy
+
+
+
+
+
+        AiTaskDomain --> "0..1" Taxonomy : isDefinedByTaxonomy
+        click Taxonomy href "../Taxonomy/"
+
+
+
+      AiTaskDomain : name
+
+      AiTaskDomain : narrow_mappings
+
+
+
+
+
+        AiTaskDomain --> "*" Any : narrow_mappings
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : narrower
+
+      AiTaskDomain : related_mappings
+
+
+
+
+
+        AiTaskDomain --> "*" Any : related_mappings
+        click Any href "../Any/"
+
+
+
+      AiTaskDomain : type
+
+      AiTaskDomain : url
+
+
+```
+
+## Inheritance
+
+- [Entity](Entity.md)
+  - [Group](Group.md)
+    - **AiTaskDomain**
+
+## Class Properties
+
+| Property  | Value                                                              |
+| --------- | ------------------------------------------------------------------ |
+| Class URI | [nexus:AiTaskDomain](https://w3id.org/ai-atlas-nexus/AiTaskDomain) |
+
+## Slots
+
+| Name                                          | Cardinality and Range                      | Description                                                                      | Inheritance         |
+| --------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)         | A relationship where a concept or a concept group is defined by a taxonomy       | direct              |
+| [hasPart](hasPart.md)                         | \* <br/> [AiTaskGroup](AiTaskGroup.md)     | A relationship where an AI Task domain has a group                               | direct              |
+| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | [Group](Group.md)   |
+| [belongsToDomain](belongsToDomain.md)         | 0..1 <br/> [Any](Any.md)                   | A relationship where a group belongs to a domain                                 | [Group](Group.md)   |
+| [type](type.md)                               | 0..1 <br/> [String](String.md)             | The type or class designation of this entity instance                            | [Group](Group.md)   |
+| [narrower](narrower.md)                       | \* <br/> [String](String.md)               | Related concepts that are narrower in scope or hierarchy                         | [Group](Group.md)   |
+| [broader](broader.md)                         | \* <br/> [String](String.md)               | Related concepts that are broader in scope or hierarchy                          | [Group](Group.md)   |
+| [id](id.md)                                   | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
+| [name](name.md)                               | 0..1 <br/> [String](String.md)             | A text name of this instance                                                     | [Entity](Entity.md) |
+| [description](description.md)                 | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md) |
+| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                   | An optional URL associated with this instance                                    | [Entity](Entity.md) |
+| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was created                                         | [Entity](Entity.md) |
+| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
+| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
+| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
+| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                     | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
+| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                     | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+
+## Usages
+
+| used by                       | used in                 | type  | used                            |
+| ----------------------------- | ----------------------- | ----- | ------------------------------- |
+| [AiTaskGroup](AiTaskGroup.md) | [isPartOf](isPartOf.md) | range | [AiTaskDomain](AiTaskDomain.md) |
+
+## Identifier and Mapping Information
+
+### Schema Source
+
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+
+## Mappings
+
+| Mapping Type | Mapped Value       |
+| ------------ | ------------------ |
+| self         | nexus:AiTaskDomain |
+| native       | nexus:AiTaskDomain |
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: AiTaskDomain
+description: A grouping of AI Tasks by domain.
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+is_a: Group
+slots:
+- isDefinedByTaxonomy
+- hasPart
+slot_usage:
+  hasPart:
+    name: hasPart
+    description: A relationship where an AI Task domain has a group.
+    range: AiTaskGroup
+class_uri: nexus:AiTaskDomain
+
+````
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: AiTaskDomain
+description: A grouping of AI Tasks by domain.
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+is_a: Group
+slot_usage:
+  hasPart:
+    name: hasPart
+    description: A relationship where an AI Task domain has a group.
+    range: AiTaskGroup
+attributes:
+  isDefinedByTaxonomy:
+    name: isDefinedByTaxonomy
+    description: A relationship where a concept or a concept group is defined by a
+      taxonomy
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
+    owner: AiTaskDomain
+    domain_of:
+    - Concept
+    - Control
+    - Group
+    - Entry
+    - Policy
+    - Rule
+    - RiskControlGroup
+    - RiskGroup
+    - Risk
+    - RiskControl
+    - Action
+    - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
+    - Stakeholder
+    - StakeholderGroup
+    - Requirement
+    range: Taxonomy
+  hasPart:
+    name: hasPart
+    description: A relationship where an AI Task domain has a group.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:member
+    alias: hasPart
+    owner: AiTaskDomain
+    domain_of:
+    - Group
+    - RiskControlGroup
+    - RiskGroup
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
+    range: AiTaskGroup
+    multivalued: true
+  hasDocumentation:
+    name: hasDocumentation
+    description: Indicates documentation associated with an entity.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
+    owner: AiTaskDomain
+    domain_of:
+    - Dataset
+    - Vocabulary
+    - Taxonomy
+    - Concept
+    - Group
+    - Entry
+    - Term
+    - Principle
+    - RiskTaxonomy
+    - RiskControlGroupTaxonomy
+    - Action
+    - BaseAi
+    - LargeLanguageModelFamily
+    - AiTaskTaxonomy
+    - AiEval
+    - EveryEvalAIResult
+    - BenchmarkMetadataCard
+    - Adapter
+    - LLMIntrinsic
+    range: Documentation
+    multivalued: true
+    inlined: false
+  belongsToDomain:
+    name: belongsToDomain
+    description: A relationship where a group belongs to a domain
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:isPartOf
+    alias: belongsToDomain
+    owner: AiTaskDomain
+    domain_of:
+    - Group
+    - CapabilityGroup
+    range: Any
+    multivalued: false
+    inlined: false
+  type:
+    name: type
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
+    ifabsent: string(Group)
+    designates_type: true
+    alias: type
+    owner: AiTaskDomain
+    domain_of:
+    - Vocabulary
+    - Taxonomy
+    - Concept
+    - Control
+    - Group
+    - Entry
+    - Policy
+    - Rule
+    - Permission
+    - Prohibition
+    - Obligation
+    - Recommendation
+    - Certification
+    - BenchmarkMetadataCard
+    - ControlActivity
+    - ControlActivityPermission
+    - ControlActivityProhibition
+    - ControlActivityObligation
+    - ControlActivityRecommendation
+    - Requirement
+    range: string
+  narrower:
+    name: narrower
+    description: Related concepts that are narrower in scope or hierarchy.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
+    rank: 1000
+    slot_uri: skos:narrower
+    alias: narrower
+    owner: AiTaskDomain
+    domain_of:
+    - Group
+    range: string
+    multivalued: true
+  broader:
+    name: broader
+    description: Related concepts that are broader in scope or hierarchy.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
+    rank: 1000
+    slot_uri: skos:narrower
+    alias: broader
+    owner: AiTaskDomain
+    domain_of:
+    - Group
+    range: string
+    multivalued: true
+  id:
+    name: id
+    description: A unique identifier to this instance of the model element. Example
+      identifiers include UUID, URI, URN, etc.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: id
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: string
+    required: true
+  name:
+    name: name
+    description: A text name of this instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:name
+    alias: name
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    - BenchmarkMetadataCard
+    range: string
+  description:
+    name: description
+    description: The description of an entity
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:description
+    alias: description
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: string
+  url:
+    name: url
+    description: An optional URL associated with this instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:url
+    alias: url
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: uri
+  dateCreated:
+    name: dateCreated
+    description: The date on which the entity was created.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:dateCreated
+    alias: dateCreated
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: date
+    required: false
+  dateModified:
+    name: dateModified
+    description: The date on which the entity was most recently modified.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: schema:dateModified
+    alias: dateModified
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: date
+    required: false
+  exact_mappings:
+    name: exact_mappings
+    description: The property is used to link two concepts, indicating a high degree
+      of confidence that the concepts can be used interchangeably across a wide range
+      of information retrieval applications
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:exactMatch
+    alias: exact_mappings
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  close_mappings:
+    name: close_mappings
+    description: The property is used to link two concepts that are sufficiently similar
+      that they can be used interchangeably in some information retrieval applications.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:closeMatch
+    alias: close_mappings
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  related_mappings:
+    name: related_mappings
+    description: The property skos:relatedMatch is used to state an associative mapping
+      link between two concepts.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:relatedMatch
+    alias: related_mappings
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  narrow_mappings:
+    name: narrow_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a narrower concept than
+      the originating concept.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:narrowMatch
+    alias: narrow_mappings
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  broad_mappings:
+    name: broad_mappings
+    description: The property is used to state a hierarchical mapping link between
+      two concepts, indicating that the concept linked to, is a broader concept than
+      the originating concept.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:broadMatch
+    alias: broad_mappings
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+  isCategorizedAs:
+    name: isCategorizedAs
+    description: A relationship where an entity has been deemed to be categorized
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
+    owner: AiTaskDomain
+    domain_of:
+    - Entity
+    range: Any
+    multivalued: true
+    inlined: false
+class_uri: nexus:AiTaskDomain
+
+````
+
+</details></div>

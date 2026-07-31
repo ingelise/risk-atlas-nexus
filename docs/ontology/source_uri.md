@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: source_uri
 
 _The uri of the incident_
 
-URI: [nexus:source_uri](https://ibm.github.io/ai-atlas-nexus/ontology/source_uri)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:source_uri](https://w3id.org/ai-atlas-nexus/source_uri)
 Alias: source_uri
 
 <!-- no inheritance hierarchy -->
@@ -15,13 +22,29 @@ Alias: source_uri
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
+
+| Property  | Value                           |
+| --------- | ------------------------------- |
+| Range     | [String](String.md)             |
+| Domain Of | [RiskIncident](RiskIncident.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
+
+### Slot Characteristics
+
+| Property | Value                           |
+| -------- | ------------------------------- |
+| Owner    | [RiskIncident](RiskIncident.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -36,7 +59,7 @@ Alias: source_uri
 ```yaml
 name: source_uri
 description: The uri of the incident
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: source_uri
 owner: RiskIncident
@@ -45,5 +68,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

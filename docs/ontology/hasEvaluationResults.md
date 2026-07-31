@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasEvaluationResults
 
 _Array of evaluation results_
 
-URI: [nexus:hasEvaluationResults](https://ibm.github.io/ai-atlas-nexus/ontology/hasEvaluationResults)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasEvaluationResults](https://w3id.org/ai-atlas-nexus/hasEvaluationResults)
 Alias: hasEvaluationResults
 
 <!-- no inheritance hierarchy -->
@@ -33,7 +40,7 @@ Alias: hasEvaluationResults
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasEvaluationResults
 ```yaml
 name: hasEvaluationResults
 description: Array of evaluation results
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EveryEvalAIResult
 alias: hasEvaluationResults
@@ -59,5 +66,5 @@ multivalued: true
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

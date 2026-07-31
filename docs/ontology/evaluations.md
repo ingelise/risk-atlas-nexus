@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: evaluations
 
 _A list of AI evaluation methods_
 
-URI: [nexus:evaluations](https://ibm.github.io/ai-atlas-nexus/ontology/evaluations)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:evaluations](https://w3id.org/ai-atlas-nexus/evaluations)
 Alias: evaluations
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: evaluations
 
 ## Properties
 
-- Range: [AiEval](AiEval.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [AiEval](AiEval.md)       |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: evaluations
 ```yaml
 name: evaluations
 description: A list of AI evaluation methods
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: evaluations
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

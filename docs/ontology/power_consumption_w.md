@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: power_consumption_w
 
 _power consumption in Watts_
 
-URI: [nexus:power_consumption_w](https://ibm.github.io/ai-atlas-nexus/ontology/power_consumption_w)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:power_consumption_w](https://w3id.org/ai-atlas-nexus/power_consumption_w)
 Alias: power_consumption_w
 
 <!-- no inheritance hierarchy -->
@@ -11,9 +18,9 @@ Alias: power_consumption_w
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -39,7 +46,7 @@ Alias: power_consumption_w
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -54,7 +61,7 @@ Alias: power_consumption_w
 ```yaml
 name: power_consumption_w
 description: power consumption in Watts
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: power_consumption_w
 domain_of:
@@ -63,5 +70,5 @@ range: integer
 minimum_value: 0
 
 ```
-</details>
+</details></div>
 ```

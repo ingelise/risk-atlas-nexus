@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasSourceMetadata
 
 _Source metadata for the evaluation_
 
-URI: [nexus:hasSourceMetadata](https://ibm.github.io/ai-atlas-nexus/ontology/hasSourceMetadata)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasSourceMetadata](https://w3id.org/ai-atlas-nexus/hasSourceMetadata)
 Alias: hasSourceMetadata
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasSourceMetadata
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasSourceMetadata
 ```yaml
 name: hasSourceMetadata
 description: Source metadata for the evaluation
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EveryEvalAIResult
 alias: hasSourceMetadata
@@ -57,5 +64,5 @@ range: SourceMetadata
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,4 +1,11 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Any
+
+<div data-search-exclude markdown="1">
 
 URI: [linkml:Any](https://w3id.org/linkml/Any)
 
@@ -87,8 +94,11 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Group](Group.md)                                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Group](Group.md)                                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Group](Group.md)                                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Entry](Entry.md)                                                 | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Entry](Entry.md)                                                 | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Entry](Entry.md)                                                 | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -96,16 +106,23 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Entry](Entry.md)                                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Entry](Entry.md)                                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
+| [Term](Term.md)                                                   | [hasRelatedRisk](hasRelatedRisk.md)             | range  | [Any](Any.md) |
+| [Term](Term.md)                                                   | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Term](Term.md)                                                   | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Term](Term.md)                                                   | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Term](Term.md)                                                   | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Principle](Principle.md)                                         | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Principle](Principle.md)                                         | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Principle](Principle.md)                                         | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [Principle](Principle.md)                                         | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Principle](Principle.md)                                         | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Principle](Principle.md)                                         | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Principle](Principle.md)                                         | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Principle](Principle.md)                                         | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -119,6 +136,7 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Policy](Policy.md)                                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Policy](Policy.md)                                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [hasRelatedRisk](hasRelatedRisk.md)             | range  | [Any](Any.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -131,6 +149,12 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Rule](Rule.md)                                                   | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Rule](Rule.md)                                                   | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Rule](Rule.md)                                                   | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [Permission](Permission.md)                                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Permission](Permission.md)                                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Permission](Permission.md)                                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -155,14 +179,28 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Recommendation](Recommendation.md)                               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Recommendation](Recommendation.md)                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Recommendation](Recommendation.md)                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Certification](Certification.md)                                 | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Certification](Certification.md)                                 | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Certification](Certification.md)                                 | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Certification](Certification.md)                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [RiskTaxonomy](RiskTaxonomy.md)                                   | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [RiskTaxonomy](RiskTaxonomy.md)                                   | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [RiskTaxonomy](RiskTaxonomy.md)                                   | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -189,8 +227,11 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [RiskGroup](RiskGroup.md)                                         | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [RiskGroup](RiskGroup.md)                                         | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [RiskGroup](RiskGroup.md)                                         | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Risk](Risk.md)                                                   | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Risk](Risk.md)                                                   | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Risk](Risk.md)                                                   | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [Risk](Risk.md)                                                   | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Risk](Risk.md)                                                   | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Risk](Risk.md)                                                   | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Risk](Risk.md)                                                   | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Risk](Risk.md)                                                   | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -209,7 +250,6 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [RiskControl](RiskControl.md)                                     | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [RiskControl](RiskControl.md)                                     | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [RiskControl](RiskControl.md)                                     | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [Action](Action.md)                                               | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [Action](Action.md)                                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Action](Action.md)                                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Action](Action.md)                                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -282,24 +322,61 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Consequence](Consequence.md)                                     | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Consequence](Consequence.md)                                     | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Consequence](Consequence.md)                                     | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityConcept](CapabilityConcept.md)                         | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [belongsToDomain](belongsToDomain.md)           | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityDomain](CapabilityDomain.md)                           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [CapabilityGroup](CapabilityGroup.md)                             | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [Capability](Capability.md)                                       | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [BaseAi](BaseAi.md)                                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [AiSystem](AiSystem.md)                                           | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
+| [AiSystem](AiSystem.md)                                           | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [AiSystem](AiSystem.md)                                           | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [AiSystem](AiSystem.md)                                           | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [AiSystem](AiSystem.md)                                           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [AiAgent](AiAgent.md)                                             | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
+| [AiAgent](AiAgent.md)                                             | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [AiAgent](AiAgent.md)                                             | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [AiAgent](AiAgent.md)                                             | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [AiAgent](AiAgent.md)                                             | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [AiAgent](AiAgent.md)                                             | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [AiAgent](AiAgent.md)                                             | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AiAgent](AiAgent.md)                                             | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AiAgent](AiAgent.md)                                             | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -313,6 +390,7 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [AiModel](AiModel.md)                                             | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [AiModel](AiModel.md)                                             | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [LargeLanguageModel](LargeLanguageModel.md)                       | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [LargeLanguageModel](LargeLanguageModel.md)                       | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [LargeLanguageModel](LargeLanguageModel.md)                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [LargeLanguageModel](LargeLanguageModel.md)                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [LargeLanguageModel](LargeLanguageModel.md)                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -325,14 +403,35 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [LargeLanguageModelFamily](LargeLanguageModelFamily.md)           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [LargeLanguageModelFamily](LargeLanguageModelFamily.md)           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [LargeLanguageModelFamily](LargeLanguageModelFamily.md)           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [AiTask](AiTask.md)                                               | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [AiTask](AiTask.md)                                               | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [AiTask](AiTask.md)                                               | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [AiTask](AiTask.md)                                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskTaxonomy](AiTaskTaxonomy.md)                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [belongsToDomain](belongsToDomain.md)           | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskDomain](AiTaskDomain.md)                                   | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [belongsToDomain](belongsToDomain.md)           | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [AiLifecyclePhase](AiLifecyclePhase.md)                           | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AiLifecyclePhase](AiLifecyclePhase.md)                           | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AiLifecyclePhase](AiLifecyclePhase.md)                           | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -369,24 +468,28 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [Input](Input.md)                                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Input](Input.md)                                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Input](Input.md)                                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Purpose](Purpose.md)                                             | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
+| [Purpose](Purpose.md)                                             | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Purpose](Purpose.md)                                             | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
+| [Purpose](Purpose.md)                                             | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Purpose](Purpose.md)                                             | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Purpose](Purpose.md)                                             | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
+| [Domain](Domain.md)                                               | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
+| [Domain](Domain.md)                                               | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Domain](Domain.md)                                               | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
+| [Domain](Domain.md)                                               | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Domain](Domain.md)                                               | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Domain](Domain.md)                                               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [LocalityOfUse](LocalityOfUse.md)                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
 | [AIComponent](AIComponent.md)                                     | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AIComponent](AIComponent.md)                                     | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AIComponent](AIComponent.md)                                     | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -436,39 +539,6 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [StakeholderGroup](StakeholderGroup.md)                           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [StakeholderGroup](StakeholderGroup.md)                           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [StakeholderGroup](StakeholderGroup.md)                           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityTaxonomy](CapabilityTaxonomy.md)                       | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityConcept](CapabilityConcept.md)                         | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [belongsToDomain](belongsToDomain.md)           | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityDomain](CapabilityDomain.md)                           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [CapabilityGroup](CapabilityGroup.md)                             | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
-| [Capability](Capability.md)                                       | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [AiEval](AiEval.md)                                               | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [AiEval](AiEval.md)                                               | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [AiEval](AiEval.md)                                               | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [AiEval](AiEval.md)                                               | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -517,48 +587,47 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 | [EvaluationResultRecord](EvaluationResultRecord.md)               | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [EvaluationResultRecord](EvaluationResultRecord.md)               | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [EvaluationResultRecord](EvaluationResultRecord.md)               | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [EveryEvalAIResult](EveryEvalAIResult.md)                         | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [EveryEvalAIResult](EveryEvalAIResult.md)                         | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [Question](Question.md)                                           | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [Question](Question.md)                                           | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Question](Question.md)                                           | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Question](Question.md)                                           | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Question](Question.md)                                           | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Question](Question.md)                                           | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Question](Question.md)                                           | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [Questionnaire](Questionnaire.md)                                 | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Questionnaire](Questionnaire.md)                                 | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [Adapter](Adapter.md)                                             | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
-| [Adapter](Adapter.md)                                             | [implementsCapability](implementsCapability.md) | domain | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [Adapter](Adapter.md)                                             | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
+| [Adapter](Adapter.md)                                             | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [Adapter](Adapter.md)                                             | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [narrow_mappings](narrow_mappings.md)           | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [broad_mappings](broad_mappings.md)             | range  | [Any](Any.md) |
 | [Adapter](Adapter.md)                                             | [isCategorizedAs](isCategorizedAs.md)           | range  | [Any](Any.md) |
-| [LLMIntrinsic](LLMIntrinsic.md)                                   | [hasRelatedRisk](hasRelatedRisk.md)             | domain | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [hasRelatedTerm](hasRelatedTerm.md)             | domain | [Any](Any.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)                                   | [requiredByTask](requiredByTask.md)             | range  | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [requiresCapability](requiresCapability.md)     | domain | [Any](Any.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)                                   | [requiresCapability](requiresCapability.md)     | range  | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [implementedByAdapter](implementedByAdapter.md) | domain | [Any](Any.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)                                   | [implementedByAdapter](implementedByAdapter.md) | range  | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [exact_mappings](exact_mappings.md)             | range  | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [close_mappings](close_mappings.md)             | range  | [Any](Any.md) |
 | [LLMIntrinsic](LLMIntrinsic.md)                                   | [related_mappings](related_mappings.md)         | range  | [Any](Any.md) |
@@ -618,7 +687,7 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -636,7 +705,7 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 <details>
 ```yaml
 name: Any
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 class_uri: linkml:Any
 
 ````
@@ -647,9 +716,9 @@ class_uri: linkml:Any
 <details>
 ```yaml
 name: Any
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 class_uri: linkml:Any
 
 ````
 
-</details>
+</details></div>

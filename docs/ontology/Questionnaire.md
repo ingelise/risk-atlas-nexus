@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Questionnaire
 
 _A questionnaire groups questions_
 
-URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questionnaire)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:Questionnaire](https://w3id.org/ai-atlas-nexus/Questionnaire)
 
 ```mermaid
  classDiagram
@@ -126,6 +133,17 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 
 
+      Questionnaire : isComposedOf
+
+
+
+
+
+        Questionnaire --> "*" Question : isComposedOf
+        click Question href "../Question/"
+
+
+
       Questionnaire : name
 
       Questionnaire : narrow_mappings
@@ -163,35 +181,36 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 
 ## Slots
 
-| Name                                            | Cardinality and Range                                                                                        | Description                                                                      | Inheritance         |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
-| [hasDocumentation](hasDocumentation.md)         | \* <br/> [Documentation](Documentation.md)                                                                   | Indicates documentation associated with an entity                                | [AiEval](AiEval.md) |
-| [hasDataset](hasDataset.md)                     | \* <br/> [Dataset](Dataset.md)                                                                               | A relationship to datasets that are used                                         | [AiEval](AiEval.md) |
-| [hasTasks](hasTasks.md)                         | \* <br/> [String](String.md)                                                                                 | The tasks or evaluations the benchmark is intended to assess                     | [AiEval](AiEval.md) |
-| [hasImplementation](hasImplementation.md)       | \* <br/> [Uri](Uri.md)                                                                                       | A relationship to a implementation defining the risk evaluation                  | [AiEval](AiEval.md) |
-| [hasUnitxtCard](hasUnitxtCard.md)               | \* <br/> [Uri](Uri.md)                                                                                       | A relationship to a Unitxt card defining the risk evaluation                     | [AiEval](AiEval.md) |
-| [hasLicense](hasLicense.md)                     | 0..1 <br/> [License](License.md)                                                                             | Indicates licenses associated with a resource                                    | [AiEval](AiEval.md) |
-| [hasRelatedRisk](hasRelatedRisk.md)             | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a risk                                 | [AiEval](AiEval.md) |
-| [bestValue](bestValue.md)                       | 0..1 <br/> [String](String.md)                                                                               | Annotation of the best possible result of the evaluation                         | [AiEval](AiEval.md) |
-| [hasBenchmarkMetadata](hasBenchmarkMetadata.md) | \* <br/> [BenchmarkMetadataCard](BenchmarkMetadataCard.md)                                                   | A relationship to a Benchmark Metadata Card which contains metadata about the... | [AiEval](AiEval.md) |
-| [id](id.md)                                     | 1 <br/> [String](String.md)                                                                                  | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
-| [name](name.md)                                 | 0..1 <br/> [String](String.md)                                                                               | A text name of this instance                                                     | [Entity](Entity.md) |
-| [description](description.md)                   | 0..1 <br/> [String](String.md)                                                                               | The description of an entity                                                     | [Entity](Entity.md) |
-| [url](url.md)                                   | 0..1 <br/> [Uri](Uri.md)                                                                                     | An optional URL associated with this instance                                    | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md)                   | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was created                                         | [Entity](Entity.md) |
-| [dateModified](dateModified.md)                 | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
-| [exact_mappings](exact_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
-| [close_mappings](close_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
-| [related_mappings](related_mappings.md)         | \* <br/> [Any](Any.md)                                                                                       | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
-| [narrow_mappings](narrow_mappings.md)           | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                                                                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| Name                                            | Cardinality and Range                                      | Description                                                                      | Inheritance         |
+| ----------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------- |
+| [hasDocumentation](hasDocumentation.md)         | \* <br/> [Documentation](Documentation.md)                 | Indicates documentation associated with an entity                                | [AiEval](AiEval.md) |
+| [hasDataset](hasDataset.md)                     | \* <br/> [Dataset](Dataset.md)                             | A relationship to datasets that are used                                         | [AiEval](AiEval.md) |
+| [hasTasks](hasTasks.md)                         | \* <br/> [String](String.md)                               | The tasks or evaluations the benchmark is intended to assess                     | [AiEval](AiEval.md) |
+| [hasImplementation](hasImplementation.md)       | \* <br/> [Uri](Uri.md)                                     | A relationship to a implementation defining the risk evaluation                  | [AiEval](AiEval.md) |
+| [hasUnitxtCard](hasUnitxtCard.md)               | \* <br/> [Uri](Uri.md)                                     | A relationship to a Unitxt card defining the risk evaluation                     | [AiEval](AiEval.md) |
+| [hasLicense](hasLicense.md)                     | 0..1 <br/> [License](License.md)                           | Indicates licenses associated with a resource                                    | [AiEval](AiEval.md) |
+| [hasRelatedRisk](hasRelatedRisk.md)             | \* <br/> [Risk](Risk.md)                                   | A relationship where an entity relates to a risk                                 | [AiEval](AiEval.md) |
+| [bestValue](bestValue.md)                       | 0..1 <br/> [String](String.md)                             | Annotation of the best possible result of the evaluation                         | [AiEval](AiEval.md) |
+| [hasBenchmarkMetadata](hasBenchmarkMetadata.md) | \* <br/> [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | A relationship to a Benchmark Metadata Card which contains metadata about the... | [AiEval](AiEval.md) |
+| [isComposedOf](isComposedOf.md)                 | \* <br/> [Question](Question.md)                           | A relationship indicating that an AI evaluation maybe composed of other AI ev... | [AiEval](AiEval.md) |
+| [id](id.md)                                     | 1 <br/> [String](String.md)                                | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
+| [name](name.md)                                 | 0..1 <br/> [String](String.md)                             | A text name of this instance                                                     | [Entity](Entity.md) |
+| [description](description.md)                   | 0..1 <br/> [String](String.md)                             | The description of an entity                                                     | [Entity](Entity.md) |
+| [url](url.md)                                   | 0..1 <br/> [Uri](Uri.md)                                   | An optional URL associated with this instance                                    | [Entity](Entity.md) |
+| [dateCreated](dateCreated.md)                   | 0..1 <br/> [Date](Date.md)                                 | The date on which the entity was created                                         | [Entity](Entity.md) |
+| [dateModified](dateModified.md)                 | 0..1 <br/> [Date](Date.md)                                 | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
+| [exact_mappings](exact_mappings.md)             | \* <br/> [Any](Any.md)                                     | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
+| [close_mappings](close_mappings.md)             | \* <br/> [Any](Any.md)                                     | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
+| [related_mappings](related_mappings.md)         | \* <br/> [Any](Any.md)                                     | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
+| [narrow_mappings](narrow_mappings.md)           | \* <br/> [Any](Any.md)                                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                                     | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -210,11 +229,11 @@ URI: [nexus:Questionnaire](https://ibm.github.io/ai-atlas-nexus/ontology/Questio
 ```yaml
 name: Questionnaire
 description: A questionnaire groups questions
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: AiEval
 slot_usage:
-  composed_of:
-    name: composed_of
+  isComposedOf:
+    name: isComposedOf
     range: Question
 
 ````
@@ -226,17 +245,17 @@ slot_usage:
 ```yaml
 name: Questionnaire
 description: A questionnaire groups questions
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: AiEval
 slot_usage:
-  composed_of:
-    name: composed_of
+  isComposedOf:
+    name: isComposedOf
     range: Question
 attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -255,6 +274,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -266,7 +286,7 @@ attributes:
   hasDataset:
     name: hasDataset
     description: A relationship to datasets that are used.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDataset
     owner: Questionnaire
@@ -278,7 +298,7 @@ attributes:
   hasTasks:
     name: hasTasks
     description: The tasks or evaluations the benchmark is intended to assess.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasTasks
     owner: Questionnaire
@@ -292,7 +312,7 @@ attributes:
   hasImplementation:
     name: hasImplementation
     description: A relationship to a implementation defining the risk evaluation
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: hasImplementation
@@ -305,7 +325,7 @@ attributes:
   hasUnitxtCard:
     name: hasUnitxtCard
     description: A relationship to a Unitxt card defining the risk evaluation
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: hasUnitxtCard
@@ -318,7 +338,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -331,6 +351,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -338,9 +359,9 @@ attributes:
   hasRelatedRisk:
     name: hasRelatedRisk
     description: A relationship where an entity relates to a risk
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: AiEval
     alias: hasRelatedRisk
     owner: Questionnaire
     domain_of:
@@ -356,13 +377,10 @@ attributes:
     range: Risk
     multivalued: true
     inlined: false
-    any_of:
-    - range: RiskConcept
-    - range: Term
   bestValue:
     name: bestValue
     description: Annotation of the best possible result of the evaluation
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: bestValue
     owner: Questionnaire
@@ -373,7 +391,7 @@ attributes:
     name: hasBenchmarkMetadata
     description: A relationship to a Benchmark Metadata Card which contains metadata
       about the benchmark.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: AiEval
     alias: hasBenchmarkMetadata
@@ -384,11 +402,25 @@ attributes:
     range: BenchmarkMetadataCard
     multivalued: true
     inlined: false
+  isComposedOf:
+    name: isComposedOf
+    description: A relationship indicating that an AI evaluation maybe composed of
+      other AI evaluations (e.g. it's an overall average of other scores).
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    alias: isComposedOf
+    owner: Questionnaire
+    domain_of:
+    - AiSystem
+    - AiEval
+    range: Question
+    multivalued: true
+    inlined: false
   id:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -401,7 +433,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -413,7 +445,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -424,7 +456,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -435,7 +467,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -447,7 +479,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -461,7 +493,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -475,7 +507,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -489,7 +521,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -504,7 +536,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -519,7 +551,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -532,7 +564,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -545,4 +577,4 @@ attributes:
 
 ````
 
-</details>
+</details></div>

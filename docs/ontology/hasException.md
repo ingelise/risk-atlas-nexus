@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasException
 
 _Exception type_
 
-URI: [nexus:hasException](https://ibm.github.io/ai-atlas-nexus/ontology/hasException)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasException](https://w3id.org/ai-atlas-nexus/hasException)
 Alias: hasException
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +24,11 @@ Alias: hasException
 
 ### Type and Range
 
-| Property  | Value                                                                            |
-| --------- | -------------------------------------------------------------------------------- |
-| Range     | [String](String.md)                                                              |
-| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                                        |
-| Slot URI  | [nexus:hasException](https://ibm.github.io/ai-atlas-nexus/ontology/hasException) |
+| Property  | Value                                                              |
+| --------- | ------------------------------------------------------------------ |
+| Range     | [String](String.md)                                                |
+| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                          |
+| Slot URI  | [nexus:hasException](https://w3id.org/ai-atlas-nexus/hasException) |
 
 ### Cardinality and Requirements
 
@@ -32,7 +39,7 @@ Alias: hasException
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasException
 ```yaml
 name: hasException
 description: Exception type
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasException
 alias: hasException
@@ -58,5 +65,5 @@ multivalued: false
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

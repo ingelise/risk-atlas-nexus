@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Fact
 
 _A fact about something, for example the result of a measurement. In addition to the value, evidence is provided._
+
+<div data-search-exclude markdown="1">
 
 - **NOTE**: this is an abstract class and should not be instantiated directly
 
@@ -39,7 +46,7 @@ URI: [schema:Statement](http://schema.org/Statement)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -59,7 +66,7 @@ URI: [schema:Statement](http://schema.org/Statement)
 name: Fact
 description: A fact about something, for example the result of a measurement. In addition
   to the value, evidence is provided.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 abstract: true
 slots:
 - value
@@ -76,13 +83,13 @@ class_uri: schema:Statement
 name: Fact
 description: A fact about something, for example the result of a measurement. In addition
   to the value, evidence is provided.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 abstract: true
 attributes:
   value:
     name: value
     description: Some numeric or string value
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: value
     owner: Fact
@@ -94,7 +101,7 @@ attributes:
     name: evidence
     description: Evidence provides a source (typical a chunk, paragraph or link) describing
       where some value was found or how it was generated.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: evidence
     owner: Fact
@@ -105,4 +112,4 @@ class_uri: schema:Statement
 
 ````
 
-</details>
+</details></div>

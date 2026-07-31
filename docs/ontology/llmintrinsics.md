@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: llmintrinsics
 
 _A list of LLMIntrinsics_
 
-URI: [nexus:llmintrinsics](https://ibm.github.io/ai-atlas-nexus/ontology/llmintrinsics)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:llmintrinsics](https://w3id.org/ai-atlas-nexus/llmintrinsics)
 Alias: llmintrinsics
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: llmintrinsics
 
 ## Properties
 
-- Range: [LLMIntrinsic](LLMIntrinsic.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                           |
+| --------- | ------------------------------- |
+| Range     | [LLMIntrinsic](LLMIntrinsic.md) |
+| Domain Of | [Container](Container.md)       |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: llmintrinsics
 ```yaml
 name: llmintrinsics
 description: A list of LLMIntrinsics
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: llmintrinsics
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

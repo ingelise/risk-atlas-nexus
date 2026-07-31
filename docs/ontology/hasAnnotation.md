@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasAnnotation
 
 _The process used to annotate or label the dataset, including who or what performed the annotations (e.g., human annotators, automated processes)._
 
-URI: [nexus:hasAnnotation](https://ibm.github.io/ai-atlas-nexus/ontology/hasAnnotation)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasAnnotation](https://w3id.org/ai-atlas-nexus/hasAnnotation)
 Alias: hasAnnotation
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasAnnotation
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasAnnotation
 name: hasAnnotation
 description: The process used to annotate or label the dataset, including who or what
   performed the annotations (e.g., human annotators, automated processes).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasAnnotation
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

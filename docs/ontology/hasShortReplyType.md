@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasShortReplyType
 
 _Short reply type_
 
-URI: [nexus:hasShortReplyType](https://ibm.github.io/ai-atlas-nexus/ontology/hasShortReplyType)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasShortReplyType](https://w3id.org/ai-atlas-nexus/hasShortReplyType)
 Alias: hasShortReplyType
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +24,11 @@ Alias: hasShortReplyType
 
 ### Type and Range
 
-| Property  | Value                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------ |
-| Range     | [String](String.md)                                                                        |
-| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                                                  |
-| Slot URI  | [nexus:hasShortReplyType](https://ibm.github.io/ai-atlas-nexus/ontology/hasShortReplyType) |
+| Property  | Value                                                                        |
+| --------- | ---------------------------------------------------------------------------- |
+| Range     | [String](String.md)                                                          |
+| Domain Of | [LLMQuestionPolicy](LLMQuestionPolicy.md)                                    |
+| Slot URI  | [nexus:hasShortReplyType](https://w3id.org/ai-atlas-nexus/hasShortReplyType) |
 
 ### Cardinality and Requirements
 
@@ -32,7 +39,7 @@ Alias: hasShortReplyType
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasShortReplyType
 ```yaml
 name: hasShortReplyType
 description: Short reply type
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasShortReplyType
 alias: hasShortReplyType
@@ -58,5 +65,5 @@ multivalued: false
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

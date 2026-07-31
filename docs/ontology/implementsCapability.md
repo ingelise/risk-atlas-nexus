@@ -1,27 +1,35 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: implementsCapability
 
-_Indicates that this adapter implements a specific capability_
+_Indicates that this entity implements a specific capability_
 
-URI: [nexus:implementsCapability](https://ibm.github.io/ai-atlas-nexus/ontology/implementsCapability)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:implementsCapability](https://w3id.org/ai-atlas-nexus/implementsCapability)
 Alias: implementsCapability
 
 <!-- no inheritance hierarchy -->
 
 ## Applicable Classes
 
-| Name                  | Description                                                                      | Modifies Slot |
-| --------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Adapter](Adapter.md) | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| Name                            | Description                                                                      | Modifies Slot |
+| ------------------------------- | -------------------------------------------------------------------------------- | ------------- |
+| [Adapter](Adapter.md)           | Adapter-based methods add extra trainable parameters after the attention and ... | yes           |
+| [LLMIntrinsic](LLMIntrinsic.md) | A capability that can be invoked through a well-defined API that is reasonabl... | yes           |
 
 ## Properties
 
 ### Type and Range
 
-| Property  | Value                       |
-| --------- | --------------------------- |
-| Range     | [Capability](Capability.md) |
-| Domain    | [Any](Any.md)               |
-| Domain Of | [Adapter](Adapter.md)       |
+| Property  | Value                                                  |
+| --------- | ------------------------------------------------------ |
+| Range     | [Any](Any.md)                                          |
+| Domain    | [Any](Any.md)                                          |
+| Domain Of | [Adapter](Adapter.md), [LLMIntrinsic](LLMIntrinsic.md) |
 
 ### Cardinality and Requirements
 
@@ -29,20 +37,11 @@ Alias: implementsCapability
 | ----------- | ----- |
 | Multivalued | Yes   |
 
-<details>
-<summary>Relationship Properties</summary>
-
-| Property | Value                                           |
-| -------- | ----------------------------------------------- |
-| Inverse  | [implementedByAdapter](implementedByAdapter.md) |
-
-</details>
-
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -56,18 +55,18 @@ Alias: implementsCapability
 <details>
 ```yaml
 name: implementsCapability
-description: Indicates that this adapter implements a specific capability
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+description: Indicates that this entity implements a specific capability
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Any
 alias: implementsCapability
 domain_of:
 - Adapter
-inverse: implementedByAdapter
-range: Capability
+- LLMIntrinsic
+range: Any
 multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

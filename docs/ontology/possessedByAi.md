@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: possessedByAi
 
 _Indicates that this capability is possessed by a specific AI system or component. Inverse of hasCapability, allowing navigation from capabilities to AI systems. This enables queries like "which AI systems have this capability?"_
+
+<div data-search-exclude markdown="1">
 
 URI: [tech:hasCapability](https://w3id.org/dpv/tech#hasCapability)
 Alias: possessedByAi
@@ -36,7 +43,7 @@ Alias: possessedByAi
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -53,7 +60,7 @@ name: possessedByAi
 description: Indicates that this capability is possessed by a specific AI system or
   component. Inverse of hasCapability, allowing navigation from capabilities to AI
   systems. This enables queries like "which AI systems have this capability?"
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Capability
 slot_uri: tech:hasCapability
@@ -64,5 +71,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

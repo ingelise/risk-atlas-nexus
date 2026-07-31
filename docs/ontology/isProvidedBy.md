@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isProvidedBy
 
 _Indicates provider of an AI system or component._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:isProvidedBy](https://w3id.org/airo#isProvidedBy)
 Alias: isProvidedBy
@@ -11,12 +18,12 @@ Alias: isProvidedBy
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
-| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
-| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | yes           |
 | [BaseAi](BaseAi.md)                         | Any type of AI, be it a LLM, RL agent, SVM, etc                                  | no            |
 | [AiSystem](AiSystem.md)                     | A compound AI System composed of one or more AI capablities                      | no            |
+| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | yes           |
+| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -37,7 +44,7 @@ Alias: isProvidedBy
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -52,7 +59,7 @@ Alias: isProvidedBy
 ```yaml
 name: isProvidedBy
 description: Indicates provider of an AI system or component.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:isProvidedBy
 alias: isProvidedBy
@@ -61,5 +68,5 @@ domain_of:
 range: AiProvider
 
 ```
-</details>
+</details></div>
 ```

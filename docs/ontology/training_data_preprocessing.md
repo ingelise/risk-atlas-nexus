@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: training_data_preprocessing
 
 _relationship indicating data preprocessing steps performed on training data sets to ensure high quality training data._
 
-URI: [nexus:training_data_preprocessing](https://ibm.github.io/ai-atlas-nexus/ontology/training_data_preprocessing)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:training_data_preprocessing](https://w3id.org/ai-atlas-nexus/training_data_preprocessing)
 Alias: training_data_preprocessing
 
 <!-- no inheritance hierarchy -->
@@ -25,7 +32,7 @@ Alias: training_data_preprocessing
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -41,7 +48,7 @@ Alias: training_data_preprocessing
 name: training_data_preprocessing
 description: relationship indicating data preprocessing steps performed on training
   data sets to ensure high quality training data.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: training_data_preprocessing
 range: DataPreprocessing
@@ -49,5 +56,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

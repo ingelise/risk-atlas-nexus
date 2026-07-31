@@ -2,7 +2,7 @@
 
 An ontology describing AI systems and their risks
 
-URI: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+URI: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 Name: ai-risk-ontology
 
@@ -10,6 +10,7 @@ Name: ai-risk-ontology
 
 | Class                                                                                                                                                                                                             | Description                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [AnonymousClassExpression](AnonymousClassExpression.md)                                                                                                                                                           |                                                                                  |
 | [Any](Any.md)                                                                                                                                                                                                     |                                                                                  |
 | [Container](Container.md)                                                                                                                                                                                         | An umbrella object that holds the ontology class instances                       |
 | [Entity](Entity.md)                                                                                                                                                                                               | A generic grouping for any identifiable entity                                   |
@@ -35,7 +36,6 @@ Name: ai-risk-ontology
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Action](Action.md)                                               | Action to remediate a risk                                                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Dataset](Dataset.md)                                                                                                                                             | A body of structured information describing some topic(s) of interest            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Documentation](Documentation.md)                                                                                                                                 | Documented information about a concept or other topic(s) of interest             |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Domain](Domain.md)                                                                                                                                               | An area, sector, or industry that is associated with economic activities         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Entry](Entry.md)                                                                                                                                                 | An entry and its definitions                                                     |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Adapter](Adapter.md)                                                                                             | Adapter-based methods add extra trainable parameters after the attention and ... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiSystem](AiSystem.md)                                                                                           | A compound AI System composed of one or more AI capablities                      |
@@ -43,12 +43,17 @@ Name: ai-risk-ontology
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiTask](AiTask.md)                                                                                               | A task, such as summarization and classification, performed by an AI             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Capability](Capability.md)                                                                                       | A specific AI capability or ability, such as reading comprehension, logical r... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Certification](Certification.md)                                                                                 | Certification mechanisms, seals, and marks for the purpose of demonstrating c... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Domain](Domain.md)                                                                                               | An area, sector, or industry that is associated with economic activities         |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LLMIntrinsic](LLMIntrinsic.md)                                                                                   | A capability that can be invoked through a well-defined API that is reasonabl... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LocalityOfUse](LocalityOfUse.md)                                                                                 | The area, e                                                                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Principle](Principle.md)                                                                                         | A representation of values or norms that must be taken into consideration whe... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Purpose](Purpose.md)                                                                                             | The end goal for which an entity is used or an action is taken                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Risk](Risk.md)                                                                                                   | The state of uncertainty associated with an AI system, that has the potential... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Term](Term.md)                                                                                                   | A term and its definitions                                                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[EvaluationResultRecord](EvaluationResultRecord.md)                                                                                                               | A single evaluation result record                                                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Group](Group.md)                                                                                                                                                 | Labelled groups of concepts                                                      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiTaskDomain](AiTaskDomain.md)                                                                                   | A grouping of AI Tasks by domain                                                 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiTaskGroup](AiTaskGroup.md)                                                                                     | A group of AI Tasks                                                              |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CapabilityDomain](CapabilityDomain.md)                                                                           | A high-level domain of AI capabilities (e                                        |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CapabilityGroup](CapabilityGroup.md)                                                                             | A group of AI capabilities that are part of a capability taxonomy, organized ... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RiskControlGroup](RiskControlGroup.md)                                                                           | A group of AI system related risk controls                                       |
@@ -65,7 +70,6 @@ Name: ai-risk-ontology
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LargeLanguageModelFamily](LargeLanguageModelFamily.md)                                                                                                           | A large language model family is a set of models that are provided by the sam... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[License](License.md)                                                                                                                                             | The general notion of a license which defines terms and grants permissions to... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Likelihood](Likelihood.md)                                                                                                                                       |                                                                                  |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LocalityOfUse](LocalityOfUse.md)                                                                                                                                 | The area, e                                                                      |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MetricConfig](MetricConfig.md)                                                                                                                                   | Configuration for evaluation metrics                                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Modality](Modality.md)                                                                                                                                           | A modality supported by an Ai component                                          |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ModelInfo](ModelInfo.md)                                                                                                                                         | Information about the AI model being evaluated                                   |
@@ -74,9 +78,9 @@ Name: ai-risk-ontology
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiProvider](AiProvider.md)                                                                                       | A provider under the AI Act is defined by Article 3(3) as a natural or legal ... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Policy](Policy.md)                                                                                                                                               | A guidance document outlining any of: procedures, plans, principles, decision... |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LLMQuestionPolicy](LLMQuestionPolicy.md)                                                                         | The policy guides how the language model should answer a diverse set of sensi... |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Purpose](Purpose.md)                                                                                                                                             | The end goal for which an entity is used or an action is taken                   |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RiskIncident](RiskIncident.md)                                                                                                                                   | An event occuring or occured which is a realised or materialised risk            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Rule](Rule.md)                                                                                                                                                   | A rule describing a process or control that directs or determines if and how ... |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AttributeConditionRule](AttributeConditionRule.md)                                                               |                                                                                  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ControlActivity](ControlActivity.md)                                                                             | An obligation, permission, or prohibition for AI system assurance                |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Obligation](Obligation.md)                                                                                       | A rule describing an obligation for performing an activity                       |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    |
@@ -98,11 +102,13 @@ Name: ai-risk-ontology
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AISubject](AISubject.md)                                                                                         | An entity that is subject to or impacted by the use of AI                        |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AIUser](AIUser.md)                                                                                               | Individual or group that interacts with a system                                 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Taxonomy](Taxonomy.md)                                                                                                                                           | A hierachical taxonomy of concepts, with their definitions and relationships     |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AiTaskTaxonomy](AiTaskTaxonomy.md)                                                                               | A taxonomy of AI Tasks                                                           |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[CapabilityTaxonomy](CapabilityTaxonomy.md)                                                                       | A taxonomy of AI capabilities describing the abilities of AI systems             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RiskControlGroupTaxonomy](RiskControlGroupTaxonomy.md)                                                           | A taxonomy of AI system related risk controls groups                             |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RiskTaxonomy](RiskTaxonomy.md)                                                                                   | A taxonomy of AI system related risks                                            |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Vocabulary](Vocabulary.md)                                                                                                                                       | A collection of terms, with their definitions and relationships                  |
 | [Fact](Fact.md)                                                                                                                                                                                                   | A fact about something, for example the result of a measurement                  |
+| [SlotCondition](SlotCondition.md)                                                                                                                                                                                 |                                                                                  |
 
 ## Slots
 
@@ -122,7 +128,7 @@ Name: ai-risk-ontology
 | [benchmarkmetadatacards](benchmarkmetadatacards.md)                                       | A list of AI evaluation benchmark metadata cards                                 |
 | [bestValue](bestValue.md)                                                                 | Annotation of the best possible result of the evaluation                         |
 | [broad_mappings](broad_mappings.md)                                                       | The property is used to state a hierarchical mapping link between two concept... |
-| [broader](broader.md)                                                                     |                                                                                  |
+| [broader](broader.md)                                                                     | Related concepts that are broader in scope or hierarchy                          |
 | [carbon_emitted](carbon_emitted.md)                                                       | The number of tons of carbon dioxide equivalent that are emitted during train... |
 | [close_mappings](close_mappings.md)                                                       | The property is used to link two concepts that are sufficiently similar that ... |
 | [concepts](concepts.md)                                                                   | A list of concepts                                                               |
@@ -139,6 +145,7 @@ Name: ai-risk-ontology
 | [detectsRiskConcept](detectsRiskConcept.md)                                               | The property airo:detectsRiskConcept indicates the control used for detecting... |
 | [documents](documents.md)                                                                 | A list of documents                                                              |
 | [entries](entries.md)                                                                     | A list of entries                                                                |
+| [equals_string](equals_string.md)                                                         | The string value that the slot must equal to satisfy this condition              |
 | [evaluatedByBenchmark](evaluatedByBenchmark.md)                                           | Indicates that this capability is evaluated by a specific benchmark              |
 | [evaluatesCapability](evaluatesCapability.md)                                             | Indicates that this benchmark evaluates a specific capability                    |
 | [evaluation_id](evaluation_id.md)                                                         | Unique identifier for this evaluation                                            |
@@ -190,6 +197,7 @@ Name: ai-risk-ontology
 | [hasImplementation](hasImplementation.md)                                                 | A relationship to a implementation defining the risk evaluation                  |
 | [hasInputModality](hasInputModality.md)                                                   | A relationship indicating the input modalities supported by an AI component      |
 | [hasInterpretation](hasInterpretation.md)                                                 | How users should interpret the scores or results from the metrics                |
+| [hasJurisdiction](hasJurisdiction.md)                                                     | The legal or political jurisdiction(s) in which this concept applies, express... |
 | [hasKeywords](hasKeywords.md)                                                             | A collection of keywords                                                         |
 | [hasLanguages](hasLanguages.md)                                                           | The languages included in the dataset used by the benchmark (e                   |
 | [hasLicense](hasLicense.md)                                                               | Indicates licenses associated with a resource                                    |
@@ -237,7 +245,8 @@ Name: ai-risk-ontology
 | [id](id.md)                                                                               | A unique identifier to this instance of the model element                        |
 | [implementedByAdapter](implementedByAdapter.md)                                           | Indicates that this capability is implemented by a specific adapter              |
 | [implementedByIntrinsic](implementedByIntrinsic.md)                                       | Indicates that this capability is implemented by a specific LLM intrinsic        |
-| [implementsCapability](implementsCapability.md)                                           | Indicates that this adapter implements a specific capability                     |
+| [implementsCapability](implementsCapability.md)                                           | Indicates that this entity implements a specific capability                      |
+| [isApplicableinLocality](isApplicableinLocality.md)                                       | A relationship where an entity has is applicable in these localities             |
 | [isAppliedWithinDomain](isAppliedWithinDomain.md)                                         | Specifies the domain an AI system is used within                                 |
 | [isCategorizedAs](isCategorizedAs.md)                                                     | A relationship where an entity has been deemed to be categorized                 |
 | [isComposedOf](isComposedOf.md)                                                           | Relationship indicating the some entity is composed of other entities (includ... |
@@ -248,6 +257,7 @@ Name: ai-risk-ontology
 | [isDevelopedBy](isDevelopedBy.md)                                                         | Indicates the developer of an AI system or component                             |
 | [isDistributedBy](isDistributedBy.md)                                                     | A relationship indicating that an entity has been distributed by an organizat... |
 | [isImportedBy](isImportedBy.md)                                                           | A relationship indicating that an entity has been imported by an organization    |
+| [isMitigatedBy](isMitigatedBy.md)                                                         | A relationship where a risk, risk source, consequence, or impact is mitigated... |
 | [isPartOf](isPartOf.md)                                                                   | A relationship where an entity is part of another entity                         |
 | [isProvidedBy](isProvidedBy.md)                                                           | Indicates provider of an AI system or component                                  |
 | [isResultOf](isResultOf.md)                                                               | A relationship indicating that an entity is the result of an AI evaluation       |
@@ -258,12 +268,13 @@ Name: ai-risk-ontology
 | [lower_is_better](lower_is_better.md)                                                     | Whether lower scores are better                                                  |
 | [max_score](max_score.md)                                                                 | Maximum possible score                                                           |
 | [min_score](min_score.md)                                                                 | Minimum possible score                                                           |
+| [mitigatesRiskConcept](mitigatesRiskConcept.md)                                           | Indicates the control used for mitigating risks, risk sources, consequences, ... |
 | [modalities](modalities.md)                                                               | A list of AI modalities                                                          |
 | [model_id](model_id.md)                                                                   | Identifier of the AI model                                                       |
 | [model_name](model_name.md)                                                               | Name of the AI model                                                             |
 | [name](name.md)                                                                           | A text name of this instance                                                     |
 | [narrow_mappings](narrow_mappings.md)                                                     | The property is used to state a hierarchical mapping link between two concept... |
-| [narrower](narrower.md)                                                                   |                                                                                  |
+| [narrower](narrower.md)                                                                   | Related concepts that are narrower in scope or hierarchy                         |
 | [numParameters](numParameters.md)                                                         | A property indicating the number of parameters in a LLM                          |
 | [numTrainingTokens](numTrainingTokens.md)                                                 | The number of tokens a AI model was trained on                                   |
 | [obligations](obligations.md)                                                             | A list of Obligations                                                            |
@@ -274,7 +285,9 @@ Name: ai-risk-ontology
 | [phase](phase.md)                                                                         | Annotation whether an AI risk shows specifically during the training-tuning o... |
 | [policies](policies.md)                                                                   | A list of policies                                                               |
 | [possessedByAi](possessedByAi.md)                                                         | Indicates that this capability is possessed by a specific AI system or compon... |
+| [postconditions](postconditions.md)                                                       | Conditions that result from applying the rule                                    |
 | [power_consumption_w](power_consumption_w.md)                                             | power consumption in Watts                                                       |
+| [preconditions](preconditions.md)                                                         | Conditions that must be satisfied before the rule applies                        |
 | [producer](producer.md)                                                                   | A relationship to the Organization instance which produces this instance         |
 | [prohibitions](prohibitions.md)                                                           | A list of prohibitions                                                           |
 | [provider](provider.md)                                                                   | A relationship to the Organization instance that provides this instance          |
@@ -289,6 +302,8 @@ Name: ai-risk-ontology
 | [schema_version](schema_version.md)                                                       | Version of the evaluation schema                                                 |
 | [score](score.md)                                                                         | The evaluation score                                                             |
 | [score_type](score_type.md)                                                               | Type of score (e                                                                 |
+| [slot_conditions](slot_conditions.md)                                                     | List of slot conditions that must be satisfied                                   |
+| [slot_name](slot_name.md)                                                                 | The name of the slot being evaluated in this condition                           |
 | [source_name](source_name.md)                                                             | Name of the evaluation source                                                    |
 | [source_organization_name](source_organization_name.md)                                   | Organization that provided the evaluation                                        |
 | [source_organization_url](source_organization_url.md)                                     | URL of the source organization                                                   |
@@ -301,7 +316,7 @@ Name: ai-risk-ontology
 | [taxonomies](taxonomies.md)                                                               | A list of taxonomies                                                             |
 | [text](text.md)                                                                           | The question itself                                                              |
 | [training_data_preprocessing](training_data_preprocessing.md)                             | relationship indicating data preprocessing steps performed on training data s... |
-| [type](type.md)                                                                           |                                                                                  |
+| [type](type.md)                                                                           | The type or class designation of this entity instance                            |
 | [url](url.md)                                                                             | An optional URL associated with this instance                                    |
 | [validated_by](validated_by.md)                                                           | A relationship indicating the model validation steps after AI model training     |
 | [value](value.md)                                                                         | Some numeric or string value                                                     |
@@ -310,16 +325,17 @@ Name: ai-risk-ontology
 
 ## Enumerations
 
-| Enumeration                                                           | Description |
-| --------------------------------------------------------------------- | ----------- |
-| [AdapterType](AdapterType.md)                                         |             |
-| [AiSystemType](AiSystemType.md)                                       |             |
-| [AIUC1ApplicationCategory](AIUC1ApplicationCategory.md)               |             |
-| [AIUC1ControlApplicationCategory](AIUC1ControlApplicationCategory.md) |             |
-| [AIUC1EvidenceCategory](AIUC1EvidenceCategory.md)                     |             |
-| [AIUC1Frequency](AIUC1Frequency.md)                                   |             |
-| [AIUC1RequirementType](AIUC1RequirementType.md)                       |             |
-| [EuAiRiskCategory](EuAiRiskCategory.md)                               |             |
+| Enumeration                                                           | Description                                                                   |
+| --------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [AdapterType](AdapterType.md)                                         |                                                                               |
+| [AiSystemType](AiSystemType.md)                                       |                                                                               |
+| [AIUC1ApplicationCategory](AIUC1ApplicationCategory.md)               | AIUC1 Application Category                                                    |
+| [AIUC1ControlApplicationCategory](AIUC1ControlApplicationCategory.md) | AIUC1 ControlApplication Category                                             |
+| [AIUC1EvidenceCategory](AIUC1EvidenceCategory.md)                     | AIUC1 Evidence Category                                                       |
+| [AIUC1Frequency](AIUC1Frequency.md)                                   | AIUC1 Frequency                                                               |
+| [AIUC1RequirementType](AIUC1RequirementType.md)                       | AIUC1 Requirement Type                                                        |
+| [EuAiRiskCategory](EuAiRiskCategory.md)                               |                                                                               |
+| [Jurisdiction](Jurisdiction.md)                                       | ISO 3166-1 country code, sourced from the DPV Location ontology (https://w3id |
 
 ## Types
 

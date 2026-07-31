@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasSeverity
 
 _Indicates the severity associated with a concept_
 
-URI: [nexus:hasSeverity](https://ibm.github.io/ai-atlas-nexus/ontology/hasSeverity)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasSeverity](https://w3id.org/ai-atlas-nexus/hasSeverity)
 Alias: hasSeverity
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasSeverity
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasSeverity
 ```yaml
 name: hasSeverity
 description: Indicates the severity associated with a concept
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: RiskConcept
 alias: hasSeverity
@@ -56,5 +63,5 @@ domain_of:
 range: Severity
 
 ```
-</details>
+</details></div>
 ```

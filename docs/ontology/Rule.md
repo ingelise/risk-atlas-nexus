@@ -1,6 +1,13 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: Rule
 
 _A rule describing a process or control that directs or determines if and how an activity should be conducted._
+
+<div data-search-exclude markdown="1">
 
 - **NOTE**: this is an abstract class and should not be instantiated directly
 
@@ -14,6 +21,8 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
         click Entity href "../Entity/"
 
 
+      Rule <|-- AttributeConditionRule
+        click AttributeConditionRule href "../AttributeConditionRule/"
       Rule <|-- Permission
         click Permission href "../Permission/"
       Rule <|-- Prohibition
@@ -137,6 +146,7 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 
 - [Entity](Entity.md)
   - **Rule**
+    - [AttributeConditionRule](AttributeConditionRule.md)
     - [Permission](Permission.md)
     - [Prohibition](Prohibition.md)
     - [Obligation](Obligation.md)
@@ -156,7 +166,7 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 | --------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------- | ------------------- |
 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md) | A relationship where a concept or a concept group is defined by a taxonomy       | direct              |
 | [hasRule](hasRule.md)                         | \* <br/> [Rule](Rule.md)           | Specifying applicability or inclusion of a rule within specified context         | direct              |
-| [type](type.md)                               | 0..1 <br/> [String](String.md)     |                                                                                  | direct              |
+| [type](type.md)                               | 0..1 <br/> [String](String.md)     | The type or class designation of this entity instance                            | direct              |
 | [id](id.md)                                   | 1 <br/> [String](String.md)        | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
 | [name](name.md)                               | 0..1 <br/> [String](String.md)     | A text name of this instance                                                     | [Entity](Entity.md) |
 | [description](description.md)                 | 0..1 <br/> [String](String.md)     | The description of an entity                                                     | [Entity](Entity.md) |
@@ -175,12 +185,27 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 | used by                                                           | used in               | type  | used            |
 | ----------------------------------------------------------------- | --------------------- | ----- | --------------- |
 | [Container](Container.md)                                         | [rules](rules.md)     | range | [Rule](Rule.md) |
+| [Entry](Entry.md)                                                 | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Term](Term.md)                                                   | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Principle](Principle.md)                                         | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [Rule](Rule.md)                                                   | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [AttributeConditionRule](AttributeConditionRule.md)               | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [Permission](Permission.md)                                       | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [Prohibition](Prohibition.md)                                     | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [Obligation](Obligation.md)                                       | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [Recommendation](Recommendation.md)                               | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Certification](Certification.md)                                 | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [LocalityOfUse](LocalityOfUse.md)                                 | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Risk](Risk.md)                                                   | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Capability](Capability.md)                                       | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [AiSystem](AiSystem.md)                                           | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [AiAgent](AiAgent.md)                                             | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [AiTask](AiTask.md)                                               | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Purpose](Purpose.md)                                             | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Domain](Domain.md)                                               | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [Adapter](Adapter.md)                                             | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
+| [LLMIntrinsic](LLMIntrinsic.md)                                   | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [ControlActivity](ControlActivity.md)                             | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [ControlActivityPermission](ControlActivityPermission.md)         | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
 | [ControlActivityProhibition](ControlActivityProhibition.md)       | [hasRule](hasRule.md) | range | [Rule](Rule.md) |
@@ -192,7 +217,7 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -212,7 +237,7 @@ URI: [dpv:Rule](https://w3id.org/dpv#Rule)
 name: Rule
 description: A rule describing a process or control that directs or determines if
   and how an activity should be conducted.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 abstract: true
 slots:
@@ -221,7 +246,8 @@ slots:
 attributes:
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     domain_of:
     - Vocabulary
@@ -257,13 +283,14 @@ class_uri: dpv:Rule
 name: Rule
 description: A rule describing a process or control that directs or determines if
   and how an activity should be conducted.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 abstract: true
 attributes:
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/common
+    description: The type or class designation of this entity instance.
+    from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
     alias: type
     owner: Rule
@@ -293,7 +320,7 @@ attributes:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
       taxonomy
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
     alias: isDefinedByTaxonomy
@@ -311,21 +338,24 @@ attributes:
     - RiskControl
     - Action
     - RiskIncident
+    - CapabilityGroup
+    - AiTaskDomain
+    - AiTaskGroup
     - Stakeholder
     - StakeholderGroup
-    - CapabilityGroup
     - Requirement
     range: Taxonomy
   hasRule:
     name: hasRule
     description: Specifying applicability or inclusion of a rule within specified
       context.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
     alias: hasRule
     owner: Rule
     domain_of:
+    - Entry
     - LLMQuestionPolicy
     - Rule
     - Requirement
@@ -336,7 +366,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -349,7 +379,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -361,7 +391,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -372,7 +402,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -383,7 +413,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -395,7 +425,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -409,7 +439,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -423,7 +453,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -437,7 +467,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -452,7 +482,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -467,7 +497,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -480,7 +510,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -494,4 +524,4 @@ class_uri: dpv:Rule
 
 ````
 
-</details>
+</details></div>

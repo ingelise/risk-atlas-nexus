@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: architecture
 
 _A description of the architecture of an AI such as 'Decoder-only'._
 
-URI: [nexus:architecture](https://ibm.github.io/ai-atlas-nexus/ontology/architecture)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:architecture](https://w3id.org/ai-atlas-nexus/architecture)
 Alias: architecture
 
 <!-- no inheritance hierarchy -->
@@ -11,9 +18,9 @@ Alias: architecture
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: architecture
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: architecture
 ```yaml
 name: architecture
 description: A description of the architecture of an AI such as 'Decoder-only'.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: architecture
 domain_of:
@@ -56,5 +63,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

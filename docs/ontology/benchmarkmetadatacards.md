@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: benchmarkmetadatacards
 
 _A list of AI evaluation benchmark metadata cards_
 
-URI: [nexus:benchmarkmetadatacards](https://ibm.github.io/ai-atlas-nexus/ontology/benchmarkmetadatacards)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:benchmarkmetadatacards](https://w3id.org/ai-atlas-nexus/benchmarkmetadatacards)
 Alias: benchmarkmetadatacards
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: benchmarkmetadatacards
 
 ## Properties
 
-- Range: [BenchmarkMetadataCard](BenchmarkMetadataCard.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                                             |
+| --------- | ------------------------------------------------- |
+| Range     | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
+| Domain Of | [Container](Container.md)                         |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: benchmarkmetadatacards
 ```yaml
 name: benchmarkmetadatacards
 description: A list of AI evaluation benchmark metadata cards
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: benchmarkmetadatacards
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

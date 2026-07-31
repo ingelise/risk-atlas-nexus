@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: refersToRisk
 
 _Indicates the incident (subject) is a materialisation of the indicated risk (object)_
 
-URI: [nexus:refersToRisk](https://ibm.github.io/ai-atlas-nexus/ontology/refersToRisk)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:refersToRisk](https://w3id.org/ai-atlas-nexus/refersToRisk)
 Alias: refersToRisk
 
 <!-- no inheritance hierarchy -->
@@ -33,7 +40,7 @@ Alias: refersToRisk
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -50,7 +57,7 @@ Alias: refersToRisk
 name: refersToRisk
 description: Indicates the incident (subject) is a materialisation of the indicated
   risk (object)
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 exact_mappings:
 - dpv:refersToRisk
 rank: 1000
@@ -63,5 +70,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

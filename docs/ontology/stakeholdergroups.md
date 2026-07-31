@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: stakeholdergroups
 
 _A list of AI stakeholder groups_
 
-URI: [nexus:stakeholdergroups](https://ibm.github.io/ai-atlas-nexus/ontology/stakeholdergroups)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:stakeholdergroups](https://w3id.org/ai-atlas-nexus/stakeholdergroups)
 Alias: stakeholdergroups
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: stakeholdergroups
 
 ## Properties
 
-- Range: [StakeholderGroup](StakeholderGroup.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                                   |
+| --------- | --------------------------------------- |
+| Range     | [StakeholderGroup](StakeholderGroup.md) |
+| Domain Of | [Container](Container.md)               |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: stakeholdergroups
 ```yaml
 name: stakeholdergroups
 description: A list of AI stakeholder groups
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: stakeholdergroups
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: actions
 
 _A list of risk related actions_
 
-URI: [nexus:actions](https://ibm.github.io/ai-atlas-nexus/ontology/actions)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:actions](https://w3id.org/ai-atlas-nexus/actions)
 Alias: actions
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: actions
 
 ## Properties
 
-- Range: [Action](Action.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [Action](Action.md)       |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: actions
 ```yaml
 name: actions
 description: A list of risk related actions
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: actions
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

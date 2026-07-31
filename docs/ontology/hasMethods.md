@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasMethods
 
 _The evaluation techniques applied within the benchmark._
 
-URI: [nexus:hasMethods](https://ibm.github.io/ai-atlas-nexus/ontology/hasMethods)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasMethods](https://w3id.org/ai-atlas-nexus/hasMethods)
 Alias: hasMethods
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasMethods
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasMethods
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasMethods
 ```yaml
 name: hasMethods
 description: The evaluation techniques applied within the benchmark.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasMethods
 domain_of:
@@ -58,5 +65,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

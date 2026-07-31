@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: aimodelfamilies
 
 _A list of AI model families_
 
-URI: [nexus:aimodelfamilies](https://ibm.github.io/ai-atlas-nexus/ontology/aimodelfamilies)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:aimodelfamilies](https://w3id.org/ai-atlas-nexus/aimodelfamilies)
 Alias: aimodelfamilies
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: aimodelfamilies
 
 ## Properties
 
-- Range: [LargeLanguageModelFamily](LargeLanguageModelFamily.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                                                   |
+| --------- | ------------------------------------------------------- |
+| Range     | [LargeLanguageModelFamily](LargeLanguageModelFamily.md) |
+| Domain Of | [Container](Container.md)                               |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: aimodelfamilies
 ```yaml
 name: aimodelfamilies
 description: A list of AI model families
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: aimodelfamilies
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasMetrics
 
 _The specific performance metrics used to assess models (e.g., accuracy, F1 score, precision, recall)._
 
-URI: [nexus:hasMetrics](https://ibm.github.io/ai-atlas-nexus/ontology/hasMetrics)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasMetrics](https://w3id.org/ai-atlas-nexus/hasMetrics)
 Alias: hasMetrics
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasMetrics
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasMetrics
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasMetrics
 name: hasMetrics
 description: The specific performance metrics used to assess models (e.g., accuracy,
   F1 score, precision, recall).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasMetrics
 domain_of:
@@ -59,5 +66,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

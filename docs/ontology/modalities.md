@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: modalities
 
 _A list of AI modalities_
 
-URI: [nexus:modalities](https://ibm.github.io/ai-atlas-nexus/ontology/modalities)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:modalities](https://w3id.org/ai-atlas-nexus/modalities)
 Alias: modalities
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: modalities
 
 ## Properties
 
-- Range: [Modality](Modality.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [Modality](Modality.md)   |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: modalities
 ```yaml
 name: modalities
 description: A list of AI modalities
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: modalities
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

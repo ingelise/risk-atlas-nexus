@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasFrequency
 
 _The frequency_
 
-URI: [nexus:hasFrequency](https://ibm.github.io/ai-atlas-nexus/ontology/hasFrequency)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasFrequency](https://w3id.org/ai-atlas-nexus/hasFrequency)
 Alias: hasFrequency
 
 <!-- no inheritance hierarchy -->
@@ -15,13 +22,25 @@ Alias: hasFrequency
 
 ## Properties
 
-- Range: [AIUC1Frequency](AIUC1Frequency.md)
+### Type and Range
+
+| Property  | Value                                                              |
+| --------- | ------------------------------------------------------------------ |
+| Range     | [AIUC1Frequency](AIUC1Frequency.md)                                |
+| Domain    | [Requirement](Requirement.md)                                      |
+| Domain Of | [Requirement](Requirement.md)                                      |
+| Slot URI  | [nexus:hasFrequency](https://w3id.org/ai-atlas-nexus/hasFrequency) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -36,8 +55,9 @@ Alias: hasFrequency
 ```yaml
 name: hasFrequency
 description: The frequency
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+domain: Requirement
 slot_uri: nexus:hasFrequency
 alias: hasFrequency
 domain_of:
@@ -45,5 +65,5 @@ domain_of:
 range: AIUC1Frequency
 
 ```
-</details>
+</details></div>
 ```

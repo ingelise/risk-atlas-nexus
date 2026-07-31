@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasAdapterType
 
 _The Adapter type, for example: LORA, ALORA, X-LORA_
 
-URI: [nexus:hasAdapterType](https://ibm.github.io/ai-atlas-nexus/ontology/hasAdapterType)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasAdapterType](https://w3id.org/ai-atlas-nexus/hasAdapterType)
 Alias: hasAdapterType
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasAdapterType
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasAdapterType
 ```yaml
 name: hasAdapterType
 description: 'The Adapter type, for example: LORA, ALORA, X-LORA'
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasAdapterType
 domain_of:
@@ -56,5 +63,5 @@ range: AdapterType
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

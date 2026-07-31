@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasValidation
 
 _Measures taken to ensure that the benchmark provides valid and reliable evaluations._
 
-URI: [nexus:hasValidation](https://ibm.github.io/ai-atlas-nexus/ontology/hasValidation)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasValidation](https://w3id.org/ai-atlas-nexus/hasValidation)
 Alias: hasValidation
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasValidation
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasValidation
 name: hasValidation
 description: Measures taken to ensure that the benchmark provides valid and reliable
   evaluations.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasValidation
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```
