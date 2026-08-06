@@ -1,6 +1,13 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasRiskControl
 
 _Indicates the control measures associated with a system or component to modify risks._
+
+<div data-search-exclude markdown="1">
 
 URI: [airo:hasRiskControl](https://w3id.org/airo#hasRiskControl)
 Alias: hasRiskControl
@@ -11,9 +18,9 @@ Alias: hasRiskControl
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -35,7 +42,7 @@ Alias: hasRiskControl
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -51,7 +58,7 @@ Alias: hasRiskControl
 name: hasRiskControl
 description: Indicates the control measures associated with a system or component
   to modify risks.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasRiskControl
 alias: hasRiskControl
@@ -61,5 +68,5 @@ range: RiskControl
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

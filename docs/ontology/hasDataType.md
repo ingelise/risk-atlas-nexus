@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasDataType
 
 _The type of data used in the benchmark (e.g., text, images, or multi-modal)_
 
-URI: [nexus:hasDataType](https://ibm.github.io/ai-atlas-nexus/ontology/hasDataType)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasDataType](https://w3id.org/ai-atlas-nexus/hasDataType)
 Alias: hasDataType
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: hasDataType
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -33,7 +40,7 @@ Alias: hasDataType
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasDataType
 ```yaml
 name: hasDataType
 description: The type of data used in the benchmark (e.g., text, images, or multi-modal)
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasDataType
 domain_of:
@@ -58,5 +65,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,6 +1,13 @@
+---
+search:
+  boost: 2.0
+---
+
 # Enum: AdapterType
 
-URI: [nexus:AdapterType](https://ibm.github.io/ai-atlas-nexus/ontology/AdapterType)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:AdapterType](https://w3id.org/ai-atlas-nexus/AdapterType)
 
 ## Permissible Values
 
@@ -20,14 +27,14 @@ URI: [nexus:AdapterType](https://ibm.github.io/ai-atlas-nexus/ontology/AdapterTy
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: AdapterType
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 permissible_values:
   LORA:
@@ -57,4 +64,6 @@ permissible_values:
 
 ```
 </details>
+
+</div>
 ```

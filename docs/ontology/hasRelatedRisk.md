@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasRelatedRisk
 
 _A relationship where an entity relates to a risk_
 
-URI: [nexus:hasRelatedRisk](https://ibm.github.io/ai-atlas-nexus/ontology/hasRelatedRisk)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasRelatedRisk](https://w3id.org/ai-atlas-nexus/hasRelatedRisk)
 Alias: hasRelatedRisk
 
 <!-- no inheritance hierarchy -->
@@ -11,18 +18,18 @@ Alias: hasRelatedRisk
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Term](Term.md)                                   | A term and its definitions                                                       | no            |
-| [LLMQuestionPolicy](LLMQuestionPolicy.md)         | The policy guides how the language model should answer a diverse set of sensi... | no            |
-| [Adapter](Adapter.md)                             | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [AiEval](AiEval.md)                               | An AI Evaluation, e                                                              | yes           |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | yes           |
+| [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | yes           |
 | [Questionnaire](Questionnaire.md)                 | A questionnaire groups questions                                                 | no            |
-| [LLMIntrinsic](LLMIntrinsic.md)                   | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
-| [AiAgent](AiAgent.md)                             | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
-| [AiEval](AiEval.md)                               | An AI Evaluation, e                                                              | no            |
-| [Action](Action.md)                               | Action to remediate a risk                                                       | no            |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
-| [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
 | [Question](Question.md)                           | An evaluation where a question has to be answered                                | no            |
-| [AiSystem](AiSystem.md)                           | A compound AI System composed of one or more AI capablities                      | no            |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md)         | The policy guides how the language model should answer a diverse set of sensi... | no            |
+| [AiSystem](AiSystem.md)                           | A compound AI System composed of one or more AI capablities                      | yes           |
+| [LLMIntrinsic](LLMIntrinsic.md)                   | A capability that can be invoked through a well-defined API that is reasonabl... | yes           |
+| [AiAgent](AiAgent.md)                             | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
+| [Term](Term.md)                                   | A term and its definitions                                                       | no            |
+| [Adapter](Adapter.md)                             | Adapter-based methods add extra trainable parameters after the attention and ... | yes           |
+| [Action](Action.md)                               | Action to remediate a risk                                                       | yes           |
 
 ## Properties
 
@@ -30,7 +37,7 @@ Alias: hasRelatedRisk
 
 | Property  | Value                                                                                                                                                                                                                                                                               |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Range     | [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md)                                                                                                                                                                                 |
+| Range     | [Any](Any.md)                                                                                                                                                                                                                                                                       |
 | Domain    | [Any](Any.md)                                                                                                                                                                                                                                                                       |
 | Domain Of | [Term](Term.md), [LLMQuestionPolicy](LLMQuestionPolicy.md), [Action](Action.md), [AiSystem](AiSystem.md), [AiEval](AiEval.md), [EveryEvalAIResult](EveryEvalAIResult.md), [BenchmarkMetadataCard](BenchmarkMetadataCard.md), [Adapter](Adapter.md), [LLMIntrinsic](LLMIntrinsic.md) |
 
@@ -40,22 +47,11 @@ Alias: hasRelatedRisk
 | ----------- | ----- |
 | Multivalued | Yes   |
 
-<details>
-<summary>Expressions & Logic</summary>
-#### Any Of
-
-Value must satisfy at least one of:
-
-- AnonymousSlotExpression({'range': 'RiskConcept'})
-- AnonymousSlotExpression({'range': 'Term'})
-
-</details>
-
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -70,7 +66,7 @@ Value must satisfy at least one of:
 ```yaml
 name: hasRelatedRisk
 description: A relationship where an entity relates to a risk
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Any
 alias: hasRelatedRisk
@@ -84,13 +80,10 @@ domain_of:
 - BenchmarkMetadataCard
 - Adapter
 - LLMIntrinsic
-range: Risk
+range: Any
 multivalued: true
 inlined: false
-any_of:
-- range: RiskConcept
-- range: Term
 
 ```
-</details>
+</details></div>
 ```

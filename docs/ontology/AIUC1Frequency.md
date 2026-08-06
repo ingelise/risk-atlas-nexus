@@ -1,6 +1,15 @@
+---
+search:
+  boost: 2.0
+---
+
 # Enum: AIUC1Frequency
 
-URI: [nexus:AIUC1Frequency](https://ibm.github.io/ai-atlas-nexus/ontology/AIUC1Frequency)
+_AIUC1 Frequency_
+
+<div data-search-exclude markdown="1">
+
+URI: [nexus:AIUC1Frequency](https://w3id.org/ai-atlas-nexus/AIUC1Frequency)
 
 ## Permissible Values
 
@@ -20,14 +29,15 @@ URI: [nexus:AIUC1Frequency](https://ibm.github.io/ai-atlas-nexus/ontology/AIUC1F
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: AIUC1Frequency
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+description: AIUC1 Frequency
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 permissible_values:
   MONTHS_3:
@@ -42,4 +52,6 @@ permissible_values:
 
 ```
 </details>
+
+</div>
 ```

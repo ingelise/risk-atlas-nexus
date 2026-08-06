@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasConsiderationConsentProcedures
 
 _Information on how consent was obtained (if applicable), especially for datasets involving personal data._
 
-URI: [nexus:hasConsiderationConsentProcedures](https://ibm.github.io/ai-atlas-nexus/ontology/hasConsiderationConsentProcedures)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasConsiderationConsentProcedures](https://w3id.org/ai-atlas-nexus/hasConsiderationConsentProcedures)
 Alias: hasConsiderationConsentProcedures
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasConsiderationConsentProcedures
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasConsiderationConsentProcedures
 name: hasConsiderationConsentProcedures
 description: Information on how consent was obtained (if applicable), especially for
   datasets involving personal data.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasConsiderationConsentProcedures
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

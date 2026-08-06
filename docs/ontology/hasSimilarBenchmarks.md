@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasSimilarBenchmarks
 
 _Benchmarks that are closely related in terms of goals or data type._
 
-URI: [nexus:hasSimilarBenchmarks](https://ibm.github.io/ai-atlas-nexus/ontology/hasSimilarBenchmarks)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasSimilarBenchmarks](https://w3id.org/ai-atlas-nexus/hasSimilarBenchmarks)
 Alias: hasSimilarBenchmarks
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasSimilarBenchmarks
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasSimilarBenchmarks
 ```yaml
 name: hasSimilarBenchmarks
 description: Benchmarks that are closely related in terms of goals or data type.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasSimilarBenchmarks
 domain_of:
@@ -56,5 +63,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

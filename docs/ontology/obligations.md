@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: obligations
 
 _A list of Obligations_
 
-URI: [nexus:obligations](https://ibm.github.io/ai-atlas-nexus/ontology/obligations)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:obligations](https://w3id.org/ai-atlas-nexus/obligations)
 Alias: obligations
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: obligations
 
 ## Properties
 
-- Range: [Obligation](Obligation.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                       |
+| --------- | --------------------------- |
+| Range     | [Obligation](Obligation.md) |
+| Domain Of | [Container](Container.md)   |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: obligations
 ```yaml
 name: obligations
 description: A list of Obligations
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: obligations
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

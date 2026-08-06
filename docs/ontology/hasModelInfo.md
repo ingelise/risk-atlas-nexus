@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasModelInfo
 
 _Model information for the evaluation_
 
-URI: [nexus:hasModelInfo](https://ibm.github.io/ai-atlas-nexus/ontology/hasModelInfo)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasModelInfo](https://w3id.org/ai-atlas-nexus/hasModelInfo)
 Alias: hasModelInfo
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasModelInfo
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasModelInfo
 ```yaml
 name: hasModelInfo
 description: Model information for the evaluation
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EveryEvalAIResult
 alias: hasModelInfo
@@ -57,5 +64,5 @@ range: ModelInfo
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

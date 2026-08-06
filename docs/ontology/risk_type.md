@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: risk_type
 
 _Annotation whether an AI risk occurs at input or output or is non-technical._
 
-URI: [nexus:risk_type](https://ibm.github.io/ai-atlas-nexus/ontology/risk_type)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:risk_type](https://w3id.org/ai-atlas-nexus/risk_type)
 Alias: risk_type
 
 <!-- no inheritance hierarchy -->
@@ -15,13 +22,29 @@ Alias: risk_type
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
+
+| Property  | Value               |
+| --------- | ------------------- |
+| Range     | [String](String.md) |
+| Domain Of | [Risk](Risk.md)     |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
+
+### Slot Characteristics
+
+| Property | Value           |
+| -------- | --------------- |
+| Owner    | [Risk](Risk.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -36,7 +59,7 @@ Alias: risk_type
 ```yaml
 name: risk_type
 description: Annotation whether an AI risk occurs at input or output or is non-technical.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: risk_type
 owner: Risk
@@ -45,5 +68,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

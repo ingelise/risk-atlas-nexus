@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasParentDefinition
 
 _Indicates parent terms associated with a term_
 
-URI: [nexus:hasParentDefinition](https://ibm.github.io/ai-atlas-nexus/ontology/hasParentDefinition)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasParentDefinition](https://w3id.org/ai-atlas-nexus/hasParentDefinition)
 Alias: hasParentDefinition
 
 <!-- no inheritance hierarchy -->
@@ -17,11 +24,11 @@ Alias: hasParentDefinition
 
 ### Type and Range
 
-| Property  | Value                                                                                          |
-| --------- | ---------------------------------------------------------------------------------------------- |
-| Range     | [Term](Term.md)                                                                                |
-| Domain Of | [Term](Term.md)                                                                                |
-| Slot URI  | [nexus:hasParentDefinition](https://ibm.github.io/ai-atlas-nexus/ontology/hasParentDefinition) |
+| Property  | Value                                                                            |
+| --------- | -------------------------------------------------------------------------------- |
+| Range     | [Term](Term.md)                                                                  |
+| Domain Of | [Term](Term.md)                                                                  |
+| Slot URI  | [nexus:hasParentDefinition](https://w3id.org/ai-atlas-nexus/hasParentDefinition) |
 
 ### Cardinality and Requirements
 
@@ -33,7 +40,7 @@ Alias: hasParentDefinition
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasParentDefinition
 ```yaml
 name: hasParentDefinition
 description: Indicates parent terms associated with a term
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasParentDefinition
 alias: hasParentDefinition
@@ -59,5 +66,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

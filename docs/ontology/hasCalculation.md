@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasCalculation
 
 _The way metrics are computed based on model outputs and the benchmark data._
 
-URI: [nexus:hasCalculation](https://ibm.github.io/ai-atlas-nexus/ontology/hasCalculation)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasCalculation](https://w3id.org/ai-atlas-nexus/hasCalculation)
 Alias: hasCalculation
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasCalculation
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasCalculation
 name: hasCalculation
 description: The way metrics are computed based on model outputs and the benchmark
   data.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasCalculation
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

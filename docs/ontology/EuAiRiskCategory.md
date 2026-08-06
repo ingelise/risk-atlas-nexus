@@ -1,6 +1,13 @@
+---
+search:
+  boost: 2.0
+---
+
 # Enum: EuAiRiskCategory
 
-URI: [nexus:EuAiRiskCategory](https://ibm.github.io/ai-atlas-nexus/ontology/EuAiRiskCategory)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:EuAiRiskCategory](https://w3id.org/ai-atlas-nexus/EuAiRiskCategory)
 
 ## Permissible Values
 
@@ -22,14 +29,14 @@ URI: [nexus:EuAiRiskCategory](https://ibm.github.io/ai-atlas-nexus/ontology/EuAi
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: EuAiRiskCategory
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 permissible_values:
   EXCLUDED:
@@ -50,4 +57,6 @@ permissible_values:
 
 ```
 </details>
+
+</div>
 ```

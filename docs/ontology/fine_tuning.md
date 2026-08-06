@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: fine_tuning
 
 _A description of the fine-tuning mechanism(s) applied to a model._
 
-URI: [nexus:fine_tuning](https://ibm.github.io/ai-atlas-nexus/ontology/fine_tuning)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:fine_tuning](https://w3id.org/ai-atlas-nexus/fine_tuning)
 Alias: fine_tuning
 
 <!-- no inheritance hierarchy -->
@@ -11,8 +18,8 @@ Alias: fine_tuning
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -32,7 +39,7 @@ Alias: fine_tuning
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: fine_tuning
 ```yaml
 name: fine_tuning
 description: A description of the fine-tuning mechanism(s) applied to a model.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: fine_tuning
 domain_of:
@@ -55,5 +62,5 @@ domain_of:
 range: string
 
 ```
-</details>
+</details></div>
 ```

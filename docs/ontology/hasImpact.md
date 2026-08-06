@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasImpact
 
 _Indicates impact(s) possible or arising as consequences from specified concept_
 
-URI: [nexus:hasImpact](https://ibm.github.io/ai-atlas-nexus/ontology/hasImpact)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasImpact](https://w3id.org/ai-atlas-nexus/hasImpact)
 Alias: hasImpact
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasImpact
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ Alias: hasImpact
 name: hasImpact
 description: Indicates impact(s) possible or arising as consequences from specified
   concept
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 broad_mappings:
 - dpv:hasConsequence
 rank: 1000
@@ -60,5 +67,5 @@ domain_of:
 range: Impact
 
 ```
-</details>
+</details></div>
 ```

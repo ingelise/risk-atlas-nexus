@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: groups
 
 _A list of groups_
 
-URI: [nexus:groups](https://ibm.github.io/ai-atlas-nexus/ontology/groups)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:groups](https://w3id.org/ai-atlas-nexus/groups)
 Alias: groups
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: groups
 
 ## Properties
 
-- Range: [Group](Group.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [Group](Group.md)         |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: groups
 ```yaml
 name: groups
 description: A list of groups
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: groups
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

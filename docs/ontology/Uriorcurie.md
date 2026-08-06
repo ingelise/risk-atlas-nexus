@@ -1,20 +1,32 @@
-# Type: Uriorcurie
+---
+
+search:
+boost: 1.0
+---# Type: Uriorcurie
 
 _a URI or a CURIE_
 
+<div data-search-exclude markdown="1">
+
 URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 
-- [base](https://w3id.org/linkml/base): URIorCURIE
+## Type Properties
 
-- [uri](https://w3id.org/linkml/uri): xsd:anyURI
+| Property       | Value                                                 |
+| -------------- | ----------------------------------------------------- |
+| Base           | `URIorCURIE`                                          |
+| Type URI       | [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |
+| Representation | `str`                                                 |
 
-- [repr](https://w3id.org/linkml/repr): str
+## Notes
+
+- If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uriorcurie".
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -22,3 +34,5 @@ URI: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
 | ------------ | ---------------- |
 | self         | xsd:anyURI       |
 | native       | nexus:uriorcurie |
+
+</div>

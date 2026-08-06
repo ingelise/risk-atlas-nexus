@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasConsequence
 
 _Indicates consequence(s) possible or arising from specified concept_
 
-URI: [nexus:hasConsequence](https://ibm.github.io/ai-atlas-nexus/ontology/hasConsequence)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasConsequence](https://w3id.org/ai-atlas-nexus/hasConsequence)
 Alias: hasConsequence
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasConsequence
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasConsequence
 ```yaml
 name: hasConsequence
 description: Indicates consequence(s) possible or arising from specified concept
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: RiskConcept
 alias: hasConsequence
@@ -56,5 +63,5 @@ domain_of:
 range: Consequence
 
 ```
-</details>
+</details></div>
 ```

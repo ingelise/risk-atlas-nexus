@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: organizations
 
 _A list of organizations_
 
-URI: [nexus:organizations](https://ibm.github.io/ai-atlas-nexus/ontology/organizations)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:organizations](https://w3id.org/ai-atlas-nexus/organizations)
 Alias: organizations
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: organizations
 
 ## Properties
 
-- Range: [Organization](Organization.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                           |
+| --------- | ------------------------------- |
+| Range     | [Organization](Organization.md) |
+| Domain Of | [Container](Container.md)       |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: organizations
 ```yaml
 name: organizations
 description: A list of organizations
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: organizations
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

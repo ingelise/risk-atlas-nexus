@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasConsiderationComplianceWithRegulations
 
 _Compliance with relevant legal or ethical regulations (if applicable)._
 
-URI: [nexus:hasConsiderationComplianceWithRegulations](https://ibm.github.io/ai-atlas-nexus/ontology/hasConsiderationComplianceWithRegulations)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasConsiderationComplianceWithRegulations](https://w3id.org/ai-atlas-nexus/hasConsiderationComplianceWithRegulations)
 Alias: hasConsiderationComplianceWithRegulations
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasConsiderationComplianceWithRegulations
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasConsiderationComplianceWithRegulations
 ```yaml
 name: hasConsiderationComplianceWithRegulations
 description: Compliance with relevant legal or ethical regulations (if applicable).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasConsiderationComplianceWithRegulations
 domain_of:
@@ -56,5 +63,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

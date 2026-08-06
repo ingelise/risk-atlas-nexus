@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasOutOfScopeUses
 
 _Use cases where the benchmark is not designed to be applied and could give misleading results._
 
-URI: [nexus:hasOutOfScopeUses](https://ibm.github.io/ai-atlas-nexus/ontology/hasOutOfScopeUses)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasOutOfScopeUses](https://w3id.org/ai-atlas-nexus/hasOutOfScopeUses)
 Alias: hasOutOfScopeUses
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasOutOfScopeUses
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasOutOfScopeUses
 name: hasOutOfScopeUses
 description: Use cases where the benchmark is not designed to be applied and could
   give misleading results.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasOutOfScopeUses
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,21 +1,37 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: isDistributedBy
 
 _A relationship indicating that an entity has been distributed by an organization._
 
-URI: [nexus:isDistributedBy](https://ibm.github.io/ai-atlas-nexus/ontology/isDistributedBy)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:isDistributedBy](https://w3id.org/ai-atlas-nexus/isDistributedBy)
 Alias: isDistributedBy
 
 <!-- no inheritance hierarchy -->
 
 ## Properties
 
-- Range: [Organization](Organization.md)
+### Type and Range
+
+| Property | Value                           |
+| -------- | ------------------------------- |
+| Range    | [Organization](Organization.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -30,12 +46,12 @@ Alias: isDistributedBy
 ```yaml
 name: isDistributedBy
 description: A relationship indicating that an entity has been distributed by an organization.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: isDistributedBy
 range: Organization
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

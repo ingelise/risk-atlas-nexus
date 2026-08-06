@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: adaptsModel
 
 _The LargeLanguageModel being adapted_
 
-URI: [nexus:adaptsModel](https://ibm.github.io/ai-atlas-nexus/ontology/adaptsModel)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:adaptsModel](https://w3id.org/ai-atlas-nexus/adaptsModel)
 Alias: adaptsModel
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: adaptsModel
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: adaptsModel
 ```yaml
 name: adaptsModel
 description: The LargeLanguageModel being adapted
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: adaptsModel
 domain_of:
@@ -56,5 +63,5 @@ range: LargeLanguageModel
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

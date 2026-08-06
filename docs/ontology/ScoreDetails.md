@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: ScoreDetails
 
 _Details about evaluation scores_
 
-URI: [nexus:scoredetails](https://ibm.github.io/ai-atlas-nexus/ontology/scoredetails)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:scoredetails](https://w3id.org/ai-atlas-nexus/scoredetails)
 
 ```mermaid
  classDiagram
@@ -101,9 +108,9 @@ URI: [nexus:scoredetails](https://ibm.github.io/ai-atlas-nexus/ontology/scoredet
 
 ## Class Properties
 
-| Property  | Value                                                                            |
-| --------- | -------------------------------------------------------------------------------- |
-| Class URI | [nexus:scoredetails](https://ibm.github.io/ai-atlas-nexus/ontology/scoredetails) |
+| Property  | Value                                                              |
+| --------- | ------------------------------------------------------------------ |
+| Class URI | [nexus:scoredetails](https://w3id.org/ai-atlas-nexus/scoredetails) |
 
 ## Slots
 
@@ -133,7 +140,7 @@ URI: [nexus:scoredetails](https://ibm.github.io/ai-atlas-nexus/ontology/scoredet
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -152,13 +159,13 @@ URI: [nexus:scoredetails](https://ibm.github.io/ai-atlas-nexus/ontology/scoredet
 ```yaml
 name: ScoreDetails
 description: Details about evaluation scores
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   score:
     name: score
     description: The evaluation score
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     domain_of:
     - ScoreDetails
@@ -174,13 +181,13 @@ class_uri: nexus:scoredetails
 ```yaml
 name: ScoreDetails
 description: Details about evaluation scores
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   score:
     name: score
     description: The evaluation score
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     alias: score
     owner: ScoreDetails
@@ -191,7 +198,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -204,7 +211,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -216,7 +223,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -227,7 +234,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -238,7 +245,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -250,7 +257,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -264,7 +271,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -278,7 +285,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -292,7 +299,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -307,7 +314,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -322,7 +329,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -335,7 +342,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -349,4 +356,4 @@ class_uri: nexus:scoredetails
 
 ````
 
-</details>
+</details></div>

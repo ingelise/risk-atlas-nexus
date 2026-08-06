@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasAiActorTask
 
 _Pertinent AI Actor Tasks for each subcategory. Not every AI Actor Task listed will apply to every suggested action in the subcategory (i.e., some apply to AI development and others apply to AI deployment)._
 
-URI: [nexus:hasAiActorTask](https://ibm.github.io/ai-atlas-nexus/ontology/hasAiActorTask)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasAiActorTask](https://w3id.org/ai-atlas-nexus/hasAiActorTask)
 Alias: hasAiActorTask
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasAiActorTask
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -49,7 +56,7 @@ name: hasAiActorTask
 description: Pertinent AI Actor Tasks for each subcategory. Not every AI Actor Task
   listed will apply to every suggested action in the subcategory (i.e., some apply
   to AI development and others apply to AI deployment).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasAiActorTask
 domain_of:
@@ -58,5 +65,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

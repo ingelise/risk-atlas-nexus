@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: datasets
 
 _A list of data sets_
 
-URI: [nexus:datasets](https://ibm.github.io/ai-atlas-nexus/ontology/datasets)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:datasets](https://w3id.org/ai-atlas-nexus/datasets)
 Alias: datasets
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: datasets
 
 ## Properties
 
-- Range: [Dataset](Dataset.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                     |
+| --------- | ------------------------- |
+| Range     | [Dataset](Dataset.md)     |
+| Domain Of | [Container](Container.md) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: datasets
 ```yaml
 name: datasets
 description: A list of data sets
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: datasets
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

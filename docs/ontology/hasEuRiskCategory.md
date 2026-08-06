@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasEuRiskCategory
 
 _The risk category of an AI system as defined by the EU AI Act._
 
-URI: [nexus:hasEuRiskCategory](https://ibm.github.io/ai-atlas-nexus/ontology/hasEuRiskCategory)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasEuRiskCategory](https://w3id.org/ai-atlas-nexus/hasEuRiskCategory)
 Alias: hasEuRiskCategory
 
 <!-- no inheritance hierarchy -->
@@ -11,18 +18,28 @@ Alias: hasEuRiskCategory
 
 | Name                    | Description                                                                      | Modifies Slot |
 | ----------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiAgent](AiAgent.md)   | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
 | [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities                      | no            |
+| [AiAgent](AiAgent.md)   | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
 
 ## Properties
 
-- Range: [EuAiRiskCategory](EuAiRiskCategory.md)
+### Type and Range
+
+| Property  | Value                                   |
+| --------- | --------------------------------------- |
+| Range     | [EuAiRiskCategory](EuAiRiskCategory.md) |
+| Domain Of | [AiSystem](AiSystem.md)                 |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| -------- | ----- |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -37,7 +54,7 @@ Alias: hasEuRiskCategory
 ```yaml
 name: hasEuRiskCategory
 description: The risk category of an AI system as defined by the EU AI Act.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasEuRiskCategory
 domain_of:
@@ -45,5 +62,5 @@ domain_of:
 range: EuAiRiskCategory
 
 ```
-</details>
+</details></div>
 ```

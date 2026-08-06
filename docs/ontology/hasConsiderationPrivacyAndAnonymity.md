@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasConsiderationPrivacyAndAnonymity
 
 _How any personal or sensitive data is handled and whether any anonymization techniques are applied._
 
-URI: [nexus:hasConsiderationPrivacyAndAnonymity](https://ibm.github.io/ai-atlas-nexus/ontology/hasConsiderationPrivacyAndAnonymity)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasConsiderationPrivacyAndAnonymity](https://w3id.org/ai-atlas-nexus/hasConsiderationPrivacyAndAnonymity)
 Alias: hasConsiderationPrivacyAndAnonymity
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasConsiderationPrivacyAndAnonymity
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -48,7 +55,7 @@ Alias: hasConsiderationPrivacyAndAnonymity
 name: hasConsiderationPrivacyAndAnonymity
 description: How any personal or sensitive data is handled and whether any anonymization
   techniques are applied.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: hasConsiderationPrivacyAndAnonymity
 domain_of:
@@ -57,5 +64,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```

@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: validated_by
 
 _A relationship indicating the model validation steps after AI model training._
 
-URI: [nexus:validated_by](https://ibm.github.io/ai-atlas-nexus/ontology/validated_by)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:validated_by](https://w3id.org/ai-atlas-nexus/validated_by)
 Alias: validated_by
 
 <!-- no inheritance hierarchy -->
@@ -25,7 +32,7 @@ Alias: validated_by
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -40,7 +47,7 @@ Alias: validated_by
 ```yaml
 name: validated_by
 description: A relationship indicating the model validation steps after AI model training.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: validated_by
 range: AiModelValidation
@@ -48,5 +55,5 @@ multivalued: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

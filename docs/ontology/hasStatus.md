@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasStatus
 
 _Indicates the status of specified concept_
 
-URI: [nexus:hasStatus](https://ibm.github.io/ai-atlas-nexus/ontology/hasStatus)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasStatus](https://w3id.org/ai-atlas-nexus/hasStatus)
 Alias: hasStatus
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasStatus
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasStatus
 ```yaml
 name: hasStatus
 description: Indicates the status of specified concept
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: RiskConcept
 alias: hasStatus
@@ -56,5 +63,5 @@ domain_of:
 range: IncidentStatus
 
 ```
-</details>
+</details></div>
 ```

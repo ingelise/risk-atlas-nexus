@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: BenchmarkMetadataCard
 
 _Benchmark metadata cards offer a standardized way to document LLM benchmarks clearly and transparently. Inspired by Model Cards and Datasheets, Benchmark metadata cards help researchers and practitioners understand exactly what benchmarks test, how they relate to real-world risks, and how to interpret their results responsibly. This is an implementation of the design set out in BenchmarkCards: Large Language Model and Risk Reporting (https://doi.org/10.48550/arXiv.2410.12974)_
 
-URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology/benchmarkmetadatacard)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:benchmarkmetadatacard](https://w3id.org/ai-atlas-nexus/benchmarkmetadatacard)
 
 ```mermaid
  classDiagram
@@ -129,8 +136,8 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 
 
-        BenchmarkMetadataCard --> "*" Risk : hasRelatedRisk
-        click Risk href "../Risk/"
+        BenchmarkMetadataCard --> "*" RiskConcept : hasRelatedRisk
+        click RiskConcept href "../RiskConcept/"
 
 
 
@@ -195,56 +202,56 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 ## Class Properties
 
-| Property  | Value                                                                                              |
-| --------- | -------------------------------------------------------------------------------------------------- |
-| Class URI | [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology/benchmarkmetadatacard) |
+| Property  | Value                                                                                |
+| --------- | ------------------------------------------------------------------------------------ |
+| Class URI | [nexus:benchmarkmetadatacard](https://w3id.org/ai-atlas-nexus/benchmarkmetadatacard) |
 
 ## Slots
 
-| Name                                                                                      | Cardinality and Range                                                                                        | Description                                                                      | Inheritance         |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
-| [describesAiEval](describesAiEval.md)                                                     | \* <br/> [AiEval](AiEval.md)                                                                                 | A relationship where a BenchmarkMetadataCard describes an AI evaluation (benc... | direct              |
-| [hasDataType](hasDataType.md)                                                             | \* <br/> [String](String.md)                                                                                 | The type of data used in the benchmark (e                                        | direct              |
-| [hasDomains](hasDomains.md)                                                               | \* <br/> [String](String.md)                                                                                 | The specific domains or areas where the benchmark is applied (e                  | direct              |
-| [hasLanguages](hasLanguages.md)                                                           | \* <br/> [String](String.md)                                                                                 | The languages included in the dataset used by the benchmark (e                   | direct              |
-| [hasSimilarBenchmarks](hasSimilarBenchmarks.md)                                           | \* <br/> [String](String.md)                                                                                 | Benchmarks that are closely related in terms of goals or data type               | direct              |
-| [hasResources](hasResources.md)                                                           | \* <br/> [String](String.md)                                                                                 | Links to relevant resources, such as repositories or papers related to the be... | direct              |
-| [hasGoal](hasGoal.md)                                                                     | 0..1 <br/> [String](String.md)                                                                               | The specific goal or primary use case the benchmark is designed for              | direct              |
-| [hasAudience](hasAudience.md)                                                             | \* <br/> [String](String.md)                                                                                 | The intended audience, such as researchers, developers, policymakers, etc        | direct              |
-| [hasTasks](hasTasks.md)                                                                   | \* <br/> [String](String.md)                                                                                 | The tasks or evaluations the benchmark is intended to assess                     | direct              |
-| [hasLimitations](hasLimitations.md)                                                       | \* <br/> [String](String.md)                                                                                 | Limitations in evaluating or addressing risks, such as gaps in demographic co... | direct              |
-| [hasOutOfScopeUses](hasOutOfScopeUses.md)                                                 | \* <br/> [String](String.md)                                                                                 | Use cases where the benchmark is not designed to be applied and could give mi... | direct              |
-| [hasDataSource](hasDataSource.md)                                                         | \* <br/> [String](String.md)                                                                                 | The origin or source of the data used in the benchmark (e                        | direct              |
-| [hasDataSize](hasDataSize.md)                                                             | 0..1 <br/> [String](String.md)                                                                               | The size of the dataset, including the number of data points or examples         | direct              |
-| [hasDataFormat](hasDataFormat.md)                                                         | \* <br/> [String](String.md)                                                                                 | The structure and modality of the data (e                                        | direct              |
-| [hasAnnotation](hasAnnotation.md)                                                         | \* <br/> [String](String.md)                                                                                 | The process used to annotate or label the dataset, including who or what perf... | direct              |
-| [hasMethods](hasMethods.md)                                                               | \* <br/> [String](String.md)                                                                                 | The evaluation techniques applied within the benchmark                           | direct              |
-| [hasMetrics](hasMetrics.md)                                                               | \* <br/> [String](String.md)                                                                                 | The specific performance metrics used to assess models (e                        | direct              |
-| [hasCalculation](hasCalculation.md)                                                       | \* <br/> [String](String.md)                                                                                 | The way metrics are computed based on model outputs and the benchmark data       | direct              |
-| [hasInterpretation](hasInterpretation.md)                                                 | \* <br/> [String](String.md)                                                                                 | How users should interpret the scores or results from the metrics                | direct              |
-| [hasBaselineResults](hasBaselineResults.md)                                               | \* <br/> [String](String.md)                                                                                 | The results of well-known or widely used models to give context to new perfor... | direct              |
-| [hasValidation](hasValidation.md)                                                         | \* <br/> [String](String.md)                                                                                 | Measures taken to ensure that the benchmark provides valid and reliable evalu... | direct              |
-| [hasRelatedRisk](hasRelatedRisk.md)                                                       | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[Risk](Risk.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a risk                                 | direct              |
-| [hasDemographicAnalysis](hasDemographicAnalysis.md)                                       | \* <br/> [String](String.md)                                                                                 | How the benchmark evaluates performance across different demographic groups (... | direct              |
-| [hasConsiderationPrivacyAndAnonymity](hasConsiderationPrivacyAndAnonymity.md)             | \* <br/> [String](String.md)                                                                                 | How any personal or sensitive data is handled and whether any anonymization t... | direct              |
-| [hasLicense](hasLicense.md)                                                               | 0..1 <br/> [License](License.md)                                                                             | Indicates licenses associated with a resource                                    | direct              |
-| [hasConsiderationConsentProcedures](hasConsiderationConsentProcedures.md)                 | \* <br/> [String](String.md)                                                                                 | Information on how consent was obtained (if applicable), especially for datas... | direct              |
-| [hasConsiderationComplianceWithRegulations](hasConsiderationComplianceWithRegulations.md) | \* <br/> [String](String.md)                                                                                 | Compliance with relevant legal or ethical regulations (if applicable)            | direct              |
-| [hasDocumentation](hasDocumentation.md)                                                   | \* <br/> [Documentation](Documentation.md)                                                                   | Indicates documentation associated with an entity                                | direct              |
-| [name](name.md)                                                                           | 0..1 <br/> [String](String.md)                                                                               | The official name of the benchmark                                               | direct              |
-| [overview](overview.md)                                                                   | 0..1 <br/> [String](String.md)                                                                               | A brief description of the benchmark's main goals and scope                      | direct              |
-| [type](type.md)                                                                           | 0..1 <br/> [String](String.md)                                                                               |                                                                                  | direct              |
-| [id](id.md)                                                                               | 1 <br/> [String](String.md)                                                                                  | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
-| [description](description.md)                                                             | 0..1 <br/> [String](String.md)                                                                               | The description of an entity                                                     | [Entity](Entity.md) |
-| [url](url.md)                                                                             | 0..1 <br/> [Uri](Uri.md)                                                                                     | An optional URL associated with this instance                                    | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md)                                                             | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was created                                         | [Entity](Entity.md) |
-| [dateModified](dateModified.md)                                                           | 0..1 <br/> [Date](Date.md)                                                                                   | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
-| [exact_mappings](exact_mappings.md)                                                       | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
-| [close_mappings](close_mappings.md)                                                       | \* <br/> [Any](Any.md)                                                                                       | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
-| [related_mappings](related_mappings.md)                                                   | \* <br/> [Any](Any.md)                                                                                       | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
-| [narrow_mappings](narrow_mappings.md)                                                     | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [broad_mappings](broad_mappings.md)                                                       | \* <br/> [Any](Any.md)                                                                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [isCategorizedAs](isCategorizedAs.md)                                                     | \* <br/> [Any](Any.md)                                                                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| Name                                                                                      | Cardinality and Range                      | Description                                                                      | Inheritance         |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
+| [describesAiEval](describesAiEval.md)                                                     | \* <br/> [AiEval](AiEval.md)               | A relationship where a BenchmarkMetadataCard describes an AI evaluation (benc... | direct              |
+| [hasDataType](hasDataType.md)                                                             | \* <br/> [String](String.md)               | The type of data used in the benchmark (e                                        | direct              |
+| [hasDomains](hasDomains.md)                                                               | \* <br/> [String](String.md)               | The specific domains or areas where the benchmark is applied (e                  | direct              |
+| [hasLanguages](hasLanguages.md)                                                           | \* <br/> [String](String.md)               | The languages included in the dataset used by the benchmark (e                   | direct              |
+| [hasSimilarBenchmarks](hasSimilarBenchmarks.md)                                           | \* <br/> [String](String.md)               | Benchmarks that are closely related in terms of goals or data type               | direct              |
+| [hasResources](hasResources.md)                                                           | \* <br/> [String](String.md)               | Links to relevant resources, such as repositories or papers related to the be... | direct              |
+| [hasGoal](hasGoal.md)                                                                     | 0..1 <br/> [String](String.md)             | The specific goal or primary use case the benchmark is designed for              | direct              |
+| [hasAudience](hasAudience.md)                                                             | \* <br/> [String](String.md)               | The intended audience, such as researchers, developers, policymakers, etc        | direct              |
+| [hasTasks](hasTasks.md)                                                                   | \* <br/> [String](String.md)               | The tasks or evaluations the benchmark is intended to assess                     | direct              |
+| [hasLimitations](hasLimitations.md)                                                       | \* <br/> [String](String.md)               | Limitations in evaluating or addressing risks, such as gaps in demographic co... | direct              |
+| [hasOutOfScopeUses](hasOutOfScopeUses.md)                                                 | \* <br/> [String](String.md)               | Use cases where the benchmark is not designed to be applied and could give mi... | direct              |
+| [hasDataSource](hasDataSource.md)                                                         | \* <br/> [String](String.md)               | The origin or source of the data used in the benchmark (e                        | direct              |
+| [hasDataSize](hasDataSize.md)                                                             | 0..1 <br/> [String](String.md)             | The size of the dataset, including the number of data points or examples         | direct              |
+| [hasDataFormat](hasDataFormat.md)                                                         | \* <br/> [String](String.md)               | The structure and modality of the data (e                                        | direct              |
+| [hasAnnotation](hasAnnotation.md)                                                         | \* <br/> [String](String.md)               | The process used to annotate or label the dataset, including who or what perf... | direct              |
+| [hasMethods](hasMethods.md)                                                               | \* <br/> [String](String.md)               | The evaluation techniques applied within the benchmark                           | direct              |
+| [hasMetrics](hasMetrics.md)                                                               | \* <br/> [String](String.md)               | The specific performance metrics used to assess models (e                        | direct              |
+| [hasCalculation](hasCalculation.md)                                                       | \* <br/> [String](String.md)               | The way metrics are computed based on model outputs and the benchmark data       | direct              |
+| [hasInterpretation](hasInterpretation.md)                                                 | \* <br/> [String](String.md)               | How users should interpret the scores or results from the metrics                | direct              |
+| [hasBaselineResults](hasBaselineResults.md)                                               | \* <br/> [String](String.md)               | The results of well-known or widely used models to give context to new perfor... | direct              |
+| [hasValidation](hasValidation.md)                                                         | \* <br/> [String](String.md)               | Measures taken to ensure that the benchmark provides valid and reliable evalu... | direct              |
+| [hasRelatedRisk](hasRelatedRisk.md)                                                       | \* <br/> [RiskConcept](RiskConcept.md)     | A relationship where an entity relates to a risk                                 | direct              |
+| [hasDemographicAnalysis](hasDemographicAnalysis.md)                                       | \* <br/> [String](String.md)               | How the benchmark evaluates performance across different demographic groups (... | direct              |
+| [hasConsiderationPrivacyAndAnonymity](hasConsiderationPrivacyAndAnonymity.md)             | \* <br/> [String](String.md)               | How any personal or sensitive data is handled and whether any anonymization t... | direct              |
+| [hasLicense](hasLicense.md)                                                               | 0..1 <br/> [License](License.md)           | Indicates licenses associated with a resource                                    | direct              |
+| [hasConsiderationConsentProcedures](hasConsiderationConsentProcedures.md)                 | \* <br/> [String](String.md)               | Information on how consent was obtained (if applicable), especially for datas... | direct              |
+| [hasConsiderationComplianceWithRegulations](hasConsiderationComplianceWithRegulations.md) | \* <br/> [String](String.md)               | Compliance with relevant legal or ethical regulations (if applicable)            | direct              |
+| [hasDocumentation](hasDocumentation.md)                                                   | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | direct              |
+| [name](name.md)                                                                           | 0..1 <br/> [String](String.md)             | The official name of the benchmark                                               | direct              |
+| [overview](overview.md)                                                                   | 0..1 <br/> [String](String.md)             | A brief description of the benchmark's main goals and scope                      | direct              |
+| [type](type.md)                                                                           | 0..1 <br/> [String](String.md)             |                                                                                  | direct              |
+| [id](id.md)                                                                               | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
+| [description](description.md)                                                             | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md) |
+| [url](url.md)                                                                             | 0..1 <br/> [Uri](Uri.md)                   | An optional URL associated with this instance                                    | [Entity](Entity.md) |
+| [dateCreated](dateCreated.md)                                                             | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was created                                         | [Entity](Entity.md) |
+| [dateModified](dateModified.md)                                                           | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
+| [exact_mappings](exact_mappings.md)                                                       | \* <br/> [Any](Any.md)                     | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
+| [close_mappings](close_mappings.md)                                                       | \* <br/> [Any](Any.md)                     | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
+| [related_mappings](related_mappings.md)                                                   | \* <br/> [Any](Any.md)                     | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
+| [narrow_mappings](narrow_mappings.md)                                                     | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [broad_mappings](broad_mappings.md)                                                       | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [isCategorizedAs](isCategorizedAs.md)                                                     | \* <br/> [Any](Any.md)                     | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 
 ## Usages
 
@@ -253,6 +260,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 | [Container](Container.md)                         | [benchmarkmetadatacards](benchmarkmetadatacards.md) | range  | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [AiEval](AiEval.md)                               | [hasBenchmarkMetadata](hasBenchmarkMetadata.md)     | range  | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | [describesAiEval](describesAiEval.md)               | domain | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
+| [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | [hasRelatedRisk](hasRelatedRisk.md)                 | domain | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [Question](Question.md)                           | [hasBenchmarkMetadata](hasBenchmarkMetadata.md)     | range  | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 | [Questionnaire](Questionnaire.md)                 | [hasBenchmarkMetadata](hasBenchmarkMetadata.md)     | range  | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) |
 
@@ -260,7 +268,7 @@ URI: [nexus:benchmarkmetadatacard](https://ibm.github.io/ai-atlas-nexus/ontology
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -284,7 +292,7 @@ description: 'Benchmark metadata cards offer a standardized way to document LLM 
   how they relate to real-world risks, and how to interpret their results responsibly.
   This is an implementation of the design set out in BenchmarkCards: Large Language
   Model and Risk Reporting (https://doi.org/10.48550/arXiv.2410.12974)'
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 slots:
 - describesAiEval
@@ -315,24 +323,29 @@ slots:
 - hasConsiderationConsentProcedures
 - hasConsiderationComplianceWithRegulations
 - hasDocumentation
+slot_usage:
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: BenchmarkMetadataCard
+    range: RiskConcept
 attributes:
   name:
     name: name
     description: The official name of the benchmark.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     domain_of:
     - Entity
     - BenchmarkMetadataCard
   overview:
     name: overview
     description: A brief description of the benchmark's main goals and scope.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     domain_of:
     - BenchmarkMetadataCard
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     designates_type: true
     domain_of:
     - Vocabulary
@@ -372,13 +385,18 @@ description: 'Benchmark metadata cards offer a standardized way to document LLM 
   how they relate to real-world risks, and how to interpret their results responsibly.
   This is an implementation of the design set out in BenchmarkCards: Large Language
   Model and Risk Reporting (https://doi.org/10.48550/arXiv.2410.12974)'
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
+slot_usage:
+  hasRelatedRisk:
+    name: hasRelatedRisk
+    domain: BenchmarkMetadataCard
+    range: RiskConcept
 attributes:
   name:
     name: name
     description: The official name of the benchmark.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     alias: name
     owner: BenchmarkMetadataCard
     domain_of:
@@ -388,7 +406,7 @@ attributes:
   overview:
     name: overview
     description: A brief description of the benchmark's main goals and scope.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     alias: overview
     owner: BenchmarkMetadataCard
@@ -397,7 +415,7 @@ attributes:
     range: string
   type:
     name: type
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     designates_type: true
     alias: type
     owner: BenchmarkMetadataCard
@@ -427,7 +445,7 @@ attributes:
     name: describesAiEval
     description: A relationship where a BenchmarkMetadataCard describes an AI evaluation
       (benchmark).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: BenchmarkMetadataCard
     alias: describesAiEval
@@ -441,7 +459,7 @@ attributes:
   hasDataType:
     name: hasDataType
     description: The type of data used in the benchmark (e.g., text, images, or multi-modal)
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDataType
     owner: BenchmarkMetadataCard
@@ -454,7 +472,7 @@ attributes:
     name: hasDomains
     description: The specific domains or areas where the benchmark is applied (e.g.,
       natural language processing, computer vision).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDomains
     owner: BenchmarkMetadataCard
@@ -467,7 +485,7 @@ attributes:
     name: hasLanguages
     description: The languages included in the dataset used by the benchmark (e.g.,
       English, multilingual).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasLanguages
     owner: BenchmarkMetadataCard
@@ -479,7 +497,7 @@ attributes:
   hasSimilarBenchmarks:
     name: hasSimilarBenchmarks
     description: Benchmarks that are closely related in terms of goals or data type.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasSimilarBenchmarks
     owner: BenchmarkMetadataCard
@@ -491,7 +509,7 @@ attributes:
     name: hasResources
     description: Links to relevant resources, such as repositories or papers related
       to the benchmark.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasResources
     owner: BenchmarkMetadataCard
@@ -503,7 +521,7 @@ attributes:
   hasGoal:
     name: hasGoal
     description: The specific goal or primary use case the benchmark is designed for.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasGoal
     owner: BenchmarkMetadataCard
@@ -515,7 +533,7 @@ attributes:
     name: hasAudience
     description: The intended audience, such as researchers, developers, policymakers,
       etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasAudience
     owner: BenchmarkMetadataCard
@@ -527,7 +545,7 @@ attributes:
   hasTasks:
     name: hasTasks
     description: The tasks or evaluations the benchmark is intended to assess.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasTasks
     owner: BenchmarkMetadataCard
@@ -542,7 +560,7 @@ attributes:
     name: hasLimitations
     description: Limitations in evaluating or addressing risks, such as gaps in demographic
       coverage or specific domains.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasLimitations
     owner: BenchmarkMetadataCard
@@ -555,7 +573,7 @@ attributes:
     name: hasOutOfScopeUses
     description: Use cases where the benchmark is not designed to be applied and could
       give misleading results.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasOutOfScopeUses
     owner: BenchmarkMetadataCard
@@ -567,7 +585,7 @@ attributes:
     name: hasDataSource
     description: The origin or source of the data used in the benchmark (e.g., curated
       datasets, user submissions).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDataSource
     owner: BenchmarkMetadataCard
@@ -579,7 +597,7 @@ attributes:
   hasDataSize:
     name: hasDataSize
     description: The size of the dataset, including the number of data points or examples.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDataSize
     owner: BenchmarkMetadataCard
@@ -591,7 +609,7 @@ attributes:
     name: hasDataFormat
     description: The structure and modality of the data (e.g., sentence pairs, question-answer
       format, tabular data).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDataFormat
     owner: BenchmarkMetadataCard
@@ -604,7 +622,7 @@ attributes:
     name: hasAnnotation
     description: The process used to annotate or label the dataset, including who
       or what performed the annotations (e.g., human annotators, automated processes).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasAnnotation
     owner: BenchmarkMetadataCard
@@ -615,7 +633,7 @@ attributes:
   hasMethods:
     name: hasMethods
     description: The evaluation techniques applied within the benchmark.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasMethods
     owner: BenchmarkMetadataCard
@@ -628,7 +646,7 @@ attributes:
     name: hasMetrics
     description: The specific performance metrics used to assess models (e.g., accuracy,
       F1 score, precision, recall).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasMetrics
     owner: BenchmarkMetadataCard
@@ -641,7 +659,7 @@ attributes:
     name: hasCalculation
     description: The way metrics are computed based on model outputs and the benchmark
       data.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasCalculation
     owner: BenchmarkMetadataCard
@@ -652,7 +670,7 @@ attributes:
   hasInterpretation:
     name: hasInterpretation
     description: How users should interpret the scores or results from the metrics.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasInterpretation
     owner: BenchmarkMetadataCard
@@ -664,7 +682,7 @@ attributes:
     name: hasBaselineResults
     description: The results of well-known or widely used models to give context to
       new performance scores.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasBaselineResults
     owner: BenchmarkMetadataCard
@@ -676,7 +694,7 @@ attributes:
     name: hasValidation
     description: Measures taken to ensure that the benchmark provides valid and reliable
       evaluations.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasValidation
     owner: BenchmarkMetadataCard
@@ -687,9 +705,9 @@ attributes:
   hasRelatedRisk:
     name: hasRelatedRisk
     description: A relationship where an entity relates to a risk
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    domain: Any
+    domain: BenchmarkMetadataCard
     alias: hasRelatedRisk
     owner: BenchmarkMetadataCard
     domain_of:
@@ -702,17 +720,14 @@ attributes:
     - BenchmarkMetadataCard
     - Adapter
     - LLMIntrinsic
-    range: Risk
+    range: RiskConcept
     multivalued: true
     inlined: false
-    any_of:
-    - range: RiskConcept
-    - range: Term
   hasDemographicAnalysis:
     name: hasDemographicAnalysis
     description: How the benchmark evaluates performance across different demographic
       groups (e.g., gender, race).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasDemographicAnalysis
     owner: BenchmarkMetadataCard
@@ -724,7 +739,7 @@ attributes:
     name: hasConsiderationPrivacyAndAnonymity
     description: How any personal or sensitive data is handled and whether any anonymization
       techniques are applied.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasConsiderationPrivacyAndAnonymity
     owner: BenchmarkMetadataCard
@@ -735,7 +750,7 @@ attributes:
   hasLicense:
     name: hasLicense
     description: Indicates licenses associated with a resource
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
     alias: hasLicense
@@ -748,6 +763,7 @@ attributes:
     - RiskTaxonomy
     - RiskControlGroupTaxonomy
     - BaseAi
+    - AiTaskTaxonomy
     - AiEval
     - BenchmarkMetadataCard
     - Adapter
@@ -756,7 +772,7 @@ attributes:
     name: hasConsiderationConsentProcedures
     description: Information on how consent was obtained (if applicable), especially
       for datasets involving personal data.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasConsiderationConsentProcedures
     owner: BenchmarkMetadataCard
@@ -767,7 +783,7 @@ attributes:
   hasConsiderationComplianceWithRegulations:
     name: hasConsiderationComplianceWithRegulations
     description: Compliance with relevant legal or ethical regulations (if applicable).
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     alias: hasConsiderationComplianceWithRegulations
     owner: BenchmarkMetadataCard
@@ -778,7 +794,7 @@ attributes:
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
     alias: hasDocumentation
@@ -797,6 +813,7 @@ attributes:
     - Action
     - BaseAi
     - LargeLanguageModelFamily
+    - AiTaskTaxonomy
     - AiEval
     - EveryEvalAIResult
     - BenchmarkMetadataCard
@@ -809,7 +826,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -822,7 +839,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -833,7 +850,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -844,7 +861,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -856,7 +873,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -870,7 +887,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -884,7 +901,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -898,7 +915,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -913,7 +930,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -928,7 +945,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -941,7 +958,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -955,4 +972,4 @@ class_uri: nexus:benchmarkmetadatacard
 
 ````
 
-</details>
+</details></div>

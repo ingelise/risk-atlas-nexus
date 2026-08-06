@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasMetricConfig
 
 _Metric configuration_
 
-URI: [nexus:hasMetricConfig](https://ibm.github.io/ai-atlas-nexus/ontology/hasMetricConfig)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasMetricConfig](https://w3id.org/ai-atlas-nexus/hasMetricConfig)
 Alias: hasMetricConfig
 
 <!-- no inheritance hierarchy -->
@@ -32,7 +39,7 @@ Alias: hasMetricConfig
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -47,7 +54,7 @@ Alias: hasMetricConfig
 ```yaml
 name: hasMetricConfig
 description: Metric configuration
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EvaluationResultRecord
 alias: hasMetricConfig
@@ -57,5 +64,5 @@ range: MetricConfig
 inlined: true
 
 ```
-</details>
+</details></div>
 ```

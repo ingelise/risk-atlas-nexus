@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: implementedByIntrinsic
 
 _Indicates that this capability is implemented by a specific LLM intrinsic. This relationship distinguishes the abstract capability (what can be done) from the technical implementation mechanism (how it is done at the model component level)._
 
-URI: [nexus:implementedByIntrinsic](https://ibm.github.io/ai-atlas-nexus/ontology/implementedByIntrinsic)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:implementedByIntrinsic](https://w3id.org/ai-atlas-nexus/implementedByIntrinsic)
 Alias: implementedByIntrinsic
 
 <!-- no inheritance hierarchy -->
@@ -11,9 +18,10 @@ Alias: implementedByIntrinsic
 
 ### Type and Range
 
-| Property | Value                           |
-| -------- | ------------------------------- |
-| Range    | [LLMIntrinsic](LLMIntrinsic.md) |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | [Any](Any.md) |
+| Domain   | [Any](Any.md) |
 
 ### Cardinality and Requirements
 
@@ -34,7 +42,7 @@ Alias: implementedByIntrinsic
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -51,14 +59,15 @@ name: implementedByIntrinsic
 description: Indicates that this capability is implemented by a specific LLM intrinsic.
   This relationship distinguishes the abstract capability (what can be done) from
   the technical implementation mechanism (how it is done at the model component level).
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+domain: Any
 alias: implementedByIntrinsic
 inverse: implementsCapability
-range: LLMIntrinsic
+range: Any
 multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

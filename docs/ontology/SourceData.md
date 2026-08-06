@@ -1,8 +1,15 @@
+---
+search:
+  boost: 10.0
+---
+
 # Class: SourceData
 
 _Information about the data source used in evaluation_
 
-URI: [nexus:sourcedata](https://ibm.github.io/ai-atlas-nexus/ontology/sourcedata)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:sourcedata](https://w3id.org/ai-atlas-nexus/sourcedata)
 
 ```mermaid
  classDiagram
@@ -107,9 +114,9 @@ URI: [nexus:sourcedata](https://ibm.github.io/ai-atlas-nexus/ontology/sourcedata
 
 ## Class Properties
 
-| Property  | Value                                                                        |
-| --------- | ---------------------------------------------------------------------------- |
-| Class URI | [nexus:sourcedata](https://ibm.github.io/ai-atlas-nexus/ontology/sourcedata) |
+| Property  | Value                                                          |
+| --------- | -------------------------------------------------------------- |
+| Class URI | [nexus:sourcedata](https://w3id.org/ai-atlas-nexus/sourcedata) |
 
 ## Slots
 
@@ -142,7 +149,7 @@ URI: [nexus:sourcedata](https://ibm.github.io/ai-atlas-nexus/ontology/sourcedata
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -161,13 +168,13 @@ URI: [nexus:sourcedata](https://ibm.github.io/ai-atlas-nexus/ontology/sourcedata
 ```yaml
 name: SourceData
 description: Information about the data source used in evaluation
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   dataset_name:
     name: dataset_name
     description: Name of the dataset
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     domain_of:
     - SourceData
@@ -175,7 +182,7 @@ attributes:
   source_type:
     name: source_type
     description: Type of data source (e.g., hf_dataset)
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     domain_of:
     - SourceMetadata
     - SourceData
@@ -183,7 +190,7 @@ attributes:
   hf_repo:
     name: hf_repo
     description: HuggingFace repository
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     domain_of:
     - SourceData
@@ -191,7 +198,7 @@ attributes:
   hf_split:
     name: hf_split
     description: HuggingFace dataset split
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     domain_of:
     - SourceData
@@ -207,13 +214,13 @@ class_uri: nexus:sourcedata
 ```yaml
 name: SourceData
 description: Information about the data source used in evaluation
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 is_a: Entity
 attributes:
   dataset_name:
     name: dataset_name
     description: Name of the dataset
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     alias: dataset_name
     owner: SourceData
@@ -223,7 +230,7 @@ attributes:
   source_type:
     name: source_type
     description: Type of data source (e.g., hf_dataset)
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     alias: source_type
     owner: SourceData
     domain_of:
@@ -233,7 +240,7 @@ attributes:
   hf_repo:
     name: hf_repo
     description: HuggingFace repository
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     alias: hf_repo
     owner: SourceData
@@ -243,7 +250,7 @@ attributes:
   hf_split:
     name: hf_split
     description: HuggingFace dataset split
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai_eval
+    from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
     alias: hf_split
     owner: SourceData
@@ -254,7 +261,7 @@ attributes:
     name: id
     description: A unique identifier to this instance of the model element. Example
       identifiers include UUID, URI, URN, etc.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -267,7 +274,7 @@ attributes:
   name:
     name: name
     description: A text name of this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -279,7 +286,7 @@ attributes:
   description:
     name: description
     description: The description of an entity
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
     alias: description
@@ -290,7 +297,7 @@ attributes:
   url:
     name: url
     description: An optional URL associated with this instance.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
     alias: url
@@ -301,7 +308,7 @@ attributes:
   dateCreated:
     name: dateCreated
     description: The date on which the entity was created.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
     alias: dateCreated
@@ -313,7 +320,7 @@ attributes:
   dateModified:
     name: dateModified
     description: The date on which the entity was most recently modified.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
     alias: dateModified
@@ -327,7 +334,7 @@ attributes:
     description: The property is used to link two concepts, indicating a high degree
       of confidence that the concepts can be used interchangeably across a wide range
       of information retrieval applications
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
     alias: exact_mappings
@@ -341,7 +348,7 @@ attributes:
     name: close_mappings
     description: The property is used to link two concepts that are sufficiently similar
       that they can be used interchangeably in some information retrieval applications.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
     alias: close_mappings
@@ -355,7 +362,7 @@ attributes:
     name: related_mappings
     description: The property skos:relatedMatch is used to state an associative mapping
       link between two concepts.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
     alias: related_mappings
@@ -370,7 +377,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a narrower concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
     alias: narrow_mappings
@@ -385,7 +392,7 @@ attributes:
     description: The property is used to state a hierarchical mapping link between
       two concepts, indicating that the concept linked to, is a broader concept than
       the originating concept.
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
     alias: broad_mappings
@@ -398,7 +405,7 @@ attributes:
   isCategorizedAs:
     name: isCategorizedAs
     description: A relationship where an entity has been deemed to be categorized
-    from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
     alias: isCategorizedAs
@@ -412,4 +419,4 @@ class_uri: nexus:sourcedata
 
 ````
 
-</details>
+</details></div>

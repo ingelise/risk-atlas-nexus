@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: permissions
 
 _A list of Permissions_
 
-URI: [nexus:permissions](https://ibm.github.io/ai-atlas-nexus/ontology/permissions)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:permissions](https://w3id.org/ai-atlas-nexus/permissions)
 Alias: permissions
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: permissions
 
 ## Properties
 
-- Range: [Permission](Permission.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                       |
+| --------- | --------------------------- |
+| Range     | [Permission](Permission.md) |
+| Domain Of | [Container](Container.md)   |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value                     |
+| -------- | ------------------------- |
+| Owner    | [Container](Container.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,7 +60,7 @@ Alias: permissions
 ```yaml
 name: permissions
 description: A list of Permissions
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: permissions
 owner: Container
@@ -50,5 +72,5 @@ inlined: true
 inlined_as_list: true
 
 ```
-</details>
+</details></div>
 ```

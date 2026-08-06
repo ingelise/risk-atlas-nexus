@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: hasApplication
 
 _The application category, Optional or Mandatory._
 
-URI: [nexus:hasApplication](https://ibm.github.io/ai-atlas-nexus/ontology/hasApplication)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:hasApplication](https://w3id.org/ai-atlas-nexus/hasApplication)
 Alias: hasApplication
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,26 @@ Alias: hasApplication
 
 ## Properties
 
-- Range: [AIUC1ApplicationCategory](AIUC1ApplicationCategory.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value                                                                  |
+| --------- | ---------------------------------------------------------------------- |
+| Range     | [AIUC1ApplicationCategory](AIUC1ApplicationCategory.md)                |
+| Domain    | [Requirement](Requirement.md)                                          |
+| Domain Of | [Requirement](Requirement.md)                                          |
+| Slot URI  | [nexus:hasApplication](https://w3id.org/ai-atlas-nexus/hasApplication) |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -38,8 +56,9 @@ Alias: hasApplication
 ```yaml
 name: hasApplication
 description: The application category, Optional or Mandatory.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+domain: Requirement
 slot_uri: nexus:hasApplication
 alias: hasApplication
 domain_of:
@@ -49,5 +68,5 @@ multivalued: true
 inlined: false
 
 ```
-</details>
+</details></div>
 ```

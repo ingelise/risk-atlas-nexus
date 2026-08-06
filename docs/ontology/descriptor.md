@@ -1,8 +1,15 @@
+---
+search:
+  boost: 5.0
+---
+
 # Slot: descriptor
 
 _Annotates whether an AI risk is a traditional risk, specific to or amplified by AI._
 
-URI: [nexus:descriptor](https://ibm.github.io/ai-atlas-nexus/ontology/descriptor)
+<div data-search-exclude markdown="1">
+
+URI: [nexus:descriptor](https://w3id.org/ai-atlas-nexus/descriptor)
 Alias: descriptor
 
 <!-- no inheritance hierarchy -->
@@ -15,15 +22,30 @@ Alias: descriptor
 
 ## Properties
 
-- Range: [String](String.md)
+### Type and Range
 
-- Multivalued: True
+| Property  | Value               |
+| --------- | ------------------- |
+| Range     | [String](String.md) |
+| Domain Of | [Risk](Risk.md)     |
+
+### Cardinality and Requirements
+
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
+
+### Slot Characteristics
+
+| Property | Value           |
+| -------- | --------------- |
+| Owner    | [Risk](Risk.md) |
 
 ## Identifier and Mapping Information
 
 ### Schema Source
 
-- from schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+- from schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 
 ## Mappings
 
@@ -39,7 +61,7 @@ Alias: descriptor
 name: descriptor
 description: Annotates whether an AI risk is a traditional risk, specific to or amplified
   by AI.
-from_schema: https://ibm.github.io/ai-atlas-nexus/ontology/ai-risk-ontology
+from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 alias: descriptor
 owner: Risk
@@ -49,5 +71,5 @@ range: string
 multivalued: true
 
 ```
-</details>
+</details></div>
 ```
