@@ -3,14 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: id
+# Slot: hasLifecycleStatus
 
-_A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc._
+_The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry._
 
 <div data-search-exclude markdown="1">
 
-URI: [schema:identifier](http://schema.org/identifier)
-Alias: id
+URI: [adms:status](http://www.w3.org/ns/adms#status)
+Alias: hasLifecycleStatus
 
 <!-- no inheritance hierarchy -->
 
@@ -117,23 +117,21 @@ Alias: id
 
 ### Type and Range
 
-| Property  | Value                                             |
-| --------- | ------------------------------------------------- |
-| Range     | [String](String.md)                               |
-| Domain Of | [Entity](Entity.md)                               |
-| Slot URI  | [schema:identifier](http://schema.org/identifier) |
+| Property  | Value                                           |
+| --------- | ----------------------------------------------- |
+| Range     | [LifecycleStatus](LifecycleStatus.md)           |
+| Domain Of | [Entity](Entity.md)                             |
+| Slot URI  | [adms:status](http://www.w3.org/ns/adms#status) |
 
 ### Cardinality and Requirements
 
 | Property | Value |
 | -------- | ----- |
-| Required | Yes   |
 
-### Slot Characteristics
+## Aliases
 
-| Property   | Value |
-| ---------- | ----- |
-| Identifier | Yes   |
+- lifecycle_status
+- doc_status
 
 ## Identifier and Mapping Information
 
@@ -143,27 +141,29 @@ Alias: id
 
 ## Mappings
 
-| Mapping Type | Mapped Value      |
-| ------------ | ----------------- |
-| self         | schema:identifier |
-| native       | nexus:id          |
+| Mapping Type | Mapped Value             |
+| ------------ | ------------------------ |
+| self         | adms:status              |
+| native       | nexus:hasLifecycleStatus |
 
 ## LinkML Source
 
 <details>
 ```yaml
-name: id
-description: A unique identifier to this instance of the model element. Example identifiers
-  include UUID, URI, URN, etc.
+name: hasLifecycleStatus
+description: The editorial / publication lifecycle state of this entity. Distinct
+  from AiLifecyclePhase, which describes an AI system's runtime evolution rather than
+  the editorial workflow of a catalogued entry.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+aliases:
+- lifecycle_status
+- doc_status
 rank: 1000
-slot_uri: schema:identifier
-identifier: true
-alias: id
+slot_uri: adms:status
+alias: hasLifecycleStatus
 domain_of:
 - Entity
-range: string
-required: true
+range: LifecycleStatus
 
 ```
 </details></div>

@@ -190,6 +190,7 @@ Name: ai-risk-ontology
 | [hasEvaluationResults](hasEvaluationResults.md)                                           | Array of evaluation results                                                      |
 | [hasEvidenceCategory](hasEvidenceCategory.md)                                             | The evidence category, ie Technical Implementation, Operational Practices, et... |
 | [hasException](hasException.md)                                                           | Exception type                                                                   |
+| [hasExternalReference](hasExternalReference.md)                                           | External references / additional resources related to this entity, such as ar... |
 | [hasFrequency](hasFrequency.md)                                                           | The frequency                                                                    |
 | [hasGoal](hasGoal.md)                                                                     | The specific goal or primary use case the benchmark is designed for              |
 | [hasImpact](hasImpact.md)                                                                 | Indicates impact(s) possible or arising as consequences from specified concep... |
@@ -201,6 +202,7 @@ Name: ai-risk-ontology
 | [hasKeywords](hasKeywords.md)                                                             | A collection of keywords                                                         |
 | [hasLanguages](hasLanguages.md)                                                           | The languages included in the dataset used by the benchmark (e                   |
 | [hasLicense](hasLicense.md)                                                               | Indicates licenses associated with a resource                                    |
+| [hasLifecycleStatus](hasLifecycleStatus.md)                                               | The editorial / publication lifecycle state of this entity                       |
 | [hasLikelihood](hasLikelihood.md)                                                         | The likelihood or probability or chance of something taking place or occuring    |
 | [hasLimitations](hasLimitations.md)                                                       | Limitations in evaluating or addressing risks, such as gaps in demographic co... |
 | [hasMethods](hasMethods.md)                                                               | The evaluation techniques applied within the benchmark                           |
@@ -275,6 +277,7 @@ Name: ai-risk-ontology
 | [name](name.md)                                                                           | A text name of this instance                                                     |
 | [narrow_mappings](narrow_mappings.md)                                                     | The property is used to state a hierarchical mapping link between two concept... |
 | [narrower](narrower.md)                                                                   | Related concepts that are narrower in scope or hierarchy                         |
+| [notes](notes.md)                                                                         | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... |
 | [numParameters](numParameters.md)                                                         | A property indicating the number of parameters in a LLM                          |
 | [numTrainingTokens](numTrainingTokens.md)                                                 | The number of tokens a AI model was trained on                                   |
 | [obligations](obligations.md)                                                             | A list of Obligations                                                            |
@@ -336,6 +339,7 @@ Name: ai-risk-ontology
 | [AIUC1RequirementType](AIUC1RequirementType.md)                       | AIUC1 Requirement Type                                                        |
 | [EuAiRiskCategory](EuAiRiskCategory.md)                               |                                                                               |
 | [Jurisdiction](Jurisdiction.md)                                       | ISO 3166-1 country code, sourced from the DPV Location ontology (https://w3id |
+| [LifecycleStatus](LifecycleStatus.md)                                 | Editorial / publication state of a catalogued entity                          |
 
 ## Types
 

@@ -3,14 +3,14 @@ search:
   boost: 5.0
 ---
 
-# Slot: id
+# Slot: notes
 
-_A unique identifier to this instance of the model element. Example identifiers include UUID, URI, URN, etc._
+_Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers._
 
 <div data-search-exclude markdown="1">
 
-URI: [schema:identifier](http://schema.org/identifier)
-Alias: id
+URI: [skos:note](http://www.w3.org/2004/02/skos/core#note)
+Alias: notes
 
 <!-- no inheritance hierarchy -->
 
@@ -117,23 +117,17 @@ Alias: id
 
 ### Type and Range
 
-| Property  | Value                                             |
-| --------- | ------------------------------------------------- |
-| Range     | [String](String.md)                               |
-| Domain Of | [Entity](Entity.md)                               |
-| Slot URI  | [schema:identifier](http://schema.org/identifier) |
+| Property  | Value                                                 |
+| --------- | ----------------------------------------------------- |
+| Range     | [String](String.md)                                   |
+| Domain Of | [Entity](Entity.md)                                   |
+| Slot URI  | [skos:note](http://www.w3.org/2004/02/skos/core#note) |
 
 ### Cardinality and Requirements
 
-| Property | Value |
-| -------- | ----- |
-| Required | Yes   |
-
-### Slot Characteristics
-
-| Property   | Value |
-| ---------- | ----- |
-| Identifier | Yes   |
+| Property    | Value |
+| ----------- | ----- |
+| Multivalued | Yes   |
 
 ## Identifier and Mapping Information
 
@@ -143,27 +137,27 @@ Alias: id
 
 ## Mappings
 
-| Mapping Type | Mapped Value      |
-| ------------ | ----------------- |
-| self         | schema:identifier |
-| native       | nexus:id          |
+| Mapping Type | Mapped Value |
+| ------------ | ------------ |
+| self         | skos:note    |
+| native       | nexus:notes  |
 
 ## LinkML Source
 
 <details>
 ```yaml
-name: id
-description: A unique identifier to this instance of the model element. Example identifiers
-  include UUID, URI, URN, etc.
+name: notes
+description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+  that do not belong in the user-facing description. Opaque to consumers.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-slot_uri: schema:identifier
-identifier: true
-alias: id
+slot_uri: skos:note
+alias: notes
 domain_of:
 - Entity
 range: string
-required: true
+recommended: false
+multivalued: true
 
 ```
 </details></div>

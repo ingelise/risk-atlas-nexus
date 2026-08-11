@@ -18,56 +18,56 @@ Alias: isDefinedByTaxonomy
 
 | Name                                                              | Description                                                                      | Modifies Slot |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Policy](Policy.md)                                               | A guidance document outlining any of: procedures, plans, principles, decision... | no            |
-| [Prohibition](Prohibition.md)                                     | A rule describing a prohibition to perform an activity                           | no            |
-| [ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    | no            |
-| [AiTask](AiTask.md)                                               | A task, such as summarization and classification, performed by an AI             | no            |
-| [ControlActivityPermission](ControlActivityPermission.md)         | A control activity (rule) describing a permission to perform an activity         | no            |
 | [Impact](Impact.md)                                               |                                                                                  | no            |
-| [CapabilityDomain](CapabilityDomain.md)                           | A high-level domain of AI capabilities (e                                        | no            |
-| [AIUser](AIUser.md)                                               | Individual or group that interacts with a system                                 | no            |
-| [Group](Group.md)                                                 | Labelled groups of concepts                                                      | no            |
-| [AISubject](AISubject.md)                                         | An entity that is subject to or impacted by the use of AI                        | no            |
-| [RiskControlGroup](RiskControlGroup.md)                           | A group of AI system related risk controls                                       | no            |
-| [ControlActivityProhibition](ControlActivityProhibition.md)       | A control activity (rule) describing a prohibition to perform an activity        | no            |
-| [Concept](Concept.md)                                             | A concept                                                                        | no            |
-| [Entry](Entry.md)                                                 | An entry and its definitions                                                     | no            |
-| [AttributeConditionRule](AttributeConditionRule.md)               |                                                                                  | no            |
-| [LLMIntrinsic](LLMIntrinsic.md)                                   | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
-| [RiskGroup](RiskGroup.md)                                         | A group of AI system related risks that are part of a risk taxonomy              | no            |
-| [AiAgent](AiAgent.md)                                             | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
-| [Term](Term.md)                                                   | A term and its definitions                                                       | no            |
-| [AIDeployer](AIDeployer.md)                                       | Any natural or legal person, public authority, agency or other body using an ... | no            |
-| [Adapter](Adapter.md)                                             | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
-| [AiTaskGroup](AiTaskGroup.md)                                     | A group of AI Tasks                                                              | no            |
-| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
-| [Rule](Rule.md)                                                   | A rule describing a process or control that directs or determines if and how ... | no            |
-| [Permission](Permission.md)                                       | A rule describing a permission to perform an activity                            | no            |
-| [AIOperator](AIOperator.md)                                       | Refers to a provider, product manufacturer, deployer, authorised representati... | no            |
-| [Capability](Capability.md)                                       | A specific AI capability or ability, such as reading comprehension, logical r... | no            |
-| [StakeholderGroup](StakeholderGroup.md)                           | An AI system stakeholder grouping                                                | no            |
-| [LocalityOfUse](LocalityOfUse.md)                                 | The area, e                                                                      | no            |
-| [Purpose](Purpose.md)                                             | The end goal for which an entity is used or an action is taken                   | no            |
-| [Requirement](Requirement.md)                                     | A requirement representing a combination of obligation, permission, or prohib... | no            |
-| [RiskConcept](RiskConcept.md)                                     | An umbrella term for referring to risk, risk source, consequence and impact      | no            |
-| [CapabilityConcept](CapabilityConcept.md)                         | An umbrella term for referring to capability domains, groups, and individual ... | no            |
-| [AiSystem](AiSystem.md)                                           | A compound AI System composed of one or more AI capablities                      | no            |
-| [Certification](Certification.md)                                 | Certification mechanisms, seals, and marks for the purpose of demonstrating c... | no            |
-| [Control](Control.md)                                             | A measure that maintains and/or modifies                                         | no            |
-| [ControlActivityRecommendation](ControlActivityRecommendation.md) | A control activity (rule) describing a recommendation for performing an activ... | no            |
-| [Domain](Domain.md)                                               | An area, sector, or industry that is associated with economic activities         | no            |
-| [AIDeveloper](AIDeveloper.md)                                     | An organisation or entity that is concerned with the development of AI servic... | no            |
-| [AiTaskDomain](AiTaskDomain.md)                                   | A grouping of AI Tasks by domain                                                 | no            |
-| [CapabilityGroup](CapabilityGroup.md)                             | A group of AI capabilities that are part of a capability taxonomy, organized ... | no            |
-| [Action](Action.md)                                               | Action to remediate a risk                                                       | no            |
-| [RiskIncident](RiskIncident.md)                                   | An event occuring or occured which is a realised or materialised risk            | no            |
-| [Principle](Principle.md)                                         | A representation of values or norms that must be taken into consideration whe... | no            |
-| [Obligation](Obligation.md)                                       | A rule describing an obligation for performing an activity                       | no            |
-| [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | The policy guides how the language model should answer a diverse set of sensi... | no            |
-| [Recommendation](Recommendation.md)                               | A rule describing a recommendation for performing an activity                    | no            |
-| [Risk](Risk.md)                                                   | The state of uncertainty associated with an AI system, that has the potential... | no            |
 | [Stakeholder](Stakeholder.md)                                     | Represents any individual, group or organization that can affect, be affected... | no            |
+| [Purpose](Purpose.md)                                             | The end goal for which an entity is used or an action is taken                   | no            |
+| [CapabilityGroup](CapabilityGroup.md)                             | A group of AI capabilities that are part of a capability taxonomy, organized ... | no            |
+| [AIUser](AIUser.md)                                               | Individual or group that interacts with a system                                 | no            |
+| [Term](Term.md)                                                   | A term and its definitions                                                       | no            |
+| [ControlActivityPermission](ControlActivityPermission.md)         | A control activity (rule) describing a permission to perform an activity         | no            |
+| [Concept](Concept.md)                                             | A concept                                                                        | no            |
+| [CapabilityDomain](CapabilityDomain.md)                           | A high-level domain of AI capabilities (e                                        | no            |
+| [AISubject](AISubject.md)                                         | An entity that is subject to or impacted by the use of AI                        | no            |
+| [Requirement](Requirement.md)                                     | A requirement representing a combination of obligation, permission, or prohib... | no            |
+| [Action](Action.md)                                               | Action to remediate a risk                                                       | no            |
+| [Adapter](Adapter.md)                                             | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [Group](Group.md)                                                 | Labelled groups of concepts                                                      | no            |
+| [Permission](Permission.md)                                       | A rule describing a permission to perform an activity                            | no            |
+| [RiskIncident](RiskIncident.md)                                   | An event occuring or occured which is a realised or materialised risk            | no            |
+| [Capability](Capability.md)                                       | A specific AI capability or ability, such as reading comprehension, logical r... | no            |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md)                         | The policy guides how the language model should answer a diverse set of sensi... | no            |
+| [ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    | no            |
+| [Principle](Principle.md)                                         | A representation of values or norms that must be taken into consideration whe... | no            |
+| [AiAgent](AiAgent.md)                                             | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
+| [AiTask](AiTask.md)                                               | A task, such as summarization and classification, performed by an AI             | no            |
+| [Prohibition](Prohibition.md)                                     | A rule describing a prohibition to perform an activity                           | no            |
+| [AttributeConditionRule](AttributeConditionRule.md)               |                                                                                  | no            |
+| [CapabilityConcept](CapabilityConcept.md)                         | An umbrella term for referring to capability domains, groups, and individual ... | no            |
+| [LLMIntrinsic](LLMIntrinsic.md)                                   | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
 | [RiskControl](RiskControl.md)                                     | A measure that maintains and/or modifies risk (and risk concepts)                | no            |
+| [AIDeveloper](AIDeveloper.md)                                     | An organisation or entity that is concerned with the development of AI servic... | no            |
+| [Obligation](Obligation.md)                                       | A rule describing an obligation for performing an activity                       | no            |
+| [ControlActivityProhibition](ControlActivityProhibition.md)       | A control activity (rule) describing a prohibition to perform an activity        | no            |
+| [AiTaskDomain](AiTaskDomain.md)                                   | A grouping of AI Tasks by domain                                                 | no            |
+| [Domain](Domain.md)                                               | An area, sector, or industry that is associated with economic activities         | no            |
+| [AIOperator](AIOperator.md)                                       | Refers to a provider, product manufacturer, deployer, authorised representati... | no            |
+| [ControlActivityRecommendation](ControlActivityRecommendation.md) | A control activity (rule) describing a recommendation for performing an activ... | no            |
+| [RiskConcept](RiskConcept.md)                                     | An umbrella term for referring to risk, risk source, consequence and impact      | no            |
+| [AiTaskGroup](AiTaskGroup.md)                                     | A group of AI Tasks                                                              | no            |
+| [RiskGroup](RiskGroup.md)                                         | A group of AI system related risks that are part of a risk taxonomy              | no            |
+| [StakeholderGroup](StakeholderGroup.md)                           | An AI system stakeholder grouping                                                | no            |
+| [Certification](Certification.md)                                 | Certification mechanisms, seals, and marks for the purpose of demonstrating c... | no            |
+| [LocalityOfUse](LocalityOfUse.md)                                 | The area, e                                                                      | no            |
+| [Risk](Risk.md)                                                   | The state of uncertainty associated with an AI system, that has the potential... | no            |
+| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
+| [Recommendation](Recommendation.md)                               | A rule describing a recommendation for performing an activity                    | no            |
+| [Entry](Entry.md)                                                 | An entry and its definitions                                                     | no            |
+| [Policy](Policy.md)                                               | A guidance document outlining any of: procedures, plans, principles, decision... | no            |
+| [Control](Control.md)                                             | A measure that maintains and/or modifies                                         | no            |
+| [RiskControlGroup](RiskControlGroup.md)                           | A group of AI system related risk controls                                       | no            |
+| [Rule](Rule.md)                                                   | A rule describing a process or control that directs or determines if and how ... | no            |
+| [AIDeployer](AIDeployer.md)                                       | Any natural or legal person, public authority, agency or other body using an ... | no            |
+| [AiSystem](AiSystem.md)                                           | A compound AI System composed of one or more AI capablities                      | no            |
 
 ## Properties
 
