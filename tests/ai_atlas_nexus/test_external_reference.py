@@ -40,6 +40,7 @@ from src.ai_atlas_nexus.ai_risk_ontology.datamodel.ai_risk_ontology import (
 )
 from tests.base import TestCaseBase
 
+
 SCHEMA_PATH = (
     Path(datamodel.__file__).resolve().parents[1] / "schema" / "ai-risk-ontology.yaml"
 )
