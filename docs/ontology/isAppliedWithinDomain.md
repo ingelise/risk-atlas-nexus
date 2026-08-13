@@ -10,7 +10,6 @@ _Specifies the domain an AI system is used within._
 <div data-search-exclude markdown="1">
 
 URI: [airo:isAppliedWithinDomain](https://w3id.org/airo#isAppliedWithinDomain)
-Alias: isAppliedWithinDomain
 
 <!-- no inheritance hierarchy -->
 
@@ -59,7 +58,6 @@ description: Specifies the domain an AI system is used within.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:isAppliedWithinDomain
-alias: isAppliedWithinDomain
 domain_of:
 - AiSystem
 range: Domain

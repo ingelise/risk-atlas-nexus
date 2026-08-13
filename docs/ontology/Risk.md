@@ -85,6 +85,17 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
 
+      Risk : hasExternalReference
+
+
+
+
+
+        Risk --> "*" Documentation : hasExternalReference
+        click Documentation href "../Documentation/"
+
+
+
       Risk : hasJurisdiction
 
 
@@ -93,6 +104,17 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
         Risk --> "*" Jurisdiction : hasJurisdiction
         click Jurisdiction href "../Jurisdiction/"
+
+
+
+      Risk : hasLifecycleStatus
+
+
+
+
+
+        Risk --> "0..1" LifecycleStatus : hasLifecycleStatus
+        click LifecycleStatus href "../LifecycleStatus/"
 
 
 
@@ -221,6 +243,8 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 
 
+      Risk : notes
+
       Risk : phase
 
       Risk : related_mappings
@@ -281,40 +305,43 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 
 ## Slots
 
-| Name                                              | Cardinality and Range                      | Description                                                                      | Inheritance                              |
-| ------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------- |
-| [hasRelatedAction](hasRelatedAction.md)           | \* <br/> [Action](Action.md)               | A relationship where an entity relates to an action                              | direct                                   |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)         | A relationship where a concept or a concept group is defined by a taxonomy       | direct                                   |
-| [isPartOf](isPartOf.md)                           | 0..1 <br/> [RiskGroup](RiskGroup.md)       | A relationship where a risk is part of a risk group                              | direct                                   |
-| [detectsRiskConcept](detectsRiskConcept.md)       | \* <br/> [RiskConcept](RiskConcept.md)     | The property airo:detectsRiskConcept indicates the control used for detecting... | direct                                   |
-| [tag](tag.md)                                     | 0..1 <br/> [String](String.md)             | A shost version of the name                                                      | direct                                   |
-| [risk_type](risk_type.md)                         | 0..1 <br/> [String](String.md)             | Annotation whether an AI risk occurs at input or output or is non-technical      | direct                                   |
-| [phase](phase.md)                                 | 0..1 <br/> [String](String.md)             | Annotation whether an AI risk shows specifically during the training-tuning o... | direct                                   |
-| [descriptor](descriptor.md)                       | \* <br/> [String](String.md)               | Annotates whether an AI risk is a traditional risk, specific to or amplified ... | direct                                   |
-| [concern](concern.md)                             | 0..1 <br/> [String](String.md)             | Some explanation about the concern related to an AI risk                         | direct                                   |
-| [isDetectedBy](isDetectedBy.md)                   | \* <br/> [RiskControl](RiskControl.md)     | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md)            |
-| [isMitigatedBy](isMitigatedBy.md)                 | \* <br/> [RiskControl](RiskControl.md)     | A relationship where a risk, risk source, consequence, or impact is mitigated... | [RiskConcept](RiskConcept.md)            |
-| [isUsedWithinLocality](isUsedWithinLocality.md)   | \* <br/> [LocalityOfUse](LocalityOfUse.md) | Specifies the domain an AI system is used within                                 | [RiskConcept](RiskConcept.md)            |
-| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)     | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                        |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md) | Indicates documentation associated with an entity                                | [Concept](Concept.md), [Entry](Entry.md) |
-| [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                     | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                        |
-| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                     | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                        |
-| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                     | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                        |
-| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                   | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                        |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)             | The entry type or class designation specifying what kind of entry this is        | [Concept](Concept.md), [Entry](Entry.md) |
-| [id](id.md)                                       | 1 <br/> [String](String.md)                | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
-| [name](name.md)                                   | 0..1 <br/> [String](String.md)             | A text name of this instance                                                     | [Entity](Entity.md)                      |
-| [description](description.md)                     | 0..1 <br/> [String](String.md)             | The description of an entity                                                     | [Entity](Entity.md)                      |
-| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                   | An optional URL associated with this instance                                    | [Entity](Entity.md)                      |
-| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was created                                         | [Entity](Entity.md)                      |
-| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                 | The date on which the entity was most recently modified                          | [Entity](Entity.md)                      |
-| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                     | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                      |
-| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                     | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                      |
-| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                     | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                      |
-| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
-| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
-| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                     | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
-| [hasJurisdiction](hasJurisdiction.md)             | \* <br/> [Jurisdiction](Jurisdiction.md)   | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
+| Name                                              | Cardinality and Range                            | Description                                                                      | Inheritance                              |
+| ------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------- |
+| [hasRelatedAction](hasRelatedAction.md)           | \* <br/> [Action](Action.md)                     | A relationship where an entity relates to an action                              | direct                                   |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)               | A relationship where a concept or a concept group is defined by a taxonomy       | direct                                   |
+| [isPartOf](isPartOf.md)                           | 0..1 <br/> [RiskGroup](RiskGroup.md)             | A relationship where a risk is part of a risk group                              | direct                                   |
+| [detectsRiskConcept](detectsRiskConcept.md)       | \* <br/> [RiskConcept](RiskConcept.md)           | The property airo:detectsRiskConcept indicates the control used for detecting... | direct                                   |
+| [tag](tag.md)                                     | 0..1 <br/> [String](String.md)                   | A shost version of the name                                                      | direct                                   |
+| [risk_type](risk_type.md)                         | 0..1 <br/> [String](String.md)                   | Annotation whether an AI risk occurs at input or output or is non-technical      | direct                                   |
+| [phase](phase.md)                                 | 0..1 <br/> [String](String.md)                   | Annotation whether an AI risk shows specifically during the training-tuning o... | direct                                   |
+| [descriptor](descriptor.md)                       | \* <br/> [String](String.md)                     | Annotates whether an AI risk is a traditional risk, specific to or amplified ... | direct                                   |
+| [concern](concern.md)                             | 0..1 <br/> [String](String.md)                   | Some explanation about the concern related to an AI risk                         | direct                                   |
+| [isDetectedBy](isDetectedBy.md)                   | \* <br/> [RiskControl](RiskControl.md)           | A relationship where a risk, risk source, consequence, or impact is detected ... | [RiskConcept](RiskConcept.md)            |
+| [isMitigatedBy](isMitigatedBy.md)                 | \* <br/> [RiskControl](RiskControl.md)           | A relationship where a risk, risk source, consequence, or impact is mitigated... | [RiskConcept](RiskConcept.md)            |
+| [isUsedWithinLocality](isUsedWithinLocality.md)   | \* <br/> [LocalityOfUse](LocalityOfUse.md)       | Specifies the domain an AI system is used within                                 | [RiskConcept](RiskConcept.md)            |
+| [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)           | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                        |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Entry](Entry.md), [Concept](Concept.md) |
+| [hasExternalReference](hasExternalReference.md)   | \* <br/> [Documentation](Documentation.md)       | External references / additional resources related to this entity, such as ar... | [Entry](Entry.md)                        |
+| [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                           | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                        |
+| [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                           | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                        |
+| [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                           | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                        |
+| [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                         | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                        |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                   | The entry type or class designation specifying what kind of entry this is        | [Entry](Entry.md), [Concept](Concept.md) |
+| [id](id.md)                                       | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
+| [name](name.md)                                   | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md)                      |
+| [description](description.md)                     | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md)                      |
+| [url](url.md)                                     | 0..1 <br/> [Uri](Uri.md)                         | An optional URL associated with this instance                                    | [Entity](Entity.md)                      |
+| [dateCreated](dateCreated.md)                     | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was created                                         | [Entity](Entity.md)                      |
+| [dateModified](dateModified.md)                   | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was most recently modified                          | [Entity](Entity.md)                      |
+| [exact_mappings](exact_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                      |
+| [close_mappings](close_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                      |
+| [related_mappings](related_mappings.md)           | \* <br/> [Any](Any.md)                           | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                      |
+| [narrow_mappings](narrow_mappings.md)             | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
+| [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
+| [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
+| [hasLifecycleStatus](hasLifecycleStatus.md)       | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                      |
+| [notes](notes.md)                                 | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                      |
+| [hasJurisdiction](hasJurisdiction.md)             | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
 
 ## Usages
 
@@ -434,7 +461,6 @@ attributes:
     description: A shost version of the name
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: tag
     owner: Risk
     domain_of:
     - Risk
@@ -444,7 +470,6 @@ attributes:
     description: Annotation whether an AI risk occurs at input or output or is non-technical.
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: risk_type
     owner: Risk
     domain_of:
     - Risk
@@ -455,7 +480,6 @@ attributes:
       or inference phase.
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: phase
     owner: Risk
     domain_of:
     - Risk
@@ -466,7 +490,6 @@ attributes:
       amplified by AI.
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: descriptor
     owner: Risk
     domain_of:
     - Risk
@@ -477,7 +500,6 @@ attributes:
     description: Some explanation about the concern related to an AI risk
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: concern
     owner: Risk
     domain_of:
     - Risk
@@ -487,7 +509,6 @@ attributes:
     description: A relationship where an entity relates to an action
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasRelatedAction
     owner: Risk
     domain_of:
     - Risk
@@ -501,7 +522,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByTaxonomy
     owner: Risk
     domain_of:
     - Concept
@@ -529,7 +549,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isPartOf
     owner: Risk
     domain_of:
     - Entry
@@ -548,7 +567,6 @@ attributes:
     - airo:detectsRiskConcept
     rank: 1000
     domain: RiskControl
-    alias: detectsRiskConcept
     owner: Risk
     domain_of:
     - Risk
@@ -564,7 +582,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isDetectedBy
     owner: Risk
     domain_of:
     - RiskConcept
@@ -579,7 +596,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isMitigatedBy
     owner: Risk
     domain_of:
     - RiskConcept
@@ -593,7 +609,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isUsedWithinLocality
-    alias: isUsedWithinLocality
     owner: Risk
     domain_of:
     - RiskConcept
@@ -607,7 +622,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByVocabulary
     owner: Risk
     domain_of:
     - Entry
@@ -621,7 +635,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: Risk
     domain_of:
     - Dataset
@@ -646,13 +659,33 @@ attributes:
     range: Documentation
     multivalued: true
     inlined: false
+  hasExternalReference:
+    name: hasExternalReference
+    description: External references / additional resources related to this entity,
+      such as articles, tools, or datasets. Distinct from hasDocumentation, which
+      documents the entity itself. External references are not necessarily curated
+      or vetted, and quality will vary.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - additional resources
+    - external_links
+    close_mappings:
+    - rdfs:seeAlso
+    rank: 1000
+    slot_uri: nexus:hasExternalReference
+    owner: Risk
+    domain_of:
+    - Control
+    - Entry
+    range: Documentation
+    multivalued: true
+    inlined: false
   requiredByTask:
     name: requiredByTask
     description: Indicates that this entry is required to perform a specific AI task.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Entry
-    alias: requiredByTask
     owner: Risk
     domain_of:
     - Entry
@@ -667,7 +700,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
-    alias: requiresCapability
     owner: Risk
     domain_of:
     - Entry
@@ -686,7 +718,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
-    alias: implementedByAdapter
     owner: Risk
     domain_of:
     - Entry
@@ -702,7 +733,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
-    alias: hasRule
     owner: Risk
     domain_of:
     - Entry
@@ -718,7 +748,6 @@ attributes:
       this is.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
-    alias: type
     owner: Risk
     domain_of:
     - Vocabulary
@@ -750,7 +779,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: Risk
     domain_of:
     - Entity
@@ -762,7 +790,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: Risk
     domain_of:
     - Entity
@@ -774,7 +801,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: Risk
     domain_of:
     - Entity
@@ -785,7 +811,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: Risk
     domain_of:
     - Entity
@@ -796,7 +821,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: Risk
     domain_of:
     - Entity
@@ -808,7 +832,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: Risk
     domain_of:
     - Entity
@@ -822,7 +845,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: Risk
     domain_of:
     - Entity
@@ -836,7 +858,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: Risk
     domain_of:
     - Entity
@@ -850,7 +871,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: Risk
     domain_of:
     - Entity
@@ -865,7 +885,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: Risk
     domain_of:
     - Entity
@@ -880,7 +899,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: Risk
     domain_of:
     - Entity
@@ -893,13 +911,40 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: Risk
     domain_of:
     - Entity
     range: Any
     multivalued: true
     inlined: false
+  hasLifecycleStatus:
+    name: hasLifecycleStatus
+    description: The editorial / publication lifecycle state of this entity. Distinct
+      from AiLifecyclePhase, which describes an AI system's runtime evolution rather
+      than the editorial workflow of a catalogued entry.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - lifecycle_status
+    - doc_status
+    rank: 1000
+    slot_uri: adms:status
+    owner: Risk
+    domain_of:
+    - Entity
+    range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: Risk
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
   hasJurisdiction:
     name: hasJurisdiction
     description: The legal or political jurisdiction(s) in which this concept applies,
@@ -907,7 +952,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasJurisdiction
-    alias: hasJurisdiction
     owner: Risk
     domain_of:
     - Concept

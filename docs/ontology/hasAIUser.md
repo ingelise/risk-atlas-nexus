@@ -10,7 +10,6 @@ _Indicate the end-user of an AI system._
 <div data-search-exclude markdown="1">
 
 URI: [airo:hasAiUser](https://w3id.org/airo#hasAiUser)
-Alias: hasAIUser
 
 <!-- no inheritance hierarchy -->
 
@@ -61,7 +60,6 @@ from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: AiSystem
 slot_uri: airo:hasAiUser
-alias: hasAIUser
 domain_of:
 - AiSystem
 range: AIUser

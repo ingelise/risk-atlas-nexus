@@ -125,6 +125,17 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 
 
+      Entity : hasLifecycleStatus
+
+
+
+
+
+        Entity --> "0..1" LifecycleStatus : hasLifecycleStatus
+        click LifecycleStatus href "../LifecycleStatus/"
+
+
+
       Entity : id
 
       Entity : isCategorizedAs
@@ -150,6 +161,8 @@ URI: [schema:Thing](http://schema.org/Thing)
         click Any href "../Any/"
 
 
+
+      Entity : notes
 
       Entity : related_mappings
 
@@ -214,20 +227,22 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 ## Slots
 
-| Name                                    | Cardinality and Range          | Description                                                                      | Inheritance |
-| --------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------- | ----------- |
-| [id](id.md)                             | 1 <br/> [String](String.md)    | A unique identifier to this instance of the model element                        | direct      |
-| [name](name.md)                         | 0..1 <br/> [String](String.md) | A text name of this instance                                                     | direct      |
-| [description](description.md)           | 0..1 <br/> [String](String.md) | The description of an entity                                                     | direct      |
-| [url](url.md)                           | 0..1 <br/> [Uri](Uri.md)       | An optional URL associated with this instance                                    | direct      |
-| [dateCreated](dateCreated.md)           | 0..1 <br/> [Date](Date.md)     | The date on which the entity was created                                         | direct      |
-| [dateModified](dateModified.md)         | 0..1 <br/> [Date](Date.md)     | The date on which the entity was most recently modified                          | direct      |
-| [exact_mappings](exact_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to link two concepts, indicating a high degree of confid... | direct      |
-| [close_mappings](close_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to link two concepts that are sufficiently similar that ... | direct      |
-| [related_mappings](related_mappings.md) | \* <br/> [Any](Any.md)         | The property skos:relatedMatch is used to state an associative mapping link b... | direct      |
-| [narrow_mappings](narrow_mappings.md)   | \* <br/> [Any](Any.md)         | The property is used to state a hierarchical mapping link between two concept... | direct      |
-| [broad_mappings](broad_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to state a hierarchical mapping link between two concept... | direct      |
-| [isCategorizedAs](isCategorizedAs.md)   | \* <br/> [Any](Any.md)         | A relationship where an entity has been deemed to be categorized                 | direct      |
+| Name                                        | Cardinality and Range                            | Description                                                                      | Inheritance |
+| ------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ----------- |
+| [id](id.md)                                 | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | direct      |
+| [name](name.md)                             | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | direct      |
+| [description](description.md)               | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | direct      |
+| [url](url.md)                               | 0..1 <br/> [Uri](Uri.md)                         | An optional URL associated with this instance                                    | direct      |
+| [dateCreated](dateCreated.md)               | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was created                                         | direct      |
+| [dateModified](dateModified.md)             | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was most recently modified                          | direct      |
+| [exact_mappings](exact_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to link two concepts, indicating a high degree of confid... | direct      |
+| [close_mappings](close_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to link two concepts that are sufficiently similar that ... | direct      |
+| [related_mappings](related_mappings.md)     | \* <br/> [Any](Any.md)                           | The property skos:relatedMatch is used to state an associative mapping link b... | direct      |
+| [narrow_mappings](narrow_mappings.md)       | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | direct      |
+| [broad_mappings](broad_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | direct      |
+| [isCategorizedAs](isCategorizedAs.md)       | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | direct      |
+| [hasLifecycleStatus](hasLifecycleStatus.md) | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | direct      |
+| [notes](notes.md)                           | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | direct      |
 
 ## Mixin Usage
 
@@ -273,6 +288,8 @@ slots:
 - narrow_mappings
 - broad_mappings
 - isCategorizedAs
+- hasLifecycleStatus
+- notes
 class_uri: schema:Thing
 
 ````
@@ -296,7 +313,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: Entity
     domain_of:
     - Entity
@@ -308,7 +324,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: Entity
     domain_of:
     - Entity
@@ -320,7 +335,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: Entity
     domain_of:
     - Entity
@@ -331,7 +345,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: Entity
     domain_of:
     - Entity
@@ -342,7 +355,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: Entity
     domain_of:
     - Entity
@@ -354,7 +366,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: Entity
     domain_of:
     - Entity
@@ -368,7 +379,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: Entity
     domain_of:
     - Entity
@@ -382,7 +392,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: Entity
     domain_of:
     - Entity
@@ -396,7 +405,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: Entity
     domain_of:
     - Entity
@@ -411,7 +419,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: Entity
     domain_of:
     - Entity
@@ -426,7 +433,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: Entity
     domain_of:
     - Entity
@@ -439,13 +445,40 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: Entity
     domain_of:
     - Entity
     range: Any
     multivalued: true
     inlined: false
+  hasLifecycleStatus:
+    name: hasLifecycleStatus
+    description: The editorial / publication lifecycle state of this entity. Distinct
+      from AiLifecyclePhase, which describes an AI system's runtime evolution rather
+      than the editorial workflow of a catalogued entry.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - lifecycle_status
+    - doc_status
+    rank: 1000
+    slot_uri: adms:status
+    owner: Entity
+    domain_of:
+    - Entity
+    range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: Entity
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: schema:Thing
 
 ````

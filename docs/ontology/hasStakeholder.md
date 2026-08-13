@@ -10,7 +10,6 @@ _Indicates stakeholders of an AI system or component._
 <div data-search-exclude markdown="1">
 
 URI: [airo:hasStakeholder](https://w3id.org/airo#hasStakeholder)
-Alias: hasStakeholder
 
 <!-- no inheritance hierarchy -->
 
@@ -59,7 +58,6 @@ description: Indicates stakeholders of an AI system or component.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasStakeholder
-alias: hasStakeholder
 domain_of:
 - AiSystem
 range: Stakeholder

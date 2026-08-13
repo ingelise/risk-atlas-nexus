@@ -94,6 +94,17 @@ URI: [nexus:CapabilityDomain](https://w3id.org/ai-atlas-nexus/CapabilityDomain)
 
 
 
+      CapabilityDomain : hasLifecycleStatus
+
+
+
+
+
+        CapabilityDomain --> "0..1" LifecycleStatus : hasLifecycleStatus
+        click LifecycleStatus href "../LifecycleStatus/"
+
+
+
       CapabilityDomain : hasPart
 
 
@@ -144,6 +155,8 @@ URI: [nexus:CapabilityDomain](https://w3id.org/ai-atlas-nexus/CapabilityDomain)
 
       CapabilityDomain : narrower
 
+      CapabilityDomain : notes
+
       CapabilityDomain : related_mappings
 
 
@@ -176,28 +189,30 @@ URI: [nexus:CapabilityDomain](https://w3id.org/ai-atlas-nexus/CapabilityDomain)
 
 ## Slots
 
-| Name                                          | Cardinality and Range                          | Description                                                                      | Inheritance                              |
-| --------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------- |
-| [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)             | A relationship where a concept or a concept group is defined by a taxonomy       | [Concept](Concept.md), [Group](Group.md) |
-| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md)     | Indicates documentation associated with an entity                                | [Concept](Concept.md), [Group](Group.md) |
-| [hasPart](hasPart.md)                         | \* <br/> [CapabilityGroup](CapabilityGroup.md) | A relationship where a capability domain has capability groups                   | [Group](Group.md)                        |
-| [belongsToDomain](belongsToDomain.md)         | 0..1 <br/> [Any](Any.md)                       | A relationship where a group belongs to a domain                                 | [Group](Group.md)                        |
-| [type](type.md)                               | 0..1 <br/> [String](String.md)                 | The type or class designation of this entity instance                            | [Concept](Concept.md), [Group](Group.md) |
-| [narrower](narrower.md)                       | \* <br/> [String](String.md)                   | Related concepts that are narrower in scope or hierarchy                         | [Group](Group.md)                        |
-| [broader](broader.md)                         | \* <br/> [String](String.md)                   | Related concepts that are broader in scope or hierarchy                          | [Group](Group.md)                        |
-| [id](id.md)                                   | 1 <br/> [String](String.md)                    | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
-| [name](name.md)                               | 0..1 <br/> [String](String.md)                 | A text name of this instance                                                     | [Entity](Entity.md)                      |
-| [description](description.md)                 | 0..1 <br/> [String](String.md)                 | The description of an entity                                                     | [Entity](Entity.md)                      |
-| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                       | An optional URL associated with this instance                                    | [Entity](Entity.md)                      |
-| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was created                                         | [Entity](Entity.md)                      |
-| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                     | The date on which the entity was most recently modified                          | [Entity](Entity.md)                      |
-| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                      |
-| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                      |
-| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                         | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                      |
-| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
-| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
-| [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                         | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
-| [hasJurisdiction](hasJurisdiction.md)         | \* <br/> [Jurisdiction](Jurisdiction.md)       | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
+| Name                                          | Cardinality and Range                            | Description                                                                      | Inheritance                              |
+| --------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------- |
+| [isDefinedByTaxonomy](isDefinedByTaxonomy.md) | 0..1 <br/> [Taxonomy](Taxonomy.md)               | A relationship where a concept or a concept group is defined by a taxonomy       | [Group](Group.md), [Concept](Concept.md) |
+| [hasDocumentation](hasDocumentation.md)       | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Group](Group.md), [Concept](Concept.md) |
+| [hasPart](hasPart.md)                         | \* <br/> [CapabilityGroup](CapabilityGroup.md)   | A relationship where a capability domain has capability groups                   | [Group](Group.md)                        |
+| [belongsToDomain](belongsToDomain.md)         | 0..1 <br/> [Any](Any.md)                         | A relationship where a group belongs to a domain                                 | [Group](Group.md)                        |
+| [type](type.md)                               | 0..1 <br/> [String](String.md)                   | The type or class designation of this entity instance                            | [Group](Group.md), [Concept](Concept.md) |
+| [narrower](narrower.md)                       | \* <br/> [String](String.md)                     | Related concepts that are narrower in scope or hierarchy                         | [Group](Group.md)                        |
+| [broader](broader.md)                         | \* <br/> [String](String.md)                     | Related concepts that are broader in scope or hierarchy                          | [Group](Group.md)                        |
+| [id](id.md)                                   | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
+| [name](name.md)                               | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md)                      |
+| [description](description.md)                 | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md)                      |
+| [url](url.md)                                 | 0..1 <br/> [Uri](Uri.md)                         | An optional URL associated with this instance                                    | [Entity](Entity.md)                      |
+| [dateCreated](dateCreated.md)                 | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was created                                         | [Entity](Entity.md)                      |
+| [dateModified](dateModified.md)               | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was most recently modified                          | [Entity](Entity.md)                      |
+| [exact_mappings](exact_mappings.md)           | \* <br/> [Any](Any.md)                           | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md)                      |
+| [close_mappings](close_mappings.md)           | \* <br/> [Any](Any.md)                           | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md)                      |
+| [related_mappings](related_mappings.md)       | \* <br/> [Any](Any.md)                           | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md)                      |
+| [narrow_mappings](narrow_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
+| [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
+| [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
+| [hasLifecycleStatus](hasLifecycleStatus.md)   | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                      |
+| [notes](notes.md)                             | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                      |
+| [hasJurisdiction](hasJurisdiction.md)         | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
 
 ## Usages
 
@@ -266,7 +281,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByTaxonomy
     owner: CapabilityDomain
     domain_of:
     - Concept
@@ -294,7 +308,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: CapabilityDomain
     domain_of:
     - Dataset
@@ -325,7 +338,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:member
-    alias: hasPart
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -342,7 +354,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: belongsToDomain
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -356,7 +367,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     ifabsent: string(Group)
     designates_type: true
-    alias: type
     owner: CapabilityDomain
     domain_of:
     - Vocabulary
@@ -386,7 +396,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
-    alias: narrower
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -398,7 +407,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
-    alias: broader
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -412,7 +420,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -424,7 +431,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -436,7 +442,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -447,7 +452,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -458,7 +462,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -470,7 +473,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -484,7 +486,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -498,7 +499,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -512,7 +512,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -527,7 +526,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -542,7 +540,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -555,13 +552,40 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: CapabilityDomain
     domain_of:
     - Entity
     range: Any
     multivalued: true
     inlined: false
+  hasLifecycleStatus:
+    name: hasLifecycleStatus
+    description: The editorial / publication lifecycle state of this entity. Distinct
+      from AiLifecyclePhase, which describes an AI system's runtime evolution rather
+      than the editorial workflow of a catalogued entry.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - lifecycle_status
+    - doc_status
+    rank: 1000
+    slot_uri: adms:status
+    owner: CapabilityDomain
+    domain_of:
+    - Entity
+    range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: CapabilityDomain
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
   hasJurisdiction:
     name: hasJurisdiction
     description: The legal or political jurisdiction(s) in which this concept applies,
@@ -569,7 +593,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasJurisdiction
-    alias: hasJurisdiction
     owner: CapabilityDomain
     domain_of:
     - Concept

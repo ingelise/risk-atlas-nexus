@@ -8,7 +8,6 @@ search:
 <div data-search-exclude markdown="1">
 
 URI: [nexus:author](https://w3id.org/ai-atlas-nexus/author)
-Alias: author
 
 <!-- no inheritance hierarchy -->
 
@@ -16,8 +15,8 @@ Alias: author
 
 | Name                              | Description                                                           | Modifies Slot |
 | --------------------------------- | --------------------------------------------------------------------- | ------------- |
-| [RiskIncident](RiskIncident.md)   | An event occuring or occured which is a realised or materialised risk | no            |
 | [Documentation](Documentation.md) | Documented information about a concept or other topic(s) of interest  | no            |
+| [RiskIncident](RiskIncident.md)   | An event occuring or occured which is a realised or materialised risk | no            |
 
 ## Properties
 
@@ -47,7 +46,6 @@ Alias: author
 <details>
 ```yaml
 name: author
-alias: author
 domain_of:
 - Documentation
 - RiskIncident
