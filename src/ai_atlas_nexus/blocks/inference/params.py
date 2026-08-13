@@ -1,8 +1,32 @@
 import dataclasses
-from typing import Any, Dict, List, Literal, Optional, TypeAlias, TypedDict, Union
+from enum import Enum
+from typing import (
+    Any,
+    Dict,
+    Generic,
+    List,
+    Literal,
+    Optional,
+    TypeAlias,
+    TypeVar,
+    Union,
+)
 
 from openai.types.chat import ChatCompletionMessageParam
 from pydantic import BaseModel
+from typing_extensions import TypedDict
+
+
+T = TypeVar("T")
+
+
+class ExplanationType(str, Enum):
+    """Types of explanations to include with detected risks."""
+
+    NONE = "none"
+    DESCRIPTION = "description"  # Risk description from ontology
+    REASONING = "reasoning"  # Model's thinking/reasoning if available
+    SELF_EXPLANATION = "self-explanation"  # Explanation from model's response itself
 
 
 class InferenceEngineCredentials(TypedDict):
@@ -228,3 +252,64 @@ class MelleaInferenceParams(TypedDict, total=False):
 ValidGenerateCompletionMessageParam: TypeAlias = Union[
     List[str], List[MelleaInferenceParams]
 ]
+
+
+@dataclasses.dataclass(kw_only=True)
+class TokenUsage:
+    """Token usage metrics from one or more LLM inference calls."""
+
+    input_tokens: Optional[int] = None
+    output_tokens: Optional[int] = None
+    total_tokens: Optional[int] = None
+
+    def __add__(self, other: "TokenUsage") -> "TokenUsage":
+        # None means "not reported", which is distinct from a genuine zero. Only collapse
+        # to a number when at least one side actually reported a count.
+        def _add(left: Optional[int], right: Optional[int]) -> Optional[int]:
+            if left is None and right is None:
+                return None
+            return (left or 0) + (right or 0)
+
+        return TokenUsage(
+            input_tokens=_add(self.input_tokens, other.input_tokens),
+            output_tokens=_add(self.output_tokens, other.output_tokens),
+            total_tokens=_add(self.total_tokens, other.total_tokens),
+        )
+
+
+@dataclasses.dataclass(kw_only=True)
+class InferenceMetadata:
+    """Aggregated metadata from one or more inference calls within a detection operation."""
+
+    token_usage: TokenUsage
+    inference_engine: str
+    model: str
+    num_calls: int
+    seed: Optional[int] = None
+    stop_reason_summary: Dict[str, int] = dataclasses.field(default_factory=dict)
+    has_thinking: bool = False
+
+
+@dataclasses.dataclass(kw_only=True)
+class RiskWithExplanation:
+    """Risk paired with optional explanation based on explanation type.
+
+    Attributes:
+        risk: The Risk object from the ontology
+        explanation: Explanation text (content depends on ExplanationType)
+    """
+
+    risk: Any  # Risk type, use Any to avoid circular imports
+    explanation: Optional[str] = None
+
+
+@dataclasses.dataclass(kw_only=True)
+class DetectionResult(Generic[T]):
+    """Response from a detection operation with aggregated metadata.
+
+    Wraps detection results (e.g., identified risks) with metadata about the
+    underlying LLM inference calls (token usage, number of calls, model info).
+    """
+
+    data: T
+    metadata: InferenceMetadata
