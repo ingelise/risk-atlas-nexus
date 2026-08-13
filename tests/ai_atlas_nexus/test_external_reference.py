@@ -89,7 +89,7 @@ class TestExternalReference(TestCaseBase):
         self.assertTrue(slot.multivalued)
         self.assertFalse(slot.inlined)
         self.assertEqual(slot.slot_uri, "nexus:hasExternalReference")
-        self.assertIn("rdfs:seeAlso", slot.exact_mappings)
+        self.assertIn("rdfs:seeAlso", slot.close_mappings)
 
     def test_has_external_reference_matches_has_documentation_inlining(self):
         """Both point at Documentation by id so references live once and deduplicate"""

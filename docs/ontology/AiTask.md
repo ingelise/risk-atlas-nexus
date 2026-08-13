@@ -243,28 +243,27 @@ URI: [airo:AiCapability](https://w3id.org/airo#AiCapability)
 | [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 | [hasLifecycleStatus](hasLifecycleStatus.md)       | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
-| [notes](notes.md)                                 | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Usages
 
-| used by                                                           | used in                                       | type   | used                |
-| ----------------------------------------------------------------- | --------------------------------------------- | ------ | ------------------- |
-| [Container](Container.md)                                         | [aitasks](aitasks.md)                         | range  | [AiTask](AiTask.md) |
-| [Capability](Capability.md)                                       | [requiredByTask](requiredByTask.md)           | range  | [AiTask](AiTask.md) |
-| [BaseAi](BaseAi.md)                                               | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [AiSystem](AiSystem.md)                                           | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [AiAgent](AiAgent.md)                                             | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [AiModel](AiModel.md)                                             | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [LargeLanguageModel](LargeLanguageModel.md)                       | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [AiTask](AiTask.md)                                               | [requiresCapability](requiresCapability.md)   | domain | [AiTask](AiTask.md) |
-| [AiTaskGroup](AiTaskGroup.md)                                     | [hasPart](hasPart.md)                         | range  | [AiTask](AiTask.md) |
-| [Adapter](Adapter.md)                                             | [performsTask](performsTask.md)               | range  | [AiTask](AiTask.md) |
-| [ControlActivity](ControlActivity.md)                             | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
-| [ControlActivityPermission](ControlActivityPermission.md)         | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
-| [ControlActivityProhibition](ControlActivityProhibition.md)       | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
-| [ControlActivityObligation](ControlActivityObligation.md)         | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
-| [ControlActivityRecommendation](ControlActivityRecommendation.md) | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
-| [Requirement](Requirement.md)                                     | [appliesToCapability](appliesToCapability.md) | range  | [AiTask](AiTask.md) |
+| used by                                                           | used in                                                 | type   | used                |
+| ----------------------------------------------------------------- | ------------------------------------------------------- | ------ | ------------------- |
+| [Container](Container.md)                                         | [aitasks](aitasks.md)                                   | range  | [AiTask](AiTask.md) |
+| [Capability](Capability.md)                                       | [requiredByTask](requiredByTask.md)                     | range  | [AiTask](AiTask.md) |
+| [BaseAi](BaseAi.md)                                               | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [AiSystem](AiSystem.md)                                           | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [AiAgent](AiAgent.md)                                             | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [AiModel](AiModel.md)                                             | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [LargeLanguageModel](LargeLanguageModel.md)                       | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [AiTask](AiTask.md)                                               | [requiresCapability](requiresCapability.md)             | domain | [AiTask](AiTask.md) |
+| [AiTaskGroup](AiTaskGroup.md)                                     | [hasPart](hasPart.md)                                   | range  | [AiTask](AiTask.md) |
+| [Adapter](Adapter.md)                                             | [performsTask](performsTask.md)                         | range  | [AiTask](AiTask.md) |
+| [ControlActivity](ControlActivity.md)                             | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
+| [ControlActivityPermission](ControlActivityPermission.md)         | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
+| [ControlActivityProhibition](ControlActivityProhibition.md)       | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
+| [ControlActivityObligation](ControlActivityObligation.md)         | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
+| [ControlActivityRecommendation](ControlActivityRecommendation.md) | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
+| [Requirement](Requirement.md)                                     | [isApplicableToCapability](isApplicableToCapability.md) | range  | [AiTask](AiTask.md) |
 
 ## Identifier and Mapping Information
 
@@ -699,20 +698,6 @@ attributes:
     domain_of:
     - Entity
     range: LifecycleStatus
-  notes:
-    name: notes
-    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
-      that do not belong in the user-facing description. Opaque to consumers.
-    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
-    rank: 1000
-    slot_uri: skos:note
-    alias: notes
-    owner: AiTask
-    domain_of:
-    - Entity
-    range: string
-    recommended: false
-    multivalued: true
 class_uri: airo:AiCapability
 
 ````

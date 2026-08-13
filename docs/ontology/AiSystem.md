@@ -301,14 +301,25 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
       AiSystem : isPartOf
 
+      AiSystem : isProducedBy
+
+
+
+
+
+        AiSystem --> "0..1" Organization : isProducedBy
+        click Organization href "../Organization/"
+
+
+
       AiSystem : isProvidedBy
 
 
 
 
 
-        AiSystem --> "0..1" AiProvider : isProvidedBy
-        click AiProvider href "../AiProvider/"
+        AiSystem --> "0..1" Organization : isProvidedBy
+        click Organization href "../Organization/"
 
 
 
@@ -346,17 +357,6 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 
         AiSystem --> "*" AiTask : performsTask
         click AiTask href "../AiTask/"
-
-
-
-      AiSystem : producer
-
-
-
-
-
-        AiSystem --> "0..1" Organization : producer
-        click Organization href "../Organization/"
 
 
 
@@ -431,12 +431,12 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 | [hasAISubject](hasAISubject.md)                   | \* <br/> [AISubject](AISubject.md)                 | Indicates the subjects of an AI system                                           | direct                                 |
 | [hasAIUser](hasAIUser.md)                         | \* <br/> [AIUser](AIUser.md)                       | Indicate the end-user of an AI system                                            | direct                                 |
 | [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [Risk](Risk.md)                           | A relationship where an entity relates to a risk                                 | direct                                 |
-| [producer](producer.md)                           | 0..1 <br/> [Organization](Organization.md)         | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                    |
+| [isProducedBy](isProducedBy.md)                   | 0..1 <br/> [Organization](Organization.md)         | A relationship to the Organization instance which produces this instance         | [BaseAi](BaseAi.md)                    |
 | [hasModelCard](hasModelCard.md)                   | \* <br/> [String](String.md)                       | A relationship to model card references                                          | [BaseAi](BaseAi.md)                    |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)         | Indicates documentation associated with an entity                                | [BaseAi](BaseAi.md), [Entry](Entry.md) |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)         | Indicates documentation associated with an entity                                | [Entry](Entry.md), [BaseAi](BaseAi.md) |
 | [hasLicense](hasLicense.md)                       | 0..1 <br/> [License](License.md)                   | Indicates licenses associated with a resource                                    | [BaseAi](BaseAi.md)                    |
 | [performsTask](performsTask.md)                   | \* <br/> [AiTask](AiTask.md)                       | relationship indicating the AI tasks an AI model can perform                     | [BaseAi](BaseAi.md)                    |
-| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [AiProvider](AiProvider.md)             | Indicates provider of an AI system or component                                  | [BaseAi](BaseAi.md)                    |
+| [isProvidedBy](isProvidedBy.md)                   | 0..1 <br/> [Organization](Organization.md)         | A relationship to the Organization instance that provides this instance          | [BaseAi](BaseAi.md)                    |
 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                 | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                      |
 | [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)             | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                      |
 | [hasExternalReference](hasExternalReference.md)   | \* <br/> [Documentation](Documentation.md)         | External references / additional resources related to this entity, such as ar... | [Entry](Entry.md)                      |
@@ -459,7 +459,6 @@ URI: [airo:AISystem](https://w3id.org/airo#AISystem)
 | [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                             | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                    |
 | [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                             | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                    |
 | [hasLifecycleStatus](hasLifecycleStatus.md)       | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)   | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                    |
-| [notes](notes.md)                                 | \* <br/> [String](String.md)                       | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                    |
 
 ## Mixin Usage
 
@@ -739,12 +738,12 @@ attributes:
     range: Risk
     multivalued: true
     inlined: false
-  producer:
-    name: producer
+  isProducedBy:
+    name: isProducedBy
     description: A relationship to the Organization instance which produces this instance.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: producer
+    alias: isProducedBy
     owner: AiSystem
     domain_of:
     - BaseAi
@@ -828,15 +827,16 @@ attributes:
     inlined: false
   isProvidedBy:
     name: isProvidedBy
-    description: Indicates provider of an AI system or component.
+    description: A relationship to the Organization instance that provides this instance.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    slot_uri: airo:isProvidedBy
+    slot_uri: schema:provider
     alias: isProvidedBy
     owner: AiSystem
     domain_of:
+    - Dataset
     - BaseAi
-    range: AiProvider
+    range: Organization
   isDefinedByTaxonomy:
     name: isDefinedByTaxonomy
     description: A relationship where a concept or a concept group is defined by a
@@ -1188,20 +1188,6 @@ attributes:
     domain_of:
     - Entity
     range: LifecycleStatus
-  notes:
-    name: notes
-    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
-      that do not belong in the user-facing description. Opaque to consumers.
-    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
-    rank: 1000
-    slot_uri: skos:note
-    alias: notes
-    owner: AiSystem
-    domain_of:
-    - Entity
-    range: string
-    recommended: false
-    multivalued: true
 class_uri: airo:AISystem
 
 ````

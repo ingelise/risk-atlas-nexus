@@ -122,7 +122,7 @@ classes:
     slots:
       - hasLicense
       - hasDocumentation
-      - provider
+      - isProvidedBy
 
   Documentation:
     is_a: Entity
@@ -476,13 +476,19 @@ slots:
     multivalued: true
     inlined: false
     description: A relationship to datasets that are used.
-  producer:
+  isProducedBy:
     range: Organization
     description: A relationship to the Organization instance which produces this instance.
-  provider:
+  producer:
+    deprecated: Changed to match slot naming convention.
+    deprecated_element_has_exact_replacement: isProducedBy
+  isProvidedBy:
     slot_uri: schema:provider
     range: Organization
     description: A relationship to the Organization instance that provides this instance.
+  provider:
+    deprecated: Changed to match slot naming convention.
+    deprecated_element_has_exact_replacement: isProvidedBy
   grants_license:
     range: License
     description: A relationship from a granting entity such as an Organization to a License instance.

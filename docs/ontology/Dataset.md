@@ -103,6 +103,17 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
 
 
+      Dataset : isProvidedBy
+
+
+
+
+
+        Dataset --> "0..1" Organization : isProvidedBy
+        click Organization href "../Organization/"
+
+
+
       Dataset : name
 
       Dataset : narrow_mappings
@@ -113,19 +124,6 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 
         Dataset --> "*" Any : narrow_mappings
         click Any href "../Any/"
-
-
-
-      Dataset : notes
-
-      Dataset : provider
-
-
-
-
-
-        Dataset --> "0..1" Organization : provider
-        click Organization href "../Organization/"
 
 
 
@@ -162,7 +160,7 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 | ------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
 | [hasLicense](hasLicense.md)                 | 0..1 <br/> [License](License.md)                 | Indicates licenses associated with a resource                                    | direct              |
 | [hasDocumentation](hasDocumentation.md)     | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | direct              |
-| [provider](provider.md)                     | 0..1 <br/> [Organization](Organization.md)       | A relationship to the Organization instance that provides this instance          | direct              |
+| [isProvidedBy](isProvidedBy.md)             | 0..1 <br/> [Organization](Organization.md)       | A relationship to the Organization instance that provides this instance          | direct              |
 | [id](id.md)                                 | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
 | [name](name.md)                             | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md) |
 | [description](description.md)               | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md) |
@@ -176,7 +174,6 @@ URI: [schema:Dataset](http://schema.org/Dataset)
 | [broad_mappings](broad_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [isCategorizedAs](isCategorizedAs.md)       | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 | [hasLifecycleStatus](hasLifecycleStatus.md) | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
-| [notes](notes.md)                           | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Usages
 
@@ -217,7 +214,7 @@ is_a: Entity
 slots:
 - hasLicense
 - hasDocumentation
-- provider
+- isProvidedBy
 class_uri: schema:Dataset
 
 ````
@@ -284,16 +281,17 @@ attributes:
     range: Documentation
     multivalued: true
     inlined: false
-  provider:
-    name: provider
+  isProvidedBy:
+    name: isProvidedBy
     description: A relationship to the Organization instance that provides this instance.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:provider
-    alias: provider
+    alias: isProvidedBy
     owner: Dataset
     domain_of:
     - Dataset
+    - BaseAi
     range: Organization
   id:
     name: id
@@ -469,20 +467,6 @@ attributes:
     domain_of:
     - Entity
     range: LifecycleStatus
-  notes:
-    name: notes
-    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
-      that do not belong in the user-facing description. Opaque to consumers.
-    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
-    rank: 1000
-    slot_uri: skos:note
-    alias: notes
-    owner: Dataset
-    domain_of:
-    - Entity
-    range: string
-    recommended: false
-    multivalued: true
 class_uri: schema:Dataset
 
 ````

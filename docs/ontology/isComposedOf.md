@@ -19,9 +19,7 @@ Alias: isComposedOf
 | Name                              | Description                                                                      | Modifies Slot |
 | --------------------------------- | -------------------------------------------------------------------------------- | ------------- |
 | [Question](Question.md)           | An evaluation where a question has to be answered                                | no            |
-| [AiEval](AiEval.md)               | An AI Evaluation, e                                                              | yes           |
 | [AiAgent](AiAgent.md)             | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
-| [Questionnaire](Questionnaire.md) | A questionnaire groups questions                                                 | yes           |
 | [AiSystem](AiSystem.md)           | A compound AI System composed of one or more AI capablities                      | yes           |
 
 ## Properties

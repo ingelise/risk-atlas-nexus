@@ -121,7 +121,7 @@ Name: ai-risk-ontology
 | [aimodelfamilies](aimodelfamilies.md)                                                     | A list of AI model families                                                      |
 | [aimodels](aimodels.md)                                                                   | A list of AI models                                                              |
 | [aitasks](aitasks.md)                                                                     | A list of AI tasks                                                               |
-| [appliesToCapability](appliesToCapability.md)                                             | This evidence only applies to AI systems with this capability                    |
+| [appliesToCapability](appliesToCapability.md)                                             |                                                                                  |
 | [architecture](architecture.md)                                                           | A description of the architecture of an AI such as 'Decoder-only'                |
 | [author](author.md)                                                                       | The author or authors of the documentation                                       |
 | [belongsToDomain](belongsToDomain.md)                                                     | A relationship where a group belongs to a domain                                 |
@@ -237,6 +237,7 @@ Name: ai-risk-ontology
 | [hasTasks](hasTasks.md)                                                                   | The tasks or evaluations the benchmark is intended to assess                     |
 | [hasTerm](hasTerm.md)                                                                     | Indicates terms associated with a vocabulary                                     |
 | [hasTrainingData](hasTrainingData.md)                                                     | A relationship indicating the datasets an AI model was trained on                |
+| [hasTrainingDataPreprocessing](hasTrainingDataPreprocessing.md)                           | Relationship indicating data preprocessing steps performed on training data s... |
 | [hasTypicalEvidence](hasTypicalEvidence.md)                                               | The evidence is usually found here                                               |
 | [hasTypicalLocation](hasTypicalLocation.md)                                               | The evidence is usually found here                                               |
 | [hasUnitxtCard](hasUnitxtCard.md)                                                         | A relationship to a Unitxt card defining the risk evaluation                     |
@@ -249,6 +250,7 @@ Name: ai-risk-ontology
 | [implementedByIntrinsic](implementedByIntrinsic.md)                                       | Indicates that this capability is implemented by a specific LLM intrinsic        |
 | [implementsCapability](implementsCapability.md)                                           | Indicates that this entity implements a specific capability                      |
 | [isApplicableinLocality](isApplicableinLocality.md)                                       | A relationship where an entity has is applicable in these localities             |
+| [isApplicableToCapability](isApplicableToCapability.md)                                   | This evidence only applies to AI systems with this capability                    |
 | [isAppliedWithinDomain](isAppliedWithinDomain.md)                                         | Specifies the domain an AI system is used within                                 |
 | [isCategorizedAs](isCategorizedAs.md)                                                     | A relationship where an entity has been deemed to be categorized                 |
 | [isComposedOf](isComposedOf.md)                                                           | Relationship indicating the some entity is composed of other entities (includ... |
@@ -261,10 +263,12 @@ Name: ai-risk-ontology
 | [isImportedBy](isImportedBy.md)                                                           | A relationship indicating that an entity has been imported by an organization    |
 | [isMitigatedBy](isMitigatedBy.md)                                                         | A relationship where a risk, risk source, consequence, or impact is mitigated... |
 | [isPartOf](isPartOf.md)                                                                   | A relationship where an entity is part of another entity                         |
-| [isProvidedBy](isProvidedBy.md)                                                           | Indicates provider of an AI system or component                                  |
+| [isProducedBy](isProducedBy.md)                                                           | A relationship to the Organization instance which produces this instance         |
+| [isProvidedBy](isProvidedBy.md)                                                           | A relationship to the Organization instance that provides this instance          |
 | [isResultOf](isResultOf.md)                                                               | A relationship indicating that an entity is the result of an AI evaluation       |
 | [isUsedBy](isUsedBy.md)                                                                   | Indicates user of an AI system                                                   |
 | [isUsedWithinLocality](isUsedWithinLocality.md)                                           | Specifies the domain an AI system is used within                                 |
+| [isValidatedBy](isValidatedBy.md)                                                         | A relationship indicating the model validation steps after AI model training     |
 | [licenses](licenses.md)                                                                   | A list of licenses                                                               |
 | [llmintrinsics](llmintrinsics.md)                                                         | A list of LLMIntrinsics                                                          |
 | [lower_is_better](lower_is_better.md)                                                     | Whether lower scores are better                                                  |
@@ -291,9 +295,9 @@ Name: ai-risk-ontology
 | [postconditions](postconditions.md)                                                       | Conditions that result from applying the rule                                    |
 | [power_consumption_w](power_consumption_w.md)                                             | power consumption in Watts                                                       |
 | [preconditions](preconditions.md)                                                         | Conditions that must be satisfied before the rule applies                        |
-| [producer](producer.md)                                                                   | A relationship to the Organization instance which produces this instance         |
+| [producer](producer.md)                                                                   |                                                                                  |
 | [prohibitions](prohibitions.md)                                                           | A list of prohibitions                                                           |
-| [provider](provider.md)                                                                   | A relationship to the Organization instance that provides this instance          |
+| [provider](provider.md)                                                                   |                                                                                  |
 | [refersToRisk](refersToRisk.md)                                                           | Indicates the incident (subject) is a materialisation of the indicated risk (... |
 | [related_mappings](related_mappings.md)                                                   | The property skos:relatedMatch is used to state an associative mapping link b... |
 | [requiredByTask](requiredByTask.md)                                                       | Indicates that this entry is required to perform a specific AI task              |
@@ -318,10 +322,9 @@ Name: ai-risk-ontology
 | [tag](tag.md)                                                                             | A shost version of the name                                                      |
 | [taxonomies](taxonomies.md)                                                               | A list of taxonomies                                                             |
 | [text](text.md)                                                                           | The question itself                                                              |
-| [training_data_preprocessing](training_data_preprocessing.md)                             | relationship indicating data preprocessing steps performed on training data s... |
+| [training_data_preprocessing](training_data_preprocessing.md)                             |                                                                                  |
 | [type](type.md)                                                                           | The type or class designation of this entity instance                            |
 | [url](url.md)                                                                             | An optional URL associated with this instance                                    |
-| [validated_by](validated_by.md)                                                           | A relationship indicating the model validation steps after AI model training     |
 | [value](value.md)                                                                         | Some numeric or string value                                                     |
 | [version](version.md)                                                                     | The version of the entity embodied by a specified resource                       |
 | [vocabularies](vocabularies.md)                                                           | A list of vocabularies                                                           |

@@ -320,13 +320,13 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 | [isMitigatedBy](isMitigatedBy.md)                 | \* <br/> [RiskControl](RiskControl.md)           | A relationship where a risk, risk source, consequence, or impact is mitigated... | [RiskConcept](RiskConcept.md)            |
 | [isUsedWithinLocality](isUsedWithinLocality.md)   | \* <br/> [LocalityOfUse](LocalityOfUse.md)       | Specifies the domain an AI system is used within                                 | [RiskConcept](RiskConcept.md)            |
 | [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)           | A relationship where a term or a term group is defined by a vocabulary           | [Entry](Entry.md)                        |
-| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Concept](Concept.md), [Entry](Entry.md) |
+| [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Entry](Entry.md), [Concept](Concept.md) |
 | [hasExternalReference](hasExternalReference.md)   | \* <br/> [Documentation](Documentation.md)       | External references / additional resources related to this entity, such as ar... | [Entry](Entry.md)                        |
 | [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                           | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                        |
 | [requiresCapability](requiresCapability.md)       | \* <br/> [Any](Any.md)                           | Indicates that this entry requires a specific capability                         | [Entry](Entry.md)                        |
 | [implementedByAdapter](implementedByAdapter.md)   | \* <br/> [Any](Any.md)                           | Indicates that this capability is implemented by a specific adapter              | [Entry](Entry.md)                        |
 | [hasRule](hasRule.md)                             | \* <br/> [Rule](Rule.md)                         | Specifying applicability or inclusion of a rule within specified context         | [Entry](Entry.md)                        |
-| [type](type.md)                                   | 0..1 <br/> [String](String.md)                   | The entry type or class designation specifying what kind of entry this is        | [Concept](Concept.md), [Entry](Entry.md) |
+| [type](type.md)                                   | 0..1 <br/> [String](String.md)                   | The entry type or class designation specifying what kind of entry this is        | [Entry](Entry.md), [Concept](Concept.md) |
 | [id](id.md)                                       | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                      |
 | [name](name.md)                                   | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md)                      |
 | [description](description.md)                     | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md)                      |
@@ -340,7 +340,6 @@ URI: [airo:Risk](https://w3id.org/airo#Risk)
 | [broad_mappings](broad_mappings.md)               | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                      |
 | [isCategorizedAs](isCategorizedAs.md)             | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
 | [hasLifecycleStatus](hasLifecycleStatus.md)       | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                      |
-| [notes](notes.md)                                 | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                      |
 | [hasJurisdiction](hasJurisdiction.md)             | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                    |
 
 ## Usages
@@ -965,20 +964,6 @@ attributes:
     domain_of:
     - Entity
     range: LifecycleStatus
-  notes:
-    name: notes
-    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
-      that do not belong in the user-facing description. Opaque to consumers.
-    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
-    rank: 1000
-    slot_uri: skos:note
-    alias: notes
-    owner: Risk
-    domain_of:
-    - Entity
-    range: string
-    recommended: false
-    multivalued: true
   hasJurisdiction:
     name: hasJurisdiction
     description: The legal or political jurisdiction(s) in which this concept applies,

@@ -19,9 +19,9 @@ Alias: isApplicableinLocality
 | Name                                      | Description                                                                      | Modifies Slot |
 | ----------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
 | [RiskControl](RiskControl.md)             | A measure that maintains and/or modifies risk (and risk concepts)                | no            |
-| [LLMQuestionPolicy](LLMQuestionPolicy.md) | The policy guides how the language model should answer a diverse set of sensi... | no            |
-| [Policy](Policy.md)                       | A guidance document outlining any of: procedures, plans, principles, decision... | no            |
 | [Control](Control.md)                     | A measure that maintains and/or modifies                                         | no            |
+| [Policy](Policy.md)                       | A guidance document outlining any of: procedures, plans, principles, decision... | no            |
+| [LLMQuestionPolicy](LLMQuestionPolicy.md) | The policy guides how the language model should answer a diverse set of sensi... | no            |
 | [Action](Action.md)                       | Action to remediate a risk                                                       | no            |
 
 ## Properties
