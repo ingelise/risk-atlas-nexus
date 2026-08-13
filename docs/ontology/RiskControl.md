@@ -211,6 +211,8 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 
 
 
+      RiskControl : notes
+
       RiskControl : related_mappings
 
 
@@ -255,7 +257,7 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 | [isUsedWithinLocality](isUsedWithinLocality.md)     | \* <br/> [LocalityOfUse](LocalityOfUse.md)       | Specifies the domain an AI system is used within                                 | [RiskConcept](RiskConcept.md)                |
 | [isApplicableinLocality](isApplicableinLocality.md) | \* <br/> [LocalityOfUse](LocalityOfUse.md)       | A relationship where an entity has is applicable in these localities             | [Control](Control.md)                        |
 | [hasExternalReference](hasExternalReference.md)     | \* <br/> [Documentation](Documentation.md)       | External references / additional resources related to this entity, such as ar... | [Control](Control.md)                        |
-| [type](type.md)                                     | 0..1 <br/> [String](String.md)                   | The type or class designation of this entity instance                            | [Control](Control.md), [Concept](Concept.md) |
+| [type](type.md)                                     | 0..1 <br/> [String](String.md)                   | The type or class designation of this entity instance                            | [Concept](Concept.md), [Control](Control.md) |
 | [id](id.md)                                         | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md)                          |
 | [name](name.md)                                     | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md)                          |
 | [description](description.md)                       | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md)                          |
@@ -269,6 +271,7 @@ URI: [airo:RiskControl](https://w3id.org/airo#RiskControl)
 | [broad_mappings](broad_mappings.md)                 | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                          |
 | [isCategorizedAs](isCategorizedAs.md)               | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                          |
 | [hasLifecycleStatus](hasLifecycleStatus.md)         | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                          |
+| [notes](notes.md)                                   | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                          |
 | [hasDocumentation](hasDocumentation.md)             | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Concept](Concept.md)                        |
 | [hasJurisdiction](hasJurisdiction.md)               | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)                        |
 
@@ -365,7 +368,6 @@ attributes:
     - airo:detectsRiskConcept
     rank: 1000
     domain: RiskControl
-    alias: detectsRiskConcept
     owner: RiskControl
     domain_of:
     - Risk
@@ -383,7 +385,6 @@ attributes:
     - airo:mitigatesRiskConcept
     rank: 1000
     domain: RiskControl
-    alias: mitigatesRiskConcept
     owner: RiskControl
     domain_of:
     - RiskControl
@@ -398,7 +399,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByTaxonomy
     owner: RiskControl
     domain_of:
     - Concept
@@ -427,7 +427,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isDetectedBy
     owner: RiskControl
     domain_of:
     - RiskConcept
@@ -442,7 +441,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isMitigatedBy
     owner: RiskControl
     domain_of:
     - RiskConcept
@@ -456,7 +454,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isUsedWithinLocality
-    alias: isUsedWithinLocality
     owner: RiskControl
     domain_of:
     - RiskConcept
@@ -470,7 +467,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isApplicableinLocality
-    alias: isApplicableinLocality
     owner: RiskControl
     domain_of:
     - Control
@@ -492,7 +488,6 @@ attributes:
     - rdfs:seeAlso
     rank: 1000
     slot_uri: nexus:hasExternalReference
-    alias: hasExternalReference
     owner: RiskControl
     domain_of:
     - Control
@@ -505,7 +500,6 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
-    alias: type
     owner: RiskControl
     domain_of:
     - Vocabulary
@@ -537,7 +531,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: RiskControl
     domain_of:
     - Entity
@@ -549,7 +542,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: RiskControl
     domain_of:
     - Entity
@@ -561,7 +553,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: RiskControl
     domain_of:
     - Entity
@@ -572,7 +563,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: RiskControl
     domain_of:
     - Entity
@@ -583,7 +573,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: RiskControl
     domain_of:
     - Entity
@@ -595,7 +584,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: RiskControl
     domain_of:
     - Entity
@@ -609,7 +597,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: RiskControl
     domain_of:
     - Entity
@@ -623,7 +610,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: RiskControl
     domain_of:
     - Entity
@@ -637,7 +623,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: RiskControl
     domain_of:
     - Entity
@@ -652,7 +637,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: RiskControl
     domain_of:
     - Entity
@@ -667,7 +651,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: RiskControl
     domain_of:
     - Entity
@@ -680,7 +663,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: RiskControl
     domain_of:
     - Entity
@@ -698,18 +680,29 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: RiskControl
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: RiskControl
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: RiskControl
     domain_of:
     - Dataset
@@ -741,7 +734,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasJurisdiction
-    alias: hasJurisdiction
     owner: RiskControl
     domain_of:
     - Concept

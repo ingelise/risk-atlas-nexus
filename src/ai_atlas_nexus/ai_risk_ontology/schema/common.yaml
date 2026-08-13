@@ -97,6 +97,7 @@ classes:
       - broad_mappings
       - isCategorizedAs
       - hasLifecycleStatus
+      - notes
 
   Organization:
     is_a: Entity
@@ -691,6 +692,13 @@ slots:
     aliases:
       - lifecycle_status
       - doc_status
+  notes:
+    slot_uri: skos:note
+    multivalued: true
+    recommended: false
+    description: >-
+      Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
   hasRelatedRisk:
     description: A relationship where an entity relates to a risk
     domain: Any

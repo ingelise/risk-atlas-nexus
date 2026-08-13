@@ -281,6 +281,7 @@ Name: ai-risk-ontology
 | [name](name.md)                                                                           | A text name of this instance                                                     |
 | [narrow_mappings](narrow_mappings.md)                                                     | The property is used to state a hierarchical mapping link between two concept... |
 | [narrower](narrower.md)                                                                   | Related concepts that are narrower in scope or hierarchy                         |
+| [notes](notes.md)                                                                         | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... |
 | [numParameters](numParameters.md)                                                         | A property indicating the number of parameters in a LLM                          |
 | [numTrainingTokens](numTrainingTokens.md)                                                 | The number of tokens a AI model was trained on                                   |
 | [obligations](obligations.md)                                                             | A list of Obligations                                                            |

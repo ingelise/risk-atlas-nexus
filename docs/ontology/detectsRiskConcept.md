@@ -10,7 +10,6 @@ _The property airo:detectsRiskConcept indicates the control used for detecting r
 <div data-search-exclude markdown="1">
 
 URI: [nexus:detectsRiskConcept](https://w3id.org/ai-atlas-nexus/detectsRiskConcept)
-Alias: detectsRiskConcept
 
 <!-- no inheritance hierarchy -->
 
@@ -73,7 +72,6 @@ exact_mappings:
 - airo:detectsRiskConcept
 rank: 1000
 domain: RiskControl
-alias: detectsRiskConcept
 domain_of:
 - Risk
 - RiskControl

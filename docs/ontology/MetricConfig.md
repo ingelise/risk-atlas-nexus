@@ -100,6 +100,8 @@ URI: [nexus:metricconfig](https://w3id.org/ai-atlas-nexus/metricconfig)
 
 
 
+      MetricConfig : notes
+
       MetricConfig : related_mappings
 
 
@@ -150,6 +152,7 @@ URI: [nexus:metricconfig](https://w3id.org/ai-atlas-nexus/metricconfig)
 | [broad_mappings](broad_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [isCategorizedAs](isCategorizedAs.md)       | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 | [hasLifecycleStatus](hasLifecycleStatus.md) | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
+| [notes](notes.md)                           | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Usages
 
@@ -234,7 +237,6 @@ attributes:
     description: Whether lower scores are better
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: lower_is_better
     owner: MetricConfig
     domain_of:
     - MetricConfig
@@ -244,7 +246,6 @@ attributes:
     description: Type of score (e.g., continuous)
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: score_type
     owner: MetricConfig
     domain_of:
     - MetricConfig
@@ -254,7 +255,6 @@ attributes:
     description: Minimum possible score
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: min_score
     owner: MetricConfig
     domain_of:
     - MetricConfig
@@ -264,7 +264,6 @@ attributes:
     description: Maximum possible score
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: max_score
     owner: MetricConfig
     domain_of:
     - MetricConfig
@@ -277,7 +276,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: MetricConfig
     domain_of:
     - Entity
@@ -289,7 +287,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: MetricConfig
     domain_of:
     - Entity
@@ -301,7 +298,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: MetricConfig
     domain_of:
     - Entity
@@ -312,7 +308,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: MetricConfig
     domain_of:
     - Entity
@@ -323,7 +318,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: MetricConfig
     domain_of:
     - Entity
@@ -335,7 +329,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: MetricConfig
     domain_of:
     - Entity
@@ -349,7 +342,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: MetricConfig
     domain_of:
     - Entity
@@ -363,7 +355,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: MetricConfig
     domain_of:
     - Entity
@@ -377,7 +368,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: MetricConfig
     domain_of:
     - Entity
@@ -392,7 +382,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: MetricConfig
     domain_of:
     - Entity
@@ -407,7 +396,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: MetricConfig
     domain_of:
     - Entity
@@ -420,7 +408,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: MetricConfig
     domain_of:
     - Entity
@@ -438,11 +425,23 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: MetricConfig
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: MetricConfig
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: nexus:metricconfig
 
 ````

@@ -192,6 +192,8 @@ URI: [nexus:everyevalairesult](https://w3id.org/ai-atlas-nexus/everyevalairesult
 
 
 
+      EveryEvalAIResult : notes
+
       EveryEvalAIResult : related_mappings
 
 
@@ -268,6 +270,7 @@ URI: [nexus:everyevalairesult](https://w3id.org/ai-atlas-nexus/everyevalairesult
 | [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                                       | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)             |
 | [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                                       | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)             |
 | [hasLifecycleStatus](hasLifecycleStatus.md)     | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)             | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)             |
+| [notes](notes.md)                               | \* <br/> [String](String.md)                                 | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)             |
 
 ## Usages
 
@@ -385,7 +388,6 @@ attributes:
     description: Version of the evaluation schema
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: schema_version
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -395,7 +397,6 @@ attributes:
     description: Unique identifier for this evaluation
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: evaluation_id
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -405,7 +406,6 @@ attributes:
     description: ISO 8601 timestamp when evaluation was performed
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: evaluation_timestamp
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -415,7 +415,6 @@ attributes:
     description: Unix timestamp when the data was retrieved
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: retrieved_timestamp
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -426,7 +425,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: EveryEvalAIResult
-    alias: hasSourceMetadata
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -438,7 +436,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: EveryEvalAIResult
-    alias: hasModelInfo
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -450,7 +447,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: EveryEvalAIResult
-    alias: hasEvaluationResults
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -462,7 +458,6 @@ attributes:
     description: The type of data used in the benchmark (e.g., text, images, or multi-modal)
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDataType
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -475,7 +470,6 @@ attributes:
       natural language processing, computer vision).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDomains
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -488,7 +482,6 @@ attributes:
       English, multilingual).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasLanguages
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -500,7 +493,6 @@ attributes:
     description: The tasks or evaluations the benchmark is intended to assess.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasTasks
     owner: EveryEvalAIResult
     domain_of:
     - AiEval
@@ -515,7 +507,6 @@ attributes:
       datasets, user submissions).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDataSource
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -527,7 +518,6 @@ attributes:
     description: The size of the dataset, including the number of data points or examples.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDataSize
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -539,7 +529,6 @@ attributes:
       format, tabular data).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDataFormat
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -551,7 +540,6 @@ attributes:
     description: The evaluation techniques applied within the benchmark.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasMethods
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -564,7 +552,6 @@ attributes:
       F1 score, precision, recall).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasMetrics
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -577,7 +564,6 @@ attributes:
       coverage or specific domains.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasLimitations
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -589,7 +575,6 @@ attributes:
     description: The specific goal or primary use case the benchmark is designed for.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasGoal
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -601,7 +586,6 @@ attributes:
       etc.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasAudience
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -614,7 +598,6 @@ attributes:
       to the benchmark.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasResources
     owner: EveryEvalAIResult
     domain_of:
     - EveryEvalAIResult
@@ -627,7 +610,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: EveryEvalAIResult
     domain_of:
     - Dataset
@@ -658,7 +640,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: AiEvalResult
-    alias: hasRelatedRisk
     owner: EveryEvalAIResult
     domain_of:
     - Term
@@ -679,7 +660,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dqv:isMeasurementOf
-    alias: isResultOf
     owner: EveryEvalAIResult
     domain_of:
     - AiEvalResult
@@ -691,7 +671,6 @@ attributes:
     description: Some numeric or string value
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: value
     owner: EveryEvalAIResult
     domain_of:
     - Fact
@@ -703,7 +682,6 @@ attributes:
       where some value was found or how it was generated.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: evidence
     owner: EveryEvalAIResult
     domain_of:
     - Fact
@@ -716,7 +694,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -728,7 +705,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -740,7 +716,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -751,7 +726,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -762,7 +736,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -774,7 +747,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -788,7 +760,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -802,7 +773,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -816,7 +786,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -831,7 +800,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -846,7 +814,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -859,7 +826,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: EveryEvalAIResult
     domain_of:
     - Entity
@@ -877,11 +843,23 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: EveryEvalAIResult
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: EveryEvalAIResult
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: nexus:everyevalairesult
 
 ````

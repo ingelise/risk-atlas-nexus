@@ -3,13 +3,13 @@ search:
   boost: 5.0
 ---
 
-# Slot: isCategorizedAs
+# Slot: notes
 
-_A relationship where an entity has been deemed to be categorized_
+_Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers._
 
 <div data-search-exclude markdown="1">
 
-URI: [nexus:isCategorizedAs](https://w3id.org/ai-atlas-nexus/isCategorizedAs)
+URI: [skos:note](http://www.w3.org/2004/02/skos/core#note)
 
 <!-- no inheritance hierarchy -->
 
@@ -21,7 +21,7 @@ URI: [nexus:isCategorizedAs](https://w3id.org/ai-atlas-nexus/isCategorizedAs)
 | [Organization](Organization.md)                                   | Any organizational entity such as a corporation, educational institution, con... | no            |
 | [License](License.md)                                             | The general notion of a license which defines terms and grants permissions to... | no            |
 | [Dataset](Dataset.md)                                             | A body of structured information describing some topic(s) of interest            | no            |
-| [Documentation](Documentation.md)                                 | Documented information about a concept or other topic(s) of interest             | yes           |
+| [Documentation](Documentation.md)                                 | Documented information about a concept or other topic(s) of interest             | no            |
 | [Vocabulary](Vocabulary.md)                                       | A collection of terms, with their definitions and relationships                  | no            |
 | [Taxonomy](Taxonomy.md)                                           | A hierachical taxonomy of concepts, with their definitions and relationships     | no            |
 | [Concept](Concept.md)                                             | A concept                                                                        | no            |
@@ -116,11 +116,11 @@ URI: [nexus:isCategorizedAs](https://w3id.org/ai-atlas-nexus/isCategorizedAs)
 
 ### Type and Range
 
-| Property  | Value                                                                    |
-| --------- | ------------------------------------------------------------------------ |
-| Range     | [Any](Any.md)                                                            |
-| Domain Of | [Entity](Entity.md)                                                      |
-| Slot URI  | [nexus:isCategorizedAs](https://w3id.org/ai-atlas-nexus/isCategorizedAs) |
+| Property  | Value                                                 |
+| --------- | ----------------------------------------------------- |
+| Range     | [String](String.md)                                   |
+| Domain Of | [Entity](Entity.md)                                   |
+| Slot URI  | [skos:note](http://www.w3.org/2004/02/skos/core#note) |
 
 ### Cardinality and Requirements
 
@@ -136,25 +136,26 @@ URI: [nexus:isCategorizedAs](https://w3id.org/ai-atlas-nexus/isCategorizedAs)
 
 ## Mappings
 
-| Mapping Type | Mapped Value          |
-| ------------ | --------------------- |
-| self         | nexus:isCategorizedAs |
-| native       | nexus:isCategorizedAs |
+| Mapping Type | Mapped Value |
+| ------------ | ------------ |
+| self         | skos:note    |
+| native       | nexus:notes  |
 
 ## LinkML Source
 
 <details>
 ```yaml
-name: isCategorizedAs
-description: A relationship where an entity has been deemed to be categorized
+name: notes
+description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+  that do not belong in the user-facing description. Opaque to consumers.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-slot_uri: nexus:isCategorizedAs
+slot_uri: skos:note
 domain_of:
 - Entity
-range: Any
+range: string
+recommended: false
 multivalued: true
-inlined: false
 
 ```
 </details></div>
