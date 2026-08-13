@@ -248,6 +248,7 @@ URI: [nexus:AiModel](https://w3id.org/ai-atlas-nexus/AiModel)
 | [broad_mappings](broad_mappings.md)           | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
 | [hasLifecycleStatus](hasLifecycleStatus.md)   | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
+| [notes](notes.md)                             | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Mixin Usage
 
@@ -313,7 +314,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dqv:hasQualityMeasurement
-    alias: hasEvaluation
     owner: AiModel
     domain_of:
     - AiModel
@@ -324,7 +324,6 @@ attributes:
     description: A description of the architecture of an AI such as 'Decoder-only'.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: architecture
     owner: AiModel
     domain_of:
     - AiModel
@@ -334,7 +333,6 @@ attributes:
     description: GPU consumption in terms of hours
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: gpu_hours
     owner: AiModel
     domain_of:
     - AiModel
@@ -345,7 +343,6 @@ attributes:
     description: power consumption in Watts
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: power_consumption_w
     owner: AiModel
     domain_of:
     - AiModel
@@ -357,7 +354,6 @@ attributes:
       during training
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: carbon_emitted
     owner: AiModel
     domain_of:
     - AiModel
@@ -373,7 +369,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasRiskControl
-    alias: hasRiskControl
     owner: AiModel
     domain_of:
     - AiModel
@@ -384,7 +379,6 @@ attributes:
     description: A relationship to the Organization instance which produces this instance.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: isProducedBy
     owner: AiModel
     domain_of:
     - BaseAi
@@ -394,7 +388,6 @@ attributes:
     description: A relationship to model card references.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasModelCard
     owner: AiModel
     domain_of:
     - BaseAi
@@ -408,7 +401,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: AiModel
     domain_of:
     - Dataset
@@ -439,7 +431,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
-    alias: hasLicense
     owner: AiModel
     domain_of:
     - Dataset
@@ -459,7 +450,6 @@ attributes:
     description: relationship indicating the AI tasks an AI model can perform.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: performsTask
     owner: AiModel
     domain_of:
     - BaseAi
@@ -472,7 +462,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:provider
-    alias: isProvidedBy
     owner: AiModel
     domain_of:
     - Dataset
@@ -486,7 +475,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: AiModel
     domain_of:
     - Entity
@@ -498,7 +486,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: AiModel
     domain_of:
     - Entity
@@ -510,7 +497,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: AiModel
     domain_of:
     - Entity
@@ -521,7 +507,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: AiModel
     domain_of:
     - Entity
@@ -532,7 +517,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: AiModel
     domain_of:
     - Entity
@@ -544,7 +528,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: AiModel
     domain_of:
     - Entity
@@ -558,7 +541,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: AiModel
     domain_of:
     - Entity
@@ -572,7 +554,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: AiModel
     domain_of:
     - Entity
@@ -586,7 +567,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: AiModel
     domain_of:
     - Entity
@@ -601,7 +581,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: AiModel
     domain_of:
     - Entity
@@ -616,7 +595,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: AiModel
     domain_of:
     - Entity
@@ -629,7 +607,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: AiModel
     domain_of:
     - Entity
@@ -647,11 +624,23 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: AiModel
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: AiModel
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 
 ````
 

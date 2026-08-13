@@ -10,7 +10,6 @@ _A relationship where a group belongs to a domain_
 <div data-search-exclude markdown="1">
 
 URI: [schema:isPartOf](http://schema.org/isPartOf)
-Alias: belongsToDomain
 
 <!-- no inheritance hierarchy -->
 
@@ -18,18 +17,13 @@ Alias: belongsToDomain
 
 | Name                                    | Description                                                                      | Modifies Slot |
 | --------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | no            |
-| [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | no            |
 | [Group](Group.md)                       | Labelled groups of concepts                                                      | no            |
-| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | no            |
-| [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping                                                | no            |
-| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | no            |
-| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | no            |
 | [CapabilityGroup](CapabilityGroup.md)   | A group of AI capabilities that are part of a capability taxonomy, organized ... | yes           |
 | [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | no            |
-| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | no            |
-| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | no            |
 | [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | no            |
+| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | no            |
+| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | no            |
+| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | no            |
 | [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping                                                | no            |
 
 ## Properties
@@ -69,7 +63,6 @@ description: A relationship where a group belongs to a domain
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: schema:isPartOf
-alias: belongsToDomain
 domain_of:
 - Group
 - CapabilityGroup

@@ -10,7 +10,6 @@ _A relationship where an entity has another entity_
 <div data-search-exclude markdown="1">
 
 URI: [skos:member](http://www.w3.org/2004/02/skos/core#member)
-Alias: hasPart
 
 <!-- no inheritance hierarchy -->
 
@@ -18,18 +17,13 @@ Alias: hasPart
 
 | Name                                    | Description                                                                      | Modifies Slot |
 | --------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | yes           |
-| [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | yes           |
 | [Group](Group.md)                       | Labelled groups of concepts                                                      | no            |
-| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | yes           |
-| [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping                                                | no            |
-| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | yes           |
-| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | yes           |
-| [CapabilityGroup](CapabilityGroup.md)   | A group of AI capabilities that are part of a capability taxonomy, organized ... | yes           |
 | [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | yes           |
-| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | yes           |
-| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | yes           |
 | [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | yes           |
+| [CapabilityGroup](CapabilityGroup.md)   | A group of AI capabilities that are part of a capability taxonomy, organized ... | yes           |
+| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | yes           |
+| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | yes           |
+| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | yes           |
 | [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping                                                | no            |
 
 ## Properties
@@ -70,7 +64,6 @@ description: A relationship where an entity has another entity
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: skos:member
-alias: hasPart
 domain_of:
 - Group
 - RiskControlGroup

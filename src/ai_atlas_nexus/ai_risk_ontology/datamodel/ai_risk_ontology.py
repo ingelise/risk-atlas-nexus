@@ -19,7 +19,7 @@ from pydantic import (
 )
 
 
-metamodel_version = "1.7.0"
+metamodel_version = "1.11.0"
 version = "0.5.0"
 
 
@@ -308,6 +308,7 @@ class Entity(ConfiguredBaseModel):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Organization(Entity):
@@ -333,6 +334,7 @@ class Organization(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class License(Entity):
@@ -364,6 +366,7 @@ class License(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Dataset(Entity):
@@ -421,6 +424,7 @@ class Dataset(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Documentation(Entity):
@@ -467,6 +471,7 @@ class Documentation(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Fact(ConfiguredBaseModel):
@@ -564,6 +569,7 @@ class Vocabulary(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Taxonomy(Entity):
@@ -650,6 +656,7 @@ class Taxonomy(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Concept(Entity):
@@ -737,6 +744,7 @@ class Concept(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Control(Entity):
@@ -808,6 +816,7 @@ class Control(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Group(Entity):
@@ -905,6 +914,7 @@ class Group(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Entry(Entity):
@@ -1014,6 +1024,7 @@ class Entry(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Term(Entry):
@@ -1133,6 +1144,7 @@ class Term(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Principle(Entry):
@@ -1241,6 +1253,7 @@ class Principle(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Policy(Entity):
@@ -1307,6 +1320,7 @@ class Policy(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class LLMQuestionPolicy(Policy):
@@ -1386,6 +1400,7 @@ class LLMQuestionPolicy(Policy):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Rule(Entity):
@@ -1453,6 +1468,7 @@ class Rule(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AttributeConditionRule(Rule):
@@ -1517,6 +1533,7 @@ class AttributeConditionRule(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AnonymousClassExpression(ConfiguredBaseModel):
@@ -1597,6 +1614,7 @@ class Permission(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Prohibition(Rule):
@@ -1664,6 +1682,7 @@ class Prohibition(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Obligation(Rule):
@@ -1731,6 +1750,7 @@ class Obligation(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Recommendation(Rule):
@@ -1798,6 +1818,7 @@ class Recommendation(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Certification(Entry):
@@ -1907,6 +1928,7 @@ class Certification(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class LocalityOfUse(Entry):
@@ -2015,6 +2037,7 @@ class LocalityOfUse(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class RiskTaxonomy(Taxonomy):
@@ -2098,6 +2121,7 @@ class RiskTaxonomy(Taxonomy):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class RiskControlGroupTaxonomy(Taxonomy):
@@ -2181,6 +2205,7 @@ class RiskControlGroupTaxonomy(Taxonomy):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class RiskConcept(Concept):
@@ -2275,6 +2300,7 @@ class RiskConcept(Concept):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class RiskControlGroup(RiskConcept, Group):
@@ -2383,6 +2409,7 @@ class RiskControlGroup(RiskConcept, Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -2491,6 +2518,7 @@ class RiskGroup(RiskConcept, Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -2623,6 +2651,7 @@ class Risk(RiskConcept, Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -2711,6 +2740,7 @@ class RiskControl(RiskConcept, Control):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasDocumentation: Optional[list[str]] = Field(default=None, description="""Indicates documentation associated with an entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Dataset',
                        'Vocabulary',
                        'Taxonomy',
@@ -2850,6 +2880,7 @@ class Action(RiskControl):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -2919,6 +2950,7 @@ class RiskIncident(RiskConcept, Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasDocumentation: Optional[list[str]] = Field(default=None, description="""Indicates documentation associated with an entity.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Dataset',
                        'Vocabulary',
                        'Taxonomy',
@@ -2991,6 +3023,7 @@ class Impact(RiskConcept, Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     isDefinedByTaxonomy: Optional[str] = Field(default=None, description="""A relationship where a concept or a concept group is defined by a taxonomy""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept',
                        'Control',
                        'Group',
@@ -3073,6 +3106,7 @@ class IncidentStatus(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class IncidentConcludedclass(IncidentStatus):
@@ -3094,6 +3128,7 @@ class IncidentConcludedclass(IncidentStatus):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class IncidentHaltedclass(IncidentStatus):
@@ -3115,6 +3150,7 @@ class IncidentHaltedclass(IncidentStatus):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class IncidentMitigatedclass(IncidentStatus):
@@ -3136,6 +3172,7 @@ class IncidentMitigatedclass(IncidentStatus):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class IncidentNearMissclass(IncidentStatus):
@@ -3157,6 +3194,7 @@ class IncidentNearMissclass(IncidentStatus):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class IncidentOngoingclass(IncidentStatus):
@@ -3178,6 +3216,7 @@ class IncidentOngoingclass(IncidentStatus):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Severity(Entity):
@@ -3199,6 +3238,7 @@ class Severity(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Likelihood(Entity):
@@ -3220,6 +3260,7 @@ class Likelihood(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Consequence(Entity):
@@ -3241,6 +3282,7 @@ class Consequence(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class CapabilityTaxonomy(Taxonomy):
@@ -3325,6 +3367,7 @@ class CapabilityTaxonomy(Taxonomy):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class CapabilityConcept(Concept):
@@ -3411,6 +3454,7 @@ class CapabilityConcept(Concept):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class CapabilityDomain(CapabilityConcept, Group):
@@ -3511,6 +3555,7 @@ class CapabilityDomain(CapabilityConcept, Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -3628,6 +3673,7 @@ class CapabilityGroup(CapabilityConcept, Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -3774,6 +3820,7 @@ class Capability(CapabilityConcept, Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasJurisdiction: Optional[list[Jurisdiction]] = Field(default=None, description="""The legal or political jurisdiction(s) in which this concept applies, expressed as ISO 3166-1 country codes.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Concept'], 'slot_uri': 'dpv:hasJurisdiction'} })
 
 
@@ -3834,6 +3881,7 @@ class BaseAi(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiSystem(BaseAi, Entry):
@@ -3999,6 +4047,7 @@ class AiSystem(BaseAi, Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiAgent(AiSystem):
@@ -4154,6 +4203,7 @@ class AiAgent(AiSystem):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class LargeLanguageModelFamily(Entity):
@@ -4197,6 +4247,7 @@ class LargeLanguageModelFamily(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiTask(Entry):
@@ -4308,6 +4359,7 @@ class AiTask(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiTaskTaxonomy(Taxonomy):
@@ -4391,6 +4443,7 @@ class AiTaskTaxonomy(Taxonomy):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiTaskDomain(Group):
@@ -4490,6 +4543,7 @@ class AiTaskDomain(Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiTaskGroup(Group):
@@ -4597,6 +4651,7 @@ class AiTaskGroup(Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiLifecyclePhase(Entity):
@@ -4622,6 +4677,7 @@ class AiLifecyclePhase(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class DataPreprocessing(AiLifecyclePhase):
@@ -4645,6 +4701,7 @@ class DataPreprocessing(AiLifecyclePhase):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiModelValidation(AiLifecyclePhase):
@@ -4668,6 +4725,7 @@ class AiModelValidation(AiLifecyclePhase):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiProvider(Organization):
@@ -4693,6 +4751,7 @@ class AiProvider(Organization):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Modality(Entity):
@@ -4717,6 +4776,7 @@ class Modality(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Input(Entity):
@@ -4741,6 +4801,7 @@ class Input(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Purpose(Entry):
@@ -4849,6 +4910,7 @@ class Purpose(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Domain(Entry):
@@ -4957,6 +5019,7 @@ class Domain(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AIComponent(Entity):
@@ -4981,6 +5044,7 @@ class AIComponent(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiModel(AIComponent, BaseAi):
@@ -5049,6 +5113,7 @@ class AiModel(AIComponent, BaseAi):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class LargeLanguageModel(AiModel):
@@ -5140,6 +5205,7 @@ class LargeLanguageModel(AiModel):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Stakeholder(Entity):
@@ -5195,6 +5261,7 @@ class Stakeholder(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AISubject(Stakeholder):
@@ -5245,6 +5312,7 @@ class AISubject(Stakeholder):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AIOperator(Stakeholder):
@@ -5295,6 +5363,7 @@ class AIOperator(Stakeholder):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AIDeveloper(Stakeholder):
@@ -5345,6 +5414,7 @@ class AIDeveloper(Stakeholder):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AIDeployer(AIOperator):
@@ -5395,6 +5465,7 @@ class AIDeployer(AIOperator):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AIUser(Stakeholder):
@@ -5445,6 +5516,7 @@ class AIUser(Stakeholder):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class StakeholderGroup(Group):
@@ -5539,6 +5611,7 @@ class StakeholderGroup(Group):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiEval(Entity):
@@ -5623,6 +5696,7 @@ class AiEval(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiEvalResult(Fact, Entity):
@@ -5651,6 +5725,7 @@ class AiEvalResult(Fact, Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class SourceMetadata(Entity):
@@ -5680,6 +5755,7 @@ class SourceMetadata(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ModelInfo(Entity):
@@ -5706,6 +5782,7 @@ class ModelInfo(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class SourceData(Entity):
@@ -5734,6 +5811,7 @@ class SourceData(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class MetricConfig(Entity):
@@ -5762,6 +5840,7 @@ class MetricConfig(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ScoreDetails(Entity):
@@ -5787,6 +5866,7 @@ class ScoreDetails(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class EvaluationResultRecord(Entity):
@@ -5815,6 +5895,7 @@ class EvaluationResultRecord(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class EveryEvalAIResult(AiEvalResult):
@@ -5895,6 +5976,7 @@ class EveryEvalAIResult(AiEvalResult):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class BenchmarkMetadataCard(Entity):
@@ -6013,6 +6095,7 @@ class BenchmarkMetadataCard(Entity):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Question(AiEval):
@@ -6086,6 +6169,7 @@ class Question(AiEval):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Questionnaire(AiEval):
@@ -6159,6 +6243,7 @@ class Questionnaire(AiEval):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Adapter(LargeLanguageModel, Entry):
@@ -6315,6 +6400,7 @@ class Adapter(LargeLanguageModel, Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
     hasEvaluation: Optional[list[str]] = Field(default=None, description="""A relationship indicating that an entity has an AI evaluation result.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AiModel'], 'slot_uri': 'dqv:hasQualityMeasurement'} })
     architecture: Optional[str] = Field(default=None, description="""A description of the architecture of an AI such as 'Decoder-only'.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AiModel']} })
     gpu_hours: Optional[int] = Field(default=None, description="""GPU consumption in terms of hours""", ge=0, json_schema_extra = { "linkml_meta": {'domain_of': ['AiModel']} })
@@ -6461,6 +6547,7 @@ class LLMIntrinsic(Entry):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class AiOffice(Organization):
@@ -6486,6 +6573,7 @@ class AiOffice(Organization):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ControlActivity(Rule):
@@ -6572,6 +6660,7 @@ class ControlActivity(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ControlActivityPermission(ControlActivity, Permission):
@@ -6660,6 +6749,7 @@ class ControlActivityPermission(ControlActivity, Permission):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ControlActivityProhibition(ControlActivity, Prohibition):
@@ -6748,6 +6838,7 @@ class ControlActivityProhibition(ControlActivity, Prohibition):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ControlActivityObligation(ControlActivity, Obligation):
@@ -6836,6 +6927,7 @@ class ControlActivityObligation(ControlActivity, Obligation):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class ControlActivityRecommendation(ControlActivity, Recommendation):
@@ -6924,6 +7016,7 @@ class ControlActivityRecommendation(ControlActivity, Recommendation):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Requirement(Rule):
@@ -7012,6 +7105,7 @@ class Requirement(Rule):
     hasLifecycleStatus: Optional[LifecycleStatus] = Field(default=None, description="""The editorial / publication lifecycle state of this entity. Distinct from AiLifecyclePhase, which describes an AI system's runtime evolution rather than the editorial workflow of a catalogued entry.""", json_schema_extra = { "linkml_meta": {'aliases': ['lifecycle_status', 'doc_status'],
          'domain_of': ['Entity'],
          'slot_uri': 'adms:status'} })
+    notes: Optional[list[str]] = Field(default=None, description="""Free-text editorial notes, source breadcrumbs, or build-time provenance that do not belong in the user-facing description. Opaque to consumers.""", json_schema_extra = { "linkml_meta": {'domain_of': ['Entity'], 'recommended': False, 'slot_uri': 'skos:note'} })
 
 
 class Container(ConfiguredBaseModel):

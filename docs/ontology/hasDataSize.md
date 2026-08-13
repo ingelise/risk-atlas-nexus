@@ -10,7 +10,6 @@ _The size of the dataset, including the number of data points or examples._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataSize](https://w3id.org/ai-atlas-nexus/hasDataSize)
-Alias: hasDataSize
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,6 @@ name: hasDataSize
 description: The size of the dataset, including the number of data points or examples.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDataSize
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

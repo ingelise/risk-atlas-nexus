@@ -10,7 +10,6 @@ _A relationship to datasets that are used._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataset](https://w3id.org/ai-atlas-nexus/hasDataset)
-Alias: hasDataset
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ name: hasDataset
 description: A relationship to datasets that are used.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDataset
 domain_of:
 - AiEval
 range: Dataset

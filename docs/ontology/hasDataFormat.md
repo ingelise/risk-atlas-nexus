@@ -10,7 +10,6 @@ _The structure and modality of the data (e.g., sentence pairs, question-answer f
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataFormat](https://w3id.org/ai-atlas-nexus/hasDataFormat)
-Alias: hasDataFormat
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: The structure and modality of the data (e.g., sentence pairs, quest
   format, tabular data).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDataFormat
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

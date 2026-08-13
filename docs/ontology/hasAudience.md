@@ -10,7 +10,6 @@ _The intended audience, such as researchers, developers, policymakers, etc._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasAudience](https://w3id.org/ai-atlas-nexus/hasAudience)
-Alias: hasAudience
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: The intended audience, such as researchers, developers, policymaker
   etc.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasAudience
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

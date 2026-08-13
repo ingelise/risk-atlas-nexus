@@ -10,7 +10,6 @@ _The specific goal or primary use case the benchmark is designed for._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasGoal](https://w3id.org/ai-atlas-nexus/hasGoal)
-Alias: hasGoal
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,6 @@ name: hasGoal
 description: The specific goal or primary use case the benchmark is designed for.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasGoal
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

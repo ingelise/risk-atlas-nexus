@@ -10,7 +10,6 @@ _The evaluation techniques applied within the benchmark._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasMethods](https://w3id.org/ai-atlas-nexus/hasMethods)
-Alias: hasMethods
 
 <!-- no inheritance hierarchy -->
 
@@ -57,7 +56,6 @@ name: hasMethods
 description: The evaluation techniques applied within the benchmark.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasMethods
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

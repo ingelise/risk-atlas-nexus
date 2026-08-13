@@ -10,7 +10,6 @@ _The languages included in the dataset used by the benchmark (e.g., English, mul
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasLanguages](https://w3id.org/ai-atlas-nexus/hasLanguages)
-Alias: hasLanguages
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: The languages included in the dataset used by the benchmark (e.g., 
   multilingual).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasLanguages
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

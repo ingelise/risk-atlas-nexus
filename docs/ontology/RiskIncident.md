@@ -316,6 +316,7 @@ URI: [dpv-risk:Incident](https://w3id.org/dpv/risk#Incident)
 | [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)           |
 | [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)           |
 | [hasLifecycleStatus](hasLifecycleStatus.md)     | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)           |
+| [notes](notes.md)                               | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)           |
 | [hasDocumentation](hasDocumentation.md)         | \* <br/> [Documentation](Documentation.md)       | Indicates documentation associated with an entity                                | [Concept](Concept.md)         |
 | [hasJurisdiction](hasJurisdiction.md)           | \* <br/> [Jurisdiction](Jurisdiction.md)         | The legal or political jurisdiction(s) in which this concept applies, express... | [Concept](Concept.md)         |
 | [type](type.md)                                 | 0..1 <br/> [String](String.md)                   | The type or class designation of this entity instance                            | [Concept](Concept.md)         |
@@ -401,7 +402,6 @@ attributes:
     name: author
     description: The author or authors of the incident report
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
-    alias: author
     owner: RiskIncident
     domain_of:
     - Documentation
@@ -412,7 +412,6 @@ attributes:
     description: The uri of the incident
     from_schema: https://w3id.org/ai-atlas-nexus/ai_risk
     rank: 1000
-    alias: source_uri
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -426,7 +425,6 @@ attributes:
     - dpv:refersToRisk
     rank: 1000
     domain: RiskIncident
-    alias: refersToRisk
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -440,7 +438,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByTaxonomy
     owner: RiskIncident
     domain_of:
     - Concept
@@ -468,7 +465,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: hasStatus
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -479,7 +475,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: hasSeverity
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -491,7 +486,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: hasLikelihood
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -505,7 +499,6 @@ attributes:
     - dpv:hasConsequenceOn
     rank: 1000
     domain: RiskConcept
-    alias: hasImpactOn
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -516,7 +509,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: hasConsequence
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -530,7 +522,6 @@ attributes:
     - dpv:hasConsequence
     rank: 1000
     domain: RiskConcept
-    alias: hasImpact
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -542,7 +533,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskIncident
-    alias: hasVariant
     owner: RiskIncident
     domain_of:
     - RiskIncident
@@ -554,7 +544,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isDetectedBy
     owner: RiskIncident
     domain_of:
     - RiskConcept
@@ -569,7 +558,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
-    alias: isMitigatedBy
     owner: RiskIncident
     domain_of:
     - RiskConcept
@@ -583,7 +571,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isUsedWithinLocality
-    alias: isUsedWithinLocality
     owner: RiskIncident
     domain_of:
     - RiskConcept
@@ -599,7 +586,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: RiskIncident
     domain_of:
     - Entity
@@ -611,7 +597,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: RiskIncident
     domain_of:
     - Entity
@@ -623,7 +608,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: RiskIncident
     domain_of:
     - Entity
@@ -634,7 +618,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: RiskIncident
     domain_of:
     - Entity
@@ -645,7 +628,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: RiskIncident
     domain_of:
     - Entity
@@ -657,7 +639,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: RiskIncident
     domain_of:
     - Entity
@@ -671,7 +652,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: RiskIncident
     domain_of:
     - Entity
@@ -685,7 +665,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: RiskIncident
     domain_of:
     - Entity
@@ -699,7 +678,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: RiskIncident
     domain_of:
     - Entity
@@ -714,7 +692,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: RiskIncident
     domain_of:
     - Entity
@@ -729,7 +706,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: RiskIncident
     domain_of:
     - Entity
@@ -742,7 +718,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: RiskIncident
     domain_of:
     - Entity
@@ -760,18 +735,29 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: RiskIncident
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: RiskIncident
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
   hasDocumentation:
     name: hasDocumentation
     description: Indicates documentation associated with an entity.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: RiskIncident
     domain_of:
     - Dataset
@@ -803,7 +789,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasJurisdiction
-    alias: hasJurisdiction
     owner: RiskIncident
     domain_of:
     - Concept
@@ -815,7 +800,6 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
-    alias: type
     owner: RiskIncident
     domain_of:
     - Vocabulary

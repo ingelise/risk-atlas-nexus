@@ -10,7 +10,6 @@ _Links to relevant resources, such as repositories or papers related to the benc
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasResources](https://w3id.org/ai-atlas-nexus/hasResources)
-Alias: hasResources
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: Links to relevant resources, such as repositories or papers related
   the benchmark.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasResources
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

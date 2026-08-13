@@ -237,6 +237,7 @@ URI: [nexus:ControlActivityPermission](https://w3id.org/ai-atlas-nexus/ControlAc
 | [broad_mappings](broad_mappings.md)                     | \* <br/> [Any](Any.md)                                                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md)                   |
 | [isCategorizedAs](isCategorizedAs.md)                   | \* <br/> [Any](Any.md)                                                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                   |
 | [hasLifecycleStatus](hasLifecycleStatus.md)             | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)                                 | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                   |
+| [notes](notes.md)                                       | \* <br/> [String](String.md)                                                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                   |
 
 ## Identifier and Mapping Information
 
@@ -312,7 +313,6 @@ attributes:
     name: type
     from_schema: https://w3id.org/ai-atlas-nexus/ai_aiuc
     designates_type: true
-    alias: type
     owner: ControlActivityPermission
     domain_of:
     - Vocabulary
@@ -344,7 +344,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:hasControlApplication
-    alias: hasControlApplication
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -357,7 +356,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:hasEvidenceCategory
-    alias: hasEvidenceCategory
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -371,7 +369,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:hasTypicalLocation
-    alias: hasTypicalLocation
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -385,7 +382,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:isApplicableToCapability
-    alias: isApplicableToCapability
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -400,7 +396,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:hasRequirement
-    alias: hasRequirement
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -414,7 +409,6 @@ attributes:
     rank: 1000
     domain: Any
     slot_uri: nexus:hasRequirementType
-    alias: hasRequirementType
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -427,7 +421,6 @@ attributes:
     rank: 1000
     domain: ControlActivity
     slot_uri: nexus:hasTypicalEvidence
-    alias: hasTypicalEvidence
     owner: ControlActivityPermission
     domain_of:
     - ControlActivity
@@ -441,7 +434,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
-    alias: isDefinedByTaxonomy
     owner: ControlActivityPermission
     domain_of:
     - Concept
@@ -470,7 +462,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
-    alias: hasRule
     owner: ControlActivityPermission
     domain_of:
     - Entry
@@ -488,7 +479,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -500,7 +490,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -512,7 +501,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -523,7 +511,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -534,7 +521,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -546,7 +532,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -560,7 +545,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -574,7 +558,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -588,7 +571,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -603,7 +585,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -618,7 +599,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -631,7 +611,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: ControlActivityPermission
     domain_of:
     - Entity
@@ -649,11 +628,23 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
-    alias: hasLifecycleStatus
     owner: ControlActivityPermission
     domain_of:
     - Entity
     range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: ControlActivityPermission
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: nexus:ControlActivityPermission
 
 ````

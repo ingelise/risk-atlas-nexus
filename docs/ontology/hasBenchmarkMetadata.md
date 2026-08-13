@@ -10,7 +10,6 @@ _A relationship to a Benchmark Metadata Card which contains metadata about the b
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasBenchmarkMetadata](https://w3id.org/ai-atlas-nexus/hasBenchmarkMetadata)
-Alias: hasBenchmarkMetadata
 
 <!-- no inheritance hierarchy -->
 
@@ -70,7 +69,6 @@ description: A relationship to a Benchmark Metadata Card which contains metadata
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: AiEval
-alias: hasBenchmarkMetadata
 domain_of:
 - AiEval
 inverse: describesAiEval

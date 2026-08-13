@@ -10,7 +10,6 @@ _Annotation of the best possible result of the evaluation_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:bestValue](https://w3id.org/ai-atlas-nexus/bestValue)
-Alias: bestValue
 
 <!-- no inheritance hierarchy -->
 
@@ -57,7 +56,6 @@ name: bestValue
 description: Annotation of the best possible result of the evaluation
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: bestValue
 domain_of:
 - AiEval
 range: string

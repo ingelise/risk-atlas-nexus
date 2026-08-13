@@ -10,7 +10,6 @@ _The origin or source of the data used in the benchmark (e.g., curated datasets,
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataSource](https://w3id.org/ai-atlas-nexus/hasDataSource)
-Alias: hasDataSource
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: The origin or source of the data used in the benchmark (e.g., curat
   datasets, user submissions).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDataSource
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

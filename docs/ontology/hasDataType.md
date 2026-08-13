@@ -10,7 +10,6 @@ _The type of data used in the benchmark (e.g., text, images, or multi-modal)_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataType](https://w3id.org/ai-atlas-nexus/hasDataType)
-Alias: hasDataType
 
 <!-- no inheritance hierarchy -->
 
@@ -57,7 +56,6 @@ name: hasDataType
 description: The type of data used in the benchmark (e.g., text, images, or multi-modal)
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDataType
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

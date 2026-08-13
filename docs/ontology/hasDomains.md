@@ -10,7 +10,6 @@ _The specific domains or areas where the benchmark is applied (e.g., natural lan
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDomains](https://w3id.org/ai-atlas-nexus/hasDomains)
-Alias: hasDomains
 
 <!-- no inheritance hierarchy -->
 
@@ -58,7 +57,6 @@ description: The specific domains or areas where the benchmark is applied (e.g.,
   language processing, computer vision).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasDomains
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard
