@@ -64,7 +64,6 @@ enums:
       WITHDRAWN:
         description: Removed / no longer available.
         meaning: adms-status:Withdrawn
-
   Jurisdiction:
     description: >-
       ISO 3166-1 country code, sourced from the DPV Location ontology
@@ -73,6 +72,41 @@ enums:
       source_ontology: dpv-loc
       source_nodes:
         - dpv:Country
+      relationship_types:
+        - rdfs:subClassOf
+      include_self: false
+
+  SupraNationalJurisdiction:
+    description: >-
+      Supra-national or intergovernmental jurisdiction, sourced from the
+      DPV Location ontology (https://w3id.org/dpv/loc). Values are
+      subclasses of dpv:SupraNationalUnion (e.g. EU, EEA).
+    reachable_from:
+      source_ontology: dpv-loc
+      source_nodes:
+        - dpv:SupraNationalUnion
+      relationship_types:
+        - rdfs:subClassOf
+      include_self: false
+    permissible_values:
+      International:
+        description: >-
+          Explicitly global scope not attributable to any single country
+          or recognised regional body.
+        aliases:
+          - INTERNATIONAL
+          - international
+
+  SubnationalJurisdiction:
+    description: >-
+      Subnational or regional jurisdiction, sourced from the DPV Location
+      ontology (https://w3id.org/dpv/loc). Values are subclasses of
+      dpv:Region and use ISO 3166-2 subdivision codes
+      (e.g. US-CA for California, CA-QC for Quebec).
+    reachable_from:
+      source_ontology: dpv-loc
+      source_nodes:
+        - dpv:Region
       relationship_types:
         - rdfs:subClassOf
       include_self: false
@@ -650,10 +684,17 @@ slots:
     slot_uri: nexus:isApplicableinLocality
   hasJurisdiction:
     description: >-
-      The legal or political jurisdiction(s) in which this concept applies,
-      expressed as ISO 3166-1 country codes.
-    range: Jurisdiction
+      The legal or regulatory jurisdiction(s) applicable to an AI system,
+      policy, risk, or obligation. Accepts ISO 3166-1 country codes,
+      supra-national bodies, or subnational jurisdictions with distinct
+      regulatory significance. Aligns with dpv:hasJurisdiction.
     multivalued: true
+    see_also:
+      - https://w3id.org/dpv#hasJurisdiction
+    any_of:
+      - range: Jurisdiction
+      - range: SupraNationalJurisdiction
+      - range: SubnationalJurisdiction
     inlined: false
     slot_uri: dpv:hasJurisdiction
   isUsedWithinLocality:
