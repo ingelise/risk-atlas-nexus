@@ -1,0 +1,92 @@
+level,id,name,parent,type
+1,eticas-bias-fairness,Bias & Fairness,,RiskGroup
+1,eticas-privacy-confidentiality,Privacy & Confidentiality,,RiskGroup
+1,eticas-reliability,Reliability,,RiskGroup
+1,eticas-governance,Governance,,RiskGroup
+1,eticas-security-misuse,Security & Misuse,,RiskGroup
+1,eticas-environmental-impact,Environmental Impact,,RiskGroup
+1,eticas-transparency-explainability,Transparency & Explainability,,RiskGroup
+1,eticas-agentic-ai,Agentic AI,,RiskGroup
+2,eticas-bias-outcome-disparities,Outcome disparities,eticas-bias-fairness,RiskGroup
+2,eticas-bias-representational-harm,Representational harm,eticas-bias-fairness,RiskGroup
+2,eticas-bias-dynamic-systemic-bias,Dynamic & Systemic bias,eticas-bias-fairness,RiskGroup
+2,eticas-privacy-collection-use,Data collection & use,eticas-privacy-confidentiality,RiskGroup
+2,eticas-privacy-data-protection,Data protection,eticas-privacy-confidentiality,RiskGroup
+2,eticas-privacy-model-level,Model-level privacy,eticas-privacy-confidentiality,RiskGroup
+2,eticas-reliability-output-quality,Output Integrity and Robustness,eticas-reliability,RiskGroup
+2,eticas-reliability-measurement-validity,Measurement Validity,eticas-reliability,RiskGroup
+2,eticas-reliability-resilience,Operational Resilience,eticas-reliability,RiskGroup
+2,eticas-governance-accountability,Accountability,eticas-governance,RiskGroup
+2,eticas-governance-documentation,Documentation & auditability,eticas-governance,RiskGroup
+2,eticas-governance-compliance,Compliance & process,eticas-governance,RiskGroup
+2,eticas-security-ai-attacks,Adversarial Threats & Attacks,eticas-security-misuse,RiskGroup
+2,eticas-security-system,Infrastructure & System security,eticas-security-misuse,RiskGroup
+2,eticas-security-harmful-misuse,Harmful & Malicious Misuse,eticas-security-misuse,RiskGroup
+2,eticas-transparency-explainability-group,Explainability,eticas-transparency-explainability,RiskGroup
+2,eticas-transparency-communication,Communication & disclosure,eticas-transparency-explainability,RiskGroup
+2,eticas-agentic-actions-tool-use,Autonomous Actions and Tool Use,eticas-agentic-ai,RiskGroup
+2,eticas-agentic-multi-agent-integrity,Multi-agent Integrity,eticas-agentic-ai,RiskGroup
+3,eticas-disparate-impact-protected-groups,Disparate impact on protected groups,e,Risk
+3,eticas-performance-equity,Differential performance across populations,e,Risk
+3,eticas-geographic-cultural-language-skew,"Geographic, cultural, or language skew",e,Risk
+3,eticas-stereotyping-demeaning-content,Stereotyping and demeaning content,e,Risk
+3,eticas-harmful-content-toxicity,Harmful content and toxicity,e,Risk
+3,eticas-sentiment-fairness,Sentiment and quality disparity across groups,e,Risk
+3,eticas-homogenization-output-across-groups,Homogenization of output across groups,e,Risk
+3,eticas-feedback-loops,Feedback loops reinforcing inequality,e,Risk
+3,eticas-unlawful-data-processing,Unlawful collection or processing of personal data,e,Risk
+3,eticas-function-creep,Function creep,e,Risk
+3,eticas-inference-based-profiling,Inference-based profiling of sensitive attributes,e,Risk
+3,eticas-weak-data-controls,"Weak data retention, erasure, and access controls",e,Risk
+3,eticas-re-identification,Re-identification of anonymised data,e,Risk
+3,eticas-pii-leakage,PII leakage through model outputs,e,Risk
+3,eticas-confidential-information-leakage,Confidential information leakage through model outputs,e,Risk
+3,eticas-hallucination,Hallucination and fabricated outputs,e,Risk
+3,eticas-output-inconsistency,Output inconsistency,e,Risk
+3,eticas-output-drift,Output drift over time,e,Risk
+3,eticas-out-of-distribution-robustness,Out-of-distribution robustness,e,Risk
+3,eticas-measurement-validity,Measurement validity of evaluative outputs,e,Risk
+3,eticas-graceful-degradation,Graceful degradation,e,Risk
+3,eticas-recovery-capability,Recovery capability,e,Risk
+3,eticas-infrastructure-dependency,Infrastructure dependency,e,Risk
+3,eticas-contextual-resilience,Contextual and ethical resilience,e,Risk
+3,eticas-unclear-responsibilities,Unclear responsibilities and accountability gaps,e,Risk
+3,eticas-responsible-actor-attribution,Responsible actor attribution,e,Risk
+3,eticas-oversight-of-adverse-impacts,Oversight of significant adverse impacts,e,Risk
+3,eticas-human-oversight-control,Human oversight and control,e,Risk
+3,eticas-supply-chain-vulnerabilities,Supply-chain vulnerabilities,e,Risk
+3,eticas-poor-documentation,Poor documentation,e,Risk
+3,eticas-limited-auditability,Limited auditability,e,Risk
+3,eticas-decision-traceability,Decision traceability,e,Risk
+3,eticas-input-output-logging,Critical input/output logging,e,Risk
+3,eticas-regulatory-non-compliance,Regulatory non-compliance,e,Risk
+3,eticas-lack-of-change-management,Lack of change management,e,Risk
+3,eticas-fitness-for-purpose,Fitness for purpose and task effectiveness,e,Risk
+3,eticas-data-governance,Data governance,e,Risk
+3,eticas-failure-remediation-gaps,Failure and remediation gaps,e,Risk
+3,eticas-monitoring-evaluation-gaps,Monitoring and evaluation gaps,e,Risk
+3,eticas-incident-response-gaps,Incident response gaps,e,Risk
+3,eticas-adversarial-attacks,Adversarial attacks,e,Risk
+3,eticas-prompt-injection,Prompt injection,e,Risk
+3,eticas-jailbreaking,Jailbreaking,e,Risk
+3,eticas-model-extraction,Model extraction,e,Risk
+3,eticas-data-poisoning,Data poisoning,e,Risk
+3,eticas-unauthorized-access,Unauthorized access,e,Risk
+3,eticas-misuse-beyond-intended-purpose,Misuse beyond intended purpose,e,Risk
+3,eticas-behavioural-manipulation,Behavioural manipulation,e,Risk
+3,eticas-synthetic-media-abuse,Synthetic media abuse,e,Risk
+3,eticas-csam-ncii-generation,CSAM and NCII generation,e,Risk
+3,eticas-inference-energy-consumption,Inference-time energy consumption,e,Risk
+3,eticas-training-resource-consumption,Training resource consumption,e,Risk
+3,eticas-hardware-efficiency,Hardware efficiency,e,Risk
+3,eticas-system-explainability,AI system explainability,e,Risk
+3,eticas-right-to-explanation-contestation,Right to explanation and contestation,e,Risk
+3,eticas-stakeholder-communication,Inadequate disclosure of system capabilities and limitations,e,Risk
+3,eticas-ai-interaction-disclosure,Disclosure of AI interaction and synthetic content,e,Risk
+3,eticas-unsafe-tool-calls,Unsafe or unauthorised tool calls,e,Risk
+3,eticas-function-calling-hallucination,Function calling hallucination,e,Risk
+3,eticas-excessive-agency,Excessive agency,e,Risk
+3,eticas-scope-creep-goal-misalignment,Scope creep and goal misalignment,e,Risk
+3,eticas-redundant-actions,Redundant actions,e,Risk
+3,eticas-trust-exploitation-between-agents,Trust exploitation between agents,e,Risk
+3,eticas-untraceable-agent-actions,Unexplainable and untraceable actions,e,Risk

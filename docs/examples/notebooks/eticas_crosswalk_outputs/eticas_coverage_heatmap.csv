@@ -1,0 +1,9 @@
+category,ibm-risk-atlas,mit-ai-risk-repository,nist-ai-rmf,ai-risk-taxonomy,owasp-llm-2.0
+Agentic AI,2,4,0,0,0
+Bias & Fairness,6,8,2,0,0
+Environmental Impact,0,2,3,0,0
+Governance,6,12,2,0,0
+Privacy & Confidentiality,3,3,3,0,0
+Reliability,2,6,4,0,0
+Security & Misuse,8,7,6,0,0
+Transparency & Explainability,3,5,1,0,0

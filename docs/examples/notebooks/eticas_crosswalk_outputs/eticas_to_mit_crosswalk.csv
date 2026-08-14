@@ -1,0 +1,36 @@
+eticas_id,eticas_name,eticas_parent,match_type,target_matches,num_matches
+eticas-disparate-impact-protected-groups,Disparate impact on protected groups,e,"closeMatch, closeMatch",Unfair discrimination and misrepresentation (mit-ai-risk-subdomain-1.1) | Unequal performance across groups (mit-ai-risk-subdomain-1.3),2
+eticas-performance-equity,Differential performance across populations,e,closeMatch,Unequal performance across groups (mit-ai-risk-subdomain-1.3),1
+eticas-stereotyping-demeaning-content,Stereotyping and demeaning content,e,closeMatch,Unfair discrimination and misrepresentation (mit-ai-risk-subdomain-1.1),1
+eticas-harmful-content-toxicity,Harmful content and toxicity,e,closeMatch,Exposure to toxic content (mit-ai-risk-subdomain-1.2),1
+eticas-sentiment-fairness,Sentiment and quality disparity across groups,e,narrowMatch,Unfair discrimination and misrepresentation (mit-ai-risk-subdomain-1.1),1
+eticas-homogenization-output-across-groups,Homogenization of output across groups,e,relatedMatch,Economic and cultural devaluation of human effort (mit-ai-risk-subdomain-6.3),1
+eticas-feedback-loops,Feedback loops reinforcing inequality,e,relatedMatch,Governance failure (mit-ai-risk-subdomain-6.5),1
+eticas-unlawful-data-processing,Unlawful collection or processing of personal data,e,closeMatch,"Compromise of privacy by obtaining, leaking or correctly inferring sensitive information (mit-ai-risk-subdomain-2.1)",1
+eticas-re-identification,Re-identification of anonymised data,e,closeMatch,"Compromise of privacy by obtaining, leaking or correctly inferring sensitive information (mit-ai-risk-subdomain-2.1)",1
+eticas-pii-leakage,PII leakage through model outputs,e,exactMatch,"Compromise of privacy by obtaining, leaking or correctly inferring sensitive information (mit-ai-risk-subdomain-2.1)",1
+eticas-hallucination,Hallucination and fabricated outputs,e,closeMatch,False or misleading information (mit-ai-risk-subdomain-3.1),1
+eticas-output-inconsistency,Output inconsistency,e,narrowMatch,Lack of capability or robustness (mit-ai-risk-subdomain-7.3),1
+eticas-output-drift,Output drift over time,e,narrowMatch,Lack of capability or robustness (mit-ai-risk-subdomain-7.3),1
+eticas-unclear-responsibilities,Unclear responsibilities and accountability gaps,e,closeMatch,Governance failure (mit-ai-risk-subdomain-6.5),1
+eticas-human-oversight-control,Human oversight and control,e,closeMatch,Loss of human agency and autonomy (mit-ai-risk-subdomain-5.2),1
+eticas-limited-auditability,Limited auditability,e,closeMatch,Governance failure (mit-ai-risk-subdomain-6.5),1
+eticas-regulatory-non-compliance,Regulatory non-compliance,e,relatedMatch,Governance failure (mit-ai-risk-subdomain-6.5),1
+eticas-fitness-for-purpose,Fitness for purpose and task effectiveness,e,closeMatch,Lack of capability or robustness (mit-ai-risk-subdomain-7.3),1
+eticas-incident-response-gaps,Incident response gaps,e,closeMatch,Governance failure (mit-ai-risk-subdomain-6.5),1
+eticas-adversarial-attacks,Adversarial attacks,e,closeMatch,AI system security vulnerabilities and attacks (mit-ai-risk-subdomain-2.2),1
+eticas-prompt-injection,Prompt injection,e,narrowMatch,AI system security vulnerabilities and attacks (mit-ai-risk-subdomain-2.2),1
+eticas-jailbreaking,Jailbreaking,e,narrowMatch,AI system security vulnerabilities and attacks (mit-ai-risk-subdomain-2.2),1
+eticas-model-extraction,Model extraction,e,narrowMatch,AI system security vulnerabilities and attacks (mit-ai-risk-subdomain-2.2),1
+eticas-data-poisoning,Data poisoning,e,narrowMatch,AI system security vulnerabilities and attacks (mit-ai-risk-subdomain-2.2),1
+eticas-behavioural-manipulation,Behavioural manipulation,e,closeMatch,"Fraud, scams, and targeted manipulation (mit-ai-risk-subdomain-4.3)",1
+eticas-synthetic-media-abuse,Synthetic media abuse,e,closeMatch,"Disinformation, surveillance, and influence at scale (mit-ai-risk-subdomain-4.1)",1
+eticas-inference-energy-consumption,Inference-time energy consumption,e,narrowMatch,Environmental harm (mit-ai-risk-subdomain-6.6),1
+eticas-training-resource-consumption,Training resource consumption,e,narrowMatch,Environmental harm (mit-ai-risk-subdomain-6.6),1
+eticas-system-explainability,AI system explainability,e,closeMatch,Lack of transparency or interpretability (mit-ai-risk-subdomain-7.4),1
+eticas-right-to-explanation-contestation,Right to explanation and contestation,e,narrowMatch,Lack of transparency or interpretability (mit-ai-risk-subdomain-7.4),1
+eticas-stakeholder-communication,Inadequate disclosure of system capabilities and limitations,e,closeMatch,Lack of transparency or interpretability (mit-ai-risk-subdomain-7.4),1
+eticas-unsafe-tool-calls,Unsafe or unauthorised tool calls,e,closeMatch,Multi-agent risks  (mit-ai-risk-subdomain-7.6),1
+eticas-scope-creep-goal-misalignment,Scope creep and goal misalignment,e,closeMatch,AI pursuing its own goals in conflict with human goals or values (mit-ai-risk-subdomain-7.1),1
+eticas-trust-exploitation-between-agents,Trust exploitation between agents,e,closeMatch,Multi-agent risks  (mit-ai-risk-subdomain-7.6),1
+eticas-untraceable-agent-actions,Unexplainable and untraceable actions,e,closeMatch,Lack of transparency or interpretability (mit-ai-risk-subdomain-7.4),1

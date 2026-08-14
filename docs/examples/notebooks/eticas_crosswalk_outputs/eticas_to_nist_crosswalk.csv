@@ -1,0 +1,19 @@
+eticas_id,eticas_name,eticas_parent,match_type,target_matches,num_matches
+eticas-harmful-content-toxicity,Harmful content and toxicity,e,closeMatch,"Dangerous, Violent, or Hateful Content (nist-dangerous-violent-or-hateful-content)",1
+eticas-homogenization-output-across-groups,Homogenization of output across groups,e,exactMatch,Harmful Bias and Homogenization (nist-harmful-bias-and-homogenization),1
+eticas-unlawful-data-processing,Unlawful collection or processing of personal data,e,closeMatch,Data Privacy (nist-data-privacy),1
+eticas-pii-leakage,PII leakage through model outputs,e,closeMatch,Data Privacy (nist-data-privacy),1
+eticas-confidential-information-leakage,Confidential information leakage through model outputs,e,closeMatch,Information Security (nist-information-security),1
+eticas-hallucination,Hallucination and fabricated outputs,e,exactMatch,Confabulation (nist-confabulation),1
+eticas-measurement-validity,Measurement validity of evaluative outputs,e,relatedMatch,Confabulation (nist-confabulation),1
+eticas-human-oversight-control,Human oversight and control,e,closeMatch,Human-AI Configuration (nist-human-ai-configuration),1
+eticas-prompt-injection,Prompt injection,e,narrowMatch,Information Security (nist-information-security),1
+eticas-model-extraction,Model extraction,e,narrowMatch,Information Security (nist-information-security),1
+eticas-data-poisoning,Data poisoning,e,narrowMatch,Information Security (nist-information-security),1
+eticas-misuse-beyond-intended-purpose,Misuse beyond intended purpose,e,narrowMatch,CBRN Information or Capabilities (nist-cbrn-information-or-capabilities),1
+eticas-synthetic-media-abuse,Synthetic media abuse,e,closeMatch,Information Integrity (nist-information-integrity),1
+eticas-csam-ncii-generation,CSAM and NCII generation,e,closeMatch,"Obscene, Degrading, and/or Abusive Content (nist-obscene-degrading-and-or-abusive-content)",1
+eticas-inference-energy-consumption,Inference-time energy consumption,e,narrowMatch,Environmental Impacts (nist-environmental-impacts),1
+eticas-training-resource-consumption,Training resource consumption,e,narrowMatch,Environmental Impacts (nist-environmental-impacts),1
+eticas-hardware-efficiency,Hardware efficiency,e,narrowMatch,Environmental Impacts (nist-environmental-impacts),1
+eticas-ai-interaction-disclosure,Disclosure of AI interaction and synthetic content,e,relatedMatch,Information Integrity (nist-information-integrity),1

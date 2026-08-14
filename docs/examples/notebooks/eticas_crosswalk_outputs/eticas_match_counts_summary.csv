@@ -1,0 +1,6 @@
+taxonomy,exactMatch,closeMatch,broadMatch,narrowMatch,relatedMatch,total
+ibm-risk-atlas,9,16,0,0,0,25
+mit-ai-risk-repository,1,22,0,10,3,36
+nist-ai-rmf,2,7,0,7,2,18
+ai-risk-taxonomy,0,0,0,0,0,0
+owasp-llm-2.0,0,0,0,0,0,0

@@ -1,0 +1,22 @@
+risk_id,name,parent_category
+eticas-geographic-cultural-language-skew,"Geographic, cultural, or language skew",e
+eticas-function-creep,Function creep,e
+eticas-inference-based-profiling,Inference-based profiling of sensitive attributes,e
+eticas-weak-data-controls,"Weak data retention, erasure, and access controls",e
+eticas-out-of-distribution-robustness,Out-of-distribution robustness,e
+eticas-graceful-degradation,Graceful degradation,e
+eticas-recovery-capability,Recovery capability,e
+eticas-infrastructure-dependency,Infrastructure dependency,e
+eticas-contextual-resilience,Contextual and ethical resilience,e
+eticas-responsible-actor-attribution,Responsible actor attribution,e
+eticas-oversight-of-adverse-impacts,Oversight of significant adverse impacts,e
+eticas-supply-chain-vulnerabilities,Supply-chain vulnerabilities,e
+eticas-decision-traceability,Decision traceability,e
+eticas-input-output-logging,Critical input/output logging,e
+eticas-lack-of-change-management,Lack of change management,e
+eticas-data-governance,Data governance,e
+eticas-failure-remediation-gaps,Failure and remediation gaps,e
+eticas-monitoring-evaluation-gaps,Monitoring and evaluation gaps,e
+eticas-unauthorized-access,Unauthorized access,e
+eticas-excessive-agency,Excessive agency,e
+eticas-redundant-actions,Redundant actions,e

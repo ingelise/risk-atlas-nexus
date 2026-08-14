@@ -1,0 +1,20 @@
+eticas_id,eticas_name,eticas_parent,match_type,target_matches,num_matches
+eticas-disparate-impact-protected-groups,Disparate impact on protected groups,e,"closeMatch, closeMatch",Decision bias (atlas-decision-bias) | Output bias (atlas-output-bias),2
+eticas-performance-equity,Differential performance across populations,e,exactMatch,Output bias (atlas-output-bias),1
+eticas-stereotyping-demeaning-content,Stereotyping and demeaning content,e,closeMatch,Output bias (atlas-output-bias),1
+eticas-harmful-content-toxicity,Harmful content and toxicity,e,"exactMatch, closeMatch",Toxic output (atlas-toxic-output) | Harmful output (atlas-harmful-output),2
+eticas-re-identification,Re-identification of anonymised data,e,exactMatch,Reidentification (atlas-reidentification),1
+eticas-pii-leakage,PII leakage through model outputs,e,exactMatch,Exposing personal information (atlas-exposing-personal-information),1
+eticas-confidential-information-leakage,Confidential information leakage through model outputs,e,closeMatch,Revealing confidential information (atlas-revealing-confidential-information),1
+eticas-hallucination,Hallucination and fabricated outputs,e,exactMatch,Hallucination (atlas-hallucination),1
+eticas-poor-documentation,Poor documentation,e,"closeMatch, closeMatch, closeMatch",Lack of data transparency (atlas-lack-of-data-transparency) | Lack of model transparency (atlas-lack-of-model-transparency) | Lack of system transparency (atlas-lack-of-system-transparency),3
+eticas-prompt-injection,Prompt injection,e,exactMatch,Prompt injection attack (atlas-prompt-injection),1
+eticas-jailbreaking,Jailbreaking,e,exactMatch,Jailbreaking (atlas-jailbreaking),1
+eticas-model-extraction,Model extraction,e,exactMatch,Extraction attack (atlas-extraction-attack),1
+eticas-data-poisoning,Data poisoning,e,exactMatch,Data poisoning (atlas-data-poisoning),1
+eticas-misuse-beyond-intended-purpose,Misuse beyond intended purpose,e,"closeMatch, closeMatch",Dangerous use (atlas-dangerous-use) | Improper usage (atlas-improper-usage),2
+eticas-synthetic-media-abuse,Synthetic media abuse,e,"closeMatch, closeMatch",Non-disclosure (atlas-non-disclosure) | Spreading disinformation (atlas-spreading-disinformation),2
+eticas-system-explainability,AI system explainability,e,closeMatch,Unexplainable output (atlas-unexplainable-output),1
+eticas-ai-interaction-disclosure,Disclosure of AI interaction and synthetic content,e,closeMatch,Non-disclosure (atlas-non-disclosure),1
+eticas-function-calling-hallucination,Function calling hallucination,e,closeMatch,Hallucination (atlas-hallucination),1
+eticas-untraceable-agent-actions,Unexplainable and untraceable actions,e,closeMatch,Unexplainable output (atlas-unexplainable-output),1
