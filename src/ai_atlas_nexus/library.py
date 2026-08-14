@@ -938,9 +938,7 @@ class AIAtlasNexus:
             risks = risks_result[0]
             metadata = None
 
-        # A non-NONE `explanation_type` wraps each Risk in a RiskWithExplanation, which
-        # has no ontology slots. Unwrap for the traversal below, but return the wrapped
-        # risks so callers that asked for explanations still receive them.
+
         detected_risks = [
             item.risk if isinstance(item, RiskWithExplanation) else item
             for item in risks
@@ -986,7 +984,10 @@ class AIAtlasNexus:
             control_ids = list(set(control_ids))
 
         summary_1 = {
-            "risk_ids": [risk.id for risk in detected_risks],
+            "risk_ids": [
+                risk.id if not isinstance(risk, RiskWithExplanation) else risk.risk.id
+                for risk in risks
+            ],
             "action_ids": actions,
             "detector_ids": detectors,
         }

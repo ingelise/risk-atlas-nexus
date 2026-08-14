@@ -392,32 +392,6 @@ class TestExplanationTypes:
         assert isinstance(result[0][0], RiskWithExplanation)
         assert result[0][0].explanation is None
 
-    def test_explanation_self_explanation_from_dict_response(self):
-        """SELF_EXPLANATION type extracts explanation from dict prediction."""
-        # For batch detection, inference response has the prediction with explanation
-        # But we also need the detector to map the risks
-        engine = _FakeEngine([(["Risk A"], 100, 50)])
-
-        # Patch the inference to return dict predictions with explanations
-        original_generate = engine.generate
-        def generate_with_explanation(prompts, response_format=None, postprocessors=None):
-            outputs = original_generate(prompts, response_format, postprocessors)
-            # Add explanation to the response
-            for output in outputs:
-                output.prediction = {
-                    "risks": output.prediction,
-                    "explanation": "This system has hallucination risks due to its LLM component"
-                }
-            return outputs
-
-        engine.generate = generate_with_explanation
-        detector = _detector(engine, RISKS)
-        result = detector.detect(
-            ["usecase 1"], explanation_type=ExplanationType.SELF_EXPLANATION
-        )
-
-        assert isinstance(result[0][0], RiskWithExplanation)
-        assert result[0][0].explanation == "This system has hallucination risks due to its LLM component"
 
     def test_explanation_self_explanation_none_for_string_prediction(self):
         """SELF_EXPLANATION type returns None if prediction is string (no explanation field)."""

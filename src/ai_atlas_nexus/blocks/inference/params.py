@@ -263,12 +263,10 @@ class TokenUsage:
     total_tokens: Optional[int] = None
 
     def __add__(self, other: "TokenUsage") -> "TokenUsage":
-        # None means "not reported", which is distinct from a genuine zero. Only collapse
-        # to a number when at least one side actually reported a count.
         def _add(left: Optional[int], right: Optional[int]) -> Optional[int]:
             if left is None and right is None:
                 return None
-            return (left or 0) + (right or 0)
+            return (0 if left is None else left) + (0 if right is None else right)
 
         return TokenUsage(
             input_tokens=_add(self.input_tokens, other.input_tokens),

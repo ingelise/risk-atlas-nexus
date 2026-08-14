@@ -15,6 +15,7 @@ from ai_atlas_nexus.blocks.inference.params import (
 from ai_atlas_nexus.blocks.prompt_response_schema import (
     LIST_OF_STR_SCHEMA,
     AIRiskPresence,
+    RiskListWithExplanations,
 )
 from ai_atlas_nexus.blocks.prompt_templates import (
     RISK_IDENTIFICATION_BATCH_TEMPLATE,
@@ -166,17 +167,10 @@ class GenericRiskDetector(RiskDetector):
         inference_responses: List[TextGenerationInferenceOutput] = (
             self.inference_engine.generate(
                 prompts,
-                response_format=json_schema,
-                postprocessors=["list_of_str"],
+                response_format=schema,
+                postprocessors=[postprocessor],
             )
         )
-
-        if explanation_type == ExplanationType.SELF_EXPLANATION:
-            logger.warning(
-                "ExplanationType.SELF_EXPLANATION is not supported in batch mode: the "
-                "response format enforces a list of risk names, so the model has no "
-                "field in which to return an explanation. Explanations will be None."
-            )
 
         risks_data = []
         for inference_response in inference_responses:
@@ -287,7 +281,13 @@ class GenericRiskDetector(RiskDetector):
         if isinstance(prediction, dict):
             # Handle dict format with "risks" or similar key
             risks = prediction.get("risks")
-            return risks if isinstance(risks, list) else []
+            if isinstance(risks, list):
+                # Check if this is a list of risk items with explanations
+                if risks and isinstance(risks[0], dict) and "risk_name" in risks[0]:
+                    # Extract just the risk names for now; explanations are handled separately
+                    return [item["risk_name"] for item in risks]
+                return risks
+            return []
         elif isinstance(prediction, list):
             return prediction
         elif isinstance(prediction, str):
@@ -347,13 +347,35 @@ class GenericRiskDetector(RiskDetector):
         """Wrap batch risks with explanations. One response maps to one risk list."""
         wrapped_risks = []
         for risk_list, response in zip(risks_data, inference_responses):
-            wrapped_list = [
-                RiskWithExplanation(
-                    risk=risk,
-                    explanation=self._get_explanation(risk, response, explanation_type)
+            # For SELF_EXPLANATION mode, build a mapping from risk names to explanations
+            explanation_map = {}
+            if explanation_type == ExplanationType.SELF_EXPLANATION:
+                if (
+                    isinstance(response.prediction, dict)
+                    and "risks" in response.prediction
+                ):
+                    risks_with_explanations = response.prediction["risks"]
+                    if isinstance(risks_with_explanations, list):
+                        explanation_map = {
+                            item.get("risk_name"): item.get("explanation")
+                            for item in risks_with_explanations
+                            if isinstance(item, dict)
+                            and "risk_name" in item
+                            and "explanation" in item
+                        }
+
+            wrapped_list = []
+            for risk in risk_list:
+                if explanation_type == ExplanationType.SELF_EXPLANATION:
+                    # Get the specific explanation for this risk from the map
+                    explanation = explanation_map.get(risk.name)
+                else:
+                    explanation = self._get_explanation(risk, response, explanation_type)
+
+                wrapped_list.append(
+                    RiskWithExplanation(risk=risk, explanation=explanation)
                 )
-                for risk in risk_list
-            ]
+
             wrapped_risks.append(wrapped_list)
         return wrapped_risks
 
