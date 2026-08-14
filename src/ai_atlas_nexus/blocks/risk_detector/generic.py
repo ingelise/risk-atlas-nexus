@@ -159,9 +159,33 @@ class GenericRiskDetector(RiskDetector):
             for usecase in usecases
         ]
 
-        # Populate schema items
-        json_schema = dict(LIST_OF_STR_SCHEMA)
-        json_schema["items"]["enum"] = [risk.name for risk in self._risks]
+        # Choose schema based on whether self-explanations are requested
+        if explanation_type == ExplanationType.SELF_EXPLANATION:
+            # Use schema with explanation field for self-explanation mode
+            schema = create_model(
+                "RiskListWithExplanations",
+                risks=(
+                    List[
+                        create_model(
+                            "RiskWithExplanationItem",
+                            risk_name=(
+                                Literal[tuple(risk.name for risk in self._risks)],
+                                ...,
+                            ),
+                            explanation=(str, ...),
+                            __base__=None,
+                        )
+                    ],
+                    ...,
+                ),
+                __base__=None,
+            )
+            postprocessor = "json_object"
+        else:
+            # Use simple list schema for other explanation types
+            schema = dict(LIST_OF_STR_SCHEMA)
+            schema["items"]["enum"] = [risk.name for risk in self._risks]
+            postprocessor = "list_of_str"
 
         # Invoke inference service
         inference_responses: List[TextGenerationInferenceOutput] = (
