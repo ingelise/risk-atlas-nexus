@@ -727,6 +727,7 @@ class AIAtlasNexus:
             use_dspy_prompt (bool): Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
             return_metadata (bool): If True, return DetectionResult with token usage aggregated over the run and broken down per usecase. If False (default), return bare list for backward compatibility.
             explanation_type (ExplanationType, optional): Type of explanation to include with each risk (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). Defaults to NONE for backward compatibility.
+                These are detailed in docs/usage/risk_explanations.md
         Returns:
             If return_metadata=False: List[List[Risk]] or List[List[RiskWithExplanation]] depending on explanation_type
                 Result containing a list of risks (optionally with explanations)
