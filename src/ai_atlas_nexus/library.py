@@ -700,7 +700,7 @@ class AIAtlasNexus:
         batch_inference: bool = True,
         use_dspy_prompt: bool = False,
         return_metadata: bool = False,
-        explanation_type: Optional[ExplanationType] = None,
+        explanation_type: ExplanationType = ExplanationType.NONE,
     ) -> Union[
         List[List[Risk]],
         List[List[RiskWithExplanation]],
@@ -867,7 +867,7 @@ class AIAtlasNexus:
         batch_inference: bool = True,
         use_dspy_prompt: bool = False,
         return_metadata: bool = False,
-        explanation_type: Optional[ExplanationType] = None,
+        explanation_type: ExplanationType = ExplanationType.NONE,
     ) -> dict:
         """Identify potential risks and actions from usecase descriptions
 
