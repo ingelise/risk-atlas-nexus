@@ -703,9 +703,8 @@ class AIAtlasNexus:
         explanation_type: Optional[ExplanationType] = None,
     ) -> Union[
         List[List[Risk]],
-        "List[List[RiskWithExplanation]]",
-        "DetectionResult[List[List[Risk]]]",
-        "DetectionResult[List[List[RiskWithExplanation]]]",
+        List[List[RiskWithExplanation]],
+        DetectionResult[Union[List[List[Risk]], List[List[RiskWithExplanation]]]],
     ]:
         """Identify potential risks from a usecase description
 
