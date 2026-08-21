@@ -11,21 +11,6 @@ LIST_OF_STR_SCHEMA = {
 }
 
 
-class RiskWithExplanationItem(BaseModel):
-    """Risk with explanation response schema for batch mode"""
-
-    risk_name: str = Field(description="Name of the identified risk")
-    explanation: str = Field(description="Brief explanation for why this risk applies")
-
-
-class RiskListWithExplanations(BaseModel):
-    """List of risks with explanations for batch mode"""
-
-    risks: List[RiskWithExplanationItem] = Field(
-        description="List of identified risks with explanations"
-    )
-
-
 class QuestionnaireOutput(BaseModel):
     """Questionnaire Response Schema"""
 

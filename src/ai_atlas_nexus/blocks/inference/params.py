@@ -1,32 +1,11 @@
 import dataclasses
-from enum import Enum
-from typing import (
-    Any,
-    Dict,
-    Generic,
-    List,
-    Literal,
-    Optional,
-    TypeAlias,
-    TypeVar,
-    Union,
-)
+from typing import Any, Dict, List, Literal, Optional, TypeAlias, Union
 
 from openai.types.chat import ChatCompletionMessageParam
 from pydantic import BaseModel
 from typing_extensions import TypedDict
 
-
-T = TypeVar("T")
-
-
-class ExplanationType(str, Enum):
-    """Types of explanations to include with detected risks."""
-
-    NONE = "none"
-    DESCRIPTION = "description"  # Risk description from ontology
-    REASONING = "reasoning"  # Model's thinking/reasoning if available
-    SELF_EXPLANATION = "self-explanation"  # Explanation from model's response itself
+from ai_atlas_nexus.metadata_base import ExplanationType
 
 
 class InferenceEngineCredentials(TypedDict):
@@ -216,7 +195,7 @@ class TextGenerationInferenceOutput:
         thinking: When thinking is enabled in ollama (think=True), the output will separate the model's thinking from the model's output.
     """
 
-    prediction: Union[str, List[Dict[str, Any]]]
+    prediction: Union[str, Dict[str, Any], List[Any]]
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
     stop_reason: Optional[str] = None
@@ -256,11 +235,22 @@ ValidGenerateCompletionMessageParam: TypeAlias = Union[
 
 @dataclasses.dataclass(kw_only=True)
 class TokenUsage:
-    """Token usage metrics from one or more LLM inference calls."""
+    """Token usage metrics from one or more LLM inference calls.
+
+    A count is None when the engine did not report it. `total_tokens` sums the counts
+    that were reported.
+    """
 
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
     total_tokens: Optional[int] = None
+
+    def __post_init__(self) -> None:
+        # Derive the total when a caller reports only the parts.
+        if self.total_tokens is None and not (
+            self.input_tokens is None and self.output_tokens is None
+        ):
+            self.total_tokens = (self.input_tokens or 0) + (self.output_tokens or 0)
 
     def __add__(self, other: "TokenUsage") -> "TokenUsage":
         def _add(left: Optional[int], right: Optional[int]) -> Optional[int]:
@@ -276,8 +266,24 @@ class TokenUsage:
 
 
 @dataclasses.dataclass(kw_only=True)
+class UsecaseInferenceMetadata:
+    """Metadata from the inference calls made for a single usecase.
+    """
+
+    token_usage: TokenUsage
+    num_calls: int
+    seed: Optional[int] = None
+    stop_reason_summary: Dict[str, int] = dataclasses.field(default_factory=dict)
+    has_thinking: bool = False
+
+
+@dataclasses.dataclass(kw_only=True)
 class InferenceMetadata:
-    """Aggregated metadata from one or more inference calls within a detection operation."""
+    """Metadata from the inference calls within a detection operation.
+
+    The top-level fields aggregate every call in the run.
+    `per_usecase` breaks the same figures down one entry per usecase.
+    """
 
     token_usage: TokenUsage
     inference_engine: str
@@ -286,28 +292,6 @@ class InferenceMetadata:
     seed: Optional[int] = None
     stop_reason_summary: Dict[str, int] = dataclasses.field(default_factory=dict)
     has_thinking: bool = False
-
-
-@dataclasses.dataclass(kw_only=True)
-class RiskWithExplanation:
-    """Risk paired with optional explanation based on explanation type.
-
-    Attributes:
-        risk: The Risk object from the ontology
-        explanation: Explanation text (content depends on ExplanationType)
-    """
-
-    risk: Any  # Risk type, use Any to avoid circular imports
-    explanation: Optional[str] = None
-
-
-@dataclasses.dataclass(kw_only=True)
-class DetectionResult(Generic[T]):
-    """Response from a detection operation with aggregated metadata.
-
-    Wraps detection results (e.g., identified risks) with metadata about the
-    underlying LLM inference calls (token usage, number of calls, model info).
-    """
-
-    data: T
-    metadata: InferenceMetadata
+    per_usecase: List[UsecaseInferenceMetadata] = dataclasses.field(
+        default_factory=list
+    )

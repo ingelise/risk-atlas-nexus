@@ -3,12 +3,11 @@ from .hf import HFInferenceEngine
 from .ollama import OllamaInferenceEngine
 from .openai import OpenAIInferenceEngine
 from .params import (
-    DetectionResult,
     ExplanationType,
     InferenceMetadata,
-    RiskWithExplanation,
     TextGenerationInferenceOutput,
     TokenUsage,
+    UsecaseInferenceMetadata,
 )
 from .rits import RITSInferenceEngine
 from .vllm import VLLMInferenceEngine

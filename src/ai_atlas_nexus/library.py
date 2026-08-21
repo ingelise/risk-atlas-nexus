@@ -38,7 +38,7 @@ from ai_atlas_nexus.blocks.graph_explorer.pyoxigraph import PyoxigraphExplorer
 from ai_atlas_nexus.blocks.shacl import SHACLEngine
 from ai_atlas_nexus.data import load_resource
 from ai_atlas_nexus.exceptions import RiskInferenceError, handle_exception
-from ai_atlas_nexus.metadata_base import BackendType, MappingMethod
+from ai_atlas_nexus.metadata_base import BackendType, ExplanationType, MappingMethod
 from ai_atlas_nexus.toolkit.data_utils import load_yamls_to_container
 from ai_atlas_nexus.toolkit.error_utils import type_check, value_check
 from ai_atlas_nexus.toolkit.logging import configure_logger
@@ -46,13 +46,27 @@ from ai_atlas_nexus.toolkit.logging import configure_logger
 
 if TYPE_CHECKING:
     from ai_atlas_nexus.blocks.inference import InferenceEngine
-    from ai_atlas_nexus.blocks.inference.params import (
+    from ai_atlas_nexus.blocks.risk_detector.results import (
         DetectionResult,
-        ExplanationType,
         RiskWithExplanation,
     )
 
 logger = configure_logger(__name__)
+
+
+def _token_usage_dict(metrics) -> Dict[str, Optional[int]]:
+    """Flatten inference metrics into the plain dict the API returns.
+
+    Args:
+        metrics: An `InferenceMetadata` for a whole run, or a
+            `UsecaseInferenceMetadata` for one usecase. Both carry the same fields.
+    """
+    return {
+        "input_tokens": metrics.token_usage.input_tokens,
+        "output_tokens": metrics.token_usage.output_tokens,
+        "total_tokens": metrics.token_usage.total_tokens,
+        "num_calls": metrics.num_calls,
+    }
 
 
 @lru_cache(maxsize=1)
@@ -686,7 +700,7 @@ class AIAtlasNexus:
         batch_inference: bool = True,
         use_dspy_prompt: bool = False,
         return_metadata: bool = False,
-        explanation_type: "Optional[ExplanationType]" = None,
+        explanation_type: Optional[ExplanationType] = None,
     ) -> Union[
         List[List[Risk]],
         "List[List[RiskWithExplanation]]",
@@ -711,16 +725,22 @@ class AIAtlasNexus:
             zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
             batch_inference (bool): Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
             use_dspy_prompt (bool): Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
-            return_metadata (bool): If True, return DetectionResult with aggregated token usage. If False (default), return bare list for backward compatibility.
+            return_metadata (bool): If True, return DetectionResult with token usage aggregated over the run and broken down per usecase. If False (default), return bare list for backward compatibility.
             explanation_type (ExplanationType, optional): Type of explanation to include with each risk (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). Defaults to NONE for backward compatibility.
         Returns:
             If return_metadata=False: List[List[Risk]] or List[List[RiskWithExplanation]] depending on explanation_type
                 Result containing a list of risks (optionally with explanations)
             If return_metadata=True: DetectionResult
-                Result containing list of risks and aggregated token usage metadata
+                Result containing list of risks, token usage metadata aggregated over
+                the run, and a per-usecase breakdown in `metadata.per_usecase`
         """
-        from ai_atlas_nexus.blocks.inference import ExplanationType, InferenceEngine
-        from ai_atlas_nexus.blocks.risk_detector import GenericRiskDetector
+        from ai_atlas_nexus.blocks.inference import InferenceEngine
+        from ai_atlas_nexus.blocks.risk_detector import (
+            Detector,
+            GenericRiskDetector,
+            RiskDetectorWithExplanation,
+            RiskDetectorWithMetadata,
+        )
 
         type_check(
             "<RANE02D314BE>",
@@ -818,7 +838,7 @@ class AIAtlasNexus:
                 f"<RAN47275F12W> Chain of Thought (CoT) examples were not provided, or do not exist in the master for this taxonomy. The API will use the Zero shot method. To improve the accuracy of risk identification, please provide CoT examples in `cot_examples` when calling this API. You may also consider raising an issue to permanently add these examples to the AI Atlas Nexus master."
             )
 
-        risk_detector = GenericRiskDetector(
+        risk_detector: Detector = GenericRiskDetector(
             risks=combined_risks,
             inference_engine=inference_engine,
             cot_examples=combined_processed_examples,
@@ -827,15 +847,13 @@ class AIAtlasNexus:
             use_dspy_prompt=use_dspy_prompt,
         )
 
-        # Default to NONE for backward compatibility if not specified
-        if explanation_type is None:
-            explanation_type = ExplanationType.NONE
+        # opt-in features use a decorator around the detector
+        if explanation_type not in (None, ExplanationType.NONE):
+            risk_detector = RiskDetectorWithExplanation(risk_detector, explanation_type)
+        if return_metadata:
+            risk_detector = RiskDetectorWithMetadata(risk_detector)
 
-        return risk_detector.detect(
-            usecases,
-            return_metadata=return_metadata,
-            explanation_type=explanation_type
-        )
+        return risk_detector.detect(usecases)
 
     @handle_exception(exceptions=[RiskInferenceError])
     def identify_risks_and_actions_from_usecases(
@@ -849,9 +867,9 @@ class AIAtlasNexus:
         batch_inference: bool = True,
         use_dspy_prompt: bool = False,
         return_metadata: bool = False,
-        explanation_type=None,
-    ):
-        """Identify potential risks from a usecase description
+        explanation_type: Optional[ExplanationType] = None,
+    ) -> dict:
+        """Identify potential risks and actions from usecase descriptions
 
         Args:
             usecases (List[str]):
@@ -866,19 +884,28 @@ class AIAtlasNexus:
                 If the `cot_examples` is omitted, the API default to a Zero-Shot approach.
             max_risk (int, optional):
                 The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
-            zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
-            batch_inference (bool): Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
-            use_dspy_prompt (bool): Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
-            return_metadata (bool): If True, add a `token_usage` entry to the result with aggregated token counts. Defaults to False.
-            explanation_type (ExplanationType, optional): Type of explanation to pair with each risk
-                (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). When not NONE, the returned
+            zero_shot_only (bool):
+                If enabled, system performs Zero Shot Risk identification, and the field `cot_examples` will be ignored.
+            batch_inference (bool):
+                Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
+            use_dspy_prompt (bool):
+                Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
+            return_metadata (bool): If True, add a `token_usage` entry to each usecase
+                and to the result as a whole. Defaults to False.
+            explanation_type (ExplanationType, optional):
+                Type of explanation to pair with each risk
+                (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). When not NONE, each entry's
                 `risks` are RiskWithExplanation objects; `summary` and control lookups still
                 operate on the underlying risks. Defaults to NONE.
         Returns:
             dict:
-                Result containing the identified `risks`, a `summary` of related action,
-                detector and control ids, and `mixed_control_items`. Includes `token_usage`
-                when `return_metadata` is True.
+                `usecases`, `model`, `taxonomy`, and `per_usecase`: one entry per
+                usecase, in the order the usecases were passed in, each holding that
+                usecase's `usecase` text, `risks`, `summary` of related action, detector
+                and control ids, `mixed_control_items`, and `token_usage` when
+                `return_metadata` is True. Run totals are in the top-level
+                `token_usage`, also only when `return_metadata` is True.
+
         """
         from ai_atlas_nexus.blocks.inference import InferenceEngine
 
@@ -925,26 +952,71 @@ class AIAtlasNexus:
             explanation_type=explanation_type,
         )
 
-        # Extract risks data, handling both bare list and wrapped DetectionResult
-        from ai_atlas_nexus.blocks.inference.params import (
+        from ai_atlas_nexus.blocks.risk_detector.results import (
             DetectionResult,
             RiskWithExplanation,
         )
 
         if isinstance(risks_result, DetectionResult):
-            risks = risks_result.data[0]
+            risks_per_usecase = risks_result.data
             metadata = risks_result.metadata
         else:
-            risks = risks_result[0]
+            risks_per_usecase = risks_result
             metadata = None
 
+        usage_per_usecase = (
+            metadata.per_usecase
+            if metadata is not None
+            else [None] * len(risks_per_usecase)
+        )
 
-        detected_risks = [
-            item.risk if isinstance(item, RiskWithExplanation) else item
-            for item in risks
-        ]
+        per_usecase = []
+        for usecase, risks, usage in zip(
+            usecases, risks_per_usecase, usage_per_usecase
+        ):
+            detected_risks = [
+                item.risk if isinstance(item, RiskWithExplanation) else item
+                for item in risks
+            ]
+            summary, control_ids = cls._summarize_detected_risks(detected_risks)
 
-        control_ids = []
+            entry = {
+                "usecase": usecase,
+                "risks": risks,
+                "summary": summary,
+                "mixed_control_items": [
+                    cls._atlas_explorer.get_by_id(None, identifier=item)
+                    for item in control_ids
+                ],
+            }
+            if usage is not None:
+                entry["token_usage"] = _token_usage_dict(usage)
+            per_usecase.append(entry)
+
+        result = {
+            "usecases": usecases,
+            "model": inference_engine.model_name_or_path,
+            "taxonomy": taxonomy,
+            "per_usecase": per_usecase,
+        }
+
+        if metadata is not None:
+            # Totals for the run. The per-usecase breakdown lives on each entry above.
+            result["token_usage"] = _token_usage_dict(metadata)
+
+        return result
+
+    def _summarize_detected_risks(cls, detected_risks: List[Risk]):
+        """Summary with risk, action, control, and detector ids.
+
+        Args:
+            detected_risks:  Risks identified for a single usecase.
+
+        Returns:
+            A `(summary, control_ids)` tuple, where `summary` contains the risk, action
+            and detector ids plus the control ids arranged by type.
+        """
+        control_ids = set()
         actions = []
         detectors = []
 
@@ -976,44 +1048,20 @@ class AIAtlasNexus:
                 )
             )
 
-            control_ids.extend(
+            control_ids.update(
                 cls._atlas_explorer.filter_ids_by_type(
                     ids=mappings, disallowed_types=["Risk"]
                 )
             )
-            control_ids = list(set(control_ids))
 
-        summary_1 = {
-            "risk_ids": [
-                risk.id if not isinstance(risk, RiskWithExplanation) else risk.risk.id
-                for risk in risks
-            ],
+        control_ids = list(control_ids)
+        summary = {
+            "risk_ids": [risk.id for risk in detected_risks],
             "action_ids": actions,
             "detector_ids": detectors,
-        }
-        summary_2 = cls._atlas_explorer.arrange_ids_by_type(control_ids)
-        summary = summary_1 | summary_2
+        } | cls._atlas_explorer.arrange_ids_by_type(control_ids)
 
-        result = {
-            "usecases": usecases,
-            "model": inference_engine.model_name_or_path,
-            "taxonomy": taxonomy,
-            "summary": summary,
-            "risks": risks,
-            "mixed_control_items": [
-                cls._atlas_explorer.get_by_id(None, identifier=item)
-                for item in control_ids
-            ],
-        }
-
-        if metadata is not None:
-            result["token_usage"] = {
-                "input_tokens": metadata.token_usage.input_tokens,
-                "output_tokens": metadata.token_usage.output_tokens,
-                "total_tokens": metadata.token_usage.total_tokens,
-            }
-
-        return result
+        return summary, control_ids
 
     def get_all_taxonomies(cls):
         """Get all taxonomy definitions from the LinkML

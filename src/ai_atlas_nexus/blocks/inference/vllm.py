@@ -233,9 +233,15 @@ class VLLMInferenceEngine(InferenceEngine):
         if isinstance(response, str):
             prediction_data = {"prediction": response}
         elif offline:
+            # Offline generation reports no usage object, so count the prompt tokens
+            # from the request.
+            prompt_token_ids = getattr(response, "prompt_token_ids", None)
             prediction_data = {
                 "prediction": response.outputs[0].text,
                 "input_text": response.prompt,
+                "input_tokens": (
+                    len(prompt_token_ids) if prompt_token_ids is not None else None
+                ),
                 "output_tokens": len(response.outputs[0].token_ids),
                 "stop_reason": response.outputs[0].finish_reason,
                 "logprobs": _extract_logprobs(response.outputs[0].logprobs),
