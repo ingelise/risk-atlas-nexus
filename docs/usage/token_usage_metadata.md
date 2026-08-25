@@ -88,11 +88,12 @@ for usecase, risks, usage in zip(usecases, result.data, result.metadata.per_usec
 ```
 
 The per-usecase totals sum to the aggregate, so either view can be used without
-double counting:
+double counting. An unreported count is `None` rather than 0, so default it before
+doing arithmetic:
 
 ```python
-assert sum(u.token_usage.input_tokens for u in result.metadata.per_usecase) == \
-    result.metadata.token_usage.input_tokens
+assert sum(u.token_usage.input_tokens or 0 for u in result.metadata.per_usecase) == \
+    (result.metadata.token_usage.input_tokens or 0)
 ```
 
 How many calls each entry covers depends on the mode. With `batch_inference=True`
@@ -150,7 +151,7 @@ Contains inference information for the run, aggregated and per usecase:
 @dataclass(kw_only=True)
 class InferenceMetadata:
     token_usage: TokenUsage           # Tokens aggregated over the whole run
-    inference_engine: str              # Engine type (e.g., "watsonx")
+    inference_engine: str              # Engine type (e.g., "WML")
     model: str                         # Model name/path
     num_calls: int                     # Total LLM calls made
     seed: Optional[int]                # Seed used (None if calls used different seeds)
@@ -200,8 +201,11 @@ result = ai_atlas_nexus.identify_risks_from_usecases(
 )
 
 cost_per_1k_tokens = 0.001  # Example: $0.001 per 1000 tokens
-total_cost = (result.metadata.token_usage.total_tokens / 1000) * cost_per_1k_tokens
-print(f"Cost of this operation: ${total_cost:.4f}")
+total_tokens = result.metadata.token_usage.total_tokens
+if total_tokens is None:
+    print("This engine did not report token counts, so cost is unknown")
+else:
+    print(f"Cost of this operation: ${(total_tokens / 1000) * cost_per_1k_tokens:.4f}")
 ```
 
 Or attribute cost to the usecase that incurred it, for chargeback or for finding
@@ -209,7 +213,7 @@ which usecases are expensive to analyze:
 
 ```python
 for usecase, usage in zip(usecases, result.metadata.per_usecase):
-    cost = (usage.token_usage.total_tokens / 1000) * cost_per_1k_tokens
+    cost = ((usage.token_usage.total_tokens or 0) / 1000) * cost_per_1k_tokens
     print(f"{usecase}: ${cost:.4f}")
 ```
 
@@ -224,8 +228,11 @@ result = ai_atlas_nexus.identify_risks_from_usecases(
     return_metadata=True,
 )
 
-avg_tokens_per_call = result.metadata.token_usage.total_tokens / result.metadata.num_calls
-print(f"Average tokens per LLM call: {avg_tokens_per_call:.0f}")
+total_tokens = result.metadata.token_usage.total_tokens
+if total_tokens is None or result.metadata.num_calls == 0:
+    print("No token counts to average")
+else:
+    print(f"Average tokens per LLM call: {total_tokens / result.metadata.num_calls:.0f}")
 ```
 
 ### Reproducibility Tracking

@@ -145,15 +145,19 @@ class GenericRiskDetector(RiskDetector):
             )
         )
 
+        known_names = {risk.name for risk in self._risks if risk.name}
         risks_data = []
         sources = []
         for inference_response in inference_responses:
             predicted_risk_names = self._extract_risk_predictions(
                 inference_response.prediction
             )
-            identified = [
-                risk for risk in self._risks if risk.name in predicted_risk_names
-            ][: self.max_risk]
+            ranked = []
+            for name in predicted_risk_names:
+                if isinstance(name, str) and name in known_names and name not in ranked:
+                    ranked.append(name)
+            top = ranked[: self.max_risk]
+            identified = [risk for risk in self._risks if risk.name in top]
             risks_data.append(identified)
             # One response covers every risk it named.
             sources.append([inference_response] * len(identified))
@@ -231,11 +235,12 @@ class GenericRiskDetector(RiskDetector):
             # Handle dict format with "risks" or similar key
             risks = prediction.get("risks")
             if isinstance(risks, list):
-                # Check if this is a list of risk items with explanations
-                if risks and isinstance(risks[0], dict) and "risk_name" in risks[0]:
-                    # Names only; explanations are the explanation decorator's job.
-                    return [item["risk_name"] for item in risks]
-                return risks
+                names = []
+                for item in risks:
+                    name = item.get("risk_name") if isinstance(item, dict) else item
+                    if name is not None:
+                        names.append(name)
+                return names
             return []
         elif isinstance(prediction, list):
             return prediction
@@ -243,6 +248,7 @@ class GenericRiskDetector(RiskDetector):
             # In case postprocessing can be skipped or fail,  fall back to
             # substring matching so those responses still yield risks.
             return [
+
                 risk.name
                 for risk in self._risks
                 if risk.name and risk.name in prediction

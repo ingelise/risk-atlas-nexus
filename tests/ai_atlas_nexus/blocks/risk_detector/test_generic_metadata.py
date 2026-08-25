@@ -55,9 +55,13 @@ def _per_risk_engine(answers_per_usecase) -> StubInferenceEngine:
     )
 
 
-def _detector(engine, risks):
+def _detector(engine, risks, max_risk=None):
     return GenericRiskDetector(
-        risks=risks, inference_engine=engine, cot_examples=None, batch_inference=True
+        risks=risks,
+        inference_engine=engine,
+        cot_examples=None,
+        batch_inference=True,
+        max_risk=max_risk,
     )
 
 
@@ -208,6 +212,17 @@ class TestMetadataAggregation:
 
         assert result.metadata.seed is None
 
+    def test_seed_none_when_only_some_calls_reported_one(self):
+        """A lone seeded call must not advertise the run as reproducible."""
+        engine = _engine(
+            StubResponse(["Risk A"], 100, 50, seed=42),
+            StubResponse(["Risk B"], 120, 60),  # engine reported no seed
+        )
+        detector = RiskDetectorWithMetadata(_detector(engine, RISKS))
+        result = detector.detect(["u1", "u2"])
+
+        assert result.metadata.seed is None
+
     def test_thinking_flag_set_when_present(self):
         """has_thinking is True if any response has thinking content."""
         engine = _engine(
@@ -224,7 +239,7 @@ class TestExplanationTypes:
     """Test different explanation type options."""
 
     def test_no_explanation_without_the_decorator(self):
-        """An undecorated detector returns bare risks."""
+        """An undecorated detector returns only the risks."""
         engine = _engine(StubResponse(["Risk A"], 100, 50))
         result = _detector(engine, RISKS).detect(["usecase 1"])
 
@@ -316,6 +331,32 @@ class TestExplanationTypes:
             "RiskWithExplanationItem"
         ]["properties"]
 
+    def test_self_explanation_schema_omits_nameless_risks(self):
+        """`Risk.name` is Optional; a null in the enum would match no risk."""
+        risks = RISKS + [
+            Risk(
+                id="risk-unnamed",
+                description="no name",
+                isDefinedByTaxonomy="ibm-risk-atlas",
+            )
+        ]
+        engine = _engine(StubResponse(["Risk A"], 100, 50))
+        schema = _with_explanation(
+            engine, risks, ExplanationType.SELF_EXPLANATION
+        )._batch_schema_override()
+
+        assert schema.response_format.model_json_schema()["$defs"][
+            "RiskWithExplanationItem"
+        ]["properties"]["risk_name"]["enum"] == ["Risk A", "Risk B"]
+
+    def test_self_explanation_schema_is_skipped_without_named_risks(self):
+        """`Literal[]` is not constructible, so an empty taxonomy must not build one."""
+        engine = _engine(StubResponse([], 100, 50))
+        detector = _with_explanation(engine, [], ExplanationType.SELF_EXPLANATION)
+
+        assert detector._batch_schema_override() is None
+        assert detector.detect(["usecase 1"]) == [[]]
+
 
 THREE_RISKS = [
     _risk("risk-a", "Risk A", "Description of risk A"),
@@ -358,7 +399,7 @@ class TestPerRiskExplanations:
         assert result[1][1].explanation == "thinking-u1-r2"
 
     def test_per_risk_bare_risks_by_default(self):
-        """Default path still returns bare Risk objects."""
+        """Default path still returns only the Risk objects."""
         engine = _per_risk_engine([["no", "yes", "no"]])
         detector = _detector_per_risk(engine, THREE_RISKS)
         result = detector.detect(["usecase 1"])
@@ -393,6 +434,16 @@ class TestDecoratorComposition:
         assert result.metadata.token_usage.total_tokens == 150
         assert result.metadata.per_usecase[0].num_calls == 1
 
+    def test_explanation_must_be_the_inner_decorator(self):
+        """The reverse nesting would drop the metadata wrapper on the floor."""
+        engine = _engine(StubResponse(["Risk A"], 100, 50))
+
+        with pytest.raises(TypeError, match="innermost"):
+            RiskDetectorWithExplanation(
+                RiskDetectorWithMetadata(_detector(engine, RISKS)),
+                ExplanationType.DESCRIPTION,
+            )
+
 
 class TestStringPredictionFallback:
     """Raw-string predictions still resolve risks when postprocessing is skipped."""
@@ -414,6 +465,78 @@ class TestStringPredictionFallback:
         result = detector.detect(["usecase 1"])
 
         assert [r.name for r in result[0]] == ["Risk A"]
+
+
+class TestPartiallyConformingPredictions:
+    """A response that half-follows the schema degrades instead of aborting the run."""
+
+    def test_mixed_names_and_objects(self):
+        """Indexing a string as a dict would raise TypeError."""
+        prediction = {"risks": [{"risk_name": "Risk A", "explanation": "why A"}, "Risk C"]}
+        engine = _engine(StubResponse(prediction, 100, 50))
+        detector = _detector(engine, THREE_RISKS)
+        result = detector.detect(["usecase 1"])
+
+        assert [r.name for r in result[0]] == ["Risk A", "Risk C"]
+
+    def test_object_missing_risk_name_is_dropped(self):
+        """`item["risk_name"]` would raise KeyError on the second item."""
+        prediction = {
+            "risks": [{"risk_name": "Risk B"}, {"explanation": "no name given"}]
+        }
+        engine = _engine(StubResponse(prediction, 100, 50))
+        detector = _detector(engine, THREE_RISKS)
+        result = detector.detect(["usecase 1"])
+
+        assert [r.name for r in result[0]] == ["Risk B"]
+
+    def test_null_name_matches_no_risk(self):
+        """A JSON null must not match a risk whose own `name` is None."""
+        risks = THREE_RISKS + [
+            Risk(
+                id="risk-unnamed",
+                description="no name",
+                isDefinedByTaxonomy="ibm-risk-atlas",
+            )
+        ]
+        engine = _engine(StubResponse({"risks": [None, "Risk A"]}, 100, 50))
+        detector = _detector(engine, risks)
+        result = detector.detect(["usecase 1"])
+
+        assert [r.name for r in result[0]] == ["Risk A"]
+
+
+class TestMaxRisk:
+    """The prompt asks for the model's top `max_risk`, so its ranking picks the cut."""
+
+    def test_truncates_by_model_ranking_not_taxonomy_order(self):
+        engine = _engine(StubResponse(["Risk C", "Risk B", "Risk A"], 100, 50))
+        detector = _detector(engine, THREE_RISKS, max_risk=2)
+        result = detector.detect(["usecase 1"])
+
+        # C and B were ranked highest; they come back in taxonomy order
+        assert [r.name for r in result[0]] == ["Risk B", "Risk C"]
+
+    def test_unknown_names_do_not_consume_slots(self):
+        engine = _engine(StubResponse(["Unknown", "Risk C", "Risk B"], 100, 50))
+        detector = _detector(engine, THREE_RISKS, max_risk=2)
+        result = detector.detect(["usecase 1"])
+
+        assert [r.name for r in result[0]] == ["Risk B", "Risk C"]
+
+    def test_repeated_names_do_not_consume_slots(self):
+        engine = _engine(StubResponse(["Risk C", "Risk C", "Risk A"], 100, 50))
+        detector = _detector(engine, THREE_RISKS, max_risk=2)
+        result = detector.detect(["usecase 1"])
+
+        assert [r.name for r in result[0]] == ["Risk A", "Risk C"]
+
+    def test_sources_align_with_the_truncated_risks(self):
+        engine = _engine(StubResponse(["Risk C", "Risk B", "Risk A"], 100, 50))
+        detector = _detector(engine, THREE_RISKS, max_risk=2)
+        run = detector._run_inference(["usecase 1"])
+
+        assert len(run.sources[0]) == len(run.data[0]) == 2
 
 
 class TestTokenUsageAggregation:

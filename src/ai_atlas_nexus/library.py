@@ -721,11 +721,16 @@ class AIAtlasNexus:
                 If the `cot_examples` is omitted, the API default to a Zero-Shot approach.
             max_risk (int, optional):
                 The maximum number of risks to extract. Pass None to allow the inference engine to determine the number of risks. Defaults to None.
-            zero_shot_only (bool): If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
-            batch_inference (bool): Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
-            use_dspy_prompt (bool): Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
-            return_metadata (bool): If True, return DetectionResult with token usage aggregated over the run and broken down per usecase. If False (default), return bare list for backward compatibility.
-            explanation_type (ExplanationType, optional): Type of explanation to include with each risk (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). Defaults to NONE for backward compatibility.
+            zero_shot_only (bool):
+                If enabled, this flag allows the system to perform Zero Shot Risk identification, and the field `cot_examples` will be ignored.
+            batch_inference (bool):
+                Whether to run risk inference service in batch mode or at each risk level. Defaults to True.
+            use_dspy_prompt (bool):
+                Use per-risk DSPy optmized prompt instructions for risk identification. When enabled, `batch_inference` flag is ignored.
+            return_metadata (bool):
+                If True, return DetectionResult with token usage. If False (default), return list of risks only.
+            explanation_type (ExplanationType, optional):
+                Type of explanation to include with each risk (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). Defaults to NONE.
                 These are detailed in docs/usage/risk_explanations.md
         Returns:
             If return_metadata=False: List[List[Risk]] or List[List[RiskWithExplanation]] depending on explanation_type

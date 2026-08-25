@@ -104,28 +104,11 @@ for risk_exp in result[0]:
 
 Surfaces the explanation the model emitted alongside its own answer.
 
-> **Works on the per-risk path only (`batch_inference=False`).** That path uses the
-> `AIRiskPresence` schema, which requires an `explanation` field, so the model already
-> produces a rationale for each Yes/No decision. The default batch path constrains the
-> response to a bare array of risk names (`LIST_OF_STR_SCHEMA`), leaving nothing to read,
-> so `explanation` comes back `None` there. Supporting batch requires changing the
-> response schema, not the extractor — see the design note below.
-
-```python
-result = ai_atlas_nexus.identify_risks_from_usecases(
-    usecases=["my AI system"],
-    inference_engine=engine,
-    batch_inference=False,  # required for SELF_EXPLANATION
-    explanation_type=ExplanationType.SELF_EXPLANATION,
-)
-
-for risk_exp in result[0]:
-    print(f"{risk_exp.risk.name}: {risk_exp.explanation}")
-```
-
-**Cost:** the per-risk path issues one LLM call per risk per usecase (99 calls for the full
-IBM risk atlas), against one call for batch. This explanation is effectively free once you
-are already on that path, but the path itself is expensive.
+- **Batch path (default, `batch_inference=True`).** The plain batch response schema uses one LLM call per usecase.
+- **Per-risk path (`batch_inference=False`, or `use_dspy_prompt=True`).** That path uses
+  the `AIRiskPresence` schema, so the
+  model produces a rationale for each Yes/No decision and the decorator reads it
+  directly.
 
 ```python
 result = ai_atlas_nexus.identify_risks_from_usecases(
@@ -141,7 +124,8 @@ for risk_exp in result[0]:
         print(f"  Explanation: {risk_exp.explanation}")
 ```
 
-**Note**: Only models that return structured responses with explanation fields will populate this field. Others will have `None`.
+**Note**: Only models that honour the structure response schema will populate this
+field. If a model returns something other than the requested JSON object, `explanation` comes back `None`.
 
 ## RiskWithExplanation Class
 

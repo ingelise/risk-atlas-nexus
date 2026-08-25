@@ -66,9 +66,7 @@ class RiskDetectorWithMetadata(RiskDetectorDecorator):
         responses: List[TextGenerationInferenceOutput],
     ) -> UsecaseInferenceMetadata:
         """Reduce a set of inference responses to one metadata record."""
-        seeds = {
-            response.seed for response in responses if response.seed is not None
-        }
+        seeds = {response.seed for response in responses}
         return UsecaseInferenceMetadata(
             # `TokenUsage.__post_init__` derives each total
             # `__add__` keeps unreported counts as None rather than fabricating a zero.

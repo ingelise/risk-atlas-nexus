@@ -48,7 +48,16 @@ class RiskDetectorWithExplanation(RiskDetectorDecorator):
 
         Raises:
             ValueError: If `explanation_type` is unknown or `ExplanationType.NONE`.
+            TypeError: If `detector` is not a `GenericRiskDetector`.
         """
+        if not isinstance(detector, GenericRiskDetector):
+            raise TypeError(
+                f"`RiskDetectorWithExplanation` must wrap a `GenericRiskDetector`, not "
+                f"{type(detector).__name__}: it asks that detector for a response "
+                f"schema carrying explanations. This decorator goes innermost, e.g. "
+                f"`RiskDetectorWithMetadata(RiskDetectorWithExplanation(detector, ...))`."
+            )
+
         try:
             explanation_type = ExplanationType(explanation_type)
         except ValueError:
@@ -105,7 +114,10 @@ class RiskDetectorWithExplanation(RiskDetectorDecorator):
         if self._explanation_type != ExplanationType.SELF_EXPLANATION:
             return None
 
-        risks = self._detector._risks
+        risk_names = tuple(risk.name for risk in self._detector._risks if risk.name)
+        if not risk_names:
+            return None
+
         return BatchSchema(
             response_format=create_model(
                 "RiskListWithExplanations",
@@ -113,10 +125,7 @@ class RiskDetectorWithExplanation(RiskDetectorDecorator):
                     List[
                         create_model(
                             "RiskWithExplanationItem",
-                            risk_name=(
-                                Literal[tuple(risk.name for risk in risks)],
-                                ...,
-                            ),
+                            risk_name=(Literal[risk_names], ...),
                             explanation=(str, ...),
                             __base__=None,
                         )
