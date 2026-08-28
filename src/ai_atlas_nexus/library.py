@@ -732,6 +732,8 @@ class AIAtlasNexus:
             explanation_type (ExplanationType, optional):
                 Type of explanation to include with each risk (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). Defaults to NONE.
                 These are detailed in docs/usage/risk_explanations.md
+                Note REASONING needs an engine that reports the model's thinking, which
+                today is Ollama only; elsewhere the explanation comes back None.
         Returns:
             If return_metadata=False: List[List[Risk]] or List[List[RiskWithExplanation]] depending on explanation_type
                 Result containing a list of risks (optionally with explanations)
@@ -902,6 +904,9 @@ class AIAtlasNexus:
                 (NONE, DESCRIPTION, REASONING, SELF_EXPLANATION). When not NONE, each entry's
                 `risks` are RiskWithExplanation objects; `summary` and control lookups still
                 operate on the underlying risks. Defaults to NONE.
+                See docs/usage/risk_explanations.md. Note REASONING needs an engine that
+                reports the model's thinking, which today is Ollama only; elsewhere the
+                explanation comes back None.
         Returns:
             dict:
                 `usecases`, `model`, `taxonomy`, and `per_usecase`: one entry per

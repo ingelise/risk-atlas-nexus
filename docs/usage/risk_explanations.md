@@ -36,9 +36,14 @@ result = detector.detect(["my AI system description"])
 
 - Extracts model thinking/reasoning if available, requires the inference response to include `thinking` field
 - Suitable for:
-  - Ollama: Models with think parameter enabled (think=True, "low", "medium", "high")
-  - WML: Models with include_reasoning=True and reasoning_effort set ("low", "medium", "high")
-  - Not suitable for: RITS, VLLM, HF, OpenAI (there is no native reasoning output)
+  - Ollama: Models with the think parameter enabled (think=True, "low", "medium", "high"), and whose reported capabilities include `thinking`
+- Not suitable for the other engines yet, because none of them read reasoning back off
+  the response into `thinking`:
+  - WML: accepts `include_reasoning=True` and `reasoning_effort` on the request, but the
+    response handler does not capture the reasoning, so `explanation` is `None`
+  - RITS, VLLM, OpenAI: reasoning-capable models return the reasoning as
+    `reasoning_content`, which is not captured yet, so `explanation` is `None`
+  - HF: no reasoning output
 
 4. SELF_EXPLANATION
 
@@ -99,6 +104,14 @@ for risk_exp in result[0]:
 ```
 
 **Note**: Only models that support thinking/reasoning (e.g., Ollama with `think=True`) will populate this field. Others will have `None`.
+
+**Known limitation**: Ollama is currently the only inference engine that populates
+`TextGenerationInferenceOutput.thinking`. Reasoning-capable models on the
+OpenAI-compatible engines (RITS, vLLM, OpenAI) return their reasoning as
+`reasoning_content`, and WML accepts `include_reasoning` / `reasoning_effort` on the
+request, but in neither case is the reasoning read back off the response. On those
+engines `REASONING` therefore yields `explanation=None`. Use `SELF_EXPLANATION` instead
+until this is addressed.
 
 ### `ExplanationType.SELF_EXPLANATION`
 

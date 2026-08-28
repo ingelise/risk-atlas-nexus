@@ -80,14 +80,6 @@ class GenericRiskDetector(RiskDetector):
         """
         return self._run_inference(usecases).data
 
-    def detect_batch(self, usecases: List[str]) -> List[List[Risk]]:
-        """Identify risks with one inference call per usecase."""
-        return self._run_batch(usecases, self._batch_schema()).data
-
-    def detect_one(self, usecases: List[str]) -> List[List[Risk]]:
-        """Identify risks with one inference call per risk, per usecase."""
-        return self._run_per_risk(usecases).data
-
     def _run_inference(
         self, usecases: List[str], batch_schema: Optional[BatchSchema] = None
     ) -> DetectionRun[Risk]:
@@ -248,7 +240,6 @@ class GenericRiskDetector(RiskDetector):
             # In case postprocessing can be skipped or fail,  fall back to
             # substring matching so those responses still yield risks.
             return [
-
                 risk.name
                 for risk in self._risks
                 if risk.name and risk.name in prediction

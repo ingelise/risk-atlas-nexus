@@ -89,10 +89,10 @@ class RiskDetectorWithExplanation(RiskDetectorDecorator):
         return self._run_inference(usecases).data
 
     def _run_inference(
-        self, usecases: List[str]
+        self, usecases: List[str], batch_schema: Optional[BatchSchema] = None
     ) -> DetectionRun[RiskWithExplanation]:
-        run = self._detector._run_inference(
-            usecases, batch_schema=self._batch_schema_override()
+        run = super()._run_inference(
+            usecases, batch_schema=batch_schema or self._batch_schema_override()
         )
         return DetectionRun(
             data=[
