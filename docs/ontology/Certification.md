@@ -323,6 +323,7 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: Certification
     domain_of:
     - Vocabulary
@@ -353,6 +354,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: Certification
     domain_of:
     - Concept
@@ -380,6 +382,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByVocabulary
     owner: Certification
     domain_of:
     - Entry
@@ -393,6 +396,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: Certification
     domain_of:
     - Dataset
@@ -431,6 +435,7 @@ attributes:
     - rdfs:seeAlso
     rank: 1000
     slot_uri: nexus:hasExternalReference
+    alias: hasExternalReference
     owner: Certification
     domain_of:
     - Control
@@ -444,6 +449,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isPartOf
     owner: Certification
     domain_of:
     - Entry
@@ -459,6 +465,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Entry
+    alias: requiredByTask
     owner: Certification
     domain_of:
     - Entry
@@ -473,6 +480,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: requiresCapability
     owner: Certification
     domain_of:
     - Entry
@@ -491,6 +499,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: implementedByAdapter
     owner: Certification
     domain_of:
     - Entry
@@ -506,6 +515,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
+    alias: hasRule
     owner: Certification
     domain_of:
     - Entry
@@ -523,6 +533,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: Certification
     domain_of:
     - Entity
@@ -534,6 +545,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: Certification
     domain_of:
     - Entity
@@ -545,6 +557,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: Certification
     domain_of:
     - Entity
@@ -555,6 +568,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: Certification
     domain_of:
     - Entity
@@ -565,6 +579,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: Certification
     domain_of:
     - Entity
@@ -576,6 +591,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: Certification
     domain_of:
     - Entity
@@ -589,6 +605,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: Certification
     domain_of:
     - Entity
@@ -602,6 +619,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: Certification
     domain_of:
     - Entity
@@ -615,6 +633,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: Certification
     domain_of:
     - Entity
@@ -629,6 +648,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: Certification
     domain_of:
     - Entity
@@ -643,6 +663,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: Certification
     domain_of:
     - Entity
@@ -655,6 +676,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: Certification
     domain_of:
     - Entity
@@ -672,6 +694,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: Certification
     domain_of:
     - Entity
@@ -683,6 +706,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: Certification
     domain_of:
     - Entity

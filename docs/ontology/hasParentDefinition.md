@@ -10,6 +10,7 @@ _Indicates parent terms associated with a term_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasParentDefinition](https://w3id.org/ai-atlas-nexus/hasParentDefinition)
+Alias: hasParentDefinition
 
 <!-- no inheritance hierarchy -->
 
@@ -57,6 +58,7 @@ description: Indicates parent terms associated with a term
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: nexus:hasParentDefinition
+alias: hasParentDefinition
 domain_of:
 - Term
 range: Term

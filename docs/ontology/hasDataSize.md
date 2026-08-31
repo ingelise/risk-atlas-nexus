@@ -10,6 +10,7 @@ _The size of the dataset, including the number of data points or examples._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataSize](https://w3id.org/ai-atlas-nexus/hasDataSize)
+Alias: hasDataSize
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasDataSize](https://w3id.org/ai-atlas-nexus/hasDataSize)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -55,6 +56,7 @@ name: hasDataSize
 description: The size of the dataset, including the number of data points or examples.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasDataSize
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

@@ -10,6 +10,7 @@ _The languages included in the dataset used by the benchmark (e.g., English, mul
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasLanguages](https://w3id.org/ai-atlas-nexus/hasLanguages)
+Alias: hasLanguages
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasLanguages](https://w3id.org/ai-atlas-nexus/hasLanguages)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ description: The languages included in the dataset used by the benchmark (e.g., 
   multilingual).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasLanguages
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

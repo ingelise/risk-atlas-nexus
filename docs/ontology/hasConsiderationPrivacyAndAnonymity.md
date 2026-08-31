@@ -10,6 +10,7 @@ _How any personal or sensitive data is handled and whether any anonymization tec
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasConsiderationPrivacyAndAnonymity](https://w3id.org/ai-atlas-nexus/hasConsiderationPrivacyAndAnonymity)
+Alias: hasConsiderationPrivacyAndAnonymity
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: How any personal or sensitive data is handled and whether any anony
   techniques are applied.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasConsiderationPrivacyAndAnonymity
 domain_of:
 - BenchmarkMetadataCard
 range: string

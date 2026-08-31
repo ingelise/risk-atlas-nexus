@@ -10,6 +10,7 @@ _Organization that provided the evaluation_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:source_organization_name](https://w3id.org/ai-atlas-nexus/source_organization_name)
+Alias: source_organization_name
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: source_organization_name
 description: Organization that provided the evaluation
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: source_organization_name
 owner: SourceMetadata
 domain_of:
 - SourceMetadata

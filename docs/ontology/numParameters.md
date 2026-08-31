@@ -10,6 +10,7 @@ _A property indicating the number of parameters in a LLM._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:numParameters](https://w3id.org/ai-atlas-nexus/numParameters)
+Alias: numParameters
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: numParameters
 description: A property indicating the number of parameters in a LLM.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: numParameters
 domain_of:
 - LargeLanguageModel
 range: integer

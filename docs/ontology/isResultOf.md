@@ -10,6 +10,7 @@ _A relationship indicating that an entity is the result of an AI evaluation._
 <div data-search-exclude markdown="1">
 
 URI: [dqv:isMeasurementOf](https://www.w3.org/TR/vocab-dqv/isMeasurementOf)
+Alias: isResultOf
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [dqv:isMeasurementOf](https://www.w3.org/TR/vocab-dqv/isMeasurementOf)
 
 | Name                                      | Description                                                                      | Modifies Slot |
 | ----------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
 | [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
+| [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ description: A relationship indicating that an entity is the result of an AI eva
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: dqv:isMeasurementOf
+alias: isResultOf
 domain_of:
 - AiEvalResult
 range: AiEval

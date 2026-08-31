@@ -10,6 +10,7 @@ _The tasks or evaluations the benchmark is intended to assess._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasTasks](https://w3id.org/ai-atlas-nexus/hasTasks)
+Alias: hasTasks
 
 <!-- no inheritance hierarchy -->
 
@@ -17,11 +18,11 @@ URI: [nexus:hasTasks](https://w3id.org/ai-atlas-nexus/hasTasks)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
+| [Questionnaire](Questionnaire.md)                 | A questionnaire groups questions                                                 | no            |
 | [AiEval](AiEval.md)                               | An AI Evaluation, e                                                              | no            |
+| [Question](Question.md)                           | An evaluation where a question has to be answered                                | no            |
 | [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
-| [Question](Question.md)                           | An evaluation where a question has to be answered                                | no            |
-| [Questionnaire](Questionnaire.md)                 | A questionnaire groups questions                                                 | no            |
 
 ## Properties
 
@@ -59,6 +60,7 @@ name: hasTasks
 description: The tasks or evaluations the benchmark is intended to assess.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasTasks
 domain_of:
 - AiEval
 - EveryEvalAIResult

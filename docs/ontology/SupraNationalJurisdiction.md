@@ -19,7 +19,11 @@ URI: [nexus:SupraNationalJurisdiction](https://w3id.org/ai-atlas-nexus/SupraNati
 - **Nodes:** dpv:SupraNationalUnion
 - **Via:** rdfs:subClassOf
 
-_This is a dynamic enum_
+## Permissible Values
+
+| Value         | Meaning | Description                                                                      |
+| ------------- | ------- | -------------------------------------------------------------------------------- |
+| International | None    | Explicitly global scope not attributable to any single country or recognised ... |
 
 ## Identifier and Mapping Information
 
@@ -37,6 +41,14 @@ description: Supra-national or intergovernmental jurisdiction, sourced from the 
   (e.g. EU, EEA).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+permissible_values:
+  International:
+    text: International
+    description: Explicitly global scope not attributable to any single country or
+      recognised regional body.
+    aliases:
+    - INTERNATIONAL
+    - international
 reachable_from:
   source_ontology: dpv-loc
   source_nodes:

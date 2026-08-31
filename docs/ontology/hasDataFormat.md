@@ -10,6 +10,7 @@ _The structure and modality of the data (e.g., sentence pairs, question-answer f
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataFormat](https://w3id.org/ai-atlas-nexus/hasDataFormat)
+Alias: hasDataFormat
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasDataFormat](https://w3id.org/ai-atlas-nexus/hasDataFormat)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ description: The structure and modality of the data (e.g., sentence pairs, quest
   format, tabular data).
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasDataFormat
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

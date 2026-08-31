@@ -10,6 +10,7 @@ _Annotation of the best possible result of the evaluation_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:bestValue](https://w3id.org/ai-atlas-nexus/bestValue)
+Alias: bestValue
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:bestValue](https://w3id.org/ai-atlas-nexus/bestValue)
 
 | Name                              | Description                                       | Modifies Slot |
 | --------------------------------- | ------------------------------------------------- | ------------- |
-| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Question](Question.md)           | An evaluation where a question has to be answered | no            |
+| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Questionnaire](Questionnaire.md) | A questionnaire groups questions                  | no            |
 
 ## Properties
@@ -56,6 +57,7 @@ name: bestValue
 description: Annotation of the best possible result of the evaluation
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: bestValue
 domain_of:
 - AiEval
 range: string

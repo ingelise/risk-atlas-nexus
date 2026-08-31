@@ -10,6 +10,7 @@ _A relationship to datasets that are used._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasDataset](https://w3id.org/ai-atlas-nexus/hasDataset)
+Alias: hasDataset
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasDataset](https://w3id.org/ai-atlas-nexus/hasDataset)
 
 | Name                              | Description                                       | Modifies Slot |
 | --------------------------------- | ------------------------------------------------- | ------------- |
-| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Question](Question.md)           | An evaluation where a question has to be answered | no            |
+| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Questionnaire](Questionnaire.md) | A questionnaire groups questions                  | no            |
 
 ## Properties
@@ -57,6 +58,7 @@ name: hasDataset
 description: A relationship to datasets that are used.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasDataset
 domain_of:
 - AiEval
 range: Dataset

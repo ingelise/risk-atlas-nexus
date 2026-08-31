@@ -10,6 +10,7 @@ _A list of LLMIntrinsics_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:llmintrinsics](https://w3id.org/ai-atlas-nexus/llmintrinsics)
+Alias: llmintrinsics
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: llmintrinsics
 description: A list of LLMIntrinsics
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: llmintrinsics
 owner: Container
 domain_of:
 - Container

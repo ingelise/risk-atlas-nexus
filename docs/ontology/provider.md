@@ -8,6 +8,7 @@ search:
 <div data-search-exclude markdown="1">
 
 URI: [nexus:provider](https://w3id.org/ai-atlas-nexus/provider)
+Alias: provider
 
 <!-- no inheritance hierarchy -->
 
@@ -46,6 +47,7 @@ deprecated: Changed to match slot naming convention.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 deprecated_element_has_exact_replacement: isProvidedBy
 rank: 1000
+alias: provider
 range: string
 
 ```

@@ -10,6 +10,7 @@ _Annotation whether an AI risk shows specifically during the training-tuning or 
 <div data-search-exclude markdown="1">
 
 URI: [nexus:phase](https://w3id.org/ai-atlas-nexus/phase)
+Alias: phase
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ description: Annotation whether an AI risk shows specifically during the trainin
   or inference phase.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: phase
 owner: Risk
 domain_of:
 - Risk

@@ -10,6 +10,7 @@ _The requirement type of whether this is preventive, detective, etc._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasRequirementType](https://w3id.org/ai-atlas-nexus/hasRequirementType)
+Alias: hasRequirementType
 
 <!-- no inheritance hierarchy -->
 
@@ -17,12 +18,12 @@ URI: [nexus:hasRequirementType](https://w3id.org/ai-atlas-nexus/hasRequirementTy
 
 | Name                                                              | Description                                                                      | Modifies Slot |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
+| [ControlActivityRecommendation](ControlActivityRecommendation.md) | A control activity (rule) describing a recommendation for performing an activ... | no            |
 | [Requirement](Requirement.md)                                     | A requirement representing a combination of obligation, permission, or prohib... | no            |
+| [ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    | no            |
 | [ControlActivityPermission](ControlActivityPermission.md)         | A control activity (rule) describing a permission to perform an activity         | no            |
 | [ControlActivityProhibition](ControlActivityProhibition.md)       | A control activity (rule) describing a prohibition to perform an activity        | no            |
-| [ControlActivityObligation](ControlActivityObligation.md)         | A control activity (rule) describing an obligation for performing an activity    | no            |
-| [ControlActivityRecommendation](ControlActivityRecommendation.md) | A control activity (rule) describing a recommendation for performing an activ... | no            |
+| [ControlActivity](ControlActivity.md)                             | An obligation, permission, or prohibition for AI system assurance                | no            |
 
 ## Properties
 
@@ -63,6 +64,7 @@ from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Any
 slot_uri: nexus:hasRequirementType
+alias: hasRequirementType
 domain_of:
 - ControlActivity
 - Requirement

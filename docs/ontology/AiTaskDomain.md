@@ -265,6 +265,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: AiTaskDomain
     domain_of:
     - Concept
@@ -292,6 +293,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:member
+    alias: hasPart
     owner: AiTaskDomain
     domain_of:
     - Group
@@ -308,6 +310,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: AiTaskDomain
     domain_of:
     - Dataset
@@ -338,6 +341,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: belongsToDomain
     owner: AiTaskDomain
     domain_of:
     - Group
@@ -351,6 +355,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     ifabsent: string(Group)
     designates_type: true
+    alias: type
     owner: AiTaskDomain
     domain_of:
     - Vocabulary
@@ -380,6 +385,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
+    alias: narrower
     owner: AiTaskDomain
     domain_of:
     - Group
@@ -391,6 +397,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
+    alias: broader
     owner: AiTaskDomain
     domain_of:
     - Group
@@ -404,6 +411,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -415,6 +423,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -426,6 +435,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -436,6 +446,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -446,6 +457,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -457,6 +469,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -470,6 +483,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -483,6 +497,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -496,6 +511,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -510,6 +526,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -524,6 +541,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -536,6 +554,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -553,6 +572,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: AiTaskDomain
     domain_of:
     - Entity
@@ -564,6 +584,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: AiTaskDomain
     domain_of:
     - Entity

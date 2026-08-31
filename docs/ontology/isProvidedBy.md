@@ -10,6 +10,7 @@ _A relationship to the Organization instance that provides this instance._
 <div data-search-exclude markdown="1">
 
 URI: [schema:provider](http://schema.org/provider)
+Alias: isProvidedBy
 
 <!-- no inheritance hierarchy -->
 
@@ -17,13 +18,13 @@ URI: [schema:provider](http://schema.org/provider)
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Dataset](Dataset.md)                       | A body of structured information describing some topic(s) of interest            | no            |
-| [BaseAi](BaseAi.md)                         | Any type of AI, be it a LLM, RL agent, SVM, etc                                  | no            |
-| [AiSystem](AiSystem.md)                     | A compound AI System composed of one or more AI capablities                      | no            |
-| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | yes           |
 | [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
-| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
+| [AiSystem](AiSystem.md)                     | A compound AI System composed of one or more AI capablities                      | no            |
+| [Dataset](Dataset.md)                       | A body of structured information describing some topic(s) of interest            | no            |
+| [AiAgent](AiAgent.md)                       | An artificial intelligence (AI) agent refers to a system or program that is c... | yes           |
+| [BaseAi](BaseAi.md)                         | Any type of AI, be it a LLM, RL agent, SVM, etc                                  | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 
 ## Properties
 
@@ -62,6 +63,7 @@ description: A relationship to the Organization instance that provides this inst
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: schema:provider
+alias: isProvidedBy
 domain_of:
 - Dataset
 - BaseAi

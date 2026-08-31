@@ -10,6 +10,7 @@ _Indicates that this capability is implemented by a specific LLM intrinsic. This
 <div data-search-exclude markdown="1">
 
 URI: [nexus:implementedByIntrinsic](https://w3id.org/ai-atlas-nexus/implementedByIntrinsic)
+Alias: implementedByIntrinsic
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ description: Indicates that this capability is implemented by a specific LLM int
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Any
+alias: implementedByIntrinsic
 inverse: implementsCapability
 range: Any
 multivalued: true

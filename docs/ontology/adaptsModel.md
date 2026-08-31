@@ -10,6 +10,7 @@ _The LargeLanguageModel being adapted_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:adaptsModel](https://w3id.org/ai-atlas-nexus/adaptsModel)
+Alias: adaptsModel
 
 <!-- no inheritance hierarchy -->
 
@@ -55,6 +56,7 @@ name: adaptsModel
 description: The LargeLanguageModel being adapted
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: adaptsModel
 domain_of:
 - Adapter
 range: LargeLanguageModel

@@ -8,6 +8,7 @@ search:
 <div data-search-exclude markdown="1">
 
 URI: [nexus:author](https://w3id.org/ai-atlas-nexus/author)
+Alias: author
 
 <!-- no inheritance hierarchy -->
 
@@ -46,6 +47,7 @@ URI: [nexus:author](https://w3id.org/ai-atlas-nexus/author)
 <details>
 ```yaml
 name: author
+alias: author
 domain_of:
 - Documentation
 - RiskIncident

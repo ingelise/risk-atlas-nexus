@@ -10,6 +10,7 @@ _ISO 8601 timestamp when evaluation was performed_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:evaluation_timestamp](https://w3id.org/ai-atlas-nexus/evaluation_timestamp)
+Alias: evaluation_timestamp
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: evaluation_timestamp
 description: ISO 8601 timestamp when evaluation was performed
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: evaluation_timestamp
 owner: EveryEvalAIResult
 domain_of:
 - EveryEvalAIResult
