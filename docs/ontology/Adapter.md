@@ -416,7 +416,7 @@ URI: [nexus:Adapter](https://w3id.org/ai-atlas-nexus/Adapter)
 | [hasTrainingData](hasTrainingData.md)             | \* <br/> [Dataset](Dataset.md)                                     | A relationship indicating the datasets an AI model was trained on                | [LargeLanguageModel](LargeLanguageModel.md)                    |
 | [fine_tuning](fine_tuning.md)                     | 0..1 <br/> [String](String.md)                                     | A description of the fine-tuning mechanism(s) applied to a model                 | [LargeLanguageModel](LargeLanguageModel.md)                    |
 | [supported_languages](supported_languages.md)     | \* <br/> [String](String.md)                                       | A list of languages, expressed as ISO two letter codes                           | [LargeLanguageModel](LargeLanguageModel.md)                    |
-| [isPartOf](isPartOf.md)                           | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models             | [Entry](Entry.md), [LargeLanguageModel](LargeLanguageModel.md) |
+| [isPartOf](isPartOf.md)                           | 0..1 <br/> [LargeLanguageModelFamily](LargeLanguageModelFamily.md) | Annotation that a Large Language model is part of a family of models             | [LargeLanguageModel](LargeLanguageModel.md), [Entry](Entry.md) |
 | [isDefinedByTaxonomy](isDefinedByTaxonomy.md)     | 0..1 <br/> [Taxonomy](Taxonomy.md)                                 | A relationship where a concept or a concept group is defined by a taxonomy       | [Entry](Entry.md)                                              |
 | [hasExternalReference](hasExternalReference.md)   | \* <br/> [Documentation](Documentation.md)                         | External references / additional resources related to this entity, such as ar... | [Entry](Entry.md)                                              |
 | [requiredByTask](requiredByTask.md)               | \* <br/> [Any](Any.md)                                             | Indicates that this entry is required to perform a specific AI task              | [Entry](Entry.md)                                              |
@@ -545,6 +545,7 @@ attributes:
     description: 'The Adapter type, for example: LORA, ALORA, X-LORA'
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: hasAdapterType
     owner: Adapter
     domain_of:
     - Adapter
@@ -556,6 +557,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByVocabulary
     owner: Adapter
     domain_of:
     - Entry
@@ -569,6 +571,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: Adapter
     domain_of:
     - Dataset
@@ -599,6 +602,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
+    alias: hasLicense
     owner: Adapter
     domain_of:
     - Dataset
@@ -619,6 +623,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Adapter
+    alias: hasRelatedRisk
     owner: Adapter
     domain_of:
     - Term
@@ -638,6 +643,7 @@ attributes:
     description: The LargeLanguageModel being adapted
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: adaptsModel
     owner: Adapter
     domain_of:
     - Adapter
@@ -649,6 +655,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Adapter
+    alias: implementsCapability
     owner: Adapter
     domain_of:
     - Adapter
@@ -665,6 +672,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: tech:hasCapability
+    alias: hasCapability
     owner: Adapter
     domain_of:
     - AiSystem
@@ -679,6 +687,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: requiresCapability
     owner: Adapter
     domain_of:
     - Entry
@@ -694,6 +703,7 @@ attributes:
     description: A property indicating the number of parameters in a LLM.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: numParameters
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -704,6 +714,7 @@ attributes:
     description: The number of tokens a AI model was trained on.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: numTrainingTokens
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -714,6 +725,7 @@ attributes:
     description: The total length, in bytes, of an AI model's context window.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: contextWindowSize
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -725,6 +737,7 @@ attributes:
       component. Examples include text, image, video.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: hasInputModality
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -737,6 +750,7 @@ attributes:
       component. Examples include text, image, video.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: hasOutputModality
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -749,6 +763,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasTrainingData
+    alias: hasTrainingData
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -760,6 +775,7 @@ attributes:
     description: A description of the fine-tuning mechanism(s) applied to a model.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: fine_tuning
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -770,6 +786,7 @@ attributes:
       'jp, fr, en, de'
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: supported_languages
     owner: Adapter
     domain_of:
     - LargeLanguageModel
@@ -783,6 +800,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isPartOf
     owner: Adapter
     domain_of:
     - Entry
@@ -799,6 +817,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: Adapter
     domain_of:
     - Concept
@@ -834,6 +853,7 @@ attributes:
     - rdfs:seeAlso
     rank: 1000
     slot_uri: nexus:hasExternalReference
+    alias: hasExternalReference
     owner: Adapter
     domain_of:
     - Control
@@ -847,6 +867,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Entry
+    alias: requiredByTask
     owner: Adapter
     domain_of:
     - Entry
@@ -863,6 +884,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: implementedByAdapter
     owner: Adapter
     domain_of:
     - Entry
@@ -878,6 +900,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
+    alias: hasRule
     owner: Adapter
     domain_of:
     - Entry
@@ -893,6 +916,7 @@ attributes:
       this is.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: Adapter
     domain_of:
     - Vocabulary
@@ -924,6 +948,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: Adapter
     domain_of:
     - Entity
@@ -935,6 +960,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: Adapter
     domain_of:
     - Entity
@@ -946,6 +972,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: Adapter
     domain_of:
     - Entity
@@ -956,6 +983,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: Adapter
     domain_of:
     - Entity
@@ -966,6 +994,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: Adapter
     domain_of:
     - Entity
@@ -977,6 +1006,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: Adapter
     domain_of:
     - Entity
@@ -990,6 +1020,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: Adapter
     domain_of:
     - Entity
@@ -1003,6 +1034,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: Adapter
     domain_of:
     - Entity
@@ -1016,6 +1048,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: Adapter
     domain_of:
     - Entity
@@ -1030,6 +1063,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: Adapter
     domain_of:
     - Entity
@@ -1044,6 +1078,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: Adapter
     domain_of:
     - Entity
@@ -1056,6 +1091,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: Adapter
     domain_of:
     - Entity
@@ -1073,6 +1109,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: Adapter
     domain_of:
     - Entity
@@ -1084,6 +1121,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: Adapter
     domain_of:
     - Entity
@@ -1096,6 +1134,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dqv:hasQualityMeasurement
+    alias: hasEvaluation
     owner: Adapter
     domain_of:
     - AiModel
@@ -1106,6 +1145,7 @@ attributes:
     description: A description of the architecture of an AI such as 'Decoder-only'.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: architecture
     owner: Adapter
     domain_of:
     - AiModel
@@ -1115,6 +1155,7 @@ attributes:
     description: GPU consumption in terms of hours
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: gpu_hours
     owner: Adapter
     domain_of:
     - AiModel
@@ -1125,6 +1166,7 @@ attributes:
     description: power consumption in Watts
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: power_consumption_w
     owner: Adapter
     domain_of:
     - AiModel
@@ -1136,6 +1178,7 @@ attributes:
       during training
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: carbon_emitted
     owner: Adapter
     domain_of:
     - AiModel
@@ -1151,6 +1194,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasRiskControl
+    alias: hasRiskControl
     owner: Adapter
     domain_of:
     - AiModel
@@ -1161,6 +1205,7 @@ attributes:
     description: A relationship to the Organization instance which produces this instance.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: isProducedBy
     owner: Adapter
     domain_of:
     - BaseAi
@@ -1170,6 +1215,7 @@ attributes:
     description: A relationship to model card references.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: hasModelCard
     owner: Adapter
     domain_of:
     - BaseAi
@@ -1182,6 +1228,7 @@ attributes:
     description: relationship indicating the AI tasks an AI model can perform.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: performsTask
     owner: Adapter
     domain_of:
     - BaseAi
@@ -1194,6 +1241,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:provider
+    alias: isProvidedBy
     owner: Adapter
     domain_of:
     - Dataset

@@ -10,6 +10,7 @@ _A list of Permissions_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:permissions](https://w3id.org/ai-atlas-nexus/permissions)
+Alias: permissions
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: permissions
 description: A list of Permissions
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: permissions
 owner: Container
 domain_of:
 - Container

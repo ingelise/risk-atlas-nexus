@@ -10,6 +10,7 @@ _Indicates the severity associated with a concept_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasSeverity](https://w3id.org/ai-atlas-nexus/hasSeverity)
+Alias: hasSeverity
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Indicates the severity associated with a concept
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: RiskConcept
+alias: hasSeverity
 domain_of:
 - RiskIncident
 range: Severity

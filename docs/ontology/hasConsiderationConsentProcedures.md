@@ -10,6 +10,7 @@ _Information on how consent was obtained (if applicable), especially for dataset
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasConsiderationConsentProcedures](https://w3id.org/ai-atlas-nexus/hasConsiderationConsentProcedures)
+Alias: hasConsiderationConsentProcedures
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Information on how consent was obtained (if applicable), especially
   datasets involving personal data.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasConsiderationConsentProcedures
 domain_of:
 - BenchmarkMetadataCard
 range: string

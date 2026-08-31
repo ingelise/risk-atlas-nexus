@@ -10,6 +10,7 @@ _A list of organizations_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:organizations](https://w3id.org/ai-atlas-nexus/organizations)
+Alias: organizations
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: organizations
 description: A list of organizations
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: organizations
 owner: Container
 domain_of:
 - Container

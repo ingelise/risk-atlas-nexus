@@ -10,6 +10,7 @@ _Indicates the incident (subject) is a materialisation of the indicated risk (ob
 <div data-search-exclude markdown="1">
 
 URI: [nexus:refersToRisk](https://w3id.org/ai-atlas-nexus/refersToRisk)
+Alias: refersToRisk
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ exact_mappings:
 - dpv:refersToRisk
 rank: 1000
 domain: RiskIncident
+alias: refersToRisk
 domain_of:
 - RiskIncident
 range: Risk

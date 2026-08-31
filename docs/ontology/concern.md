@@ -10,6 +10,7 @@ _Some explanation about the concern related to an AI risk_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:concern](https://w3id.org/ai-atlas-nexus/concern)
+Alias: concern
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: concern
 description: Some explanation about the concern related to an AI risk
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: concern
 owner: Risk
 domain_of:
 - Risk

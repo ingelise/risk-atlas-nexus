@@ -10,6 +10,7 @@ _Links to relevant resources, such as repositories or papers related to the benc
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasResources](https://w3id.org/ai-atlas-nexus/hasResources)
+Alias: hasResources
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasResources](https://w3id.org/ai-atlas-nexus/hasResources)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ description: Links to relevant resources, such as repositories or papers related
   the benchmark.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasResources
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

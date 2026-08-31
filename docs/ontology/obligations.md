@@ -10,6 +10,7 @@ _A list of Obligations_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:obligations](https://w3id.org/ai-atlas-nexus/obligations)
+Alias: obligations
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: obligations
 description: A list of Obligations
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: obligations
 owner: Container
 domain_of:
 - Container

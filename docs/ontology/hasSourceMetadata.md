@@ -10,6 +10,7 @@ _Source metadata for the evaluation_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasSourceMetadata](https://w3id.org/ai-atlas-nexus/hasSourceMetadata)
+Alias: hasSourceMetadata
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Source metadata for the evaluation
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EveryEvalAIResult
+alias: hasSourceMetadata
 domain_of:
 - EveryEvalAIResult
 range: SourceMetadata

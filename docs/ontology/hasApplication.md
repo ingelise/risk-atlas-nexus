@@ -10,6 +10,7 @@ _The application category, Optional or Mandatory._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasApplication](https://w3id.org/ai-atlas-nexus/hasApplication)
+Alias: hasApplication
 
 <!-- no inheritance hierarchy -->
 
@@ -59,6 +60,7 @@ from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Requirement
 slot_uri: nexus:hasApplication
+alias: hasApplication
 domain_of:
 - Requirement
 range: AIUC1ApplicationCategory

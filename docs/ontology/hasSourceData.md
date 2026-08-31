@@ -10,6 +10,7 @@ _Source data information_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasSourceData](https://w3id.org/ai-atlas-nexus/hasSourceData)
+Alias: hasSourceData
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Source data information
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EvaluationResultRecord
+alias: hasSourceData
 domain_of:
 - EvaluationResultRecord
 range: SourceData

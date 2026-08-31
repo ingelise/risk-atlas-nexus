@@ -10,6 +10,7 @@ _A list of policies_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:policies](https://w3id.org/ai-atlas-nexus/policies)
+Alias: policies
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: policies
 description: A list of policies
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: policies
 owner: Container
 domain_of:
 - Container

@@ -10,6 +10,7 @@ _Annotates whether an AI risk is a traditional risk, specific to or amplified by
 <div data-search-exclude markdown="1">
 
 URI: [nexus:descriptor](https://w3id.org/ai-atlas-nexus/descriptor)
+Alias: descriptor
 
 <!-- no inheritance hierarchy -->
 
@@ -62,6 +63,7 @@ description: Annotates whether an AI risk is a traditional risk, specific to or 
   by AI.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: descriptor
 owner: Risk
 domain_of:
 - Risk

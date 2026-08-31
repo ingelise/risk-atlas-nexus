@@ -10,6 +10,7 @@ _Some numeric or string value_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:value](https://w3id.org/ai-atlas-nexus/value)
+Alias: value
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +18,9 @@ URI: [nexus:value](https://w3id.org/ai-atlas-nexus/value)
 
 | Name                                      | Description                                                                      | Modifies Slot |
 | ----------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Fact](Fact.md)                           | A fact about something, for example the result of a measurement                  | no            |
-| [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
 | [EveryEvalAIResult](EveryEvalAIResult.md) | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
+| [AiEvalResult](AiEvalResult.md)           | The result of an evaluation for a specific AI model                              | no            |
+| [Fact](Fact.md)                           | A fact about something, for example the result of a measurement                  | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ name: value
 description: Some numeric or string value
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: value
 domain_of:
 - Fact
 range: string

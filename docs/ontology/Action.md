@@ -265,7 +265,7 @@ URI: [nexus:Action](https://w3id.org/ai-atlas-nexus/Action)
 | [isCategorizedAs](isCategorizedAs.md)               | \* <br/> [Any](Any.md)                                                                                                                                                                                                                | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                          |
 | [hasLifecycleStatus](hasLifecycleStatus.md)         | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)                                                                                                                                                                                      | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                          |
 | [notes](notes.md)                                   | \* <br/> [String](String.md)                                                                                                                                                                                                          | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                          |
-| [hasJurisdiction](hasJurisdiction.md)               | \* <br/> [String](String.md)&nbsp;or&nbsp;<br />[Jurisdiction](Jurisdiction.md)&nbsp;or&nbsp;<br />[SupraNationalJurisdiction](SupraNationalJurisdiction.md)&nbsp;or&nbsp;<br />[SubnationalJurisdiction](SubnationalJurisdiction.md) | The legal or regulatory jurisdiction(s) applicable to an AI system, policy, r... | [Concept](Concept.md)                        |
+| [hasJurisdiction](hasJurisdiction.md)               | \* <br/> [Jurisdiction](Jurisdiction.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[SubnationalJurisdiction](SubnationalJurisdiction.md)&nbsp;or&nbsp;<br />[SupraNationalJurisdiction](SupraNationalJurisdiction.md) | The legal or regulatory jurisdiction(s) applicable to an AI system, policy, r... | [Concept](Concept.md)                        |
 
 ## Usages
 
@@ -334,6 +334,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Action
+    alias: hasRelatedRisk
     owner: Action
     domain_of:
     - Term
@@ -354,6 +355,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: Action
     domain_of:
     - Dataset
@@ -385,6 +387,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: Action
     domain_of:
     - Concept
@@ -413,6 +416,7 @@ attributes:
       apply to AI development and others apply to AI deployment).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
+    alias: hasAiActorTask
     owner: Action
     domain_of:
     - Action
@@ -427,6 +431,7 @@ attributes:
     - airo:detectsRiskConcept
     rank: 1000
     domain: RiskControl
+    alias: detectsRiskConcept
     owner: Action
     domain_of:
     - Risk
@@ -444,6 +449,7 @@ attributes:
     - airo:mitigatesRiskConcept
     rank: 1000
     domain: RiskControl
+    alias: mitigatesRiskConcept
     owner: Action
     domain_of:
     - RiskControl
@@ -458,6 +464,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
+    alias: isDetectedBy
     owner: Action
     domain_of:
     - RiskConcept
@@ -472,6 +479,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: RiskConcept
+    alias: isMitigatedBy
     owner: Action
     domain_of:
     - RiskConcept
@@ -485,6 +493,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:isUsedWithinLocality
+    alias: isUsedWithinLocality
     owner: Action
     domain_of:
     - RiskConcept
@@ -498,6 +507,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isApplicableinLocality
+    alias: isApplicableinLocality
     owner: Action
     domain_of:
     - Control
@@ -519,6 +529,7 @@ attributes:
     - rdfs:seeAlso
     rank: 1000
     slot_uri: nexus:hasExternalReference
+    alias: hasExternalReference
     owner: Action
     domain_of:
     - Control
@@ -531,6 +542,7 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: Action
     domain_of:
     - Vocabulary
@@ -562,6 +574,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: Action
     domain_of:
     - Entity
@@ -573,6 +586,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: Action
     domain_of:
     - Entity
@@ -584,6 +598,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: Action
     domain_of:
     - Entity
@@ -594,6 +609,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: Action
     domain_of:
     - Entity
@@ -604,6 +620,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: Action
     domain_of:
     - Entity
@@ -615,6 +632,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: Action
     domain_of:
     - Entity
@@ -628,6 +646,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: Action
     domain_of:
     - Entity
@@ -641,6 +660,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: Action
     domain_of:
     - Entity
@@ -654,6 +674,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: Action
     domain_of:
     - Entity
@@ -668,6 +689,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: Action
     domain_of:
     - Entity
@@ -682,6 +704,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: Action
     domain_of:
     - Entity
@@ -694,6 +717,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: Action
     domain_of:
     - Entity
@@ -711,6 +735,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: Action
     domain_of:
     - Entity
@@ -722,6 +747,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: Action
     domain_of:
     - Entity
@@ -739,6 +765,7 @@ attributes:
     - https://w3id.org/dpv#hasJurisdiction
     rank: 1000
     slot_uri: dpv:hasJurisdiction
+    alias: hasJurisdiction
     owner: Action
     domain_of:
     - Concept

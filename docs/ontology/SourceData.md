@@ -237,6 +237,7 @@ attributes:
     description: Name of the dataset
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
+    alias: dataset_name
     owner: SourceData
     domain_of:
     - SourceData
@@ -245,6 +246,7 @@ attributes:
     name: source_type
     description: Type of data source (e.g., hf_dataset)
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
+    alias: source_type
     owner: SourceData
     domain_of:
     - SourceMetadata
@@ -255,6 +257,7 @@ attributes:
     description: HuggingFace repository
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
+    alias: hf_repo
     owner: SourceData
     domain_of:
     - SourceData
@@ -264,6 +267,7 @@ attributes:
     description: HuggingFace dataset split
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
+    alias: hf_split
     owner: SourceData
     domain_of:
     - SourceData
@@ -276,6 +280,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: SourceData
     domain_of:
     - Entity
@@ -287,6 +292,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: SourceData
     domain_of:
     - Entity
@@ -298,6 +304,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: SourceData
     domain_of:
     - Entity
@@ -308,6 +315,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: SourceData
     domain_of:
     - Entity
@@ -318,6 +326,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: SourceData
     domain_of:
     - Entity
@@ -329,6 +338,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: SourceData
     domain_of:
     - Entity
@@ -342,6 +352,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -355,6 +366,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -368,6 +380,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -382,6 +395,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -396,6 +410,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -408,6 +423,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: SourceData
     domain_of:
     - Entity
@@ -425,6 +441,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: SourceData
     domain_of:
     - Entity
@@ -436,6 +453,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: SourceData
     domain_of:
     - Entity

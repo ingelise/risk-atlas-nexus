@@ -10,6 +10,7 @@ _The Adapter for the intrinsic_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasAdapter](https://w3id.org/ai-atlas-nexus/hasAdapter)
+Alias: hasAdapter
 
 <!-- no inheritance hierarchy -->
 
@@ -57,6 +58,7 @@ description: The Adapter for the intrinsic
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: LLMIntrinsic
+alias: hasAdapter
 domain_of:
 - LLMIntrinsic
 range: Adapter

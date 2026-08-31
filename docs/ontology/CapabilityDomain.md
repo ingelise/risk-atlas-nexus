@@ -203,7 +203,7 @@ URI: [nexus:CapabilityDomain](https://w3id.org/ai-atlas-nexus/CapabilityDomain)
 | [isCategorizedAs](isCategorizedAs.md)         | \* <br/> [Any](Any.md)                                                                                                                                                                                                                | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md)                      |
 | [hasLifecycleStatus](hasLifecycleStatus.md)   | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)                                                                                                                                                                                      | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md)                      |
 | [notes](notes.md)                             | \* <br/> [String](String.md)                                                                                                                                                                                                          | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md)                      |
-| [hasJurisdiction](hasJurisdiction.md)         | \* <br/> [String](String.md)&nbsp;or&nbsp;<br />[Jurisdiction](Jurisdiction.md)&nbsp;or&nbsp;<br />[SupraNationalJurisdiction](SupraNationalJurisdiction.md)&nbsp;or&nbsp;<br />[SubnationalJurisdiction](SubnationalJurisdiction.md) | The legal or regulatory jurisdiction(s) applicable to an AI system, policy, r... | [Concept](Concept.md)                    |
+| [hasJurisdiction](hasJurisdiction.md)         | \* <br/> [Jurisdiction](Jurisdiction.md)&nbsp;or&nbsp;<br />[String](String.md)&nbsp;or&nbsp;<br />[SubnationalJurisdiction](SubnationalJurisdiction.md)&nbsp;or&nbsp;<br />[SupraNationalJurisdiction](SupraNationalJurisdiction.md) | The legal or regulatory jurisdiction(s) applicable to an AI system, policy, r... | [Concept](Concept.md)                    |
 
 ## Usages
 
@@ -272,6 +272,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: CapabilityDomain
     domain_of:
     - Concept
@@ -299,6 +300,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: CapabilityDomain
     domain_of:
     - Dataset
@@ -329,6 +331,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:member
+    alias: hasPart
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -345,6 +348,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: belongsToDomain
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -358,6 +362,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     ifabsent: string(Group)
     designates_type: true
+    alias: type
     owner: CapabilityDomain
     domain_of:
     - Vocabulary
@@ -387,6 +392,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
+    alias: narrower
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -398,6 +404,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
     slot_uri: skos:narrower
+    alias: broader
     owner: CapabilityDomain
     domain_of:
     - Group
@@ -411,6 +418,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -422,6 +430,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -433,6 +442,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -443,6 +453,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -453,6 +464,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -464,6 +476,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -477,6 +490,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -490,6 +504,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -503,6 +518,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -517,6 +533,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -531,6 +548,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -543,6 +561,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -560,6 +579,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -571,6 +591,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: CapabilityDomain
     domain_of:
     - Entity
@@ -588,6 +609,7 @@ attributes:
     - https://w3id.org/dpv#hasJurisdiction
     rank: 1000
     slot_uri: dpv:hasJurisdiction
+    alias: hasJurisdiction
     owner: CapabilityDomain
     domain_of:
     - Concept

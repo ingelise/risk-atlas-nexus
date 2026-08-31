@@ -10,6 +10,7 @@ _A list of languages, expressed as ISO two letter codes. For example, 'jp, fr, e
 <div data-search-exclude markdown="1">
 
 URI: [nexus:supported_languages](https://w3id.org/ai-atlas-nexus/supported_languages)
+Alias: supported_languages
 
 <!-- no inheritance hierarchy -->
 
@@ -57,6 +58,7 @@ description: A list of languages, expressed as ISO two letter codes. For example
   'jp, fr, en, de'
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: supported_languages
 domain_of:
 - LargeLanguageModel
 range: string

@@ -10,6 +10,7 @@ _A list of AI modalities_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:modalities](https://w3id.org/ai-atlas-nexus/modalities)
+Alias: modalities
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: modalities
 description: A list of AI modalities
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: modalities
 owner: Container
 domain_of:
 - Container

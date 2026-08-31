@@ -10,6 +10,7 @@ _Indicates the control measures associated with a system or component to modify 
 <div data-search-exclude markdown="1">
 
 URI: [airo:hasRiskControl](https://w3id.org/airo#hasRiskControl)
+Alias: hasRiskControl
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +18,9 @@ URI: [airo:hasRiskControl](https://w3id.org/airo#hasRiskControl)
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 | [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 
 ## Properties
 
@@ -60,6 +61,7 @@ description: Indicates the control measures associated with a system or componen
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasRiskControl
+alias: hasRiskControl
 domain_of:
 - AiModel
 range: RiskControl

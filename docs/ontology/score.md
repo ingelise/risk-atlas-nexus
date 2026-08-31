@@ -10,6 +10,7 @@ _The evaluation score_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:score](https://w3id.org/ai-atlas-nexus/score)
+Alias: score
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: score
 description: The evaluation score
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: score
 owner: ScoreDetails
 domain_of:
 - ScoreDetails

@@ -10,6 +10,7 @@ _Indicates user of an AI system._
 <div data-search-exclude markdown="1">
 
 URI: [airo:isUsedBy](https://w3id.org/airo#isUsedBy)
+Alias: isUsedBy
 
 <!-- no inheritance hierarchy -->
 
@@ -49,6 +50,7 @@ description: Indicates user of an AI system.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:isUsedBy
+alias: isUsedBy
 range: AiProvider
 
 ```

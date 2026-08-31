@@ -10,6 +10,7 @@ _How users should interpret the scores or results from the metrics._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasInterpretation](https://w3id.org/ai-atlas-nexus/hasInterpretation)
+Alias: hasInterpretation
 
 <!-- no inheritance hierarchy -->
 
@@ -55,6 +56,7 @@ name: hasInterpretation
 description: How users should interpret the scores or results from the metrics.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasInterpretation
 domain_of:
 - BenchmarkMetadataCard
 range: string

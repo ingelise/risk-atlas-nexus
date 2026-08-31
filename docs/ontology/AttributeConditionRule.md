@@ -246,6 +246,7 @@ attributes:
     description: Conditions that must be satisfied before the rule applies.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
+    alias: preconditions
     owner: AttributeConditionRule
     domain_of:
     - AttributeConditionRule
@@ -256,6 +257,7 @@ attributes:
     description: Conditions that result from applying the rule.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
+    alias: postconditions
     owner: AttributeConditionRule
     domain_of:
     - AttributeConditionRule
@@ -268,6 +270,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: AttributeConditionRule
     domain_of:
     - Concept
@@ -296,6 +299,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
+    alias: hasRule
     owner: AttributeConditionRule
     domain_of:
     - Entry
@@ -310,6 +314,7 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: AttributeConditionRule
     domain_of:
     - Vocabulary
@@ -341,6 +346,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -352,6 +358,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -363,6 +370,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -373,6 +381,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -383,6 +392,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -394,6 +404,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -407,6 +418,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -420,6 +432,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -433,6 +446,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -447,6 +461,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -461,6 +476,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -473,6 +489,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -490,6 +507,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: AttributeConditionRule
     domain_of:
     - Entity
@@ -501,6 +519,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: AttributeConditionRule
     domain_of:
     - Entity

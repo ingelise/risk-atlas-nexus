@@ -10,6 +10,7 @@ _Model information for the evaluation_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasModelInfo](https://w3id.org/ai-atlas-nexus/hasModelInfo)
+Alias: hasModelInfo
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Model information for the evaluation
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EveryEvalAIResult
+alias: hasModelInfo
 domain_of:
 - EveryEvalAIResult
 range: ModelInfo

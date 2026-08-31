@@ -10,6 +10,7 @@ _Indicates an incident that shares the same causative factors, produces similar 
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasVariant](https://w3id.org/ai-atlas-nexus/hasVariant)
+Alias: hasVariant
 
 <!-- no inheritance hierarchy -->
 
@@ -57,6 +58,7 @@ description: Indicates an incident that shares the same causative factors, produ
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: RiskIncident
+alias: hasVariant
 domain_of:
 - RiskIncident
 range: RiskIncident

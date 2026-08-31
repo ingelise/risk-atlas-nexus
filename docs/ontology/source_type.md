@@ -8,6 +8,7 @@ search:
 <div data-search-exclude markdown="1">
 
 URI: [nexus:source_type](https://w3id.org/ai-atlas-nexus/source_type)
+Alias: source_type
 
 <!-- no inheritance hierarchy -->
 
@@ -15,8 +16,8 @@ URI: [nexus:source_type](https://w3id.org/ai-atlas-nexus/source_type)
 
 | Name                                | Description                                          | Modifies Slot |
 | ----------------------------------- | ---------------------------------------------------- | ------------- |
-| [SourceMetadata](SourceMetadata.md) | Metadata about the source of an evaluation           | no            |
 | [SourceData](SourceData.md)         | Information about the data source used in evaluation | no            |
+| [SourceMetadata](SourceMetadata.md) | Metadata about the source of an evaluation           | no            |
 
 ## Properties
 
@@ -46,6 +47,7 @@ URI: [nexus:source_type](https://w3id.org/ai-atlas-nexus/source_type)
 <details>
 ```yaml
 name: source_type
+alias: source_type
 domain_of:
 - SourceMetadata
 - SourceData

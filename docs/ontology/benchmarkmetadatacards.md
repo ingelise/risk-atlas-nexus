@@ -10,6 +10,7 @@ _A list of AI evaluation benchmark metadata cards_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:benchmarkmetadatacards](https://w3id.org/ai-atlas-nexus/benchmarkmetadatacards)
+Alias: benchmarkmetadatacards
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: benchmarkmetadatacards
 description: A list of AI evaluation benchmark metadata cards
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: benchmarkmetadatacards
 owner: Container
 domain_of:
 - Container

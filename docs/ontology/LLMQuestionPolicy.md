@@ -249,6 +249,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: hasRelatedRisk
     owner: LLMQuestionPolicy
     domain_of:
     - Term
@@ -270,6 +271,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
+    alias: hasRule
     owner: LLMQuestionPolicy
     domain_of:
     - Entry
@@ -285,6 +287,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:hasReasonDenial
+    alias: hasReasonDenial
     owner: LLMQuestionPolicy
     domain_of:
     - LLMQuestionPolicy
@@ -297,6 +300,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:hasShortReplyType
+    alias: hasShortReplyType
     owner: LLMQuestionPolicy
     domain_of:
     - LLMQuestionPolicy
@@ -309,6 +313,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:hasException
+    alias: hasException
     owner: LLMQuestionPolicy
     domain_of:
     - LLMQuestionPolicy
@@ -322,6 +327,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: LLMQuestionPolicy
     domain_of:
     - Concept
@@ -349,6 +355,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isApplicableinLocality
+    alias: isApplicableinLocality
     owner: LLMQuestionPolicy
     domain_of:
     - Control
@@ -361,6 +368,7 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: LLMQuestionPolicy
     domain_of:
     - Vocabulary
@@ -392,6 +400,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -403,6 +412,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -414,6 +424,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -424,6 +435,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -434,6 +446,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -445,6 +458,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -458,6 +472,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -471,6 +486,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -484,6 +500,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -498,6 +515,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -512,6 +530,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -524,6 +543,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -541,6 +561,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
@@ -552,6 +573,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: LLMQuestionPolicy
     domain_of:
     - Entity
