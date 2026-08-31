@@ -12,7 +12,6 @@ _Indicates the technical capabilities this entry possesses._
 <div data-search-exclude markdown="1">
 
 URI: [tech:hasCapability](https://w3id.org/dpv/tech#hasCapability)
-Alias: hasCapability
 
 <!-- no inheritance hierarchy -->
 
@@ -20,8 +19,8 @@ Alias: hasCapability
 
 | Name                            | Description                                                                      | Modifies Slot |
 | ------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Adapter](Adapter.md)           | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [AiSystem](AiSystem.md)         | A compound AI System composed of one or more AI capablities                      | yes           |
+| [Adapter](Adapter.md)           | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [LLMIntrinsic](LLMIntrinsic.md) | A capability that can be invoked through a well-defined API that is reasonabl... | no            |
 | [AiAgent](AiAgent.md)           | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
 
@@ -65,7 +64,6 @@ description: 'Indicates the technical capabilities this entry possesses.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: tech:hasCapability
-alias: hasCapability
 domain_of:
 
 - AiSystem

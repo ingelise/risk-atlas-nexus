@@ -59,6 +59,17 @@ URI: [nexus:sourcedata](https://w3id.org/ai-atlas-nexus/sourcedata)
 
 
 
+      SourceData : hasLifecycleStatus
+
+
+
+
+
+        SourceData --> "0..1" LifecycleStatus : hasLifecycleStatus
+        click LifecycleStatus href "../LifecycleStatus/"
+
+
+
       SourceData : hf_repo
 
       SourceData : hf_split
@@ -88,6 +99,8 @@ URI: [nexus:sourcedata](https://w3id.org/ai-atlas-nexus/sourcedata)
         click Any href "../Any/"
 
 
+
+      SourceData : notes
 
       SourceData : related_mappings
 
@@ -120,24 +133,26 @@ URI: [nexus:sourcedata](https://w3id.org/ai-atlas-nexus/sourcedata)
 
 ## Slots
 
-| Name                                    | Cardinality and Range          | Description                                                                      | Inheritance         |
-| --------------------------------------- | ------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
-| [dataset_name](dataset_name.md)         | 0..1 <br/> [String](String.md) | Name of the dataset                                                              | direct              |
-| [source_type](source_type.md)           | 0..1 <br/> [String](String.md) | Type of data source (e                                                           | direct              |
-| [hf_repo](hf_repo.md)                   | 0..1 <br/> [String](String.md) | HuggingFace repository                                                           | direct              |
-| [hf_split](hf_split.md)                 | 0..1 <br/> [String](String.md) | HuggingFace dataset split                                                        | direct              |
-| [id](id.md)                             | 1 <br/> [String](String.md)    | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
-| [name](name.md)                         | 0..1 <br/> [String](String.md) | A text name of this instance                                                     | [Entity](Entity.md) |
-| [description](description.md)           | 0..1 <br/> [String](String.md) | The description of an entity                                                     | [Entity](Entity.md) |
-| [url](url.md)                           | 0..1 <br/> [Uri](Uri.md)       | An optional URL associated with this instance                                    | [Entity](Entity.md) |
-| [dateCreated](dateCreated.md)           | 0..1 <br/> [Date](Date.md)     | The date on which the entity was created                                         | [Entity](Entity.md) |
-| [dateModified](dateModified.md)         | 0..1 <br/> [Date](Date.md)     | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
-| [exact_mappings](exact_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
-| [close_mappings](close_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
-| [related_mappings](related_mappings.md) | \* <br/> [Any](Any.md)         | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
-| [narrow_mappings](narrow_mappings.md)   | \* <br/> [Any](Any.md)         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [broad_mappings](broad_mappings.md)     | \* <br/> [Any](Any.md)         | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
-| [isCategorizedAs](isCategorizedAs.md)   | \* <br/> [Any](Any.md)         | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| Name                                        | Cardinality and Range                            | Description                                                                      | Inheritance         |
+| ------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------- | ------------------- |
+| [dataset_name](dataset_name.md)             | 0..1 <br/> [String](String.md)                   | Name of the dataset                                                              | direct              |
+| [source_type](source_type.md)               | 0..1 <br/> [String](String.md)                   | Type of data source (e                                                           | direct              |
+| [hf_repo](hf_repo.md)                       | 0..1 <br/> [String](String.md)                   | HuggingFace repository                                                           | direct              |
+| [hf_split](hf_split.md)                     | 0..1 <br/> [String](String.md)                   | HuggingFace dataset split                                                        | direct              |
+| [id](id.md)                                 | 1 <br/> [String](String.md)                      | A unique identifier to this instance of the model element                        | [Entity](Entity.md) |
+| [name](name.md)                             | 0..1 <br/> [String](String.md)                   | A text name of this instance                                                     | [Entity](Entity.md) |
+| [description](description.md)               | 0..1 <br/> [String](String.md)                   | The description of an entity                                                     | [Entity](Entity.md) |
+| [url](url.md)                               | 0..1 <br/> [Uri](Uri.md)                         | An optional URL associated with this instance                                    | [Entity](Entity.md) |
+| [dateCreated](dateCreated.md)               | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was created                                         | [Entity](Entity.md) |
+| [dateModified](dateModified.md)             | 0..1 <br/> [Date](Date.md)                       | The date on which the entity was most recently modified                          | [Entity](Entity.md) |
+| [exact_mappings](exact_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to link two concepts, indicating a high degree of confid... | [Entity](Entity.md) |
+| [close_mappings](close_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to link two concepts that are sufficiently similar that ... | [Entity](Entity.md) |
+| [related_mappings](related_mappings.md)     | \* <br/> [Any](Any.md)                           | The property skos:relatedMatch is used to state an associative mapping link b... | [Entity](Entity.md) |
+| [narrow_mappings](narrow_mappings.md)       | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [broad_mappings](broad_mappings.md)         | \* <br/> [Any](Any.md)                           | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
+| [isCategorizedAs](isCategorizedAs.md)       | \* <br/> [Any](Any.md)                           | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| [hasLifecycleStatus](hasLifecycleStatus.md) | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md) | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
+| [notes](notes.md)                           | \* <br/> [String](String.md)                     | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Usages
 
@@ -222,7 +237,6 @@ attributes:
     description: Name of the dataset
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: dataset_name
     owner: SourceData
     domain_of:
     - SourceData
@@ -231,7 +245,6 @@ attributes:
     name: source_type
     description: Type of data source (e.g., hf_dataset)
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
-    alias: source_type
     owner: SourceData
     domain_of:
     - SourceMetadata
@@ -242,7 +255,6 @@ attributes:
     description: HuggingFace repository
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: hf_repo
     owner: SourceData
     domain_of:
     - SourceData
@@ -252,7 +264,6 @@ attributes:
     description: HuggingFace dataset split
     from_schema: https://w3id.org/ai-atlas-nexus/ai_eval
     rank: 1000
-    alias: hf_split
     owner: SourceData
     domain_of:
     - SourceData
@@ -265,7 +276,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: SourceData
     domain_of:
     - Entity
@@ -277,7 +287,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: SourceData
     domain_of:
     - Entity
@@ -289,7 +298,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: SourceData
     domain_of:
     - Entity
@@ -300,7 +308,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: SourceData
     domain_of:
     - Entity
@@ -311,7 +318,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: SourceData
     domain_of:
     - Entity
@@ -323,7 +329,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: SourceData
     domain_of:
     - Entity
@@ -337,7 +342,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -351,7 +355,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -365,7 +368,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -380,7 +382,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -395,7 +396,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: SourceData
     domain_of:
     - Entity
@@ -408,13 +408,40 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: SourceData
     domain_of:
     - Entity
     range: Any
     multivalued: true
     inlined: false
+  hasLifecycleStatus:
+    name: hasLifecycleStatus
+    description: The editorial / publication lifecycle state of this entity. Distinct
+      from AiLifecyclePhase, which describes an AI system's runtime evolution rather
+      than the editorial workflow of a catalogued entry.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - lifecycle_status
+    - doc_status
+    rank: 1000
+    slot_uri: adms:status
+    owner: SourceData
+    domain_of:
+    - Entity
+    range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: SourceData
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: nexus:sourcedata
 
 ````

@@ -10,7 +10,6 @@ _A relationship indicating the output modalities supported by an AI component. E
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasOutputModality](https://w3id.org/ai-atlas-nexus/hasOutputModality)
-Alias: hasOutputModality
 
 <!-- no inheritance hierarchy -->
 
@@ -18,8 +17,8 @@ Alias: hasOutputModality
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
+| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 
 ## Properties
 
@@ -58,7 +57,6 @@ description: A relationship indicating the output modalities supported by an AI 
   Examples include text, image, video.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasOutputModality
 domain_of:
 - LargeLanguageModel
 range: Modality

@@ -10,7 +10,6 @@ _A property indicating the number of parameters in a LLM._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:numParameters](https://w3id.org/ai-atlas-nexus/numParameters)
-Alias: numParameters
 
 <!-- no inheritance hierarchy -->
 
@@ -18,8 +17,8 @@ Alias: numParameters
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 | [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
+| [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
 
 ## Properties
 
@@ -62,7 +61,6 @@ name: numParameters
 description: A property indicating the number of parameters in a LLM.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: numParameters
 domain_of:
 - LargeLanguageModel
 range: integer

@@ -112,6 +112,17 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 
 
 
+      AiEval : hasLifecycleStatus
+
+
+
+
+
+        AiEval --> "0..1" LifecycleStatus : hasLifecycleStatus
+        click LifecycleStatus href "../LifecycleStatus/"
+
+
+
       AiEval : hasRelatedRisk
 
 
@@ -163,6 +174,8 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
         click Any href "../Any/"
 
 
+
+      AiEval : notes
 
       AiEval : related_mappings
 
@@ -219,6 +232,8 @@ URI: [dqv:Metric](https://www.w3.org/TR/vocab-dqv/Metric)
 | [narrow_mappings](narrow_mappings.md)           | \* <br/> [Any](Any.md)                                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [broad_mappings](broad_mappings.md)             | \* <br/> [Any](Any.md)                                     | The property is used to state a hierarchical mapping link between two concept... | [Entity](Entity.md) |
 | [isCategorizedAs](isCategorizedAs.md)           | \* <br/> [Any](Any.md)                                     | A relationship where an entity has been deemed to be categorized                 | [Entity](Entity.md) |
+| [hasLifecycleStatus](hasLifecycleStatus.md)     | 0..1 <br/> [LifecycleStatus](LifecycleStatus.md)           | The editorial / publication lifecycle state of this entity                       | [Entity](Entity.md) |
+| [notes](notes.md)                               | \* <br/> [String](String.md)                               | Free-text editorial notes, source breadcrumbs, or build-time provenance that ... | [Entity](Entity.md) |
 
 ## Usages
 
@@ -315,7 +330,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
-    alias: hasDocumentation
     owner: AiEval
     domain_of:
     - Dataset
@@ -345,7 +359,6 @@ attributes:
     description: A relationship to datasets that are used.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasDataset
     owner: AiEval
     domain_of:
     - AiEval
@@ -357,7 +370,6 @@ attributes:
     description: The tasks or evaluations the benchmark is intended to assess.
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: hasTasks
     owner: AiEval
     domain_of:
     - AiEval
@@ -372,7 +384,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: hasImplementation
     owner: AiEval
     domain_of:
     - AiEval
@@ -385,7 +396,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: hasUnitxtCard
     owner: AiEval
     domain_of:
     - AiEval
@@ -398,7 +408,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
-    alias: hasLicense
     owner: AiEval
     domain_of:
     - Dataset
@@ -419,7 +428,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: AiEval
-    alias: hasRelatedRisk
     owner: AiEval
     domain_of:
     - Term
@@ -439,7 +447,6 @@ attributes:
     description: Annotation of the best possible result of the evaluation
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: bestValue
     owner: AiEval
     domain_of:
     - AiEval
@@ -451,7 +458,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: AiEval
-    alias: hasBenchmarkMetadata
     owner: AiEval
     domain_of:
     - AiEval
@@ -465,7 +471,6 @@ attributes:
       other AI evaluations (e.g. it's an overall average of other scores).
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
-    alias: isComposedOf
     owner: AiEval
     domain_of:
     - AiSystem
@@ -481,7 +486,6 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
     owner: AiEval
     domain_of:
     - Entity
@@ -493,7 +497,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
-    alias: name
     owner: AiEval
     domain_of:
     - Entity
@@ -505,7 +508,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
-    alias: description
     owner: AiEval
     domain_of:
     - Entity
@@ -516,7 +518,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
-    alias: url
     owner: AiEval
     domain_of:
     - Entity
@@ -527,7 +528,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
-    alias: dateCreated
     owner: AiEval
     domain_of:
     - Entity
@@ -539,7 +539,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
-    alias: dateModified
     owner: AiEval
     domain_of:
     - Entity
@@ -553,7 +552,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
-    alias: exact_mappings
     owner: AiEval
     domain_of:
     - Entity
@@ -567,7 +565,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
-    alias: close_mappings
     owner: AiEval
     domain_of:
     - Entity
@@ -581,7 +578,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
-    alias: related_mappings
     owner: AiEval
     domain_of:
     - Entity
@@ -596,7 +592,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
-    alias: narrow_mappings
     owner: AiEval
     domain_of:
     - Entity
@@ -611,7 +606,6 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
-    alias: broad_mappings
     owner: AiEval
     domain_of:
     - Entity
@@ -624,13 +618,40 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
-    alias: isCategorizedAs
     owner: AiEval
     domain_of:
     - Entity
     range: Any
     multivalued: true
     inlined: false
+  hasLifecycleStatus:
+    name: hasLifecycleStatus
+    description: The editorial / publication lifecycle state of this entity. Distinct
+      from AiLifecyclePhase, which describes an AI system's runtime evolution rather
+      than the editorial workflow of a catalogued entry.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    aliases:
+    - lifecycle_status
+    - doc_status
+    rank: 1000
+    slot_uri: adms:status
+    owner: AiEval
+    domain_of:
+    - Entity
+    range: LifecycleStatus
+  notes:
+    name: notes
+    description: Free-text editorial notes, source breadcrumbs, or build-time provenance
+      that do not belong in the user-facing description. Opaque to consumers.
+    from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
+    rank: 1000
+    slot_uri: skos:note
+    owner: AiEval
+    domain_of:
+    - Entity
+    range: string
+    recommended: false
+    multivalued: true
 class_uri: dqv:Metric
 
 ````

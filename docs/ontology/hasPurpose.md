@@ -10,7 +10,6 @@ _Indicates the purpose of an entity, e.g. AI system, components._
 <div data-search-exclude markdown="1">
 
 URI: [airo:hasPurpose](https://w3id.org/airo#hasPurpose)
-Alias: hasPurpose
 
 <!-- no inheritance hierarchy -->
 
@@ -59,7 +58,6 @@ description: Indicates the purpose of an entity, e.g. AI system, components.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasPurpose
-alias: hasPurpose
 domain_of:
 - AiSystem
 range: Purpose

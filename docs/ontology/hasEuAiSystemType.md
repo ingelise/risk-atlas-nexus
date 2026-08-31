@@ -10,7 +10,6 @@ _The type of system as defined by the EU AI Act._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasEuAiSystemType](https://w3id.org/ai-atlas-nexus/hasEuAiSystemType)
-Alias: hasEuAiSystemType
 
 <!-- no inheritance hierarchy -->
 
@@ -56,7 +55,6 @@ name: hasEuAiSystemType
 description: The type of system as defined by the EU AI Act.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
-alias: hasEuAiSystemType
 domain_of:
 - AiSystem
 range: AiSystemType

@@ -10,7 +10,6 @@ _The property airo:detectsRiskConcept indicates the control used for detecting r
 <div data-search-exclude markdown="1">
 
 URI: [nexus:detectsRiskConcept](https://w3id.org/ai-atlas-nexus/detectsRiskConcept)
-Alias: detectsRiskConcept
 
 <!-- no inheritance hierarchy -->
 
@@ -18,9 +17,9 @@ Alias: detectsRiskConcept
 
 | Name                          | Description                                                                      | Modifies Slot |
 | ----------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Action](Action.md)           | Action to remediate a risk                                                       | no            |
 | [Risk](Risk.md)               | The state of uncertainty associated with an AI system, that has the potential... | no            |
 | [RiskControl](RiskControl.md) | A measure that maintains and/or modifies risk (and risk concepts)                | no            |
+| [Action](Action.md)           | Action to remediate a risk                                                       | no            |
 
 ## Properties
 
@@ -73,7 +72,6 @@ exact_mappings:
 - airo:detectsRiskConcept
 rank: 1000
 domain: RiskControl
-alias: detectsRiskConcept
 domain_of:
 - Risk
 - RiskControl
