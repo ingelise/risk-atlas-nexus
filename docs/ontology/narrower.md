@@ -10,6 +10,7 @@ _Related concepts that are narrower in scope or hierarchy._
 <div data-search-exclude markdown="1">
 
 URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
+Alias: narrower
 
 <!-- no inheritance hierarchy -->
 
@@ -17,14 +18,14 @@ URI: [skos:narrower](http://www.w3.org/2004/02/skos/core#narrower)
 
 | Name                                    | Description                                                                      | Modifies Slot |
 | --------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [Group](Group.md)                       | Labelled groups of concepts                                                      | no            |
-| [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | no            |
-| [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | no            |
-| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | no            |
-| [CapabilityGroup](CapabilityGroup.md)   | A group of AI capabilities that are part of a capability taxonomy, organized ... | no            |
-| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | no            |
-| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | no            |
 | [StakeholderGroup](StakeholderGroup.md) | An AI system stakeholder grouping                                                | no            |
+| [CapabilityGroup](CapabilityGroup.md)   | A group of AI capabilities that are part of a capability taxonomy, organized ... | no            |
+| [Group](Group.md)                       | Labelled groups of concepts                                                      | no            |
+| [CapabilityDomain](CapabilityDomain.md) | A high-level domain of AI capabilities (e                                        | no            |
+| [AiTaskGroup](AiTaskGroup.md)           | A group of AI Tasks                                                              | no            |
+| [AiTaskDomain](AiTaskDomain.md)         | A grouping of AI Tasks by domain                                                 | no            |
+| [RiskGroup](RiskGroup.md)               | A group of AI system related risks that are part of a risk taxonomy              | no            |
+| [RiskControlGroup](RiskControlGroup.md) | A group of AI system related risk controls                                       | no            |
 
 ## Properties
 
@@ -70,6 +71,7 @@ description: Related concepts that are narrower in scope or hierarchy.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: skos:narrower
+alias: narrower
 owner: Group
 domain_of:
 - Group

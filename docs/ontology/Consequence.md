@@ -191,6 +191,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: Consequence
     domain_of:
     - Entity
@@ -202,6 +203,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: Consequence
     domain_of:
     - Entity
@@ -213,6 +215,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: Consequence
     domain_of:
     - Entity
@@ -223,6 +226,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: Consequence
     domain_of:
     - Entity
@@ -233,6 +237,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: Consequence
     domain_of:
     - Entity
@@ -244,6 +249,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: Consequence
     domain_of:
     - Entity
@@ -257,6 +263,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: Consequence
     domain_of:
     - Entity
@@ -270,6 +277,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: Consequence
     domain_of:
     - Entity
@@ -283,6 +291,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: Consequence
     domain_of:
     - Entity
@@ -297,6 +306,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: Consequence
     domain_of:
     - Entity
@@ -311,6 +321,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: Consequence
     domain_of:
     - Entity
@@ -323,6 +334,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: Consequence
     domain_of:
     - Entity
@@ -340,6 +352,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: Consequence
     domain_of:
     - Entity
@@ -351,6 +364,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: Consequence
     domain_of:
     - Entity

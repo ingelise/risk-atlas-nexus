@@ -276,7 +276,7 @@ URI: [ai:Capability](https://w3id.org/dpv/ai#Capability)
 | Name                                              | Cardinality and Range                                                     | Description                                                                      | Inheritance         |
 | ------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------- |
 | [hasRelatedRisk](hasRelatedRisk.md)               | \* <br/> [RiskConcept](RiskConcept.md)                                    | A relationship where an entity relates to a risk                                 | direct              |
-| [hasRelatedTerm](hasRelatedTerm.md)               | \* <br/> [Term](Term.md)&nbsp;or&nbsp;<br />[RiskConcept](RiskConcept.md) | A relationship where an entity relates to a term                                 | direct              |
+| [hasRelatedTerm](hasRelatedTerm.md)               | \* <br/> [RiskConcept](RiskConcept.md)&nbsp;or&nbsp;<br />[Term](Term.md) | A relationship where an entity relates to a term                                 | direct              |
 | [hasDocumentation](hasDocumentation.md)           | \* <br/> [Documentation](Documentation.md)                                | Indicates documentation associated with an entity                                | direct              |
 | [isDefinedByVocabulary](isDefinedByVocabulary.md) | 0..1 <br/> [Vocabulary](Vocabulary.md)                                    | A relationship where a term or a term group is defined by a vocabulary           | direct              |
 | [hasAdapter](hasAdapter.md)                       | \* <br/> [Adapter](Adapter.md)                                            | The Adapter for the intrinsic                                                    | direct              |
@@ -389,6 +389,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: LLMIntrinsic
+    alias: hasRelatedRisk
     owner: LLMIntrinsic
     domain_of:
     - Term
@@ -409,6 +410,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: hasRelatedTerm
     owner: LLMIntrinsic
     domain_of:
     - LLMIntrinsic
@@ -424,6 +426,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: LLMIntrinsic
     domain_of:
     - Dataset
@@ -454,6 +457,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByVocabulary
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -467,6 +471,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: LLMIntrinsic
+    alias: hasAdapter
     owner: LLMIntrinsic
     domain_of:
     - LLMIntrinsic
@@ -481,6 +486,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: tech:hasCapability
+    alias: hasCapability
     owner: LLMIntrinsic
     domain_of:
     - AiSystem
@@ -495,6 +501,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: LLMIntrinsic
+    alias: implementsCapability
     owner: LLMIntrinsic
     domain_of:
     - Adapter
@@ -510,6 +517,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isDefinedByTaxonomy
     owner: LLMIntrinsic
     domain_of:
     - Concept
@@ -545,6 +553,7 @@ attributes:
     - rdfs:seeAlso
     rank: 1000
     slot_uri: nexus:hasExternalReference
+    alias: hasExternalReference
     owner: LLMIntrinsic
     domain_of:
     - Control
@@ -558,6 +567,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:isPartOf
+    alias: isPartOf
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -573,6 +583,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Entry
+    alias: requiredByTask
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -587,6 +598,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: requiresCapability
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -605,6 +617,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     domain: Any
+    alias: implementedByAdapter
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -620,6 +633,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: dpv:hasRule
+    alias: hasRule
     owner: LLMIntrinsic
     domain_of:
     - Entry
@@ -635,6 +649,7 @@ attributes:
       this is.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: LLMIntrinsic
     domain_of:
     - Vocabulary
@@ -666,6 +681,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -677,6 +693,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -688,6 +705,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -698,6 +716,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -708,6 +727,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -719,6 +739,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -732,6 +753,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -745,6 +767,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -758,6 +781,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -772,6 +796,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -786,6 +811,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -798,6 +824,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -815,6 +842,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: LLMIntrinsic
     domain_of:
     - Entity
@@ -826,6 +854,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: LLMIntrinsic
     domain_of:
     - Entity

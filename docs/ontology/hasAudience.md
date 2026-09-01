@@ -10,6 +10,7 @@ _The intended audience, such as researchers, developers, policymakers, etc._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasAudience](https://w3id.org/ai-atlas-nexus/hasAudience)
+Alias: hasAudience
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasAudience](https://w3id.org/ai-atlas-nexus/hasAudience)
 
 | Name                                              | Description                                                                      | Modifies Slot |
 | ------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 | [BenchmarkMetadataCard](BenchmarkMetadataCard.md) | Benchmark metadata cards offer a standardized way to document LLM benchmarks ... | no            |
+| [EveryEvalAIResult](EveryEvalAIResult.md)         | An evaluation result from the Every Eval Ever dataset, capturing evaluation m... | no            |
 
 ## Properties
 
@@ -57,6 +58,7 @@ description: The intended audience, such as researchers, developers, policymaker
   etc.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasAudience
 domain_of:
 - EveryEvalAIResult
 - BenchmarkMetadataCard

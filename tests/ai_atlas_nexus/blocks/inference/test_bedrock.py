@@ -2,7 +2,10 @@ import json
 import unittest
 from unittest.mock import Mock, patch
 
-import botocore.exceptions
+import pytest
+
+
+botocore = pytest.importorskip("botocore")
 
 from ai_atlas_nexus.blocks.inference.bedrock import AWSBedrockInferenceEngine
 from ai_atlas_nexus.blocks.inference.params import TextGenerationInferenceOutput

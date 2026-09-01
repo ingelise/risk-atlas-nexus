@@ -215,6 +215,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:version
+    alias: version
     owner: RiskControlGroupTaxonomy
     domain_of:
     - License
@@ -230,6 +231,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Dataset
@@ -260,6 +262,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
+    alias: hasLicense
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Dataset
@@ -279,6 +282,7 @@ attributes:
     description: The type or class designation of this entity instance.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     designates_type: true
+    alias: type
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Vocabulary
@@ -310,6 +314,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -321,6 +326,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -332,6 +338,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -342,6 +349,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -352,6 +360,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -363,6 +372,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -376,6 +386,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -389,6 +400,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -402,6 +414,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -416,6 +429,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -430,6 +444,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -442,6 +457,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -459,6 +475,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity
@@ -470,6 +487,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: RiskControlGroupTaxonomy
     domain_of:
     - Entity

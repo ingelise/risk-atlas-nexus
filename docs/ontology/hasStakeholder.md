@@ -10,6 +10,7 @@ _Indicates stakeholders of an AI system or component._
 <div data-search-exclude markdown="1">
 
 URI: [airo:hasStakeholder](https://w3id.org/airo#hasStakeholder)
+Alias: hasStakeholder
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [airo:hasStakeholder](https://w3id.org/airo#hasStakeholder)
 
 | Name                    | Description                                                                      | Modifies Slot |
 | ----------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities                      | no            |
 | [AiAgent](AiAgent.md)   | An artificial intelligence (AI) agent refers to a system or program that is c... | no            |
+| [AiSystem](AiSystem.md) | A compound AI System composed of one or more AI capablities                      | no            |
 
 ## Properties
 
@@ -58,6 +59,7 @@ description: Indicates stakeholders of an AI system or component.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 slot_uri: airo:hasStakeholder
+alias: hasStakeholder
 domain_of:
 - AiSystem
 range: Stakeholder

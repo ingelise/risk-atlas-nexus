@@ -10,6 +10,7 @@ _A relationship where an entity relates to an action_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasRelatedAction](https://w3id.org/ai-atlas-nexus/hasRelatedAction)
+Alias: hasRelatedAction
 
 <!-- no inheritance hierarchy -->
 
@@ -55,6 +56,7 @@ name: hasRelatedAction
 description: A relationship where an entity relates to an action
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasRelatedAction
 domain_of:
 - Risk
 range: Action

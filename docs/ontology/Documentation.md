@@ -302,6 +302,7 @@ attributes:
     description: The author or authors of the documentation
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
+    alias: author
     owner: Documentation
     domain_of:
     - Documentation
@@ -313,6 +314,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasLicense
+    alias: hasLicense
     owner: Documentation
     domain_of:
     - Dataset
@@ -335,6 +337,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: Documentation
     domain_of:
     - Entity
@@ -346,6 +349,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: Documentation
     domain_of:
     - Entity
@@ -357,6 +361,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: Documentation
     domain_of:
     - Entity
@@ -367,6 +372,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: Documentation
     domain_of:
     - Entity
@@ -377,6 +383,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: Documentation
     domain_of:
     - Entity
@@ -388,6 +395,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: Documentation
     domain_of:
     - Entity
@@ -401,6 +409,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: Documentation
     domain_of:
     - Entity
@@ -414,6 +423,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: Documentation
     domain_of:
     - Entity
@@ -427,6 +437,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: Documentation
     domain_of:
     - Entity
@@ -441,6 +452,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: Documentation
     domain_of:
     - Entity
@@ -455,6 +467,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: Documentation
     domain_of:
     - Entity
@@ -469,6 +482,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: Documentation
     domain_of:
     - Entity
@@ -486,6 +500,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: Documentation
     domain_of:
     - Entity
@@ -497,6 +512,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: Documentation
     domain_of:
     - Entity

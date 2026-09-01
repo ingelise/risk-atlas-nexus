@@ -10,6 +10,7 @@ _A list of AI models_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:aimodels](https://w3id.org/ai-atlas-nexus/aimodels)
+Alias: aimodels
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: aimodels
 description: A list of AI models
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: aimodels
 owner: Container
 domain_of:
 - Container

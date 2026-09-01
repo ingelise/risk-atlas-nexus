@@ -10,6 +10,7 @@ _Name of the AI model_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:model_name](https://w3id.org/ai-atlas-nexus/model_name)
+Alias: model_name
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: model_name
 description: Name of the AI model
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: model_name
 owner: ModelInfo
 domain_of:
 - ModelInfo

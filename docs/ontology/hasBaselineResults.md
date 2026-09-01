@@ -10,6 +10,7 @@ _The results of well-known or widely used models to give context to new performa
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasBaselineResults](https://w3id.org/ai-atlas-nexus/hasBaselineResults)
+Alias: hasBaselineResults
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: The results of well-known or widely used models to give context to 
   performance scores.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: hasBaselineResults
 domain_of:
 - BenchmarkMetadataCard
 range: string

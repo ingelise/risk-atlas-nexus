@@ -208,6 +208,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: airo:hasDocumentation
+    alias: hasDocumentation
     owner: LargeLanguageModelFamily
     domain_of:
     - Dataset
@@ -240,6 +241,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
+    alias: id
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -251,6 +253,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:name
+    alias: name
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -262,6 +265,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:description
+    alias: description
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -272,6 +276,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:url
+    alias: url
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -282,6 +287,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateCreated
+    alias: dateCreated
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -293,6 +299,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: schema:dateModified
+    alias: dateModified
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -306,6 +313,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:exactMatch
+    alias: exact_mappings
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -319,6 +327,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:closeMatch
+    alias: close_mappings
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -332,6 +341,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:relatedMatch
+    alias: related_mappings
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -346,6 +356,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:narrowMatch
+    alias: narrow_mappings
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -360,6 +371,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:broadMatch
+    alias: broad_mappings
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -372,6 +384,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: nexus:isCategorizedAs
+    alias: isCategorizedAs
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -389,6 +402,7 @@ attributes:
     - doc_status
     rank: 1000
     slot_uri: adms:status
+    alias: hasLifecycleStatus
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity
@@ -400,6 +414,7 @@ attributes:
     from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
     rank: 1000
     slot_uri: skos:note
+    alias: notes
     owner: LargeLanguageModelFamily
     domain_of:
     - Entity

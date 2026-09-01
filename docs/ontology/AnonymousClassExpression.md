@@ -75,6 +75,7 @@ attributes:
     - AnonymousClassExpression
     range: SlotCondition
     multivalued: true
+    inlined: true
     inlined_as_list: true
 
 ````
@@ -92,6 +93,7 @@ attributes:
     description: List of slot conditions that must be satisfied.
     from_schema: https://w3id.org/ai-atlas-nexus/common
     rank: 1000
+    alias: slot_conditions
     owner: AnonymousClassExpression
     domain_of:
     - AnonymousClassExpression

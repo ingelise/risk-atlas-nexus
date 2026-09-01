@@ -10,6 +10,7 @@ _GPU consumption in terms of hours_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:gpu_hours](https://w3id.org/ai-atlas-nexus/gpu_hours)
+Alias: gpu_hours
 
 <!-- no inheritance hierarchy -->
 
@@ -17,9 +18,9 @@ URI: [nexus:gpu_hours](https://w3id.org/ai-atlas-nexus/gpu_hours)
 
 | Name                                        | Description                                                                      | Modifies Slot |
 | ------------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
-| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 | [LargeLanguageModel](LargeLanguageModel.md) | A large language model (LLM) is an AI model which supports a range of languag... | no            |
 | [Adapter](Adapter.md)                       | Adapter-based methods add extra trainable parameters after the attention and ... | no            |
+| [AiModel](AiModel.md)                       | A base AI Model class                                                            | no            |
 
 ## Properties
 
@@ -62,6 +63,7 @@ name: gpu_hours
 description: GPU consumption in terms of hours
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: gpu_hours
 domain_of:
 - AiModel
 range: integer

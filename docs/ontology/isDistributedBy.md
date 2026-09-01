@@ -10,6 +10,7 @@ _A relationship indicating that an entity has been distributed by an organizatio
 <div data-search-exclude markdown="1">
 
 URI: [nexus:isDistributedBy](https://w3id.org/ai-atlas-nexus/isDistributedBy)
+Alias: isDistributedBy
 
 <!-- no inheritance hierarchy -->
 
@@ -47,8 +48,8 @@ name: isDistributedBy
 description: A relationship indicating that an entity has been distributed by an organization.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: isDistributedBy
 range: Organization
-inlined: true
 inlined_as_list: true
 
 ```

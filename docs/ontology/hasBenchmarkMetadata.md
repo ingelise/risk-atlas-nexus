@@ -10,6 +10,7 @@ _A relationship to a Benchmark Metadata Card which contains metadata about the b
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasBenchmarkMetadata](https://w3id.org/ai-atlas-nexus/hasBenchmarkMetadata)
+Alias: hasBenchmarkMetadata
 
 <!-- no inheritance hierarchy -->
 
@@ -17,8 +18,8 @@ URI: [nexus:hasBenchmarkMetadata](https://w3id.org/ai-atlas-nexus/hasBenchmarkMe
 
 | Name                              | Description                                       | Modifies Slot |
 | --------------------------------- | ------------------------------------------------- | ------------- |
-| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Question](Question.md)           | An evaluation where a question has to be answered | no            |
+| [AiEval](AiEval.md)               | An AI Evaluation, e                               | no            |
 | [Questionnaire](Questionnaire.md) | A questionnaire groups questions                  | no            |
 
 ## Properties
@@ -69,6 +70,7 @@ description: A relationship to a Benchmark Metadata Card which contains metadata
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: AiEval
+alias: hasBenchmarkMetadata
 domain_of:
 - AiEval
 inverse: describesAiEval

@@ -10,6 +10,7 @@ _The name of the slot being evaluated in this condition._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:slot_name](https://w3id.org/ai-atlas-nexus/slot_name)
+Alias: slot_name
 
 <!-- no inheritance hierarchy -->
 
@@ -60,6 +61,7 @@ name: slot_name
 description: The name of the slot being evaluated in this condition.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: slot_name
 owner: SlotCondition
 domain_of:
 - SlotCondition

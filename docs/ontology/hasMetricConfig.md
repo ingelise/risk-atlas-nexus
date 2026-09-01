@@ -10,6 +10,7 @@ _Metric configuration_
 <div data-search-exclude markdown="1">
 
 URI: [nexus:hasMetricConfig](https://w3id.org/ai-atlas-nexus/hasMetricConfig)
+Alias: hasMetricConfig
 
 <!-- no inheritance hierarchy -->
 
@@ -56,6 +57,7 @@ description: Metric configuration
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: EvaluationResultRecord
+alias: hasMetricConfig
 domain_of:
 - EvaluationResultRecord
 range: MetricConfig

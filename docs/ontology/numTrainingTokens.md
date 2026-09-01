@@ -10,6 +10,7 @@ _The number of tokens a AI model was trained on._
 <div data-search-exclude markdown="1">
 
 URI: [nexus:numTrainingTokens](https://w3id.org/ai-atlas-nexus/numTrainingTokens)
+Alias: numTrainingTokens
 
 <!-- no inheritance hierarchy -->
 
@@ -61,6 +62,7 @@ name: numTrainingTokens
 description: The number of tokens a AI model was trained on.
 from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
+alias: numTrainingTokens
 domain_of:
 - LargeLanguageModel
 range: integer

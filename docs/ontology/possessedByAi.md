@@ -10,6 +10,7 @@ _Indicates that this capability is possessed by a specific AI system or componen
 <div data-search-exclude markdown="1">
 
 URI: [tech:hasCapability](https://w3id.org/dpv/tech#hasCapability)
+Alias: possessedByAi
 
 <!-- no inheritance hierarchy -->
 
@@ -63,6 +64,7 @@ from_schema: https://w3id.org/ai-atlas-nexus/ai-risk-ontology
 rank: 1000
 domain: Capability
 slot_uri: tech:hasCapability
+alias: possessedByAi
 inverse: hasCapability
 range: BaseAi
 multivalued: true
