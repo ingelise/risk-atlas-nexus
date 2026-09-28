@@ -166,6 +166,7 @@ classes:
       - ExternalReference
     slots:
       - hasLicense
+      - hasJurisdiction
     slot_usage:
       isCategorizedAs:
         range: Term
@@ -685,9 +686,7 @@ slots:
   hasJurisdiction:
     description: >-
       The legal or regulatory jurisdiction(s) applicable to an AI system,
-      policy, risk, or obligation. Accepts ISO 3166-1 country codes,
-      supra-national bodies, or subnational jurisdictions with distinct
-      regulatory significance. Aligns with dpv:hasJurisdiction.
+      policy, risk, or obligation. Indicates applicability of specified jurisdictions, expressed as ISO 3166-1 country codes. Aligns with dpv:hasJurisdiction.
     multivalued: true
     see_also:
       - https://w3id.org/dpv#hasJurisdiction
