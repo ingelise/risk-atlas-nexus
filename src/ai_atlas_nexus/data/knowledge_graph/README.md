@@ -23,6 +23,7 @@ For more information about LinkML data instances see [the LinkML documentation](
 | `owasp_ast10_references_data.yaml`          | Documents              | External references, and the AISVS/ASVS/CWE/ISO 42001 targets the AST10 mappings point at             |
 | `owasp_mcp_top10_data.yaml`                 | RiskTaxonomy           | The OWASP Top 10 for Model Context Protocol risk definitions                                          |
 | `csa_maestro_data.yaml`                     | RiskTaxonomy           | The CSA MAESTRO seven-layer reference architecture, used to categorise risks by layer                 |
+| `pan_agent_skill_rules_data.yaml`           | RiskTaxonomy           | Agent skill security rules R1-R12 by Yuhao Wu (Palo Alto Networks)                                    |
 | `mit_ai_risk_repository_data.yaml`          | RiskTaxonomy           | The MIT AI Risk Repository risk taxonomy                                                              |
 | `ailuminate.yaml`                           | RiskTaxonomy           | The AILuminate benchmark risk taxonomy                                                                |
 | `credo.yaml`                                | RiskTaxonomy           | the Unified Control Framework from Credo                                                              |
